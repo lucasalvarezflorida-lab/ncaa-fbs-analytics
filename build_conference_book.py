@@ -247,7 +247,17 @@ TEAM_COLS = ["Team", "Conference", "FPI Rank", "FPI", "Predicted", "Residual",
              "RushO", "RushO Rk", "RushO Note", "PassO", "PassO Rk", "PassO Note",
              "RushD", "RushD Rk", "RushD Note", "PassD", "PassD Rk", "PassD Note",
              "ST", "ST Rk", "ST Note",
-             "RosterStart", "RosterCount", "SchedStart", "SchedCount"]
+             "RosterStart", "RosterCount", "SchedStart", "SchedCount",
+             "ScoutBaseO", "ScoutTendO", "ScoutBaseD", "ScoutTendD",
+             "ScoutStrengths", "ScoutWeaknesses"]
+
+SCOUT_JSON = HERE / "scouting_top25.json"
+
+
+def load_scouting() -> dict:
+    if SCOUT_JSON.exists():
+        return json.load(open(SCOUT_JSON, encoding="utf-8"))
+    return {"meta": {"order": []}, "teams": {}}
 
 
 def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
@@ -257,6 +267,7 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
     rosters = read_rosters()
     ratings = read_overview_ratings(wb)
     notes = read_unit_notes()
+    scouting = load_scouting()
 
     merged, _, _ = build_dataset(2025, refresh=refresh, transfer=True)
     _, fitted = fit_ols(merged, FEATURE_COLS)
@@ -307,7 +318,11 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
         for u in range(5):
             row += [units[u] if units[u] is not None else "n/a",
                     unit_ranks[u], unit_notes[u]]
-        row += [r_row, len(players), s_row, len(team_games)]
+        sc = scouting["teams"].get(team, {})
+        bullets = lambda xs: "\n".join("• " + x for x in xs) if xs else ""
+        row += [r_row, len(players), s_row, len(team_games),
+                sc.get("ob", ""), sc.get("ot", ""), sc.get("db", ""),
+                sc.get("dt", ""), bullets(sc.get("s")), bullets(sc.get("w"))]
         ws_t.append(row)
 
         for p in players:
@@ -479,6 +494,69 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
     return ws
 
 
+# ---------------- scouting sheet ----------------
+
+def build_scouting_sheet(wb):
+    """'Scouting' tab: dropdown over the FPI top 25 -> full dossier card
+    (base schemes, tendencies, strengths/weaknesses) from _Teams scout columns."""
+    scouting = load_scouting()
+    order = scouting["meta"].get("order", [])
+    if not order:
+        return
+    prior = wb["Scouting"]["B1"].value if "Scouting" in wb.sheetnames else None
+    if "Scouting" in wb.sheetnames:
+        del wb["Scouting"]
+    ws = wb.create_sheet("Scouting")
+
+    ws["A1"] = "Select team:"
+    ws["A1"].font = ARIAL_B
+    ws["B1"] = prior if prior in order else order[0]
+    ws["B1"].font = Font(name="Arial", bold=True, size=12, color="0000FF")
+    ws["B1"].fill = PICK_FILL
+    ws["D1"] = f"FPI top 25 only — {scouting['meta'].get('vintage', '')}"
+    ws["D1"].font = Font(name="Arial", italic=True, size=9)
+    for i, t in enumerate(order, 1):
+        ws.cell(row=i, column=27, value=t)  # AA (hidden)
+    dv = DataValidation(type="list", formula1=f"=$AA$1:$AA${len(order)}",
+                        allow_blank=False, showDropDown=False)
+    ws.add_data_validation(dv)
+    dv.add(ws["B1"])
+    ws["AB1"] = "=MATCH($B$1,_Teams!$A:$A,0)"
+    for col in ("AA", "AB"):
+        ws.column_dimensions[col].hidden = True
+
+    ws.cell(row=3, column=1, value="=$B$1").font = TITLE_FONT
+    for c in range(1, 3):
+        ws.cell(row=3, column=c).fill = TITLE_FILL
+    ws["A4"] = ('=INDEX(_Teams!$B:$B,$AB$1)&"  ·  FPI "&INDEX(_Teams!$D:$D,$AB$1)'
+                '&"  (#"&INDEX(_Teams!$C:$C,$AB$1)&")"')
+    ws["A4"].font = Font(name="Arial", italic=True, color="5C6B7E")
+
+    sections = [
+        ("OFFENSE — BASE", "AE", "2E6B4F", 48),
+        ("OFFENSE — TENDENCIES", "AF", "2E6B4F", 72),
+        ("DEFENSE — BASE", "AG", "A3332C", 48),
+        ("DEFENSE — TENDENCIES", "AH", "A3332C", 72),
+        ("STRENGTHS", "AI", "2E6B4F", 66),
+        ("WEAKNESSES", "AJ", "A3332C", 66),
+    ]
+    from openpyxl.styles import Alignment as _Al
+    r = 6
+    for label, col, color, height in sections:
+        c = ws.cell(row=r, column=1, value=label)
+        c.font = Font(name="Arial", bold=True, size=11, color="FFFFFF")
+        c.fill = PatternFill("solid", start_color=color)
+        body = ws.cell(row=r + 1, column=1,
+                       value=f'=INDEX(_Teams!${col}:${col},$AB$1)&""')
+        body.font = ARIAL
+        body.alignment = _Al(wrap_text=True, vertical="top")
+        ws.row_dimensions[r + 1].height = height
+        r += 3
+    ws.column_dimensions["A"].width = 108
+    ws.column_dimensions["B"].width = 18
+    ws.freeze_panes = "A2"
+
+
 # ---------------- upset board + alert log ----------------
 
 ALERTS_LOG = HERE / "alerts_log.json"
@@ -528,7 +606,9 @@ def build_upset_board(wb, games: list[dict]):
         ws.cell(row=1, column=c).fill = TITLE_FILL
     ws["A2"] = ("Model margin = FPI gap + 2.5 home field (2025 final FPI as preseason prior — upgrades automatically "
                 "when 2026 FPI publishes). \U0001F534 model picks the underdog outright (spread >= 3). "
-                "\U0001F7E1 same side, 6+ pt disagreement. Games are graded against the line first seen at alert time.")
+                "\U0001F7E1 same side, 6+ pt disagreement. Games are graded against the line first seen at alert time. "
+                "2023-25 backtest of these rules: 49.7% ATS (below 52.4% break-even) — this board is a research "
+                "shortlist and narrative engine, not a bet slip. See BACKTEST_RESULTS.md.")
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
 
     headers = ["Wk", "Date", "Matchup", "Spread (alert)", "Now", "O/U",
@@ -684,6 +764,7 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
     conf_teams, games, fpi, team_conf = build_data_sheets(wb, refresh)
     build_upset_board(wb, games)
     build_season_sim(wb, games, fpi, team_conf)
+    build_scouting_sheet(wb)
 
     # per-conference max roster size drives each tab's formula-grid height
     ws_t = wb["_Teams"]
@@ -701,12 +782,13 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
     # order: Overview, FPI Decomposition, conferences, hidden data sheets
     if drop_team_tabs:
         keep = {"Overview", "FPI Decomposition", "Upset Board", "Season Sim",
-                "_Teams", "_Rosters", "_Sched"}
+                "Scouting", "_Teams", "_Rosters", "_Sched"}
         keep |= set(CONF_ORDER)
         for name in list(wb.sheetnames):
             if name not in keep:
                 del wb[name]
-    order = ["Overview", "FPI Decomposition", "Upset Board", "Season Sim"] + \
+    order = ["Overview", "FPI Decomposition", "Upset Board", "Season Sim",
+             "Scouting"] + \
             [c for c in CONF_ORDER if c in wb.sheetnames] + \
             ["_Teams", "_Rosters", "_Sched"]
     wb._sheets = [wb[n] for n in order if n in wb.sheetnames] + \

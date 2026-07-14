@@ -1,0 +1,484 @@
+{
+ "meta": {
+  "vintage": "Stats 2025 season; staff/QB notes web-verified 2026-07-12",
+  "order": [
+   "Indiana",
+   "Ohio State",
+   "Notre Dame",
+   "Oregon",
+   "Miami",
+   "Texas Tech",
+   "Georgia",
+   "Utah",
+   "Ole Miss",
+   "Alabama",
+   "Texas",
+   "Texas A&M",
+   "USC",
+   "Vanderbilt",
+   "Oklahoma",
+   "Penn State",
+   "BYU",
+   "Iowa",
+   "Tennessee",
+   "Michigan",
+   "Washington",
+   "Missouri",
+   "SMU",
+   "Auburn",
+   "South Florida"
+  ]
+ },
+ "teams": {
+  "Indiana": {
+   "conf": "Big Ten",
+   "fpi": 31.5,
+   "ob": "Zone-RPO spread under Curt Cignetti — 11 personnel, condensed splits, heavy play-action and glance RPOs off wide zone.",
+   "ot": "Methodical by design: elite efficiency (#4 success rate) with almost no vertical variance (#114 explosiveness). Best red-zone offense in the country (#1 points/opportunity). QB room resets after Fernando Mendoza's departure — the system, not the passer, is the constant.",
+   "db": "4-2-5 under Bryant Haines — aggressive simulated pressures, run-through linebackers, press-quarters behind it.",
+   "dt": "#1 stuff rate and #2 havoc in FBS: they win at the line and on early downs. The tradeoff is boom-bust — #108 at preventing explosives. Teams that protect and take shots have a path; nobody grinds them down.",
+   "s": [
+    "Best situational football in the sport — red zone and 3rd down on both sides",
+    "Front-seven havoc travels anywhere",
+    "Coaching edge: Cignetti's staff wins the margins"
+   ],
+   "w": [
+    "Explosiveness allergy on offense caps blowout upside vs elite defenses",
+    "New QB after Mendoza — efficiency machine needs a new trigger man",
+    "Secondary can be beaten over the top when pressure doesn't land"
+   ]
+  },
+  "Ohio State": {
+   "conf": "Big Ten",
+   "fpi": 27.6,
+   "ob": "Pro-spread under Ryan Day with new OC Arthur Smith (ex-Falcons HC/Steelers OC, hired after Brian Hartline left for the USF job) — expect more 12/13 personnel, play-action, and a real run-game commitment layered onto the WR pipeline.",
+   "ot": "Julian Sayin returns behind Jeremiah Smith and Carnell Tate — the highest-ceiling pass game in the country, now with Smith's NFL wide-zone/keeper structure around it. The 2025 season ended in a Cotton Bowl CFP loss; the offense, not the defense, was the reason.",
+   "db": "Multiple front under Matt Patricia — disguised coverage shells, NFL-style game-planning, elite pass defense metrics.",
+   "dt": "Top-5 in EPA allowed and pass efficiency defense in 2025. They rally-tackle and squeeze explosives; pressure comes from scheme more than raw blitzing.",
+   "s": [
+    "Sayin-to-Smith is the best QB-WR axis in the sport",
+    "Back-to-back elite defenses with NFL scheme diversity",
+    "Two former NFL head coaches now coordinate both sides"
+   ],
+   "w": [
+    "First-year college OC install — NFL-to-CFB transitions are not automatic",
+    "OL play, not skill talent, decides their CFP ceiling",
+    "Run-game identity was still optional against elite fronts in 2025"
+   ]
+  },
+  "Notre Dame": {
+   "conf": "Independent",
+   "fpi": 25.3,
+   "ob": "Duo/counter downhill run game under Mike Denbrock — 12/13 personnel mixed with CJ Carr's rhythm play-action.",
+   "ot": "Even post-Jeremiyah Love, the identity is RB-led: gap-scheme runs, heavy sets, then max-protect shots. Carr showed a live arm as a first-year starter; they'll trust him more in 2026.",
+   "db": "Tite-front quarters-match — sound, positionally disciplined, built to erase explosives first.",
+   "dt": "Bend-don't-break with elite tackling. They trade some havoc for structure; screens and QB run are the historical soft spots.",
+   "s": [
+    "OL/RB physicality wins November football",
+    "Carr's year-two leap is the highest-probability QB improvement in the top 10",
+    "Freeman's roster has no bottom-quartile position group"
+   ],
+   "w": [
+    "Independent schedule means zero bad-week amnesty",
+    "WR separation vs elite man coverage is still a question",
+    "Pass rush relies on scheme more than a dominant edge"
+   ]
+  },
+  "Oregon": {
+   "conf": "Big Ten",
+   "fpi": 23.9,
+   "ob": "Will Stein's spread — wide zone base with layered RPOs, motion at the highest rate in the conference, tempo shifts as a weapon.",
+   "ot": "Dante Moore distributes to a rebuilt-but-elite skill room. They sequence runs into shot plays better than anyone in the Big Ten; 3rd-and-medium is where Stein's script lives.",
+   "db": "4-2-5 under Tosh Lupoi — heavy front movement, deep DL rotation, edge speed over bulk.",
+   "dt": "Explosive-play prevention is the calling card; they'll concede completions underneath and close on the catch. Havoc comes in waves with the DL rotation.",
+   "s": [
+    "Best roster construction in the Big Ten — portal and HS classes both top-5",
+    "Moore's second season in-system",
+    "Special teams and field position consistently elite"
+   ],
+   "w": [
+    "Have not won the biggest CFP-stage game yet under Lanning",
+    "Interior DL vs power run games (see: physical B1G losses)",
+    "WR room turnover puts pressure on year-one transfers"
+   ]
+  },
+  "Miami": {
+   "conf": "ACC",
+   "fpi": 22.4,
+   "ob": "Shannon Dawson's one-back spread — tempo, quick game to the boundary, vertical seams — behind Cristobal's mauling OL.",
+   "ot": "The portal answer arrived: Darian Mensah from Duke — the ACC's leading passer (3,973 yds, 34/6 TD-INT) who won the league title against them. Pair that with a top-10 line-yards OL and this is the ACC's most complete offense on paper.",
+   "db": "Corey Hetherman's attack front — high sim-pressure rate, aggressive run fits, man-heavy behind it.",
+   "dt": "Big havoc jump in 2025; they trade structure for negative plays. Vertical shots off play-action are the counterpunch opponents live on.",
+   "s": [
+    "Elite OL/DL two-deep — Cristobal recruits the trenches like nobody in the ACC",
+    "Mensah is the conference's best returning QB resume",
+    "2025 CFP run (Fiesta Bowl win over Ole Miss) broke the January seal"
+   ],
+   "w": [
+    "Aggression = explosives allowed when pressure whiffs",
+    "Mensah's first year in a new building — Duke's spacing isn't Dawson's tempo",
+    "Expectations now assume CFP; anything less reopens the Cristobal questions"
+   ]
+  },
+  "Texas Tech": {
+   "conf": "Big 12",
+   "fpi": 21.5,
+   "ob": "Mack Leftwich's tempo spread — Air-Raid DNA with a real run game, top-25 explosiveness, fastest-scripting offense in the Big 12.",
+   "ot": "Behren Morton's exit hands the keys to a portal/blue-chip competition. They push tempo (73.9 plays/g) and hunt shots; success rate (#61) lags the highlight reel — drive-finishing came from defense-gifted fields.",
+   "db": "Shiel Wood's 3-3-5 — tite front, pressure from every second-level angle. #1 EPA defense, #1 success rate allowed, #1 havoc in 2025.",
+   "dt": "The best defense money could build: bought the entire DL two-deep from the portal and it worked. They win 1st down, then tee off. Question is repeatability after NFL departures (Bailey, Rodriguez).",
+   "s": [
+    "Reigning #1 defense with the resources to re-stock",
+    "Tempo + explosiveness stresses any defense's conditioning",
+    "Administration fully committed to paying for it"
+   ],
+   "w": [
+    "New QB in a system that needs one",
+    "2025 was aided by a friendly schedule draw — margins shrink",
+    "Can the portal-built model survive year-over-year turnover?"
+   ]
+  },
+  "Georgia": {
+   "conf": "SEC",
+   "fpi": 21.4,
+   "ob": "Mike Bobo pro-style — 12 personnel base, condensed formations, play-action keepers for Gunner Stockton's legs.",
+   "ot": "More QB-run element with Stockton than the Bennett/Beck eras. Explosiveness has been the missing gear two straight years; they manufacture chunk plays with tight-end seams rather than WR speed.",
+   "db": "Smart/Schumann multiple 3-4 — pattern-match zone, elite vs the run, linebacker-driven.",
+   "dt": "Still top-shelf on early downs, but 2025 showed uncharacteristic explosive leaks in the secondary. The front seven reloads annually; the back end is the retooling project.",
+   "s": [
+    "Line-of-scrimmage depth on both sides remains SEC-best",
+    "Smart's floor: double-digit wins in every full season",
+    "Stockton's mobility adds a red-zone dimension"
+   ],
+   "w": [
+    "WR separation and vertical speed — two years running",
+    "Secondary explosives allowed trending the wrong way",
+    "Offense can go conservative in exactly the games that decide seasons"
+   ]
+  },
+  "Utah": {
+   "conf": "Big 12",
+   "fpi": 20.1,
+   "ob": "Jason Beck's QB-run spread built on Devon Dampier — zone-read, counter bash, designed keepers 12-15 times a game.",
+   "ot": "Dampier returning makes them the Big 12's most defined identity: 61%+ run rate feel with RPO glance routes off it. Passing efficiency spikes when defenses over-commit to the box.",
+   "db": "Morgan Scalley's 4-2-5 — structurally disciplined, safeties downhill, almost never misaligned.",
+   "dt": "Classic Utah: top-20 success-rate defense, low havoc variance, tackle everything. They'll trade completions for time-of-possession and red-zone stops.",
+   "s": [
+    "Clearest identity in the Big 12 — they know exactly who they are",
+    "Dampier is the conference's most valuable non-Manning QB",
+    "Whittingham-era culture: never out-toughed"
+   ],
+   "w": [
+    "Ceiling depends on Dampier staying healthy through QB-run volume",
+    "Pass game is complementary — playing from behind is a problem",
+    "Skill talent is functional, not scary"
+   ]
+  },
+  "Ole Miss": {
+   "conf": "SEC",
+   "fpi": 19.3,
+   "ob": "Pete Golding's first year as HC after Kiffin's LSU exit — but the spread-tempo offensive core persists, now built around a returning star.",
+   "ot": "Trinidad Chambliss is BACK for 2026 after winning his NCAA eligibility appeal — the reigning SEC Newcomer of the Year who quarterbacked a 13-win, first-ever CFP season (Sugar Bowl MVP in the win over Georgia; season ended in the Fiesta vs Miami). Ex-Auburn five-star Deuce Knight waits behind him.",
+   "db": "Golding's own 4-2-5 system stays — multiple fronts, sim pressures, transfer-heavy DL.",
+   "dt": "The identity Golding built as DC: disruptive interior line, aggressive early-down run fits, press man in must-pass. He kept the defensive spine through the transition.",
+   "s": [
+    "Chambliss chose Oxford over following Kiffin — the rarest kind of continuity win",
+    "Program-record 13-win CFP season as the springboard",
+    "QB room is two-deep with high-end talent (Chambliss + Knight)"
+   ],
+   "w": [
+    "First-year head coach following the program's identity engine",
+    "Lost OC-level play-calling brains to Baton Rouge",
+    "The league now has a full offseason of Chambliss film"
+   ]
+  },
+  "Alabama": {
+   "conf": "SEC",
+   "fpi": 19.0,
+   "ob": "Ryan Grubb's dropback pass game — five-out spacing, chunk throws to the intermediate middle, RB screens as run-game extension.",
+   "ot": "Ty Simpson's draft departure hands it to Keelon Russell (five-star, year two). Pass-first identity is set; the run game (#102 rush EPA feel in stretches) and short-yardage remain the friction points.",
+   "db": "Kane Wommack's 4-2-5 'swarm' — light boxes, rally speed, disguised pressure.",
+   "dt": "Elite in coverage, occasionally soft vs downhill gap runs. Special teams (SP+ ST -1.30, #103) actively lost them field position all season — a fixable, glaring leak.",
+   "s": [
+    "Russell is the most talented QB in the building since Bryce Young",
+    "WR room reloads with five-stars annually",
+    "Wommack's coverage disguise ranks with anyone's"
+   ],
+   "w": [
+    "Special teams was a bottom-35 unit — inexcusable at this level",
+    "Short-yardage/goal-line identity unresolved",
+    "First-year starter at QB in Tuscaloosa expectations"
+   ]
+  },
+  "Texas": {
+   "conf": "SEC",
+   "fpi": 18.6,
+   "ob": "Sarkisian pro-style — wide zone marriage with play-action dagger/flood, 12 personnel sprinkled, Arch Manning at the wheel.",
+   "ot": "2025 underdelivered on the preseason #1 hype: OL regression and drops, not Manning, were the story. Expect more designed Manning movement and a rebuilt interior line in 2026.",
+   "db": "Pete Kwiatkowski's 4-2-5 — light-box quarters, elite eraser safeties, pressure with four.",
+   "dt": "Back end is the program's best unit: top-10 pass efficiency defense three years running. Vulnerable stretch: physical duo/counter teams that stay on schedule.",
+   "s": [
+    "Manning's arm talent + second full year as starter",
+    "PK's secondary erases one side of the field",
+    "Roster depth built for a 16-game season"
+   ],
+   "w": [
+    "OL interior was the 2025 disappointment — retooled, unproven",
+    "Run-game identity wobbles when zone gets stuffed early",
+    "Pressure to deliver now is at maximum"
+   ]
+  },
+  "Texas A&M": {
+   "conf": "SEC",
+   "fpi": 18.4,
+   "ob": "Collin Klein's spread — Marcel Reed's legs as a base constraint, quick RPO game, shot plays off sprint-out movement.",
+   "ot": "Reed returning after the 2025 CFP run makes this a top-10 offense on paper: designed QB run in the red zone, improving pocket patience. WR depth thinned by the draft.",
+   "db": "Mike Elko's multiple front — heavy nickel, twist-game interior pressure, coverage rotation late in the down.",
+   "dt": "Elko's fingerprints: top-25 success rate allowed, disciplined vs RPOs. Edge rush production must be re-sourced after draft losses.",
+   "s": [
+    "Reed is the SEC's best returning dual-threat resume",
+    "Elko game-days: consistently steal one possession a game",
+    "Trench classes stacked three years deep"
+   ],
+   "w": [
+    "Receiver room needs a portal hit to stay explosive",
+    "Edge pressure regression risk",
+    "Program still hasn't stacked two elite years in a row"
+   ]
+  },
+  "USC": {
+   "conf": "Big Ten",
+   "fpi": 18.0,
+   "ob": "Lincoln Riley's Air Raid tree — spacing and leverage masterclass, best screen game in the country, tempo when wounded.",
+   "ot": "Riley's system produces top-10 pass efficiency regardless of the trigger man; 2026 QB competition (post-Maiava room) decides the ceiling. Run game is opportunistic draw/counter, not identity.",
+   "db": "D'Anton Lynn's 4-2-5 — simulated pressure, split-safety shells, major 2025 improvement in structure.",
+   "dt": "From liability to league-average-plus in one Lynn year: fewer busts, better tackling. Still lean up front against B1G power run games.",
+   "s": [
+    "Riley's pass-game design remains a per-play cheat code",
+    "Lynn defense trending up with his own recruits",
+    "Elite specialists and hidden-yardage gains"
+   ],
+   "w": [
+    "Interior DL vs Michigan/Ohio State-style power remains the litmus test",
+    "QB transition year in a QB-dependent system",
+    "Cold-weather November road identity still unproven"
+   ]
+  },
+  "Vanderbilt": {
+   "conf": "SEC",
+   "fpi": 17.0,
+   "ob": "Tim Beck's option-flavored spread — but the Diego Pavia era is over, and the offense was built bespoke around his chaos.",
+   "ot": "Two years of program-best offense came from QB-run keepers, fourth-down aggression, and Pavia's off-script genius. The 2026 offense must be re-founded: expect the same run-first, possession-length identity with a more conventional passer.",
+   "db": "Clark Lea's 3-3-5 multiple — his own defensive rebuild caught up in 2025: opportunistic, turnover-hunting.",
+   "dt": "They won 2025 games with third-down disguise and red-zone stinginess rather than raw talent. Regression risk is real as the league re-calibrates to them.",
+   "s": [
+    "Lea has institutionalized an identity Vandy never had",
+    "Fourth-down/analytics edge is the sharpest in the SEC",
+    "Two straight bowl seasons of belief and retention"
+   ],
+   "w": [
+    "Replacing Pavia isn't a position change, it's an identity change",
+    "Talent gap vs the SEC's top half hasn't closed",
+    "2025 turnover luck won't repeat"
+   ]
+  },
+  "Oklahoma": {
+   "conf": "SEC",
+   "fpi": 15.9,
+   "ob": "Ben Arbuckle's Air-Raid-with-legs — John Mateer's dual-threat volume, empty formations with QB-draw constraint.",
+   "ot": "Mateer confirmed his return for a senior year ('I need to be better' — his words). 2025 was uneven: 62% completion, 14/11 TD-INT through a broken throwing hand he played through after 17 days. Healthy hand + year two in-system is the bull case; the designed-run gravity (8 rushing TDs) never left.",
+   "db": "Venables' 4-2-5 — cheat-the-count sim pressures, elite 2025 (top-5 EPA allowed), speed everywhere.",
+   "dt": "The best Venables defense yet: havoc without busts. Replacing interior anchors is the annual tax, but the scheme is now fully installed.",
+   "s": [
+    "Mateer returning removes the biggest variable — chemistry with Arbuckle is year three",
+    "Venables defense hit elite in year four as promised",
+    "The Sooners finally look built for SEC line play"
+   ],
+   "w": [
+    "Mateer must cut the interceptions (11 in 2025) to justify the billing",
+    "WR explosiveness thin past the top two",
+    "OL depth one injury from trouble"
+   ]
+  },
+  "Penn State": {
+   "conf": "Big Ten",
+   "fpi": 15.9,
+   "ob": "Matt Campbell era begins (8-year deal from Iowa State, replacing the fired James Franklin) — expect his identity: multi-TE pro-style run game, play-action, culture-first program building.",
+   "ot": "Campbell turned Iowa State from 3-9 into a perennial bowl program with less talent than he inherits here. The roster skews power-spread with a top-15 OL two-deep and deep RB room; run-first ball control while the new staff installs, opening vs Marshall Sept 5.",
+   "db": "The defensive front is the program's export product — edge/DT depth stays elite through the transition. Note: 2025 DC Jim Knowles left for Tennessee, so the back end gets a new voice too.",
+   "dt": "2025 was top-10 in success rate allowed before the season unraveled. Campbell's Iowa State defenses were famously structured (the 3-3-5 revolution started there) — expect scheme discipline over blitz volume.",
+   "s": [
+    "Campbell is a proven program-builder with a top-10 roster for the first time",
+    "Trench talent on both sides survives regime change",
+    "Fan/NIL infrastructure remains top-10"
+   ],
+   "w": [
+    "QB position is a genuine unknown in year one",
+    "Coordinator turnover on both sides in one offseason",
+    "Campbell has never coached a season under this level of expectation"
+   ]
+  },
+  "BYU": {
+   "conf": "Big 12",
+   "fpi": 15.3,
+   "ob": "Aaron Roderick's spread — Bear Bachmeier's true-freshman 2025 revelation, QB run married to deep play-action.",
+   "ot": "Bachmeier returning for year two is the Big 12's quiet superpower: they punished single-high all season. Physical, patient, and better on 3rd-and-4-to-7 than anyone in the league.",
+   "db": "Jay Hill's 3-3-5 — boundary pressure looks, disciplined eyes, turnover manufacturing.",
+   "dt": "Top-20 havoc without gambling: Hill's blitzes hit home because the back end holds. Size vs SEC-style OLs is the only structural question.",
+   "s": [
+    "Bachmeier is the best returning QB story in the Big 12",
+    "Hill's defense creates 2+ takeaways a game feel",
+    "Roster continuity in the portal era — nobody retains like BYU"
+   ],
+   "w": [
+    "Skill-position ceiling is modest by top-10 standards",
+    "Front sizes get tested by the league's biggest OLs",
+    "Thin margin for error with a top-heavy schedule"
+   ]
+  },
+  "Iowa": {
+   "conf": "Big Ten",
+   "fpi": 15.3,
+   "ob": "Tim Lester's outside zone — 12/21 personnel, the slowest pace in the sample (60.8 plays/g), play-action boots off it.",
+   "ot": "Gronowski's graduation reopens the eternal QB question. Elite line yards (#15) and points/opportunity (#20) say the infrastructure works; they shorten every game and bet on special teams.",
+   "db": "Phil Parker's quarters — two-high shells, drop-eight in must-pass, tackling machine.",
+   "dt": "#8 in explosiveness allowed: nothing over the top, ever. Low havoc by design; they'll concede 5-yard completions for sixty minutes and win the red zone.",
+   "s": [
+    "Parker is the best pure DC in the sport, year in year out",
+    "Special teams wins them a game a season outright",
+    "Identity so stable it survives any roster"
+   ],
+   "w": [
+    "QB play caps the ceiling — again",
+    "Explosiveness (#132) means zero comeback capability",
+    "Modern tempo offenses stress their substitution patterns"
+   ]
+  },
+  "Tennessee": {
+   "conf": "SEC",
+   "fpi": 14.3,
+   "ob": "Heupel's Veer and Shoot — extreme splits, vertical stems, tempo that forbids substitution.",
+   "ot": "Post-Aguilar QB room is open; the system's floor is high (spacing does the work) but its ceiling is QB-dependent. Run game is inside zone vs light boxes the splits create.",
+   "db": "New DC Jim Knowles (via Penn State, and the 2024 natty-winning Ohio State defense before that) replaces Tim Banks, who left for Auburn's staff after the unit collapsed to #92 in scoring defense.",
+   "dt": "Knowles brings his safety-driven 4-2-5 — late rotation, creative sim pressures, and a track record of immediate top-10 turnarounds. The scheme upgrade is the single biggest coordinator win of the SEC offseason.",
+   "s": [
+    "Knowles is as good as defensive hires get",
+    "Scheme guarantees explosive plays regardless of personnel",
+    "OL continuity best of the Heupel era"
+   ],
+   "w": [
+    "QB competition with no proven answer",
+    "2025 defensive personnel didn't suddenly get faster — year-one Knowles fixes structure, not speed",
+    "Wide-split offense struggles vs elite two-high discipline"
+   ]
+  },
+  "Michigan": {
+   "conf": "Big Ten",
+   "fpi": 14.2,
+   "ob": "Chip Lindsey's evolving pro-spread around Bryce Underwood — year-two leap incoming for the #1 2025 recruit.",
+   "ot": "2025 was training wheels: heavy gap run game, defined reads for Underwood. Watch the vertical volume spike in 2026 — the arm talent demands it.",
+   "db": "Wink Martindale's pressure-man — highest blitz-rate profile in the conference, corners on islands.",
+   "dt": "Boom-bust by design: elite havoc, occasional explosive concessions when the pressure loses. They erase bad QBs entirely.",
+   "s": [
+    "Underwood's ceiling is the highest of any B1G QB",
+    "DL two-deep remains championship-grade",
+    "Program identity (line play + special teams) intact post-Harbaugh"
+   ],
+   "w": [
+    "WR separation remains the roster's thinnest asset",
+    "Martindale gambles get punished by elite processors",
+    "Underwood's year-two leap is projection, not yet fact"
+   ]
+  },
+  "Washington": {
+   "conf": "Big Ten",
+   "fpi": 14.0,
+   "ob": "Jedd Fisch pro-style spread — Demond Williams' dual-threat base, movement pockets, layered crossers.",
+   "ot": "Williams quietly finished 2025 top-20 in EPA/play: the legs are real, and Fisch's route tree gives him easy first reads. OL rebuild is the throttle.",
+   "db": "Multiple 4-2-5 — coverage-first, rally tackling, modest havoc.",
+   "dt": "Competent, not scary: they limit explosives and force long drives, but generate little negative-play pressure without blitzing.",
+   "s": [
+    "Williams is a rising top-10 QB nobody outside the West watches",
+    "Fisch's QB development track record",
+    "Skill room speed sneaky-elite"
+   ],
+   "w": [
+    "Trench depth (both lines) below B1G contender grade",
+    "Pass rush needs a portal answer",
+    "Travel-heavy B1G schedule again"
+   ]
+  },
+  "Missouri": {
+   "conf": "SEC",
+   "fpi": 13.1,
+   "ob": "Drinkwitz spread — Ahmad Hardy's downhill volume behind heavy pre-snap motion, Beau Pribula-era RPO game.",
+   "ot": "Hardy led the nation in rushing as a sophomore; everything constraints off him. Austin Simmons arrives from Ole Miss to settle the QB room — an SEC-experienced arm to keep defenses out of nine-man boxes.",
+   "db": "Corey Batoon's 4-2-5 — spot-drop discipline, interior push over edge speed.",
+   "dt": "Top-25 success rate allowed in 2025; the profile is stout-vs-run, adequate-vs-pass. They keep games in the 20s.",
+   "s": [
+    "Hardy is the SEC's best returning RB — full stop",
+    "Drink's game-planning wins toss-up games",
+    "Home environment consistently banks an upset"
+   ],
+   "w": [
+    "QB clarity needed before the identity fully clicks",
+    "Edge rush is ordinary",
+    "Ceiling historically caps at 10 wins — breaking through needs variance"
+   ]
+  },
+  "SMU": {
+   "conf": "ACC",
+   "fpi": 12.5,
+   "ob": "Rhett Lashlee tempo-RPO spread — wide splits, snap-count warfare, RB screens as extended runs.",
+   "ot": "Kevin Jennings' era likely closes; the system has produced a top-25 offense three straight years with three different QBs. Expect the same: pace, spacing, and YAC manufacturing.",
+   "db": "3-3-5 pressure-sim front — transfer-heavy back seven, gambling profile.",
+   "dt": "Havoc-rich, bust-prone: they'll win you three games with takeaways and lose you one with explosives. ACC offenses solved stretches of 2025.",
+   "s": [
+    "System offense with proven QB plug-and-play",
+    "Dallas NIL base keeps the roster stocked",
+    "Lashlee's in-game tempo manipulation is elite"
+   ],
+   "w": [
+    "Defensive floor is the concern in big games",
+    "Line play still a tier below ACC's best",
+    "Post-CFP expectations meet a harder schedule"
+   ]
+  },
+  "Auburn": {
+   "conf": "SEC",
+   "fpi": 11.1,
+   "ob": "Alex Golesh's tempo, TE-friendly vertical spread arrives from USF — OC Joel Gordon came with him (his play-caller all three Tampa years; #2 national total offense in 2025).",
+   "ot": "Golesh offenses live in 12-personnel spacing at Veer-and-Shoot pace — the exact inverse of the Freeze stagnation. Staff assembled in 17 days: Kodi Burns (WRs, Auburn alum), Larry Porter (RBs), Tim Banks (safeties, from Tennessee). QB room portal-rebuilt (Deuce Knight left for Ole Miss).",
+   "db": "Continuity where it counts: DJ Durkin RETAINED as DC — the fronts, sim pressures, and personnel carry over intact.",
+   "dt": "Keeping Durkin means the defense skips the reinstall tax entirely. DL talent accumulation is top-10 nationally; the 2025 defense was better than its record.",
+   "s": [
+    "Golesh's offense fixes the exact thing that got Freeze fired",
+    "Durkin retention = one-sided transition, not a teardown",
+    "Jordan-Hare in year-one-energy mode is worth a home upset"
+   ],
+   "w": [
+    "Full identity reinstall on offense — year-one variance is huge",
+    "QB is a total unknown after the Knight exit",
+    "SEC schedule shows no mercy to transitions"
+   ]
+  },
+  "South Florida": {
+   "conf": "American",
+   "fpi": 11.1,
+   "ob": "Brian Hartline era — Ohio State's OC/WR-whisperer took the job in December 2025. Expect a pro-spread with elite receiver development replacing Golesh's tempo-vertical system.",
+   "ot": "Byrum Brown's graduation plus the system change makes this a double reset, but Hartline is a Tampa-area legend recruiting his own backyard. Final season at Raymond James before the on-campus stadium opens in 2027 — momentum is real even in transition.",
+   "db": "The 2025 defense was aggressive, multiple, and turnover-hungry — how much survives the staff turnover is the open question.",
+   "dt": "USF punched above its weight through scheme and culture; the architect left, but the administration's investment (and Hartline's recruiting pull) suggests a reload, not a collapse. Grade the two-deep in September, not July.",
+   "s": [
+    "Hartline is arguably the best WR developer in football, college or pro",
+    "Tampa recruiting footprint is genuinely fertile — and now has a closer",
+    "Administration showed it will invest after the CFP near-miss"
+   ],
+   "w": [
+    "First-time head coach replacing a proven one, with a new QB",
+    "System change on offense means year-one friction",
+    "FPI's #25 is a lagging indicator — treat with maximum skepticism"
+   ]
+  }
+ }
+}
