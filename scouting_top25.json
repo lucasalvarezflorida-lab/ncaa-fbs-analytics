@@ -1,6 +1,6 @@
 {
  "meta": {
-  "vintage": "Stats 2025 season; staff/QB notes web-verified 2026-07-12",
+  "vintage": "Stats 2025 season; staff/QB notes web-verified 2026-07-13 (top 25 + full SEC)",
   "order": [
    "Indiana",
    "Ohio State",
@@ -26,7 +26,13 @@
    "Missouri",
    "SMU",
    "Auburn",
-   "South Florida"
+   "South Florida",
+   "LSU",
+   "South Carolina",
+   "Florida",
+   "Mississippi State",
+   "Kentucky",
+   "Arkansas"
   ]
  },
  "teams": {
@@ -87,7 +93,7 @@
   "Oregon": {
    "conf": "Big Ten",
    "fpi": 23.9,
-   "ob": "Will Stein's spread — wide zone base with layered RPOs, motion at the highest rate in the conference, tempo shifts as a weapon.",
+   "ob": "Lanning's spread — wide zone base with layered RPOs and motion at the conference's highest rate — now under a new play-caller after OC Will Stein left to become Kentucky's head coach.",
    "ot": "Dante Moore distributes to a rebuilt-but-elite skill room. They sequence runs into shot plays better than anyone in the Big Ten; 3rd-and-medium is where Stein's script lives.",
    "db": "4-2-5 under Tosh Lupoi — heavy front movement, deep DL rotation, edge speed over bulk.",
    "dt": "Explosive-play prevention is the calling card; they'll concede completions underneath and close on the catch. Havoc comes in waves with the DL rotation.",
@@ -99,7 +105,7 @@
    "w": [
     "Have not won the biggest CFP-stage game yet under Lanning",
     "Interior DL vs power run games (see: physical B1G losses)",
-    "WR room turnover puts pressure on year-one transfers"
+    "Stein's exit means a new voice calling it for Dante Moore"
    ]
   },
   "Miami": {
@@ -478,6 +484,108 @@
     "First-time head coach replacing a proven one, with a new QB",
     "System change on offense means year-one friction",
     "FPI's #25 is a lagging indicator — treat with maximum skepticism"
+   ]
+  },
+  "LSU": {
+   "conf": "SEC",
+   "ob": "Lane Kiffin's tempo-RPO spread arrives in Baton Rouge — the same pace-and-glance system that just produced Ole Miss's 13-win CFP season, now with LSU's talent base.",
+   "ot": "QB room rebuilt through the portal after Garrett Nussmeier's draft exit (his stock fell behind a bad 2025 OL — the roster started the offseason with one scholarship arm). Kiffin installs fast; week 1 won't look like a rebuild even if November does.",
+   "db": "Multiple 4-2-5 rebuild under Kiffin's hires — verify the coordinator before air; the transition consumed the winter.",
+   "dt": "The 2025 defense underachieved amid the Brian Kelly firing chaos — talent has outrun results in Baton Rouge for two years. Kiffin's Ole Miss defenses were portal-patched and opportunistic; expect the same blueprint.",
+   "s": [
+    "Kiffin's offense + LSU's recruiting base is the SEC's scariest combination on paper",
+    "NIL/portal muscle to patch any hole fast",
+    "Skill-position talent still top-10 nationally"
+   ],
+   "w": [
+    "Portal QB must hit immediately — no developmental runway",
+    "Mid-season firing chaos tax: two systems, two staffs in one year",
+    "OL was the 2025 failure point and returns unproven"
+   ]
+  },
+  "South Carolina": {
+   "conf": "SEC",
+   "ob": "Shane Beamer's spread built around LaNorris Sellers — designed QB run, play-action verticals, the offense flowing entirely through #16.",
+   "ot": "Sellers RETURNED — a projected top-5 NFL pick who chose Columbia over the draft, the single biggest returning-player win in the conference. 2025 wasted him behind poor protection; the whole offseason was spent fixing his supporting cast.",
+   "db": "4-2-5 with the edge-rush pipeline the program has become known for — speed off both edges, safeties downhill.",
+   "dt": "Better than its 2025 record: the defense kept games winnable while the offense sputtered. Front-seven athleticism is SEC-caliber; depth behind it is not.",
+   "s": [
+    "Sellers is arguably the SEC's best player at any position",
+    "Edge-rush production pipeline keeps reloading",
+    "Beamer's special teams steal hidden points"
+   ],
+   "w": [
+    "The OL must stop getting Sellers hit — same sentence as last July",
+    "Skill weapons a tier below the SEC's best",
+    "Staff pressure: wasting Sellers' return is a fireable offense"
+   ]
+  },
+  "Florida": {
+   "conf": "SEC",
+   "ob": "Jon Sumrall (from Tulane) brings his physical, run-first spread — QB run game, heavy play-action, ball-control identity.",
+   "ot": "DJ Lagway left for Baylor after the coaching change, so the QB is a portal answer running a brand-new system. Sumrall's Tulane teams won with discipline, turnover margin, and fourth-down conviction — the exact traits late-Napier Florida lacked.",
+   "db": "Sumrall is a defense-and-culture head coach: aggressive 4-2-5, tackling-first, simplified assignments.",
+   "dt": "The roster has more SEC talent than its 2025 results showed — misused, not missing. Expect immediate physicality gains and early-season simplicity.",
+   "s": [
+    "Sumrall has the best culture track record of any recent mid-major riser",
+    "DL and secondary talent stockpiled from top-10 classes",
+    "Roster is battle-hardened by the league's toughest schedules"
+   ],
+   "w": [
+    "QB reset after Lagway's exit — new system, new triggerman",
+    "Second offensive system in two years for the returners",
+    "The Swamp does not grade on a transition curve"
+   ]
+  },
+  "Mississippi State": {
+   "conf": "SEC",
+   "ob": "Jeff Lebby's year-three tempo spread (Veer-and-Shoot family) around rising QB KaMario Taylor — vertical shots off wide splits at pace.",
+   "ot": "Taylor is the league's quiet breakout pick, with Kevin Johns (from Oklahoma State) hired to coach the QB room. Scoring won't be the problem; it never is in Lebby's offense by year three.",
+   "db": "Rebuilt defensive staff for 2026 — the 2025 unit was among the SEC's worst on early downs.",
+   "dt": "They'll score and get scored on: the win total rides entirely on the defense climbing from bad to mediocre. Watch shootout unders... which is to say, overs.",
+   "s": [
+    "Taylor's trajectory is real — dual-threat with a live arm",
+    "Lebby's offense travels regardless of talent gaps",
+    "Year-three continuity is rare currency in this league's chaos"
+   ],
+   "w": [
+    "Defense still bottom-tier SEC after two rebuild years",
+    "Two-deep depth thins fast at contact positions",
+    "Zero margin for error in this schedule"
+   ]
+  },
+  "Kentucky": {
+   "conf": "SEC",
+   "ob": "Will Stein — Oregon's offensive coordinator — takes over after Kentucky moved on from Mark Stoops following back-to-back losing seasons. His motion-heavy wide-zone spread replaces a decade of grind-it-out identity.",
+   "ot": "Stein was the hottest OC hire on the market; the roster he inherits was built for the opposite style. Expect a portal-heavy skill infusion and a year-one offense that looks modern immediately but runs thin by November.",
+   "db": "The Stoops-era defensive identity leaves with him — new coordinator, new structure (verify the staff before air).",
+   "dt": "Kentucky's floor was always its defense under Stoops; that floor is now unknown. The rebuild is total, both sides.",
+   "s": [
+    "Stein's offense is the anti-Stoops — pace, space, and QB-friendly structure",
+    "Expectations at rock bottom: everything is upside",
+    "First-mover credibility with portal offensive skill"
+   ],
+   "w": [
+    "Full-program reset — scheme, staff, and roster simultaneously",
+    "Roster was recruited for a different sport, stylistically",
+    "The SEC schedule doesn't wait for installs"
+   ]
+  },
+  "Arkansas": {
+   "conf": "SEC",
+   "ob": "Ryan Silverfield (50-25 at Memphis, two 10-win seasons) brings a balanced pro-spread with a strong OL-development reputation.",
+   "ot": "The offense will be built around efficiency and the run game while the portal sorts the QB room. Silverfield's Memphis teams were clean: low turnovers, high red-zone conversion, few beat-yourself losses.",
+   "db": "New staff, fundamentals-first rebuild — reports pointed at an in-state coordinator hire; verify before air.",
+   "dt": "The 2025 defense was bottom-quartile SEC and the talent gap is real. Year one is about structure, not stars.",
+   "s": [
+    "Silverfield develops OL and culture — the two things Arkansas lacked",
+    "A genuinely fresh start after the Pittman plateau",
+    "Soft on-ramp: opens with North Alabama Sept 5"
+   ],
+   "w": [
+    "Talent gap vs even the SEC's middle class",
+    "QB unsettled entering camp",
+    "Transition-year variance cuts both ways"
    ]
   }
  }

@@ -513,7 +513,7 @@ def build_scouting_sheet(wb):
     ws["B1"] = prior if prior in order else order[0]
     ws["B1"].font = Font(name="Arial", bold=True, size=12, color="0000FF")
     ws["B1"].fill = PICK_FILL
-    ws["D1"] = f"FPI top 25 only — {scouting['meta'].get('vintage', '')}"
+    ws["D1"] = f"FPI top 25 + all SEC teams — {scouting['meta'].get('vintage', '')}"
     ws["D1"].font = Font(name="Arial", italic=True, size=9)
     for i, t in enumerate(order, 1):
         ws.cell(row=i, column=27, value=t)  # AA (hidden)
