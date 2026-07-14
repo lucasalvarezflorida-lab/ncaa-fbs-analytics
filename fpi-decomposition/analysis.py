@@ -117,6 +117,44 @@ def load_portal(year: int, refresh: bool = False) -> pd.DataFrame:
     )
 
 
+STAR_RATING = {5: 0.98, 4: 0.92, 3: 0.84, 2: 0.78}  # imputation for unrated
+REPLACEMENT = 0.75   # rating baseline: value = max(rating - 0.75, 0)
+GAUSS_SIGMA = 5.0    # 247-style diminishing returns: i-th best commit decays
+
+
+def _quality_points(values: pd.Series) -> float:
+    """Gaussian-decayed sum of sorted player values (quality >> quantity)."""
+    import numpy as np
+    v = values.sort_values(ascending=False).to_numpy()
+    if len(v) == 0:
+        return 0.0
+    w = np.exp(-(np.arange(len(v)) ** 2) / (2 * GAUSS_SIGMA ** 2))
+    return float((v * w).sum())
+
+
+def load_portal_quality(year: int, refresh: bool = False) -> pd.DataFrame:
+    """Net QUALITY-WEIGHTED portal points: 247-style diminishing returns on
+    value above replacement, netted incoming minus outgoing. Contrast with
+    load_portal's raw sum (which measures churn volume, not talent)."""
+    df = _frame(cfbd.fetch_portal(year, refresh), "/player/portal")
+    origin = pick_col(df, ["origin", "from"], "/player/portal")
+    dest = pick_col(df, ["destination", "to"], "/player/portal")
+    rating = pick_col(df, ["rating", "stars"], "/player/portal")
+    stars = "stars" if "stars" in df.columns else rating
+    df = df.copy()
+    r = pd.to_numeric(df[rating], errors="coerce")
+    s = pd.to_numeric(df[stars], errors="coerce").map(STAR_RATING)
+    df["value"] = (r.fillna(s) - REPLACEMENT).clip(lower=0).fillna(0)
+
+    in_q = df[df[dest].notna()].groupby(dest)["value"].apply(_quality_points)
+    out_q = df[df[origin].notna()].groupby(origin)["value"].apply(_quality_points)
+    net = pd.concat([in_q.rename("in_q"), out_q.rename("out_q")], axis=1).fillna(0)
+    net["net_portal_q"] = net["in_q"] - net["out_q"]
+    net = net.reset_index().rename(columns={"index": "team_pq"})
+    return add_merge_key(net[["team_pq", "net_portal_q"]], "team_pq").drop(
+        columns="team_pq")
+
+
 def build_dataset(
     year: int, refresh: bool = False, transfer: bool = False
 ) -> tuple[pd.DataFrame, dict, int]:
@@ -129,6 +167,7 @@ def build_dataset(
     }
     if transfer:
         features["net_portal"] = load_portal(fpi_year, refresh)
+        features["net_portal_q"] = load_portal_quality(fpi_year, refresh)
     merged, coverage = merge_features(fpi, features)
     return merged, coverage, fpi_year
 

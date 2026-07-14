@@ -302,12 +302,16 @@ def write_fpi_sheet(book: Path, refresh: bool):
     for name in FEATURE_COLS:
         stats.append((name, round(model.params[name], 2),
                       "<0.0001" if model.pvalues[name] < 1e-4 else f"{model.pvalues[name]:.3f}"))
+    model_q, _ = fit_ols(merged, FEATURE_COLS + ["net_portal_q"])
     stats += [
-        ("net portal (if added)", round(model_p.params["net_portal"], 2),
+        ("portal (raw sum)", round(model_p.params["net_portal"], 2),
          f"{model_p.pvalues['net_portal']:.3f}"),
+        ("portal (quality-wt)", round(model_q.params["net_portal_q"], 2),
+         f"{model_q.pvalues['net_portal_q']:.3f}"),
         ("", "", ""),
         ("Adj R-sq baseline", round(model.rsquared_adj, 4), ""),
-        ("Adj R-sq + portal", round(model_p.rsquared_adj, 4), ""),
+        ("Adj R-sq + portal raw", round(model_p.rsquared_adj, 4), ""),
+        ("Adj R-sq + portal QW", round(model_q.rsquared_adj, 4), ""),
     ]
     for ri, tup in enumerate(stats, start=4):
         for ci, v in enumerate(tup, start=14):

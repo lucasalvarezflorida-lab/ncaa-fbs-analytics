@@ -84,19 +84,25 @@ def main() -> int:
     if args.transfer:
         portal_cols = FEATURE_COLS + ["net_portal"]
         model_p, fitted_p = fit_ols(merged, portal_cols)
-        print(f"\n=== Portal model: fpi ~ {' + '.join(portal_cols)} ===")
+        print(f"\n=== Portal model (RAW SUM): fpi ~ ... + net_portal ===")
         print(summarize_model(model_p, portal_cols))
 
-        print("\n=== Before/after comparison ===")
-        print(f"  {'metric':<24}{'baseline':>12}{'+ portal':>12}")
-        print(
-            f"  {'Adjusted R-sq':<24}{model.rsquared_adj:>12.4f}"
-            f"{model_p.rsquared_adj:>12.4f}"
-        )
-        print(
-            f"  {'Residual std (all)':<24}{fitted['residual'].std():>12.3f}"
-            f"{fitted_p['residual'].std():>12.3f}"
-        )
+        quality_cols = FEATURE_COLS + ["net_portal_q"]
+        model_q, fitted_q = fit_ols(merged, quality_cols)
+        print(f"\n=== Portal model (QUALITY-WEIGHTED): fpi ~ ... + net_portal_q ===")
+        print("    (value above 0.75 replacement, 247-style Gaussian "
+              f"diminishing returns, unrated imputed from stars)")
+        print(summarize_model(model_q, quality_cols))
+
+        print("\n=== Three-way comparison ===")
+        print(f"  {'metric':<24}{'baseline':>12}{'raw sum':>12}{'quality-wt':>12}")
+        print(f"  {'Adjusted R-sq':<24}{model.rsquared_adj:>12.4f}"
+              f"{model_p.rsquared_adj:>12.4f}{model_q.rsquared_adj:>12.4f}")
+        print(f"  {'Residual std (all)':<24}{fitted['residual'].std():>12.3f}"
+              f"{fitted_p['residual'].std():>12.3f}{fitted_q['residual'].std():>12.3f}")
+        print(f"  {'portal coef p-value':<24}{'—':>12}"
+              f"{model_p.pvalues['net_portal']:>12.4f}"
+              f"{model_q.pvalues['net_portal_q']:>12.4f}")
 
         # Residual shrinkage for high-portal-turnover teams (top quartile by
         # gross portal activity proxied by |net_portal| among fitted teams).

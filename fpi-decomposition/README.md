@@ -77,12 +77,16 @@ composite are statistically indistinguishable from zero *given the other two*
 — not because they don't matter, but because they're heavily collinear with
 recruiting and prior performance (see Limitations).
 
-**The transfer portal feature adds essentially nothing.** Net portal rating
-moved adjusted R-squared from 0.6960 to 0.6962 (coef 0.67, p = 0.30).
-Residual standard deviation ticked from 6.68 to 6.65, and mean absolute
-residual for high-portal-turnover teams (top quartile by gross portal
-activity) shrank only from 5.86 to 5.74 (~2%). Raw net portal rating, as
-constructed here, is not a useful proxy for what FPI knows.
+**The transfer portal: construction matters more than the data.** A RAW net
+portal rating (sum of incoming transfer ratings minus outgoing) adds nothing —
+adjusted R-squared 0.6960 → 0.6962, p = 0.30. It turns out to measure roster
+churn, not talent: coaching-transition bulk shoppers dominate raw sums. But a
+QUALITY-WEIGHTED version — value above a 0.75 replacement level, 247-style
+Gaussian diminishing returns so a team's top arrivals dominate, unrated
+players imputed from star grades — is significant: **adjusted R-squared
+0.6960 → 0.7119, coef 1.83, p = 0.005**, residual std 6.68 → 6.47. Same
+underlying data, different measurement, opposite conclusion — a tidy lesson
+in feature construction.
 
 **The residuals are the story.** Teams FPI rates far above the public-input
 model: Indiana (+19.0), Kennesaw State (+16.4), Texas Tech (+16.2), New

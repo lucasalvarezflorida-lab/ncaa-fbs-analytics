@@ -25,7 +25,12 @@ Standardized coefficients (baseline):
 | recruiting 4-yr avg | 5.06 | 0.004 |
 | returning production (PPA) | 0.34 | 0.58 |
 | talent composite | -1.14 | 0.49 |
-| net portal rating (portal model) | 0.67 | 0.30 |
+| net portal — raw sum | 0.67 | 0.30 |
+| net portal — quality-weighted | 1.83 | **0.005** |
+
+Portal punchline: raw sums measure churn (Oklahoma State signed 51 rated
+transfers = #1 by volume); quality-weighting above replacement makes the
+portal a real signal — adj R² 0.696 → 0.712.
 
 ## Top 25 by FPI — with roster inputs
 
