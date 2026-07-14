@@ -1,0 +1,18 @@
+# data caches (regenerable via refresh_all.py)
+rosters/data/
+fpi-decomposition/data/
+
+# generated output (kept locally; charts regenerable)
+fpi-decomposition/output/*
+!fpi-decomposition/output/residuals_2025.png
+
+# workbook backups, locks, logs
+*.bak*
+.~lock.*
+refresh_log.txt
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.env

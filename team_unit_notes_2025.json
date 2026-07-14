@@ -1,0 +1,2210 @@
+{
+"miami": {
+"notes": [
+"PPA 0.103/play. Pass-tilted scheme + game scripts pulled the per-play efficiency below the gaudy total yardage rank.",
+"PPA 0.437/play. Top quartile nationally; Beck's CFP run drove this. Mensah transfer regression risk for 2026 (\u03b1=0.55).",
+"PPA -0.011/play allowed. Strong but not elite by EPA \u2014 the #3 yardage rank was inflated by trailing-opponent script. Bain Jr. departure adds 2026 risk.",
+"PPA 0.130/play allowed. Solid mid-pack; coverage will depend on new portal CBs (Thornton, Hussey) gelling early.",
+""
+],
+"ranks": [
+76,
+12,
+13,
+22,
+"n/a"
+]
+},
+"indiana": {
+"notes": [
+"PPA 0.229/play",
+"PPA 0.573/play",
+"PPA -0.069/play allowed",
+"PPA 0.134/play allowed",
+"SP+ ST 1.50"
+],
+"ranks": [
+19,
+1,
+4,
+27,
+16
+]
+},
+"ohio state": {
+"notes": [
+"PPA 0.139/play",
+"PPA 0.555/play",
+"PPA -0.067/play allowed",
+"PPA 0.065/play allowed",
+"SP+ ST 0.20"
+],
+"ranks": [
+60,
+2,
+6,
+10,
+65
+]
+},
+"texas tech": {
+"notes": [
+"PPA 0.152/play",
+"PPA 0.392/play",
+"PPA -0.145/play allowed",
+"PPA 0.025/play allowed",
+"SP+ ST 0.60"
+],
+"ranks": [
+49,
+22,
+1,
+4,
+54
+]
+},
+"notre dame": {
+"notes": [
+"PPA 0.237/play",
+"PPA 0.444/play",
+"PPA 0.036/play allowed",
+"PPA 0.052/play allowed",
+"SP+ ST 0.80"
+],
+"ranks": [
+15,
+10,
+33,
+6,
+41
+]
+},
+"vanderbilt": {
+"notes": [
+"PPA 0.325/play",
+"PPA 0.518/play",
+"PPA 0.017/play allowed",
+"PPA 0.346/play allowed",
+"SP+ ST 1.80"
+],
+"ranks": [
+2,
+5,
+23,
+112,
+4
+]
+},
+"utah": {
+"notes": [
+"PPA 0.353/play",
+"PPA 0.367/play",
+"PPA 0.197/play allowed",
+"PPA -0.033/play allowed",
+"SP+ ST 0.00"
+],
+"ranks": [
+1,
+31,
+124,
+3,
+74
+]
+},
+"washington": {
+"notes": [
+"PPA 0.269/play",
+"PPA 0.369/play",
+"PPA -0.034/play allowed",
+"PPA 0.178/play allowed",
+"SP+ ST -0.90"
+],
+"ranks": [
+8,
+29,
+9,
+47,
+93
+]
+},
+"toledo": {
+"notes": [
+"PPA 0.123/play",
+"PPA 0.333/play",
+"PPA -0.028/play allowed",
+"PPA -0.077/play allowed",
+"SP+ ST -1.30"
+],
+"ranks": [
+68,
+39,
+11,
+1,
+103
+]
+},
+"oregon": {
+"notes": [
+"PPA 0.238/play",
+"PPA 0.405/play",
+"PPA 0.064/play allowed",
+"PPA 0.103/play allowed",
+"SP+ ST 0.70"
+],
+"ranks": [
+13,
+18,
+47,
+15,
+48
+]
+},
+"james madison": {
+"notes": [
+"PPA 0.242/play",
+"PPA 0.276/play",
+"PPA -0.028/play allowed",
+"PPA 0.058/play allowed",
+"SP+ ST -1.10"
+],
+"ranks": [
+11,
+53,
+12,
+8,
+99
+]
+},
+"south florida": {
+"notes": [
+"PPA 0.201/play",
+"PPA 0.444/play",
+"PPA 0.027/play allowed",
+"PPA 0.170/play allowed",
+"SP+ ST -0.80"
+],
+"ranks": [
+26,
+10,
+26,
+44,
+89
+]
+},
+"smu": {
+"notes": [
+"PPA 0.143/play",
+"PPA 0.406/play",
+"PPA -0.053/play allowed",
+"PPA 0.173/play allowed",
+"SP+ ST -1.20"
+],
+"ranks": [
+55,
+16,
+8,
+46,
+101
+]
+},
+"old dominion": {
+"notes": [
+"PPA 0.162/play",
+"PPA 0.371/play",
+"PPA -0.003/play allowed",
+"PPA 0.080/play allowed",
+"SP+ ST -2.00"
+],
+"ranks": [
+39,
+27,
+16,
+13,
+131
+]
+},
+"georgia": {
+"notes": [
+"PPA 0.145/play",
+"PPA 0.355/play",
+"PPA -0.010/play allowed",
+"PPA 0.221/play allowed",
+"SP+ ST 1.90"
+],
+"ranks": [
+54,
+33,
+14,
+62,
+1
+]
+},
+"tennessee": {
+"notes": [
+"PPA 0.236/play",
+"PPA 0.406/play",
+"PPA 0.100/play allowed",
+"PPA 0.200/play allowed",
+"SP+ ST 1.10"
+],
+"ranks": [
+17,
+16,
+73,
+51,
+33
+]
+},
+"ole miss": {
+"notes": [
+"PPA 0.161/play",
+"PPA 0.463/play",
+"PPA 0.159/play allowed",
+"PPA 0.114/play allowed",
+"SP+ ST 1.90"
+],
+"ranks": [
+40,
+6,
+104,
+18,
+1
+]
+},
+"auburn": {
+"notes": [
+"PPA 0.239/play",
+"PPA 0.140/play",
+"PPA -0.113/play allowed",
+"PPA 0.262/play allowed",
+"SP+ ST 0.70"
+],
+"ranks": [
+12,
+115,
+1,
+83,
+48
+]
+},
+"usc": {
+"notes": [
+"PPA 0.214/play",
+"PPA 0.526/play",
+"PPA 0.133/play allowed",
+"PPA 0.165/play allowed",
+"SP+ ST -1.00"
+],
+"ranks": [
+21,
+4,
+89,
+40,
+97
+]
+},
+"byu": {
+"notes": [
+"PPA 0.199/play",
+"PPA 0.291/play",
+"PPA 0.047/play allowed",
+"PPA 0.131/play allowed",
+"SP+ ST 0.80"
+],
+"ranks": [
+27,
+48,
+40,
+23,
+41
+]
+},
+"north texas": {
+"notes": [
+"PPA 0.294/play",
+"PPA 0.454/play",
+"PPA 0.176/play allowed",
+"PPA 0.168/play allowed",
+"SP+ ST -0.70"
+],
+"ranks": [
+3,
+8,
+111,
+43,
+84
+]
+},
+"texas state": {
+"notes": [
+"PPA 0.256/play",
+"PPA 0.403/play",
+"PPA 0.085/play allowed",
+"PPA 0.249/play allowed",
+"SP+ ST 0.40"
+],
+"ranks": [
+10,
+19,
+59,
+75,
+59
+]
+},
+"missouri": {
+"notes": [
+"PPA 0.236/play",
+"PPA 0.202/play",
+"PPA 0.032/play allowed",
+"PPA 0.052/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+16,
+87,
+29,
+7,
+109
+]
+},
+"san diego state": {
+"notes": [
+"PPA 0.158/play",
+"PPA 0.080/play",
+"PPA 0.052/play allowed",
+"PPA -0.050/play allowed",
+"SP+ ST 1.80"
+],
+"ranks": [
+45,
+126,
+44,
+2,
+4
+]
+},
+"east carolina": {
+"notes": [
+"PPA 0.104/play",
+"PPA 0.333/play",
+"PPA -0.034/play allowed",
+"PPA 0.151/play allowed",
+"SP+ ST -0.50"
+],
+"ranks": [
+74,
+39,
+10,
+35,
+81
+]
+},
+"oklahoma": {
+"notes": [
+"PPA 0.025/play",
+"PPA 0.200/play",
+"PPA -0.082/play allowed",
+"PPA 0.076/play allowed",
+"SP+ ST 1.10"
+],
+"ranks": [
+115,
+90,
+3,
+12,
+33
+]
+},
+"penn state": {
+"notes": [
+"PPA 0.206/play",
+"PPA 0.292/play",
+"PPA 0.102/play allowed",
+"PPA 0.164/play allowed",
+"SP+ ST 1.80"
+],
+"ranks": [
+25,
+47,
+74,
+39,
+4
+]
+},
+"florida state": {
+"notes": [
+"PPA 0.276/play",
+"PPA 0.353/play",
+"PPA 0.095/play allowed",
+"PPA 0.217/play allowed",
+"SP+ ST -0.80"
+],
+"ranks": [
+7,
+34,
+69,
+59,
+89
+]
+},
+"iowa": {
+"notes": [
+"PPA 0.163/play",
+"PPA 0.235/play",
+"PPA 0.045/play allowed",
+"PPA 0.134/play allowed",
+"SP+ ST 1.70"
+],
+"ranks": [
+38,
+71,
+37,
+28,
+8
+]
+},
+"georgia tech": {
+"notes": [
+"PPA 0.186/play",
+"PPA 0.429/play",
+"PPA 0.105/play allowed",
+"PPA 0.276/play allowed",
+"SP+ ST 1.70"
+],
+"ranks": [
+31,
+15,
+76,
+87,
+8
+]
+},
+"cincinnati": {
+"notes": [
+"PPA 0.233/play",
+"PPA 0.434/play",
+"PPA 0.145/play allowed",
+"PPA 0.250/play allowed",
+"SP+ ST 0.80"
+],
+"ranks": [
+18,
+13,
+95,
+76,
+41
+]
+},
+"navy": {
+"notes": [
+"PPA 0.289/play",
+"PPA 0.445/play",
+"PPA 0.118/play allowed",
+"PPA 0.361/play allowed",
+"SP+ ST 0.50"
+],
+"ranks": [
+4,
+9,
+83,
+118,
+56
+]
+},
+"virginia": {
+"notes": [
+"PPA 0.183/play",
+"PPA 0.226/play",
+"PPA 0.049/play allowed",
+"PPA 0.132/play allowed",
+"SP+ ST 0.50"
+],
+"ranks": [
+33,
+78,
+42,
+26,
+56
+]
+},
+"iowa state": {
+"notes": [
+"PPA 0.160/play",
+"PPA 0.287/play",
+"PPA 0.016/play allowed",
+"PPA 0.235/play allowed",
+"SP+ ST 1.30"
+],
+"ranks": [
+41,
+50,
+22,
+67,
+25
+]
+},
+"wake forest": {
+"notes": [
+"PPA 0.099/play",
+"PPA 0.262/play",
+"PPA 0.007/play allowed",
+"PPA 0.101/play allowed",
+"SP+ ST 0.00"
+],
+"ranks": [
+78,
+58,
+19,
+14,
+74
+]
+},
+"pittsburgh": {
+"notes": [
+"PPA 0.059/play",
+"PPA 0.308/play",
+"PPA -0.068/play allowed",
+"PPA 0.217/play allowed",
+"SP+ ST 0.40"
+],
+"ranks": [
+96,
+43,
+5,
+58,
+59
+]
+},
+"louisville": {
+"notes": [
+"PPA 0.190/play",
+"PPA 0.162/play",
+"PPA 0.079/play allowed",
+"PPA 0.062/play allowed",
+"SP+ ST 0.60"
+],
+"ranks": [
+29,
+110,
+54,
+9,
+54
+]
+},
+"memphis": {
+"notes": [
+"PPA 0.288/play",
+"PPA 0.208/play",
+"PPA 0.010/play allowed",
+"PPA 0.361/play allowed",
+"SP+ ST 1.50"
+],
+"ranks": [
+5,
+82,
+20,
+118,
+16
+]
+},
+"louisiana tech": {
+"notes": [
+"PPA 0.148/play",
+"PPA 0.182/play",
+"PPA 0.021/play allowed",
+"PPA 0.106/play allowed",
+"SP+ ST 0.10"
+],
+"ranks": [
+50,
+99,
+25,
+17,
+69
+]
+},
+"texas am": {
+"notes": [
+"PPA 0.158/play",
+"PPA 0.371/play",
+"PPA 0.133/play allowed",
+"PPA 0.103/play allowed",
+"SP+ ST -1.00"
+],
+"ranks": [
+44,
+27,
+90,
+15,
+97
+]
+},
+"connecticut": {
+"notes": [
+"PPA 0.213/play",
+"PPA 0.431/play",
+"PPA 0.194/play allowed",
+"PPA 0.251/play allowed",
+"SP+ ST 1.60"
+],
+"ranks": [
+22,
+14,
+123,
+79,
+12
+]
+},
+"south carolina": {
+"notes": [
+"PPA 0.105/play",
+"PPA 0.175/play",
+"PPA -0.058/play allowed",
+"PPA 0.237/play allowed",
+"SP+ ST 1.50"
+],
+"ranks": [
+73,
+105,
+7,
+69,
+16
+]
+},
+"new mexico": {
+"notes": [
+"PPA 0.147/play",
+"PPA 0.265/play",
+"PPA 0.042/play allowed",
+"PPA 0.236/play allowed",
+"SP+ ST 1.60"
+],
+"ranks": [
+52,
+56,
+35,
+68,
+12
+]
+},
+"texas": {
+"notes": [
+"PPA 0.070/play",
+"PPA 0.299/play",
+"PPA 0.021/play allowed",
+"PPA 0.183/play allowed",
+"SP+ ST 1.20"
+],
+"ranks": [
+92,
+44,
+24,
+48,
+31
+]
+},
+"army": {
+"notes": [
+"PPA 0.143/play",
+"PPA 0.459/play",
+"PPA 0.095/play allowed",
+"PPA 0.299/play allowed",
+"SP+ ST 0.30"
+],
+"ranks": [
+55,
+7,
+67,
+96,
+62
+]
+},
+"clemson": {
+"notes": [
+"PPA 0.101/play",
+"PPA 0.252/play",
+"PPA 0.035/play allowed",
+"PPA 0.167/play allowed",
+"SP+ ST 0.80"
+],
+"ranks": [
+77,
+63,
+31,
+42,
+41
+]
+},
+"kansas state": {
+"notes": [
+"PPA 0.175/play",
+"PPA 0.253/play",
+"PPA 0.115/play allowed",
+"PPA 0.149/play allowed",
+"SP+ ST 0.70"
+],
+"ranks": [
+36,
+63,
+80,
+34,
+48
+]
+},
+"michigan": {
+"notes": [
+"PPA 0.237/play",
+"PPA 0.203/play",
+"PPA 0.044/play allowed",
+"PPA 0.217/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+14,
+85,
+36,
+59,
+109
+]
+},
+"tulane": {
+"notes": [
+"PPA 0.087/play",
+"PPA 0.376/play",
+"PPA 0.087/play allowed",
+"PPA 0.250/play allowed",
+"SP+ ST 1.60"
+],
+"ranks": [
+80,
+24,
+62,
+76,
+12
+]
+},
+"central michigan": {
+"notes": [
+"PPA 0.022/play",
+"PPA 0.401/play",
+"PPA 0.072/play allowed",
+"PPA 0.126/play allowed",
+"SP+ ST -0.70"
+],
+"ranks": [
+117,
+20,
+53,
+21,
+84
+]
+},
+"utsa": {
+"notes": [
+"PPA 0.155/play",
+"PPA 0.298/play",
+"PPA 0.078/play allowed",
+"PPA 0.242/play allowed",
+"SP+ ST 0.40"
+],
+"ranks": [
+47,
+45,
+54,
+71,
+59
+]
+},
+"western kentucky": {
+"notes": [
+"PPA 0.082/play",
+"PPA 0.245/play",
+"PPA 0.089/play allowed",
+"PPA 0.132/play allowed",
+"SP+ ST 1.40"
+],
+"ranks": [
+84,
+68,
+63,
+24,
+23
+]
+},
+"ohio": {
+"notes": [
+"PPA 0.209/play",
+"PPA 0.270/play",
+"PPA 0.080/play allowed",
+"PPA 0.207/play allowed",
+"SP+ ST -1.90"
+],
+"ranks": [
+24,
+55,
+56,
+56,
+129
+]
+},
+"alabama": {
+"notes": [
+"PPA 0.049/play",
+"PPA 0.348/play",
+"PPA 0.067/play allowed",
+"PPA 0.122/play allowed",
+"SP+ ST -1.30"
+],
+"ranks": [
+102,
+37,
+49,
+20,
+103
+]
+},
+"unlv": {
+"notes": [
+"PPA 0.259/play",
+"PPA 0.357/play",
+"PPA 0.215/play allowed",
+"PPA 0.250/play allowed",
+"SP+ ST 0.20"
+],
+"ranks": [
+9,
+32,
+130,
+76,
+65
+]
+},
+"illinois": {
+"notes": [
+"PPA 0.087/play",
+"PPA 0.396/play",
+"PPA 0.080/play allowed",
+"PPA 0.300/play allowed",
+"SP+ ST 1.30"
+],
+"ranks": [
+81,
+21,
+56,
+97,
+25
+]
+},
+"arizona state": {
+"notes": [
+"PPA 0.119/play",
+"PPA 0.222/play",
+"PPA 0.038/play allowed",
+"PPA 0.162/play allowed",
+"SP+ ST -1.70"
+],
+"ranks": [
+69,
+79,
+34,
+37,
+125
+]
+},
+"baylor": {
+"notes": [
+"PPA 0.160/play",
+"PPA 0.246/play",
+"PPA 0.136/play allowed",
+"PPA 0.248/play allowed",
+"SP+ ST 1.90"
+],
+"ranks": [
+42,
+66,
+92,
+74,
+1
+]
+},
+"miami oh": {
+"notes": [
+"PPA 0.070/play",
+"PPA 0.180/play",
+"PPA 0.051/play allowed",
+"PPA 0.190/play allowed",
+"SP+ ST 1.50"
+],
+"ranks": [
+92,
+100,
+43,
+50,
+16
+]
+},
+"arizona": {
+"notes": [
+"PPA 0.140/play",
+"PPA 0.204/play",
+"PPA 0.102/play allowed",
+"PPA 0.115/play allowed",
+"SP+ ST -1.50"
+],
+"ranks": [
+58,
+84,
+74,
+19,
+117
+]
+},
+"arkansas": {
+"notes": [
+"PPA 0.278/play",
+"PPA 0.373/play",
+"PPA 0.165/play allowed",
+"PPA 0.434/play allowed",
+"SP+ ST 0.80"
+],
+"ranks": [
+6,
+25,
+106,
+132,
+41
+]
+},
+"boise state": {
+"notes": [
+"PPA 0.128/play",
+"PPA 0.252/play",
+"PPA 0.202/play allowed",
+"PPA 0.033/play allowed",
+"SP+ ST -0.80"
+],
+"ranks": [
+65,
+63,
+126,
+5,
+89
+]
+},
+"fresno state": {
+"notes": [
+"PPA 0.040/play",
+"PPA 0.231/play",
+"PPA 0.057/play allowed",
+"PPA 0.136/play allowed",
+"SP+ ST -0.10"
+],
+"ranks": [
+108,
+75,
+46,
+30,
+77
+]
+},
+"lsu": {
+"notes": [
+"PPA 0.021/play",
+"PPA 0.208/play",
+"PPA 0.026/play allowed",
+"PPA 0.170/play allowed",
+"SP+ ST 0.70"
+],
+"ranks": [
+120,
+83,
+26,
+44,
+48
+]
+},
+"kansas": {
+"notes": [
+"PPA 0.185/play",
+"PPA 0.291/play",
+"PPA 0.116/play allowed",
+"PPA 0.363/play allowed",
+"SP+ ST 1.70"
+],
+"ranks": [
+32,
+48,
+82,
+122,
+8
+]
+},
+"nc state": {
+"notes": [
+"PPA 0.157/play",
+"PPA 0.349/play",
+"PPA 0.115/play allowed",
+"PPA 0.270/play allowed",
+"SP+ ST -1.20"
+],
+"ranks": [
+46,
+36,
+81,
+84,
+101
+]
+},
+"tcu": {
+"notes": [
+"PPA 0.059/play",
+"PPA 0.370/play",
+"PPA 0.030/play allowed",
+"PPA 0.318/play allowed",
+"SP+ ST -0.70"
+],
+"ranks": [
+97,
+29,
+28,
+103,
+84
+]
+},
+"western michigan": {
+"notes": [
+"PPA 0.119/play",
+"PPA 0.091/play",
+"PPA 0.070/play allowed",
+"PPA 0.070/play allowed",
+"SP+ ST -1.30"
+],
+"ranks": [
+69,
+125,
+51,
+11,
+103
+]
+},
+"ucf": {
+"notes": [
+"PPA 0.138/play",
+"PPA 0.186/play",
+"PPA 0.124/play allowed",
+"PPA 0.135/play allowed",
+"SP+ ST -0.50"
+],
+"ranks": [
+61,
+97,
+85,
+29,
+81
+]
+},
+"washington state": {
+"notes": [
+"PPA 0.078/play",
+"PPA 0.199/play",
+"PPA 0.086/play allowed",
+"PPA 0.141/play allowed",
+"SP+ ST -0.30"
+],
+"ranks": [
+88,
+92,
+61,
+32,
+78
+]
+},
+"marshall": {
+"notes": [
+"PPA 0.021/play",
+"PPA 0.372/play",
+"PPA 0.035/play allowed",
+"PPA 0.340/play allowed",
+"SP+ ST 0.70"
+],
+"ranks": [
+119,
+26,
+31,
+111,
+48
+]
+},
+"florida": {
+"notes": [
+"PPA 0.132/play",
+"PPA 0.176/play",
+"PPA 0.085/play allowed",
+"PPA 0.285/play allowed",
+"SP+ ST 1.50"
+],
+"ranks": [
+62,
+104,
+60,
+91,
+16
+]
+},
+"duke": {
+"notes": [
+"PPA 0.093/play",
+"PPA 0.381/play",
+"PPA 0.094/play allowed",
+"PPA 0.393/play allowed",
+"SP+ ST 1.10"
+],
+"ranks": [
+79,
+23,
+67,
+125,
+33
+]
+},
+"jacksonville state": {
+"notes": [
+"PPA 0.210/play",
+"PPA 0.168/play",
+"PPA 0.107/play allowed",
+"PPA 0.238/play allowed",
+"SP+ ST -1.60"
+],
+"ranks": [
+23,
+107,
+78,
+70,
+123
+]
+},
+"hawaii": {
+"notes": [
+"PPA 0.022/play",
+"PPA 0.278/play",
+"PPA 0.096/play allowed",
+"PPA 0.245/play allowed",
+"SP+ ST 1.70"
+],
+"ranks": [
+117,
+52,
+70,
+72,
+8
+]
+},
+"buffalo": {
+"notes": [
+"PPA 0.005/play",
+"PPA 0.172/play",
+"PPA 0.047/play allowed",
+"PPA 0.205/play allowed",
+"SP+ ST 1.60"
+],
+"ranks": [
+124,
+106,
+40,
+55,
+12
+]
+},
+"southern miss": {
+"notes": [
+"PPA 0.103/play",
+"PPA 0.244/play",
+"PPA 0.154/play allowed",
+"PPA 0.137/play allowed",
+"SP+ ST -1.30"
+],
+"ranks": [
+75,
+69,
+99,
+31,
+103
+]
+},
+"fiu": {
+"notes": [
+"PPA 0.158/play",
+"PPA 0.199/play",
+"PPA 0.136/play allowed",
+"PPA 0.210/play allowed",
+"SP+ ST -0.80"
+],
+"ranks": [
+43,
+93,
+91,
+57,
+89
+]
+},
+"mississippi state": {
+"notes": [
+"PPA 0.139/play",
+"PPA 0.203/play",
+"PPA 0.144/play allowed",
+"PPA 0.281/play allowed",
+"SP+ ST 1.50"
+],
+"ranks": [
+59,
+85,
+93,
+89,
+16
+]
+},
+"utah state": {
+"notes": [
+"PPA 0.181/play",
+"PPA 0.263/play",
+"PPA 0.198/play allowed",
+"PPA 0.201/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+35,
+57,
+125,
+52,
+109
+]
+},
+"northwestern": {
+"notes": [
+"PPA 0.142/play",
+"PPA 0.198/play",
+"PPA 0.170/play allowed",
+"PPA 0.234/play allowed",
+"SP+ ST 1.30"
+],
+"ranks": [
+57,
+94,
+109,
+66,
+25
+]
+},
+"houston": {
+"notes": [
+"PPA -0.029/play",
+"PPA 0.321/play",
+"PPA 0.046/play allowed",
+"PPA 0.218/play allowed",
+"SP+ ST -1.10"
+],
+"ranks": [
+129,
+42,
+38,
+61,
+99
+]
+},
+"nebraska": {
+"notes": [
+"PPA 0.153/play",
+"PPA 0.242/play",
+"PPA 0.237/play allowed",
+"PPA 0.165/play allowed",
+"SP+ ST 0.10"
+],
+"ranks": [
+48,
+70,
+132,
+40,
+69
+]
+},
+"kennesaw state": {
+"notes": [
+"PPA 0.119/play",
+"PPA 0.276/play",
+"PPA 0.145/play allowed",
+"PPA 0.226/play allowed",
+"SP+ ST -1.70"
+],
+"ranks": [
+71,
+53,
+97,
+63,
+125
+]
+},
+"liberty": {
+"notes": [
+"PPA 0.173/play",
+"PPA 0.226/play",
+"PPA 0.186/play allowed",
+"PPA 0.246/play allowed",
+"SP+ ST -0.70"
+],
+"ranks": [
+37,
+77,
+115,
+73,
+84
+]
+},
+"maryland": {
+"notes": [
+"PPA 0.004/play",
+"PPA 0.202/play",
+"PPA 0.128/play allowed",
+"PPA 0.155/play allowed",
+"SP+ ST 0.90"
+],
+"ranks": [
+126,
+87,
+87,
+36,
+39
+]
+},
+"tulsa": {
+"notes": [
+"PPA 0.056/play",
+"PPA 0.149/play",
+"PPA 0.069/play allowed",
+"PPA 0.277/play allowed",
+"SP+ ST 1.40"
+],
+"ranks": [
+98,
+113,
+50,
+88,
+23
+]
+},
+"troy": {
+"notes": [
+"PPA 0.005/play",
+"PPA 0.155/play",
+"PPA 0.092/play allowed",
+"PPA 0.162/play allowed",
+"SP+ ST 0.70"
+],
+"ranks": [
+125,
+111,
+64,
+37,
+48
+]
+},
+"kentucky": {
+"notes": [
+"PPA 0.085/play",
+"PPA 0.176/play",
+"PPA 0.066/play allowed",
+"PPA 0.301/play allowed",
+"SP+ ST 0.00"
+],
+"ranks": [
+82,
+103,
+48,
+98,
+74
+]
+},
+"air force": {
+"notes": [
+"PPA 0.229/play",
+"PPA 0.545/play",
+"PPA 0.292/play allowed",
+"PPA 0.509/play allowed",
+"SP+ ST 0.20"
+],
+"ranks": [
+19,
+3,
+136,
+136,
+65
+]
+},
+"app state": {
+"notes": [
+"PPA 0.071/play",
+"PPA 0.178/play",
+"PPA 0.092/play allowed",
+"PPA 0.296/play allowed",
+"SP+ ST 0.90"
+],
+"ranks": [
+90,
+102,
+64,
+94,
+39
+]
+},
+"north carolina": {
+"notes": [
+"PPA -0.019/play",
+"PPA 0.178/play",
+"PPA 0.096/play allowed",
+"PPA 0.189/play allowed",
+"SP+ ST 1.20"
+],
+"ranks": [
+127,
+101,
+71,
+49,
+31
+]
+},
+"wyoming": {
+"notes": [
+"PPA 0.013/play",
+"PPA 0.118/play",
+"PPA 0.072/play allowed",
+"PPA 0.132/play allowed",
+"SP+ ST -1.80"
+],
+"ranks": [
+122,
+121,
+52,
+24,
+128
+]
+},
+"middle tennessee": {
+"notes": [
+"PPA 0.072/play",
+"PPA 0.187/play",
+"PPA 0.034/play allowed",
+"PPA 0.412/play allowed",
+"SP+ ST 0.50"
+],
+"ranks": [
+89,
+95,
+30,
+127,
+56
+]
+},
+"san jose state": {
+"notes": [
+"PPA 0.128/play",
+"PPA 0.216/play",
+"PPA 0.106/play allowed",
+"PPA 0.346/play allowed",
+"SP+ ST -1.50"
+],
+"ranks": [
+64,
+80,
+77,
+112,
+117
+]
+},
+"west virginia": {
+"notes": [
+"PPA 0.037/play",
+"PPA 0.125/play",
+"PPA 0.014/play allowed",
+"PPA 0.352/play allowed",
+"SP+ ST 0.30"
+],
+"ranks": [
+110,
+117,
+21,
+116,
+62
+]
+},
+"florida atlantic": {
+"notes": [
+"PPA 0.045/play",
+"PPA 0.281/play",
+"PPA 0.217/play allowed",
+"PPA 0.259/play allowed",
+"SP+ ST 1.50"
+],
+"ranks": [
+105,
+51,
+131,
+82,
+16
+]
+},
+"eastern michigan": {
+"notes": [
+"PPA 0.132/play",
+"PPA 0.293/play",
+"PPA 0.207/play allowed",
+"PPA 0.347/play allowed",
+"SP+ ST 0.10"
+],
+"ranks": [
+62,
+46,
+127,
+114,
+69
+]
+},
+"utep": {
+"notes": [
+"PPA 0.054/play",
+"PPA 0.017/play",
+"PPA 0.005/play allowed",
+"PPA 0.231/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+100,
+131,
+18,
+65,
+109
+]
+},
+"bowling green": {
+"notes": [
+"PPA 0.045/play",
+"PPA 0.049/play",
+"PPA 0.056/play allowed",
+"PPA 0.271/play allowed",
+"SP+ ST 0.80"
+],
+"ranks": [
+105,
+128,
+45,
+85,
+41
+]
+},
+"delaware": {
+"notes": [
+"PPA 0.080/play",
+"PPA 0.261/play",
+"PPA 0.167/play allowed",
+"PPA 0.290/play allowed",
+"SP+ ST -0.90"
+],
+"ranks": [
+86,
+60,
+107,
+93,
+93
+]
+},
+"boston college": {
+"notes": [
+"PPA 0.047/play",
+"PPA 0.254/play",
+"PPA 0.145/play allowed",
+"PPA 0.361/play allowed",
+"SP+ ST 1.30"
+],
+"ranks": [
+103,
+62,
+95,
+118,
+25
+]
+},
+"georgia southern": {
+"notes": [
+"PPA 0.182/play",
+"PPA 0.262/play",
+"PPA 0.270/play allowed",
+"PPA 0.325/play allowed",
+"SP+ ST 0.10"
+],
+"ranks": [
+34,
+58,
+134,
+106,
+69
+]
+},
+"new mexico state": {
+"notes": [
+"PPA -0.077/play",
+"PPA 0.132/play",
+"PPA 0.002/play allowed",
+"PPA 0.251/play allowed",
+"SP+ ST -0.30"
+],
+"ranks": [
+135,
+116,
+17,
+79,
+78
+]
+},
+"temple": {
+"notes": [
+"PPA 0.051/play",
+"PPA 0.338/play",
+"PPA 0.214/play allowed",
+"PPA 0.354/play allowed",
+"SP+ ST 1.00"
+],
+"ranks": [
+101,
+38,
+129,
+117,
+37
+]
+},
+"minnesota": {
+"notes": [
+"PPA 0.028/play",
+"PPA 0.202/play",
+"PPA 0.113/play allowed",
+"PPA 0.254/play allowed",
+"SP+ ST -1.60"
+],
+"ranks": [
+114,
+87,
+79,
+81,
+123
+]
+},
+"stanford": {
+"notes": [
+"PPA -0.020/play",
+"PPA 0.185/play",
+"PPA -0.009/play allowed",
+"PPA 0.351/play allowed",
+"SP+ ST -1.70"
+],
+"ranks": [
+128,
+97,
+15,
+115,
+125
+]
+},
+"michigan state": {
+"notes": [
+"PPA 0.071/play",
+"PPA 0.236/play",
+"PPA 0.157/play allowed",
+"PPA 0.297/play allowed",
+"SP+ ST -1.30"
+],
+"ranks": [
+90,
+71,
+101,
+95,
+103
+]
+},
+"akron": {
+"notes": [
+"PPA 0.012/play",
+"PPA 0.168/play",
+"PPA 0.098/play allowed",
+"PPA 0.228/play allowed",
+"SP+ ST -1.90"
+],
+"ranks": [
+123,
+107,
+72,
+64,
+129
+]
+},
+"california": {
+"notes": [
+"PPA -0.037/play",
+"PPA 0.234/play",
+"PPA 0.192/play allowed",
+"PPA 0.143/play allowed",
+"SP+ ST -0.90"
+],
+"ranks": [
+132,
+74,
+122,
+33,
+93
+]
+},
+"virginia tech": {
+"notes": [
+"PPA 0.189/play",
+"PPA 0.165/play",
+"PPA 0.157/play allowed",
+"PPA 0.426/play allowed",
+"SP+ ST -0.70"
+],
+"ranks": [
+30,
+109,
+101,
+130,
+84
+]
+},
+"ul monroe": {
+"notes": [
+"PPA 0.047/play",
+"PPA 0.186/play",
+"PPA 0.081/play allowed",
+"PPA 0.320/play allowed",
+"SP+ ST -2.10"
+],
+"ranks": [
+103,
+96,
+58,
+105,
+136
+]
+},
+"south alabama": {
+"notes": [
+"PPA 0.148/play",
+"PPA 0.210/play",
+"PPA 0.186/play allowed",
+"PPA 0.339/play allowed",
+"SP+ ST -2.00"
+],
+"ranks": [
+51,
+81,
+116,
+110,
+131
+]
+},
+"arkansas state": {
+"notes": [
+"PPA -0.036/play",
+"PPA 0.230/play",
+"PPA 0.119/play allowed",
+"PPA 0.310/play allowed",
+"SP+ ST 0.30"
+],
+"ranks": [
+130,
+76,
+84,
+100,
+62
+]
+},
+"northern illinois": {
+"notes": [
+"PPA 0.117/play",
+"PPA 0.000/play",
+"PPA 0.163/play allowed",
+"PPA 0.204/play allowed",
+"SP+ ST -0.60"
+],
+"ranks": [
+72,
+132,
+105,
+54,
+83
+]
+},
+"louisiana": {
+"notes": [
+"PPA 0.126/play",
+"PPA 0.141/play",
+"PPA 0.191/play allowed",
+"PPA 0.273/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+66,
+114,
+118,
+86,
+109
+]
+},
+"wisconsin": {
+"notes": [
+"PPA 0.062/play",
+"PPA 0.024/play",
+"PPA 0.046/play allowed",
+"PPA 0.312/play allowed",
+"SP+ ST -0.90"
+],
+"ranks": [
+95,
+130,
+39,
+101,
+93
+]
+},
+"missouri state": {
+"notes": [
+"PPA 0.032/play",
+"PPA 0.323/play",
+"PPA 0.185/play allowed",
+"PPA 0.332/play allowed",
+"SP+ ST -1.50"
+],
+"ranks": [
+112,
+41,
+114,
+108,
+117
+]
+},
+"ucla": {
+"notes": [
+"PPA 0.192/play",
+"PPA 0.104/play",
+"PPA 0.238/play allowed",
+"PPA 0.339/play allowed",
+"SP+ ST 0.10"
+],
+"ranks": [
+28,
+124,
+133,
+109,
+69
+]
+},
+"nevada": {
+"notes": [
+"PPA 0.084/play",
+"PPA -0.011/play",
+"PPA 0.191/play allowed",
+"PPA 0.201/play allowed",
+"SP+ ST 1.00"
+],
+"ranks": [
+83,
+133,
+120,
+52,
+37
+]
+},
+"purdue": {
+"notes": [
+"PPA 0.125/play",
+"PPA 0.119/play",
+"PPA 0.178/play allowed",
+"PPA 0.428/play allowed",
+"SP+ ST 1.80"
+],
+"ranks": [
+67,
+120,
+113,
+131,
+4
+]
+},
+"colorado state": {
+"notes": [
+"PPA 0.079/play",
+"PPA 0.200/play",
+"PPA 0.170/play allowed",
+"PPA 0.376/play allowed",
+"SP+ ST -0.30"
+],
+"ranks": [
+87,
+90,
+108,
+124,
+78
+]
+},
+"colorado": {
+"notes": [
+"PPA 0.038/play",
+"PPA 0.155/play",
+"PPA 0.131/play allowed",
+"PPA 0.330/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+109,
+112,
+88,
+107,
+109
+]
+},
+"kent state": {
+"notes": [
+"PPA -0.036/play",
+"PPA 0.246/play",
+"PPA 0.157/play allowed",
+"PPA 0.281/play allowed",
+"SP+ ST -1.50"
+],
+"ranks": [
+131,
+66,
+103,
+90,
+117
+]
+},
+"oregon state": {
+"notes": [
+"PPA 0.018/play",
+"PPA 0.124/play",
+"PPA 0.092/play allowed",
+"PPA 0.313/play allowed",
+"SP+ ST -2.00"
+],
+"ranks": [
+121,
+118,
+64,
+102,
+131
+]
+},
+"rutgers": {
+"notes": [
+"PPA 0.081/play",
+"PPA 0.351/play",
+"PPA 0.274/play allowed",
+"PPA 0.423/play allowed",
+"SP+ ST 0.20"
+],
+"ranks": [
+85,
+35,
+135,
+128,
+65
+]
+},
+"rice": {
+"notes": [
+"PPA 0.034/play",
+"PPA 0.078/play",
+"PPA 0.156/play allowed",
+"PPA 0.362/play allowed",
+"SP+ ST 1.30"
+],
+"ranks": [
+111,
+127,
+100,
+121,
+25
+]
+},
+"uab": {
+"notes": [
+"PPA 0.145/play",
+"PPA 0.261/play",
+"PPA 0.213/play allowed",
+"PPA 0.490/play allowed",
+"SP+ ST -1.50"
+],
+"ranks": [
+53,
+60,
+128,
+135,
+117
+]
+},
+"syracuse": {
+"notes": [
+"PPA 0.025/play",
+"PPA 0.108/play",
+"PPA 0.150/play allowed",
+"PPA 0.402/play allowed",
+"SP+ ST 1.10"
+],
+"ranks": [
+115,
+122,
+98,
+126,
+33
+]
+},
+"coastal carolina": {
+"notes": [
+"PPA 0.042/play",
+"PPA 0.107/play",
+"PPA 0.192/play allowed",
+"PPA 0.286/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+107,
+123,
+121,
+92,
+109
+]
+},
+"georgia state": {
+"notes": [
+"PPA 0.056/play",
+"PPA 0.234/play",
+"PPA 0.191/play allowed",
+"PPA 0.424/play allowed",
+"SP+ ST -2.00"
+],
+"ranks": [
+98,
+73,
+118,
+129,
+131
+]
+},
+"ball state": {
+"notes": [
+"PPA 0.032/play",
+"PPA -0.029/play",
+"PPA 0.144/play allowed",
+"PPA 0.319/play allowed",
+"SP+ ST -2.00"
+],
+"ranks": [
+113,
+136,
+94,
+104,
+131
+]
+},
+"sam houston": {
+"notes": [
+"PPA 0.069/play",
+"PPA -0.021/play",
+"PPA 0.176/play allowed",
+"PPA 0.373/play allowed",
+"SP+ ST -1.30"
+],
+"ranks": [
+94,
+135,
+112,
+123,
+103
+]
+},
+"oklahoma state": {
+"notes": [
+"PPA -0.053/play",
+"PPA 0.035/play",
+"PPA 0.128/play allowed",
+"PPA 0.446/play allowed",
+"SP+ ST 1.30"
+],
+"ranks": [
+134,
+129,
+86,
+134,
+25
+]
+},
+"charlotte": {
+"notes": [
+"PPA -0.115/play",
+"PPA 0.123/play",
+"PPA 0.187/play allowed",
+"PPA 0.305/play allowed",
+"SP+ ST -1.40"
+],
+"ranks": [
+136,
+119,
+117,
+99,
+109
+]
+},
+"umass": {
+"notes": [
+"PPA -0.043/play",
+"PPA -0.011/play",
+"PPA 0.170/play allowed",
+"PPA 0.437/play allowed",
+"SP+ ST -1.50"
+],
+"ranks": [
+133,
+133,
+109,
+133,
+117
+]
+},
+"north dakota state": {
+"notes": [
+"",
+"",
+"",
+"",
+""
+],
+"ranks": [
+"n/a",
+"n/a",
+"n/a",
+"n/a",
+"n/a"
+]
+},
+"sacramento state": {
+"notes": [
+"",
+"",
+"",
+"",
+""
+],
+"ranks": [
+"n/a",
+"n/a",
+"n/a",
+"n/a",
+"n/a"
+]
+}
+}

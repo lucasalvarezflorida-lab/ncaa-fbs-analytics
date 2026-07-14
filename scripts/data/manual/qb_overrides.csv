@@ -1,0 +1,9 @@
+team,confirmed_starter,confirmed_starter_epa_per_pass
+# Example overrides — uncomment and edit before each game week if Phase 3
+# projects the wrong starter. Format mirrors lineup_overrides.csv in the
+# NHL model. The orchestrator will swap these into Phase 3 output during
+# Phase 5 consolidation.
+#
+# Miami,Darian Mensah,0.32
+# Florida,DJ Lagway,0.18
+# Ohio State,Julian Sayin,0.28

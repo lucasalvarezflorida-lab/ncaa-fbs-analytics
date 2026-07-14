@@ -1,0 +1,6 @@
+data/
+output/*
+!output/residuals_2025.png
+__pycache__/
+*.pyc
+.env

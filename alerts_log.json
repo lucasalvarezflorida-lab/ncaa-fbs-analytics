@@ -1,0 +1,152 @@
+{
+"401856766": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "TCU",
+"away": "North Carolina",
+"spread": -6.5,
+"edge": 8.8,
+"tier": "YEL",
+"model_side": "TCU"
+},
+"401862693": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "UNLV",
+"away": "Memphis",
+"spread": -3,
+"edge": -3.8,
+"tier": "RED",
+"model_side": "Memphis"
+},
+"401858429": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Michigan State",
+"away": "Toledo",
+"spread": -10.5,
+"edge": -11.5,
+"tier": "RED",
+"model_side": "Toledo"
+},
+"401858425": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Indiana",
+"away": "North Texas",
+"spread": -40.5,
+"edge": -13.5,
+"tier": "YEL",
+"model_side": "North Texas"
+},
+"401858430": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Nebraska",
+"away": "Ohio",
+"spread": -23.5,
+"edge": -13.1,
+"tier": "YEL",
+"model_side": "Ohio"
+},
+"401856634": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Alabama",
+"away": "East Carolina",
+"spread": -25.5,
+"edge": -9.1,
+"tier": "YEL",
+"model_side": "East Carolina"
+},
+"401869960": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "James Madison",
+"away": "Liberty",
+"spread": -6,
+"edge": 17.5,
+"tier": "YEL",
+"model_side": "James Madison"
+},
+"401856667": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Texas",
+"away": "Texas State",
+"spread": -30.5,
+"edge": -7.9,
+"tier": "YEL",
+"model_side": "Texas State"
+},
+"401856772": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Tulsa",
+"away": "Oklahoma State",
+"spread": 11.5,
+"edge": 12.1,
+"tier": "RED",
+"model_side": "Tulsa"
+},
+"401862699": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "South Florida",
+"away": "Florida International",
+"spread": -12.5,
+"edge": 12.3,
+"tier": "YEL",
+"model_side": "South Florida"
+},
+"401856660": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "LSU",
+"away": "Clemson",
+"spread": -10.5,
+"edge": -6.8,
+"tier": "YEL",
+"model_side": "Clemson"
+},
+"401858428": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Michigan",
+"away": "Western Michigan",
+"spread": -26.5,
+"edge": -7.1,
+"tier": "YEL",
+"model_side": "Western Michigan"
+},
+"401858437": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Washington",
+"away": "Washington State",
+"spread": -21.5,
+"edge": -6.4,
+"tier": "YEL",
+"model_side": "Washington State"
+},
+"401858438": {
+"first_seen": "2026-07-13",
+"wk": 1,
+"home": "Notre Dame",
+"away": "Wisconsin",
+"spread": 20.5,
+"edge": 43.3,
+"tier": "RED",
+"model_side": "Notre Dame"
+},
+"401856682": {
+"first_seen": "2026-07-13",
+"wk": 2,
+"home": "Texas",
+"away": "Ohio State",
+"spread": -1.5,
+"edge": -8.0,
+"tier": "YEL",
+"model_side": "Ohio State"
+}
+}
