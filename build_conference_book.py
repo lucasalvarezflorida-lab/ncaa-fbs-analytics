@@ -99,6 +99,20 @@ RED_MIN_SPREAD = 3.0 # only call it an upset if a real favorite exists
 UNRATED_MARGIN = 24.0  # assumed FPI margin vs FCS / unrated opponents (sim only)
 
 
+def load_fpi_2026() -> dict:
+    """ESPN 2026 preseason FPI from the captured snapshot (norm name -> fpi)."""
+    snaps = sorted((HERE / "fpi-decomposition" / "data").glob(
+        "fpi_2026_preseason_snapshot_*.json"))
+    if not snaps:
+        return {}
+    out = {}
+    for r in json.load(open(snaps[-1], encoding="utf-8")):
+        team, v = r.get("team") or r.get("school"), r.get("fpi", r.get("rating"))
+        if team and v is not None:
+            out[norm(team)] = float(v)
+    return out
+
+
 def fetch_lines(refresh: bool) -> dict:
     """{game_id: {spread, spread_open, spread_text, ou, home_ml, away_ml}}."""
     import cfbd_client as cfbd
@@ -279,6 +293,22 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
             resid=round(row["residual"], 1),
             resid_rank=int(fitted["residual"].rank(ascending=False)[i]))
 
+    # overlay ESPN 2026 preseason FPI (captured snapshot) as the live prior:
+    # alerts, sim, and schedule opponent ranks all use it; the 2025-fit
+    # pred/resid stay as the decomposition context
+    fpi26 = load_fpi_2026()
+    if fpi26:
+        ranked26 = sorted(fpi26.items(), key=lambda kv: -kv[1])
+        rank26 = {k: i + 1 for i, (k, _) in enumerate(ranked26)}
+        for k, v in fpi26.items():
+            e = fpi.setdefault(k, {})
+            e["fpi"] = round(v, 1)
+            e["rank"] = rank26[k]
+            e.setdefault("pred", "n/a")
+            e.setdefault("resid", "n/a")
+            e.setdefault("resid_rank", "n/a")
+        print(f"prior: ESPN 2026 preseason FPI ({len(fpi26)} teams, snapshot)")
+
     games = fetch_games(refresh, fpi)
     sched = derive_team_sched(games, {k: v["rank"] for k, v in fpi.items()})
     sched_by_norm = {norm(t): g for t, g in sched.items()}
@@ -422,8 +452,8 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
 
     info = [
         ("Conference", _txt("B")),
-        ("FPI (2025 final)", _num_pair("D", "C")),
-        ("FPI Residual vs public inputs", _num_pair("F", "G")),
+        ("ESPN FPI (2026 preseason)", _num_pair("D", "C")),
+        ("Residual (2025 decomposition)", _num_pair("F", "G")),
         ("Composite (0-10)", _num_pair("H", "I")),
         ("SP+ (rescaled 0-10)", _num_pair("J", "K")),
     ]
@@ -1032,10 +1062,10 @@ def build_upset_board(wb, games: list[dict]):
     ws["A1"].font = TITLE_FONT
     for c in range(1, 12):
         ws.cell(row=1, column=c).fill = TITLE_FILL
-    ws["A2"] = ("Model margin = FPI gap + 2.5 home field (2025 final FPI as preseason prior — upgrades automatically "
-                "when 2026 FPI publishes). \U0001F534 model picks the underdog outright (spread >= 3). "
+    ws["A2"] = ("Model margin = FPI gap + 2.5 home field. PRIOR = ESPN 2026 PRESEASON FPI (captured from ESPN "
+                "July 14, 2026). \U0001F534 model picks the underdog outright (spread >= 3). "
                 "\U0001F7E1 same side, 6+ pt disagreement. Games are graded against the line first seen at alert time. "
-                "2023-25 backtest of these rules: 49.7% ATS (below 52.4% break-even) — this board is a research "
+                "2023-25 backtest of these rules (with a stale prior): 49.7% ATS — this board is a research "
                 "shortlist and narrative engine, not a bet slip. See BACKTEST_RESULTS.md.")
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
 
@@ -1152,8 +1182,8 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
     ws["A1"].font = TITLE_FONT
     for c in range(1, 10):
         ws.cell(row=1, column=c).fill = TITLE_FILL
-    ws["A2"] = ("Win prob per game = NormalDist(FPI gap + 2.5 HFA, sd 13.5). Prior = 2025 final FPI "
-                "(auto-upgrades when 2026 FPI publishes). Unrated opponents (FCS/newcomers) counted as +24 pt margin. "
+    ws["A2"] = ("Win prob per game = NormalDist(FPI gap + 2.5 HFA, sd 13.5). Prior = ESPN 2026 PRESEASON FPI "
+                "(captured July 14, 2026). Unrated opponents counted as +24 pt margin. "
                 "Compare Proj Wins to your book's season win totals for value.")
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
     headers = ["Rank", "Team", "Conf", "FPI", "Games", "Proj Wins",
