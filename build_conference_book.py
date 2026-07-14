@@ -522,7 +522,7 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
 
     ws.merge_cells("N12:R12")
     dc = ws["N12"]
-    dc.value = '="DEPTH CHART — "&INDEX(_Teams!$AL:$AL,$AG$1)'
+    dc.value = "DEPTH CHART"
     dc.font = Font(name="Arial", bold=True, size=11, color="FFFFFF")
     for cc in range(14, 19):
         ws.cell(row=12, column=cc).fill = TITLE_FILL
@@ -531,23 +531,32 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
         c.font = WHITE_B
         c.fill = HEAD_FILL
     R_DC0 = 14
+    N_GRID = 30  # 3 section bands + 11 off + 11 def + 5 ST
+    BAND_AT = {0, 12, 24}
+    BAND_F = Font(name="Arial", bold=True, size=10, color="FFFFFF")
     OFF_F = Font(name="Arial", bold=True, size=10, color="2E6B4F")
     DEF_F = Font(name="Arial", bold=True, size=10, color="A3332C")
     ST_F = Font(name="Arial", bold=True, size=10, color="5C6B7E")
-    for i in range(25):
+    for i in range(N_GRID):
         r = R_DC0 + i
-        pf = OFF_F if i < 11 else DEF_F if i < 22 else ST_F
+        band = i in BAND_AT
+        pf = BAND_F if band else OFF_F if i < 12 else DEF_F if i < 24 else ST_F
         ws.cell(row=r, column=14,
                 value=f'=IF($AG$1=0,"",INDEX(_DepthGrid!$B:$B,$AG$6+ROW()-{R_DC0})&"")').font = pf
         for j, col in ((15, "C"), (16, "D"), (17, "E"), (18, "F")):
             c = ws.cell(row=r, column=j,
                         value=f'=IF($AG$1=0,"",INDEX(_DepthGrid!${col}:${col},$AG$6+ROW()-{R_DC0})&"")')
-            c.font = Font(name="Arial", size=10)
-    note = ws.cell(row=R_DC0 + 25, column=14,
+            c.font = BAND_F if band else Font(name="Arial", size=10)
+        if band:
+            for cc in range(14, 19):
+                ws.cell(row=r, column=cc).fill = PatternFill("solid", start_color="35507A")
+    note = ws.cell(row=R_DC0 + N_GRID, column=14,
                    value="Projected from official rosters — ✓ pinned (depth_overrides.csv), • portal arrival. "
-                         "Rows follow this team's base personnel/front.")
+                         "Rows follow this team's base personnel/front. KR/PR fill only from pins "
+                         "(no public July data names returners).")
     note.font = Font(name="Arial", italic=True, size=8.5, color="5C6B7E")
-    ws.merge_cells(start_row=R_DC0 + 25, start_column=14, end_row=R_DC0 + 26, end_column=18)
+    ws.merge_cells(start_row=R_DC0 + N_GRID, start_column=14,
+                   end_row=R_DC0 + N_GRID + 2, end_column=18)
     note.alignment = _Al(wrap_text=True, vertical="top")
 
     widths = [22, 30, 26, 9, 8, 16, 30, 34, 28, 8, 8, 8, 2, 6, 24, 22, 20, 18]
@@ -639,7 +648,7 @@ DEF_TEMPLATES = {
     "34": ["DE", "NT", "DE", "OLB", "ILB", "ILB", "OLB", "CB", "CB", "SS", "FS"],
     "335": ["DE", "NT", "DE", "LB", "LB", "LB", "CB", "CB", "NB", "S", "S"],
 }
-ST_ROWS = ["K", "P", "LS"]
+ST_ROWS = ["K", "P", "LS", "KR", "PR"]
 OFF_LABELS = {"11": "11 personnel (3WR-1TE)", "12": "12 personnel (2WR-2TE)",
               "21": "21 personnel (FB)", "10": "10 personnel (4WR)",
               "flex": "flexbone option"}
@@ -764,6 +773,15 @@ def build_depth_grid(team: str, info: dict, card: dict, overrides: dict):
     ps = _sub(st, {"P", "PUNTER", "PUNTER/KICKER"}) or st[1:] or st
     lss = _sub(st, {"LS", "LONG SNAPPER", "LONGSNAPPER", "DEEP SNAPPER", "SNAPPER"}) or st[2:] or st
 
+    # returners: pin-only (no public data names returners in July) — pins are
+    # matched against the WHOLE roster, any position
+    all_players = [p for g in DEPTH_GROUPS for p in groups[g]]
+
+    def _pin_pool(grp):
+        pinned = overrides.get((norm(team), grp), [])
+        by_norm = {norm(p["name"]): p for p in all_players}
+        return [by_norm[n] for n in pinned if n in by_norm]
+
     rbs = groups["RB"]
     pools = {"QB": groups["QB"], "WR": groups["WR"], "TE": groups["TE"],
              "LT": p_lt, "LG": p_lg, "C": p_c, "RG": p_rg, "RT": p_rt,
@@ -771,7 +789,8 @@ def build_depth_grid(team: str, info: dict, card: dict, overrides: dict):
              "LB": lbs, "OLB": lbs[0::2], "ILB": lbs[1::2],
              "WLB": lbs[0::3], "MLB": lbs[1::3], "SLB": lbs[2::3],
              "CB": cbs, "NB": nbs, "S": safs, "SS": safs[0::2], "FS": safs[1::2],
-             "K": ks, "P": ps, "LS": lss}
+             "K": ks, "P": ps, "LS": lss,
+             "KR": _pin_pool("KR"), "PR": _pin_pool("PR")}
     if off_k == "21":
         pools["RB"], pools["FB"] = rbs[0::2], rbs[1::2]
     elif off_k == "flex":
@@ -779,8 +798,15 @@ def build_depth_grid(team: str, info: dict, card: dict, overrides: dict):
     else:
         pools["RB"] = rbs
 
-    rows = _fill_rows(off, pools, all_pins) + _fill_rows(deff, pools, all_pins) \
-        + _fill_rows(ST_ROWS, pools, all_pins)
+    def _band(text):
+        return ("", [text, "", "", ""])
+
+    rows = ([_band(f"OFFENSE — {OFF_LABELS[off_k]}")]
+            + _fill_rows(off, pools, all_pins)
+            + [_band(f"DEFENSE — {DEF_LABELS[def_k]}")]
+            + _fill_rows(deff, pools, all_pins)
+            + [_band("SPECIAL TEAMS")]
+            + _fill_rows(ST_ROWS, pools, all_pins))
     label = f"{OFF_LABELS[off_k]} · {DEF_LABELS[def_k]} defense"
     return rows, label
 
@@ -1166,8 +1192,8 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
     conf_teams, games, fpi, team_conf = build_data_sheets(wb, refresh)
     build_upset_board(wb, games)
     build_season_sim(wb, games, fpi, team_conf)
-    build_scouting_sheet(wb)
-    build_depth_sheet(wb, read_rosters())
+    # standalone Scouting / Depth Charts tabs retired 2026-07-13: their content
+    # now lives on the conference tabs (S&W + scheme depth panel per team)
 
     # per-conference max roster size drives each tab's formula-grid height
     ws_t = wb["_Teams"]
@@ -1185,16 +1211,14 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
     # order: Overview, FPI Decomposition, conferences, hidden data sheets
     if drop_team_tabs:
         keep = {"Overview", "FPI Decomposition", "Upset Board", "Season Sim",
-                "Scouting", "Depth Charts", "_Teams", "_Rosters", "_Sched",
-                "_Depth", "_DepthGrid"}
+                "_Teams", "_Rosters", "_Sched", "_DepthGrid"}
         keep |= set(CONF_ORDER)
         for name in list(wb.sheetnames):
             if name not in keep:
                 del wb[name]
-    order = ["Overview", "FPI Decomposition", "Upset Board", "Season Sim",
-             "Scouting", "Depth Charts"] + \
+    order = ["Overview", "FPI Decomposition", "Upset Board", "Season Sim"] + \
             [c for c in CONF_ORDER if c in wb.sheetnames] + \
-            ["_Teams", "_Rosters", "_Sched", "_Depth", "_DepthGrid"]
+            ["_Teams", "_Rosters", "_Sched", "_DepthGrid"]
     wb._sheets = [wb[n] for n in order if n in wb.sheetnames] + \
                  [wb[n] for n in wb.sheetnames if n not in order]
     wb.save(book)
