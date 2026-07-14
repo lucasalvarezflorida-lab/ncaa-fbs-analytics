@@ -1,0 +1,1148 @@
+season,week,home,away,spread,model_margin,edge,tier,model_side,final,ats,dog_won
+2023,1,USC,San José State,-30.5,21.5,-9.0,YEL,San José State,56-28,W,
+2023,1,UCF,Kent State,-35.5,16.4,-19.1,YEL,Kent State,56-6,L,
+2023,1,Minnesota,Nebraska,-7.5,14.6,7.1,YEL,Minnesota,13-10,L,
+2023,1,Utah,Florida,-5.5,14.1,8.6,YEL,Utah,24-11,W,
+2023,1,Georgia Tech,Louisville,7.5,-14.2,-6.7,YEL,Louisville,34-39,L,
+2023,1,Hawai'i,Stanford,3.0,-13.1,-10.1,YEL,Stanford,24-37,W,
+2023,1,Oklahoma,Arkansas State,-36.0,24.5,-11.5,YEL,Arkansas State,73-0,L,
+2023,1,Michigan,East Carolina,-36.0,24.3,-11.7,YEL,East Carolina,30-3,W,
+2023,1,TCU,Colorado,-20.5,33.9,13.4,YEL,TCU,42-45,L,
+2023,1,Western Kentucky,South Florida,-11.5,18.1,6.6,YEL,Western Kentucky,41-24,W,
+2023,1,Wisconsin,Buffalo,-28.0,18.4,-9.6,YEL,Buffalo,38-17,W,
+2023,1,North Texas,California,6.5,0.5,7.0,RED,North Texas,21-58,L,False
+2023,1,Colorado State,Washington State,11.0,-18.3,-7.3,YEL,Washington State,24-50,W,
+2023,1,Texas A&M,New Mexico,-38.0,28.8,-9.2,YEL,New Mexico,52-10,L,
+2023,1,Illinois,Toledo,-9.5,15.7,6.2,YEL,Illinois,30-28,L,
+2023,1,Virginia Tech,Old Dominion,-16.0,6.8,-9.2,YEL,Old Dominion,36-17,L,
+2023,1,Tulane,South Alabama,-6.5,13.4,6.9,YEL,Tulane,37-17,W,
+2023,2,Kansas,Illinois,-3.5,-4.0,-7.5,RED,Illinois,34-23,L,False
+2023,2,Wake Forest,Vanderbilt,-10.0,16.9,6.9,YEL,Wake Forest,36-20,W,
+2023,2,Colorado,Nebraska,-3.0,-13.9,-16.9,RED,Nebraska,36-14,L,False
+2023,2,Virginia Tech,Purdue,-1.0,-8.0,-9.0,YEL,Purdue,17-24,W,
+2023,2,Iowa State,Iowa,3.5,1.4,4.9,RED,Iowa State,13-20,L,False
+2023,2,Tulane,Ole Miss,8.5,-0.3,8.2,YEL,Tulane,20-37,L,
+2023,2,East Carolina,Marshall,2.5,4.7,7.2,YEL,East Carolina,13-31,L,
+2023,2,Arkansas,Kent State,-38.5,16.4,-22.1,YEL,Kent State,28-6,W,
+2023,2,Washington,Tulsa,-33.0,18.1,-14.9,YEL,Tulsa,43-10,P,
+2023,2,North Carolina,App State,-19.5,8.3,-11.2,YEL,App State,40-34,W,
+2023,2,Georgia Southern,UAB,-7.0,-3.7,-10.7,RED,UAB,49-35,L,False
+2023,2,Oklahoma,SMU,-16.5,10.2,-6.3,YEL,SMU,28-11,L,
+2023,2,Florida International,North Texas,11.0,-19.5,-8.5,YEL,North Texas,46-39,L,
+2023,2,Rice,Houston,7.0,-15.6,-8.6,YEL,Houston,43-41,L,
+2023,2,Missouri,Middle Tennessee,-21.0,11.6,-9.4,YEL,Middle Tennessee,23-19,W,
+2023,2,Georgia State,UConn,-3.0,12.4,9.4,YEL,Georgia State,35-14,W,
+2023,2,Arkansas State,Memphis,20.5,-13.7,6.8,YEL,Arkansas State,3-37,L,
+2023,2,Mississippi State,Arizona,-8.5,17.7,9.2,YEL,Mississippi State,31-24,L,
+2023,2,Florida State,Southern Miss,-31.0,24.1,-6.9,YEL,Southern Miss,66-13,L,
+2023,2,USC,Stanford,-29.0,19.6,-9.4,YEL,Stanford,56-10,L,
+2023,3,Air Force,Utah State,-8.5,17.7,9.2,YEL,Air Force,39-21,W,
+2023,3,Missouri,Kansas State,2.0,-9.8,-7.8,YEL,Kansas State,30-27,L,
+2023,3,Ohio,Iowa State,2.5,-9.7,-7.2,YEL,Iowa State,10-7,L,
+2023,3,Eastern Michigan,Massachusetts,-8.0,17.0,9.0,YEL,Eastern Michigan,19-17,L,
+2023,3,Notre Dame,Central Michigan,-35.0,26.2,-8.8,YEL,Central Michigan,41-17,W,
+2023,3,Iowa,Western Michigan,-28.5,22.4,-6.1,YEL,Western Michigan,41-10,L,
+2023,3,App State,East Carolina,-7.5,1.1,-6.4,YEL,East Carolina,43-28,L,
+2023,3,Tulsa,Oklahoma,28.0,-11.6,16.4,YEL,Tulsa,17-66,L,
+2023,3,North Carolina,Minnesota,-6.0,-2.7,-8.7,RED,Minnesota,31-13,L,False
+2023,3,UConn,Florida International,-7.0,13.2,6.2,YEL,UConn,17-24,L,
+2023,3,Ohio State,Western Kentucky,-29.5,23.2,-6.3,YEL,Western Kentucky,63-10,L,
+2023,3,Texas A&M,UL Monroe,-36.5,23.4,-13.1,YEL,UL Monroe,47-3,L,
+2023,3,Michigan State,Washington,15.0,-3.7,11.3,YEL,Michigan State,7-41,L,
+2023,3,Cincinnati,Miami (OH),-14.0,20.7,6.7,YEL,Cincinnati,24-31,L,
+2023,3,Louisiana Tech,North Texas,-4.5,-7.3,-11.8,RED,North Texas,37-40,W,True
+2023,3,New Mexico,New Mexico State,-3.0,-1.7,-4.7,RED,New Mexico State,17-27,W,True
+2023,3,Colorado,Colorado State,-17.0,2.5,-14.5,YEL,Colorado State,43-35,W,
+2023,3,Nevada,Kansas,28.5,-17.3,11.2,YEL,Nevada,24-31,W,
+2023,3,Arizona,UTEP,-18.5,11.9,-6.6,YEL,UTEP,31-10,L,
+2023,4,TCU,SMU,-6.5,14.6,8.1,YEL,TCU,34-17,W,
+2023,4,Northern Illinois,Tulsa,-4.0,-7.6,-11.6,RED,Tulsa,14-22,W,True
+2023,4,Troy,Western Kentucky,-3.5,-0.7,-4.2,RED,Western Kentucky,27-24,W,False
+2023,4,Michigan,Rutgers,-24.0,33.9,9.9,YEL,Michigan,31-7,P,
+2023,4,Cincinnati,Oklahoma,14.0,-1.0,13.0,YEL,Cincinnati,6-20,P,
+2023,4,Clemson,Florida State,2.0,4.6,6.6,YEL,Clemson,24-31,L,
+2023,4,Toledo,Western Michigan,-21.5,11.6,-9.9,YEL,Western Michigan,49-31,W,
+2023,4,Massachusetts,New Mexico,-3.5,-2.6,-6.1,RED,New Mexico,31-34,W,True
+2023,4,Alabama,Ole Miss,-7.0,17.5,10.5,YEL,Alabama,24-10,W,
+2023,4,Michigan State,Maryland,7.5,-0.1,7.4,YEL,Michigan State,9-31,L,
+2023,4,Temple,Miami,23.5,-8.8,14.7,YEL,Temple,7-41,L,
+2023,4,Oregon,Colorado,-21.0,33.8,12.8,YEL,Oregon,42-6,W,
+2023,4,Utah,UCLA,-5.5,13.1,7.6,YEL,Utah,14-7,W,
+2023,4,Louisville,Boston College,-14.0,20.7,6.7,YEL,Louisville,56-28,W,
+2023,4,South Florida,Rice,2.5,6.1,8.6,YEL,South Florida,42-29,W,
+2023,4,Florida International,Liberty,10.0,-19.0,-9.0,YEL,Liberty,6-38,W,
+2023,4,Wake Forest,Georgia Tech,-4.0,13.6,9.6,YEL,Wake Forest,16-30,L,
+2023,4,Wyoming,App State,-3.0,-7.3,-10.3,RED,App State,22-19,P,False
+2023,4,Stanford,Arizona,12.5,0.6,13.1,RED,Stanford,20-21,W,False
+2023,4,Texas State,Nevada,-17.0,6.1,-10.9,YEL,Nevada,35-24,W,
+2023,4,Middle Tennessee,Colorado State,-3.0,13.0,10.0,YEL,Middle Tennessee,23-31,L,
+2023,4,Missouri,Memphis,-6.5,-1.6,-8.1,RED,Memphis,34-27,L,False
+2023,4,South Carolina,Mississippi State,-6.0,-6.3,-12.3,RED,Mississippi State,37-30,L,False
+2023,4,Baylor,Texas,14.5,-7.8,6.7,YEL,Baylor,6-38,L,
+2023,4,Georgia,UAB,-41.5,32.2,-9.3,YEL,UAB,49-21,W,
+2023,4,Notre Dame,Ohio State,3.5,-10.7,-7.2,YEL,Ohio State,14-17,L,
+2023,4,Pittsburgh,North Carolina,7.5,4.2,11.7,RED,Pittsburgh,24-41,L,False
+2023,4,Utah State,James Madison,4.5,-11.4,-6.9,YEL,James Madison,38-45,W,
+2023,4,Kansas State,UCF,-3.5,10.4,6.9,YEL,Kansas State,44-31,W,
+2023,4,Fresno State,Kent State,-28.0,13.2,-14.8,YEL,Kent State,53-10,L,
+2023,4,Arizona State,USC,34.5,-12.8,21.7,YEL,Arizona State,28-42,W,
+2023,4,Hawai'i,New Mexico State,-3.0,-2.1,-5.1,RED,New Mexico State,20-17,P,False
+2023,5,Western Kentucky,Middle Tennessee,-7.0,14.1,7.1,YEL,Western Kentucky,31-10,W,
+2023,5,Tulsa,Temple,-3.0,10.2,7.2,YEL,Tulsa,48-26,W,
+2023,5,Oregon State,Utah,-3.5,-4.5,-8.0,RED,Utah,21-7,L,False
+2023,5,Colorado,USC,21.5,-27.7,-6.2,YEL,USC,41-48,L,
+2023,5,Akron,Buffalo,-2.5,-7.1,-9.6,YEL,Buffalo,10-13,W,
+2023,5,Tulane,UAB,-21.5,11.8,-9.7,YEL,UAB,35-23,W,
+2023,5,Central Michigan,Eastern Michigan,-7.5,1.1,-6.4,YEL,Eastern Michigan,26-23,W,
+2023,5,Boston College,Virginia,-3.5,-1.0,-4.5,RED,Virginia,27-24,W,False
+2023,5,Kent State,Miami (OH),14.5,7.2,21.7,RED,Kent State,3-23,L,False
+2023,5,California,Arizona State,-12.5,3.3,-9.2,YEL,Arizona State,24-21,W,
+2023,5,UCF,Baylor,-12.5,0.4,-12.1,YEL,Baylor,35-36,W,
+2023,5,Auburn,Georgia,14.0,-21.2,-7.2,YEL,Georgia,20-27,L,
+2023,5,Massachusetts,Arkansas State,-1.0,-9.7,-10.7,YEL,Arkansas State,28-52,W,
+2023,5,Navy,South Florida,-3.0,9.5,6.5,YEL,Navy,30-44,L,
+2023,5,Georgia Tech,Bowling Green,-22.0,15.2,-6.8,YEL,Bowling Green,27-38,W,
+2023,5,Vanderbilt,Missouri,13.5,-6.9,6.6,YEL,Vanderbilt,21-38,L,
+2023,5,Stanford,Oregon,27.0,-15.6,11.4,YEL,Stanford,6-42,L,
+2023,5,Southern Miss,Texas State,5.0,9.3,14.3,RED,Southern Miss,36-50,L,False
+2023,5,Rice,East Carolina,-3.5,-13.4,-16.9,RED,East Carolina,24-17,L,False
+2023,5,Oklahoma,Iowa State,-20.0,6.2,-13.8,YEL,Iowa State,50-20,L,
+2023,5,Tennessee,South Carolina,-12.5,20.8,8.3,YEL,Tennessee,41-20,W,
+2023,5,Iowa,Michigan State,-12.5,4.6,-7.9,YEL,Michigan State,26-16,W,
+2023,5,Virginia Tech,Pittsburgh,2.5,-11.6,-9.1,YEL,Pittsburgh,38-21,L,
+2023,5,Arizona,Washington,20.0,-11.0,9.0,YEL,Arizona,24-31,W,
+2023,6,New Mexico State,Florida International,-6.5,13.0,6.5,YEL,New Mexico State,34-17,W,
+2023,6,Louisiana Tech,Western Kentucky,6.0,-15.8,-9.8,YEL,Western Kentucky,28-35,W,
+2023,6,Illinois,Nebraska,-3.5,13.0,9.5,YEL,Illinois,7-20,L,
+2023,6,Mississippi State,Western Michigan,-20.5,28.2,7.7,YEL,Mississippi State,41-28,L,
+2023,6,Missouri,LSU,4.0,-12.4,-8.4,YEL,LSU,39-49,W,
+2023,6,Buffalo,Central Michigan,3.0,5.9,8.9,RED,Buffalo,37-13,W,True
+2023,6,Clemson,Wake Forest,-21.0,12.5,-8.5,YEL,Wake Forest,17-12,W,
+2023,6,Ohio,Kent State,-26.0,3.5,-22.5,YEL,Kent State,42-17,W,
+2023,6,Texas A&M,Alabama,1.0,-17.6,-16.6,YEL,Alabama,20-26,W,
+2023,6,Louisiana,Texas State,-2.5,13.2,10.7,YEL,Louisiana,34-30,W,
+2023,6,UAB,South Florida,3.5,13.2,16.7,RED,UAB,56-35,W,True
+2023,6,Rice,UConn,-9.5,3.2,-6.3,YEL,UConn,31-38,W,
+2023,6,Arizona State,Colorado,4.0,17.4,21.4,RED,Arizona State,24-27,W,False
+2023,6,Georgia,Kentucky,-14.5,26.6,12.1,YEL,Georgia,51-13,W,
+2023,6,Minnesota,Michigan,18.0,-9.7,8.3,YEL,Minnesota,10-52,L,
+2023,6,Louisville,Notre Dame,6.0,0.6,6.6,RED,Louisville,33-20,W,True
+2023,6,Miami,Georgia Tech,-19.5,5.5,-14.0,YEL,Georgia Tech,20-23,W,
+2023,6,Utah State,Colorado State,3.0,8.1,11.1,RED,Utah State,44-24,W,True
+2023,7,Middle Tennessee,Louisiana Tech,-3.0,9.2,6.2,YEL,Middle Tennessee,31-23,W,
+2023,7,Florida International,UTEP,1.5,-11.5,-10.0,YEL,UTEP,14-27,W,
+2023,7,East Carolina,SMU,11.0,2.0,13.0,RED,East Carolina,10-31,L,False
+2023,7,Colorado,Stanford,-11.5,-10.7,-22.2,RED,Stanford,43-46,W,True
+2023,7,Eastern Michigan,Kent State,-8.5,-0.2,-8.7,RED,Kent State,28-14,L,False
+2023,7,Rutgers,Michigan State,-4.5,-10.6,-15.1,RED,Michigan State,27-24,W,False
+2023,7,Charlotte,Navy,3.0,-11.8,-8.8,YEL,Navy,0-14,W,
+2023,7,Ball State,Toledo,17.5,-7.2,10.3,YEL,Ball State,6-13,W,
+2023,7,Utah,California,-11.0,23.0,12.0,YEL,Utah,34-14,W,
+2023,7,Virginia Tech,Wake Forest,-1.5,-11.3,-12.8,YEL,Wake Forest,30-13,L,
+2023,7,Maryland,Illinois,-13.5,0.5,-13.0,YEL,Illinois,24-27,W,
+2023,7,Western Michigan,Miami (OH),8.5,1.7,10.2,RED,Western Michigan,21-34,L,False
+2023,7,Tennessee,Texas A&M,-3.0,18.0,15.0,YEL,Tennessee,20-13,W,
+2023,7,South Florida,Florida Atlantic,-2.5,-3.6,-6.1,YEL,Florida Atlantic,14-56,W,
+2023,7,Oklahoma State,Kansas,3.0,5.8,8.8,RED,Oklahoma State,39-32,W,True
+2023,7,TCU,BYU,-5.0,16.1,11.1,YEL,TCU,44-11,W,
+2023,7,Washington,Oregon,-3.0,-0.3,-3.3,RED,Oregon,36-33,P,False
+2023,7,Buffalo,Bowling Green,-4.0,11.0,7.0,YEL,Buffalo,14-24,L,
+2023,7,Wisconsin,Iowa,-9.5,3.2,-6.3,YEL,Iowa,6-15,W,
+2023,7,Pittsburgh,Louisville,7.5,-0.3,7.2,YEL,Pittsburgh,38-21,W,
+2023,7,Texas State,UL Monroe,-18.0,3.3,-14.7,YEL,UL Monroe,21-20,W,
+2023,7,North Carolina,Miami,-2.5,9.2,6.7,YEL,North Carolina,41-31,W,
+2023,7,Colorado State,Boise State,8.5,-18.4,-9.9,YEL,Boise State,31-30,L,
+2023,8,Liberty,Middle Tennessee,-14.0,5.2,-8.8,YEL,Middle Tennessee,42-35,W,
+2023,8,South Alabama,Southern Miss,-17.0,7.1,-9.9,YEL,Southern Miss,55-3,L,
+2023,8,UTEP,New Mexico State,1.0,6.0,7.0,YEL,UTEP,7-28,L,
+2023,8,Tulsa,Rice,-3.0,12.5,9.5,YEL,Tulsa,10-42,L,
+2023,8,Temple,SMU,22.5,-11.5,11.0,YEL,Temple,0-55,L,
+2023,8,Cincinnati,Baylor,-3.0,-0.1,-3.1,RED,Baylor,29-32,W,True
+2023,8,Indiana,Rutgers,6.0,6.1,12.1,RED,Indiana,14-31,L,False
+2023,8,Arkansas,Mississippi State,-6.5,-3.8,-10.3,RED,Mississippi State,3-7,W,True
+2023,8,Ohio,Western Michigan,-16.5,9.0,-7.5,YEL,Western Michigan,20-17,W,
+2023,8,Oklahoma,UCF,-17.5,5.6,-11.9,YEL,UCF,31-29,W,
+2023,8,Navy,Air Force,11.5,-4.7,6.8,YEL,Navy,6-17,W,
+2023,8,Georgia Southern,UL Monroe,-16.5,10.1,-6.4,YEL,UL Monroe,38-28,W,
+2023,8,East Carolina,Charlotte,-6.5,22.0,15.5,YEL,East Carolina,7-10,L,
+2023,8,Illinois,Wisconsin,3.0,4.2,7.2,RED,Illinois,21-25,L,False
+2023,8,Northern Illinois,Eastern Michigan,-12.0,-2.0,-14.0,RED,Eastern Michigan,20-13,W,False
+2023,8,Missouri,South Carolina,-7.5,0.6,-6.9,YEL,South Carolina,34-12,L,
+2023,8,Iowa,Minnesota,-3.5,-1.5,-5.0,RED,Minnesota,10-12,W,True
+2023,8,West Virginia,Oklahoma State,-3.0,-0.1,-3.1,RED,Oklahoma State,34-48,W,True
+2023,8,Kent State,Buffalo,7.0,3.2,10.2,RED,Kent State,6-24,L,False
+2023,8,Ball State,Central Michigan,5.0,0.5,5.5,RED,Ball State,24-17,W,True
+2023,8,Oregon,Washington State,-20.0,13.0,-7.0,YEL,Washington State,38-24,W,
+2023,8,Houston,Texas,23.5,-12.8,10.7,YEL,Houston,24-31,W,
+2023,8,North Carolina,Virginia,-24.0,12.7,-11.3,YEL,Virginia,27-31,W,
+2023,8,Arkansas State,Coastal Carolina,9.0,-3.0,6.0,YEL,Arkansas State,17-27,L,
+2023,8,LSU,Army,-33.0,22.4,-10.6,YEL,Army,62-0,L,
+2023,8,Michigan State,Michigan,24.5,-15.8,8.7,YEL,Michigan State,0-49,L,
+2023,8,Miami,Clemson,3.0,-15.5,-12.5,YEL,Clemson,28-20,L,
+2023,8,USC,Utah,-6.5,-3.5,-10.0,RED,Utah,32-34,W,True
+2023,8,Stanford,UCLA,17.0,-10.0,7.0,YEL,Stanford,7-42,L,
+2023,8,Washington,Arizona State,-27.5,16.2,-11.3,YEL,Arizona State,15-7,W,
+2023,9,Western Kentucky,Liberty,4.0,11.5,15.5,RED,Western Kentucky,29-42,L,False
+2023,9,Virginia Tech,Syracuse,-2.5,-8.8,-11.3,YEL,Syracuse,38-10,L,
+2023,9,Charlotte,Florida Atlantic,4.0,-10.8,-6.8,YEL,Florida Atlantic,16-38,W,
+2023,9,Army,Massachusetts,-10.0,24.2,14.2,YEL,Army,14-21,L,
+2023,9,SMU,Tulsa,-20.5,8.9,-11.6,YEL,Tulsa,69-10,L,
+2023,9,Wake Forest,Florida State,20.5,-5.4,15.1,YEL,Wake Forest,16-41,L,
+2023,9,Texas A&M,South Carolina,-14.5,5.3,-9.2,YEL,South Carolina,30-17,W,
+2023,9,Eastern Michigan,Western Michigan,3.0,5.3,8.3,RED,Eastern Michigan,21-45,L,False
+2023,9,Florida,Georgia,14.5,-22.4,-7.9,YEL,Georgia,20-43,W,
+2023,9,Miami,Virginia,-18.5,6.0,-12.5,YEL,Virginia,29-26,W,
+2023,9,Utah,Oregon,6.5,7.4,13.9,RED,Utah,6-35,L,False
+2023,9,UTSA,East Carolina,-18.5,4.1,-14.4,YEL,East Carolina,41-27,W,
+2023,9,App State,Southern Miss,-17.0,9.0,-8.0,YEL,Southern Miss,48-38,W,
+2023,9,Auburn,Mississippi State,-6.5,-4.5,-11.0,RED,Mississippi State,27-13,L,False
+2023,9,Notre Dame,Pittsburgh,-20.5,7.2,-13.3,YEL,Pittsburgh,58-7,L,
+2023,9,Baylor,Iowa State,2.5,5.3,7.8,YEL,Baylor,18-30,L,
+2023,9,Rice,Tulane,10.5,-21.1,-10.6,YEL,Tulane,28-30,L,
+2023,9,South Alabama,Louisiana,-10.5,3.2,-7.3,YEL,Louisiana,20-33,W,
+2023,9,Boise State,Wyoming,-5.0,15.6,10.6,YEL,Boise State,32-7,W,
+2023,9,Stanford,Washington,26.5,-12.9,13.6,YEL,Stanford,33-42,W,
+2023,9,Kentucky,Tennessee,3.5,-14.4,-10.9,YEL,Tennessee,27-33,W,
+2023,9,Texas State,Troy,6.0,-12.3,-6.3,YEL,Troy,13-31,W,
+2023,9,UCLA,Colorado,-17.0,28.1,11.1,YEL,UCLA,28-16,L,
+2023,9,Fresno State,UNLV,-7.5,17.0,9.5,YEL,Fresno State,31-24,L,
+2023,9,Arizona,Oregon State,3.5,-11.7,-8.2,YEL,Oregon State,27-24,L,
+2023,10,Central Michigan,Northern Illinois,3.0,5.6,8.6,RED,Central Michigan,37-31,W,True
+2023,10,Toledo,Buffalo,-14.0,6.9,-7.1,YEL,Buffalo,31-13,L,
+2023,10,Bowling Green,Ball State,-6.5,-0.6,-7.1,RED,Ball State,24-21,W,False
+2023,10,Akron,Kent State,-4.0,-7.8,-11.8,RED,Kent State,31-27,P,False
+2023,10,Texas Tech,TCU,-2.5,-3.6,-6.1,YEL,TCU,35-28,L,
+2023,10,Duke,Wake Forest,-6.5,0.3,-6.2,YEL,Wake Forest,24-21,W,
+2023,10,Syracuse,Boston College,-3.0,15.0,12.0,YEL,Syracuse,10-17,L,
+2023,10,Clemson,Notre Dame,3.0,7.5,10.5,RED,Clemson,31-23,W,True
+2023,10,Michigan State,Nebraska,3.0,8.4,11.4,RED,Michigan State,20-17,W,True
+2023,10,Rutgers,Ohio State,19.0,-31.1,-12.1,YEL,Ohio State,16-35,P,
+2023,10,Utah,Arizona State,-11.0,23.8,12.8,YEL,Utah,55-3,W,
+2023,10,Air Force,Army,-18.5,6.3,-12.2,YEL,Army,3-23,W,
+2023,10,UAB,Florida Atlantic,-1.0,7.1,6.1,YEL,UAB,45-42,W,
+2023,10,Louisville,Virginia Tech,-9.5,19.4,9.9,YEL,Louisville,34-3,W,
+2023,10,Cincinnati,UCF,3.5,2.0,5.5,RED,Cincinnati,26-28,W,False
+2023,10,Georgia,Missouri,-15.0,29.8,14.8,YEL,Georgia,30-21,L,
+2023,10,Pittsburgh,Florida State,21.5,-5.1,16.4,YEL,Pittsburgh,7-24,W,
+2023,10,Northwestern,Iowa,4.5,-15.0,-10.5,YEL,Iowa,7-10,L,
+2023,10,East Carolina,Tulane,17.0,-5.2,11.8,YEL,East Carolina,10-13,W,
+2023,10,Southern Miss,UL Monroe,-3.0,10.1,7.1,YEL,Southern Miss,24-7,W,
+2023,10,Tulsa,Charlotte,-4.5,16.2,11.7,YEL,Tulsa,26-33,L,
+2023,10,Oregon,California,-24.5,18.1,-6.4,YEL,California,63-19,L,
+2023,10,New Mexico State,Middle Tennessee,-3.5,-5.8,-9.3,RED,Middle Tennessee,13-7,L,False
+2023,10,West Virginia,BYU,-13.0,5.8,-7.2,YEL,BYU,37-7,L,
+2023,10,San Diego State,Utah State,2.5,8.6,11.1,YEL,San Diego State,24-32,L,
+2023,10,USC,Washington,3.0,4.2,7.2,RED,USC,42-52,L,False
+2023,10,Michigan,Purdue,-32.5,21.8,-10.7,YEL,Purdue,41-13,W,
+2023,10,Mississippi State,Kentucky,5.0,9.9,14.9,RED,Mississippi State,3-24,L,False
+2023,10,Alabama,LSU,-3.0,12.4,9.4,YEL,Alabama,42-28,W,
+2023,10,NC State,Miami,5.5,9.5,15.0,RED,NC State,20-6,W,True
+2023,10,Colorado,Oregon State,13.5,-26.7,-13.2,YEL,Oregon State,19-26,L,
+2023,11,Northern Illinois,Ball State,-10.5,1.4,-9.1,YEL,Ball State,17-20,W,
+2023,11,Buffalo,Ohio,7.0,0.8,7.8,RED,Buffalo,10-20,L,False
+2023,11,Miami (OH),Akron,-17.0,8.1,-8.9,YEL,Akron,19-0,L,
+2023,11,Kent State,Bowling Green,8.5,11.7,20.2,RED,Kent State,19-49,L,False
+2023,11,Toledo,Eastern Michigan,-18.5,8.8,-9.7,YEL,Eastern Michigan,49-23,L,
+2023,11,SMU,North Texas,-15.5,8.2,-7.3,YEL,North Texas,45-21,L,
+2023,11,Kentucky,Alabama,10.0,-19.0,-9.0,YEL,Alabama,21-49,W,
+2023,11,Illinois,Indiana,-5.5,16.5,11.0,YEL,Illinois,48-45,L,
+2023,11,Clemson,Georgia Tech,-15.5,23.5,8.0,YEL,Clemson,42-21,W,
+2023,11,Tulane,Tulsa,-22.5,16.1,-6.4,YEL,Tulsa,24-22,W,
+2023,11,Kansas,Texas Tech,-3.5,-2.5,-6.0,RED,Texas Tech,13-16,W,True
+2023,11,James Madison,UConn,-27.0,19.6,-7.4,YEL,UConn,44-6,L,
+2023,11,Wake Forest,NC State,2.5,3.5,6.0,YEL,Wake Forest,6-26,L,
+2023,11,Charlotte,Memphis,11.0,-19.4,-8.4,YEL,Memphis,38-44,L,
+2023,11,UL Monroe,Troy,20.0,-13.1,6.9,YEL,UL Monroe,14-45,L,
+2023,11,Colorado,Arizona,6.0,-12.6,-6.6,YEL,Arizona,31-34,L,
+2023,11,Utah State,Nevada,-15.5,7.5,-8.0,YEL,Nevada,41-24,L,
+2023,11,Kansas State,Baylor,-19.0,8.3,-10.7,YEL,Baylor,59-25,L,
+2023,11,Washington,Utah,-10.5,-5.2,-15.7,RED,Utah,35-28,W,False
+2023,11,Wisconsin,Northwestern,-12.0,18.2,6.2,YEL,Wisconsin,10-24,L,
+2023,11,Coastal Carolina,Texas State,3.0,8.8,11.8,RED,Coastal Carolina,31-23,W,True
+2023,11,Western Kentucky,New Mexico State,-5.5,22.5,17.0,YEL,Western Kentucky,29-38,L,
+2023,11,Middle Tennessee,Florida International,-11.5,21.3,9.8,YEL,Middle Tennessee,40-6,W,
+2023,11,Missouri,Tennessee,1.0,-17.7,-16.7,YEL,Tennessee,36-7,L,
+2023,11,Iowa,Rutgers,-2.5,17.7,15.2,YEL,Iowa,22-0,W,
+2023,11,Florida Atlantic,East Carolina,-9.5,-3.7,-13.2,RED,East Carolina,7-22,W,True
+2023,11,Georgia,Ole Miss,-13.0,20.1,7.1,YEL,Georgia,52-17,W,
+2023,11,Colorado State,San Diego State,-4.5,-9.2,-13.7,RED,San Diego State,22-19,W,False
+2023,11,Marshall,Georgia Southern,1.5,8.2,9.7,YEL,Marshall,38-33,W,
+2023,11,UTSA,Rice,-13.0,19.9,6.9,YEL,UTSA,34-14,W,
+2023,11,Ohio State,Michigan State,-30.5,23.0,-7.5,YEL,Michigan State,38-3,L,
+2023,11,Texas A&M,Mississippi State,-18.5,-3.5,-22.0,RED,Mississippi State,51-10,L,False
+2023,11,North Carolina,Duke,-9.5,3.3,-6.2,YEL,Duke,47-45,W,
+2023,11,San José State,Fresno State,1.0,-7.1,-6.1,YEL,Fresno State,42-18,L,
+2023,11,Oregon,USC,-12.5,3.6,-8.9,YEL,USC,36-27,W,
+2023,12,Miami (OH),Buffalo,-8.5,-1.5,-10.0,RED,Buffalo,23-10,L,False
+2023,12,Pittsburgh,Boston College,-1.0,17.9,16.9,YEL,Pittsburgh,24-16,W,
+2023,12,Washington State,Colorado,-5.5,23.3,17.8,YEL,Washington State,56-14,W,
+2023,12,Memphis,SMU,7.5,4.4,11.9,RED,Memphis,34-38,W,False
+2023,12,Navy,East Carolina,-3.0,-2.7,-5.7,RED,East Carolina,10-0,L,False
+2023,12,Penn State,Rutgers,-19.5,29.8,10.3,YEL,Penn State,27-6,W,
+2023,12,Ole Miss,UL Monroe,-37.0,28.5,-8.5,YEL,UL Monroe,35-3,W,
+2023,12,Maryland,Michigan,21.0,-13.3,7.7,YEL,Maryland,24-31,W,
+2023,12,Northwestern,Purdue,-1.0,-9.4,-10.4,YEL,Purdue,23-15,L,
+2023,12,BYU,Oklahoma,24.0,-6.6,17.4,YEL,BYU,24-31,W,
+2023,12,Miami,Louisville,1.5,-8.7,-7.2,YEL,Louisville,31-38,W,
+2023,12,Army,Coastal Carolina,5.5,6.5,12.0,RED,Army,28-21,W,True
+2023,12,Indiana,Michigan State,-4.5,-7.0,-11.5,RED,Michigan State,21-24,W,True
+2023,12,Mississippi State,Southern Miss,-14.0,21.8,7.8,YEL,Mississippi State,41-20,W,
+2023,12,Ball State,Kent State,-13.0,-3.6,-16.6,RED,Kent State,34-3,L,False
+2023,12,James Madison,App State,-11.5,4.5,-7.0,YEL,App State,23-26,W,
+2023,12,Arizona,Utah,1.0,-18.7,-17.7,YEL,Utah,42-18,L,
+2023,12,West Virginia,Cincinnati,-6.5,0.1,-6.4,YEL,Cincinnati,42-21,L,
+2023,12,UAB,Temple,-7.0,14.5,7.5,YEL,UAB,34-24,W,
+2023,12,Tulsa,North Texas,3.0,1.8,4.8,RED,Tulsa,28-35,L,False
+2023,12,Arkansas State,Texas State,3.5,3.3,6.8,RED,Arkansas State,77-31,W,True
+2023,12,Colorado State,Nevada,-11.0,1.9,-9.1,YEL,Nevada,30-20,W,
+2023,12,Clemson,North Carolina,-7.5,13.9,6.4,YEL,Clemson,31-20,W,
+2023,12,Troy,Louisiana,-14.5,6.5,-8.0,YEL,Louisiana,31-24,W,
+2023,12,Virginia Tech,NC State,-3.5,-10.2,-13.7,RED,NC State,28-35,W,True
+2023,12,Notre Dame,Wake Forest,-25.0,7.5,-17.5,YEL,Wake Forest,45-7,L,
+2023,12,Air Force,UNLV,-4.0,17.0,13.0,YEL,Air Force,27-31,L,
+2023,12,Arizona State,Oregon,22.0,-13.9,8.1,YEL,Arizona State,13-49,L,
+2023,12,Ohio State,Minnesota,-28.0,16.8,-11.2,YEL,Minnesota,37-3,L,
+2023,12,Houston,Oklahoma State,7.5,-0.1,7.4,YEL,Houston,30-43,L,
+2023,12,South Alabama,Marshall,-8.0,1.5,-6.5,YEL,Marshall,28-0,L,
+2023,12,Utah State,Boise State,4.0,-12.8,-8.8,YEL,Boise State,10-45,W,
+2023,12,Wisconsin,Nebraska,-5.0,11.3,6.3,YEL,Wisconsin,24-17,W,
+2023,12,Missouri,Florida,-10.5,-2.5,-13.0,RED,Florida,33-31,W,False
+2023,12,Georgia Tech,Syracuse,-6.0,-6.1,-12.1,RED,Syracuse,31-22,L,False
+2023,12,San José State,San Diego State,-14.0,2.0,-12.0,YEL,San Diego State,24-13,W,
+2023,13,Western Michigan,Bowling Green,2.0,6.2,8.2,YEL,Western Michigan,10-34,L,
+2023,13,Mississippi State,Ole Miss,11.0,3.4,14.4,RED,Mississippi State,7-17,W,False
+2023,13,Oklahoma,TCU,-12.5,-1.9,-14.4,RED,TCU,69-45,L,False
+2023,13,Central Michigan,Toledo,12.5,-5.3,7.2,YEL,Central Michigan,17-32,L,
+2023,13,Tulane,UTSA,-2.5,8.7,6.2,YEL,Tulane,29-16,W,
+2023,13,Arkansas,Missouri,7.0,6.9,13.9,RED,Arkansas,14-48,L,False
+2023,13,Oregon,Oregon State,-14.0,4.6,-9.4,YEL,Oregon State,31-7,L,
+2023,13,Ball State,Miami (OH),6.5,1.1,7.6,RED,Ball State,15-17,W,False
+2023,13,Kent State,Northern Illinois,18.5,9.7,28.2,RED,Kent State,27-37,W,False
+2023,13,UCF,Houston,-13.5,5.3,-8.2,YEL,Houston,27-13,L,
+2023,13,Duke,Pittsburgh,-6.5,-0.1,-6.6,RED,Pittsburgh,30-19,L,False
+2023,13,Purdue,Indiana,-2.5,11.0,8.5,YEL,Purdue,35-31,W,
+2023,13,Southern Miss,Troy,16.5,-5.5,11.0,YEL,Southern Miss,17-35,L,
+2023,13,SMU,Navy,-20.0,8.2,-11.8,YEL,Navy,59-14,L,
+2023,13,Rice,Florida Atlantic,-5.0,-7.2,-12.2,RED,Florida Atlantic,24-21,W,False
+2023,13,Syracuse,Wake Forest,-3.0,-0.0,-3.0,RED,Wake Forest,35-31,L,False
+2023,13,North Texas,UAB,-3.0,-1.1,-4.1,RED,UAB,45-42,P,False
+2023,13,UNLV,San José State,-3.5,-2.4,-5.9,RED,San José State,31-37,W,True
+2023,13,Florida International,Western Kentucky,10.0,-28.0,-18.0,YEL,Western Kentucky,28-41,W,
+2023,13,Utah,Colorado,-21.5,38.7,17.2,YEL,Utah,23-17,L,
+2023,13,Oklahoma State,BYU,-17.5,8.3,-9.2,YEL,BYU,40-34,W,
+2023,13,UTEP,Liberty,17.0,-5.0,12.0,YEL,UTEP,28-42,W,
+2023,13,Illinois,Northwestern,-5.0,19.9,14.9,YEL,Illinois,43-45,L,
+2023,13,Arizona State,Arizona,12.5,2.3,14.8,RED,Arizona State,23-59,L,False
+2023,13,Virginia,Virginia Tech,2.5,4.7,7.2,YEL,Virginia,17-55,L,
+2023,13,Marshall,Arkansas State,-2.0,14.1,12.1,YEL,Marshall,35-21,W,
+2023,13,Tennessee,Vanderbilt,-25.5,32.1,6.6,YEL,Tennessee,48-24,L,
+2023,13,Rutgers,Maryland,2.0,-13.1,-11.1,YEL,Maryland,24-42,W,
+2023,13,Minnesota,Wisconsin,1.5,5.8,7.3,YEL,Minnesota,14-28,L,
+2023,13,Baylor,West Virginia,6.5,7.4,13.9,RED,Baylor,31-34,W,False
+2023,13,Stanford,Notre Dame,24.5,-14.0,10.5,YEL,Stanford,23-56,L,
+2023,13,Georgia Tech,Georgia,23.0,-30.9,-7.9,YEL,Georgia,23-31,L,
+2023,13,Cincinnati,Kansas,6.0,5.6,11.6,RED,Cincinnati,16-49,L,False
+2023,13,Nevada,Wyoming,11.0,-4.6,6.4,YEL,Nevada,6-42,L,
+2023,13,Hawai'i,Colorado State,6.0,0.1,6.1,RED,Hawai'i,27-24,W,True
+2023,14,Washington,Oregon,9.0,-2.8,6.2,YEL,Washington,34-31,W,
+2023,14,UNLV,Boise State,2.5,-12.1,-9.6,YEL,Boise State,20-44,W,
+2023,14,Iowa,Michigan,23.5,-16.2,7.3,YEL,Iowa,0-26,L,
+2024,1,Minnesota,North Carolina,-2.5,-8.3,-10.8,YEL,North Carolina,17-19,W,
+2024,1,Stanford,TCU,8.5,-16.8,-8.3,YEL,TCU,27-34,L,
+2024,1,West Virginia,Penn State,10.0,-17.2,-7.2,YEL,Penn State,12-34,W,
+2024,1,Syracuse,Ohio,-17.5,9.9,-7.6,YEL,Ohio,38-22,W,
+2024,1,Nebraska,UTEP,-27.5,17.9,-9.6,YEL,UTEP,40-7,L,
+2024,1,South Alabama,North Texas,-6.0,13.4,7.4,YEL,South Alabama,38-52,L,
+2024,1,Troy,Nevada,-15.5,27.3,11.8,YEL,Troy,26-28,L,
+2024,1,Michigan,Fresno State,-21.0,33.6,12.6,YEL,Michigan,30-10,L,
+2024,1,Georgia Tech,Georgia State,-20.5,14.2,-6.3,YEL,Georgia State,35-12,L,
+2024,1,Charlotte,James Madison,7.5,-19.0,-11.5,YEL,James Madison,7-30,W,
+2024,1,Arizona State,Wyoming,-6.5,-2.8,-9.3,RED,Wyoming,48-7,L,False
+2024,1,Florida State,Boston College,-16.5,27.5,11.0,YEL,Florida State,13-28,L,
+2024,2,SMU,BYU,-11.5,18.1,6.6,YEL,SMU,15-18,L,
+2024,2,Northwestern,Duke,-1.5,-9.1,-10.6,YEL,Duke,20-26,W,
+2024,2,Michigan,Texas,7.0,6.9,13.9,RED,Michigan,12-31,L,False
+2024,2,Syracuse,Georgia Tech,3.0,1.8,4.8,RED,Syracuse,31-28,W,True
+2024,2,Memphis,Troy,-19.0,-0.5,-19.5,RED,Troy,38-17,L,False
+2024,2,Washington,Eastern Michigan,-25.0,34.7,9.7,YEL,Washington,30-9,L,
+2024,2,Louisville,Jacksonville State,-29.0,17.5,-11.5,YEL,Jacksonville State,49-14,L,
+2024,2,Iowa,Iowa State,-3.0,-0.3,-3.3,RED,Iowa State,19-20,W,True
+2024,2,Texas State,UTSA,-1.0,-7.1,-8.1,YEL,UTSA,49-10,L,
+2024,2,Ole Miss,Middle Tennessee,-43.0,27.9,-15.1,YEL,Middle Tennessee,52-3,L,
+2024,2,Virginia Tech,Marshall,-20.5,12.3,-8.2,YEL,Marshall,31-14,W,
+2024,2,Nevada,Georgia Southern,-1.0,-9.0,-10.0,YEL,Georgia Southern,17-20,W,
+2024,2,Alabama,South Florida,-31.0,37.3,6.3,YEL,Alabama,42-16,L,
+2024,2,UL Monroe,UAB,13.0,-6.2,6.8,YEL,UL Monroe,32-6,W,
+2024,2,Ohio State,Western Michigan,-37.5,43.5,6.0,YEL,Ohio State,56-0,W,
+2024,2,New Mexico State,Liberty,22.0,-6.9,15.1,YEL,New Mexico State,24-30,W,
+2024,2,San Diego State,Oregon State,6.0,-22.4,-16.4,YEL,Oregon State,0-21,W,
+2024,2,Arizona State,Mississippi State,-5.5,-5.9,-11.4,RED,Mississippi State,30-23,L,False
+2024,3,Michigan,Arkansas State,-22.5,39.1,16.6,YEL,Michigan,28-18,L,
+2024,3,Texas Tech,North Texas,-9.5,18.9,9.4,YEL,Texas Tech,66-21,W,
+2024,3,Florida State,Memphis,-7.0,19.6,12.6,YEL,Florida State,12-20,L,
+2024,3,Missouri,Boston College,-16.5,22.9,6.4,YEL,Missouri,27-21,L,
+2024,3,Washington,Washington State,-4.0,14.3,10.3,YEL,Washington,19-24,L,
+2024,3,Purdue,Notre Dame,11.5,-18.9,-7.4,YEL,Notre Dame,7-66,W,
+2024,3,Oregon State,Oregon,16.0,-8.5,7.5,YEL,Oregon State,14-49,L,
+2024,3,Miami,Ball State,-36.5,25.4,-11.1,YEL,Ball State,62-0,L,
+2024,3,Oklahoma,Tulane,-13.5,21.9,8.4,YEL,Oklahoma,34-19,W,
+2024,3,Iowa,Troy,-22.5,2.8,-19.7,YEL,Troy,38-21,W,
+2024,3,Arkansas,UAB,-24.0,15.6,-8.4,YEL,UAB,37-27,W,
+2024,3,Duke,UConn,-17.0,27.2,10.2,YEL,Duke,26-21,L,
+2024,3,Florida Atlantic,Florida International,-6.0,16.5,10.5,YEL,Florida Atlantic,38-20,W,
+2024,3,Wake Forest,Ole Miss,23.5,-14.4,9.1,YEL,Wake Forest,6-40,L,
+2024,3,Texas,UTSA,-34.5,24.6,-9.9,YEL,UTSA,56-7,L,
+2024,3,Georgia State,Vanderbilt,10.0,3.0,13.0,RED,Georgia State,36-32,W,True
+2024,3,Eastern Michigan,Jacksonville State,-2.0,-8.5,-10.5,YEL,Jacksonville State,37-34,L,
+2024,3,Southern Miss,South Florida,11.5,-1.8,9.7,YEL,Southern Miss,24-49,L,
+2024,3,Kentucky,Georgia,24.0,-14.9,9.1,YEL,Kentucky,12-13,W,
+2024,3,Mississippi State,Toledo,-13.0,2.8,-10.2,YEL,Toledo,17-41,W,
+2024,3,UCLA,Indiana,2.5,12.3,14.8,YEL,UCLA,13-42,L,
+2024,3,Baylor,Air Force,-15.5,-2.1,-17.6,RED,Air Force,31-3,L,False
+2024,3,Tennessee,Kent State,-47.5,40.6,-6.9,YEL,Kent State,71-0,L,
+2024,3,Virginia,Maryland,2.0,-10.9,-8.9,YEL,Maryland,13-27,W,
+2024,3,Wyoming,BYU,10.0,2.1,12.1,RED,Wyoming,14-34,L,False
+2024,3,Fresno State,New Mexico State,-20.0,4.6,-15.4,YEL,New Mexico State,48-0,L,
+2024,4,App State,South Alabama,-8.0,1.1,-6.9,YEL,South Alabama,14-48,W,
+2024,4,Nebraska,Illinois,-9.0,2.7,-6.3,YEL,Illinois,24-31,W,
+2024,4,Washington State,San José State,-13.0,5.5,-7.5,YEL,San José State,54-52,W,
+2024,4,Army,Rice,-7.5,-2.5,-10.0,RED,Rice,37-14,L,False
+2024,4,Clemson,NC State,-17.0,9.4,-7.6,YEL,NC State,59-35,L,
+2024,4,Indiana,Charlotte,-28.5,14.7,-13.8,YEL,Charlotte,52-14,L,
+2024,4,Kentucky,Ohio,-21.5,14.9,-6.6,YEL,Ohio,41-6,L,
+2024,4,Coastal Carolina,Virginia,3.5,5.0,8.5,RED,Coastal Carolina,24-43,L,False
+2024,4,Jacksonville State,Southern Miss,-6.0,13.0,7.0,YEL,Jacksonville State,44-7,W,
+2024,4,Auburn,Arkansas,-2.5,9.2,6.7,YEL,Auburn,14-24,L,
+2024,4,Texas Tech,Arizona State,-4.5,16.2,11.7,YEL,Texas Tech,30-22,W,
+2024,4,Michigan,USC,4.0,17.0,21.0,RED,Michigan,27-24,W,True
+2024,4,Missouri,Vanderbilt,-17.5,26.9,9.4,YEL,Missouri,30-27,L,
+2024,4,SMU,TCU,1.0,6.8,7.8,YEL,SMU,66-42,W,
+2024,4,Liberty,East Carolina,-7.5,14.0,6.5,YEL,Liberty,35-24,W,
+2024,4,UConn,Florida Atlantic,-1.0,-6.2,-7.2,YEL,Florida Atlantic,48-14,L,
+2024,4,Sam Houston,New Mexico State,-15.0,-6.0,-21.0,RED,New Mexico State,31-11,L,False
+2024,4,North Texas,Wyoming,-7.0,-5.4,-12.4,RED,Wyoming,44-17,L,False
+2024,4,Florida State,California,-3.0,18.3,15.3,YEL,Florida State,14-9,W,
+2024,4,Washington,Northwestern,-11.5,20.3,8.8,YEL,Washington,24-5,W,
+2024,4,Oklahoma,Tennessee,6.0,10.9,16.9,RED,Oklahoma,15-25,L,False
+2024,4,Ole Miss,Georgia Southern,-35.0,25.4,-9.6,YEL,Georgia Southern,52-13,L,
+2024,4,Oregon State,Purdue,-1.5,17.1,15.6,YEL,Oregon State,38-21,W,
+2024,4,BYU,Kansas State,7.5,-18.1,-10.6,YEL,Kansas State,38-9,L,
+2024,5,Miami,Virginia Tech,-17.5,9.6,-7.9,YEL,Virginia Tech,38-34,W,
+2024,5,Rutgers,Washington,-1.0,-12.5,-13.5,YEL,Washington,21-18,L,
+2024,5,Kansas State,Oklahoma State,-6.0,15.2,9.2,YEL,Kansas State,42-20,W,
+2024,5,Baylor,BYU,-3.0,-0.6,-3.6,RED,BYU,28-34,W,True
+2024,5,UAB,Navy,4.5,3.7,8.2,RED,UAB,18-41,L,False
+2024,5,Purdue,Nebraska,10.0,1.2,11.2,RED,Purdue,10-28,L,False
+2024,5,Indiana,Maryland,-7.5,-8.3,-15.8,RED,Maryland,42-28,L,False
+2024,5,NC State,Northern Illinois,-7.0,16.7,9.7,YEL,NC State,24-17,P,
+2024,5,Michigan,Minnesota,-10.5,30.7,20.2,YEL,Michigan,27-24,L,
+2024,5,Tulane,South Florida,-4.0,15.4,11.4,YEL,Tulane,45-10,W,
+2024,5,Ohio,Akron,-8.5,17.5,9.0,YEL,Ohio,30-10,W,
+2024,5,Kent State,Eastern Michigan,14.0,-6.8,7.2,YEL,Kent State,33-52,L,
+2024,5,Marshall,Western Michigan,-3.5,10.3,6.8,YEL,Marshall,27-20,W,
+2024,5,Texas A&M,Arkansas,-6.5,13.1,6.6,YEL,Texas A&M,21-17,L,
+2024,5,Auburn,Oklahoma,-2.0,-11.1,-13.1,YEL,Oklahoma,21-27,W,
+2024,5,East Carolina,UTSA,-2.0,-6.3,-8.3,YEL,UTSA,30-20,L,
+2024,5,Texas,Mississippi State,-37.0,24.8,-12.2,YEL,Mississippi State,35-13,W,
+2024,5,Rice,Charlotte,-4.0,13.6,9.6,YEL,Rice,20-21,L,
+2024,5,Troy,UL Monroe,-6.0,27.8,21.8,YEL,Troy,9-13,L,
+2024,5,Houston,Iowa State,16.0,-8.5,7.5,YEL,Houston,0-20,L,
+2024,5,Penn State,Illinois,-19.5,27.6,8.1,YEL,Penn State,21-7,L,
+2024,5,Memphis,Middle Tennessee,-27.0,15.4,-11.6,YEL,Middle Tennessee,24-7,W,
+2024,5,New Mexico State,New Mexico,9.5,11.4,20.9,RED,New Mexico State,40-50,L,False
+2024,5,SMU,Florida State,-6.0,-3.6,-9.6,RED,Florida State,42-16,L,False
+2024,5,Texas Tech,Cincinnati,-3.0,9.8,6.8,YEL,Texas Tech,44-41,P,
+2024,5,Wyoming,Air Force,4.0,0.6,4.6,RED,Wyoming,31-19,W,True
+2024,5,UCLA,Oregon,23.5,-15.5,8.0,YEL,UCLA,13-34,W,
+2024,6,Troy,Texas State,14.5,16.7,31.2,RED,Troy,17-38,L,False
+2024,6,UTEP,Sam Houston,10.0,1.9,11.9,RED,UTEP,21-41,L,False
+2024,6,UNLV,Syracuse,-5.5,-1.7,-7.2,RED,Syracuse,41-44,W,True
+2024,6,Oregon,Michigan State,-22.5,31.1,8.6,YEL,Oregon,31-10,L,
+2024,6,Air Force,Navy,10.0,14.2,24.2,RED,Air Force,7-34,L,False
+2024,6,NC State,Wake Forest,-4.0,11.0,7.0,YEL,NC State,30-34,L,
+2024,6,Tulsa,Army,13.5,-1.9,11.6,YEL,Tulsa,7-49,L,
+2024,6,Penn State,UCLA,-30.0,21.1,-8.9,YEL,UCLA,27-11,W,
+2024,6,Louisville,SMU,-6.5,0.0,-6.5,YEL,SMU,27-34,W,
+2024,6,North Carolina,Pittsburgh,2.5,13.1,15.6,YEL,North Carolina,24-34,L,
+2024,6,UAB,Tulane,19.5,-11.5,8.0,YEL,UAB,20-71,L,
+2024,6,Ball State,Western Michigan,10.0,4.3,14.3,RED,Ball State,42-45,W,False
+2024,6,Marshall,App State,-3.0,-2.6,-5.6,RED,App State,52-37,L,False
+2024,6,Ohio State,Iowa,-17.0,23.9,6.9,YEL,Ohio State,35-7,W,
+2024,6,Northwestern,Indiana,12.5,2.5,15.0,RED,Northwestern,24-41,L,False
+2024,6,UConn,Temple,-17.5,6.0,-11.5,YEL,Temple,29-20,W,
+2024,6,Nebraska,Rutgers,-7.0,0.6,-6.4,YEL,Rutgers,14-7,P,
+2024,6,Vanderbilt,Alabama,23.5,-31.5,-8.0,YEL,Alabama,40-35,L,
+2024,6,Oregon State,Colorado State,-10.0,28.3,18.3,YEL,Oregon State,39-31,L,
+2024,6,UL Monroe,James Madison,16.5,-23.6,-7.1,YEL,James Madison,21-19,L,
+2024,6,Florida State,Clemson,16.5,8.5,25.0,RED,Florida State,13-29,W,False
+2024,6,Boise State,Utah State,-28.0,15.3,-12.7,YEL,Utah State,62-30,L,
+2024,6,Southern Miss,Louisiana,17.5,-6.3,11.2,YEL,Southern Miss,13-23,W,
+2024,6,San José State,Nevada,-7.0,21.8,14.8,YEL,San José State,35-31,L,
+2024,6,Washington,Michigan,-1.5,-7.6,-9.1,YEL,Michigan,27-17,L,
+2024,6,Georgia Tech,Duke,-10.0,-3.2,-13.2,RED,Duke,24-14,P,False
+2024,6,Arizona State,Kansas,-2.5,-14.1,-16.6,YEL,Kansas,35-31,L,
+2024,7,Liberty,Florida International,-15.5,27.6,12.1,YEL,Liberty,31-24,L,
+2024,7,Jacksonville State,New Mexico State,-21.0,4.4,-16.6,YEL,New Mexico State,54-13,L,
+2024,7,Western Kentucky,UTEP,-19.0,12.0,-7.0,YEL,UTEP,44-17,L,
+2024,7,Louisiana Tech,Middle Tennessee,-5.0,-2.5,-7.5,RED,Middle Tennessee,48-21,L,False
+2024,7,Utah State,UNLV,19.0,-3.3,15.7,YEL,Utah State,34-50,W,
+2024,7,Arizona State,Utah,6.0,-15.8,-9.8,YEL,Utah,27-19,L,
+2024,7,Wake Forest,Clemson,21.0,-13.0,8.0,YEL,Wake Forest,14-49,L,
+2024,7,Army,UAB,-27.0,4.5,-22.5,YEL,UAB,44-10,L,
+2024,7,Kent State,Ball State,3.0,-9.7,-6.7,YEL,Ball State,35-37,L,
+2024,7,Iowa,Washington,-2.5,-9.0,-11.5,YEL,Washington,40-16,L,
+2024,7,North Carolina,Georgia Tech,3.5,9.7,13.2,RED,North Carolina,34-41,L,False
+2024,7,Eastern Michigan,Miami (OH),3.0,-10.9,-7.9,YEL,Miami (OH),14-38,W,
+2024,7,Colorado State,San José State,-2.5,-9.5,-12.0,YEL,San José State,31-24,L,
+2024,7,Pittsburgh,California,-3.5,-1.9,-5.4,RED,California,17-15,W,False
+2024,7,Virginia,Louisville,7.0,-14.1,-7.1,YEL,Louisville,20-24,L,
+2024,7,UCF,Cincinnati,-2.0,13.3,11.3,YEL,UCF,13-19,L,
+2024,7,USC,Penn State,3.5,-10.0,-6.5,YEL,Penn State,30-33,L,
+2024,7,Notre Dame,Stanford,-22.5,33.0,10.5,YEL,Notre Dame,49-7,W,
+2024,7,Wyoming,San Diego State,-1.5,11.1,9.6,YEL,Wyoming,24-27,L,
+2024,7,Oklahoma,Texas,17.0,-0.7,16.3,YEL,Oklahoma,3-34,L,
+2024,7,Illinois,Purdue,-22.5,3.7,-18.8,YEL,Purdue,50-49,W,
+2024,7,BYU,Arizona,-3.0,-10.7,-13.7,RED,Arizona,41-19,L,False
+2024,7,Georgia,Mississippi State,-34.0,26.4,-7.6,YEL,Mississippi State,41-31,W,
+2024,7,UL Monroe,Southern Miss,-4.5,-2.9,-7.4,RED,Southern Miss,38-21,L,False
+2024,7,Texas State,Arkansas State,-13.5,3.0,-10.5,YEL,Arkansas State,41-9,L,
+2024,7,Florida Atlantic,North Texas,5.5,5.4,10.9,RED,Florida Atlantic,37-41,W,False
+2024,7,New Mexico,Air Force,-7.0,-11.6,-18.6,RED,Air Force,52-37,L,False
+2024,7,Louisiana,App State,-10.0,-2.3,-12.3,RED,App State,34-24,P,False
+2024,7,Nevada,Oregon State,3.0,-30.6,-27.6,YEL,Oregon State,42-37,L,
+2024,7,LSU,Ole Miss,4.0,8.1,12.1,RED,LSU,29-26,W,True
+2024,7,Oregon,Ohio State,3.5,0.1,3.6,RED,Oregon,32-31,W,True
+2024,7,Kentucky,Vanderbilt,-12.5,18.9,6.4,YEL,Kentucky,13-20,L,
+2024,7,NC State,Syracuse,1.0,7.0,8.0,YEL,NC State,17-24,L,
+2024,7,UCLA,Minnesota,3.5,10.1,13.6,RED,UCLA,17-21,L,False
+2024,7,Colorado,Kansas State,3.5,-18.4,-14.9,YEL,Kansas State,28-31,L,
+2024,8,South Alabama,Troy,-10.0,-2.5,-12.5,RED,Troy,25-9,L,False
+2024,8,New Mexico State,Louisiana Tech,12.5,12.1,24.6,RED,New Mexico State,33-30,W,True
+2024,8,Sam Houston,Western Kentucky,-1.5,-6.4,-7.9,YEL,Western Kentucky,14-31,W,
+2024,8,UTEP,Florida International,7.0,9.1,16.1,RED,UTEP,30-21,W,True
+2024,8,Duke,Florida State,-2.5,-8.6,-11.1,YEL,Florida State,23-16,L,
+2024,8,Purdue,Oregon,30.0,-23.2,6.8,YEL,Purdue,0-35,L,
+2024,8,BYU,Oklahoma State,-8.5,-5.4,-13.9,RED,Oklahoma State,38-35,W,False
+2024,8,Nevada,Fresno State,3.0,-13.1,-10.1,YEL,Fresno State,21-24,P,
+2024,8,Rutgers,UCLA,-4.0,-2.0,-6.0,RED,UCLA,32-35,W,True
+2024,8,Army,East Carolina,-17.5,1.3,-16.2,YEL,East Carolina,45-28,W,
+2024,8,UConn,Wake Forest,2.5,-11.8,-9.3,YEL,Wake Forest,20-23,W,
+2024,8,Louisville,Miami,4.5,2.7,7.2,RED,Louisville,45-52,L,False
+2024,8,Coastal Carolina,Louisiana,6.0,5.1,11.1,RED,Coastal Carolina,24-34,L,False
+2024,8,Indiana,Nebraska,-6.5,-1.0,-7.5,RED,Nebraska,56-7,L,False
+2024,8,Oklahoma,South Carolina,1.0,18.9,19.9,YEL,Oklahoma,9-35,L,
+2024,8,Temple,Tulsa,-3.5,-3.5,-7.0,RED,Tulsa,20-10,L,False
+2024,8,Northern Illinois,Toledo,-3.0,-5.3,-8.3,RED,Toledo,6-13,W,True
+2024,8,California,NC State,-9.5,-0.4,-9.9,RED,NC State,23-24,W,True
+2024,8,South Florida,UAB,-14.0,3.6,-10.4,YEL,UAB,35-25,W,
+2024,8,Illinois,Michigan,6.0,-24.6,-18.6,YEL,Michigan,21-7,L,
+2024,8,Tulane,Rice,-21.5,9.5,-12.0,YEL,Rice,24-10,W,
+2024,8,Navy,Charlotte,-16.5,5.4,-11.1,YEL,Charlotte,51-17,L,
+2024,8,UTSA,Florida Atlantic,-4.0,10.8,6.8,YEL,UTSA,38-24,W,
+2024,8,Old Dominion,Texas State,10.5,1.4,11.9,RED,Old Dominion,24-14,W,True
+2024,8,Kansas,Houston,-4.5,11.2,6.7,YEL,Kansas,42-14,W,
+2024,8,Texas Tech,Baylor,-4.5,13.7,9.2,YEL,Texas Tech,35-59,L,
+2024,8,San José State,Wyoming,-13.0,5.0,-8.0,YEL,Wyoming,24-14,W,
+2024,8,Arizona,Colorado,-2.5,16.0,13.5,YEL,Arizona,7-34,L,
+2024,8,Utah State,New Mexico,1.0,9.3,10.3,YEL,Utah State,45-50,L,
+2024,8,Mississippi State,Texas A&M,21.0,-12.0,9.0,YEL,Mississippi State,24-34,W,
+2024,8,Vanderbilt,Ball State,-27.5,5.1,-22.4,YEL,Ball State,24-14,W,
+2024,8,Arkansas,LSU,3.0,-16.1,-13.1,YEL,LSU,10-34,W,
+2024,8,West Virginia,Kansas State,2.5,-10.4,-7.9,YEL,Kansas State,18-45,W,
+2024,8,Iowa State,UCF,-13.0,1.6,-11.4,YEL,UCF,38-35,W,
+2024,8,Air Force,Colorado State,6.0,13.9,19.9,RED,Air Force,13-21,L,False
+2024,8,Oregon State,UNLV,6.5,18.3,24.8,RED,Oregon State,25-33,L,False
+2024,9,Jacksonville State,Middle Tennessee,-20.5,8.9,-11.6,YEL,Middle Tennessee,42-20,L,
+2024,9,Pittsburgh,Syracuse,-5.0,-0.3,-5.3,RED,Syracuse,41-13,L,False
+2024,9,Boston College,Louisville,7.0,-14.0,-7.0,YEL,Louisville,27-31,L,
+2024,9,Navy,Notre Dame,11.5,-32.9,-21.4,YEL,Notre Dame,14-51,W,
+2024,9,Virginia Tech,Georgia Tech,-11.0,3.6,-7.4,YEL,Georgia Tech,21-6,L,
+2024,9,Ohio,Buffalo,-4.0,11.1,7.1,YEL,Ohio,47-16,W,
+2024,9,Ole Miss,Oklahoma,-19.0,-4.7,-23.7,RED,Oklahoma,26-14,W,False
+2024,9,Indiana,Washington,-5.5,-17.8,-23.3,RED,Washington,31-17,L,False
+2024,9,Virginia,North Carolina,-3.5,-13.0,-16.5,RED,North Carolina,14-41,W,True
+2024,9,Mississippi State,Arkansas,7.5,1.1,8.6,RED,Mississippi State,25-58,L,False
+2024,9,UConn,Rice,-6.5,-9.4,-15.9,RED,Rice,17-10,L,False
+2024,9,Iowa,Northwestern,-16.5,8.9,-7.6,YEL,Northwestern,40-14,L,
+2024,9,Western Michigan,Kent State,-19.0,12.9,-6.1,YEL,Kent State,52-21,L,
+2024,9,Ball State,Northern Illinois,13.5,-2.0,11.5,YEL,Ball State,25-23,W,
+2024,9,Toledo,Bowling Green,-2.0,8.6,6.6,YEL,Toledo,26-41,L,
+2024,9,Minnesota,Maryland,-6.0,-6.1,-12.1,RED,Maryland,48-23,L,False
+2024,9,UCF,BYU,-2.5,14.0,11.5,YEL,UCF,24-37,L,
+2024,9,Baylor,Oklahoma State,-7.0,-8.6,-15.6,RED,Oklahoma State,38-28,L,False
+2024,9,California,Oregon State,-13.0,-7.4,-20.4,RED,Oregon State,44-7,L,False
+2024,9,Vanderbilt,Texas,17.0,-29.8,-12.8,YEL,Texas,24-27,L,
+2024,9,South Alabama,UL Monroe,-7.0,22.9,15.9,YEL,South Alabama,46-17,W,
+2024,9,Wyoming,Utah State,2.0,7.9,9.9,YEL,Wyoming,25-27,P,
+2024,9,Arkansas State,Troy,-8.5,-12.2,-20.7,RED,Troy,34-31,W,False
+2024,9,Miami,Florida State,-22.5,-6.2,-28.7,RED,Florida State,36-14,W,False
+2024,9,Michigan,Michigan State,-3.5,33.6,30.1,YEL,Michigan,24-17,W,
+2024,9,Wisconsin,Penn State,6.5,-17.1,-10.6,YEL,Penn State,13-28,W,
+2024,9,Duke,SMU,11.5,-2.6,8.9,YEL,Duke,27-28,W,
+2024,9,Fresno State,San José State,-6.5,-1.2,-7.7,RED,San José State,33-10,L,False
+2024,10,Florida International,New Mexico State,-7.0,-15.7,-22.7,RED,New Mexico State,34-13,L,False
+2024,10,Texas State,Louisiana,-4.0,-0.6,-4.6,RED,Louisiana,17-23,W,True
+2024,10,Sam Houston,Louisiana Tech,-10.5,3.6,-6.9,YEL,Louisiana Tech,9-3,W,
+2024,10,Liberty,Jacksonville State,-2.5,10.0,7.5,YEL,Liberty,21-31,L,
+2024,10,UConn,Georgia State,-7.0,-4.8,-11.8,RED,Georgia State,34-27,P,False
+2024,10,Florida Atlantic,South Florida,1.5,5.1,6.6,YEL,Florida Atlantic,21-44,L,
+2024,10,Army,Air Force,-18.0,-6.1,-24.1,RED,Air Force,20-3,W,False
+2024,10,Miami,Duke,-21.0,4.9,-16.1,YEL,Duke,53-31,L,
+2024,10,UTSA,Memphis,7.0,0.8,7.8,RED,UTSA,44-36,W,True
+2024,10,NC State,Stanford,-10.0,19.2,9.2,YEL,NC State,59-28,W,
+2024,10,Illinois,Minnesota,2.5,3.6,6.1,YEL,Illinois,17-25,L,
+2024,10,Penn State,Ohio State,3.0,0.6,3.6,RED,Penn State,13-20,L,False
+2024,10,Syracuse,Virginia Tech,3.5,0.8,4.3,RED,Syracuse,38-31,W,True
+2024,10,Auburn,Vanderbilt,-7.5,20.5,13.0,YEL,Auburn,7-17,L,
+2024,10,App State,Old Dominion,2.5,11.4,13.9,YEL,App State,28-20,W,
+2024,10,Nebraska,UCLA,-7.5,-3.9,-11.4,RED,UCLA,20-27,W,True
+2024,10,Michigan,Oregon,14.5,5.1,19.6,RED,Michigan,17-38,L,False
+2024,10,Michigan State,Indiana,7.5,1.7,9.2,RED,Michigan State,10-47,L,False
+2024,10,Florida State,North Carolina,2.5,12.2,14.7,YEL,Florida State,11-35,L,
+2024,10,Oklahoma State,Arizona State,5.0,16.1,21.1,RED,Oklahoma State,21-42,L,False
+2024,10,Iowa State,Texas Tech,-13.5,5.1,-8.4,YEL,Texas Tech,22-23,W,
+2024,10,New Mexico,Wyoming,-7.5,-9.7,-17.2,RED,Wyoming,45-49,W,True
+2024,10,Troy,Coastal Carolina,4.0,11.0,15.0,RED,Troy,38-24,W,True
+2024,10,Rice,Navy,12.5,10.7,23.2,RED,Rice,24-10,W,True
+2024,10,Washington,USC,2.0,7.0,9.0,YEL,Washington,26-21,W,
+2024,10,Tennessee,Kentucky,-17.5,9.3,-8.2,YEL,Kentucky,28-18,W,
+2024,10,Baylor,TCU,-2.5,-11.9,-14.4,YEL,TCU,37-34,L,
+2024,10,SMU,Pittsburgh,-7.0,16.7,9.7,YEL,SMU,48-25,W,
+2024,11,Central Michigan,Bowling Green,15.5,-5.0,10.5,YEL,Central Michigan,13-23,W,
+2024,11,UCLA,Iowa,6.5,3.5,10.0,RED,UCLA,20-17,W,True
+2024,11,Rutgers,Minnesota,6.5,5.6,12.1,RED,Rutgers,26-19,W,True
+2024,11,South Florida,Navy,4.5,4.7,9.2,RED,South Florida,7-28,L,False
+2024,11,Boston College,Syracuse,-3.0,-5.0,-8.0,RED,Syracuse,37-31,L,False
+2024,11,Cincinnati,West Virginia,-5.5,-4.5,-10.0,RED,West Virginia,24-31,W,True
+2024,11,Ohio State,Purdue,-37.5,30.6,-6.9,YEL,Purdue,45-0,L,
+2024,11,UAB,UConn,7.5,7.5,15.0,RED,UAB,23-31,L,False
+2024,11,Southern Miss,Marshall,13.5,-6.0,7.5,YEL,Southern Miss,3-37,L,
+2024,11,Oregon State,San José State,-3.0,16.3,13.3,YEL,Oregon State,13-24,L,
+2024,11,North Texas,Army,6.5,1.3,7.8,RED,North Texas,3-14,L,False
+2024,11,Indiana,Michigan,-14.5,-27.9,-42.4,RED,Michigan,20-15,W,False
+2024,11,Texas Tech,Colorado,4.5,10.8,15.3,RED,Texas Tech,27-41,L,False
+2024,11,Vanderbilt,South Carolina,6.0,-12.7,-6.7,YEL,South Carolina,7-28,W,
+2024,11,Louisiana,Arkansas State,-14.0,6.1,-7.9,YEL,Arkansas State,55-19,L,
+2024,11,New Mexico State,Western Kentucky,18.0,2.1,20.1,RED,New Mexico State,28-41,W,False
+2024,11,Arizona State,UCF,-2.5,-14.7,-17.2,YEL,UCF,35-31,L,
+2024,11,Tennessee,Mississippi State,-26.0,15.7,-10.3,YEL,Mississippi State,33-14,W,
+2024,11,Notre Dame,Florida State,-25.5,3.4,-22.1,YEL,Florida State,52-3,L,
+2024,11,Air Force,Fresno State,10.0,5.6,15.6,RED,Air Force,36-28,W,True
+2024,11,Utah,BYU,3.0,15.1,18.1,RED,Utah,21-22,W,False
+2024,11,Washington State,Utah State,-20.0,13.4,-6.6,YEL,Utah State,49-28,L,
+2024,12,Tulsa,East Carolina,16.0,-3.1,12.9,YEL,Tulsa,31-38,W,
+2024,12,UTSA,North Texas,-1.0,13.8,12.8,YEL,UTSA,48-27,W,
+2024,12,Colorado State,Wyoming,-8.5,-7.0,-15.5,RED,Wyoming,24-10,L,False
+2024,12,Washington,UCLA,-4.5,13.0,8.5,YEL,Washington,31-19,W,
+2024,12,Arizona,Houston,-1.0,16.1,15.1,YEL,Arizona,27-3,W,
+2024,12,Colorado,Utah,-13.5,-10.4,-23.9,RED,Utah,49-24,L,False
+2024,12,Auburn,UL Monroe,-24.5,31.0,6.5,YEL,Auburn,48-14,W,
+2024,12,Marshall,Coastal Carolina,-7.5,-0.4,-7.9,RED,Coastal Carolina,31-19,L,False
+2024,12,Jacksonville State,Florida International,-12.5,20.1,7.6,YEL,Jacksonville State,34-31,L,
+2024,12,Temple,Florida Atlantic,-2.0,-9.6,-11.6,YEL,Florida Atlantic,18-15,L,
+2024,12,Utah State,Hawai'i,2.5,9.8,12.3,YEL,Utah State,55-10,W,
+2024,12,California,Syracuse,-10.5,4.2,-6.3,YEL,Syracuse,25-33,W,
+2024,12,Air Force,Oregon State,3.0,-11.8,-8.8,YEL,Oregon State,28-0,L,
+2024,12,Notre Dame,Virginia,-20.5,28.6,8.1,YEL,Notre Dame,35-14,W,
+2024,12,Florida,LSU,3.0,-12.0,-9.0,YEL,LSU,27-16,L,
+2024,12,Purdue,Penn State,30.0,-23.8,6.2,YEL,Purdue,10-49,L,
+2024,12,West Virginia,Baylor,2.0,13.4,15.4,YEL,West Virginia,35-49,L,
+2024,12,Georgia Southern,Troy,-7.0,-10.8,-17.8,RED,Troy,20-28,W,True
+2024,12,USC,Nebraska,-6.5,14.9,8.4,YEL,USC,28-20,W,
+2024,12,Old Dominion,James Madison,1.5,-13.5,-12.0,YEL,James Madison,32-35,W,
+2024,12,South Carolina,Missouri,-10.5,-6.7,-17.2,RED,Missouri,34-30,W,False
+2024,12,Kansas State,Arizona State,-7.5,28.8,21.3,YEL,Kansas State,14-24,L,
+2024,12,San José State,Boise State,14.5,-2.5,12.0,YEL,San José State,21-42,L,
+2024,12,Louisiana,South Alabama,-6.5,-3.7,-10.2,RED,South Alabama,22-24,W,True
+2024,12,Texas State,Southern Miss,-27.5,8.2,-19.3,YEL,Southern Miss,58-3,L,
+2024,12,Texas A&M,New Mexico State,-38.5,23.4,-15.1,YEL,New Mexico State,38-3,W,
+2024,12,BYU,Kansas,-3.0,-8.4,-11.4,RED,Kansas,13-17,W,True
+2024,12,UNLV,San Diego State,-22.0,11.6,-10.4,YEL,San Diego State,41-20,W,
+2024,13,Kent State,Akron,10.5,-1.4,9.1,YEL,Kent State,17-38,L,
+2024,13,Central Michigan,Western Michigan,6.0,3.0,9.0,RED,Central Michigan,16-14,W,True
+2024,13,Miami (OH),Northern Illinois,-1.5,8.5,7.0,YEL,Miami (OH),20-9,W,
+2024,13,Toledo,Ohio,-1.5,8.1,6.6,YEL,Toledo,7-24,L,
+2024,13,Georgia Tech,NC State,-7.5,-1.4,-8.9,RED,NC State,30-29,W,False
+2024,13,UTSA,Temple,-16.5,23.0,6.5,YEL,UTSA,51-27,W,
+2024,13,Michigan State,Purdue,-14.0,-0.4,-14.4,RED,Purdue,24-17,W,False
+2024,13,San José State,UNLV,7.5,4.6,12.1,RED,San José State,16-27,L,False
+2024,13,Jacksonville State,Sam Houston,-5.5,12.9,7.4,YEL,Jacksonville State,21-11,W,
+2024,13,Syracuse,UConn,-10.0,20.8,10.8,YEL,Syracuse,31-24,L,
+2024,13,Florida,Ole Miss,13.0,-6.5,6.5,YEL,Florida,24-17,W,
+2024,13,Maryland,Iowa,4.0,4.5,8.5,RED,Maryland,13-29,L,False
+2024,13,Ohio State,Indiana,-10.5,32.7,22.2,YEL,Ohio State,38-15,W,
+2024,13,Miami,Wake Forest,-23.5,15.2,-8.3,YEL,Wake Forest,42-14,L,
+2024,13,Boston College,North Carolina,2.0,-12.8,-10.8,YEL,North Carolina,41-21,L,
+2024,13,Liberty,Western Kentucky,-1.0,11.5,10.5,YEL,Liberty,38-21,W,
+2024,13,Tennessee,UTEP,-41.5,31.3,-10.2,YEL,UTEP,56-0,L,
+2024,13,Ball State,Bowling Green,12.5,-3.7,8.8,YEL,Ball State,13-38,L,
+2024,13,Middle Tennessee,New Mexico State,-3.5,-2.0,-5.5,RED,New Mexico State,21-36,W,True
+2024,13,Arkansas State,UL Monroe,-3.0,13.1,10.1,YEL,Arkansas State,28-21,W,
+2024,13,Southern Miss,South Alabama,24.0,-12.5,11.5,YEL,Southern Miss,14-35,W,
+2024,13,Florida Atlantic,Charlotte,3.0,10.3,13.3,RED,Florida Atlantic,27-39,L,False
+2024,13,TCU,Arizona,-10.5,0.6,-9.9,YEL,Arizona,49-28,L,
+2024,13,South Florida,Tulsa,-17.5,6.0,-11.5,YEL,Tulsa,63-30,L,
+2024,13,Michigan,Northwestern,-10.5,30.4,19.9,YEL,Michigan,50-6,W,
+2024,13,Arizona State,BYU,-3.5,-3.2,-6.7,RED,BYU,28-23,L,False
+2024,13,Kansas,Colorado,1.5,11.2,12.7,YEL,Kansas,37-21,W,
+2024,13,Oklahoma State,Texas Tech,5.0,2.4,7.4,RED,Oklahoma State,48-56,L,False
+2024,13,Minnesota,Penn State,11.0,-23.7,-12.7,YEL,Penn State,25-26,L,
+2024,13,Louisville,Pittsburgh,-7.0,14.2,7.2,YEL,Louisville,37-9,W,
+2024,13,Louisiana,Troy,-7.5,-8.6,-16.1,RED,Troy,51-30,L,False
+2024,13,Houston,Baylor,7.0,5.3,12.3,RED,Houston,10-20,L,False
+2024,13,Oregon State,Washington State,11.0,13.3,24.3,RED,Oregon State,41-38,W,True
+2024,13,Notre Dame,Army,-14.5,29.7,15.2,YEL,Notre Dame,49-14,W,
+2024,13,Wyoming,Boise State,22.0,-4.9,17.1,YEL,Wyoming,13-17,W,
+2024,13,Texas State,Georgia State,-23.0,2.7,-20.3,YEL,Georgia State,44-52,W,
+2024,13,Utah,Iowa State,6.5,4.4,10.9,RED,Utah,28-31,W,False
+2024,13,Oklahoma,Alabama,14.0,0.1,14.1,RED,Oklahoma,24-3,W,True
+2024,13,Old Dominion,Marshall,-3.0,-1.3,-4.3,RED,Marshall,35-42,W,True
+2024,13,LSU,Vanderbilt,-10.0,32.5,22.5,YEL,LSU,24-17,L,
+2024,13,Kansas State,Cincinnati,-7.5,22.4,14.9,YEL,Kansas State,41-15,W,
+2024,13,Duke,Virginia Tech,2.5,7.2,9.7,YEL,Duke,31-28,W,
+2024,13,Nevada,Air Force,-3.0,-16.2,-19.2,RED,Air Force,19-22,W,True
+2024,13,Fresno State,Colorado State,-3.5,10.8,7.3,YEL,Fresno State,28-22,W,
+2024,14,Buffalo,Kent State,-23.5,12.9,-10.6,YEL,Kent State,43-7,L,
+2024,14,Akron,Toledo,9.0,-18.1,-9.1,YEL,Toledo,21-14,L,
+2024,14,Tulane,Memphis,-12.5,2.8,-9.7,YEL,Memphis,24-34,W,
+2024,14,Bowling Green,Miami (OH),-3.0,-1.8,-4.8,RED,Miami (OH),12-28,W,True
+2024,14,Colorado,Oklahoma State,-15.0,-5.7,-20.7,RED,Oklahoma State,52-0,L,False
+2024,14,Ohio,Ball State,-18.0,9.2,-8.8,YEL,Ball State,42-21,L,
+2024,14,Wisconsin,Minnesota,2.0,9.1,11.1,YEL,Wisconsin,7-24,L,
+2024,14,Boise State,Oregon State,-17.5,-6.3,-23.8,RED,Oregon State,34-18,W,False
+2024,14,Colorado State,Utah State,-5.0,-1.6,-6.6,RED,Utah State,42-37,P,False
+2024,14,Ole Miss,Mississippi State,-26.0,16.9,-9.1,YEL,Mississippi State,26-14,W,
+2024,14,Sam Houston,Liberty,2.5,-15.4,-12.9,YEL,Liberty,20-18,L,
+2024,14,South Alabama,Texas State,2.5,11.7,14.2,YEL,South Alabama,38-45,L,
+2024,14,San José State,Stanford,-2.5,12.5,10.0,YEL,San José State,34-31,W,
+2024,14,Georgia,Georgia Tech,-17.0,24.2,7.2,YEL,Georgia,44-42,L,
+2024,14,UCF,Utah,-10.0,1.5,-8.5,YEL,Utah,14-28,W,
+2024,14,Baylor,Kansas,1.5,-11.5,-10.0,YEL,Kansas,45-17,L,
+2024,14,Clemson,South Carolina,-3.0,10.3,7.3,YEL,Clemson,14-17,L,
+2024,14,Vanderbilt,Tennessee,9.5,-20.7,-11.2,YEL,Tennessee,23-36,W,
+2024,14,Massachusetts,UConn,8.0,0.5,8.5,RED,Massachusetts,42-47,W,False
+2024,14,Ohio State,Michigan,-19.5,2.4,-17.1,YEL,Michigan,10-13,W,
+2024,14,Army,UTSA,-6.0,-7.6,-13.6,RED,UTSA,29-24,W,False
+2024,14,Northwestern,Illinois,9.0,-0.8,8.2,YEL,Northwestern,28-38,L,
+2024,14,Florida International,Middle Tennessee,-10.0,-11.1,-21.1,RED,Middle Tennessee,35-24,L,False
+2024,14,Rice,South Florida,5.5,8.4,13.9,RED,Rice,35-28,W,True
+2024,14,Boston College,Pittsburgh,-3.5,-2.2,-5.7,RED,Pittsburgh,34-23,L,False
+2024,14,Arkansas State,Old Dominion,5.5,3.1,8.6,RED,Arkansas State,32-40,L,False
+2024,14,Missouri,Arkansas,-3.0,15.6,12.6,YEL,Missouri,28-21,W,
+2024,14,Alabama,Auburn,-11.0,18.5,7.5,YEL,Alabama,28-14,W,
+2024,14,Arizona,Arizona State,7.5,21.5,29.0,RED,Arizona,7-49,L,False
+2024,14,New Mexico State,UTEP,-3.5,11.6,8.1,YEL,New Mexico State,35-42,L,
+2024,14,Georgia Southern,App State,-2.5,-4.5,-7.0,YEL,App State,29-20,L,
+2024,14,Washington State,Wyoming,-18.5,8.0,-10.5,YEL,Wyoming,14-15,W,
+2024,14,Indiana,Purdue,-28.5,0.4,-28.1,YEL,Purdue,66-0,L,
+2024,14,Florida State,Florida,17.0,16.1,33.1,RED,Florida State,11-31,L,False
+2024,14,Oregon,Washington,-17.0,10.0,-7.0,YEL,Washington,49-21,L,
+2024,14,Iowa State,Kansas State,-2.0,-7.4,-9.4,YEL,Kansas State,29-21,L,
+2024,14,Virginia Tech,Virginia,-4.5,11.9,7.4,YEL,Virginia Tech,37-17,W,
+2024,14,James Madison,Marshall,-4.0,14.7,10.7,YEL,James Madison,33-35,L,
+2024,14,BYU,Houston,-12.5,2.8,-9.7,YEL,Houston,30-18,W,
+2024,14,Hawai'i,New Mexico,6.5,2.1,8.6,RED,Hawai'i,38-30,W,True
+2024,15,Arizona State,Iowa State,1.5,-16.4,-14.9,YEL,Iowa State,45-19,L,
+2024,15,Texas,Georgia,-3.0,-1.6,-4.6,RED,Georgia,19-22,W,True
+2024,15,Oregon,Penn State,-3.5,-0.6,-4.1,RED,Penn State,45-37,L,False
+2025,1,Western Kentucky,Sam Houston,-9.5,1.8,-7.7,YEL,Sam Houston,41-24,L,
+2025,1,UCF,Jacksonville State,-16.5,8.7,-7.8,YEL,Jacksonville State,17-10,W,
+2025,1,Akron,Wyoming,8.5,-2.1,6.4,YEL,Akron,0-10,L,
+2025,1,Wisconsin,Miami (OH),-17.5,10.6,-6.9,YEL,Miami (OH),17-0,W,
+2025,1,Michigan State,Western Michigan,-18.5,9.6,-8.9,YEL,Western Michigan,23-6,W,
+2025,1,Colorado,Georgia Tech,4.0,7.8,11.8,RED,Colorado,20-27,L,False
+2025,1,Purdue,Ball State,-16.5,6.7,-9.8,YEL,Ball State,31-0,L,
+2025,1,Tulane,Northwestern,-6.5,18.1,11.6,YEL,Tulane,23-3,W,
+2025,1,Southern Miss,Mississippi State,11.5,-19.4,-7.9,YEL,Mississippi State,17-34,W,
+2025,1,Penn State,Nevada,-45.5,31.0,-14.5,YEL,Nevada,46-11,W,
+2025,1,Massachusetts,Temple,3.0,3.9,6.9,RED,Massachusetts,10-42,L,False
+2025,1,Georgia,Marshall,-39.5,21.8,-17.7,YEL,Marshall,45-7,W,
+2025,1,Florida State,Alabama,13.5,-25.3,-11.8,YEL,Alabama,31-17,L,
+2025,1,Michigan,New Mexico,-36.5,21.9,-14.6,YEL,New Mexico,34-17,W,
+2025,1,Utah State,UTEP,-3.5,11.1,7.6,YEL,Utah State,28-16,W,
+2025,1,Oregon State,California,-3.0,-8.7,-11.7,RED,California,15-34,W,True
+2025,1,UCLA,Utah,6.5,0.3,6.8,RED,UCLA,10-43,L,False
+2025,2,Maryland,Northern Illinois,-17.0,6.2,-10.8,YEL,Northern Illinois,20-9,W,
+2025,2,Indiana,Kennesaw State,-35.5,42.9,7.4,YEL,Indiana,56-9,W,
+2025,2,Texas Tech,Kent State,-48.5,39.9,-8.6,YEL,Kent State,62-14,W,
+2025,2,Jacksonville State,Liberty,6.0,8.5,14.5,RED,Jacksonville State,34-24,W,True
+2025,2,SMU,Baylor,-3.0,9.8,6.8,YEL,SMU,45-48,L,
+2025,2,Penn State,Florida International,-42.0,34.5,-7.5,YEL,Florida International,34-0,W,
+2025,2,Texas A&M,Utah State,-34.5,27.6,-6.9,YEL,Utah State,44-22,W,
+2025,2,Cincinnati,Bowling Green,-22.5,9.1,-13.4,YEL,Bowling Green,34-20,W,
+2025,2,UTSA,Texas State,-4.5,-5.3,-9.8,RED,Texas State,36-43,W,True
+2025,2,Western Michigan,North Texas,12.0,-1.2,10.8,YEL,Western Michigan,30-33,W,
+2025,2,Clemson,Troy,-31.0,24.5,-6.5,YEL,Troy,27-16,W,
+2025,2,Rice,Houston,13.5,-2.6,10.9,YEL,Rice,9-35,L,
+2025,2,Kansas State,Army,-17.0,8.3,-8.7,YEL,Army,21-24,W,
+2025,2,Auburn,Ball State,-43.0,30.2,-12.8,YEL,Ball State,42-3,W,
+2025,2,LSU,Louisiana Tech,-36.5,26.7,-9.8,YEL,Louisiana Tech,23-7,W,
+2025,2,Nebraska,Akron,-34.0,24.6,-9.4,YEL,Akron,68-0,L,
+2025,2,Michigan State,Boston College,-3.5,-6.2,-9.7,RED,Boston College,42-40,W,False
+2025,2,USC,Georgia Southern,-29.0,18.1,-10.9,YEL,Georgia Southern,59-20,L,
+2025,2,UNLV,UCLA,2.5,5.7,8.2,YEL,UNLV,30-23,W,
+2025,2,New Mexico State,Tulsa,3.0,4.8,7.8,RED,New Mexico State,21-14,W,True
+2025,2,Washington State,San Diego State,-2.0,17.8,15.8,YEL,Washington State,36-13,W,
+2025,2,Hawai'i,Sam Houston,-7.0,-2.3,-9.3,RED,Sam Houston,37-20,L,False
+2025,3,Houston,Colorado,-4.0,-13.6,-17.6,RED,Colorado,36-20,L,False
+2025,3,Arizona,Kansas State,1.5,-12.0,-10.5,YEL,Kansas State,23-17,L,
+2025,3,Auburn,South Alabama,-26.5,11.9,-14.6,YEL,South Alabama,31-15,W,
+2025,3,Missouri,Louisiana,-27.5,14.8,-12.7,YEL,Louisiana,52-10,L,
+2025,3,Tennessee,Georgia,3.5,1.2,4.7,RED,Tennessee,41-44,W,False
+2025,3,West Virginia,Pittsburgh,7.0,0.3,7.3,RED,West Virginia,31-24,W,True
+2025,3,Texas Tech,Oregon State,-24.5,15.6,-8.9,YEL,Oregon State,45-14,L,
+2025,3,North Texas,Washington State,-6.5,-6.5,-13.0,RED,Washington State,59-10,L,False
+2025,3,Texas,UTEP,-39.5,48.0,8.5,YEL,Texas,27-10,L,
+2025,3,Bowling Green,Liberty,6.0,6.3,12.3,RED,Bowling Green,23-13,W,True
+2025,3,Southern Miss,App State,3.0,-12.4,-9.4,YEL,App State,38-22,L,
+2025,3,Illinois,Western Michigan,-27.5,18.7,-8.8,YEL,Western Michigan,38-0,L,
+2025,3,Ole Miss,Arkansas,-3.5,14.9,11.4,YEL,Ole Miss,41-35,W,
+2025,3,Virginia Tech,Old Dominion,-5.5,13.7,8.2,YEL,Virginia Tech,26-45,L,
+2025,3,Notre Dame,Texas A&M,-6.5,13.5,7.0,YEL,Notre Dame,40-41,L,
+2025,3,Coastal Carolina,East Carolina,7.0,2.4,9.4,RED,Coastal Carolina,0-38,L,False
+2025,3,South Carolina,Vanderbilt,-3.0,10.9,7.9,YEL,South Carolina,7-31,L,
+2025,3,Tulsa,Navy,14.0,-20.3,-6.3,YEL,Navy,23-42,W,
+2025,3,Wyoming,Utah,24.5,-13.8,10.7,YEL,Wyoming,6-31,L,
+2025,3,Tulane,Duke,-1.5,9.4,7.9,YEL,Tulane,34-27,W,
+2025,3,UAB,Akron,-12.5,5.7,-6.8,YEL,Akron,31-28,W,
+2025,3,Utah State,Air Force,4.0,1.2,5.2,RED,Utah State,49-30,W,True
+2025,3,Stanford,Boston College,14.0,-7.6,6.4,YEL,Stanford,30-20,W,
+2025,3,Arizona State,Texas State,-18.5,12.0,-6.5,YEL,Texas State,34-15,L,
+2025,4,Oklahoma State,Tulsa,-10.0,25.4,15.4,YEL,Oklahoma State,12-19,L,
+2025,4,Army,North Texas,2.5,15.1,17.6,YEL,Army,38-45,L,
+2025,4,TCU,SMU,-6.5,-5.9,-12.4,RED,SMU,35-24,L,False
+2025,4,Western Michigan,Toledo,13.5,-3.1,10.4,YEL,Western Michigan,14-13,W,
+2025,4,Eastern Michigan,Louisiana,2.5,-10.8,-8.3,YEL,Louisiana,34-31,L,
+2025,4,Notre Dame,Purdue,-24.5,41.6,17.1,YEL,Notre Dame,56-30,W,
+2025,4,Buffalo,Troy,-5.5,-0.6,-6.1,RED,Troy,17-21,W,True
+2025,4,Florida State,Kent State,-44.5,29.8,-14.7,YEL,Kent State,66-10,L,
+2025,4,Mississippi State,Northern Illinois,-23.5,6.9,-16.6,YEL,Northern Illinois,38-10,L,
+2025,4,Air Force,Boise State,10.5,-17.9,-7.4,YEL,Boise State,37-49,W,
+2025,4,Missouri,South Carolina,-10.0,-0.1,-10.1,RED,South Carolina,29-20,W,False
+2025,4,Middle Tennessee,Marshall,2.5,-19.7,-17.2,YEL,Marshall,28-42,W,
+2025,4,Washington State,Washington,21.0,-0.9,20.1,YEL,Washington State,24-59,L,
+2025,4,Indiana,Illinois,-7.0,16.0,9.0,YEL,Indiana,63-10,W,
+2025,4,Vanderbilt,Georgia State,-27.5,19.2,-8.3,YEL,Georgia State,70-21,L,
+2025,4,Baylor,Arizona State,-3.0,-0.2,-3.2,RED,Arizona State,24-27,W,True
+2025,4,Virginia,Stanford,-16.5,6.5,-10.0,YEL,Stanford,48-20,L,
+2025,4,Louisiana Tech,Southern Miss,-3.0,13.5,10.5,YEL,Louisiana Tech,30-20,W,
+2025,4,East Carolina,BYU,6.5,-12.7,-6.2,YEL,BYU,13-34,W,
+2025,4,UTEP,UL Monroe,-5.5,-5.6,-11.1,RED,UL Monroe,25-31,W,True
+2025,4,Colorado State,UTSA,4.5,0.5,5.0,RED,Colorado State,16-17,W,False
+2025,4,Colorado,Wyoming,-12.5,26.4,13.9,YEL,Colorado,37-20,W,
+2025,5,East Carolina,Army,-3.5,-8.7,-12.2,RED,Army,28-6,L,False
+2025,5,Virginia,Florida State,7.0,5.1,12.1,RED,Virginia,46-38,W,True
+2025,5,Oregon State,Houston,11.5,-0.9,10.6,YEL,Oregon State,24-27,W,
+2025,5,North Texas,South Alabama,-13.5,-5.0,-18.5,RED,South Alabama,36-22,L,False
+2025,5,Arkansas,Notre Dame,5.5,-14.6,-9.1,YEL,Notre Dame,13-56,W,
+2025,5,Pittsburgh,Louisville,3.0,-10.0,-7.0,YEL,Louisville,27-34,W,
+2025,5,Syracuse,Duke,4.0,2.8,6.8,RED,Syracuse,3-38,L,False
+2025,5,James Madison,Georgia Southern,-14.5,7.8,-6.7,YEL,Georgia Southern,35-10,L,
+2025,5,Washington,Ohio State,9.5,-17.3,-7.8,YEL,Ohio State,6-24,W,
+2025,5,Northwestern,UCLA,-6.0,-5.3,-11.3,RED,UCLA,17-14,W,False
+2025,5,Northern Illinois,San Diego State,1.5,11.8,13.3,YEL,Northern Illinois,3-6,L,
+2025,5,Ole Miss,LSU,-2.5,9.6,7.1,YEL,Ole Miss,24-19,W,
+2025,5,West Virginia,Utah,13.5,-0.7,12.8,YEL,West Virginia,14-48,L,
+2025,5,Toledo,Akron,-21.5,13.1,-8.4,YEL,Akron,45-3,L,
+2025,5,Oklahoma State,Baylor,21.0,-6.8,14.2,YEL,Oklahoma State,27-45,W,
+2025,5,Tulsa,Tulane,14.5,-31.1,-16.6,YEL,Tulane,14-31,W,
+2025,5,Mississippi State,Tennessee,7.5,-18.1,-10.6,YEL,Tennessee,34-41,L,
+2025,5,Kennesaw State,Middle Tennessee,-7.0,0.2,-6.8,YEL,Middle Tennessee,24-16,L,
+2025,5,Old Dominion,Liberty,-14.5,7.1,-7.4,YEL,Liberty,21-7,W,
+2025,5,Southern Miss,Jacksonville State,-4.5,-18.3,-22.8,RED,Jacksonville State,42-25,L,False
+2025,5,Iowa State,Arizona,-4.0,16.0,12.0,YEL,Iowa State,39-14,W,
+2025,5,NC State,Virginia Tech,-10.0,-5.9,-15.9,RED,Virginia Tech,21-23,W,True
+2025,5,Colorado State,Washington State,-4.5,-6.8,-11.3,RED,Washington State,3-20,W,True
+2025,5,Missouri,Massachusetts,-44.5,32.0,-12.5,YEL,Massachusetts,42-6,W,
+2025,5,South Carolina,Kentucky,-5.5,12.6,7.1,YEL,South Carolina,35-13,W,
+2025,5,Colorado,BYU,6.5,5.9,12.4,RED,Colorado,21-24,W,False
+2025,6,New Mexico State,Sam Houston,2.5,-11.3,-8.8,YEL,Sam Houston,37-10,L,
+2025,6,South Florida,Charlotte,-27.5,12.6,-14.9,YEL,Charlotte,54-26,L,
+2025,6,BYU,West Virginia,-19.5,10.0,-9.5,YEL,West Virginia,38-24,W,
+2025,6,San Diego State,Colorado State,-4.5,-3.5,-8.0,RED,Colorado State,45-24,L,False
+2025,6,Michigan,Wisconsin,-17.5,7.1,-10.4,YEL,Wisconsin,24-10,W,
+2025,6,UAB,Army,6.5,-15.5,-9.0,YEL,Army,13-31,W,
+2025,6,Purdue,Illinois,7.0,-16.5,-9.5,YEL,Illinois,27-43,W,
+2025,6,Virginia Tech,Wake Forest,-4.5,16.4,11.9,YEL,Virginia Tech,23-30,L,
+2025,6,Massachusetts,Western Michigan,12.5,-3.9,8.6,YEL,Massachusetts,3-21,L,
+2025,6,Arizona,Oklahoma State,-21.5,-0.7,-22.2,RED,Oklahoma State,41-13,L,False
+2025,6,Florida,Texas,4.5,-11.7,-7.2,YEL,Texas,29-21,L,
+2025,6,Georgia State,James Madison,19.5,-10.7,8.8,YEL,Georgia State,7-14,W,
+2025,6,Louisville,Virginia,-6.5,20.3,13.8,YEL,Louisville,27-30,L,
+2025,6,UCLA,Penn State,24.5,-14.8,9.7,YEL,UCLA,42-37,W,
+2025,6,Northern Illinois,Miami (OH),4.5,1.6,6.1,RED,Northern Illinois,14-25,L,False
+2025,6,Alabama,Vanderbilt,-13.5,20.0,6.5,YEL,Alabama,30-14,W,
+2025,6,Akron,Central Michigan,7.0,1.4,8.4,RED,Akron,28-22,W,True
+2025,6,Old Dominion,Coastal Carolina,-18.5,6.2,-12.3,YEL,Coastal Carolina,47-7,L,
+2025,6,Wyoming,UNLV,4.5,-14.7,-10.2,YEL,UNLV,17-31,W,
+2025,6,Houston,Texas Tech,13.5,-7.1,6.4,YEL,Houston,11-35,L,
+2025,6,TCU,Colorado,-13.5,-2.2,-15.7,RED,Colorado,35-21,L,False
+2025,6,Florida State,Miami,3.5,-18.7,-15.2,YEL,Miami,22-28,W,
+2025,6,Memphis,Tulsa,-21.0,27.7,6.7,YEL,Memphis,45-7,W,
+2025,6,California,Duke,3.5,3.1,6.6,RED,California,21-45,L,False
+2025,7,UTEP,Liberty,1.5,-10.0,-8.5,YEL,Liberty,8-19,W,
+2025,7,Tulane,East Carolina,-7.0,19.0,12.0,YEL,Tulane,26-19,P,
+2025,7,Georgia Southern,Southern Miss,3.0,21.9,24.9,RED,Georgia Southern,35-38,P,False
+2025,7,Cincinnati,UCF,-10.0,0.6,-9.4,YEL,UCF,20-11,W,
+2025,7,Michigan State,UCLA,-7.0,-4.1,-11.1,RED,UCLA,13-38,W,True
+2025,7,Oklahoma State,Houston,14.5,5.8,20.3,RED,Oklahoma State,17-39,L,False
+2025,7,Missouri,Alabama,3.0,-9.2,-6.2,YEL,Alabama,24-27,P,
+2025,7,James Madison,Louisiana,-18.5,5.6,-12.9,YEL,Louisiana,24-14,W,
+2025,7,Bowling Green,Toledo,10.5,4.7,15.2,RED,Bowling Green,28-23,W,True
+2025,7,Florida State,Pittsburgh,-10.5,-5.4,-15.9,RED,Pittsburgh,31-34,W,True
+2025,7,Ole Miss,Washington State,-33.5,21.4,-12.1,YEL,Washington State,24-21,W,
+2025,7,Kent State,Massachusetts,-1.5,-11.4,-12.9,YEL,Massachusetts,42-6,L,
+2025,7,UNLV,Air Force,-7.0,17.9,10.9,YEL,UNLV,51-48,L,
+2025,7,Marshall,Old Dominion,14.5,7.6,22.1,RED,Marshall,48-24,W,True
+2025,7,Colorado,Iowa State,3.0,5.0,8.0,RED,Colorado,24-17,W,True
+2025,7,Georgia Tech,Virginia Tech,-14.0,1.0,-13.0,YEL,Virginia Tech,35-20,L,
+2025,7,Texas,Oklahoma,-2.5,15.2,12.7,YEL,Texas,23-6,W,
+2025,7,Kansas State,TCU,3.0,5.6,8.6,RED,Kansas State,41-28,W,True
+2025,7,Penn State,Northwestern,-20.5,27.6,7.1,YEL,Penn State,21-22,L,
+2025,7,Coastal Carolina,UL Monroe,3.0,7.8,10.8,RED,Coastal Carolina,23-8,W,True
+2025,7,Texas Tech,Kansas,-13.5,-0.1,-13.6,RED,Kansas,42-17,L,False
+2025,7,Minnesota,Purdue,-7.5,25.7,18.2,YEL,Minnesota,27-20,L,
+2025,7,Boston College,Clemson,14.0,-7.4,6.6,YEL,Boston College,10-41,L,
+2025,7,LSU,South Carolina,-8.5,1.2,-7.3,YEL,South Carolina,20-10,L,
+2025,7,Arizona,BYU,2.5,-10.2,-7.7,YEL,BYU,27-33,W,
+2025,7,Boise State,New Mexico,-14.5,23.5,9.0,YEL,Boise State,41-25,W,
+2025,7,Utah,Arizona State,-9.5,-4.3,-13.8,RED,Arizona State,42-10,L,False
+2025,7,Nevada,San Diego State,6.5,7.7,14.2,RED,Nevada,10-44,L,False
+2025,8,South Alabama,Arkansas State,-8.5,14.6,6.1,YEL,South Alabama,14-15,L,
+2025,8,Sam Houston,UTEP,3.5,12.4,15.9,RED,Sam Houston,17-35,L,False
+2025,8,Miami,Louisville,-10.5,3.3,-7.2,YEL,Louisville,21-24,W,
+2025,8,Minnesota,Nebraska,7.0,5.7,12.7,RED,Minnesota,24-6,W,True
+2025,8,Utah State,San José State,-3.0,-3.1,-6.1,RED,San José State,30-25,L,False
+2025,8,Boston College,UConn,2.5,10.7,13.2,YEL,Boston College,23-38,L,
+2025,8,Bowling Green,Central Michigan,-3.0,14.2,11.2,YEL,Bowling Green,6-27,L,
+2025,8,Vanderbilt,LSU,-1.5,-4.6,-6.1,YEL,LSU,31-24,L,
+2025,8,Duke,Georgia Tech,-3.5,-1.2,-4.7,RED,Georgia Tech,18-27,W,True
+2025,8,South Carolina,Oklahoma,4.5,6.4,10.9,RED,South Carolina,7-26,L,False
+2025,8,Massachusetts,Buffalo,16.5,-4.5,12.0,YEL,Massachusetts,21-28,W,
+2025,8,Northwestern,Purdue,-3.0,11.3,8.3,YEL,Northwestern,19-0,W,
+2025,8,Wisconsin,Ohio State,24.5,-17.5,7.0,YEL,Wisconsin,0-34,L,
+2025,8,Charlotte,Temple,10.0,7.7,17.7,RED,Charlotte,14-49,L,False
+2025,8,Marshall,Texas State,3.0,3.0,6.0,RED,Marshall,40-37,W,True
+2025,8,App State,Coastal Carolina,-10.5,1.8,-8.7,YEL,Coastal Carolina,37-45,W,
+2025,8,Arizona State,Texas Tech,7.5,8.1,15.6,RED,Arizona State,26-22,W,True
+2025,8,UAB,Memphis,23.5,-12.4,11.1,YEL,UAB,31-24,W,
+2025,8,Louisiana,Southern Miss,4.5,24.1,28.6,RED,Louisiana,10-22,L,False
+2025,8,Virginia,Washington State,-16.5,-0.5,-17.0,RED,Washington State,22-20,W,False
+2025,8,Iowa,Penn State,-3.0,-6.4,-9.4,RED,Penn State,25-24,W,False
+2025,8,Kentucky,Texas,12.5,-18.9,-6.4,YEL,Texas,13-16,L,
+2025,8,South Florida,Florida Atlantic,-20.5,11.3,-9.2,YEL,Florida Atlantic,48-13,L,
+2025,8,Syracuse,Pittsburgh,9.5,2.5,12.0,RED,Syracuse,13-30,L,False
+2025,8,BYU,Utah,4.0,6.8,10.8,RED,BYU,24-21,W,True
+2025,8,Oklahoma State,Cincinnati,23.5,-1.1,22.4,YEL,Oklahoma State,17-49,L,
+2025,8,New Mexico,Nevada,-14.0,0.9,-13.1,YEL,Nevada,24-22,W,
+2025,8,Stanford,Florida State,17.5,1.1,18.6,RED,Stanford,20-13,W,True
+2025,9,Florida International,Kennesaw State,3.0,12.2,15.2,RED,Florida International,26-45,L,False
+2025,9,Louisiana Tech,Western Kentucky,-5.5,-0.5,-6.0,RED,Western Kentucky,27-28,W,True
+2025,9,Charlotte,North Texas,25.5,-3.7,21.8,YEL,Charlotte,20-54,L,
+2025,9,Indiana,UCLA,-26.5,18.4,-8.1,YEL,UCLA,56-6,L,
+2025,9,Memphis,South Florida,3.5,8.1,11.6,RED,Memphis,34-31,W,True
+2025,9,Georgia Tech,Syracuse,-17.5,5.9,-11.6,YEL,Syracuse,41-16,L,
+2025,9,Nebraska,Northwestern,-7.0,13.7,6.7,YEL,Nebraska,28-21,P,
+2025,9,North Carolina,Virginia,11.5,6.4,17.9,RED,North Carolina,16-17,W,False
+2025,9,Kent State,Bowling Green,7.5,-25.6,-18.1,YEL,Bowling Green,24-21,L,
+2025,9,Oklahoma,Ole Miss,-5.5,-7.2,-12.7,RED,Ole Miss,26-34,W,True
+2025,9,Wake Forest,SMU,5.5,-19.0,-13.5,YEL,SMU,13-12,L,
+2025,9,Purdue,Rutgers,-2.5,-15.2,-17.7,YEL,Rutgers,24-27,W,
+2025,9,Old Dominion,App State,-13.5,6.9,-6.6,YEL,App State,24-21,W,
+2025,9,Rice,UConn,10.5,-2.8,7.7,YEL,Rice,37-34,W,
+2025,9,Washington State,Toledo,1.5,9.5,11.0,YEL,Washington State,28-7,W,
+2025,9,Central Michigan,Massachusetts,-16.5,5.0,-11.5,YEL,Massachusetts,38-13,L,
+2025,9,Northern Illinois,Ball State,-6.5,16.2,9.7,YEL,Northern Illinois,21-7,W,
+2025,9,Miami (OH),Western Michigan,-2.5,10.1,7.6,YEL,Miami (OH),26-17,W,
+2025,9,Southern Miss,UL Monroe,-14.0,-7.9,-21.9,RED,UL Monroe,49-21,L,False
+2025,9,Fresno State,San Diego State,3.0,13.1,16.1,RED,Fresno State,0-23,L,False
+2025,9,Vanderbilt,Missouri,-3.0,-3.2,-6.2,RED,Missouri,17-10,L,False
+2025,9,Cincinnati,Baylor,-3.5,-3.2,-6.7,RED,Baylor,41-20,L,False
+2025,9,Texas Tech,Oklahoma State,-37.5,8.9,-28.6,YEL,Oklahoma State,42-0,L,
+2025,9,Mississippi State,Texas,8.5,-23.4,-14.9,YEL,Texas,38-45,L,
+2025,9,West Virginia,TCU,16.5,-3.7,12.8,YEL,West Virginia,17-23,W,
+2025,9,Oregon,Wisconsin,-31.5,18.8,-12.7,YEL,Wisconsin,21-7,W,
+2025,9,Troy,Louisiana,-7.0,-4.6,-11.6,RED,Louisiana,35-23,L,False
+2025,9,Louisville,Boston College,-25.5,14.2,-11.3,YEL,Boston College,38-24,W,
+2025,9,Wyoming,Colorado State,-5.5,-1.1,-6.6,RED,Colorado State,28-0,L,False
+2025,9,Kentucky,Tennessee,7.5,-13.6,-6.1,YEL,Tennessee,34-56,W,
+2025,9,Arizona State,Houston,-7.0,17.7,10.7,YEL,Arizona State,16-24,L,
+2025,9,Utah,Colorado,-14.0,-5.2,-19.2,RED,Colorado,53-7,L,False
+2025,10,Kennesaw State,UTEP,-12.5,0.2,-12.3,YEL,UTEP,33-20,L,
+2025,10,Texas State,James Madison,7.0,1.8,8.8,RED,Texas State,20-52,L,False
+2025,10,Middle Tennessee,Jacksonville State,4.0,-16.0,-12.0,YEL,Jacksonville State,21-24,L,
+2025,10,UTSA,Tulane,6.0,-13.6,-7.6,YEL,Tulane,48-26,L,
+2025,10,Louisiana Tech,Sam Houston,-16.5,-1.2,-17.7,RED,Sam Houston,55-14,L,False
+2025,10,Houston,West Virginia,-13.5,-2.7,-16.2,RED,West Virginia,35-45,W,True
+2025,10,Bowling Green,Buffalo,-2.5,9.7,7.2,YEL,Bowling Green,3-28,L,
+2025,10,Air Force,Army,1.5,-12.2,-10.7,YEL,Army,17-20,W,
+2025,10,North Texas,Navy,-6.5,-4.5,-11.0,RED,Navy,31-17,L,False
+2025,10,SMU,Miami,8.5,1.6,10.1,RED,SMU,26-20,W,True
+2025,10,Clemson,Duke,-4.0,13.6,9.6,YEL,Clemson,45-46,L,
+2025,10,Ohio State,Penn State,-17.5,7.3,-10.2,YEL,Penn State,38-14,L,
+2025,10,Illinois,Rutgers,-13.5,3.9,-9.6,YEL,Rutgers,35-13,L,
+2025,10,Texas,Vanderbilt,-3.5,22.1,18.6,YEL,Texas,34-31,L,
+2025,10,Iowa State,Arizona State,-7.5,0.9,-6.6,YEL,Arizona State,19-24,W,
+2025,10,UNLV,New Mexico,-3.5,18.5,15.0,YEL,UNLV,35-40,L,
+2025,10,Boston College,Notre Dame,31.5,-18.0,13.5,YEL,Boston College,10-25,W,
+2025,10,UL Monroe,Old Dominion,16.5,-6.5,10.0,YEL,UL Monroe,6-31,L,
+2025,10,Western Kentucky,New Mexico State,-7.5,15.6,8.1,YEL,Western Kentucky,35-16,W,
+2025,10,Stanford,Pittsburgh,13.5,-6.8,6.7,YEL,Stanford,20-35,L,
+2025,10,Kansas State,Texas Tech,7.5,7.4,14.9,RED,Kansas State,20-43,L,False
+2025,10,Minnesota,Michigan State,-4.5,15.7,11.2,YEL,Minnesota,23-20,L,
+2025,10,California,Virginia,6.5,8.1,14.6,RED,California,21-31,L,False
+2025,10,Kansas,Oklahoma State,-24.5,11.4,-13.1,YEL,Oklahoma State,38-21,W,
+2025,10,Colorado,Arizona,4.0,18.6,22.6,RED,Colorado,17-52,L,False
+2025,10,San Diego State,Wyoming,-10.0,0.2,-9.8,YEL,Wyoming,24-7,L,
+2025,10,Florida State,Wake Forest,-12.5,3.6,-8.9,YEL,Wake Forest,42-7,L,
+2025,10,Tennessee,Oklahoma,-3.0,12.3,9.3,YEL,Tennessee,27-33,L,
+2025,10,Utah,Cincinnati,-11.5,4.1,-7.4,YEL,Cincinnati,45-14,L,
+2025,10,San José State,Hawai'i,-2.5,9.1,6.6,YEL,San José State,45-38,W,
+2025,11,Akron,Massachusetts,-12.5,3.9,-8.6,YEL,Massachusetts,44-10,L,
+2025,11,Ball State,Kent State,-3.0,15.7,12.7,YEL,Ball State,17-13,W,
+2025,11,Toledo,Northern Illinois,-14.5,1.4,-13.1,YEL,Northern Illinois,42-3,L,
+2025,11,App State,Georgia Southern,-4.5,-1.9,-6.4,RED,Georgia Southern,23-25,W,True
+2025,11,South Florida,UTSA,-14.0,4.6,-9.4,YEL,UTSA,55-23,L,
+2025,11,UCF,Houston,-1.5,11.2,9.7,YEL,UCF,27-30,L,
+2025,11,USC,Northwestern,-14.5,20.8,6.3,YEL,USC,38-17,W,
+2025,11,Memphis,Tulane,-3.0,-5.9,-8.9,RED,Tulane,32-38,W,True
+2025,11,Mississippi State,Georgia,9.5,-19.4,-9.9,YEL,Georgia,21-41,W,
+2025,11,Arkansas State,Southern Miss,6.5,12.4,18.9,RED,Arkansas State,21-27,W,False
+2025,11,Army,Temple,-7.0,26.5,19.5,YEL,Army,14-13,L,
+2025,11,West Virginia,Colorado,-6.5,-8.4,-14.9,RED,Colorado,29-22,L,False
+2025,11,Texas Tech,BYU,-13.5,-0.6,-14.1,RED,BYU,29-7,L,False
+2025,11,Marshall,James Madison,13.5,2.4,15.9,RED,Marshall,23-35,W,False
+2025,11,Penn State,Indiana,14.5,3.8,18.3,RED,Penn State,24-27,W,False
+2025,11,Eastern Michigan,Bowling Green,-3.0,-7.8,-10.8,RED,Bowling Green,27-21,L,False
+2025,11,Purdue,Ohio State,29.5,-36.2,-6.7,YEL,Ohio State,10-34,L,
+2025,11,Rice,UAB,1.5,6.7,8.2,YEL,Rice,24-17,W,
+2025,11,East Carolina,Charlotte,-27.5,10.1,-17.4,YEL,Charlotte,48-22,W,
+2025,11,UTEP,Jacksonville State,1.5,-16.0,-14.5,YEL,Jacksonville State,27-30,W,
+2025,11,Middle Tennessee,Florida International,-1.5,-4.9,-6.4,YEL,Florida International,30-56,W,
+2025,11,Florida Atlantic,Tulsa,-4.5,13.3,8.8,YEL,Florida Atlantic,40-21,W,
+2025,11,Miami,Syracuse,-28.5,15.8,-12.7,YEL,Syracuse,38-10,W,
+2025,11,Arizona,Kansas,-5.5,-9.6,-15.1,RED,Kansas,24-20,W,False
+2025,11,TCU,Iowa State,-7.5,0.4,-7.1,YEL,Iowa State,17-20,W,
+2025,11,Missouri,Texas A&M,7.0,0.4,7.4,RED,Missouri,17-38,L,False
+2025,11,Vanderbilt,Auburn,-6.0,-0.7,-6.7,RED,Auburn,45-38,L,False
+2025,11,New Mexico State,Kennesaw State,11.5,3.4,14.9,RED,New Mexico State,21-24,W,False
+2025,11,Wisconsin,Washington,10.5,2.2,12.7,RED,Wisconsin,13-10,W,True
+2025,11,Louisiana,Texas State,3.5,0.1,3.6,RED,Louisiana,42-39,W,True
+2025,11,Clemson,Florida State,-1.5,21.2,19.7,YEL,Clemson,24-10,W,
+2025,11,Utah State,Nevada,-10.0,0.1,-9.9,YEL,Nevada,51-14,L,
+2025,11,Oregon State,Sam Houston,-21.0,2.6,-18.4,YEL,Sam Houston,17-21,W,
+2025,11,Hawai'i,San Diego State,6.5,4.4,10.9,RED,Hawai'i,38-6,W,True
+2025,12,Akron,Kent State,-7.5,17.8,10.3,YEL,Akron,35-42,L,
+2025,12,Western Michigan,Ohio,-1.5,-7.4,-8.9,YEL,Ohio,17-13,L,
+2025,12,Miami (OH),Toledo,5.5,4.5,10.0,RED,Miami (OH),3-24,L,False
+2025,12,Oregon,Minnesota,-26.5,14.3,-12.2,YEL,Minnesota,42-13,L,
+2025,12,Navy,South Florida,9.5,5.6,15.1,RED,Navy,41-38,W,True
+2025,12,Oklahoma State,Kansas State,19.5,-8.8,10.7,YEL,Oklahoma State,6-14,W,
+2025,12,Pittsburgh,Notre Dame,12.5,-18.8,-6.3,YEL,Notre Dame,15-37,W,
+2025,12,Charlotte,UTSA,16.5,-5.4,11.1,YEL,Charlotte,7-28,L,
+2025,12,Indiana,Wisconsin,-28.5,16.4,-12.1,YEL,Wisconsin,31-7,W,
+2025,12,Texas A&M,South Carolina,-16.5,2.0,-14.5,YEL,South Carolina,31-30,W,
+2025,12,Tulsa,Oregon State,-1.5,-13.7,-15.2,YEL,Oregon State,31-14,L,
+2025,12,UAB,North Texas,17.5,-3.0,14.5,YEL,UAB,24-53,L,
+2025,12,New Mexico,Colorado State,-15.5,0.1,-15.4,YEL,Colorado State,20-17,W,
+2025,12,Texas Tech,UCF,-24.5,3.4,-21.1,YEL,UCF,48-9,L,
+2025,12,Alabama,Oklahoma,-6.5,15.5,9.0,YEL,Alabama,21-23,L,
+2025,12,Boston College,Georgia Tech,16.5,-0.1,16.4,YEL,Boston College,34-36,W,
+2025,12,Nevada,San José State,10.0,-0.8,9.2,YEL,Nevada,55-10,W,
+2025,12,James Madison,App State,-21.0,12.2,-8.8,YEL,App State,58-10,L,
+2025,12,Illinois,Maryland,-16.5,8.2,-8.3,YEL,Maryland,24-6,L,
+2025,12,Southern Miss,Texas State,-3.0,-21.5,-24.5,RED,Texas State,14-41,W,True
+2025,12,Michigan State,Penn State,7.0,-21.4,-14.4,YEL,Penn State,10-28,W,
+2025,12,East Carolina,Memphis,-3.0,-5.6,-8.6,RED,Memphis,31-27,L,False
+2025,12,Tulane,Florida Atlantic,-16.5,25.3,8.8,YEL,Tulane,35-24,L,
+2025,12,Wake Forest,North Carolina,-3.5,-5.2,-8.7,RED,North Carolina,28-12,L,False
+2025,12,Baylor,Utah,9.5,6.6,16.1,RED,Baylor,28-55,L,False
+2025,12,UNLV,Utah State,-4.5,19.3,14.8,YEL,UNLV,29-26,L,
+2025,12,Washington,Purdue,-14.5,21.4,6.9,YEL,Washington,49-13,W,
+2025,12,Georgia,Texas,-3.5,-1.5,-5.0,RED,Texas,35-10,L,False
+2025,12,Ohio State,UCLA,-33.5,24.5,-9.0,YEL,UCLA,48-10,L,
+2025,12,Florida State,Virginia Tech,-14.5,-10.3,-24.8,RED,Virginia Tech,34-14,L,False
+2025,12,Missouri,Mississippi State,-7.5,14.5,7.0,YEL,Missouri,49-27,W,
+2025,12,Jacksonville State,Kennesaw State,3.5,23.3,26.8,RED,Jacksonville State,35-26,W,True
+2025,12,Fresno State,Wyoming,-3.0,10.8,7.8,YEL,Fresno State,24-3,W,
+2025,12,San Diego State,Boise State,-1.5,-22.1,-23.6,YEL,Boise State,17-7,L,
+2025,13,Northern Illinois,Western Michigan,7.0,9.2,16.2,RED,Northern Illinois,19-35,L,False
+2025,13,Bowling Green,Akron,-2.5,15.2,12.7,YEL,Bowling Green,16-19,L,
+2025,13,Ohio,Massachusetts,-33.5,18.8,-14.7,YEL,Massachusetts,42-14,W,
+2025,13,Kent State,Central Michigan,7.5,-13.9,-6.4,YEL,Central Michigan,16-28,W,
+2025,13,Arkansas State,Louisiana,-2.5,-9.2,-11.7,YEL,Louisiana,30-34,W,
+2025,13,NC State,Florida State,7.0,6.8,13.8,RED,NC State,21-11,W,True
+2025,13,UNLV,Hawai'i,-2.5,20.2,17.7,YEL,UNLV,38-10,W,
+2025,13,Virginia Tech,Miami,17.5,-6.0,11.5,YEL,Virginia Tech,17-34,W,
+2025,13,Northwestern,Minnesota,-4.0,-14.3,-18.3,RED,Minnesota,38-35,W,False
+2025,13,Army,Tulsa,-10.0,30.9,20.9,YEL,Army,25-26,L,
+2025,13,James Madison,Washington State,-15.5,3.7,-11.8,YEL,Washington State,24-20,W,
+2025,13,Georgia Southern,Old Dominion,10.0,2.5,12.5,RED,Georgia Southern,10-45,L,False
+2025,13,Arizona,Baylor,-6.5,-10.0,-16.5,RED,Baylor,41-17,L,False
+2025,13,Toledo,Ball State,-29.5,15.2,-14.3,YEL,Ball State,38-9,W,
+2025,13,Wyoming,Nevada,-6.0,-0.3,-6.3,RED,Nevada,7-13,W,True
+2025,13,UAB,South Florida,21.5,-6.8,14.7,YEL,UAB,18-48,L,
+2025,13,Middle Tennessee,Sam Houston,-6.5,-9.9,-16.4,RED,Sam Houston,31-17,L,False
+2025,13,South Alabama,Southern Miss,2.5,24.5,27.0,YEL,South Alabama,42-35,W,
+2025,13,Texas,Arkansas,-8.5,20.4,11.9,YEL,Texas,52-37,W,
+2025,13,Florida International,Jacksonville State,-2.5,-8.6,-11.1,YEL,Jacksonville State,27-21,L,
+2025,13,Notre Dame,Syracuse,-36.5,23.8,-12.7,YEL,Syracuse,70-7,L,
+2025,13,North Carolina,Duke,7.0,1.4,8.4,RED,North Carolina,25-32,P,False
+2025,13,Temple,Tulane,7.5,-26.8,-19.3,YEL,Tulane,13-37,W,
+2025,13,Maryland,Michigan,14.0,-7.4,6.6,YEL,Maryland,20-45,L,
+2025,13,Utah,Kansas State,-17.5,-3.6,-21.1,RED,Kansas State,51-47,W,False
+2025,13,Houston,TCU,1.5,-9.0,-7.5,YEL,TCU,14-17,W,
+2025,13,Penn State,Nebraska,-7.0,16.4,9.4,YEL,Penn State,37-10,W,
+2025,13,Air Force,New Mexico,3.5,3.1,6.6,RED,Air Force,3-20,L,False
+2025,13,Wisconsin,Illinois,8.5,2.1,10.6,RED,Wisconsin,27-10,W,True
+2025,13,Rice,North Texas,18.5,1.2,19.7,RED,Rice,24-56,L,False
+2025,13,Colorado,Arizona State,7.0,3.4,10.4,RED,Colorado,17-42,L,False
+2025,13,Fresno State,Utah State,-1.5,10.3,8.8,YEL,Fresno State,17-28,L,
+2025,13,UCLA,Washington,10.5,0.2,10.7,RED,UCLA,14-48,L,False
+2025,13,San Diego State,San José State,-10.0,-6.0,-16.0,RED,San José State,25-3,L,False
+2025,14,Eastern Michigan,Western Michigan,10.0,-0.0,10.0,YEL,Eastern Michigan,21-31,P,
+2025,14,Mississippi State,Ole Miss,7.5,-17.9,-10.4,YEL,Ole Miss,19-38,W,
+2025,14,Northern Illinois,Kent State,-4.5,29.4,24.9,YEL,Northern Illinois,31-35,L,
+2025,14,Kansas,Utah,10.0,6.2,16.2,RED,Kansas,21-31,P,False
+2025,14,Colorado State,Air Force,2.5,4.3,6.8,YEL,Colorado State,21-42,L,
+2025,14,New Mexico,San Diego State,1.5,6.1,7.6,YEL,New Mexico,23-17,W,
+2025,14,North Texas,Temple,-20.5,13.9,-6.6,YEL,Temple,52-25,L,
+2025,14,Utah State,Boise State,1.5,-19.3,-17.8,YEL,Boise State,24-25,L,
+2025,14,Texas,Texas A&M,2.5,14.3,16.8,YEL,Texas,27-17,W,
+2025,14,Arizona State,Arizona,1.5,17.7,19.2,YEL,Arizona State,7-23,L,
+2025,14,Oklahoma State,Iowa State,14.0,-7.8,6.2,YEL,Oklahoma State,13-20,W,
+2025,14,Louisville,Kentucky,1.5,14.3,15.8,YEL,Louisville,41-0,W,
+2025,14,Baylor,Houston,-2.5,15.0,12.5,YEL,Baylor,24-31,L,
+2025,14,Kansas State,Colorado,-16.5,0.9,-15.6,YEL,Colorado,24-14,W,
+2025,14,West Virginia,Texas Tech,24.5,-1.9,22.6,YEL,West Virginia,0-49,L,
+2025,14,BYU,UCF,-17.5,6.5,-11.0,YEL,UCF,41-21,L,
+2025,14,Sam Houston,Florida International,10.5,5.0,15.5,RED,Sam Houston,16-56,L,False
+2025,14,Old Dominion,Georgia State,-28.5,10.4,-18.1,YEL,Georgia State,27-10,W,
+2025,14,Jacksonville State,Western Kentucky,1.5,9.2,10.8,YEL,Jacksonville State,37-34,W,
+2025,14,App State,Arkansas State,1.5,7.6,9.1,YEL,App State,29-30,W,
+2025,14,Tulsa,UAB,-9.5,-7.9,-17.4,RED,UAB,24-31,W,True
+2025,14,Syracuse,Boston College,3.0,1.7,4.7,RED,Syracuse,12-34,L,False
+2025,14,Oklahoma,LSU,-11.5,-0.1,-11.6,RED,LSU,17-13,W,False
+2025,14,Minnesota,Wisconsin,2.5,7.0,9.5,YEL,Minnesota,17-7,W,
+2025,14,UTSA,Army,-8.5,-8.4,-16.9,RED,Army,24-27,W,True
+2025,14,Southern Miss,Troy,-7.0,-12.0,-19.0,RED,Troy,18-28,W,True
+2025,14,Liberty,Kennesaw State,2.5,17.2,19.7,YEL,Liberty,42-48,L,
+2025,14,Duke,Wake Forest,-2.5,11.2,8.7,YEL,Duke,49-32,W,
+2025,14,Washington,Oregon,6.5,-13.6,-7.1,YEL,Oregon,14-26,W,
+2025,14,Tennessee,Vanderbilt,-2.5,16.8,14.3,YEL,Tennessee,24-45,L,
+2025,14,Coastal Carolina,James Madison,24.5,-6.5,18.0,YEL,Coastal Carolina,10-59,L,
+2025,14,Florida,Florida State,1.5,18.3,19.8,YEL,Florida,40-21,W,
+2025,14,Virginia,Virginia Tech,-8.5,-7.6,-16.1,RED,Virginia Tech,27-7,L,False
+2025,14,South Florida,Rice,-28.5,7.6,-20.9,YEL,Rice,52-3,L,
+2025,14,Michigan State,Maryland,-4.0,-3.3,-7.3,RED,Maryland,38-28,L,False
+2025,14,USC,UCLA,-21.5,13.0,-8.5,YEL,UCLA,29-10,W,
+2025,14,NC State,North Carolina,-7.0,0.3,-6.7,YEL,North Carolina,42-19,L,
+2025,14,San José State,Fresno State,3.0,0.4,3.4,RED,San José State,14-41,L,False
+2025,14,Hawai'i,Wyoming,-8.5,2.0,-6.5,YEL,Wyoming,27-7,L,
+2025,15,Jacksonville State,Kennesaw State,3.0,23.3,26.3,RED,Jacksonville State,15-19,L,False
+2025,15,James Madison,Troy,-24.5,12.7,-11.8,YEL,Troy,31-14,W,
+2025,15,Tulane,North Texas,1.5,20.3,21.8,YEL,Tulane,34-21,W,
+2025,15,Western Michigan,Miami (OH),-2.5,-7.6,-10.1,YEL,Miami (OH),23-13,L,
+2025,15,Texas Tech,BYU,-12.5,-3.1,-15.6,RED,BYU,34-7,L,False
+2025,15,Virginia,Duke,-3.5,-5.0,-8.5,RED,Duke,20-27,W,True
+2025,16,Navy,Army,-6.5,-5.6,-12.1,RED,Army,17-16,W,False

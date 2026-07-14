@@ -27,6 +27,20 @@ Compare it to the spread:
 Every alert is logged with the line at alert time and graded against *that* line when
 the game completes — a running ATS record the model can't retroactively flatter.
 
+## Backtested — and honest about the result
+
+The alert rules were replayed against 2023–2025 (1,147 alerts, prior-year FPI as the
+model — exactly the information the live system has): **49.7% ATS, below the 52.38%
+break-even**. Notably, the *biggest* disagreements with the market (15+ point edges)
+performed worst (46.8%) — when a stale prior and the market disagree loudly, the market
+is usually right, because it knows about roster and coaching changes the prior doesn't.
+Full slicing in [`BACKTEST_RESULTS.md`](BACKTEST_RESULTS.md).
+
+That's the point of the ledger: this system surfaces *where* a major public model and
+the betting market disagree — a research shortlist and narrative engine, not a picks
+service. Making it profitable would require features the prior lacks (coaching changes,
+QB status, portal flows) — which is the roadmap.
+
 ## Honest limitations
 
 Public proxies aren't ESPN's inputs; coefficients aren't causal (the features are
