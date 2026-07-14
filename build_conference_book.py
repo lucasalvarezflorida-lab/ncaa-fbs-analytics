@@ -494,6 +494,184 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
     return ws
 
 
+# ---------------- depth charts ----------------
+
+DEPTH_OVERRIDES = HERE / "depth_overrides.csv"
+DEPTH_GROUPS = ["QB", "RB", "WR", "TE", "OL", "DL/EDGE", "LB", "DB", "Specialists"]
+DEPTH_CAPS = {"QB": 3, "RB": 4, "WR": 6, "TE": 3, "OL": 7, "DL/EDGE": 7,
+              "LB": 5, "DB": 8, "Specialists": 3}
+_POS_MAP = {
+    "QB": "QB",
+    "RB": "RB", "FB": "RB", "HB": "RB", "TB": "RB", "AB": "RB",
+    "WR": "WR", "ATH": "WR", "SLOT": "WR",
+    "TE": "TE", "H": "TE",
+    "OL": "OL", "OT": "OL", "OG": "OL", "G": "OL", "C": "OL", "T": "OL",
+    "IOL": "OL", "OC": "OL",
+    "DL": "DL/EDGE", "DT": "DL/EDGE", "DE": "DL/EDGE", "NT": "DL/EDGE",
+    "NG": "DL/EDGE", "EDGE": "DL/EDGE", "RUSH": "DL/EDGE", "JACK": "DL/EDGE",
+    "LB": "LB", "ILB": "LB", "OLB": "LB", "MLB": "LB", "WLB": "LB",
+    "SLB": "LB", "MIKE": "LB", "WILL": "LB", "SAM": "LB",
+    "DB": "DB", "CB": "DB", "S": "DB", "FS": "DB", "SS": "DB",
+    "NICKEL": "DB", "NB": "DB", "STAR": "DB", "ROVER": "DB",
+    "K": "Specialists", "P": "Specialists", "PK": "Specialists",
+    "LS": "Specialists", "K/P": "Specialists", "KO": "Specialists",
+}
+_CLASS_RANK = {"GR": 0, "GRAD": 0, "6TH": 0, "SR": 1, "R-SR": 1, "RS-SR": 1,
+               "5TH": 1, "JR": 2, "R-JR": 2, "RS-JR": 2, "SO": 3, "R-SO": 3,
+               "RS-SO": 3, "FR": 4, "R-FR": 4, "RS-FR": 4}
+
+
+_POS_FULL = {
+    "QUARTERBACK": "QB", "RUNNING BACK": "RB", "FULLBACK": "RB", "HALFBACK": "RB",
+    "WIDE RECEIVER": "WR", "ATHLETE": "WR", "TIGHT END": "TE",
+    "OFFENSIVE LINE": "OL", "OFFENSIVE LINEMAN": "OL", "OFFENSIVE TACKLE": "OL",
+    "OFFENSIVE GUARD": "OL", "CENTER": "OL",
+    "DEFENSIVE LINE": "DL/EDGE", "DEFENSIVE LINEMAN": "DL/EDGE",
+    "DEFENSIVE END": "DL/EDGE", "DEFENSIVE TACKLE": "DL/EDGE",
+    "EDGE RUSHER": "DL/EDGE", "NOSE TACKLE": "DL/EDGE",
+    "LINEBACKER": "LB", "INSIDE LINEBACKER": "LB", "OUTSIDE LINEBACKER": "LB",
+    "DEFENSIVE BACK": "DB", "CORNERBACK": "DB", "SAFETY": "DB", "NICKELBACK": "DB",
+    "KICKER": "Specialists", "PUNTER": "Specialists", "PLACE KICKER": "Specialists",
+    "LONG SNAPPER": "Specialists", "LONGSNAPPER": "Specialists",
+    "DEEP SNAPPER": "Specialists", "PUNTER/KICKER": "Specialists",
+}
+
+
+def _group_of(pos) -> str | None:
+    p = str(pos or "").strip().upper().replace(".", "")
+    return (_POS_MAP.get(p) or _POS_FULL.get(p)
+            or _POS_MAP.get(p.split("/")[0]) or _POS_FULL.get(p.split("/")[0]))
+
+
+def _cls_rank(cls) -> int:
+    return _CLASS_RANK.get(str(cls or "").strip().upper(), 3)
+
+
+def load_depth_overrides() -> dict:
+    """{(norm team, group): [norm player names in pinned order]}"""
+    import csv
+    out: dict = {}
+    if not DEPTH_OVERRIDES.exists():
+        return out
+    with open(DEPTH_OVERRIDES, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            key = (norm(row["team"]), row["group"].strip())
+            out.setdefault(key, []).append(
+                (int(row["rank"]), norm(row["player"])))
+    return {k: [p for _, p in sorted(v)] for k, v in out.items()}
+
+
+def build_depth_rows(rosters: dict) -> dict[str, dict[str, str]]:
+    """{team: {group: multiline depth text}} from roster + overrides."""
+    overrides = load_depth_overrides()
+    unmatched = []
+    depth: dict[str, dict[str, str]] = {}
+    for team, info in rosters.items():
+        groups: dict[str, list] = {g: [] for g in DEPTH_GROUPS}
+        for jersey, name, pos, cls, ht, wt, home, note in info["players"]:
+            g = _group_of(pos)
+            if not g or not name:
+                continue
+            groups[g].append(dict(name=name, pos=str(pos or "").strip(),
+                                  cls=str(cls or "").strip(),
+                                  jersey=jersey if isinstance(jersey, int) else 999,
+                                  portal=str(note or "").startswith(("Transfer", "Incoming"))))
+        team_out = {}
+        for g, players in groups.items():
+            pins = overrides.get((norm(team), g), [])
+
+            def key(p):
+                pn = norm(p["name"])
+                pin = pins.index(pn) if pn in pins else 99
+                return (pin, _cls_rank(p["cls"]), p["jersey"], p["name"])
+
+            for pin_name in pins:
+                if not any(norm(p["name"]) == pin_name for p in players):
+                    unmatched.append(f"{team}/{g}: {pin_name}")
+            players.sort(key=key)
+            cap = DEPTH_CAPS[g]
+            lines = []
+            for i, p in enumerate(players[:cap], 1):
+                pinned = "✓ " if norm(p["name"]) in pins else ""
+                tag = " • portal" if p["portal"] else ""
+                cls = f", {p['cls']}" if p["cls"] else ""
+                lines.append(f"{i}. {pinned}{p['name']} ({p['pos']}{cls}){tag}")
+            if len(players) > cap:
+                lines.append(f"   +{len(players) - cap} more on roster")
+            team_out[g] = "\n".join(lines) if lines else "(none listed)"
+        depth[team] = team_out
+    if unmatched:
+        print(f"WARN depth overrides with no roster match: {unmatched[:8]}"
+              + (f" (+{len(unmatched)-8})" if len(unmatched) > 8 else ""))
+    return depth
+
+
+def build_depth_sheet(wb, rosters: dict):
+    """Hidden _Depth data sheet + visible 'Depth Charts' dropdown tab."""
+    depth = build_depth_rows(rosters)
+
+    if "_Depth" in wb.sheetnames:
+        del wb["_Depth"]
+    ws_d = wb.create_sheet("_Depth")
+    ws_d.append(["Team"] + DEPTH_GROUPS)
+    for team in sorted(depth):
+        ws_d.append([team] + [depth[team][g] for g in DEPTH_GROUPS])
+    ws_d.sheet_state = "hidden"
+
+    prior = wb["Depth Charts"]["B1"].value if "Depth Charts" in wb.sheetnames else None
+    if "Depth Charts" in wb.sheetnames:
+        del wb["Depth Charts"]
+    ws = wb.create_sheet("Depth Charts")
+    teams = sorted(depth)
+    ws["A1"] = "Select team:"
+    ws["A1"].font = ARIAL_B
+    ws["B1"] = prior if prior in teams else teams[0]
+    ws["B1"].font = Font(name="Arial", bold=True, size=12, color="0000FF")
+    ws["B1"].fill = PICK_FILL
+    stamp = f"{datetime.date.today():%B %d, %Y}"
+    ws["D1"] = (f"PROJECTED depth from official rosters (refreshed {stamp}): ordered by "
+                "class seniority; ✓ = pinned via depth_overrides.csv. Teams publish real "
+                "two-deeps in game weeks — pin corrections in the CSV and press REFRESH.")
+    ws["D1"].font = Font(name="Arial", italic=True, size=9)
+    for i, t in enumerate(teams, 1):
+        ws.cell(row=i, column=27, value=t)  # AA hidden
+    dv = DataValidation(type="list", formula1=f"=$AA$1:$AA${len(teams)}",
+                        allow_blank=False, showDropDown=False)
+    ws.add_data_validation(dv)
+    dv.add(ws["B1"])
+    ws["AB1"] = "=MATCH($B$1,_Depth!$A:$A,0)"
+    ws["AB2"] = "=MATCH($B$1,_Teams!$A:$A,0)"
+    for col in ("AA", "AB"):
+        ws.column_dimensions[col].hidden = True
+
+    ws.cell(row=3, column=1, value="=$B$1").font = TITLE_FONT
+    for c in range(1, 3):
+        ws.cell(row=3, column=c).fill = TITLE_FILL
+    ws["A4"] = '=INDEX(_Teams!$B:$B,$AB$2)&"  ·  FPI "&INDEX(_Teams!$D:$D,$AB$2)&"  (#"&INDEX(_Teams!$C:$C,$AB$2)&")"'
+    ws["A4"].font = Font(name="Arial", italic=True, color="5C6B7E")
+
+    from openpyxl.styles import Alignment as _Al
+    colors = {"QB": "2E6B4F", "RB": "2E6B4F", "WR": "2E6B4F", "TE": "2E6B4F",
+              "OL": "2E6B4F", "DL/EDGE": "A3332C", "LB": "A3332C", "DB": "A3332C",
+              "Specialists": "5C6B7E"}
+    r = 6
+    for gi, g in enumerate(DEPTH_GROUPS):
+        col_letter = get_column_letter(2 + gi)  # _Depth col B..J
+        c = ws.cell(row=r, column=1, value=g)
+        c.font = Font(name="Arial", bold=True, size=11, color="FFFFFF")
+        c.fill = PatternFill("solid", start_color=colors[g])
+        body = ws.cell(row=r + 1, column=1,
+                       value=f'=INDEX(_Depth!${col_letter}:${col_letter},$AB$1)&""')
+        body.font = ARIAL
+        body.alignment = _Al(wrap_text=True, vertical="top")
+        ws.row_dimensions[r + 1].height = 14.5 * (DEPTH_CAPS[g] + 1) + 6
+        r += 3
+    ws.column_dimensions["A"].width = 88
+    ws.column_dimensions["B"].width = 18
+    ws.freeze_panes = "A2"
+    print(f"Depth Charts: {len(teams)} teams, 9 position groups")
+
+
 # ---------------- scouting sheet ----------------
 
 def build_scouting_sheet(wb):
@@ -765,6 +943,7 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
     build_upset_board(wb, games)
     build_season_sim(wb, games, fpi, team_conf)
     build_scouting_sheet(wb)
+    build_depth_sheet(wb, read_rosters())
 
     # per-conference max roster size drives each tab's formula-grid height
     ws_t = wb["_Teams"]
@@ -782,15 +961,15 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
     # order: Overview, FPI Decomposition, conferences, hidden data sheets
     if drop_team_tabs:
         keep = {"Overview", "FPI Decomposition", "Upset Board", "Season Sim",
-                "Scouting", "_Teams", "_Rosters", "_Sched"}
+                "Scouting", "Depth Charts", "_Teams", "_Rosters", "_Sched", "_Depth"}
         keep |= set(CONF_ORDER)
         for name in list(wb.sheetnames):
             if name not in keep:
                 del wb[name]
     order = ["Overview", "FPI Decomposition", "Upset Board", "Season Sim",
-             "Scouting"] + \
+             "Scouting", "Depth Charts"] + \
             [c for c in CONF_ORDER if c in wb.sheetnames] + \
-            ["_Teams", "_Rosters", "_Sched"]
+            ["_Teams", "_Rosters", "_Sched", "_Depth"]
     wb._sheets = [wb[n] for n in order if n in wb.sheetnames] + \
                  [wb[n] for n in wb.sheetnames if n not in order]
     wb.save(book)
