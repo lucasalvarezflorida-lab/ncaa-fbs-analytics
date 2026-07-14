@@ -16,3 +16,6 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .env
+
+# OurLads curated data - personal use only, not for redistribution
+ourlads_depth.json

@@ -561,8 +561,8 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
         c.font = WHITE_B
         c.fill = HEAD_FILL
     R_DC0 = 14
-    N_GRID = 30  # 3 section bands + 11 off + 11 def + 5 ST
-    BAND_AT = {0, 12, 24}
+    N_GRID = N_GRID_ROWS  # 3 section bands + 13 off + 12 def + 7 ST
+    BAND_AT = {0, 14, 27}
     BAND_F = Font(name="Arial", bold=True, size=10, color="FFFFFF")
     OFF_F = Font(name="Arial", bold=True, size=10, color="2E6B4F")
     DEF_F = Font(name="Arial", bold=True, size=10, color="A3332C")
@@ -570,7 +570,7 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
     for i in range(N_GRID):
         r = R_DC0 + i
         band = i in BAND_AT
-        pf = BAND_F if band else OFF_F if i < 12 else DEF_F if i < 24 else ST_F
+        pf = BAND_F if band else OFF_F if i < 14 else DEF_F if i < 27 else ST_F
         ws.cell(row=r, column=14,
                 value=f'=IF($AG$1=0,"",INDEX(_DepthGrid!$B:$B,$AG$6+ROW()-{R_DC0})&"")').font = pf
         for j, col in ((15, "C"), (16, "D"), (17, "E"), (18, "F")):
@@ -581,9 +581,9 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
             for cc in range(14, 19):
                 ws.cell(row=r, column=cc).fill = PatternFill("solid", start_color="35507A")
     note = ws.cell(row=R_DC0 + N_GRID, column=14,
-                   value="Projected from official rosters — ✓ pinned (depth_overrides.csv), • portal arrival. "
-                         "Rows follow this team's base personnel/front. KR/PR fill only from pins "
-                         "(no public July data names returners).")
+                   value="Source: OurLads.com curated charts where captured (date in section bands; local use only) — "
+                         "'(projected)' bands = our roster-seniority fallback with depth_overrides.csv pins. "
+                         "• = transfer/portal, ✓ = pinned.")
     note.font = Font(name="Arial", italic=True, size=8.5, color="5C6B7E")
     ws.merge_cells(start_row=R_DC0 + N_GRID, start_column=14,
                    end_row=R_DC0 + N_GRID + 2, end_column=18)
@@ -741,8 +741,88 @@ def _fill_rows(labels, pools, pins):
     return grid
 
 
+OURLADS_JSON = HERE / "ourlads_depth.json"
+GRID_OFF, GRID_DEF, GRID_ST = 13, 12, 7  # fixed section sizes (padded/trimmed)
+N_GRID_ROWS = 3 + GRID_OFF + GRID_DEF + GRID_ST  # 35 incl. 3 section bands
+
+_OURLADS_CACHE = None
+
+
+def load_ourlads() -> dict:
+    global _OURLADS_CACHE
+    if _OURLADS_CACHE is None:
+        if OURLADS_JSON.exists():
+            _OURLADS_CACHE = json.load(open(OURLADS_JSON, encoding="utf-8"))
+        else:
+            _OURLADS_CACHE = {"teams": {}, "captured": ""}
+    return _OURLADS_CACHE
+
+
+_OL_ST = {"PT", "PK", "KO", "LS", "H", "PR", "KR", "P", "K"}
+_OL_DEF_PREFIX = ("DE", "DT", "NT", "LB", "CB", "S", "FS", "SS", "NB", "LDE",
+                  "RDE", "LDT", "RDT", "WLB", "MLB", "SLB", "LCB", "RCB", "ILB",
+                  "OLB", "EDGE", "RUSH", "STAR", "ROVER", "BANDIT", "JACK", "DS")
+import re as _re
+_CLS_RE = _re.compile(r"\s+((?:RS\s+)?(?:GR|SR|JR|SO|FR)(?:/TR)?|GR/TR|TR)$", _re.I)
+
+
+def _ol_fmt(raw: str) -> str:
+    """'Sayin, Julian RS SO' / 'Martin, Justyn RS SR/TR' -> display string."""
+    s = raw.strip()
+    cls, transfer = "", "/TR" in s.upper()
+    m = _CLS_RE.search(s)
+    if m:
+        cls = m.group(1).upper().replace("/TR", "").strip()
+        s = s[: m.start()].strip()
+    if "," in s:
+        last, first = s.split(",", 1)
+        s = f"{first.strip()} {last.strip()}"
+    out = s + (f" ({cls})" if cls else "")
+    return out + (" •" if transfer else "")
+
+
+def _ourlads_sections(entry: dict):
+    off, deff, st = [], [], []
+    for r in entry.get("rows", []):
+        pos = r["pos"].strip().upper()
+        players = [_ol_fmt(p) for p in r.get("players", [])[:4]]
+        players += [""] * (4 - len(players))
+        row = (r["pos"].strip(), players)
+        if pos in _OL_ST:
+            st.append(row)
+        elif pos.startswith(_OL_DEF_PREFIX):
+            deff.append(row)
+        else:
+            off.append(row)
+    return off, deff, st
+
+
+def _pad(section, n):
+    section = section[:n]
+    return section + [("", ["", "", "", ""])] * (n - len(section))
+
+
 def build_depth_grid(team: str, info: dict, card: dict, overrides: dict):
-    """25 fixed rows (11 off / 11 def / 3 ST): (pos, [p1..p4]) + scheme label."""
+    """Fixed 35 rows (3 bands + 13 off + 12 def + 7 ST): (pos, [p1..p4]).
+    OurLads curated chart wins when captured; else roster heuristic + pins."""
+    ol = load_ourlads()
+    entry = ol.get("teams", {}).get(team)
+    if entry and entry.get("rows"):
+        off, deff, st = _ourlads_sections(entry)
+        upd = entry.get("updated", "").split(" ")[0]
+        src = f" (OurLads {upd})" if upd else " (OurLads)"
+        off_lab = (entry.get("off_scheme") or "base").strip()
+        def_lab = (entry.get("def_scheme") or "base").strip()
+        rows = ([("", [f"OFFENSE — {off_lab}{src}", "", "", ""])] + _pad(off, GRID_OFF)
+                + [("", [f"DEFENSE — {def_lab}{src}", "", "", ""])] + _pad(deff, GRID_DEF)
+                + [("", [f"SPECIAL TEAMS{src}", "", "", ""])] + _pad(st, GRID_ST))
+        label = f"{off_lab} · {def_lab} (OurLads)"
+        return rows, label
+    return _heuristic_depth_grid(team, info, card, overrides)
+
+
+def _heuristic_depth_grid(team: str, info: dict, card: dict, overrides: dict):
+    """Roster-derived fallback: scheme template + seniority + pins."""
     groups: dict[str, list] = {g: [] for g in DEPTH_GROUPS}
     for jersey, name, pos, cls, ht, wt, home, note in info["players"]:
         g = _group_of(pos)
@@ -831,13 +911,13 @@ def build_depth_grid(team: str, info: dict, card: dict, overrides: dict):
     def _band(text):
         return ("", [text, "", "", ""])
 
-    rows = ([_band(f"OFFENSE — {OFF_LABELS[off_k]}")]
-            + _fill_rows(off, pools, all_pins)
-            + [_band(f"DEFENSE — {DEF_LABELS[def_k]}")]
-            + _fill_rows(deff, pools, all_pins)
-            + [_band("SPECIAL TEAMS")]
-            + _fill_rows(ST_ROWS, pools, all_pins))
-    label = f"{OFF_LABELS[off_k]} · {DEF_LABELS[def_k]} defense"
+    rows = ([_band(f"OFFENSE — {OFF_LABELS[off_k]} (projected)")]
+            + _pad(_fill_rows(off, pools, all_pins), GRID_OFF)
+            + [_band(f"DEFENSE — {DEF_LABELS[def_k]} (projected)")]
+            + _pad(_fill_rows(deff, pools, all_pins), GRID_DEF)
+            + [_band("SPECIAL TEAMS (projected)")]
+            + _pad(_fill_rows(ST_ROWS, pools, all_pins), GRID_ST))
+    label = f"{OFF_LABELS[off_k]} · {DEF_LABELS[def_k]} defense (projected)"
     return rows, label
 
 
