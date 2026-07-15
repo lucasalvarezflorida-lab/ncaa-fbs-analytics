@@ -7,7 +7,8 @@
 "spread": -10,
 "edge": -7.3,
 "tier": "YEL",
-"model_side": "Jacksonville State"
+"model_side": "Jacksonville State",
+"close_spread": -10
 },
 "401866408": {
 "first_seen": "2026-07-14",
@@ -21,7 +22,8 @@
 "dog": "Sacramento State",
 "dog_ml": 265,
 "ml_guard": false,
-"ml_backfilled": "2026-07-15"
+"ml_backfilled": "2026-07-15",
+"close_spread": -8.5
 },
 "401858423": {
 "first_seen": "2026-07-14",
@@ -31,7 +33,8 @@
 "spread": -30.5,
 "edge": -9.4,
 "tier": "YEL",
-"model_side": "Massachusetts"
+"model_side": "Massachusetts",
+"close_spread": -30.5
 },
 "401858425": {
 "first_seen": "2026-07-14",
@@ -41,7 +44,8 @@
 "spread": -40.5,
 "edge": -8.5,
 "tier": "YEL",
-"model_side": "North Texas"
+"model_side": "North Texas",
+"close_spread": -40.5
 },
 "401858438": {
 "first_seen": "2026-07-14",
@@ -55,6 +59,7 @@
 "dog": "Notre Dame",
 "dog_ml": 1000,
 "ml_guard": true,
-"ml_backfilled": "2026-07-15"
+"ml_backfilled": "2026-07-15",
+"close_spread": 20.5
 }
 }

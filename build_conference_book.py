@@ -209,6 +209,10 @@ def fetch_games(refresh: bool, fpi: dict[str, dict]) -> list[dict]:
         games.append(dict(
             id=pick(g, "id"), wk=pick(g, "week"), date=date_s,
             home=home, away=away, neutral=neutral,
+            home_conf=pick(g, "homeConference", "home_conference"),
+            away_conf=pick(g, "awayConference", "away_conference"),
+            home_class=pick(g, "homeClassification", "home_classification"),
+            away_class=pick(g, "awayClassification", "away_classification"),
             venue=pick(g, "venue") or "",
             spread=spread, spread_text=ln.get("spread_text") or "",
             open_text=_spread_text(home, away, ln.get("spread_open")),
@@ -1148,6 +1152,11 @@ def update_alerts_log(games: list[dict]) -> dict:
             # first-seen principle is preserved in spirit
             log[gid].update(dog=g["dog"], dog_ml=g["dog_ml"],
                             ml_guard=g["ml_guard"], ml_backfilled=today)
+        # CLV tracking: keep the latest line each refresh. CFBD stops moving a
+        # game's line at kickoff, so once the game completes this IS the close;
+        # the first-seen number used for grading is never touched.
+        if gid in log and g["spread"] is not None:
+            log[gid]["close_spread"] = g["spread"]
     json.dump(log, open(ALERTS_LOG, "w", encoding="utf-8"), indent=0)
     return log
 
@@ -1177,7 +1186,7 @@ def build_upset_board(wb, games: list[dict]):
 
     ws["A1"] = "Upset Board — FPI vs the market, 2026"
     ws["A1"].font = TITLE_FONT
-    for c in range(1, 14):
+    for c in range(1, 15):
         ws.cell(row=1, column=c).fill = TITLE_FILL
     ws["A2"] = ("Model margin = FPI gap + 2.5 home field. PRIOR = ESPN 2026 PRESEASON FPI (captured from ESPN "
                 "July 14, 2026). \U0001F534 model picks the underdog outright (spread >= 3). "
@@ -1191,12 +1200,14 @@ def build_upset_board(wb, games: list[dict]):
                 f"top decile{f' (>= {tail_thresh:g})' if tail_thresh else ''} — unders went 55.1% on 60+ totals "
                 "2021-25, the only spread/total bias to survive FDR. ⛔ATS-only = RED dog at +401 or longer on the "
                 "road/neutral — longshot moneylines bled -22.9% ROI 2021-25; take the points, not the ML. "
-                "Home dogs exempt (-1.2%).")
+                "Home dogs exempt (-1.2%). CLV = points the alert line beat the latest/closing line by, from the "
+                "model side's perspective (2021-25: no strategy beat the close, so positive CLV is the cleanest "
+                "sign the alert engine is early rather than loud).")
     ws["A3"].font = Font(name="Arial", italic=True, size=9)
 
-    headers = ["Wk", "Date", "Matchup", "Spread (alert)", "Now", "O/U",
-               "FPI margin (home)", "Edge", "Tier", "Dog ML", "Model side",
-               "Final", "ATS"]
+    headers = ["Wk", "Date", "Matchup", "Spread (alert)", "Now", "CLV",
+               "O/U", "FPI margin (home)", "Edge", "Tier", "Dog ML",
+               "Model side", "Final", "ATS"]
     for j, h in enumerate(headers, 1):
         c = ws.cell(row=4, column=j, value=h)
         c.font = WHITE_B
@@ -1217,6 +1228,7 @@ def build_upset_board(wb, games: list[dict]):
     r = 5
     ats_rec = {"Cover": 0, "Miss": 0, "Push": 0}
     dog_rec = {"Dog WON": 0, "Dog lost": 0}
+    clv_done: list[float] = []
     for e, g, ats, outright in rows:
         matchup = f"{e['away']} at {e['home']}" if not g["neutral"] else \
                   f"{e['away']} vs {e['home']} (N)"
@@ -1232,9 +1244,13 @@ def build_upset_board(wb, games: list[dict]):
             dog_ml_disp = _ml_text(e.get("dog_ml")) or "n/a"
             if e.get("ml_guard"):
                 dog_ml_disp += " ⛔ATS-only"
+        clv = ""
+        if e.get("close_spread") is not None and e.get("spread") is not None:
+            moved = float(e["spread"]) - float(e["close_spread"])
+            clv = round(moved if e["model_side"] == e["home"] else -moved, 1)
         vals = [e["wk"], g["date"], matchup,
                 _spread_text(e["home"], e["away"], e["spread"]),
-                g["spread_text"], ou_disp,
+                g["spread_text"], clv, ou_disp,
                 round(g["model_margin"], 1) if g["model_margin"] is not None else "",
                 e["edge"], "\U0001F534" if e["tier"] == "RED" else "\U0001F7E1",
                 dog_ml_disp, e["model_side"], final,
@@ -1247,29 +1263,218 @@ def build_upset_board(wb, games: list[dict]):
             ats_rec[ats] += 1
         if outright:
             dog_rec[outright] += 1
+        if clv != "" and g["completed"]:
+            clv_done.append(clv)
         r += 1
 
     # scorecard
-    ws.cell(row=4, column=15, value="Scorecard").font = ARIAL_B
+    ws.cell(row=4, column=16, value="Scorecard").font = ARIAL_B
     n_guard = sum(1 for e, *_ in rows if e.get("ml_guard"))
+    if clv_done:
+        clv_avg = f"{sum(clv_done) / len(clv_done):+.2f}"
+        clv_rec = (f"{sum(1 for c in clv_done if c > 0)}-"
+                   f"{sum(1 for c in clv_done if c < 0)}-"
+                   f"{sum(1 for c in clv_done if c == 0)}")
+    else:
+        clv_avg, clv_rec = "pending", "0-0-0"
     score_lines = [
         ("Alerts logged", len(rows)),
         ("Model side ATS", f"{ats_rec['Cover']}-{ats_rec['Miss']}-{ats_rec['Push']}"),
         ("Red dogs outright*", f"{dog_rec['Dog WON']}-{dog_rec['Dog lost']}"),
         ("ML-guarded (ATS-only)", n_guard),
+        ("Avg CLV, graded (pts)", clv_avg),
+        ("CLV beat-tie-lost close", clv_rec),
         ("Pending", sum(1 for *_x, a, _o in rows if not a)),
         ("*excludes ⛔ML-guarded", ""),
     ]
     for i, (k, v) in enumerate(score_lines):
-        ws.cell(row=5 + i, column=15, value=k).font = ARIAL
-        ws.cell(row=5 + i, column=16, value=v).font = ARIAL_B
+        ws.cell(row=5 + i, column=16, value=k).font = ARIAL
+        ws.cell(row=5 + i, column=17, value=v).font = ARIAL_B
 
-    widths = [5, 24, 34, 16, 16, 14, 16, 8, 6, 16, 20, 10, 16, 2, 22, 12]
+    widths = [5, 24, 34, 16, 16, 6, 14, 16, 8, 6, 16, 20, 10, 16, 2, 22, 12]
     for i, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "A5"
     print(f"Upset Board: {len(rows)} alerts "
           f"({sum(1 for e, *_ in rows if e['tier'] == 'RED')} red)")
+
+
+# ---------------- watch list (paper bets) ----------------
+
+WATCH_LOG = HERE / "watchlist_log.json"
+POWER_CONFS_2026 = {"SEC", "Big Ten", "Big 12", "ACC"}
+
+WATCH_RULES = {
+    "RANKED_FAV": ("Ranked-vs-ranked favorite ATS",
+                   "2021-25: 56.1% (285 gms), 5/5 seasons, p=.048 — failed FDR"),
+    "EARLY_UNDER": ("Early-season under (wks 1-4)",
+                    "2021-25: 52.8% (1,218 bets), 5/5 seasons — at break-even"),
+    "G5_DOG": ("G5-vs-G5 dog ATS",
+               "2021-25: 52.1% (1,622 bets), 4/5 seasons — short of break-even"),
+}
+
+
+def fetch_ap_ranks(refresh: bool) -> dict[int, dict[str, int]]:
+    """{week: {norm(team): rank}} from the 2026 AP poll (Coaches fallback).
+
+    Empty until the first 2026 poll drops (~late Aug) — RANKED_FAV simply
+    logs nothing before then.
+    """
+    import cfbd_client as cfbd
+    try:
+        weeks = cfbd.get("/rankings", {"year": 2026, "seasonType": "regular"},
+                         refresh)
+    except Exception as exc:
+        print(f"watch list: 2026 rankings unavailable ({exc})")
+        return {}
+    out = {}
+    for wk in weeks or []:
+        polls = wk.get("polls") or []
+        poll = (next((p for p in polls if p.get("poll") == "AP Top 25"), None)
+                or next((p for p in polls if p.get("poll") == "Coaches Poll"),
+                        None))
+        if poll:
+            out[wk.get("week")] = {norm(r["school"]): r.get("rank")
+                                   for r in poll.get("ranks") or []
+                                   if r.get("school")}
+    return out
+
+
+def _is_g5(conf, cls, team) -> bool:
+    return (cls == "fbs" and conf not in POWER_CONFS_2026
+            and norm(team or "") != norm("Notre Dame"))
+
+
+def update_watch_log(games: list[dict], ranks: dict) -> dict:
+    """Paper-bet ledger for the post-mortem watch-list patterns: log each rule
+    hit at the FIRST-SEEN line, pre-kickoff only, never regraded against moved
+    lines (same philosophy as alerts_log). A game can hit multiple rules."""
+    log = json.load(open(WATCH_LOG, encoding="utf-8")) if WATCH_LOG.exists() else {}
+    today = f"{datetime.date.today():%Y-%m-%d}"
+
+    def put(g, rule, **kw):
+        key = f"{g['id']}:{rule}"
+        if key not in log:
+            log[key] = dict(first_seen=today, rule=rule, gid=g["id"],
+                            wk=g["wk"], home=g["home"], away=g["away"], **kw)
+
+    for g in games:
+        if g["completed"]:
+            continue  # paper bets must exist before kickoff
+        fbs_both = g["home_class"] == "fbs" and g["away_class"] == "fbs"
+        spread, ou = g["spread"], g["ou"]
+        poll = ranks.get(g["wk"]) or {}
+        if (fbs_both and spread is not None and spread != 0 and poll
+                and norm(g["home"]) in poll and norm(g["away"]) in poll):
+            fav = g["home"] if spread < 0 else g["away"]
+            put(g, "RANKED_FAV", side=fav, spread=spread,
+                bet=f"{_spread_text(g['home'], g['away'], spread)} ATS")
+        if fbs_both and ou is not None and (g["wk"] or 99) <= 4:
+            put(g, "EARLY_UNDER", side="UNDER", total=ou,
+                bet=f"UNDER {float(ou):g}")
+        if (spread is not None and spread != 0
+                and _is_g5(g["home_conf"], g["home_class"], g["home"])
+                and _is_g5(g["away_conf"], g["away_class"], g["away"])):
+            dog = g["away"] if spread < 0 else g["home"]
+            put(g, "G5_DOG", side=dog, spread=spread,
+                bet=f"{dog} +{abs(float(spread)):g} ATS")
+    json.dump(log, open(WATCH_LOG, "w", encoding="utf-8"), indent=0)
+    return log
+
+
+def _grade_watch(e: dict, g: dict) -> str:
+    """W/L/P vs the first-seen number; '' while pending."""
+    if not g["completed"] or g["home_pts"] is None:
+        return ""
+    if e["rule"] == "EARLY_UNDER":
+        diff = float(e["total"]) - (g["home_pts"] + g["away_pts"])
+        return "P" if diff == 0 else ("W" if diff > 0 else "L")
+    margin = g["home_pts"] - g["away_pts"]
+    covered = margin + float(e["spread"])  # >0 = home covered
+    val = covered if e["side"] == e["home"] else -covered
+    return "P" if val == 0 else ("W" if val > 0 else "L")
+
+
+def build_watch_list(wb, games: list[dict], refresh: bool):
+    ranks = fetch_ap_ranks(refresh)
+    log = update_watch_log(games, ranks)
+    by_id = {g["id"]: g for g in games}
+
+    if "Watch List" in wb.sheetnames:
+        del wb["Watch List"]
+    ws = wb.create_sheet("Watch List")
+    ws["A1"] = "Watch List — post-mortem patterns on paper, 2026"
+    ws["A1"].font = TITLE_FONT
+    for c in range(1, 9):
+        ws.cell(row=1, column=c).fill = TITLE_FILL
+    ws["A2"] = ("Three patterns from the 2021-25 market post-mortem that repeated across seasons but did NOT "
+                "survive multiple-comparison correction (market-postmortem/MARKET_POSTMORTEM.md §4). Logged as "
+                "PAPER bets at the first-seen line, pre-kickoff only, graded like the Upset Board. Graduation "
+                "rule: a pattern earns real consideration only if it clears 52.38% on 100+ decided 2026 bets; "
+                "otherwise it retires as 2021-25 noise. Evidence collection, not a bet slip.")
+    ws["A2"].font = Font(name="Arial", italic=True, size=9)
+
+    rows = []
+    for key, e in log.items():
+        g = by_id.get(e["gid"])
+        if g is not None:
+            rows.append((e, g, _grade_watch(e, g)))
+    rule_order = {r: i for i, r in enumerate(WATCH_RULES)}
+    rows.sort(key=lambda t: (rule_order.get(t[0]["rule"], 9), t[0]["wk"] or 0))
+
+    # per-pattern scorecard (cols A, D-G; D is wide enough for the evidence)
+    for j, h in ((1, "Pattern"), (4, "2021-25 evidence"), (5, "2026 paper record"),
+                 (6, "Win%"), (7, "Status")):
+        c = ws.cell(row=4, column=j, value=h)
+        c.font = WHITE_B
+        c.fill = HEAD_FILL
+    for i, (rule, (label, hist)) in enumerate(WATCH_RULES.items()):
+        graded = [gr for e, _g, gr in rows if e["rule"] == rule]
+        w, l, p = graded.count("W"), graded.count("L"), graded.count("P")
+        n = w + l
+        pct = 100 * w / n if n else None
+        if n >= 100 and pct > 52.38:
+            status = "GRADUATING — clears break-even"
+        elif n >= 100 and pct <= 50:
+            status = "RETIRING — below coin flip"
+        elif len(graded) or any(e["rule"] == rule for e, *_ in rows):
+            status = "monitoring"
+        else:
+            status = "waiting for games"
+        for j, v in ((1, label), (4, hist), (5, f"{w}-{l}-{p}"),
+                     (6, f"{pct:.1f}%" if pct is not None else "—"),
+                     (7, status)):
+            ws.cell(row=5 + i, column=j, value=v).font = ARIAL
+
+    hrow = 9
+    for j, h in enumerate(["Pattern", "Wk", "Date", "Matchup",
+                           "Paper bet (first-seen)", "Now", "Final",
+                           "Result"], 1):
+        c = ws.cell(row=hrow, column=j, value=h)
+        c.font = WHITE_B
+        c.fill = HEAD_FILL
+    r = hrow + 1
+    for e, g, gr in rows:
+        matchup = f"{e['away']} at {e['home']}" if not g["neutral"] else \
+                  f"{e['away']} vs {e['home']} (N)"
+        now = ((f"{float(g['ou']):g}" if g["ou"] is not None else "")
+               if e["rule"] == "EARLY_UNDER" else g["spread_text"])
+        final = (f"{g['home_pts']}-{g['away_pts']}"
+                 if g["completed"] and g["home_pts"] is not None else "")
+        vals = [WATCH_RULES[e["rule"]][0], e["wk"], g["date"], matchup,
+                e["bet"], now, final,
+                {"W": "Win", "L": "Loss", "P": "Push"}.get(gr, "pending")]
+        for j, v in enumerate(vals, 1):
+            ws.cell(row=r, column=j, value=v).font = ARIAL
+        r += 1
+
+    widths = [30, 5, 24, 42, 26, 16, 10, 10]
+    for i, w in enumerate(widths, 1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    ws.freeze_panes = f"A{hrow + 1}"
+    counts = {r_: sum(1 for e, *_ in rows if e["rule"] == r_)
+              for r_ in WATCH_RULES}
+    print(f"Watch List: {len(rows)} paper bets {counts}")
 
 
 # ---------------- season sim ----------------
@@ -1361,6 +1566,7 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
 
     conf_teams, games, fpi, team_conf = build_data_sheets(wb, refresh)
     build_upset_board(wb, games)
+    build_watch_list(wb, games, refresh)
     build_season_sim(wb, games, fpi, team_conf)
     # standalone Scouting / Depth Charts tabs retired 2026-07-13: their content
     # now lives on the conference tabs (S&W + scheme depth panel per team)
@@ -1380,13 +1586,14 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
 
     # order: Overview, FPI Decomposition, conferences, hidden data sheets
     if drop_team_tabs:
-        keep = {"Overview", "FPI Decomposition", "Upset Board", "Season Sim",
-                "_Teams", "_Rosters", "_Sched", "_DepthGrid"}
+        keep = {"Overview", "FPI Decomposition", "Upset Board", "Watch List",
+                "Season Sim", "_Teams", "_Rosters", "_Sched", "_DepthGrid"}
         keep |= set(CONF_ORDER)
         for name in list(wb.sheetnames):
             if name not in keep:
                 del wb[name]
-    order = ["Overview", "FPI Decomposition", "Upset Board", "Season Sim"] + \
+    order = ["Overview", "FPI Decomposition", "Upset Board", "Watch List",
+             "Season Sim"] + \
             [c for c in CONF_ORDER if c in wb.sheetnames] + \
             ["_Teams", "_Rosters", "_Sched", "_DepthGrid"]
     wb._sheets = [wb[n] for n in order if n in wb.sheetnames] + \
