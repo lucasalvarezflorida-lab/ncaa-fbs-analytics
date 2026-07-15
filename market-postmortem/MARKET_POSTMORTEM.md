@@ -220,6 +220,7 @@ into that demand rather than at true odds.
 | `fetch_data.py` → `build_dataset.py` → `analyze_market.py` → `make_charts.py` | the pipeline, in order |
 | `charts/*.png` | the four headline charts |
 
-*Next phases: NFL (`nfl_games.csv`) and NBA (`nba_archive.json`) sit in
-"Fun Projects" for the same treatment — the analysis scripts only need a
-loader swap.*
+*Phase 2 (NFL 2021–2025, NBA 2011–2021) is done — see
+[MARKET_POSTMORTEM_PHASE2.md](MARKET_POSTMORTEM_PHASE2.md). Short version:
+the NFL prices everything, the NBA prices almost everything, and the biases
+above are thin-market (CFB) phenomena.*

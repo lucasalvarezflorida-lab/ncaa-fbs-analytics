@@ -1,11 +1,13 @@
 # market-postmortem
 
-Grades the CFB betting market itself (closing spreads, totals, moneylines vs
-results, 2021–2025) rather than any one strategy. Findings:
-[MARKET_POSTMORTEM.md](MARKET_POSTMORTEM.md).
+Grades betting markets themselves (closing spreads, totals, moneylines vs
+results) rather than any one strategy. Findings:
+[MARKET_POSTMORTEM.md](MARKET_POSTMORTEM.md) (CFB 2021–2025) and
+[MARKET_POSTMORTEM_PHASE2.md](MARKET_POSTMORTEM_PHASE2.md) (NFL 2021–2025,
+NBA 2011–2021).
 
-Pipeline (each step reads the previous step's output; CFBD key comes from the
-`CFBD_API_KEY` env var via the shared `../fpi-decomposition/cfbd_client.py`
+CFB pipeline (each step reads the previous step's output; CFBD key comes from
+the `CFBD_API_KEY` env var via the shared `../fpi-decomposition/cfbd_client.py`
 cache — never printed or committed):
 
 ```
@@ -15,8 +17,17 @@ python analyze_market.py   # -> slice_results.csv + results.json (57 tests, BH F
 python make_charts.py      # -> charts/*.png (4 headline charts)
 ```
 
-Conventions match the rest of the repo: home-perspective spreads, pushes
-excluded from win%, 52.38% break-even at -110, provider preference
-DraftKings → Bovada → ESPN Bet, line movement always open→close within one
-book. Phase 2 candidates: NFL/NBA via the local CSV/JSON archives in
-"Fun Projects".
+Phase 2 (self-contained loaders over local files in "Fun Projects";
+shared stats in `pm_common.py`):
+
+```
+python analyze_nfl.py         # nfl_games.csv    -> nfl_bets/slices/results
+python analyze_nba.py         # nba_archive.json -> nba_bets/slices/results
+python make_charts_phase2.py  # -> charts/nfl_*, nba_*, phase2_*
+```
+
+Conventions match the rest of the repo: home-perspective spreads (negative =
+home favored; nflverse's sign is flipped on load), pushes excluded from win%,
+52.38% break-even at -110, line movement always open→close within one book.
+The NBA loader repairs 933 swapped spread/total pairs in the archive
+(recovered totals validated; unrecoverable spread signs become NaN).
