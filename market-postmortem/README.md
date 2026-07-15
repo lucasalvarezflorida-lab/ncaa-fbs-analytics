@@ -21,10 +21,16 @@ Phase 2 (self-contained loaders over local files in "Fun Projects";
 shared stats in `pm_common.py`):
 
 ```
-python analyze_nfl.py         # nfl_games.csv    -> nfl_bets/slices/results
-python analyze_nba.py         # nba_archive.json -> nba_bets/slices/results
-python make_charts_phase2.py  # -> charts/nfl_*, nba_*, phase2_*
+python analyze_nfl.py            # nfl_games.csv    -> nfl_bets/slices/results
+python analyze_nba.py            # nba_archive.json -> nba_bets/slices/results
+python make_charts_phase2.py     # -> charts/nfl_*, nba_*, phase2_*
+python build_phase2_workbooks.py # -> NFL_Postmortem.xlsx + NBA_Postmortem.xlsx
+                                 #    (then recalc via Excel COM, never LibreOffice)
 ```
+
+The two .xlsx workbooks are browse-friendly versions of the same outputs:
+Summary (live formulas over the Bets tab), Slice Results (BH/persistence
+flags), Bets (filterable per-game data), Charts.
 
 Conventions match the rest of the repo: home-perspective spreads (negative =
 home favored; nflverse's sign is flipped on load), pushes excluded from win%,
