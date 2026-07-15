@@ -17,7 +17,11 @@
 "spread": -8.5,
 "edge": -11.9,
 "tier": "RED",
-"model_side": "Sacramento State"
+"model_side": "Sacramento State",
+"dog": "Sacramento State",
+"dog_ml": 265,
+"ml_guard": false,
+"ml_backfilled": "2026-07-15"
 },
 "401858423": {
 "first_seen": "2026-07-14",
@@ -47,6 +51,10 @@
 "spread": 20.5,
 "edge": 41.6,
 "tier": "RED",
-"model_side": "Notre Dame"
+"model_side": "Notre Dame",
+"dog": "Notre Dame",
+"dog_ml": 1000,
+"ml_guard": true,
+"ml_backfilled": "2026-07-15"
 }
 }

@@ -218,6 +218,30 @@ def fetch_games(refresh: bool, fpi: dict[str, dict]) -> list[dict]:
             completed=bool(pick(g, "completed")),
             model_margin=model_margin, edge=edge, tier=tier,
             model_side=model_side))
+
+    # Market-postmortem flags (market-postmortem/MARKET_POSTMORTEM.md):
+    # U-TAIL = total in the season's top decile (2021-25: unders 55.1% on 60+
+    # totals, the only spread/total bias to survive FDR). Percentile, not a
+    # fixed 60 — the scoring era moves. ML guardrail = RED-alert dogs at +401
+    # or longer on the road/neutral render ATS-only (longshot MLs bled -22.9%
+    # ROI 2021-25; home dogs, at -1.2%, are exempt).
+    posted = sorted(float(g["ou"]) for g in games if g["ou"] is not None)
+    tail_thresh = posted[int(0.9 * (len(posted) - 1))] if len(posted) >= 50 else None
+    for g in games:
+        g["ou_tail"] = (tail_thresh is not None and g["ou"] is not None
+                        and float(g["ou"]) >= tail_thresh)
+        g["ou_tail_thresh"] = tail_thresh
+        dog = dog_ml = None
+        ml_guard = False
+        if g["tier"] == "RED":
+            dog = g["away"] if float(g["spread"]) < 0 else g["home"]
+            dog_ml = g["away_ml"] if dog == g["away"] else g["home_ml"]
+            ml_guard = (dog_ml is not None and float(dog_ml) >= 401
+                        and (g["neutral"] or dog == g["away"]))
+        g["dog"], g["dog_ml"], g["ml_guard"] = dog, dog_ml, ml_guard
+    if tail_thresh is not None:
+        print(f"U-TAIL: totals >= {tail_thresh:g} (top decile of {len(posted)} "
+              f"posted; {sum(1 for g in games if g['ou_tail'])} games flagged)")
     return games
 
 
@@ -244,10 +268,13 @@ def derive_team_sched(games: list[dict], fpi_rank: dict[str, int]) -> dict[str, 
                 mark = {"RED": "\U0001F534 ", "YEL": "\U0001F7E1 "}.get(g["tier"], "")
                 edge_text = f"{mark}{e:+.1f}"
             ml = g["home_ml"] if is_home else g["away_ml"]
+            ou_disp = ""
+            if g["ou"] is not None:
+                ou_disp = (f"{float(g['ou']):g} ⚑U-TAIL"
+                           if g.get("ou_tail") else g["ou"])
             sched.setdefault(team, []).append(
                 [g["wk"], g["date"], opp, f"#{rk}" if rk else "n/a", ha,
-                 g["spread_text"], g["open_text"],
-                 g["ou"] if g["ou"] is not None else "", _ml_text(ml),
+                 g["spread_text"], g["open_text"], ou_disp, _ml_text(ml),
                  edge_text, _result_text(g, is_home), g["venue"]])
     for team in sched:
         sched[team].sort(key=lambda r: (r[0] or 0))
@@ -483,7 +510,8 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
     note = ws.cell(row=R_SCHED_TITLE, column=4,
                    value="Opp FPI = opponent's 2025 final FPI rank. Lines: DraftKings/Bovada via CFBD as of refresh. "
                          "Edge = FPI-implied margin minus market margin for THIS team; "
-                         "\U0001F534 model likes the dog outright, \U0001F7E1 6+ pt disagreement.")
+                         "\U0001F534 model likes the dog outright, \U0001F7E1 6+ pt disagreement. "
+                         "⚑U-TAIL = total in the season's top decile (2021-25 post-mortem: unders 55%).")
     note.font = Font(name="Arial", italic=True, size=9)
     for j, h in enumerate(["Wk", "Date", "Opponent", "Opp FPI", "H/A", "Spread",
                            "Open", "O/U", "ML", "Edge", "Result", "Venue"], 1):
@@ -1110,7 +1138,16 @@ def update_alerts_log(games: list[dict]) -> dict:
         if g["tier"] and gid not in log:
             log[gid] = dict(first_seen=today, wk=g["wk"], home=g["home"],
                             away=g["away"], spread=g["spread"], edge=g["edge"],
-                            tier=g["tier"], model_side=g["model_side"])
+                            tier=g["tier"], model_side=g["model_side"],
+                            dog=g["dog"], dog_ml=g["dog_ml"],
+                            ml_guard=g["ml_guard"])
+        elif (gid in log and log[gid].get("tier") == "RED"
+              and "dog_ml" not in log[gid] and not g["completed"]):
+            # one-time backfill for RED entries logged before the ML guardrail
+            # existed — allowed only while the game hasn't kicked off, so the
+            # first-seen principle is preserved in spirit
+            log[gid].update(dog=g["dog"], dog_ml=g["dog_ml"],
+                            ml_guard=g["ml_guard"], ml_backfilled=today)
     json.dump(log, open(ALERTS_LOG, "w", encoding="utf-8"), indent=0)
     return log
 
@@ -1140,7 +1177,7 @@ def build_upset_board(wb, games: list[dict]):
 
     ws["A1"] = "Upset Board — FPI vs the market, 2026"
     ws["A1"].font = TITLE_FONT
-    for c in range(1, 12):
+    for c in range(1, 14):
         ws.cell(row=1, column=c).fill = TITLE_FILL
     ws["A2"] = ("Model margin = FPI gap + 2.5 home field. PRIOR = ESPN 2026 PRESEASON FPI (captured from ESPN "
                 "July 14, 2026). \U0001F534 model picks the underdog outright (spread >= 3). "
@@ -1148,9 +1185,18 @@ def build_upset_board(wb, games: list[dict]):
                 "2023-25 backtest of these rules (with a stale prior): 49.7% ATS — this board is a research "
                 "shortlist and narrative engine, not a bet slip. See BACKTEST_RESULTS.md.")
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
+    tail_thresh = next((g["ou_tail_thresh"] for g in games
+                        if g.get("ou_tail_thresh") is not None), None)
+    ws["A3"] = ("Post-mortem rules (market-postmortem/MARKET_POSTMORTEM.md): ⚑U-TAIL = total in the season's "
+                f"top decile{f' (>= {tail_thresh:g})' if tail_thresh else ''} — unders went 55.1% on 60+ totals "
+                "2021-25, the only spread/total bias to survive FDR. ⛔ATS-only = RED dog at +401 or longer on the "
+                "road/neutral — longshot moneylines bled -22.9% ROI 2021-25; take the points, not the ML. "
+                "Home dogs exempt (-1.2%).")
+    ws["A3"].font = Font(name="Arial", italic=True, size=9)
 
     headers = ["Wk", "Date", "Matchup", "Spread (alert)", "Now", "O/U",
-               "FPI margin (home)", "Edge", "Tier", "Model side", "Final", "ATS"]
+               "FPI margin (home)", "Edge", "Tier", "Dog ML", "Model side",
+               "Final", "ATS"]
     for j, h in enumerate(headers, 1):
         c = ws.cell(row=4, column=j, value=h)
         c.font = WHITE_B
@@ -1175,12 +1221,23 @@ def build_upset_board(wb, games: list[dict]):
         matchup = f"{e['away']} at {e['home']}" if not g["neutral"] else \
                   f"{e['away']} vs {e['home']} (N)"
         final = _result_text(g, True) and f"{g['home_pts']}-{g['away_pts']}"
+        if e.get("ml_guard"):
+            outright = ""  # guardrail: the alert is ATS-only, no ML framing
+        ou_disp = ""
+        if g["ou"] is not None:
+            ou_disp = (f"{float(g['ou']):g} ⚑U-TAIL" if g.get("ou_tail")
+                       else g["ou"])
+        dog_ml_disp = ""
+        if e["tier"] == "RED":
+            dog_ml_disp = _ml_text(e.get("dog_ml")) or "n/a"
+            if e.get("ml_guard"):
+                dog_ml_disp += " ⛔ATS-only"
         vals = [e["wk"], g["date"], matchup,
                 _spread_text(e["home"], e["away"], e["spread"]),
-                g["spread_text"], g["ou"] if g["ou"] is not None else "",
+                g["spread_text"], ou_disp,
                 round(g["model_margin"], 1) if g["model_margin"] is not None else "",
                 e["edge"], "\U0001F534" if e["tier"] == "RED" else "\U0001F7E1",
-                e["model_side"], final,
+                dog_ml_disp, e["model_side"], final,
                 (ats + (" / " + outright if outright else "")) if ats else "pending"]
         for j, v in enumerate(vals, 1):
             c = ws.cell(row=r, column=j, value=v)
@@ -1193,18 +1250,21 @@ def build_upset_board(wb, games: list[dict]):
         r += 1
 
     # scorecard
-    ws.cell(row=4, column=14, value="Scorecard").font = ARIAL_B
+    ws.cell(row=4, column=15, value="Scorecard").font = ARIAL_B
+    n_guard = sum(1 for e, *_ in rows if e.get("ml_guard"))
     score_lines = [
         ("Alerts logged", len(rows)),
         ("Model side ATS", f"{ats_rec['Cover']}-{ats_rec['Miss']}-{ats_rec['Push']}"),
-        ("Red dogs outright", f"{dog_rec['Dog WON']}-{dog_rec['Dog lost']}"),
+        ("Red dogs outright*", f"{dog_rec['Dog WON']}-{dog_rec['Dog lost']}"),
+        ("ML-guarded (ATS-only)", n_guard),
         ("Pending", sum(1 for *_x, a, _o in rows if not a)),
+        ("*excludes ⛔ML-guarded", ""),
     ]
     for i, (k, v) in enumerate(score_lines):
-        ws.cell(row=5 + i, column=14, value=k).font = ARIAL
-        ws.cell(row=5 + i, column=15, value=v).font = ARIAL_B
+        ws.cell(row=5 + i, column=15, value=k).font = ARIAL
+        ws.cell(row=5 + i, column=16, value=v).font = ARIAL_B
 
-    widths = [5, 24, 34, 16, 16, 7, 16, 8, 6, 20, 10, 16, 2, 18, 12]
+    widths = [5, 24, 34, 16, 16, 14, 16, 8, 6, 16, 20, 10, 16, 2, 22, 12]
     for i, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "A5"
