@@ -294,7 +294,8 @@ TEAM_COLS = ["Team", "Conference", "FPI Rank", "FPI", "Predicted", "Residual",
              "ST", "ST Rk", "ST Note",
              "RosterStart", "RosterCount", "SchedStart", "SchedCount",
              "ScoutBaseO", "ScoutTendO", "ScoutBaseD", "ScoutTendD",
-             "ScoutStrengths", "ScoutWeaknesses", "DepthStart", "SchemeLabel"]
+             "ScoutStrengths", "ScoutWeaknesses", "DepthStart", "SchemeLabel",
+             "DeepIntro", "DeepRoster", "DeepIdentity", "DeepPrediction"]
 
 SCOUT_JSON = HERE / "scouting_top25.json"
 
@@ -386,10 +387,13 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
         sc = scouting["teams"].get(team, {})
         bullets = lambda xs: "\n".join("• " + x for x in xs) if xs else ""
         grid, scheme_label = build_depth_grid(team, info, sc, depth_overrides)
+        deep = sc.get("deep", {})
         row += [r_row, len(players), s_row, len(team_games),
                 sc.get("ob", ""), sc.get("ot", ""), sc.get("db", ""),
                 sc.get("dt", ""), bullets(sc.get("s")), bullets(sc.get("w")),
-                g_row, scheme_label]
+                g_row, scheme_label,
+                deep.get("intro", ""), deep.get("roster", ""),
+                deep.get("identity", ""), deep.get("prediction", "")]
         ws_t.append(row)
         for pos, depth4 in grid:
             ws_g.append([team, pos] + depth4)
@@ -620,6 +624,24 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
     ws.merge_cells(start_row=R_DC0 + N_GRID, start_column=14,
                    end_row=R_DC0 + N_GRID + 2, end_column=18)
     note.alignment = _Al(wrap_text=True, vertical="top")
+
+    # ----- deep dive (from Lucas's conference prep files; SEC & ACC so far) -----
+    r_deep = R_DC0 + N_GRID + 4  # row 53
+    _panel_header(r_deep, "DEEP DIVE — podcast prep, July 17, 2026 (blank = no file yet)", "35507A")
+    deep_secs = [("CAPSULE", "AM", 115), ("ROSTER", "AN", 430),
+                 ("IDENTITY · STRENGTHS · WEAKNESSES · GOALS", "AO", 300),
+                 ("PREDICTION", "AP", 135)]
+    rr = r_deep + 1
+    for label, col, height in deep_secs:
+        c = ws.cell(row=rr, column=14, value=label)
+        c.font = Font(name="Arial", bold=True, size=10, color="5C6B7E")
+        body = ws.cell(row=rr + 1, column=14,
+                       value=f'=IF($AG$1=0,"",INDEX(_Teams!${col}:${col},$AG$1)&"")')
+        body.font = Font(name="Arial", size=10)
+        body.alignment = _Al(wrap_text=True, vertical="top")
+        ws.merge_cells(start_row=rr + 1, start_column=14, end_row=rr + 1, end_column=18)
+        ws.row_dimensions[rr + 1].height = height
+        rr += 2
 
     widths = [22, 30, 26, 9, 8, 16, 30, 34, 28, 8, 8, 8, 2, 6, 24, 22, 20, 18]
     for i, w in enumerate(widths, 1):
