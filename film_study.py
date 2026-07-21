@@ -60,6 +60,18 @@ def slug(name: str) -> str:
     return re.sub(r"[^A-Za-z0-9]+", "_", name).strip("_")
 
 
+def dedup_text(text: str) -> str:
+    """CFBD's play-by-play occasionally ships the play text doubled
+    ("TEAM run ... TEAM run ..."). Collapse an exact repetition."""
+    s = re.sub(r"\s+", " ", text or "").strip()
+    half, rem = divmod(len(s), 2)
+    if rem == 0 and half and s[:half] == s[half:]:
+        return s[:half].strip()  # "XX" — doubled with no separator
+    if rem == 1 and s[:half] == s[half + 1:]:
+        return s[:half]  # "X X" — doubled around a space
+    return s
+
+
 def clock_str(clk) -> str:
     if isinstance(clk, dict):
         m, s = clk.get("minutes") or 0, clk.get("seconds") or 0
@@ -135,7 +147,7 @@ def wp_series(gid, refresh: bool) -> list[dict]:
         out.append({
             "n": pick(r, "playNumber", "play_number") or len(out) + 1,
             "wp": wp,
-            "text": pick(r, "playText", "play_text") or "",
+            "text": dedup_text(pick(r, "playText", "play_text") or ""),
             "home_score": pick(r, "homeScore", "home_score"),
             "away_score": pick(r, "awayScore", "away_score"),
         })
@@ -209,7 +221,7 @@ def turning_points(plays: list[dict]) -> list[dict]:
             "distance": pick(p, "distance"),
             "type": pick(p, "playType", "play_type") or "?",
             "yards": pick(p, "yardsGained", "yards_gained"),
-            "text": pick(p, "playText", "play_text") or "",
+            "text": dedup_text(pick(p, "playText", "play_text") or ""),
         })
     scored.sort(key=lambda p: abs(p["ppa"]), reverse=True)
     return scored[:N_TURNING]
