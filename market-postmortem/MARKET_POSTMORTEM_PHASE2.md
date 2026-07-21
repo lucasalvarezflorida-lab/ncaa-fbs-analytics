@@ -155,6 +155,9 @@ the NFL/NBA "edges" are worth exactly a watch-list entry.
 2. **NFL primetime-under and 7–9.5-dog** belong on the same paper-bet Watch
    List pattern as the CFB three — if a 2026 NFL data feed ever joins the
    system, they're pre-registered candidates with 2021–25 priors.
+   *(Done, July 2026: the four rules, exact definitions, grading and
+   graduation criteria are frozen in
+   [NFL_WATCHLIST_2026_PREREG.md](NFL_WATCHLIST_2026_PREREG.md).)*
 3. **The CLV lesson generalizes.** In all three sports the close beat every
    mechanical follow strategy. The Upset Board's CLV column is the right
    scoreboard; an NFL/NBA version would need nothing new conceptually.

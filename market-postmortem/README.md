@@ -4,7 +4,10 @@ Grades betting markets themselves (closing spreads, totals, moneylines vs
 results) rather than any one strategy. Findings:
 [MARKET_POSTMORTEM.md](MARKET_POSTMORTEM.md) (CFB 2021–2025) and
 [MARKET_POSTMORTEM_PHASE2.md](MARKET_POSTMORTEM_PHASE2.md) (NFL 2021–2025,
-NBA 2011–2021).
+NBA 2011–2021). The four persistent-but-unproven NFL patterns are
+pre-registered for 2026 paper tracking in
+[NFL_WATCHLIST_2026_PREREG.md](NFL_WATCHLIST_2026_PREREG.md) (committed
+July 2026, before any 2026 line existed).
 
 CFB pipeline (each step reads the previous step's output; CFBD key comes from
 the `CFBD_API_KEY` env var via the shared `../fpi-decomposition/cfbd_client.py`
