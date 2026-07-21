@@ -18,7 +18,8 @@ H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 BASE = "https://www.ourlads.com/ncaa-football-depth-charts/"
 
 idx = requests.get(BASE, headers=H, timeout=30).text
-links = sorted(set(re.findall(r'depth-chart\.aspx\?s=([a-z0-9-]+)&(?:amp;)?id=(\d+)', idx)))
+# slug may contain a literal space (OurLads quirk: "s=utah state" July 2026)
+links = sorted(set(re.findall(r'depth-chart\.aspx\?s=([a-z0-9 -]+?)&(?:amp;)?id=(\d+)', idx)))
 print("team pages:", len(links))
 
 # map slugs to our workbook team names
@@ -90,7 +91,7 @@ for slug, tid in links:
     if not team:
         continue
     try:
-        html = requests.get(f"{BASE}depth-chart.aspx?s={slug}&id={tid}",
+        html = requests.get(f"{BASE}depth-chart.aspx?s={requests.utils.quote(slug)}&id={tid}",
                             headers=H, timeout=30).text
         parsed = parse_page(html)
         if parsed and len(parsed["rows"]) >= 20:
