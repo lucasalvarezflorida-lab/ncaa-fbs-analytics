@@ -60,6 +60,6 @@
 "dog_ml": 1000,
 "ml_guard": true,
 "ml_backfilled": "2026-07-15",
-"close_spread": 20.5
+"close_spread": -20.5
 }
 }
