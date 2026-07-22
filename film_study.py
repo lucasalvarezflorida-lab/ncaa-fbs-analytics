@@ -206,12 +206,18 @@ def game_plays(gid, year: int, week, season_type: str, team: str,
     return [r for r in rows if pick(r, "gameId", "game_id") == gid]
 
 
+NON_PLAYS = {"end period", "end of half", "end of game", "end of regulation",
+             "timeout", "uncategorized"}
+
+
 def turning_points(plays: list[dict]) -> list[dict]:
     scored = []
     for p in plays:
         ppa = fnum(pick(p, "ppa", "epa"))
         if ppa is None:
             continue
+        if str(pick(p, "playType", "play_type") or "").lower() in NON_PLAYS:
+            continue  # clock/bookkeeping rows carry junk EPA
         scored.append({
             "ppa": ppa,
             "offense": p.get("offense") or "?",
@@ -410,12 +416,14 @@ def build_report(args) -> Path:
                          "runs on completed games.")
 
     OUT_DIR.mkdir(exist_ok=True)
-    stem = f"{args.year}_wk{week}_{slug(away)}_at_{slug(home)}"
+    wk_label = f"post{week}" if args.postseason else f"wk{week}"
+    stem = f"{args.year}_{wk_label}_{slug(away)}_at_{slug(home)}"
     md_path = OUT_DIR / f"{stem}.md"
     png_path = OUT_DIR / f"{stem}_wp.png"
 
+    when = f"postseason" if args.postseason else f"week {week}"
     lines = [f"# Film study — {away} at {home} "
-             f"({args.year} week {week}{', neutral' if neutral else ''})", ""]
+             f"({args.year} {when}{', neutral' if neutral else ''})", ""]
 
     # 1. Score vs the script
     spread, total = close_spread(gid, args.year, season_type, refresh)
