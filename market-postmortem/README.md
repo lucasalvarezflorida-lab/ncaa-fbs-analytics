@@ -43,6 +43,18 @@ python preseason_rank_trends.py # preseason AP top 25 / prior-year FPI top 30 pr
                                 #   model predicted top 25, 10 tests, 0 survive
 ```
 
+2026 in-season tracking:
+
+```
+python nfl_watchlist.py   # paper-bet loop for the four pre-registered NFL rules
+                          #   (NFL_WATCHLIST_2026_PREREG.md): downloads current
+                          #   nflverse games.csv, logs provisional bets, grades
+                          #   completed games vs CLOSING lines into
+                          #   nfl_watchlist_log.json + a "Watch List 2026" tab
+                          #   in NFL_Postmortem.xlsx. Rerun after
+                          #   build_phase2_workbooks.py (which recreates the book).
+```
+
 The two .xlsx workbooks are browse-friendly versions of the same outputs:
 Summary (live formulas over the Bets tab), Slice Results (BH/persistence
 flags), Bets (filterable per-game data), Charts.

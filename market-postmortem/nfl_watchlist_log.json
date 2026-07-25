@@ -1,0 +1,803 @@
+{
+"2026_01_NE_SEA:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-09",
+"home": "SEA",
+"away": "NE",
+"first_line": 44.5
+},
+"2026_01_NE_SEA:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 1,
+"date": "2026-09-09",
+"home": "SEA",
+"away": "NE",
+"first_line": 44.5
+},
+"2026_01_SF_LA:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 1,
+"date": "2026-09-10",
+"home": "LA",
+"away": "SF",
+"first_line": 48.5
+},
+"2026_01_SF_LA:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-10",
+"home": "LA",
+"away": "SF",
+"first_line": 48.5
+},
+"2026_01_CHI_CAR:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "CAR",
+"away": "CHI",
+"first_line": 44.5
+},
+"2026_01_CHI_CAR:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "CAR",
+"away": "CHI",
+"first_line": 44.5
+},
+"2026_01_TB_CIN:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "CIN",
+"away": "TB",
+"first_line": 52.5
+},
+"2026_01_NO_DET:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "DET",
+"away": "NO",
+"first_line": 49.5
+},
+"2026_01_NO_DET:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 1,
+"date": "2026-09-13",
+"home": "DET",
+"away": "NO",
+"first_line": -7.0
+},
+"2026_01_BUF_HOU:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "HOU",
+"away": "BUF",
+"first_line": 44.5
+},
+"2026_01_BUF_HOU:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "HOU",
+"away": "BUF",
+"first_line": 44.5
+},
+"2026_01_BAL_IND:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "IND",
+"away": "BAL",
+"first_line": 49.5
+},
+"2026_01_CLE_JAX:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "JAX",
+"away": "CLE",
+"first_line": 40.5
+},
+"2026_01_CLE_JAX:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 1,
+"date": "2026-09-13",
+"home": "JAX",
+"away": "CLE",
+"first_line": -7.5
+},
+"2026_01_ATL_PIT:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "PIT",
+"away": "ATL",
+"first_line": 41.5
+},
+"2026_01_ATL_PIT:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "PIT",
+"away": "ATL",
+"first_line": 41.5
+},
+"2026_01_NYJ_TEN:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "TEN",
+"away": "NYJ",
+"first_line": 38.5
+},
+"2026_01_ARI_LAC:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "LAC",
+"away": "ARI",
+"first_line": 46.5
+},
+"2026_01_MIA_LV:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "LV",
+"away": "MIA",
+"first_line": 40.5
+},
+"2026_01_GB_MIN:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "MIN",
+"away": "GB",
+"first_line": 45.5
+},
+"2026_01_WAS_PHI:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "PHI",
+"away": "WAS",
+"first_line": 47.5
+},
+"2026_01_DAL_NYG:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "NYG",
+"away": "DAL",
+"first_line": 47.5
+},
+"2026_01_DAL_NYG:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-13",
+"home": "NYG",
+"away": "DAL",
+"first_line": 47.5
+},
+"2026_01_DEN_KC:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 1,
+"date": "2026-09-14",
+"home": "KC",
+"away": "DEN",
+"first_line": 42.5
+},
+"2026_01_DEN_KC:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 1,
+"date": "2026-09-14",
+"home": "KC",
+"away": "DEN",
+"first_line": 42.5
+},
+"2026_01_DEN_KC:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 1,
+"date": "2026-09-14",
+"home": "KC",
+"away": "DEN",
+"first_line": 42.5
+},
+"2026_02_DET_BUF:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 2,
+"date": "2026-09-17",
+"home": "BUF",
+"away": "DET",
+"first_line": 52.5
+},
+"2026_02_DET_BUF:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-17",
+"home": "BUF",
+"away": "DET",
+"first_line": 52.5
+},
+"2026_02_CAR_ATL:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "ATL",
+"away": "CAR",
+"first_line": 43.5
+},
+"2026_02_CAR_ATL:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "ATL",
+"away": "CAR",
+"first_line": 43.5
+},
+"2026_02_NO_BAL:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "BAL",
+"away": "NO",
+"first_line": 46.5
+},
+"2026_02_NO_BAL:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 2,
+"date": "2026-09-20",
+"home": "BAL",
+"away": "NO",
+"first_line": -7.5
+},
+"2026_02_MIN_CHI:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "CHI",
+"away": "MIN",
+"first_line": 45.5
+},
+"2026_02_CIN_HOU:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "HOU",
+"away": "CIN",
+"first_line": 46.5
+},
+"2026_02_PIT_NE:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "NE",
+"away": "PIT",
+"first_line": 43.5
+},
+"2026_02_PIT_NE:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "NE",
+"away": "PIT",
+"first_line": 43.5
+},
+"2026_02_GB_NYJ:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "NYJ",
+"away": "GB",
+"first_line": 42.5
+},
+"2026_02_GB_NYJ:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "NYJ",
+"away": "GB",
+"first_line": 42.5
+},
+"2026_02_CLE_TB:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "TB",
+"away": "CLE",
+"first_line": 42.5
+},
+"2026_02_CLE_TB:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "TB",
+"away": "CLE",
+"first_line": 42.5
+},
+"2026_02_PHI_TEN:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "TEN",
+"away": "PHI",
+"first_line": 42.5
+},
+"2026_02_PHI_TEN:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "TEN",
+"away": "PHI",
+"first_line": 42.5
+},
+"2026_02_JAX_DEN:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "DEN",
+"away": "JAX",
+"first_line": 43.5
+},
+"2026_02_JAX_DEN:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "DEN",
+"away": "JAX",
+"first_line": 43.5
+},
+"2026_02_LV_LAC:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "LAC",
+"away": "LV",
+"first_line": 42.5
+},
+"2026_02_LV_LAC:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "LAC",
+"away": "LV",
+"first_line": 42.5
+},
+"2026_02_LV_LAC:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 2,
+"date": "2026-09-20",
+"home": "LAC",
+"away": "LV",
+"first_line": -8.5
+},
+"2026_02_SEA_ARI:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "ARI",
+"away": "SEA",
+"first_line": 44.5
+},
+"2026_02_SEA_ARI:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "ARI",
+"away": "SEA",
+"first_line": 44.5
+},
+"2026_02_WAS_DAL:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "DAL",
+"away": "WAS",
+"first_line": 51.5
+},
+"2026_02_MIA_SF:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "SF",
+"away": "MIA",
+"first_line": 46.5
+},
+"2026_02_IND_KC:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "KC",
+"away": "IND",
+"first_line": 47.5
+},
+"2026_02_IND_KC:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-20",
+"home": "KC",
+"away": "IND",
+"first_line": 47.5
+},
+"2026_02_NYG_LA:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 2,
+"date": "2026-09-21",
+"home": "LA",
+"away": "NYG",
+"first_line": 48.5
+},
+"2026_02_NYG_LA:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 2,
+"date": "2026-09-21",
+"home": "LA",
+"away": "NYG",
+"first_line": 48.5
+},
+"2026_02_NYG_LA:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 2,
+"date": "2026-09-21",
+"home": "LA",
+"away": "NYG",
+"first_line": -8.5
+},
+"2026_03_ATL_GB:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 3,
+"date": "2026-09-24",
+"home": "GB",
+"away": "ATL",
+"first_line": 46.5
+},
+"2026_03_ATL_GB:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-24",
+"home": "GB",
+"away": "ATL",
+"first_line": 46.5
+},
+"2026_03_ATL_GB:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 3,
+"date": "2026-09-24",
+"home": "GB",
+"away": "ATL",
+"first_line": -7.5
+},
+"2026_03_LAC_BUF:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "BUF",
+"away": "LAC",
+"first_line": 48.5
+},
+"2026_03_CAR_CLE:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "CLE",
+"away": "CAR",
+"first_line": 39.5
+},
+"2026_03_NYJ_DET:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "DET",
+"away": "NYJ",
+"first_line": 45.5
+},
+"2026_03_NYJ_DET:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 3,
+"date": "2026-09-27",
+"home": "DET",
+"away": "NYJ",
+"first_line": -9.5
+},
+"2026_03_HOU_IND:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "IND",
+"away": "HOU",
+"first_line": 45.5
+},
+"2026_03_NE_JAX:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "JAX",
+"away": "NE",
+"first_line": 45.5
+},
+"2026_03_KC_MIA:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "MIA",
+"away": "KC",
+"first_line": 44.5
+},
+"2026_03_KC_MIA:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "MIA",
+"away": "KC",
+"first_line": 44.5
+},
+"2026_03_KC_MIA:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 3,
+"date": "2026-09-27",
+"home": "MIA",
+"away": "KC",
+"first_line": 7.5
+},
+"2026_03_TEN_NYG:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "NYG",
+"away": "TEN",
+"first_line": 44.5
+},
+"2026_03_TEN_NYG:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "NYG",
+"away": "TEN",
+"first_line": 44.5
+},
+"2026_03_CIN_PIT:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "PIT",
+"away": "CIN",
+"first_line": 47.5
+},
+"2026_03_SEA_WAS:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "WAS",
+"away": "SEA",
+"first_line": 46.5
+},
+"2026_03_ARI_SF:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "SF",
+"away": "ARI",
+"first_line": 46.5
+},
+"2026_03_MIN_TB:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "TB",
+"away": "MIN",
+"first_line": 44.5
+},
+"2026_03_MIN_TB:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "TB",
+"away": "MIN",
+"first_line": 44.5
+},
+"2026_03_BAL_DAL:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "DAL",
+"away": "BAL",
+"first_line": 51.5
+},
+"2026_03_LV_NO:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "NO",
+"away": "LV",
+"first_line": 42.5
+},
+"2026_03_LV_NO:MID_TOTAL_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "MID_TOTAL_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "NO",
+"away": "LV",
+"first_line": 42.5
+},
+"2026_03_LA_DEN:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "DEN",
+"away": "LA",
+"first_line": 45.5
+},
+"2026_03_LA_DEN:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-27",
+"home": "DEN",
+"away": "LA",
+"first_line": 45.5
+},
+"2026_03_PHI_CHI:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 3,
+"date": "2026-09-28",
+"home": "CHI",
+"away": "PHI",
+"first_line": 46.5
+},
+"2026_03_PHI_CHI:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 3,
+"date": "2026-09-28",
+"home": "CHI",
+"away": "PHI",
+"first_line": 46.5
+},
+"2026_04_PIT_CLE:PRIME_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "PRIME_UNDER",
+"week": 4,
+"date": "2026-10-01",
+"home": "CLE",
+"away": "PIT",
+"first_line": 40.5
+},
+"2026_04_PIT_CLE:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 4,
+"date": "2026-10-01",
+"home": "CLE",
+"away": "PIT",
+"first_line": 40.5
+},
+"2026_04_IND_WAS:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 4,
+"date": "2026-10-04",
+"home": "WAS",
+"away": "IND",
+"first_line": 50.5
+},
+"2026_04_NYJ_CHI:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 4,
+"date": "2026-10-04",
+"home": "CHI",
+"away": "NYJ",
+"first_line": 45.5
+},
+"2026_04_NYJ_CHI:DOG_7_95": {
+"first_seen": "2026-07-25",
+"rule": "DOG_7_95",
+"week": 4,
+"date": "2026-10-04",
+"home": "CHI",
+"away": "NYJ",
+"first_line": -8.5
+},
+"2026_04_DAL_HOU:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 4,
+"date": "2026-10-04",
+"home": "HOU",
+"away": "DAL",
+"first_line": 47.5
+},
+"2026_04_GB_TB:EARLY_UNDER": {
+"first_seen": "2026-07-25",
+"rule": "EARLY_UNDER",
+"week": 4,
+"date": "2026-10-04",
+"home": "TB",
+"away": "GB",
+"first_line": 47.5
+}
+}

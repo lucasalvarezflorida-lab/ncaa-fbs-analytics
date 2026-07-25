@@ -7,6 +7,9 @@ fpi-decomposition/output/*
 !fpi-decomposition/output/residuals_2025.png
 film_study/
 
+# live nflverse download (refetched every nfl_watchlist.py run)
+market-postmortem/nfl_games_live.csv
+
 # workbook backups, locks, logs
 *.bak*
 .~lock.*
