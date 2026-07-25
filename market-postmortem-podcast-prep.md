@@ -1,14 +1,16 @@
 # "What the Books Actually Miss" — Podcast Prep
 
-*Compiled July 21, 2026, entirely from the repo's own studies:
+*Compiled July 21, 2026 (updated July 25 with the identity batteries),
+entirely from the repo's own studies:
 [MARKET_POSTMORTEM.md](market-postmortem/MARKET_POSTMORTEM.md) (CFB 2021–25,
-3,944 games, 57 slices) and
+3,944 games, 57 slices),
 [MARKET_POSTMORTEM_PHASE2.md](market-postmortem/MARKET_POSTMORTEM_PHASE2.md)
-(NFL 2021–25, 1,424 games; NBA 2011–21, 13,893 games). Every claim below has a
-receipt in those files or their CSVs. Methodology in one breath: exact binomial
-tests, Benjamini–Hochberg false-discovery correction at q=0.10, and a
-persistence rule — a pattern must repeat in ~80% of seasons or it's dead.
-Break-even at -110 juice is 52.38%.*
+(NFL 2021–25, 1,424 games; NBA 2011–21, 13,893 games), and the four
+team/coach/ranking batteries in `market-postmortem/*trends*.py`. Every claim
+below has a receipt in those files or their CSVs. Methodology in one breath:
+exact binomial tests, Benjamini–Hochberg false-discovery correction at q=0.10,
+and a persistence rule — a pattern must repeat in ~80% of seasons or it's
+dead. Break-even at -110 juice is 52.38%.*
 
 ---
 
@@ -20,7 +22,10 @@ games. Not "did my system win" — did *the market's own number* miss in any
 repeatable direction. The answer: almost never. Out of 141 strategy slices
 across three sports, a **handful** survive honest statistics, every one of
 them is in college football, and they all tell the same story: **the books
-don't misprice football, they misprice attention.**
+don't misprice football, they misprice attention.** Then we went hunting for
+the angles fans actually ask about — is my team cursed, does this coach
+always go over — and ran another 804 team-, coach-, and ranking-based tests.
+Survivors: **zero.**
 
 ## Segment 1 — CFB: the two real misses
 
@@ -60,9 +65,11 @@ ATS, weeks-1–4 unders 54.9% (5/5). All fail correction. New this summer:
 those are now **pre-registered** for 2026
 ([NFL_WATCHLIST_2026_PREREG.md](market-postmortem/NFL_WATCHLIST_2026_PREREG.md),
 committed in July, before a single 2026 line existed) — paper bets, graded
-against the close, nothing graduates before 52.38% on 100+ bets. *"We wrote
-the rules down in July so we can't cheat in December — most of these can't
-even mathematically graduate until 2027."*
+against the close, nothing graduates before 52.38% on 100+ bets. The tracker
+(`nfl_watchlist.py`) is already live: **89 provisional paper bets logged off
+July lookahead lines**, starting with the Thursday opener (Broncos–Chiefs
+under 42.5). *"We wrote the rules down in July so we can't cheat in
+December — most of these can't even mathematically graduate until 2027."*
 
 Fun anecdote, clearly labeled as one: unders in 15+ mph wind went 57-36-2
 (61.3%) — but that's 93 games, and it's excluded from the watch list on
@@ -104,6 +111,48 @@ ones is chasing lottery tickets and overs. Sixteen NFL games a week under
 industrial sharp action have none of it. *"Edges don't live where the games
 are — they live where the crowds aren't."*
 
+## Segment 5 — "but what about MY team?" (the identity batteries)
+
+The questions every listener actually has: does Miami always blow the over,
+does Kiffin always go under, fade the preseason hype? We tested all of it —
+every NFL team (96 tests), every CFB program with 30+ graded games (399),
+every coach pooled across schools (299), and preseason AP / FPI / model
+rankings (10). **804 tests, raw hits almost exactly what a fair coin
+predicts, zero survive correction.** Your team is not cursed and your coach
+is not a system.
+
+The two showpieces, because they're perfect radio:
+
+* **Lane Kiffin's Ole Miss went UNDER 70.8% of the time, 2021–24** — under
+  in all four seasons, best totals number in the whole coach battery. The
+  points-machine reputation, priced; the actual slow-tempo teams, not.
+* **Lincoln Riley's USC went OVER 70.0%, 2022–24.** Elite offense, no
+  defense, every casual's prior.
+
+Then the punchline: both had knowable 2025 attributions, so we graded 2025
+as a true out-of-sample year. **Kiffin 2025: 6 overs, 5 unders. Riley 2025:
+7 overs, 6 unders.** Two coin flips. *"A 70% trend on 45 games is what noise
+looks like — and even if some of it was real, the books had re-priced it by
+year five."* (Also: Kiffin's 'trend' was fit entirely on Ole Miss personnel,
+and he's at LSU now. The sample wouldn't even transfer.)
+
+Honest color for the segment: the team batteries' top hits were mostly
+*one-possession-game* rates — Ohio State in close games 17.9% of the time,
+Nebraska 58.6% (the famous curse) — but those describe team quality, not
+market error. Ohio State blows teams out AND the market prices it; their ATS
+record is a coin flip. Notre Dame covering 66.7% and Marcus Freeman covering
+70.7% are the same noise wearing two hats, and both were already regressing
+by 2025.
+
+One thread survived with an asterisk: **teams in the prior year's FPI top 30
+failed to cover, all five seasons** — fading them won 53.7% (elite-vs-elite
+excluded). The catch: it's a post-hoc slice that never faced the original
+FDR battery, and 53.7% barely clears the 52.38% vig line. So it's now the
+**fifth paper rule on the workbook's Watch List** (`FPI_FADE`, registered
+preseason, 21 bets already logged) — 2026 is its trial year, not its victory
+lap. *"The public buys last year's brand names; the books shade into it and
+keep almost every cent."*
+
 ## Listener takeaways (rapid-fire closer)
 
 1. Never buy a +400-or-longer college moneyline; if you must own a longshot,
@@ -116,13 +165,18 @@ are — they live where the crowds aren't."*
 4. The close is the best free forecast in sports. Grade yourself against it
    (closing-line value) before you grade yourself against results.
 5. Anyone selling an NFL system is selling the vig. 0-for-42.
+6. Team and coach trends are astrology with box scores — 804 tests, zero
+   survivors, and the two prettiest ones (Kiffin unders, Riley overs) died
+   the very next season. Situations persist; names get re-priced weekly.
 
 ## If asked "so what do you actually do with this?"
 
 The two CFB findings are automated in the season workbook: a U-TAIL chip
 flags top-decile totals, RED upset alerts suppress the moneyline framing on
-+401 road dogs, every alert gets a CLV grade, and the maybe-patterns
-(ranked-vs-ranked favorites, early unders, G5 dogs) sit on a paper-bet Watch
-List with the same 52.38%-on-100+ graduation bar as the new NFL list. First
-2026 grades start rolling in Week 1 (~Aug 29); ranked-favorite tracking wakes
-up when the AP poll drops in late August. That's a natural follow-up episode.
++401 road dogs, every alert gets a CLV grade, and the maybe-patterns —
+ranked-vs-ranked favorites, early unders, G5 dogs, and now the FPI-elite
+fade — sit on a paper-bet Watch List with the same 52.38%-on-100+ graduation
+bar as the NFL list, whose tracker is already logging bets off July lines.
+First 2026 grades start rolling in Week 1 (~Aug 29); ranked-favorite
+tracking wakes up when the AP poll drops in late August. That's a natural
+follow-up episode.
