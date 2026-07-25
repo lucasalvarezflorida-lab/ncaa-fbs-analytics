@@ -1,0 +1,995 @@
+{
+ "meta": {
+  "frozen": "2026-07-25",
+  "gap_threshold": 3,
+  "excluded": "MAC (tier board, no order), Independents (n<4)",
+  "provenance": "CUSA board is Athlon-shaped per the source file",
+  "note": "2026 is the first sample; no backtest of these boards exists"
+ },
+ "teams": {
+  "texas": {
+   "team": "Texas",
+   "group": "SEC",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "georgia": {
+   "team": "Georgia",
+   "group": "SEC",
+   "lucas_rank": 2,
+   "fpi_group_rank": 2,
+   "gap": 0,
+   "flag": ""
+  },
+  "lsu": {
+   "team": "LSU",
+   "group": "SEC",
+   "lucas_rank": 3,
+   "fpi_group_rank": 4,
+   "gap": 1,
+   "flag": ""
+  },
+  "ole miss": {
+   "team": "Ole Miss",
+   "group": "SEC",
+   "lucas_rank": 4,
+   "fpi_group_rank": 7,
+   "gap": 3,
+   "flag": "over"
+  },
+  "alabama": {
+   "team": "Alabama",
+   "group": "SEC",
+   "lucas_rank": 5,
+   "fpi_group_rank": 3,
+   "gap": -2,
+   "flag": ""
+  },
+  "texas am": {
+   "team": "Texas A&M",
+   "group": "SEC",
+   "lucas_rank": 6,
+   "fpi_group_rank": 5,
+   "gap": -1,
+   "flag": ""
+  },
+  "oklahoma": {
+   "team": "Oklahoma",
+   "group": "SEC",
+   "lucas_rank": 7,
+   "fpi_group_rank": 6,
+   "gap": -1,
+   "flag": ""
+  },
+  "tennessee": {
+   "team": "Tennessee",
+   "group": "SEC",
+   "lucas_rank": 8,
+   "fpi_group_rank": 8,
+   "gap": 0,
+   "flag": ""
+  },
+  "south carolina": {
+   "team": "South Carolina",
+   "group": "SEC",
+   "lucas_rank": 9,
+   "fpi_group_rank": 12,
+   "gap": 3,
+   "flag": "over"
+  },
+  "auburn": {
+   "team": "Auburn",
+   "group": "SEC",
+   "lucas_rank": 10,
+   "fpi_group_rank": 11,
+   "gap": 1,
+   "flag": ""
+  },
+  "florida": {
+   "team": "Florida",
+   "group": "SEC",
+   "lucas_rank": 11,
+   "fpi_group_rank": 9,
+   "gap": -2,
+   "flag": ""
+  },
+  "missouri": {
+   "team": "Missouri",
+   "group": "SEC",
+   "lucas_rank": 12,
+   "fpi_group_rank": 10,
+   "gap": -2,
+   "flag": ""
+  },
+  "vanderbilt": {
+   "team": "Vanderbilt",
+   "group": "SEC",
+   "lucas_rank": 13,
+   "fpi_group_rank": 13,
+   "gap": 0,
+   "flag": ""
+  },
+  "kentucky": {
+   "team": "Kentucky",
+   "group": "SEC",
+   "lucas_rank": 14,
+   "fpi_group_rank": 14,
+   "gap": 0,
+   "flag": ""
+  },
+  "arkansas": {
+   "team": "Arkansas",
+   "group": "SEC",
+   "lucas_rank": 15,
+   "fpi_group_rank": 15,
+   "gap": 0,
+   "flag": ""
+  },
+  "mississippi state": {
+   "team": "Mississippi State",
+   "group": "SEC",
+   "lucas_rank": 16,
+   "fpi_group_rank": 16,
+   "gap": 0,
+   "flag": ""
+  },
+  "miami": {
+   "team": "Miami",
+   "group": "ACC",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "smu": {
+   "team": "SMU",
+   "group": "ACC",
+   "lucas_rank": 2,
+   "fpi_group_rank": 3,
+   "gap": 1,
+   "flag": ""
+  },
+  "louisville": {
+   "team": "Louisville",
+   "group": "ACC",
+   "lucas_rank": 3,
+   "fpi_group_rank": 4,
+   "gap": 1,
+   "flag": ""
+  },
+  "clemson": {
+   "team": "Clemson",
+   "group": "ACC",
+   "lucas_rank": 4,
+   "fpi_group_rank": 2,
+   "gap": -2,
+   "flag": ""
+  },
+  "virginia tech": {
+   "team": "Virginia Tech",
+   "group": "ACC",
+   "lucas_rank": 5,
+   "fpi_group_rank": 7,
+   "gap": 2,
+   "flag": ""
+  },
+  "georgia tech": {
+   "team": "Georgia Tech",
+   "group": "ACC",
+   "lucas_rank": 6,
+   "fpi_group_rank": 10,
+   "gap": 4,
+   "flag": "over"
+  },
+  "california": {
+   "team": "California",
+   "group": "ACC",
+   "lucas_rank": 7,
+   "fpi_group_rank": 14,
+   "gap": 7,
+   "flag": "over"
+  },
+  "virginia": {
+   "team": "Virginia",
+   "group": "ACC",
+   "lucas_rank": 8,
+   "fpi_group_rank": 6,
+   "gap": -2,
+   "flag": ""
+  },
+  "north carolina": {
+   "team": "North Carolina",
+   "group": "ACC",
+   "lucas_rank": 9,
+   "fpi_group_rank": 9,
+   "gap": 0,
+   "flag": ""
+  },
+  "florida state": {
+   "team": "Florida State",
+   "group": "ACC",
+   "lucas_rank": 10,
+   "fpi_group_rank": 5,
+   "gap": -5,
+   "flag": "under"
+  },
+  "duke": {
+   "team": "Duke",
+   "group": "ACC",
+   "lucas_rank": 11,
+   "fpi_group_rank": 12,
+   "gap": 1,
+   "flag": ""
+  },
+  "nc state": {
+   "team": "NC State",
+   "group": "ACC",
+   "lucas_rank": 12,
+   "fpi_group_rank": 11,
+   "gap": -1,
+   "flag": ""
+  },
+  "pittsburgh": {
+   "team": "Pittsburgh",
+   "group": "ACC",
+   "lucas_rank": 13,
+   "fpi_group_rank": 8,
+   "gap": -5,
+   "flag": "under"
+  },
+  "wake forest": {
+   "team": "Wake Forest",
+   "group": "ACC",
+   "lucas_rank": 14,
+   "fpi_group_rank": 13,
+   "gap": -1,
+   "flag": ""
+  },
+  "syracuse": {
+   "team": "Syracuse",
+   "group": "ACC",
+   "lucas_rank": 15,
+   "fpi_group_rank": 15,
+   "gap": 0,
+   "flag": ""
+  },
+  "stanford": {
+   "team": "Stanford",
+   "group": "ACC",
+   "lucas_rank": 16,
+   "fpi_group_rank": 17,
+   "gap": 1,
+   "flag": ""
+  },
+  "boston college": {
+   "team": "Boston College",
+   "group": "ACC",
+   "lucas_rank": 17,
+   "fpi_group_rank": 16,
+   "gap": -1,
+   "flag": ""
+  },
+  "texas tech": {
+   "team": "Texas Tech",
+   "group": "Big 12",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "byu": {
+   "team": "BYU",
+   "group": "Big 12",
+   "lucas_rank": 2,
+   "fpi_group_rank": 2,
+   "gap": 0,
+   "flag": ""
+  },
+  "utah": {
+   "team": "Utah",
+   "group": "Big 12",
+   "lucas_rank": 3,
+   "fpi_group_rank": 3,
+   "gap": 0,
+   "flag": ""
+  },
+  "kansas state": {
+   "team": "Kansas State",
+   "group": "Big 12",
+   "lucas_rank": 4,
+   "fpi_group_rank": 8,
+   "gap": 4,
+   "flag": "over"
+  },
+  "arizona": {
+   "team": "Arizona",
+   "group": "Big 12",
+   "lucas_rank": 5,
+   "fpi_group_rank": 4,
+   "gap": -1,
+   "flag": ""
+  },
+  "tcu": {
+   "team": "TCU",
+   "group": "Big 12",
+   "lucas_rank": 6,
+   "fpi_group_rank": 7,
+   "gap": 1,
+   "flag": ""
+  },
+  "houston": {
+   "team": "Houston",
+   "group": "Big 12",
+   "lucas_rank": 7,
+   "fpi_group_rank": 5,
+   "gap": -2,
+   "flag": ""
+  },
+  "oklahoma state": {
+   "team": "Oklahoma State",
+   "group": "Big 12",
+   "lucas_rank": 8,
+   "fpi_group_rank": 12,
+   "gap": 4,
+   "flag": "over"
+  },
+  "arizona state": {
+   "team": "Arizona State",
+   "group": "Big 12",
+   "lucas_rank": 9,
+   "fpi_group_rank": 9,
+   "gap": 0,
+   "flag": ""
+  },
+  "cincinnati": {
+   "team": "Cincinnati",
+   "group": "Big 12",
+   "lucas_rank": 10,
+   "fpi_group_rank": 11,
+   "gap": 1,
+   "flag": ""
+  },
+  "baylor": {
+   "team": "Baylor",
+   "group": "Big 12",
+   "lucas_rank": 11,
+   "fpi_group_rank": 6,
+   "gap": -5,
+   "flag": "under"
+  },
+  "kansas": {
+   "team": "Kansas",
+   "group": "Big 12",
+   "lucas_rank": 12,
+   "fpi_group_rank": 13,
+   "gap": 1,
+   "flag": ""
+  },
+  "ucf": {
+   "team": "UCF",
+   "group": "Big 12",
+   "lucas_rank": 13,
+   "fpi_group_rank": 14,
+   "gap": 1,
+   "flag": ""
+  },
+  "iowa state": {
+   "team": "Iowa State",
+   "group": "Big 12",
+   "lucas_rank": 14,
+   "fpi_group_rank": 16,
+   "gap": 2,
+   "flag": ""
+  },
+  "west virginia": {
+   "team": "West Virginia",
+   "group": "Big 12",
+   "lucas_rank": 15,
+   "fpi_group_rank": 15,
+   "gap": 0,
+   "flag": ""
+  },
+  "colorado": {
+   "team": "Colorado",
+   "group": "Big 12",
+   "lucas_rank": 16,
+   "fpi_group_rank": 10,
+   "gap": -6,
+   "flag": "under"
+  },
+  "ohio state": {
+   "team": "Ohio State",
+   "group": "Big Ten",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "oregon": {
+   "team": "Oregon",
+   "group": "Big Ten",
+   "lucas_rank": 2,
+   "fpi_group_rank": 2,
+   "gap": 0,
+   "flag": ""
+  },
+  "indiana": {
+   "team": "Indiana",
+   "group": "Big Ten",
+   "lucas_rank": 3,
+   "fpi_group_rank": 3,
+   "gap": 0,
+   "flag": ""
+  },
+  "penn state": {
+   "team": "Penn State",
+   "group": "Big Ten",
+   "lucas_rank": 4,
+   "fpi_group_rank": 6,
+   "gap": 2,
+   "flag": ""
+  },
+  "usc": {
+   "team": "USC",
+   "group": "Big Ten",
+   "lucas_rank": 5,
+   "fpi_group_rank": 4,
+   "gap": -1,
+   "flag": ""
+  },
+  "iowa": {
+   "team": "Iowa",
+   "group": "Big Ten",
+   "lucas_rank": 6,
+   "fpi_group_rank": 7,
+   "gap": 1,
+   "flag": ""
+  },
+  "michigan": {
+   "team": "Michigan",
+   "group": "Big Ten",
+   "lucas_rank": 7,
+   "fpi_group_rank": 5,
+   "gap": -2,
+   "flag": ""
+  },
+  "washington": {
+   "team": "Washington",
+   "group": "Big Ten",
+   "lucas_rank": 8,
+   "fpi_group_rank": 8,
+   "gap": 0,
+   "flag": ""
+  },
+  "illinois": {
+   "team": "Illinois",
+   "group": "Big Ten",
+   "lucas_rank": 9,
+   "fpi_group_rank": 10,
+   "gap": 1,
+   "flag": ""
+  },
+  "nebraska": {
+   "team": "Nebraska",
+   "group": "Big Ten",
+   "lucas_rank": 10,
+   "fpi_group_rank": 9,
+   "gap": -1,
+   "flag": ""
+  },
+  "ucla": {
+   "team": "UCLA",
+   "group": "Big Ten",
+   "lucas_rank": 11,
+   "fpi_group_rank": 15,
+   "gap": 4,
+   "flag": "over"
+  },
+  "minnesota": {
+   "team": "Minnesota",
+   "group": "Big Ten",
+   "lucas_rank": 12,
+   "fpi_group_rank": 14,
+   "gap": 2,
+   "flag": ""
+  },
+  "maryland": {
+   "team": "Maryland",
+   "group": "Big Ten",
+   "lucas_rank": 13,
+   "fpi_group_rank": 13,
+   "gap": 0,
+   "flag": ""
+  },
+  "wisconsin": {
+   "team": "Wisconsin",
+   "group": "Big Ten",
+   "lucas_rank": 14,
+   "fpi_group_rank": 11,
+   "gap": -3,
+   "flag": "under"
+  },
+  "northwestern": {
+   "team": "Northwestern",
+   "group": "Big Ten",
+   "lucas_rank": 15,
+   "fpi_group_rank": 12,
+   "gap": -3,
+   "flag": "under"
+  },
+  "rutgers": {
+   "team": "Rutgers",
+   "group": "Big Ten",
+   "lucas_rank": 16,
+   "fpi_group_rank": 17,
+   "gap": 1,
+   "flag": ""
+  },
+  "michigan state": {
+   "team": "Michigan State",
+   "group": "Big Ten",
+   "lucas_rank": 17,
+   "fpi_group_rank": 16,
+   "gap": -1,
+   "flag": ""
+  },
+  "purdue": {
+   "team": "Purdue",
+   "group": "Big Ten",
+   "lucas_rank": 18,
+   "fpi_group_rank": 18,
+   "gap": 0,
+   "flag": ""
+  },
+  "navy": {
+   "team": "Navy",
+   "group": "American",
+   "lucas_rank": 1,
+   "fpi_group_rank": 3,
+   "gap": 2,
+   "flag": ""
+  },
+  "memphis": {
+   "team": "Memphis",
+   "group": "American",
+   "lucas_rank": 2,
+   "fpi_group_rank": 5,
+   "gap": 3,
+   "flag": "over"
+  },
+  "utsa": {
+   "team": "UTSA",
+   "group": "American",
+   "lucas_rank": 3,
+   "fpi_group_rank": 6,
+   "gap": 3,
+   "flag": "over"
+  },
+  "east carolina": {
+   "team": "East Carolina",
+   "group": "American",
+   "lucas_rank": 4,
+   "fpi_group_rank": 2,
+   "gap": -2,
+   "flag": ""
+  },
+  "south florida": {
+   "team": "South Florida",
+   "group": "American",
+   "lucas_rank": 5,
+   "fpi_group_rank": 4,
+   "gap": -1,
+   "flag": ""
+  },
+  "army": {
+   "team": "Army",
+   "group": "American",
+   "lucas_rank": 6,
+   "fpi_group_rank": 7,
+   "gap": 1,
+   "flag": ""
+  },
+  "tulane": {
+   "team": "Tulane",
+   "group": "American",
+   "lucas_rank": 7,
+   "fpi_group_rank": 1,
+   "gap": -6,
+   "flag": "under"
+  },
+  "florida atlantic": {
+   "team": "Florida Atlantic",
+   "group": "American",
+   "lucas_rank": 8,
+   "fpi_group_rank": 11,
+   "gap": 3,
+   "flag": "over"
+  },
+  "tulsa": {
+   "team": "Tulsa",
+   "group": "American",
+   "lucas_rank": 9,
+   "fpi_group_rank": 10,
+   "gap": 1,
+   "flag": ""
+  },
+  "temple": {
+   "team": "Temple",
+   "group": "American",
+   "lucas_rank": 10,
+   "fpi_group_rank": 9,
+   "gap": -1,
+   "flag": ""
+  },
+  "north texas": {
+   "team": "North Texas",
+   "group": "American",
+   "lucas_rank": 11,
+   "fpi_group_rank": 8,
+   "gap": -3,
+   "flag": "under"
+  },
+  "rice": {
+   "team": "Rice",
+   "group": "American",
+   "lucas_rank": 12,
+   "fpi_group_rank": 12,
+   "gap": 0,
+   "flag": ""
+  },
+  "uab": {
+   "team": "UAB",
+   "group": "American",
+   "lucas_rank": 13,
+   "fpi_group_rank": 14,
+   "gap": 1,
+   "flag": ""
+  },
+  "charlotte": {
+   "team": "Charlotte",
+   "group": "American",
+   "lucas_rank": 14,
+   "fpi_group_rank": 13,
+   "gap": -1,
+   "flag": ""
+  },
+  "boise state": {
+   "team": "Boise State",
+   "group": "Pac-12",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "san diego state": {
+   "team": "San Diego State",
+   "group": "Pac-12",
+   "lucas_rank": 2,
+   "fpi_group_rank": 2,
+   "gap": 0,
+   "flag": ""
+  },
+  "fresno state": {
+   "team": "Fresno State",
+   "group": "Pac-12",
+   "lucas_rank": 3,
+   "fpi_group_rank": 3,
+   "gap": 0,
+   "flag": ""
+  },
+  "washington state": {
+   "team": "Washington State",
+   "group": "Pac-12",
+   "lucas_rank": 4,
+   "fpi_group_rank": 4,
+   "gap": 0,
+   "flag": ""
+  },
+  "texas state": {
+   "team": "Texas State",
+   "group": "Pac-12",
+   "lucas_rank": 5,
+   "fpi_group_rank": 5,
+   "gap": 0,
+   "flag": ""
+  },
+  "oregon state": {
+   "team": "Oregon State",
+   "group": "Pac-12",
+   "lucas_rank": 6,
+   "fpi_group_rank": 7,
+   "gap": 1,
+   "flag": ""
+  },
+  "utah state": {
+   "team": "Utah State",
+   "group": "Pac-12",
+   "lucas_rank": 7,
+   "fpi_group_rank": 6,
+   "gap": -1,
+   "flag": ""
+  },
+  "colorado state": {
+   "team": "Colorado State",
+   "group": "Pac-12",
+   "lucas_rank": 8,
+   "fpi_group_rank": 8,
+   "gap": 0,
+   "flag": ""
+  },
+  "unlv": {
+   "team": "UNLV",
+   "group": "Mountain West",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "new mexico": {
+   "team": "New Mexico",
+   "group": "Mountain West",
+   "lucas_rank": 2,
+   "fpi_group_rank": 3,
+   "gap": 1,
+   "flag": ""
+  },
+  "hawaii": {
+   "team": "Hawai'i",
+   "group": "Mountain West",
+   "lucas_rank": 3,
+   "fpi_group_rank": 2,
+   "gap": -1,
+   "flag": ""
+  },
+  "air force": {
+   "team": "Air Force",
+   "group": "Mountain West",
+   "lucas_rank": 4,
+   "fpi_group_rank": 4,
+   "gap": 0,
+   "flag": ""
+  },
+  "north dakota state": {
+   "team": "North Dakota State",
+   "group": "Mountain West",
+   "lucas_rank": 5,
+   "fpi_group_rank": 5,
+   "gap": 0,
+   "flag": ""
+  },
+  "wyoming": {
+   "team": "Wyoming",
+   "group": "Mountain West",
+   "lucas_rank": 6,
+   "fpi_group_rank": 7,
+   "gap": 1,
+   "flag": ""
+  },
+  "san jose state": {
+   "team": "San Jos\u00e9 State",
+   "group": "Mountain West",
+   "lucas_rank": 7,
+   "fpi_group_rank": 8,
+   "gap": 1,
+   "flag": ""
+  },
+  "nevada": {
+   "team": "Nevada",
+   "group": "Mountain West",
+   "lucas_rank": 8,
+   "fpi_group_rank": 6,
+   "gap": -2,
+   "flag": ""
+  },
+  "northern illinois": {
+   "team": "Northern Illinois",
+   "group": "Mountain West",
+   "lucas_rank": 9,
+   "fpi_group_rank": 9,
+   "gap": 0,
+   "flag": ""
+  },
+  "utep": {
+   "team": "UTEP",
+   "group": "Mountain West",
+   "lucas_rank": 10,
+   "fpi_group_rank": 10,
+   "gap": 0,
+   "flag": ""
+  },
+  "western kentucky": {
+   "team": "Western Kentucky",
+   "group": "CUSA",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "liberty": {
+   "team": "Liberty",
+   "group": "CUSA",
+   "lucas_rank": 2,
+   "fpi_group_rank": 3,
+   "gap": 1,
+   "flag": ""
+  },
+  "kennesaw state": {
+   "team": "Kennesaw State",
+   "group": "CUSA",
+   "lucas_rank": 3,
+   "fpi_group_rank": 5,
+   "gap": 2,
+   "flag": ""
+  },
+  "jacksonville state": {
+   "team": "Jacksonville State",
+   "group": "CUSA",
+   "lucas_rank": 4,
+   "fpi_group_rank": 4,
+   "gap": 0,
+   "flag": ""
+  },
+  "delaware": {
+   "team": "Delaware",
+   "group": "CUSA",
+   "lucas_rank": 5,
+   "fpi_group_rank": 2,
+   "gap": -3,
+   "flag": "under"
+  },
+  "fiu": {
+   "team": "FIU",
+   "group": "CUSA",
+   "lucas_rank": 6,
+   "fpi_group_rank": 7,
+   "gap": 1,
+   "flag": ""
+  },
+  "missouri state": {
+   "team": "Missouri State",
+   "group": "CUSA",
+   "lucas_rank": 7,
+   "fpi_group_rank": 6,
+   "gap": -1,
+   "flag": ""
+  },
+  "new mexico state": {
+   "team": "New Mexico State",
+   "group": "CUSA",
+   "lucas_rank": 8,
+   "fpi_group_rank": 8,
+   "gap": 0,
+   "flag": ""
+  },
+  "middle tennessee": {
+   "team": "Middle Tennessee",
+   "group": "CUSA",
+   "lucas_rank": 9,
+   "fpi_group_rank": 9,
+   "gap": 0,
+   "flag": ""
+  },
+  "sam houston": {
+   "team": "Sam Houston",
+   "group": "CUSA",
+   "lucas_rank": 10,
+   "fpi_group_rank": 10,
+   "gap": 0,
+   "flag": ""
+  },
+  "james madison": {
+   "team": "James Madison",
+   "group": "Sun Belt EAST",
+   "lucas_rank": 1,
+   "fpi_group_rank": 1,
+   "gap": 0,
+   "flag": ""
+  },
+  "old dominion": {
+   "team": "Old Dominion",
+   "group": "Sun Belt EAST",
+   "lucas_rank": 2,
+   "fpi_group_rank": 2,
+   "gap": 0,
+   "flag": ""
+  },
+  "marshall": {
+   "team": "Marshall",
+   "group": "Sun Belt EAST",
+   "lucas_rank": 3,
+   "fpi_group_rank": 4,
+   "gap": 1,
+   "flag": ""
+  },
+  "georgia southern": {
+   "team": "Georgia Southern",
+   "group": "Sun Belt EAST",
+   "lucas_rank": 4,
+   "fpi_group_rank": 3,
+   "gap": -1,
+   "flag": ""
+  },
+  "app state": {
+   "team": "App State",
+   "group": "Sun Belt EAST",
+   "lucas_rank": 5,
+   "fpi_group_rank": 5,
+   "gap": 0,
+   "flag": ""
+  },
+  "coastal carolina": {
+   "team": "Coastal Carolina",
+   "group": "Sun Belt EAST",
+   "lucas_rank": 6,
+   "fpi_group_rank": 6,
+   "gap": 0,
+   "flag": ""
+  },
+  "georgia state": {
+   "team": "Georgia State",
+   "group": "Sun Belt EAST",
+   "lucas_rank": 7,
+   "fpi_group_rank": 7,
+   "gap": 0,
+   "flag": ""
+  },
+  "louisiana": {
+   "team": "Louisiana",
+   "group": "Sun Belt WEST",
+   "lucas_rank": 1,
+   "fpi_group_rank": 3,
+   "gap": 2,
+   "flag": ""
+  },
+  "arkansas state": {
+   "team": "Arkansas State",
+   "group": "Sun Belt WEST",
+   "lucas_rank": 2,
+   "fpi_group_rank": 4,
+   "gap": 2,
+   "flag": ""
+  },
+  "troy": {
+   "team": "Troy",
+   "group": "Sun Belt WEST",
+   "lucas_rank": 3,
+   "fpi_group_rank": 2,
+   "gap": -1,
+   "flag": ""
+  },
+  "louisiana tech": {
+   "team": "Louisiana Tech",
+   "group": "Sun Belt WEST",
+   "lucas_rank": 4,
+   "fpi_group_rank": 5,
+   "gap": 1,
+   "flag": ""
+  },
+  "south alabama": {
+   "team": "South Alabama",
+   "group": "Sun Belt WEST",
+   "lucas_rank": 5,
+   "fpi_group_rank": 6,
+   "gap": 1,
+   "flag": ""
+  },
+  "southern miss": {
+   "team": "Southern Miss",
+   "group": "Sun Belt WEST",
+   "lucas_rank": 6,
+   "fpi_group_rank": 1,
+   "gap": -5,
+   "flag": "under"
+  },
+  "ul monroe": {
+   "team": "UL Monroe",
+   "group": "Sun Belt WEST",
+   "lucas_rank": 7,
+   "fpi_group_rank": 7,
+   "gap": 0,
+   "flag": ""
+  }
+ }
+}

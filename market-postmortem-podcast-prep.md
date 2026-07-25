@@ -177,6 +177,9 @@ flags top-decile totals, RED upset alerts suppress the moneyline framing on
 ranked-vs-ranked favorites, early unders, G5 dogs, and now the FPI-elite
 fade — sit on a paper-bet Watch List with the same 52.38%-on-100+ graduation
 bar as the NFL list, whose tracker is already logging bets off July lines.
-First 2026 grades start rolling in Week 1 (~Aug 29); ranked-favorite
-tracking wakes up when the AP poll drops in late August. That's a natural
-follow-up episode.
+The sixth rule is the fun one: **LUCAS_CALL** — the podcast's own
+per-conference boards, frozen in July, flagged wherever they disagree with
+preseason FPI by 3+ spots (20 teams), paper-bet all season. No backtest
+exists by construction; 2026 grades the host. First 2026 grades start
+rolling in Week 1 (~Aug 29); ranked-favorite tracking wakes up when the AP
+poll drops in late August. That's a natural follow-up episode.

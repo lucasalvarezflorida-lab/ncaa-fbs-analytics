@@ -1338,7 +1338,15 @@ WATCH_RULES = {
     "FPI_FADE": ("Fade prior-year FPI top-30 ATS",
                  "2021-25: 53.7% (1,150 bets), 5/5 seasons, p=.012 — post-hoc, "
                  "elite-vs-elite excluded"),
+    # Added 2026-07-25, preseason (build_lucas_board.py): Lucas's podcast
+    # boards vs ESPN preseason FPI, ±3 in-conference spots. NO backtest
+    # exists by construction — 2026 is the first sample of the personal eye.
+    "LUCAS_CALL": ("Lucas board vs market (±3 spots)",
+                   "no backtest — boards frozen 2026-07-25, 20 flagged teams; "
+                   "2026 is the first sample"),
 }
+
+LUCAS_BOARD = HERE / "lucas_board_2026.json"
 
 
 def fetch_ap_ranks(refresh: bool) -> dict[int, dict[str, int]]:
@@ -1389,6 +1397,14 @@ def fetch_fpi_elite(refresh: bool) -> set[str]:
     return {norm(r.get("team") or "") for r in rated[:30]}
 
 
+def load_lucas_flags() -> dict[str, str]:
+    """norm(team) -> 'over'/'under' from the frozen podcast-board file."""
+    if not LUCAS_BOARD.exists():
+        return {}
+    data = json.load(open(LUCAS_BOARD, encoding="utf-8"))
+    return {k: v["flag"] for k, v in data["teams"].items() if v["flag"]}
+
+
 def update_watch_log(games: list[dict], ranks: dict,
                      fpi_elite: set[str]) -> dict:
     """Paper-bet ledger for the post-mortem watch-list patterns: log each rule
@@ -1396,6 +1412,7 @@ def update_watch_log(games: list[dict], ranks: dict,
     lines (same philosophy as alerts_log). A game can hit multiple rules."""
     log = json.load(open(WATCH_LOG, encoding="utf-8")) if WATCH_LOG.exists() else {}
     today = f"{datetime.date.today():%Y-%m-%d}"
+    lucas_flags = load_lucas_flags()
 
     def put(g, rule, **kw):
         key = f"{g['id']}:{rule}"
@@ -1432,6 +1449,19 @@ def update_watch_log(games: list[dict], ranks: dict,
                 hcp = float(spread) if side == g["home"] else -float(spread)
                 put(g, "FPI_FADE", side=side, spread=spread,
                     bet=f"{side} {hcp:+g} ATS vs FPI-elite")
+        if fbs_both and spread is not None and spread != 0 and lucas_flags:
+            sides = set()
+            for team, opp in ((g["home"], g["away"]), (g["away"], g["home"])):
+                f = lucas_flags.get(norm(team))
+                if f == "over":
+                    sides.add(team)
+                elif f == "under":
+                    sides.add(opp)
+            if len(sides) == 1:  # skip conflicting signals
+                side = sides.pop()
+                hcp = float(spread) if side == g["home"] else -float(spread)
+                put(g, "LUCAS_CALL", side=side, spread=spread,
+                    bet=f"{side} {hcp:+g} ATS (Lucas call)")
     json.dump(log, open(WATCH_LOG, "w", encoding="utf-8"), indent=0)
     return log
 
@@ -1461,9 +1491,10 @@ def build_watch_list(wb, games: list[dict], refresh: bool):
     ws["A1"].font = TITLE_FONT
     for c in range(1, 9):
         ws.cell(row=1, column=c).fill = TITLE_FILL
-    ws["A2"] = ("Four patterns from the 2021-25 market post-mortem that repeated across seasons but did NOT "
-                "survive multiple-comparison correction (market-postmortem/MARKET_POSTMORTEM.md §4; FPI_FADE "
-                "added preseason 2026-07-25 from preseason_rank_trends.py). Logged as "
+    ws["A2"] = ("Five paper patterns: four from the 2021-25 market post-mortem that repeated across seasons but "
+                "did NOT survive multiple-comparison correction (market-postmortem/MARKET_POSTMORTEM.md §4; "
+                "FPI_FADE added preseason 2026-07-25), plus LUCAS_CALL — Lucas's frozen podcast boards vs "
+                "preseason FPI, a personal-eye test with no backtest by construction. Logged as "
                 "PAPER bets at the first-seen line, pre-kickoff only, graded like the Upset Board. Graduation "
                 "rule: a pattern earns real consideration only if it clears 52.38% on 100+ decided 2026 bets; "
                 "otherwise it retires as 2021-25 noise. Evidence collection, not a bet slip.")

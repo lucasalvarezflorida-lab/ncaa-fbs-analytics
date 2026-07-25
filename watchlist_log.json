@@ -922,5 +922,159 @@
 "side": "Florida State",
 "spread": 2.5,
 "bet": "Florida State +2.5 ATS vs FPI-elite"
+},
+"401864570:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401864570,
+"wk": 1,
+"home": "Florida State",
+"away": "New Mexico State",
+"side": "New Mexico State",
+"spread": -29.5,
+"bet": "New Mexico State +29.5 ATS (Lucas call)"
+},
+"401862693:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401862693,
+"wk": 1,
+"home": "UNLV",
+"away": "Memphis",
+"side": "Memphis",
+"spread": -3,
+"bet": "Memphis +3 ATS (Lucas call)"
+},
+"401856776:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401856776,
+"wk": 1,
+"home": "Georgia Tech",
+"away": "Colorado",
+"side": "Georgia Tech",
+"spread": -7,
+"bet": "Georgia Tech -7 ATS (Lucas call)"
+},
+"401858207:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401858207,
+"wk": 1,
+"home": "Pittsburgh",
+"away": "Miami (OH)",
+"side": "Miami (OH)",
+"spread": -16.5,
+"bet": "Miami (OH) +16.5 ATS (Lucas call)"
+},
+"401858425:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401858425,
+"wk": 1,
+"home": "Indiana",
+"away": "North Texas",
+"side": "Indiana",
+"spread": -40.5,
+"bet": "Indiana -40.5 ATS (Lucas call)"
+},
+"401856665:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401856665,
+"wk": 1,
+"home": "South Carolina",
+"away": "Kent State",
+"side": "South Carolina",
+"spread": -34.5,
+"bet": "South Carolina -34.5 ATS (Lucas call)"
+},
+"401858209:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401858209,
+"wk": 1,
+"home": "Duke",
+"away": "Tulane",
+"side": "Duke",
+"spread": -8.5,
+"bet": "Duke -8.5 ATS (Lucas call)"
+},
+"401856636:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401856636,
+"wk": 1,
+"home": "Auburn",
+"away": "Baylor",
+"side": "Auburn",
+"spread": -6.5,
+"bet": "Auburn -6.5 ATS (Lucas call)"
+},
+"401856772:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401856772,
+"wk": 1,
+"home": "Tulsa",
+"away": "Oklahoma State",
+"side": "Oklahoma State",
+"spread": 11.5,
+"bet": "Oklahoma State -11.5 ATS (Lucas call)"
+},
+"401862695:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401862695,
+"wk": 1,
+"home": "Memphis",
+"away": "Arkansas State",
+"side": "Memphis",
+"spread": -10.5,
+"bet": "Memphis -10.5 ATS (Lucas call)"
+},
+"401856637:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401856637,
+"wk": 1,
+"home": "Florida",
+"away": "Florida Atlantic",
+"side": "Florida Atlantic",
+"spread": -25.5,
+"bet": "Florida Atlantic +25.5 ATS (Lucas call)"
+},
+"401856661:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401856661,
+"wk": 1,
+"home": "Ole Miss",
+"away": "Louisville",
+"side": "Ole Miss",
+"spread": -6.5,
+"bet": "Ole Miss -6.5 ATS (Lucas call)"
+},
+"401858438:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401858438,
+"wk": 1,
+"home": "Notre Dame",
+"away": "Wisconsin",
+"side": "Notre Dame",
+"spread": -20.5,
+"bet": "Notre Dame -20.5 ATS (Lucas call)"
+},
+"401858212:LUCAS_CALL": {
+"first_seen": "2026-07-25",
+"rule": "LUCAS_CALL",
+"gid": 401858212,
+"wk": 1,
+"home": "Florida State",
+"away": "SMU",
+"side": "SMU",
+"spread": 2.5,
+"bet": "SMU -2.5 ATS (Lucas call)"
 }
 }
