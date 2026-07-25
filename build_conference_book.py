@@ -1333,6 +1333,11 @@ WATCH_RULES = {
                     "2021-25: 52.8% (1,218 bets), 5/5 seasons — at break-even"),
     "G5_DOG": ("G5-vs-G5 dog ATS",
                "2021-25: 52.1% (1,622 bets), 4/5 seasons — short of break-even"),
+    # Added 2026-07-25, preseason (preseason_rank_trends.py): post-hoc slice,
+    # never faced the original 57-test FDR battery — the paper year IS the test.
+    "FPI_FADE": ("Fade prior-year FPI top-30 ATS",
+                 "2021-25: 53.7% (1,150 bets), 5/5 seasons, p=.012 — post-hoc, "
+                 "elite-vs-elite excluded"),
 }
 
 
@@ -1367,7 +1372,25 @@ def _is_g5(conf, cls, team) -> bool:
             and norm(team or "") != norm("Notre Dame"))
 
 
-def update_watch_log(games: list[dict], ranks: dict) -> dict:
+def fetch_fpi_elite(refresh: bool) -> set[str]:
+    """Prior-year (2025) final FPI top 30, normalized — frozen all season.
+
+    FPI_FADE bets the non-elite side vs these teams. Empty set (endpoint
+    down) just means the rule logs nothing that refresh.
+    """
+    import cfbd_client as cfbd
+    try:
+        prior = cfbd.get("/ratings/fpi", {"year": 2025}, refresh)
+    except Exception as exc:
+        print(f"watch list: 2025 FPI unavailable ({exc})")
+        return set()
+    rated = sorted((r for r in prior or [] if r.get("fpi") is not None),
+                   key=lambda r: -r["fpi"])
+    return {norm(r.get("team") or "") for r in rated[:30]}
+
+
+def update_watch_log(games: list[dict], ranks: dict,
+                     fpi_elite: set[str]) -> dict:
     """Paper-bet ledger for the post-mortem watch-list patterns: log each rule
     hit at the FIRST-SEEN line, pre-kickoff only, never regraded against moved
     lines (same philosophy as alerts_log). A game can hit multiple rules."""
@@ -1400,6 +1423,15 @@ def update_watch_log(games: list[dict], ranks: dict) -> dict:
             dog = g["away"] if spread < 0 else g["home"]
             put(g, "G5_DOG", side=dog, spread=spread,
                 bet=f"{dog} +{abs(float(spread)):g} ATS")
+        if fbs_both and spread is not None and spread != 0 and fpi_elite:
+            home_elite = norm(g["home"]) in fpi_elite
+            away_elite = norm(g["away"]) in fpi_elite
+            if home_elite != away_elite:  # exactly one elite side
+                side = g["away"] if home_elite else g["home"]
+                # the fade side's own handicap (home-perspective spread)
+                hcp = float(spread) if side == g["home"] else -float(spread)
+                put(g, "FPI_FADE", side=side, spread=spread,
+                    bet=f"{side} {hcp:+g} ATS vs FPI-elite")
     json.dump(log, open(WATCH_LOG, "w", encoding="utf-8"), indent=0)
     return log
 
@@ -1419,7 +1451,7 @@ def _grade_watch(e: dict, g: dict) -> str:
 
 def build_watch_list(wb, games: list[dict], refresh: bool):
     ranks = fetch_ap_ranks(refresh)
-    log = update_watch_log(games, ranks)
+    log = update_watch_log(games, ranks, fetch_fpi_elite(refresh))
     by_id = {g["id"]: g for g in games}
 
     if "Watch List" in wb.sheetnames:
@@ -1429,8 +1461,9 @@ def build_watch_list(wb, games: list[dict], refresh: bool):
     ws["A1"].font = TITLE_FONT
     for c in range(1, 9):
         ws.cell(row=1, column=c).fill = TITLE_FILL
-    ws["A2"] = ("Three patterns from the 2021-25 market post-mortem that repeated across seasons but did NOT "
-                "survive multiple-comparison correction (market-postmortem/MARKET_POSTMORTEM.md §4). Logged as "
+    ws["A2"] = ("Four patterns from the 2021-25 market post-mortem that repeated across seasons but did NOT "
+                "survive multiple-comparison correction (market-postmortem/MARKET_POSTMORTEM.md §4; FPI_FADE "
+                "added preseason 2026-07-25 from preseason_rank_trends.py). Logged as "
                 "PAPER bets at the first-seen line, pre-kickoff only, graded like the Upset Board. Graduation "
                 "rule: a pattern earns real consideration only if it clears 52.38% on 100+ decided 2026 bets; "
                 "otherwise it retires as 2021-25 noise. Evidence collection, not a bet slip.")
