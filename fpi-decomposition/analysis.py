@@ -33,7 +33,34 @@ def _frame(records: list, context: str) -> pd.DataFrame:
 
 
 def load_fpi(year: int, refresh: bool = False) -> tuple[pd.DataFrame, int]:
-    """Load FPI for `year`, falling back to `year - 1` if not published yet."""
+    """Load FPI for `year`, falling back to `year - 1` if not published yet.
+
+    A local preseason snapshot (data/fpi_{year}_preseason_snapshot_*.json,
+    captured from ESPN before week 1) takes priority over CFBD: CFBD mirrors
+    *final* FPI, so for a true preseason decomposition the snapshot IS the
+    target, and falling back to last season's final FPI would silently
+    reintroduce the circularity the snapshot exists to avoid.
+    """
+    import json
+
+    snaps = sorted(
+        cfbd.DATA_DIR.glob(f"fpi_{year}_preseason_snapshot_*.json"))
+    if snaps:
+        rows = json.load(open(snaps[-1], encoding="utf-8"))
+        df = _frame(rows, "preseason snapshot")
+        team = pick_col(df, ["team", "school"], "preseason snapshot")
+        fpi = pick_col(df, ["fpi", "rating"], "preseason snapshot")
+        out = df[[team, fpi]].rename(columns={team: "team", fpi: "fpi"})
+        conf_rows = _frame(cfbd.get("/teams/fbs", {"year": year}, refresh),
+                           "/teams/fbs")
+        school = pick_col(conf_rows, ["school", "team"], "/teams/fbs")
+        conf = pick_col(conf_rows, ["conference", "conf"], "/teams/fbs")
+        out["conference"] = out.team.map(
+            dict(zip(conf_rows[school], conf_rows[conf])))
+        out = out.dropna(subset=["fpi"])
+        print(f"FPI source: {snaps[-1].name} (ESPN preseason snapshot, "
+              f"{len(out)} teams)")
+        return add_merge_key(out, "team"), year
     for y in (year, year - 1):
         records = cfbd.fetch_fpi(y, refresh)
         if records:

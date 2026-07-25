@@ -347,6 +347,41 @@ def snapshot_preseason_fpi():
               "on the first refresh after ESPN releases it.")
 
 
+def maybe_run_2026_decomposition():
+    """Run the TRUE preseason decomposition automatically, once, on the first
+    refresh where CFBD's 2026 input mirrors (returning production + talent)
+    have rows. The target y is the ESPN preseason snapshot — analysis.load_fpi
+    prefers it over CFBD, so there's no silent fallback to 2025 final FPI.
+    Requested by Lucas 2026-07-25 ("run the FPI decomposition after the 2026
+    snapshot drops")."""
+    if (FPI_DIR / "output" / "residuals_2026.csv").exists():
+        return  # already ran
+    import cfbd_client as cfbd
+    try:
+        ret = cfbd.get("/player/returning", {"year": 2026}, refresh=True)
+        tal = cfbd.get("/talent", {"year": 2026}, refresh=True)
+    except Exception as exc:
+        print(f"WARN: 2026 mirror check failed ({exc}); will retry next refresh")
+        return
+    if not (ret and tal):
+        print("2026 returning-production/talent not on CFBD yet — preseason "
+              "decomposition still pending (auto-runs when they land).")
+        return
+    print("\n*** CFBD 2026 inputs are LIVE — running the true preseason "
+          "decomposition (y = ESPN July snapshot) ***")
+    r = subprocess.run(
+        [sys.executable, str(FPI_DIR / "fpi_decomposition.py"),
+         "--year", "2026", "--transfer", "--refresh"], cwd=FPI_DIR)
+    if r.returncode == 0:
+        print("*** Preseason decomposition DONE — outputs in "
+              "fpi-decomposition/output/*_2026*. Review before quoting: "
+              "compare vs the 2025 backtest (R² 0.705/0.712) and update "
+              "README/PODCAST_NOTES + the workbook FPI sheet. ***")
+    else:
+        print("WARN: decomposition run failed — rerun manually: "
+              "python fpi_decomposition.py --year 2026 --transfer --refresh")
+
+
 def recalc_com(book: Path):
     """Recalculate + save via Excel so formula results are cached in the file."""
     ps = (
@@ -383,6 +418,7 @@ def main() -> int:
     if not args.import_only:
         run_roster_refresh()
         snapshot_preseason_fpi()
+        maybe_run_2026_decomposition()
 
     print("\n== rebuilding conference tabs + data sheets ==")
     from build_conference_book import restructure
