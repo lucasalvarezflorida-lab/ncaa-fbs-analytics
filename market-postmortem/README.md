@@ -31,6 +31,18 @@ python build_phase2_workbooks.py # -> NFL_Postmortem.xlsx + NBA_Postmortem.xlsx
                                  #    (then recalc via Excel COM, never LibreOffice)
 ```
 
+Identity/ranking batteries (July 2026, all negative — kept as receipts;
+each prints its own battery size, BH verdict, and season splits):
+
+```
+python team_trends_nfl.py       # per-NFL-team over/ATS/one-score, 96 tests, 0 survive
+python team_trends_cfb.py       # per-CFB-team (30+ games), 399 tests, 0 survive
+python coach_trends_cfb.py      # per-coach pooled across schools (CFBD /coaches;
+                                #   split team-seasons excluded), 299 tests, 0 survive
+python preseason_rank_trends.py # preseason AP top 25 / prior-year FPI top 30 proxy /
+                                #   model predicted top 25, 10 tests, 0 survive
+```
+
 The two .xlsx workbooks are browse-friendly versions of the same outputs:
 Summary (live formulas over the Bets tab), Slice Results (BH/persistence
 flags), Bets (filterable per-game data), Charts.
