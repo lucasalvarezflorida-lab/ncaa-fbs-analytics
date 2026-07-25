@@ -9,6 +9,7 @@ film_study/
 
 # live nflverse download (refetched every nfl_watchlist.py run)
 market-postmortem/nfl_games_live.csv
+market-postmortem/nfl_watchlist_run.log
 
 # workbook backups, locks, logs
 *.bak*

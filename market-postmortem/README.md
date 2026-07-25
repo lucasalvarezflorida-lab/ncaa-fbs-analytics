@@ -53,6 +53,9 @@ python nfl_watchlist.py   # paper-bet loop for the four pre-registered NFL rules
                           #   nfl_watchlist_log.json + a "Watch List 2026" tab
                           #   in NFL_Postmortem.xlsx. Rerun after
                           #   build_phase2_workbooks.py (which recreates the book).
+                          #   Scheduled: Windows task "NFL Watchlist Weekly"
+                          #   (../nfl_watchlist_weekly.bat, Tuesdays 8:00 AM from
+                          #   2026-08-25, logs to nfl_watchlist_run.log).
 ```
 
 The two .xlsx workbooks are browse-friendly versions of the same outputs:
