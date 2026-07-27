@@ -10,3 +10,5 @@ echo. >> nfl_watchlist_run.log
 echo ==== scheduled run %date% %time% ==== >> nfl_watchlist_run.log
 "C:\Users\lucas\AppData\Local\Python\pythoncore-3.14-64\python.exe" nfl_watchlist.py >> nfl_watchlist_run.log 2>&1
 echo ==== done %date% %time% (exit %errorlevel%) ==== >> nfl_watchlist_run.log
+rem Discard recalc-noise workbook rewrites; real changes stay for review.
+"C:\Users\lucas\AppData\Local\Python\pythoncore-3.14-64\python.exe" "%~dp0workbook_noise_check.py" >> nfl_watchlist_run.log 2>&1
