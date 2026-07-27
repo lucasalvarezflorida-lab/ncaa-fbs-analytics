@@ -39,6 +39,9 @@ python team_trends_nfl.py       # per-NFL-team over/ATS/one-score, 96 tests, 0 s
 python team_trends_cfb.py       # per-CFB-team (30+ games), 399 tests, 0 survive
 python coach_trends_cfb.py      # per-coach pooled across schools (CFBD /coaches;
                                 #   split team-seasons excluded), 299 tests, 0 survive
+python luck_audit.py cfb|nfl    # prior-season records vs Pythagorean + one-score
+                                #   luck; CFB annotated with Lucas board rank/flag.
+                                #   Forecasting context, not a betting rule.
 python preseason_rank_trends.py # preseason AP top 25 / prior-year FPI top 30 proxy /
                                 #   model predicted top 25, 10 tests, 0 survive
 ```
