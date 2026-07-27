@@ -2,7 +2,13 @@
  "meta": {
   "frozen": "2026-07-25",
   "gap_threshold": 3,
-  "excluded": "MAC (tier board, no order), Independents (n<4)",
+  "tier_rules": {
+   "avgw_break": 1.0,
+   "mwc_odds_ratio": 2.0,
+   "cusa_rank_break": 8,
+   "mac": "native tiers"
+  },
+  "excluded": "Independents (n<4); MAC has tiers only (no order)",
   "provenance": "CUSA board is Athlon-shaped per the source file",
   "note": "2026 is the first sample; no backtest of these boards exists"
  },
@@ -13,6 +19,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "georgia": {
@@ -21,6 +28,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 2,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "lsu": {
@@ -29,6 +37,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 4,
    "gap": 1,
+   "tier": 1,
    "flag": ""
   },
   "ole miss": {
@@ -37,6 +46,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 7,
    "gap": 3,
+   "tier": 2,
    "flag": "over"
   },
   "alabama": {
@@ -45,6 +55,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 3,
    "gap": -2,
+   "tier": 2,
    "flag": ""
   },
   "texas am": {
@@ -53,6 +64,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 5,
    "gap": -1,
+   "tier": 2,
    "flag": ""
   },
   "oklahoma": {
@@ -61,6 +73,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 6,
    "gap": -1,
+   "tier": 2,
    "flag": ""
   },
   "tennessee": {
@@ -69,6 +82,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 8,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "south carolina": {
@@ -77,6 +91,7 @@
    "lucas_rank": 9,
    "fpi_group_rank": 12,
    "gap": 3,
+   "tier": 2,
    "flag": "over"
   },
   "auburn": {
@@ -85,6 +100,7 @@
    "lucas_rank": 10,
    "fpi_group_rank": 11,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "florida": {
@@ -93,6 +109,7 @@
    "lucas_rank": 11,
    "fpi_group_rank": 9,
    "gap": -2,
+   "tier": 2,
    "flag": ""
   },
   "missouri": {
@@ -101,6 +118,7 @@
    "lucas_rank": 12,
    "fpi_group_rank": 10,
    "gap": -2,
+   "tier": 2,
    "flag": ""
   },
   "vanderbilt": {
@@ -109,6 +127,7 @@
    "lucas_rank": 13,
    "fpi_group_rank": 13,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "kentucky": {
@@ -117,6 +136,7 @@
    "lucas_rank": 14,
    "fpi_group_rank": 14,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "arkansas": {
@@ -125,6 +145,7 @@
    "lucas_rank": 15,
    "fpi_group_rank": 15,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "mississippi state": {
@@ -133,6 +154,7 @@
    "lucas_rank": 16,
    "fpi_group_rank": 16,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "miami": {
@@ -141,6 +163,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "smu": {
@@ -149,6 +172,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 3,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "louisville": {
@@ -157,6 +181,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 4,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "clemson": {
@@ -165,6 +190,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 2,
    "gap": -2,
+   "tier": 2,
    "flag": ""
   },
   "virginia tech": {
@@ -173,6 +199,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 7,
    "gap": 2,
+   "tier": 2,
    "flag": ""
   },
   "georgia tech": {
@@ -181,6 +208,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 10,
    "gap": 4,
+   "tier": 3,
    "flag": "over"
   },
   "california": {
@@ -189,6 +217,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 14,
    "gap": 7,
+   "tier": 3,
    "flag": "over"
   },
   "virginia": {
@@ -197,6 +226,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 6,
    "gap": -2,
+   "tier": 3,
    "flag": ""
   },
   "north carolina": {
@@ -205,6 +235,7 @@
    "lucas_rank": 9,
    "fpi_group_rank": 9,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "florida state": {
@@ -213,6 +244,7 @@
    "lucas_rank": 10,
    "fpi_group_rank": 5,
    "gap": -5,
+   "tier": 3,
    "flag": "under"
   },
   "duke": {
@@ -221,6 +253,7 @@
    "lucas_rank": 11,
    "fpi_group_rank": 12,
    "gap": 1,
+   "tier": 3,
    "flag": ""
   },
   "nc state": {
@@ -229,6 +262,7 @@
    "lucas_rank": 12,
    "fpi_group_rank": 11,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "pittsburgh": {
@@ -237,6 +271,7 @@
    "lucas_rank": 13,
    "fpi_group_rank": 8,
    "gap": -5,
+   "tier": 3,
    "flag": "under"
   },
   "wake forest": {
@@ -245,6 +280,7 @@
    "lucas_rank": 14,
    "fpi_group_rank": 13,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "syracuse": {
@@ -253,6 +289,7 @@
    "lucas_rank": 15,
    "fpi_group_rank": 15,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "stanford": {
@@ -261,6 +298,7 @@
    "lucas_rank": 16,
    "fpi_group_rank": 17,
    "gap": 1,
+   "tier": 3,
    "flag": ""
   },
   "boston college": {
@@ -269,6 +307,7 @@
    "lucas_rank": 17,
    "fpi_group_rank": 16,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "texas tech": {
@@ -277,6 +316,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "byu": {
@@ -285,6 +325,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 2,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "utah": {
@@ -293,6 +334,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 3,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "kansas state": {
@@ -301,6 +343,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 8,
    "gap": 4,
+   "tier": 2,
    "flag": "over"
   },
   "arizona": {
@@ -309,6 +352,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 4,
    "gap": -1,
+   "tier": 2,
    "flag": ""
   },
   "tcu": {
@@ -317,6 +361,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 7,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "houston": {
@@ -325,6 +370,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 5,
    "gap": -2,
+   "tier": 2,
    "flag": ""
   },
   "oklahoma state": {
@@ -333,6 +379,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 12,
    "gap": 4,
+   "tier": 2,
    "flag": "over"
   },
   "arizona state": {
@@ -341,6 +388,7 @@
    "lucas_rank": 9,
    "fpi_group_rank": 9,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "cincinnati": {
@@ -349,6 +397,7 @@
    "lucas_rank": 10,
    "fpi_group_rank": 11,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "baylor": {
@@ -357,6 +406,7 @@
    "lucas_rank": 11,
    "fpi_group_rank": 6,
    "gap": -5,
+   "tier": 2,
    "flag": "under"
   },
   "kansas": {
@@ -365,6 +415,7 @@
    "lucas_rank": 12,
    "fpi_group_rank": 13,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "ucf": {
@@ -373,6 +424,7 @@
    "lucas_rank": 13,
    "fpi_group_rank": 14,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "iowa state": {
@@ -381,6 +433,7 @@
    "lucas_rank": 14,
    "fpi_group_rank": 16,
    "gap": 2,
+   "tier": 2,
    "flag": ""
   },
   "west virginia": {
@@ -389,6 +442,7 @@
    "lucas_rank": 15,
    "fpi_group_rank": 15,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "colorado": {
@@ -397,6 +451,7 @@
    "lucas_rank": 16,
    "fpi_group_rank": 10,
    "gap": -6,
+   "tier": 2,
    "flag": "under"
   },
   "ohio state": {
@@ -405,6 +460,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "oregon": {
@@ -413,6 +469,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 2,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "indiana": {
@@ -421,6 +478,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 3,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "penn state": {
@@ -429,6 +487,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 6,
    "gap": 2,
+   "tier": 1,
    "flag": ""
   },
   "usc": {
@@ -437,6 +496,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 4,
    "gap": -1,
+   "tier": 2,
    "flag": ""
   },
   "iowa": {
@@ -445,6 +505,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 7,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "michigan": {
@@ -453,6 +514,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 5,
    "gap": -2,
+   "tier": 2,
    "flag": ""
   },
   "washington": {
@@ -461,6 +523,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 8,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "illinois": {
@@ -469,6 +532,7 @@
    "lucas_rank": 9,
    "fpi_group_rank": 10,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "nebraska": {
@@ -477,6 +541,7 @@
    "lucas_rank": 10,
    "fpi_group_rank": 9,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "ucla": {
@@ -485,6 +550,7 @@
    "lucas_rank": 11,
    "fpi_group_rank": 15,
    "gap": 4,
+   "tier": 3,
    "flag": "over"
   },
   "minnesota": {
@@ -493,6 +559,7 @@
    "lucas_rank": 12,
    "fpi_group_rank": 14,
    "gap": 2,
+   "tier": 3,
    "flag": ""
   },
   "maryland": {
@@ -501,6 +568,7 @@
    "lucas_rank": 13,
    "fpi_group_rank": 13,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "wisconsin": {
@@ -509,6 +577,7 @@
    "lucas_rank": 14,
    "fpi_group_rank": 11,
    "gap": -3,
+   "tier": 3,
    "flag": "under"
   },
   "northwestern": {
@@ -517,6 +586,7 @@
    "lucas_rank": 15,
    "fpi_group_rank": 12,
    "gap": -3,
+   "tier": 3,
    "flag": "under"
   },
   "rutgers": {
@@ -525,6 +595,7 @@
    "lucas_rank": 16,
    "fpi_group_rank": 17,
    "gap": 1,
+   "tier": 3,
    "flag": ""
   },
   "michigan state": {
@@ -533,6 +604,7 @@
    "lucas_rank": 17,
    "fpi_group_rank": 16,
    "gap": -1,
+   "tier": 4,
    "flag": ""
   },
   "purdue": {
@@ -541,6 +613,7 @@
    "lucas_rank": 18,
    "fpi_group_rank": 18,
    "gap": 0,
+   "tier": 4,
    "flag": ""
   },
   "navy": {
@@ -549,6 +622,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 3,
    "gap": 2,
+   "tier": 1,
    "flag": ""
   },
   "memphis": {
@@ -557,6 +631,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 5,
    "gap": 3,
+   "tier": 1,
    "flag": "over"
   },
   "utsa": {
@@ -565,6 +640,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 6,
    "gap": 3,
+   "tier": 1,
    "flag": "over"
   },
   "east carolina": {
@@ -573,6 +649,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 2,
    "gap": -2,
+   "tier": 1,
    "flag": ""
   },
   "south florida": {
@@ -581,6 +658,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 4,
    "gap": -1,
+   "tier": 1,
    "flag": ""
   },
   "army": {
@@ -589,6 +667,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 7,
    "gap": 1,
+   "tier": 1,
    "flag": ""
   },
   "tulane": {
@@ -597,6 +676,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 1,
    "gap": -6,
+   "tier": 1,
    "flag": "under"
   },
   "florida atlantic": {
@@ -605,6 +685,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 11,
    "gap": 3,
+   "tier": 1,
    "flag": "over"
   },
   "tulsa": {
@@ -613,6 +694,7 @@
    "lucas_rank": 9,
    "fpi_group_rank": 10,
    "gap": 1,
+   "tier": 1,
    "flag": ""
   },
   "temple": {
@@ -621,6 +703,7 @@
    "lucas_rank": 10,
    "fpi_group_rank": 9,
    "gap": -1,
+   "tier": 1,
    "flag": ""
   },
   "north texas": {
@@ -629,6 +712,7 @@
    "lucas_rank": 11,
    "fpi_group_rank": 8,
    "gap": -3,
+   "tier": 1,
    "flag": "under"
   },
   "rice": {
@@ -637,6 +721,7 @@
    "lucas_rank": 12,
    "fpi_group_rank": 12,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "uab": {
@@ -645,6 +730,7 @@
    "lucas_rank": 13,
    "fpi_group_rank": 14,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "charlotte": {
@@ -653,6 +739,7 @@
    "lucas_rank": 14,
    "fpi_group_rank": 13,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "boise state": {
@@ -661,6 +748,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "san diego state": {
@@ -669,6 +757,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 2,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "fresno state": {
@@ -677,6 +766,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 3,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "washington state": {
@@ -685,6 +775,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 4,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "texas state": {
@@ -693,6 +784,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 5,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "oregon state": {
@@ -701,6 +793,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 7,
    "gap": 1,
+   "tier": 3,
    "flag": ""
   },
   "utah state": {
@@ -709,6 +802,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 6,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "colorado state": {
@@ -717,6 +811,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 8,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "unlv": {
@@ -725,6 +820,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "new mexico": {
@@ -733,6 +829,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 3,
    "gap": 1,
+   "tier": 1,
    "flag": ""
   },
   "hawaii": {
@@ -741,6 +838,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 2,
    "gap": -1,
+   "tier": 1,
    "flag": ""
   },
   "air force": {
@@ -749,6 +847,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 4,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "north dakota state": {
@@ -757,6 +856,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 5,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "wyoming": {
@@ -765,6 +865,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 7,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "san jose state": {
@@ -773,6 +874,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 8,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "nevada": {
@@ -781,6 +883,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 6,
    "gap": -2,
+   "tier": 2,
    "flag": ""
   },
   "northern illinois": {
@@ -789,6 +892,7 @@
    "lucas_rank": 9,
    "fpi_group_rank": 9,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "utep": {
@@ -797,6 +901,7 @@
    "lucas_rank": 10,
    "fpi_group_rank": 10,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "western kentucky": {
@@ -805,6 +910,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "liberty": {
@@ -813,6 +919,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 3,
    "gap": 1,
+   "tier": 1,
    "flag": ""
   },
   "kennesaw state": {
@@ -821,6 +928,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 5,
    "gap": 2,
+   "tier": 2,
    "flag": ""
   },
   "jacksonville state": {
@@ -829,6 +937,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 4,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "delaware": {
@@ -837,6 +946,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 2,
    "gap": -3,
+   "tier": 2,
    "flag": "under"
   },
   "fiu": {
@@ -845,6 +955,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 7,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "missouri state": {
@@ -853,6 +964,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 6,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "new mexico state": {
@@ -861,6 +973,7 @@
    "lucas_rank": 8,
    "fpi_group_rank": 8,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "middle tennessee": {
@@ -869,6 +982,7 @@
    "lucas_rank": 9,
    "fpi_group_rank": 9,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "sam houston": {
@@ -877,6 +991,7 @@
    "lucas_rank": 10,
    "fpi_group_rank": 10,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "james madison": {
@@ -885,6 +1000,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 1,
    "gap": 0,
+   "tier": 1,
    "flag": ""
   },
   "old dominion": {
@@ -893,6 +1009,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 2,
    "gap": 0,
+   "tier": 2,
    "flag": ""
   },
   "marshall": {
@@ -901,6 +1018,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 4,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "georgia southern": {
@@ -909,6 +1027,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 3,
    "gap": -1,
+   "tier": 3,
    "flag": ""
   },
   "app state": {
@@ -917,6 +1036,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 5,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "coastal carolina": {
@@ -925,6 +1045,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 6,
    "gap": 0,
+   "tier": 3,
    "flag": ""
   },
   "georgia state": {
@@ -933,6 +1054,7 @@
    "lucas_rank": 7,
    "fpi_group_rank": 7,
    "gap": 0,
+   "tier": 4,
    "flag": ""
   },
   "louisiana": {
@@ -941,6 +1063,7 @@
    "lucas_rank": 1,
    "fpi_group_rank": 3,
    "gap": 2,
+   "tier": 1,
    "flag": ""
   },
   "arkansas state": {
@@ -949,6 +1072,7 @@
    "lucas_rank": 2,
    "fpi_group_rank": 4,
    "gap": 2,
+   "tier": 1,
    "flag": ""
   },
   "troy": {
@@ -957,6 +1081,7 @@
    "lucas_rank": 3,
    "fpi_group_rank": 2,
    "gap": -1,
+   "tier": 1,
    "flag": ""
   },
   "louisiana tech": {
@@ -965,6 +1090,7 @@
    "lucas_rank": 4,
    "fpi_group_rank": 5,
    "gap": 1,
+   "tier": 1,
    "flag": ""
   },
   "south alabama": {
@@ -973,6 +1099,7 @@
    "lucas_rank": 5,
    "fpi_group_rank": 6,
    "gap": 1,
+   "tier": 2,
    "flag": ""
   },
   "southern miss": {
@@ -981,6 +1108,7 @@
    "lucas_rank": 6,
    "fpi_group_rank": 1,
    "gap": -5,
+   "tier": 3,
    "flag": "under"
   },
   "ul monroe": {
@@ -989,6 +1117,124 @@
    "lucas_rank": 7,
    "fpi_group_rank": 7,
    "gap": 0,
+   "tier": 3,
+   "flag": ""
+  },
+  "miami oh": {
+   "team": "Miami (OH)",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 1,
+   "flag": ""
+  },
+  "western michigan": {
+   "team": "Western Michigan",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 1,
+   "flag": ""
+  },
+  "central michigan": {
+   "team": "Central Michigan",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 1,
+   "flag": ""
+  },
+  "toledo": {
+   "team": "Toledo",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 1,
+   "flag": ""
+  },
+  "ohio": {
+   "team": "Ohio",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 2,
+   "flag": ""
+  },
+  "buffalo": {
+   "team": "Buffalo",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 2,
+   "flag": ""
+  },
+  "kent state": {
+   "team": "Kent State",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 3,
+   "flag": ""
+  },
+  "bowling green": {
+   "team": "Bowling Green",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 3,
+   "flag": ""
+  },
+  "eastern michigan": {
+   "team": "Eastern Michigan",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 3,
+   "flag": ""
+  },
+  "akron": {
+   "team": "Akron",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 3,
+   "flag": ""
+  },
+  "umass": {
+   "team": "UMass",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 4,
+   "flag": ""
+  },
+  "ball state": {
+   "team": "Ball State",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 4,
+   "flag": ""
+  },
+  "sacramento state": {
+   "team": "Sacramento State",
+   "group": "MAC",
+   "lucas_rank": null,
+   "fpi_group_rank": null,
+   "gap": null,
+   "tier": 4,
    "flag": ""
   }
  }

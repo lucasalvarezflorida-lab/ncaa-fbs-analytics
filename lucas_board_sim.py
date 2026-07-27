@@ -1,12 +1,14 @@
 """Season sim with Lucas's podcast boards as the prior, vs the ESPN FPI sim.
 
-The boards are ordinal, so the prior is built by RANK-SWAP within each board
-group: the group's actual ESPN preseason FPI values are redistributed
-according to Lucas's order (his #1 gets the group's best FPI value, etc.).
-No magnitudes are invented; only the ordering changes. Teams not on a board
-(MAC, independents) keep their ESPN FPI. Same engine as the workbook's
-Season Sim tab: 10k Monte Carlo, sigma 13.5, HFA 2.5, unrated +24, seed
-2026 — identical in both runs, so every delta is the boards' doing.
+Headline prior = TIER-SWAP: the boards assert tier membership (frozen in
+lucas_board_2026.json from Lucas's own board columns), so each tier takes
+the next block of its group's actual ESPN FPI value pool, and within a tier
+values follow the market's own ordering — no within-tier claim, no invented
+magnitudes. The full RANK-SWAP prior (his exact order) is kept as a
+reference column. Independents keep ESPN FPI; the MAC participates via its
+natively tiered board. Same engine as the workbook's Season Sim tab: 10k
+Monte Carlo, sigma 13.5, HFA 2.5, unrated +24, seed 2026 in every run, so
+every delta is the boards' doing.
 
 Output: lucas_board_sim_2026.csv + console highlights.
 """
@@ -58,16 +60,34 @@ def main():
     fpi = load_fpi_2026()
     board = json.load(open(HERE / "lucas_board_2026.json", encoding="utf-8"))
 
-    # rank-swap within each board group
-    lucas_fpi = dict(fpi)
     groups: dict[str, list] = {}
     for v in board["teams"].values():
         groups.setdefault(v["group"], []).append(v)
+
+    # rank-swap (reference): full Lucas order gets the group's value pool
+    rank_fpi = dict(fpi)
+    for group, members in groups.items():
+        rated = [m for m in members
+                 if norm(m["team"]) in fpi and m["lucas_rank"] is not None]
+        values = sorted((fpi[norm(m["team"])] for m in rated), reverse=True)
+        for m in sorted(rated, key=lambda m: m["lucas_rank"]):
+            rank_fpi[norm(m["team"])] = values.pop(0)
+
+    # tier-swap (headline): the board asserts TIER MEMBERSHIP only. Each
+    # tier takes the next block of the group's value pool; within a tier,
+    # values go by the market's own ordering (no within-tier claim).
+    lucas_fpi = dict(fpi)
     for group, members in groups.items():
         rated = [m for m in members if norm(m["team"]) in fpi]
         values = sorted((fpi[norm(m["team"])] for m in rated), reverse=True)
-        for m in sorted(rated, key=lambda m: m["lucas_rank"]):
-            lucas_fpi[norm(m["team"])] = values.pop(0)
+        pos = 0
+        for tier in sorted({m["tier"] for m in rated}):
+            tm = [m for m in rated if m["tier"] == tier]
+            block = values[pos:pos + len(tm)]
+            pos += len(tm)
+            for m, v in zip(sorted(tm, key=lambda m: -fpi[norm(m["team"])]),
+                            block):
+                lucas_fpi[norm(m["team"])] = v
 
     ranked = sorted(fpi.items(), key=lambda kv: -kv[1])
     wrapped = {k: {"fpi": v, "rank": i + 1}
@@ -78,6 +98,7 @@ def main():
 
     base = simulate(games, fpi, teams)
     yours = simulate(games, lucas_fpi, teams)
+    ranky = simulate(games, rank_fpi, teams)
 
     flags = {norm(v["team"]): v["flag"] for v in board["teams"].values()
              if v["flag"]}
@@ -91,6 +112,7 @@ def main():
             lucas_fpi=round(lucas_fpi[norm(t)], 1),
             espn_wins=round(base[t]["mean"], 2),
             lucas_wins=round(yours[t]["mean"], 2),
+            rankswap_wins=round(ranky[t]["mean"], 2) if t in ranky else None,
             delta=round(yours[t]["mean"] - base[t]["mean"], 2),
             espn_bowl=round(base[t]["bowl"], 3),
             lucas_bowl=round(yours[t]["bowl"], 3),
