@@ -2,9 +2,9 @@
 
 *Compiled July 21, 2026 (updated July 25 with the identity batteries),
 entirely from the repo's own studies:
-[MARKET_POSTMORTEM.md](market-postmortem/MARKET_POSTMORTEM.md) (CFB 2021–25,
+[MARKET_POSTMORTEM.md](../market-postmortem/MARKET_POSTMORTEM.md) (CFB 2021–25,
 3,944 games, 57 slices),
-[MARKET_POSTMORTEM_PHASE2.md](market-postmortem/MARKET_POSTMORTEM_PHASE2.md)
+[MARKET_POSTMORTEM_PHASE2.md](../market-postmortem/MARKET_POSTMORTEM_PHASE2.md)
 (NFL 2021–25, 1,424 games; NBA 2011–21, 13,893 games), and the four
 team/coach/ranking batteries in `market-postmortem/*trends*.py`. Every claim
 below has a receipt in those files or their CSVs. Methodology in one breath:
@@ -63,7 +63,7 @@ The favorite–longshot bias that torched college longshots? NFL +251 dogs lost
 What's *close*: primetime unders 55.7% (5/5 seasons), 7–9.5-point dogs 55.9%
 ATS, weeks-1–4 unders 54.9% (5/5). All fail correction. New this summer:
 those are now **pre-registered** for 2026
-([NFL_WATCHLIST_2026_PREREG.md](market-postmortem/NFL_WATCHLIST_2026_PREREG.md),
+([NFL_WATCHLIST_2026_PREREG.md](../market-postmortem/NFL_WATCHLIST_2026_PREREG.md),
 committed in July, before a single 2026 line existed) — paper bets, graded
 against the close, nothing graduates before 52.38% on 100+ bets. The tracker
 (`nfl_watchlist.py`) is already live: **89 provisional paper bets logged off

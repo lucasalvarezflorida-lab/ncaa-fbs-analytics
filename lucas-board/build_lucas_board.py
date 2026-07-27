@@ -27,7 +27,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent   # lucas-board/
-ROOT = HERE.parent                       # repo root (podcast prep files)
+ROOT = HERE.parent                       # repo root
+PREP = ROOT / "podcast-prep"             # the podcast prep docs (boards)
 sys.path.insert(0, str(ROOT / "fpi-decomposition"))
 from name_mapping import normalize_name as norm
 
@@ -48,12 +49,12 @@ BOARDS = {  # group -> (file, section anchor, tier metric)
     "ACC": ("2026-acc-deep-dive-podcast-prep.md", None, "avgw"),
     "Big 12": ("2026-big-12-deep-dive-podcast-prep.md", None, "avgw"),
     "Big Ten": ("2026-big-ten-deep-dive-podcast-prep.md", None, "avgw"),
-    "American": ("files/2026-american-deep-dive-podcast-prep.md", None, "avgw"),
+    "American": ("2026-american-deep-dive-podcast-prep.md", None, "avgw"),
     "Pac-12": ("2026-g6-finisher-pac12-mwc-cusa-mac-podcast-prep.md", 0, "avgw"),
     "Mountain West": ("2026-g6-finisher-pac12-mwc-cusa-mac-podcast-prep.md", 1, "odds"),
     "CUSA": ("2026-g6-finisher-pac12-mwc-cusa-mac-podcast-prep.md", 2, "athlon"),
-    "Sun Belt EAST": ("files/2026-sun-belt-deep-dive-podcast-prep.md", "EAST", "avgw"),
-    "Sun Belt WEST": ("files/2026-sun-belt-deep-dive-podcast-prep.md", "WEST", "avgw"),
+    "Sun Belt EAST": ("2026-sun-belt-deep-dive-podcast-prep.md", "EAST", "avgw"),
+    "Sun Belt WEST": ("2026-sun-belt-deep-dive-podcast-prep.md", "WEST", "avgw"),
 }
 MAC_FILE = "2026-g6-finisher-pac12-mwc-cusa-mac-podcast-prep.md"
 MAC_SECTION = 3  # fourth Big Board in the G6 file, the tier table
@@ -148,7 +149,7 @@ def main():
     out, misses = {}, []
 
     for group, (fname, anchor, kind) in BOARDS.items():
-        rows = board_rows(ROOT / fname, anchor)
+        rows = board_rows(PREP / fname, anchor)
         if not rows:
             raise SystemExit(f"ERROR: no teams parsed for {group}")
         tiers = assign_tiers(rows, kind)
@@ -174,7 +175,7 @@ def main():
         print(f"{group}: {len(rows)} teams, {n_tiers} tiers "
               f"({' | '.join(','.join(t for (t, _), ti in zip(rows, tiers) if ti == k) for k in range(1, n_tiers + 1))})")
 
-    for t, tier in mac_tiers(ROOT / MAC_FILE).items():
+    for t, tier in mac_tiers(PREP / MAC_FILE).items():
         v = snap.get(norm(t))
         if v is None:
             misses.append(f"MAC: {t}")

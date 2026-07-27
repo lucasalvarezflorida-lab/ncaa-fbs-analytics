@@ -1,7 +1,7 @@
 # lucas-board — the boards as a bet
 
 Betting-side artifacts derived from the podcast's per-conference Big Boards.
-The boards themselves (content) live in the repo-root prep files; this folder
+The boards themselves (content) live in the `podcast-prep/` docs; this folder
 is what happens when they're held to a market standard.
 
 | file | what it is |
