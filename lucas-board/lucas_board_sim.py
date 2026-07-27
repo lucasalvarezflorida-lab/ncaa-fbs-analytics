@@ -13,16 +13,18 @@ every delta is the boards' doing.
 Output: lucas_board_sim_2026.csv + console highlights.
 """
 import json
+import sys
 from pathlib import Path
 from statistics import NormalDist
 
 import numpy as np
 import pandas as pd
 
+HERE = Path(__file__).resolve().parent   # lucas-board/
+sys.path.insert(0, str(HERE.parent))     # repo root, for the workbook engine
+
 from build_conference_book import (HFA, UNRATED_MARGIN, fetch_games,
                                    load_fpi_2026, norm)
-
-HERE = Path(__file__).resolve().parent
 SIGMA = 13.5
 N_SIMS = 10_000
 

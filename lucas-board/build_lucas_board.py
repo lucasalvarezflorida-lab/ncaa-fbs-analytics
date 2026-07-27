@@ -26,11 +26,12 @@ import re
 import sys
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE / "fpi-decomposition"))
+HERE = Path(__file__).resolve().parent   # lucas-board/
+ROOT = HERE.parent                       # repo root (podcast prep files)
+sys.path.insert(0, str(ROOT / "fpi-decomposition"))
 from name_mapping import normalize_name as norm
 
-SNAP = HERE / "fpi-decomposition" / "data" / "fpi_2026_preseason_snapshot_20260714.json"
+SNAP = ROOT / "fpi-decomposition" / "data" / "fpi_2026_preseason_snapshot_20260714.json"
 OUT = HERE / "lucas_board_2026.json"
 GAP = 3          # flag threshold, within-group spots
 AVGW_BREAK = 1.0  # SP+ avg-wins drop that starts a new tier
@@ -147,7 +148,7 @@ def main():
     out, misses = {}, []
 
     for group, (fname, anchor, kind) in BOARDS.items():
-        rows = board_rows(HERE / fname, anchor)
+        rows = board_rows(ROOT / fname, anchor)
         if not rows:
             raise SystemExit(f"ERROR: no teams parsed for {group}")
         tiers = assign_tiers(rows, kind)
@@ -173,7 +174,7 @@ def main():
         print(f"{group}: {len(rows)} teams, {n_tiers} tiers "
               f"({' | '.join(','.join(t for (t, _), ti in zip(rows, tiers) if ti == k) for k in range(1, n_tiers + 1))})")
 
-    for t, tier in mac_tiers(HERE / MAC_FILE).items():
+    for t, tier in mac_tiers(ROOT / MAC_FILE).items():
         v = snap.get(norm(t))
         if v is None:
             misses.append(f"MAC: {t}")

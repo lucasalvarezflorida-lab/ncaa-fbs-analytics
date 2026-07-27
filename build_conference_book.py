@@ -1346,7 +1346,7 @@ WATCH_RULES = {
                    "2026 is the first sample"),
 }
 
-LUCAS_BOARD = HERE / "lucas_board_2026.json"
+LUCAS_BOARD = HERE / "lucas-board" / "lucas_board_2026.json"
 
 
 def fetch_ap_ranks(refresh: bool) -> dict[int, dict[str, int]]:
