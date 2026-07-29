@@ -1748,30 +1748,44 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
             c.font = ARIAL
             if j in (9, 10):
                 c.number_format = "0%"
-    for i, w in enumerate([6, 24, 18, 8, 7, 10, 9, 9, 12, 9], 1):
+    # column plan serves BOTH tables: A rank/pos, B team, C conf/FPI,
+    # D-E records, F-J probabilities. Manual formatting on this sheet is
+    # wiped every refresh — all styling must live here.
+    for i, w in enumerate([6, 24, 18, 10, 10, 10, 9, 9, 12, 9], 1):
         ws.column_dimensions[get_column_letter(i)].width = w
+    ws.merge_cells("A2:J2")
+    ws["A2"].alignment = Alignment(wrap_text=True, vertical="top")
+    ws.row_dimensions[2].height = 26
     ws.freeze_panes = "A5"
     ws.auto_filter.ref = f"A4:J{4 + len(results)}"
     print(f"Season Sim: {len(results)} teams projected")
 
     # ---- per-conference projected standings (joint sims) ----
+    CTR = Alignment(horizontal="center")
+    SOFT_FILL = PatternFill("solid", start_color="FDE9D9")  # projected CG pair
     row = 4 + len(results) + 3
-    ws.cell(row=row, column=1, value="PROJECTED STANDINGS BY CONFERENCE "
-            "— joint simulation (games shared between teams)")
+    ws.cell(row=row, column=1, value="PROJECTED STANDINGS BY CONFERENCE")
     ws.cell(row=row, column=1).font = TITLE_FONT
-    for c in range(1, 10):
+    ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=7)
+    for c in range(1, 8):
         ws.cell(row=row, column=c).fill = TITLE_FILL
-    ws.cell(row=row + 1, column=1, value=(
-        "Standings = conference win pct; 2-way ties for the 1-seed break on "
-        "head-to-head, title game at a neutral site. 'Split %' = share of sims "
-        "where the champion is NOT the team with the league's best overall "
-        "record (2025 ACC: Duke won the league at 8-5 while 10-2 Miami sat "
-        "home — that split). * = title-ineligible (transition)."))
-    ws.cell(row=row + 1, column=1).font = Font(name="Arial", italic=True, size=9)
+    exp = ws.cell(row=row + 1, column=1, value=(
+        "Joint simulation: every league game sampled once and shared between "
+        "both teams, so standings hang together. Standings = conference win "
+        "pct; 2-way ties for the 1-seed break on head-to-head; neutral-site "
+        "title game. Shaded rows = projected title-game pair. 'Split' = share "
+        "of sims where the champion is NOT the team with the league's best "
+        "overall record (2025 ACC: 8-5 Duke won it while 10-2 Miami sat home). "
+        "* = title-ineligible (transition)."))
+    exp.font = Font(name="Arial", italic=True, size=9)
+    exp.alignment = Alignment(wrap_text=True, vertical="top")
+    ws.merge_cells(start_row=row + 1, start_column=1, end_row=row + 1,
+                   end_column=7)
+    ws.row_dimensions[row + 1].height = 60
     row += 3
 
-    std_headers = ["Pos", "Team", "FPI", "Proj Conf", "Proj Overall",
-                   "P(CG)", "P(Champ)"]
+    std_headers = ["Pos", "Team", "FPI", "Conf W-L", "Overall", "P(CG)",
+                   "P(Champ)"]
     n_blocks = 0
     for conf in CONF_ORDER:
         rows_c, split = _simulate_conf_standings(
@@ -1780,28 +1794,36 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
             continue
         ws.cell(row=row, column=1, value=conf.upper())
         ws.cell(row=row, column=1).font = WHITE_B
-        ws.cell(row=row, column=4,
-                value=f"champ ≠ best overall in {split:.0%} of sims")
-        ws.cell(row=row, column=4).font = Font(name="Arial", italic=True,
-                                               size=9, color="FFFFFF")
+        ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=4)
+        sp = ws.cell(row=row, column=5, value=f"split: {split:.0%}")
+        sp.font = Font(name="Arial", italic=True, size=9, color="FFFFFF")
+        sp.alignment = Alignment(horizontal="right")
+        ws.merge_cells(start_row=row, start_column=5, end_row=row, end_column=7)
         for c in range(1, 8):
             ws.cell(row=row, column=c).fill = HEAD_FILL
         row += 1
         for j, h in enumerate(std_headers, 1):
             cell = ws.cell(row=row, column=j, value=h)
             cell.font = Font(name="Arial", bold=True, size=9)
+            cell.alignment = CTR if j != 2 else Alignment(horizontal="left")
         row += 1
         for pos, d in enumerate(rows_c, 1):
             name = d["team"] + (" *" if d["ineligible"] else "")
-            vals = [pos, name, round(d["fpi"], 1),
-                    f"{d['conf_w']:.1f}-{d['conf_l']:.1f}",
-                    f"{d['over_w']:.1f}-{d['over_l']:.1f}",
+            vals = [pos, name, d["fpi"],
+                    f"{d['conf_w']:.1f}–{d['conf_l']:.1f}",
+                    f"{d['over_w']:.1f}–{d['over_l']:.1f}",
                     d["cg"], d["champ"]]
             for j, v in enumerate(vals, 1):
                 cell = ws.cell(row=row, column=j, value=v)
                 cell.font = ARIAL
+                if j != 2:
+                    cell.alignment = CTR
+                if j == 3:
+                    cell.number_format = "0.0"
                 if j in (6, 7):
                     cell.number_format = "0%"
+                if pos <= 2:
+                    cell.fill = SOFT_FILL
             row += 1
         row += 1
         n_blocks += 1
