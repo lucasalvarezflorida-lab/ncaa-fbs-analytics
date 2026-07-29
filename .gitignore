@@ -24,3 +24,6 @@ __pycache__/
 
 # OurLads curated data - personal use only, not for redistribution
 ourlads_depth.json
+
+# conference decks embed OurLads depth charts - local use only, never commit
+decks/2026_*_Projections.pptx

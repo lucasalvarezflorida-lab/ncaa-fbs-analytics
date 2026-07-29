@@ -1,6 +1,12 @@
 """Generate the Season Sim PowerPoint set:
-  decks/2026_Season_Sim_Overview.pptx        (national deck)
-  decks/2026_<Conference>_Projections.pptx   (one per conference, x10)
+  decks/2026_Season_Sim_Overview.pptx        (national deck — safe to commit)
+  decks/2026_<Conference>_Projections.pptx   (one per conference, x10:
+      standings + title race + TWO SLIDES PER TEAM — projections/strengths/
+      weaknesses profile, and the projected depth chart)
+
+LOCAL-ONLY WARNING: the conference decks embed OurLads depth charts
+(ourlads_depth.json is gitignored — their curated product). The conference
+decks are gitignored for the same reason; only the overview deck is tracked.
 
 Data = the same engines as the workbook: independent per-team sim for the
 national projections (Season Sim tab numbers) and the joint
@@ -8,6 +14,7 @@ _simulate_conf_standings() for conference standings/title races.
 Brand: workbook navy 0A2851 / orange F47321, Arial throughout.
 """
 
+import json
 import sys
 from pathlib import Path
 from statistics import NormalDist
@@ -20,7 +27,8 @@ sys.path.insert(0, str(MODEL / "fpi-decomposition"))
 
 import cfbd_client as cfbd
 from build_conference_book import (CONF_ORDER, HFA, SIM_SIGMA, UNRATED_MARGIN,
-                                   _simulate_conf_standings, load_fpi_2026)
+                                   _simulate_conf_standings, load_fpi_2026,
+                                   load_scouting)
 from name_mapping import normalize_name as norm
 
 from pptx import Presentation
@@ -111,7 +119,157 @@ for conf in CONF_ORDER:
         games, fpi, team_conf, conf, N_SIMS, np.random.default_rng(2026))
     if rows is not None:
         conf_data[conf] = (rows, split)
-print(f"data ready: {len(national)} teams, {len(conf_data)} conferences")
+
+national_map = {d["team"]: d for d in national}
+scouting = load_scouting().get("teams", {})
+_depth_raw = json.loads((MODEL / "ourlads_depth.json").read_text(
+    encoding="utf-8"))
+depth_by_norm = {norm(k): v for k, v in _depth_raw.get("teams", {}).items()}
+DEPTH_STAMP = _depth_raw.get("captured", "")
+print(f"data ready: {len(national)} teams, {len(conf_data)} conferences, "
+      f"depth for {len(depth_by_norm)} teams ({DEPTH_STAMP})")
+
+# OurLads rows arrive ordered offense -> defense -> special teams; split on
+# the first defensive / first ST position.
+DEF_POS = {"DE", "DT", "NT", "NG", "DL", "EDGE", "RUSH", "JACK", "BANDIT",
+           "LB", "ILB", "OLB", "MLB", "MIKE", "WILL", "SAM", "CB", "S", "FS",
+           "SS", "DB", "NICKEL", "NB", "N", "STAR", "ROVER", "HUSKY", "SPUR",
+           "N/S", "LEO", "STUD"}
+ST_POS = {"K", "P", "PK", "LS", "KR", "PR", "KO", "K/P", "PT"}
+
+
+def _is_def_pos(base, full):
+    if full in DEF_POS or base in DEF_POS:
+        return True
+    # side-prefixed variants: LDE/RDE, LCB/RCB, LDT/RDT, LOLB/ROLB ...
+    return len(base) > 2 and base[0] in "LR" and base[1:] in DEF_POS
+
+
+def split_depth(rows):
+    off, dfn, st = [], [], []
+    seen_def = False
+    for r in rows:
+        base = str(r.get("pos", "")).split("-")[0].split("/")[0].upper()
+        full = str(r.get("pos", "")).upper()
+        if full in ST_POS or base in ST_POS:
+            st.append(r)
+        elif base == "H" and seen_def:
+            continue  # holder — duplicate of the punter, skip
+        elif _is_def_pos(base, full):
+            seen_def = True
+            dfn.append(r)
+        elif seen_def:
+            dfn.append(r)  # unknown position after the defense started
+        else:
+            off.append(r)
+    return off, dfn, st
+
+
+def depth_table(slide, title, rows, x, y, w, font=9.5):
+    txt(slide, x, y, w, 0.3, title, 13, NAVY, bold=True)
+    nrows = len(rows) + 1
+    shape = slide.shapes.add_table(nrows, 3, Inches(x), Inches(y + 0.35),
+                                   Inches(w), Inches(0.26 * nrows))
+    tbl = shape.table
+    tbl.first_row = False
+    tbl.horz_banding = False
+    for j, (h, cw) in enumerate(zip(["Pos", "Starter", "Second"],
+                                    [0.75, 2.6, 2.6])):
+        tbl.columns[j].width = Emu(int(Inches(cw * w / 5.95)))
+        c = tbl.cell(0, j)
+        c.text = h
+        c.fill.solid()
+        c.fill.fore_color.rgb = NAVY
+        p = c.text_frame.paragraphs[0]
+        p.alignment = PP_ALIGN.LEFT if j else PP_ALIGN.CENTER
+        f = p.runs[0].font
+        f.name = "Arial"
+        f.size = Pt(font)
+        f.bold = True
+        f.color.rgb = WHITE
+    for i, r in enumerate(rows, 1):
+        players = r.get("players") or []
+        vals = [str(r.get("pos", "")),
+                players[0] if players else "",
+                players[1] if len(players) > 1 else ""]
+        for j, v in enumerate(vals):
+            c = tbl.cell(i, j)
+            c.text = v
+            c.fill.solid()
+            c.fill.fore_color.rgb = ICE if i % 2 == 0 else WHITE
+            p = c.text_frame.paragraphs[0]
+            p.alignment = PP_ALIGN.LEFT if j else PP_ALIGN.CENTER
+            if p.runs:  # empty cells (no backup listed) have no run
+                f = p.runs[0].font
+                f.name = "Arial"
+                f.size = Pt(font)
+                f.color.rgb = INK
+    for r_ in tbl.rows:
+        r_.height = Emu(int(Inches(0.24)))
+    return shape
+
+
+def team_slides(prs, conf, d):
+    """Two slides per team: profile (projections + S/W) and depth chart."""
+    team = d["team"]
+    sc = scouting.get(team) or {}
+    nat = national_map.get(team) or {}
+
+    # ---- slide A: projections + strengths/weaknesses ----
+    s = blank(prs)
+    txt(s, 0.9, 0.4, 9.0, 0.7, team, 32, NAVY, bold=True)
+    txt(s, 0.9, 1.05, 9.0, 0.4, f"{conf} · ESPN 2026 preseason FPI "
+        f"{d['fpi']:.1f}", 13, MUTE)
+    cards = [(f"{d['over_w']:.1f}–{d['over_l']:.1f}", "proj overall"),
+             (f"{d['conf_w']:.1f}–{d['conf_l']:.1f}", "proj conference"),
+             (f"{nat.get('bowl', 0):.0%}", "P(bowl, 6+ wins)"),
+             (f"{d['cg']:.0%}", "P(title game)"),
+             (f"{d['champ']:.0%}", "P(champion)")]
+    for i, (big, label) in enumerate(cards):
+        stat_card(s, 0.7 + i * 2.45, 1.8, 2.3, big, label)
+    sw_y = 3.6
+    txt(s, 0.9, sw_y, 5.6, 0.4, "STRENGTHS", 14, NAVY, bold=True)
+    str_list = sc.get("s") or ["(no scouting card)"]
+    txt(s, 0.9, sw_y + 0.45, 5.6, 2.2,
+        "\n".join(f"+  {x}" for x in str_list), 13)
+    txt(s, 6.9, sw_y, 5.6, 0.4, "WEAKNESSES", 14, NAVY, bold=True)
+    wk_list = sc.get("w") or ["(no scouting card)"]
+    txt(s, 6.9, sw_y + 0.45, 5.6, 2.2,
+        "\n".join(f"–  {x}" for x in wk_list), 13)
+    scheme_bits = []
+    if sc.get("ob"):
+        scheme_bits.append(f"Offense: {sc['ob']}")
+    if sc.get("db"):
+        scheme_bits.append(f"Defense: {sc['db']}")
+    if scheme_bits:
+        txt(s, 0.9, 6.35, 11.6, 1.0, "\n".join(scheme_bits), 11, MUTE,
+            italic=True)
+
+    # ---- slide B: projected depth chart ----
+    s = blank(prs)
+    entry = depth_by_norm.get(norm(team))
+    txt(s, 0.9, 0.35, 11.6, 0.6, f"{team} — projected depth chart", 28,
+        NAVY, bold=True)
+    if not entry:
+        txt(s, 0.9, 1.6, 11.0, 1.0, "No depth chart captured.", 14, MUTE)
+        return
+    sub = (f"OurLads, updated {entry.get('updated', DEPTH_STAMP)} · "
+           f"{entry.get('off_scheme', '')} / {entry.get('def_scheme', '')} · "
+           f"local use only — do not redistribute")
+    txt(s, 0.9, 0.95, 11.6, 0.35, sub, 11, MUTE, italic=True)
+    off, dfn, st = split_depth(entry.get("rows") or [])
+    font = 9.5 if max(len(off), len(dfn) + len(st) + 1) <= 14 else 8.5
+    depth_table(s, "OFFENSE", off[:14], 0.7, 1.45, 5.95, font=font)
+    depth_table(s, "DEFENSE", dfn[:14], 6.85, 1.45, 5.95, font=font)
+    if st:
+        y_st = 1.45 + 0.35 + 0.26 * (min(len(dfn), 14) + 1) + 0.25
+        if y_st < 6.4:
+            depth_table(s, "SPECIAL TEAMS", st[:4], 6.85, y_st, 5.95,
+                        font=font)
+
+
+print(f"team content wired: scouting {len(scouting)}, "
+      f"depth {len(depth_by_norm)}")
 
 # ---------------- pptx helpers ----------------
 
@@ -413,8 +571,11 @@ for conf, (rows, split) in conf_data.items():
     fav = max(rows, key=lambda d: d["champ"])
     title_slide(
         prs, f"{conf} — 2026 Projections",
-        f"Projected standings, title race, and championship odds\n"
-        f"10,000 joint simulated seasons · ESPN 2026 preseason FPI prior",
+        f"Projected standings, title race, and a two-slide breakdown of all "
+        f"{len(rows)} teams:\nprojections · strengths & weaknesses · "
+        f"projected depth charts\n"
+        f"10,000 joint simulated seasons · ESPN 2026 preseason FPI prior · "
+        f"LOCAL USE (OurLads depth data)",
         "NCAA FBS Analytics · conference breakdown")
 
     # standings slide
@@ -446,6 +607,10 @@ for conf, (rows, split) in conf_data.items():
              f"({gap_team['over_w']:.1f} wins) outruns its conference finish — "
              f"draw matters.")
     txt(s, 9.4, 1.8, 3.3, 4.6, note, 12, MUTE)
+
+    # team breakdowns: two slides per team, in projected-standings order
+    for d in rows:
+        team_slides(prs, conf, d)
 
     safe = conf.replace(" ", "_").replace("-", "_")
     out = DECKS / f"2026_{safe}_Projections.pptx"
