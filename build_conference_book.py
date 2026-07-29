@@ -209,6 +209,7 @@ def fetch_games(refresh: bool, fpi: dict[str, dict]) -> list[dict]:
         games.append(dict(
             id=pick(g, "id"), wk=pick(g, "week"), date=date_s,
             home=home, away=away, neutral=neutral,
+            conf_game=bool(pick(g, "conferenceGame", "conference_game")),
             home_conf=pick(g, "homeConference", "home_conference"),
             away_conf=pick(g, "awayConference", "away_conference"),
             home_class=pick(g, "homeClassification", "home_classification"),
@@ -1565,6 +1566,121 @@ def build_watch_list(wb, games: list[dict], refresh: bool):
 
 # ---------------- season sim ----------------
 
+# transitioning programs: play a league schedule but cannot take a CG seed
+TITLE_INELIGIBLE = {"North Dakota State", "Sacramento State"}
+SIM_SIGMA = 13.5  # historical sd of CFB scoring margin vs spread
+
+
+def _simulate_conf_standings(games, fpi, team_conf, conf, n_sims, rng):
+    """Joint Monte Carlo of one conference: same conventions as the per-team
+    sim (margin ~ N(FPI gap + HFA, 13.5), unrated = +24) but games are shared
+    between teams so conference standings, CG berths, and the title are
+    coherent. Standings run on conference win PCT (slates are 8 or 9 games);
+    2-way ties for the 1-seed break on head-to-head. Returns (rows, split)
+    where split = share of sims in which the champion is NOT the team with
+    the conference's best overall record (the Miami/Duke 2025 case)."""
+    import numpy as np
+
+    teams = sorted(t for t, c in team_conf.items() if c == conf)
+    if len(teams) < 4:
+        return None, None
+    ti = {t: i for i, t in enumerate(teams)}
+    n = len(teams)
+
+    def rate(t):
+        e = fpi.get(norm(t))
+        return e["fpi"] if e else None
+
+    conf_g, other_g = [], []   # (home_i, away_i, mean) / (team_i, mean)
+    for g in games:
+        h, a = g["home"], g["away"]
+        in_h, in_a = h in ti, a in ti
+        if not in_h and not in_a:
+            continue
+        if in_h and in_a and g.get("conf_game"):
+            rh, ra = rate(h), rate(a)
+            if rh is None or ra is None:
+                continue
+            conf_g.append((ti[h], ti[a],
+                           rh - ra + (0 if g["neutral"] else HFA)))
+            continue
+        for team, opp, is_home in ((h, a, True), (a, h, False)):
+            if team not in ti:
+                continue
+            if opp in ti and not is_home:
+                continue  # non-conference intra-league game: count once
+            rt, ro = rate(team), rate(opp)
+            if rt is None:
+                continue
+            gap = UNRATED_MARGIN if ro is None else rt - ro
+            other_g.append((ti[team],
+                            gap + (0 if g["neutral"] else (HFA if is_home else -HFA))))
+
+    if not conf_g:
+        return None, None
+
+    cmeans = np.array([m for _, _, m in conf_g])
+    chi = np.array([h for h, _, _ in conf_g])
+    cai = np.array([a for _, a, _ in conf_g])
+    omeans = np.array([m for _, m in other_g]) if other_g else np.empty(0)
+    oti = np.array([t for t, _ in other_g], dtype=int) if other_g else np.empty(0, dtype=int)
+    gp = np.zeros(n)
+    np.add.at(gp, chi, 1)
+    np.add.at(gp, cai, 1)
+    pair = {frozenset((int(chi[k]), int(cai[k]))): k for k in range(len(conf_g))}
+    ratings = np.array([rate(t) if rate(t) is not None else -30.0 for t in teams])
+    eligible = np.array([t not in TITLE_INELIGIBLE for t in teams])
+
+    conf_w = np.zeros(n)
+    over_w = np.zeros(n)
+    cg = np.zeros(n)
+    champ = np.zeros(n)
+    split = 0
+    for _ in range(n_sims):
+        cm = rng.normal(cmeans, SIM_SIGMA)
+        hw = cm > 0
+        w = np.zeros(n)
+        np.add.at(w, chi, hw.astype(float))
+        np.add.at(w, cai, (~hw).astype(float))
+        ow = w.copy()
+        if len(omeans):
+            om = rng.normal(omeans, SIM_SIGMA)
+            np.add.at(ow, oti, (om > 0).astype(float))
+        conf_w += w
+        over_w += ow
+
+        pct = np.where(gp > 0, w / np.maximum(gp, 1), -1.0)
+        pct_e = np.where(eligible, pct, -1.0)  # ineligible teams can't seed
+        order = np.argsort(-(pct_e + rng.uniform(0, 1e-6, n)))
+        s1, s2 = int(order[0]), int(order[1])
+        tied = np.flatnonzero(pct_e == pct_e[s1])
+        if len(tied) == 2:
+            k = pair.get(frozenset(map(int, tied)))
+            if k is not None:
+                winner = int(chi[k]) if cm[k] > 0 else int(cai[k])
+                if winner in tied:
+                    s1 = winner
+                    s2 = int(tied[0]) if int(tied[1]) == winner else int(tied[1])
+        cg[s1] += 1
+        cg[s2] += 1
+        c = s1 if rng.normal(ratings[s1] - ratings[s2], SIM_SIGMA) > 0 else s2
+        champ[c] += 1
+        if c != int(np.argmax(ow + rng.uniform(0, 1e-6, n))):
+            split += 1
+
+    rows = []
+    for i, t in enumerate(teams):
+        tot = gp[i] + (oti == i).sum()
+        rows.append(dict(
+            team=t, fpi=ratings[i],
+            conf_w=conf_w[i] / n_sims, conf_l=gp[i] - conf_w[i] / n_sims,
+            over_w=over_w[i] / n_sims, over_l=tot - over_w[i] / n_sims,
+            cg=cg[i] / n_sims, champ=champ[i] / n_sims,
+            ineligible=not eligible[i]))
+    rows.sort(key=lambda d: -(d["conf_w"] / max(1, d["conf_w"] + d["conf_l"])))
+    return rows, split / n_sims
+
+
 def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
                      team_conf: dict[str, str], n_sims: int = 10000):
     import numpy as np
@@ -1637,6 +1753,59 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
     ws.freeze_panes = "A5"
     ws.auto_filter.ref = f"A4:J{4 + len(results)}"
     print(f"Season Sim: {len(results)} teams projected")
+
+    # ---- per-conference projected standings (joint sims) ----
+    row = 4 + len(results) + 3
+    ws.cell(row=row, column=1, value="PROJECTED STANDINGS BY CONFERENCE "
+            "— joint simulation (games shared between teams)")
+    ws.cell(row=row, column=1).font = TITLE_FONT
+    for c in range(1, 10):
+        ws.cell(row=row, column=c).fill = TITLE_FILL
+    ws.cell(row=row + 1, column=1, value=(
+        "Standings = conference win pct; 2-way ties for the 1-seed break on "
+        "head-to-head, title game at a neutral site. 'Split %' = share of sims "
+        "where the champion is NOT the team with the league's best overall "
+        "record (2025 ACC: Duke won the league at 8-5 while 10-2 Miami sat "
+        "home — that split). * = title-ineligible (transition)."))
+    ws.cell(row=row + 1, column=1).font = Font(name="Arial", italic=True, size=9)
+    row += 3
+
+    std_headers = ["Pos", "Team", "FPI", "Proj Conf", "Proj Overall",
+                   "P(CG)", "P(Champ)"]
+    n_blocks = 0
+    for conf in CONF_ORDER:
+        rows_c, split = _simulate_conf_standings(
+            games, fpi, team_conf, conf, n_sims, np.random.default_rng(2026))
+        if rows_c is None:
+            continue
+        ws.cell(row=row, column=1, value=conf.upper())
+        ws.cell(row=row, column=1).font = WHITE_B
+        ws.cell(row=row, column=4,
+                value=f"champ ≠ best overall in {split:.0%} of sims")
+        ws.cell(row=row, column=4).font = Font(name="Arial", italic=True,
+                                               size=9, color="FFFFFF")
+        for c in range(1, 8):
+            ws.cell(row=row, column=c).fill = HEAD_FILL
+        row += 1
+        for j, h in enumerate(std_headers, 1):
+            cell = ws.cell(row=row, column=j, value=h)
+            cell.font = Font(name="Arial", bold=True, size=9)
+        row += 1
+        for pos, d in enumerate(rows_c, 1):
+            name = d["team"] + (" *" if d["ineligible"] else "")
+            vals = [pos, name, round(d["fpi"], 1),
+                    f"{d['conf_w']:.1f}-{d['conf_l']:.1f}",
+                    f"{d['over_w']:.1f}-{d['over_l']:.1f}",
+                    d["cg"], d["champ"]]
+            for j, v in enumerate(vals, 1):
+                cell = ws.cell(row=row, column=j, value=v)
+                cell.font = ARIAL
+                if j in (6, 7):
+                    cell.number_format = "0%"
+            row += 1
+        row += 1
+        n_blocks += 1
+    print(f"Season Sim: projected standings for {n_blocks} conferences")
 
 
 def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
