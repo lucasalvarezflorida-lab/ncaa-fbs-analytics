@@ -626,12 +626,34 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
                    end_row=R_DC0 + N_GRID + 2, end_column=18)
     note.alignment = _Al(wrap_text=True, vertical="top")
 
-    # ----- deep dive (from Lucas's conference prep files; SEC & ACC so far) -----
+    # ----- deep dive (from Lucas's conference prep files) -----
     r_deep = R_DC0 + N_GRID + 4  # row 53
-    _panel_header(r_deep, "DEEP DIVE — podcast prep, July 17, 2026 (blank = no file yet)", "35507A")
-    deep_secs = [("CAPSULE", "AM", 115), ("ROSTER", "AN", 430),
-                 ("IDENTITY · STRENGTHS · WEAKNESSES · GOALS", "AO", 300),
-                 ("PREDICTION", "AP", 135)]
+    _panel_header(r_deep, "DEEP DIVE — podcast prep (all 138 teams; drafted "
+                          "sections carry a review-before-air vintage)", "35507A")
+
+    # Right-size each section to the LONGEST text among THIS conference's
+    # teams (the panel is dropdown-driven, so the row height is shared):
+    # no more giant blank boxes for terse teams, no clipping for wordy ones.
+    PANEL_CHARS = 100   # merged N:R ~= 90 width units at Arial 10
+    LINE_PT = 13.0      # points per wrapped line
+    scout_teams = load_scouting().get("teams", {})
+
+    def _fit_height(key: str, floor: float) -> float:
+        longest = 1
+        for t in teams:
+            deep = (scout_teams.get(t) or {}).get("deep") or {}
+            txt = str(deep.get(key) or "")
+            lines = 0
+            for para in txt.split("\n"):
+                lines += max(1, (len(para) + PANEL_CHARS - 1) // PANEL_CHARS)
+            longest = max(longest, lines)
+        return max(floor, longest * LINE_PT + 8)
+
+    deep_secs = [("CAPSULE", "AM", _fit_height("intro", 40)),
+                 ("ROSTER", "AN", _fit_height("roster", 55)),
+                 ("IDENTITY · STRENGTHS · WEAKNESSES · GOALS", "AO",
+                  _fit_height("identity", 55)),
+                 ("PREDICTION", "AP", _fit_height("prediction", 30))]
     rr = r_deep + 1
     for label, col, height in deep_secs:
         c = ws.cell(row=rr, column=14, value=label)
