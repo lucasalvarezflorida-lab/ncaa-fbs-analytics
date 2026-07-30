@@ -209,8 +209,32 @@ def depth_table(slide, title, rows, x, y, w, font=9.5):
     return shape
 
 
+def _fit_size(text, width_in, height_in, sizes=(13, 12, 11, 10, 9.5, 9)):
+    """Largest Arial size whose wrapped line count fits the box."""
+    paras = [p for p in str(text).split("\n")]
+    for s in sizes:
+        chars_per_line = max(20, int(width_in * 72 / (s * 0.52)))
+        lines = sum(max(1, -(-len(p) // chars_per_line)) for p in paras)
+        if lines * s * 1.25 <= height_in * 72:
+            return s
+    return sizes[-1]
+
+
+def deep_block(slide, x, y, w, h, label, text):
+    txt(slide, x, y, w, 0.35, label, 14, NAVY, bold=True)
+    body = str(text or "").strip()
+    if not body:
+        body = "(none)"
+    if len(body) < 60:
+        # terse one-liner (G6 predictions): render as a callout
+        txt(slide, x, y + 0.55, w, 1.2, body, 30, ORANGE, bold=True)
+        return
+    size = _fit_size(body, w, h - 0.55)
+    txt(slide, x, y + 0.5, w, h - 0.5, body, size)
+
+
 def team_slides(prs, conf, d):
-    """Two slides per team: profile (projections + S/W) and depth chart."""
+    """Four slides per team: profile, deep dive x2, depth chart."""
     team = d["team"]
     sc = scouting.get(team) or {}
     nat = national_map.get(team) or {}
@@ -245,7 +269,27 @@ def team_slides(prs, conf, d):
         txt(s, 0.9, 6.35, 11.6, 1.0, "\n".join(scheme_bits), 11, MUTE,
             italic=True)
 
-    # ---- slide B: projected depth chart ----
+    # ---- slides B/C: the deep dive ----
+    deep = sc.get("deep") or {}
+    s = blank(prs)
+    txt(s, 0.9, 0.35, 11.6, 0.6, f"{team} — deep dive", 28, NAVY, bold=True)
+    txt(s, 0.9, 0.98, 11.6, 0.35, "The season · prediction", 12, MUTE,
+        italic=True)
+    deep_block(s, 0.9, 1.55, 5.7, 5.5, "THE SEASON", deep.get("intro"))
+    deep_block(s, 6.9, 1.55, 5.7, 5.5, "PREDICTION", deep.get("prediction"))
+
+    s = blank(prs)
+    txt(s, 0.9, 0.35, 11.6, 0.6, f"{team} — deep dive", 28, NAVY, bold=True)
+    txt(s, 0.9, 0.98, 11.6, 0.35, "Roster · identity", 12, MUTE, italic=True)
+    deep_block(s, 0.9, 1.55, 5.7, 5.3, "ROSTER", deep.get("roster"))
+    deep_block(s, 6.9, 1.55, 5.7, 5.3,
+               "IDENTITY · STRENGTHS · WEAKNESSES · GOALS",
+               deep.get("identity"))
+    if deep.get("vintage"):
+        txt(s, 0.9, 7.05, 11.6, 0.35, f"Prep vintage: {deep['vintage']}", 8.5,
+            MUTE, italic=True)
+
+    # ---- slide D: projected depth chart ----
     s = blank(prs)
     entry = depth_by_norm.get(norm(team))
     txt(s, 0.9, 0.35, 11.6, 0.6, f"{team} — projected depth chart", 28,
@@ -571,9 +615,9 @@ for conf, (rows, split) in conf_data.items():
     fav = max(rows, key=lambda d: d["champ"])
     title_slide(
         prs, f"{conf} — 2026 Projections",
-        f"Projected standings, title race, and a two-slide breakdown of all "
-        f"{len(rows)} teams:\nprojections · strengths & weaknesses · "
-        f"projected depth charts\n"
+        f"Projected standings, title race, and a four-slide breakdown of all "
+        f"{len(rows)} teams:\nprojections · strengths & weaknesses · full "
+        f"deep dives · projected depth charts\n"
         f"10,000 joint simulated seasons · ESPN 2026 preseason FPI prior · "
         f"LOCAL USE (OurLads depth data)",
         "NCAA FBS Analytics · conference breakdown")
