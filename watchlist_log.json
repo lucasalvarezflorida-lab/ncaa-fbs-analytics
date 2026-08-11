@@ -1076,5 +1076,16 @@
 "side": "SMU",
 "spread": 2.5,
 "bet": "SMU -2.5 ATS (Lucas call)"
+},
+"401856660:RANKED_FAV": {
+"first_seen": "2026-08-06",
+"rule": "RANKED_FAV",
+"gid": 401856660,
+"wk": 1,
+"home": "LSU",
+"away": "Clemson",
+"side": "LSU",
+"spread": -10.5,
+"bet": "LSU -10.5 ATS"
 }
 }
