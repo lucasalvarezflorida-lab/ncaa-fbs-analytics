@@ -17,7 +17,6 @@ Brand: workbook navy 0A2851 / orange F47321, Arial throughout.
 import json
 import sys
 from pathlib import Path
-from statistics import NormalDist
 
 import numpy as np
 
@@ -27,8 +26,8 @@ sys.path.insert(0, str(MODEL / "fpi-decomposition"))
 
 import cfbd_client as cfbd
 from build_conference_book import (CONF_ORDER, HFA, SIM_SIGMA, UNRATED_MARGIN,
-                                   _simulate_conf_standings, load_fpi_2026,
-                                   load_scouting)
+                                   _margin_model, _simulate_conf_standings,
+                                   load_fpi_2026, load_scouting)
 from name_mapping import normalize_name as norm
 
 from pptx import Presentation
@@ -86,7 +85,8 @@ for g in raw:
                       conf_game=bool(pick(g, "conferenceGame", "conference_game"))))
 
 # independent per-team sim (Season Sim tab numbers)
-ND = NormalDist(0, SIM_SIGMA)
+win_prob, resid, margin_desc = _margin_model()
+SIM_SD = f"{float(resid.std()):.1f}" if resid is not None else f"{SIM_SIGMA:g}"
 rng = np.random.default_rng(2026)
 win_probs = {t: [] for t in team_conf}
 for g in games:
@@ -100,7 +100,7 @@ for g in games:
         margin = UNRATED_MARGIN if ro is None else rt - ro
         if not g["neutral"]:
             margin += HFA if is_home else -HFA
-        win_probs[team].append(ND.cdf(margin))
+        win_probs[team].append(win_prob(margin))
 
 national = []
 for t, ps in win_probs.items():
@@ -116,7 +116,8 @@ national.sort(key=lambda d: -d["mean"])
 conf_data = {}
 for conf in CONF_ORDER:
     rows, split = _simulate_conf_standings(
-        games, fpi, team_conf, conf, N_SIMS, np.random.default_rng(2026))
+        games, fpi, team_conf, conf, N_SIMS, np.random.default_rng(2026),
+        resid=resid)
     if rows is not None:
         conf_data[conf] = (rows, split)
 
@@ -455,8 +456,9 @@ prs = new_deck()
 title_slide(
     prs, "2026 Season Simulation",
     "10,000 Monte Carlo seasons · joint conference standings · title races\n"
-    "Prior: ESPN 2026 preseason FPI (July 14 snapshot) · margins ~ N(FPI gap "
-    "+ 2.5 HFA, σ = 13.5)",
+    "Prior: ESPN 2026 preseason FPI (July 14) · margins = FPI gap + 2.5 HFA "
+    f"+ empirical residuals (σ {SIM_SD})\n"
+    "Predictions frozen at kickoff of the 2026 opener — Aug 29",
     "NCAA FBS Analytics · projected standings")
 
 # methodology + stat callouts
@@ -474,7 +476,7 @@ txt(s, 0.9, 1.6, 6.4, 4.6,
     "\u2018Split\u2019 = share of seasons in which the conference champion is "
     "NOT the team with the league's best overall record.", 15)
 stat_card(s, 8.0, 1.7, 2.4, "10,000", "seasons per league")
-stat_card(s, 10.5, 1.7, 2.4, "σ 13.5", "margin sd vs spread")
+stat_card(s, 10.5, 1.7, 2.4, f"σ {SIM_SD}", "empirical margin sd, 2021–25 fit")
 stat_card(s, 8.0, 3.5, 2.4, "+2.5", "home-field points")
 stat_card(s, 10.5, 3.5, 2.4, "138", "FBS teams rated")
 txt(s, 8.0, 5.3, 4.9, 1.4,

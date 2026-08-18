@@ -149,7 +149,7 @@ GAMES = [
         where="Charlottesville · Scott Stadium",
         sub="Sat Aug 29 · 3:30 ET · revenge of the 35-31 end-zone INT · UVA: 11 wins, ACC CG loss in 2025",
         machine="UVA –6.7", market="–3 / –6", value="3.7 pts on UVA at DK",
-        wp=("UVA", 69, "NCSU", 31),
+        wp=("UVA", 65, "NCSU", 35),
         decides=[
             "THE BOOKS DISAGREE BY A FULL FIELD GOAL — shop the number on air",
             "UVA's #26 pass defense vs CJ Bailey's #36 pass offense decides it",
@@ -172,7 +172,7 @@ GAMES = [
         where="Fargo · Fargodome",
         sub="Sat Aug 29 · 5:30 ET · CBSSN · NDSU's first FBS game · 2015 FCS title rematch · ON THE UPSET BOARD",
         machine="NDSU –2.7", market="–10 → –7", value="+3 CLV banked",
-        wp=("NDSU", 58, "JSU", 42),
+        wp=("NDSU", 57, "JSU", 43),
         decides=[
             "JSU identity: #23 rush offense, back-to-back ~3,500-yard rushing seasons",
             "JSU pass game #107 — stack the box, make Creel throw",
@@ -211,8 +211,9 @@ for g in GAMES:
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 1.22
 txt(s, 0.9, 6.75, 11.5, 0.5,
-    "Machine = ESPN 2026 preseason FPI + 2.5 HFA, σ 13.5 · lines as of Aug 18 "
-    "· model plays graded vs first-seen lines", 10.5,
+    "Machine = ESPN 2026 preseason FPI + 2.5 HFA, empirical margin curve "
+    "(σ 17.9, 2021–25 fit) · lines as of Aug 18 · model plays graded vs "
+    "first-seen lines", 10.5,
     RGBColor(0x8F, 0xA5, 0xC4))
 
 # ---------------- per-game slides ----------------

@@ -42,6 +42,20 @@ def overround(ml_a: float, ml_b: float) -> float:
     return american_to_prob(ml_a) + american_to_prob(ml_b) - 1
 
 
+def kelly(p: float, ml: float, fraction: float = 1.0) -> float:
+    """Kelly stake as a share of bankroll: win prob p, a bet at American odds.
+
+    Full Kelly is (p - q) / (1 - q) with q the posted price's break-even
+    probability; `fraction` scales it (0.25 = quarter-Kelly). Returns 0 when
+    the posted price offers no positive expectation — a model-vs-market edge
+    on no-vig probabilities does not guarantee +EV at the vigged price.
+    """
+    if not 0.0 < p < 1.0:
+        raise ValueError(f"probability must be in (0, 1), got {p}")
+    q = american_to_prob(ml)
+    return max(0.0, fraction * (p - q) / (1.0 - q))
+
+
 def novig(ml_a: float, ml_b: float,
           method: str = "proportional") -> tuple[float, float]:
     """No-vig probabilities (p_a, p_b) from a two-sided market.

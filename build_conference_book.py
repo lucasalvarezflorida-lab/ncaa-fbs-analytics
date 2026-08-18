@@ -96,7 +96,9 @@ LINE_PROVIDERS = ["DraftKings", "Bovada", "ESPN Bet"]  # preference order, per f
 HFA = 2.5            # home-field advantage in points for the FPI-implied margin
 EDGE_YEL = 6.0       # same-side disagreement threshold (points)
 RED_MIN_SPREAD = 3.0 # only call it an upset if a real favorite exists
-UNRATED_MARGIN = 24.0  # assumed FPI margin vs FCS / unrated opponents (sim only)
+UNRATED_MARGIN = 29.0  # FPI margin vs FCS / unrated opponents (sim only):
+                       # empirical curve at +29 = 94.3%, matching the actual
+                       # FBS-over-FCS rate 2021-25 (568/602 = 94.4%)
 
 
 def load_fpi_2026() -> dict:
@@ -1590,14 +1592,36 @@ def build_watch_list(wb, games: list[dict], refresh: bool):
 
 # transitioning programs: play a league schedule but cannot take a CG seed
 TITLE_INELIGIBLE = {"North Dakota State", "Sacramento State"}
-SIM_SIGMA = 13.5  # historical sd of CFB scoring margin vs spread
+SIM_SIGMA = 13.5  # fallback sd if the fitted margin curve is missing
 
 
-def _simulate_conf_standings(games, fpi, team_conf, conf, n_sims, rng):
+def _margin_model():
+    """(win_prob_fn, residuals, description) for the season sim.
+
+    Preferred: the empirical curve fit by fit_margin_curve.py (residuals of
+    actual margins vs this model's margins, 2021-25 — true sd ~17.9, fat
+    tails included). Falls back to the old Normal(0, 13.5) if the curve
+    JSON hasn't been built, so a fresh checkout still refreshes."""
+    try:
+        from margin_prob import load_curve
+        curve = load_curve("model")
+        desc = (f"empirical margin curve (margin_prob_curve.json, "
+                f"n={curve.meta.get('n')} games 2021-25, "
+                f"resid sd {curve.meta.get('resid_sd')})")
+        return curve.win_prob, curve.residuals, desc
+    except FileNotFoundError:
+        from statistics import NormalDist
+        print("WARNING: margin_prob_curve.json missing — season sim falling "
+              "back to Normal(0, 13.5); run fit_margin_curve.py")
+        return NormalDist(0, SIM_SIGMA).cdf, None, f"NormalDist(0, {SIM_SIGMA})"
+
+
+def _simulate_conf_standings(games, fpi, team_conf, conf, n_sims, rng,
+                             resid=None):
     """Joint Monte Carlo of one conference: same conventions as the per-team
-    sim (margin ~ N(FPI gap + HFA, 13.5), unrated = +24) but games are shared
-    between teams so conference standings, CG berths, and the title are
-    coherent. Standings run on conference win PCT (slates are 8 or 9 games);
+    sim (margin = FPI gap + HFA + a residual drawn from the fitted empirical
+    distribution, unrated = +24) but games are shared between teams so
+    conference standings, CG berths, and the title are coherent. Standings run on conference win PCT (slates are 8 or 9 games);
     2-way ties for the 1-seed break on head-to-head. Returns (rows, split)
     where split = share of sims in which the champion is NOT the team with
     the conference's best overall record (the Miami/Duke 2025 case)."""
@@ -1653,20 +1677,27 @@ def _simulate_conf_standings(games, fpi, team_conf, conf, n_sims, rng):
     ratings = np.array([rate(t) if rate(t) is not None else -30.0 for t in teams])
     eligible = np.array([t not in TITLE_INELIGIBLE for t in teams])
 
+    if resid is None:
+        def draw(size):
+            return rng.normal(0.0, SIM_SIGMA, size)
+    else:
+        def draw(size):  # bootstrap from the fitted residual sample
+            return resid[rng.integers(0, len(resid), size)]
+
     conf_w = np.zeros(n)
     over_w = np.zeros(n)
     cg = np.zeros(n)
     champ = np.zeros(n)
     split = 0
     for _ in range(n_sims):
-        cm = rng.normal(cmeans, SIM_SIGMA)
+        cm = cmeans + draw(len(cmeans))
         hw = cm > 0
         w = np.zeros(n)
         np.add.at(w, chi, hw.astype(float))
         np.add.at(w, cai, (~hw).astype(float))
         ow = w.copy()
         if len(omeans):
-            om = rng.normal(omeans, SIM_SIGMA)
+            om = omeans + draw(len(omeans))
             np.add.at(ow, oti, (om > 0).astype(float))
         conf_w += w
         over_w += ow
@@ -1685,7 +1716,7 @@ def _simulate_conf_standings(games, fpi, team_conf, conf, n_sims, rng):
                     s2 = int(tied[0]) if int(tied[1]) == winner else int(tied[1])
         cg[s1] += 1
         cg[s2] += 1
-        c = s1 if rng.normal(ratings[s1] - ratings[s2], SIM_SIGMA) > 0 else s2
+        c = s1 if ratings[s1] - ratings[s2] + draw(1)[0] > 0 else s2
         champ[c] += 1
         if c != int(np.argmax(ow + rng.uniform(0, 1e-6, n))):
             split += 1
@@ -1707,10 +1738,7 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
                      team_conf: dict[str, str], n_sims: int = 10000):
     import numpy as np
 
-    from statistics import NormalDist
-
-    SIGMA = 13.5  # historical sd of CFB scoring margin vs spread
-    ND = NormalDist(0, SIGMA)
+    win_prob, resid, margin_desc = _margin_model()
     teams = sorted(team_conf)
     win_probs: dict[str, list[float]] = {t: [] for t in teams}
     for g in games:
@@ -1727,7 +1755,7 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
                 margin = tf["fpi"] - of["fpi"]
             if not g["neutral"]:
                 margin += HFA if is_home else -HFA
-            win_probs[team].append(ND.cdf(margin))
+            win_probs[team].append(win_prob(margin))
 
     rng = np.random.default_rng(2026)
     results = []
@@ -1751,8 +1779,10 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
     ws["A1"].font = TITLE_FONT
     for c in range(1, 10):
         ws.cell(row=1, column=c).fill = TITLE_FILL
-    ws["A2"] = ("Win prob per game = NormalDist(FPI gap + 2.5 HFA, sd 13.5). Prior = ESPN 2026 PRESEASON FPI "
-                "(captured July 14, 2026). Unrated opponents counted as +24 pt margin. "
+    ws["A2"] = (f"Win prob per game = {margin_desc} applied to FPI gap + 2.5 HFA. "
+                "Prior = ESPN 2026 PRESEASON FPI (captured July 14, 2026). "
+                f"Unrated opponents counted as +{UNRATED_MARGIN:g} pt margin "
+                "(calibrated to the 94.4% FBS-over-FCS rate, 2021-25). "
                 "Compare Proj Wins to your book's season win totals for value.")
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
     headers = ["Rank", "Team", "Conf", "FPI", "Games", "Proj Wins",
@@ -1780,7 +1810,7 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
     ws.row_dimensions[2].height = 26
     ws.freeze_panes = "A5"
     ws.auto_filter.ref = f"A4:J{4 + len(results)}"
-    print(f"Season Sim: {len(results)} teams projected")
+    print(f"Season Sim: {len(results)} teams projected via {margin_desc}")
 
     # ---- per-conference projected standings (joint sims) ----
     CTR = Alignment(horizontal="center")
@@ -1811,7 +1841,8 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
     n_blocks = 0
     for conf in CONF_ORDER:
         rows_c, split = _simulate_conf_standings(
-            games, fpi, team_conf, conf, n_sims, np.random.default_rng(2026))
+            games, fpi, team_conf, conf, n_sims, np.random.default_rng(2026),
+            resid=resid)
         if rows_c is None:
             continue
         ws.cell(row=row, column=1, value=conf.upper())

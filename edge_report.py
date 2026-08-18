@@ -26,10 +26,11 @@ sys.path.insert(0, str(HERE / "fpi-decomposition"))
 from build_conference_book import (_spread_text, fetch_games,  # noqa: E402
                                    load_fpi_2026)
 from margin_prob import load_curve  # noqa: E402
-from odds import novig, overround, prob_to_american  # noqa: E402
+from odds import kelly, novig, overround, prob_to_american  # noqa: E402
 
 COLUMNS = ["game", "mkt_spread", "model_spread", "side", "side_ml",
-           "model_p", "mkt_p", "mkt_src", "fair_ml", "edge_pp", "flags"]
+           "model_p", "mkt_p", "mkt_src", "fair_ml", "edge_pp",
+           "kelly_frac", "stake_pts", "flags"]
 
 # a real two-way ML market books 2-8% of vig; Bovada ships -100000
 # placeholder MLs on huge favorites, which would devig to ~50/50 and top the
@@ -37,7 +38,8 @@ COLUMNS = ["game", "mkt_spread", "model_spread", "side", "side_ml",
 MAX_OVERROUND = 0.15
 
 
-def build_rows(week: int, refresh: bool, devig: str):
+def build_rows(week: int, refresh: bool, devig: str,
+               kelly_frac: float, bank: float | None):
     fpi = {k: {"fpi": v} for k, v in load_fpi_2026().items()}
     if not fpi:
         sys.exit("no 2026 preseason FPI snapshot found — run refresh_all.py first")
@@ -69,6 +71,8 @@ def build_rows(week: int, refresh: bool, devig: str):
         p = p_home if on_home else 1 - p_home
         q = q_home if on_home else 1 - q_home
         side_ml = (g["home_ml"] if on_home else g["away_ml"]) if has_ml else None
+        kf = kelly(p, side_ml, kelly_frac) if side_ml is not None else None
+        stake = round(bank * kf) if (bank and kf is not None) else None
 
         flags = [g["tier"]] if g["tier"] else []
         if g["ml_guard"] and side == g.get("dog"):
@@ -87,28 +91,40 @@ def build_rows(week: int, refresh: bool, devig: str):
             model_p=p, mkt_p=q, mkt_src=src,
             fair_ml=f"{prob_to_american(p):+d}",
             edge_pp=100 * (p - q),
+            kelly_frac=kf, stake_pts=stake,
             flags=" ".join(flags)))
     rows.sort(key=lambda r: -r["edge_pp"])
     return rows, no_market, no_model, model_curve
 
 
-def print_table(rows, week, devig, no_market, no_model, curve) -> None:
+def print_table(rows, week, devig, no_market, no_model, curve,
+                kelly_frac, bank) -> None:
     meta = curve.meta
     print(f"WEEK {week} EDGE REPORT — model curve n={meta.get('n')} games "
-          f"(resid sd {meta.get('resid_sd')}), devig={devig}")
+          f"(resid sd {meta.get('resid_sd')}), devig={devig}, "
+          f"kelly={kelly_frac:g}x" + (f", bank={bank:g}" if bank else ""))
+    stake_h = f" {'STAKE':>6}" if bank else ""
     print(f"{'GAME':41} {'MKT SPREAD':>21} {'MODEL SPREAD':>21} "
           f"{'SIDE':22} {'ML':>6} {'MODEL%':>7} {'MKT%':>7} "
-          f"{'FAIR':>6} {'EDGE':>6}  FLAGS")
+          f"{'FAIR':>6} {'EDGE':>6} {'KELLY':>6}{stake_h}  FLAGS")
     for r in rows:
         mkt = f"{r['mkt_p']:.1%}" + ("*" if r["mkt_src"] == "spread" else " ")
+        kel = f"{r['kelly_frac']:.1%}" if r["kelly_frac"] is not None else "-"
+        stake = ""
+        if bank:
+            stake = f" {r['stake_pts'] if r['stake_pts'] is not None else '-':>6}"
         print(f"{r['game'][:41]:41} {r['mkt_spread'][:21]:>21} "
               f"{r['model_spread'][:21]:>21} {r['side'][:22]:22} "
               f"{r['side_ml']:>6} {r['model_p']:>7.1%} {mkt:>8} "
-              f"{r['fair_ml']:>6} {r['edge_pp']:>+6.1f}  {r['flags']}")
+              f"{r['fair_ml']:>6} {r['edge_pp']:>+6.1f} {kel:>6}{stake}  "
+              f"{r['flags']}")
     print(f"\n{len(rows)} games priced. "
           f"* market prob derived from the spread (no moneyline posted yet). "
           f"skipped: {no_market} without any line, {no_model} without a model "
-          f"price (FCS/unrated opponent).")
+          f"price (FCS/unrated opponent).\n"
+          f"KELLY = {kelly_frac:g}x Kelly at the posted ML "
+          f"(0.0% = no +EV at that price even if the no-vig edge is positive; "
+          f"- = no ML posted).")
 
 
 def main() -> None:
@@ -123,16 +139,23 @@ def main() -> None:
                     help="re-pull games/lines from CFBD (needs CFBD_API_KEY)")
     ap.add_argument("--devig", choices=["proportional", "power", "shin"],
                     default="proportional")
+    ap.add_argument("--kelly", type=float, default=0.25, metavar="FRAC",
+                    help="Kelly fraction for stake sizing (default 0.25 = "
+                         "quarter-Kelly)")
+    ap.add_argument("--bank", type=float, metavar="POINTS",
+                    help="current bankroll in contest points; adds a STAKE "
+                         "column (points to bet)")
     ap.add_argument("--csv", metavar="PATH", help="also write the table as CSV")
     args = ap.parse_args()
 
     try:
         rows, no_market, no_model, curve = build_rows(
-            args.week, args.refresh, args.devig)
+            args.week, args.refresh, args.devig, args.kelly, args.bank)
     except FileNotFoundError as e:
         sys.exit(str(e))
 
-    print_table(rows, args.week, args.devig, no_market, no_model, curve)
+    print_table(rows, args.week, args.devig, no_market, no_model, curve,
+                args.kelly, args.bank)
 
     if args.csv:
         with open(args.csv, "w", newline="", encoding="utf-8") as f:
@@ -141,7 +164,10 @@ def main() -> None:
             for r in rows:
                 w.writerow({**r, "model_p": round(r["model_p"], 4),
                             "mkt_p": round(r["mkt_p"], 4),
-                            "edge_pp": round(r["edge_pp"], 2)})
+                            "edge_pp": round(r["edge_pp"], 2),
+                            "kelly_frac": (round(r["kelly_frac"], 4)
+                                           if r["kelly_frac"] is not None
+                                           else None)})
         print(f"wrote {args.csv}")
 
 

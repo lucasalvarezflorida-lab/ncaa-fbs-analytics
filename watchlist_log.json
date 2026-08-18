@@ -1087,5 +1087,27 @@
 "side": "LSU",
 "spread": -10.5,
 "bet": "LSU -10.5 ATS"
+},
+"401858423:EARLY_UNDER": {
+"first_seen": "2026-08-13",
+"rule": "EARLY_UNDER",
+"gid": 401858423,
+"wk": 1,
+"home": "Rutgers",
+"away": "Massachusetts",
+"side": "UNDER",
+"total": 54.5,
+"bet": "UNDER 54.5"
+},
+"401864498:EARLY_UNDER": {
+"first_seen": "2026-08-13",
+"rule": "EARLY_UNDER",
+"gid": 401864498,
+"wk": 1,
+"home": "New Mexico",
+"away": "Central Michigan",
+"side": "UNDER",
+"total": 49,
+"bet": "UNDER 49"
 }
 }

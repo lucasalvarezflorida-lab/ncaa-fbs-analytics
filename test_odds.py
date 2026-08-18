@@ -4,7 +4,7 @@ import math
 
 import pytest
 
-from odds import american_to_prob, novig, overround, prob_to_american
+from odds import american_to_prob, kelly, novig, overround, prob_to_american
 
 
 def test_american_to_prob():
@@ -46,6 +46,17 @@ def test_novig_sums_to_one():
         pa, pb = novig(-450, 340, method)
         assert math.isclose(pa + pb, 1.0, abs_tol=1e-9), method
         assert pa > 0.5 > pb, method
+
+
+def test_kelly():
+    assert kelly(0.5, 100) == 0.0                      # exactly break-even
+    assert math.isclose(kelly(0.6, 100), 0.2)          # (0.6-0.5)/(1-0.5)
+    assert math.isclose(kelly(0.6, 100, 0.25), 0.05)   # quarter-Kelly
+    assert kelly(0.2, 150) == 0.0                      # -EV price -> no bet
+    # b = 2.65 at +265: f = p - (1-p)/b
+    assert math.isclose(kelly(0.57, 265), 0.57 - 0.43 / 2.65)
+    with pytest.raises(ValueError):
+        kelly(1.0, -110)
 
 
 def test_longshot_shading():
