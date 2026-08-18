@@ -6,11 +6,19 @@ the next block of its group's actual ESPN FPI value pool, and within a tier
 values follow the market's own ordering — no within-tier claim, no invented
 magnitudes. The full RANK-SWAP prior (his exact order) is kept as a
 reference column. Independents keep ESPN FPI; the MAC participates via its
-natively tiered board. Same engine as the workbook's Season Sim tab: 10k
-Monte Carlo, sigma 13.5, HFA 2.5, unrated +24, seed 2026 in every run, so
-every delta is the boards' doing.
+natively tiered board. Engine matches the workbook's Season Sim tab AS OF
+THE 7/25 FREEZE: 10k Monte Carlo, sigma 13.5, HFA 2.5, unrated +24 (pinned
+below), seed 2026 in every run, so every delta is the boards' doing.
 
 Output: lucas_board_sim_2026.csv + console highlights.
+
+--curve: methodology sensitivity companion (pre-Aug-29 only). Swaps ONLY
+the margin->win-prob conversion for the empirical curve the live workbook
+adopted 2026-08-18 (margin_prob_curve.json, residual sd 17.94); everything
+else, including the +24 pin, stays frozen so exactly one variable moves.
+Writes lucas_board_sim_2026_curve.csv — NEVER the frozen CSV.
+--out PATH: redirect output (e.g. to verify the frozen CSV reproduces
+without touching it).
 """
 import json
 import sys
@@ -23,15 +31,19 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent   # lucas-board/
 sys.path.insert(0, str(HERE.parent))     # repo root, for the workbook engine
 
-from build_conference_book import (HFA, UNRATED_MARGIN, fetch_games,
-                                   load_fpi_2026, norm)
+from build_conference_book import HFA, fetch_games, load_fpi_2026, norm
+
 SIGMA = 13.5
 N_SIMS = 10_000
+# FROZEN 2026-08-18: build_conference_book.UNRATED_MARGIN moved 24 -> 29 when
+# the workbook adopted the empirical margin curve. The pre-registered CSV was
+# built with +24; pinned here so it stays reproducible. Do not track the live
+# constant.
+UNRATED_MARGIN = 24.0
 
 
-def simulate(games: list[dict], fpi: dict[str, dict],
-             teams: list[str]) -> dict[str, dict]:
-    nd = NormalDist(0, SIGMA)
+def simulate(games: list[dict], fpi: dict[str, dict], teams: list[str],
+             conv) -> dict[str, dict]:
     win_probs: dict[str, list[float]] = {t: [] for t in teams}
     for g in games:
         for team, opp, is_home in ((g["home"], g["away"], True),
@@ -44,7 +56,7 @@ def simulate(games: list[dict], fpi: dict[str, dict],
             margin = UNRATED_MARGIN if of is None else tf - of
             if not g["neutral"]:
                 margin += HFA if is_home else -HFA
-            win_probs[team].append(nd.cdf(margin))
+            win_probs[team].append(conv(margin))
     rng = np.random.default_rng(2026)
     out = {}
     for t in teams:
@@ -59,6 +71,21 @@ def simulate(games: list[dict], fpi: dict[str, dict],
 
 
 def main():
+    args = sys.argv[1:]
+    use_curve = "--curve" in args
+    if use_curve:
+        from margin_prob import load_curve
+        curve = load_curve()
+        conv = lambda m: float(curve.win_prob(m))
+        conv_label = "empirical curve (sd 17.94) — SENSITIVITY COMPANION"
+        out_path = HERE / "lucas_board_sim_2026_curve.csv"
+    else:
+        conv = NormalDist(0, SIGMA).cdf
+        conv_label = f"Normal(0, {SIGMA:g}) — frozen 7/25 methodology"
+        out_path = HERE / "lucas_board_sim_2026.csv"
+    if "--out" in args:
+        out_path = Path(args[args.index("--out") + 1])
+
     fpi = load_fpi_2026()
     board = json.load(open(HERE / "lucas_board_2026.json", encoding="utf-8"))
 
@@ -98,9 +125,9 @@ def main():
     teams = sorted({g["home"] for g in games} | {g["away"] for g in games})
     teams = [t for t in teams if norm(t) in fpi]
 
-    base = simulate(games, fpi, teams)
-    yours = simulate(games, lucas_fpi, teams)
-    ranky = simulate(games, rank_fpi, teams)
+    base = simulate(games, fpi, teams, conv)
+    yours = simulate(games, lucas_fpi, teams, conv)
+    ranky = simulate(games, rank_fpi, teams, conv)
 
     flags = {norm(v["team"]): v["flag"] for v in board["teams"].values()
              if v["flag"]}
@@ -122,10 +149,10 @@ def main():
             lucas_10w=round(yours[t]["ten"], 3),
             flag=flags.get(norm(t), "")))
     df = pd.DataFrame(rows).sort_values("delta", ascending=False)
-    df.to_csv(HERE / "lucas_board_sim_2026.csv", index=False)
+    df.to_csv(out_path, index=False)
 
     print(f"simulated {len(df)} teams x {N_SIMS} runs, both priors "
-          f"(seed 2026)\n")
+          f"(seed 2026)\nconversion: {conv_label}\n")
     show = ["team", "espn_wins", "lucas_wins", "delta", "flag"]
     print("=== biggest gainers under Lucas's boards ===")
     print(df.head(10)[show].to_string(index=False))
@@ -134,7 +161,7 @@ def main():
     up = df[df.delta >= 1].shape[0]
     dn = df[df.delta <= -1].shape[0]
     print(f"\nteams moving >= +/-1 win: {up} up, {dn} down; "
-          f"CSV: lucas_board_sim_2026.csv")
+          f"CSV: {out_path.name}")
 
 
 if __name__ == "__main__":
