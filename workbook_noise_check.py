@@ -1,18 +1,22 @@
-"""Post-refresh guard: discard no-op workbook rewrites.
+"""Post-refresh guard: discard no-op workbook and deck rewrites.
 
 Excel COM recalc rewrites xlsx/xlsm binaries (docProps timestamps,
-calcChain order) even when no cell changed, so the weekly loops leave
-phantom modifications in git status. For every git-modified workbook,
-compare the working copy against HEAD cell-by-cell: byte-different but
-cell-identical -> git restore; any real difference (sheets, dimensions,
-values) -> leave in place for review and say what moved.
+calcChain order) even when no cell changed, and python-pptx stamps the
+build time into every zip entry header, so regenerating a deck from an
+unchanged script is byte-different too. For every git-modified workbook
+or deck, compare the working copy against HEAD on content — cells for
+xlsx/xlsm, zip part names + part bytes for pptx: byte-different but
+content-identical -> git restore; any real difference -> leave in place
+for review and say what moved.
 
 Conservative by design: if either copy fails to load, the file is left
 untouched. Always exits 0 so it can't fail the scheduled loop.
 """
+import io
 import subprocess
 import sys
 import tempfile
+import zipfile
 from itertools import zip_longest
 from pathlib import Path
 
@@ -46,18 +50,45 @@ def first_diff(work: dict, head: dict) -> str | None:
     return None
 
 
+def pptx_diff(work_path: Path, head_bytes: bytes) -> str | None:
+    """None if every zip part is byte-identical (entry-header timestamps
+    are the only thing python-pptx varies between runs), else what moved."""
+    with zipfile.ZipFile(work_path) as zw, \
+            zipfile.ZipFile(io.BytesIO(head_bytes)) as zh:
+        nw, nh = set(zw.namelist()), set(zh.namelist())
+        if nw != nh:
+            return f"part set changed: {sorted(nw ^ nh)[:4]}"
+        for name in sorted(nw):
+            if zw.read(name) != zh.read(name):
+                return f"part changed: {name}"
+    return None
+
+
 def main() -> None:
     status = git("status", "--porcelain").stdout.decode()
     books = [line[3:].strip().strip('"') for line in status.splitlines()
              if line[:2] == " M"
-             and line.strip().lower().endswith((".xlsx", ".xlsm"))]
+             and line.strip().lower().endswith((".xlsx", ".xlsm", ".pptx"))]
     if not books:
-        print("noise check: no modified workbooks")
+        print("noise check: no modified workbooks or decks")
         return
     for rel in books:
         show = git("show", f"HEAD:{rel}")
         if show.returncode != 0:
             print(f"noise check: {rel} — no HEAD version, left alone")
+            continue
+        if rel.lower().endswith(".pptx"):
+            try:
+                diff = pptx_diff(HERE / rel, show.stdout)
+            except Exception as e:  # unreadable/locked: never touch it
+                print(f"noise check: {rel} — compare failed ({e}), left alone")
+                continue
+            if diff is None:
+                git("restore", rel)
+                print(f"noise check: {rel} — part-identical to HEAD, restored")
+            else:
+                print(f"noise check: {rel} — REAL change, left for review "
+                      f"({diff})")
             continue
         with tempfile.NamedTemporaryFile(suffix=Path(rel).suffix,
                                          delete=False) as tf:
