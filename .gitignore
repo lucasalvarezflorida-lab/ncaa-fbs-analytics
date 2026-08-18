@@ -27,3 +27,6 @@ ourlads_depth.json
 
 # conference decks embed OurLads depth charts - local use only, never commit
 decks/2026_*_Projections.pptx
+
+# ESPN CDN logo pulls (re-download via URLs in rosters/data/teams_fbs_2026.json)
+decks/logos/

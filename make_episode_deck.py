@@ -1,7 +1,10 @@
-"""Episode 1 Week 0 deck v2 — designed edition.
-Motif: team-color badge circles. Navy score-bug panel per game with the
-model/market numbers and a win-probability split bar. Dark title + dark
-'The Card' closer around light content slides."""
+"""Episode 1 Week 0 deck v3 — logo edition.
+Motif: real school logos (ESPN 500px PNGs in decks/logos/, URLs cached in
+rosters/data/teams_fbs_2026.json) on white pucks over navy. Navy score-bug
+panel per game with the model/market numbers and a win-probability split
+bar. Dark title + dark 'The Card' closer around light content slides."""
+
+import os
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -74,23 +77,22 @@ def luminance(c):
     return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
 
 
-def badge(slide, x, y, d, code, color_rgb):
-    col = RGBColor(*color_rgb)
-    sp = shape(slide, MSO_SHAPE.OVAL, x, y, d, d, col)
-    tf = sp.text_frame
-    tf.word_wrap = False
-    tf.margin_left = 0
-    tf.margin_right = 0
-    p = tf.paragraphs[0]
-    p.alignment = PP_ALIGN.CENTER
-    r = p.add_run()
-    r.text = code
-    f = r.font
-    f.name = "Arial"
-    f.bold = True
-    f.size = Pt(15 if d >= 0.8 else 11)
-    f.color.rgb = WHITE if luminance(color_rgb) < 150 else INK
-    return sp
+LOGO_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "decks", "logos")
+
+
+def logo_badge(slide, x, y, d, key, plate=False):
+    """School logo at (x, y), d inches square. plate=True adds a white
+    circular puck behind it — needed on navy (UVA's logo is navy)."""
+    if plate:
+        shape(slide, MSO_SHAPE.OVAL, x, y, d, d, WHITE)
+        inset = d * 0.10
+    else:
+        inset = 0.0
+    slide.shapes.add_picture(
+        os.path.join(LOGO_DIR, TEAMS[key]["logo"]),
+        Inches(x + inset), Inches(y + inset),
+        Inches(d - 2 * inset), Inches(d - 2 * inset))
 
 
 def wp_bar(slide, x, y, w, h, team_a, pct_a, col_a, team_b, pct_b, col_b,
@@ -110,12 +112,12 @@ def wp_bar(slide, x, y, w, h, team_a, pct_a, col_a, team_b, pct_b, col_b,
 
 
 TEAMS = {
-    "UNC": dict(code="UNC", color=(0x7B, 0xAF, 0xD4)),
-    "TCU": dict(code="TCU", color=(0x4D, 0x19, 0x79)),
-    "NCSU": dict(code="NCSU", color=(0xCC, 0x00, 0x00)),
-    "UVA": dict(code="UVA", color=(0x23, 0x2D, 0x4B)),
-    "JSU": dict(code="JSU", color=(0xB5, 0x12, 0x1B)),
-    "NDSU": dict(code="NDSU", color=(0x0A, 0x56, 0x40)),
+    "UNC": dict(code="UNC", color=(0x7B, 0xAF, 0xD4), logo="unc.png"),
+    "TCU": dict(code="TCU", color=(0x4D, 0x19, 0x79), logo="tcu.png"),
+    "NCSU": dict(code="NCSU", color=(0xCC, 0x00, 0x00), logo="ncsu.png"),
+    "UVA": dict(code="UVA", color=(0x23, 0x2D, 0x4B), logo="uva.png"),
+    "JSU": dict(code="JSU", color=(0xB5, 0x12, 0x1B), logo="jsu.png"),
+    "NDSU": dict(code="NDSU", color=(0x0A, 0x56, 0x40), logo="ndsu.png"),
 }
 
 GAMES = [
@@ -198,8 +200,8 @@ txt(s, 0.9, 1.3, 11.5, 1.3, "Three Games, One Card", 46, WHITE, bold=True)
 y = 3.0
 for g in GAMES:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 1.0, NAVY2)
-    badge(s, 1.15, y + 0.16, 0.68, TEAMS[g["a"]]["code"], TEAMS[g["a"]]["color"])
-    badge(s, 2.0, y + 0.16, 0.68, TEAMS[g["b"]]["code"], TEAMS[g["b"]]["color"])
+    logo_badge(s, 1.15, y + 0.16, 0.68, g["a"], plate=True)
+    logo_badge(s, 2.0, y + 0.16, 0.68, g["b"], plate=True)
     txt(s, 2.95, y + 0.14, 6.3, 0.45, g["title"], 17, WHITE, bold=True)
     txt(s, 2.95, y + 0.56, 6.3, 0.35, g["where"], 11,
         RGBColor(0xCA, 0xDC, 0xFC))
@@ -215,13 +217,11 @@ txt(s, 0.9, 6.75, 11.5, 0.5,
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
-    ta, tb = TEAMS[g["a"]], TEAMS[g["b"]]
-
     # -- numbers slide --
     s = blank()
-    badge(s, 0.9, 0.42, 0.8, ta["code"], ta["color"])
+    logo_badge(s, 0.9, 0.42, 0.8, g["a"])
     txt(s, 1.82, 0.52, 0.5, 0.5, g["vs"], 14, MUTE, align=PP_ALIGN.CENTER)
-    badge(s, 2.35, 0.42, 0.8, tb["code"], tb["color"])
+    logo_badge(s, 2.35, 0.42, 0.8, g["b"])
     txt(s, 3.45, 0.38, 8.9, 0.55, g["title"], 27, NAVY, bold=True)
     txt(s, 3.45, 0.94, 8.9, 0.35, g["sub"], 11, MUTE, italic=True)
 
@@ -255,17 +255,16 @@ for g in GAMES:
 
     # -- players slide --
     s = blank()
-    badge(s, 0.9, 0.42, 0.8, ta["code"], ta["color"])
+    logo_badge(s, 0.9, 0.42, 0.8, g["a"])
     txt(s, 1.82, 0.52, 0.5, 0.5, g["vs"], 14, MUTE, align=PP_ALIGN.CENTER)
-    badge(s, 2.35, 0.42, 0.8, tb["code"], tb["color"])
+    logo_badge(s, 2.35, 0.42, 0.8, g["b"])
     txt(s, 3.45, 0.42, 8.9, 0.55, "Players to watch", 27, NAVY, bold=True)
 
     for col, (key, players) in enumerate(
             [(g["a"], g["players_a"]), (g["b"], g["players_b"])]):
-        t = TEAMS[key]
         x = 0.9 + col * 6.0
         shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65, 5.2, ICE)
-        badge(s, x + 0.3, 1.85, 0.62, t["code"], t["color"])
+        logo_badge(s, x + 0.3, 1.85, 0.62, key)
         txt(s, x + 1.1, 1.95, 4.2, 0.45, g["title"].split(" at ")[col]
             if " at " in g["title"] and col < 2 else "", 1, ICE)  # spacer
         txt(s, x + 1.1, 1.92, 4.3, 0.5,
@@ -286,8 +285,8 @@ txt(s, 0.9, 1.15, 11.5, 0.9, "Where the machine stands", 38, WHITE, bold=True)
 y = 2.5
 for g in GAMES:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 1.15, NAVY2)
-    badge(s, 1.15, y + 0.24, 0.68, TEAMS[g["a"]]["code"], TEAMS[g["a"]]["color"])
-    badge(s, 2.0, y + 0.24, 0.68, TEAMS[g["b"]]["code"], TEAMS[g["b"]]["color"])
+    logo_badge(s, 1.15, y + 0.24, 0.68, g["a"], plate=True)
+    logo_badge(s, 2.0, y + 0.24, 0.68, g["b"], plate=True)
     txt(s, 2.95, y + 0.16, 5.6, 0.45, g["title"], 16, WHITE, bold=True)
     txt(s, 2.95, y + 0.6, 5.6, 0.4, g["lean"].replace("Lean: ", "").replace(
         "Model side: ", ""), 12, RGBColor(0xCA, 0xDC, 0xFC))
