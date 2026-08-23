@@ -216,7 +216,7 @@ def apply_card(g):
     if total is not None:
         hp, ap = (float(total) + m) / 2, (float(total) - m) / 2
         order = [(ha, hp), (hb, ap)] if hp >= ap else [(hb, ap), (ha, hp)]
-        g["score"] = " – ".join(f"{disp.get(t, t)} {round(p)}" for t, p in order)
+        g["score"] = " – ".join(f"{disp.get(t, t)} {int(p + 0.5)}" for t, p in order)
         g["score_note"] = f"projected score · machine margin on the {float(total):g} market total"
     else:
         g["score"], g["score_note"] = "", ""
@@ -262,6 +262,8 @@ GAMES = [
         ],
         honesty="Honesty check: UNC's −12.1 residual was 2025's biggest ACC market-overrating — the skepticism premium is earned. Line moved from −6.5 to −7.5 since Aug 18: the market is leaning further into TCU, not toward us.",
         lean="Lean: UNC ATS at −7.5 — research, not a play, while the win-prob gap is this wide · O/U no lean",
+                keys_a=["Throw it — TCU's pass defense is the soft spot; the run game is closed", 'Win the hidden yards — the special-teams edge is real', "Bend-don't-break without Steve Belichick: keep the defense simple", 'Keep the circus outside: a clean, scripted first quarter'],
+        keys_b=['Craig efficient, not heroic — distribute to a loaded receiver room', 'Make UNC one-dimensional with the run front, then rush the passer', 'Hold up in the back end with a new starting safety', 'Dwyer in the return game: the weapon inside a mediocre unit'],
         players_a=[("Billy Edwards Jr.", "QB — Maryland grad; 2,881 yds/15 TD in '24; '25 at Wisconsin lost to injury (7/16, 113 yds); Belichick's pick"),
                    ("Demon June", "RB — 2025: 464 yds at 5.5/carry, 3 total TD — Corey's key, but see the run-front matchup"),
                    ("Jordan Shipp", "WR — the X; 2025: 60 rec, 671 yds, 6 TD"),
@@ -286,6 +288,8 @@ GAMES = [
         ],
         honesty="UVA's +11.7 residual (11th-highest in FBS) says ESPN rates them well above what public inputs explain — and the roster lost 6 of its top 7 receivers and its senior pass rush. The machine's −6.7 is the stalest number on this card.",
         lean="No play: value was at −3, fair is −6, the market sits at −5.5 · machine still leans UVA",
+                keys_a=['Bailey has to beat an elite pass defense with a rebuilt receiver room', 'Establish Duke Scott to stay out of obvious passing downs', 'Stop losing games on special teams', 'Make Pribula the story — pressure with the new edges'],
+        keys_b=['Pribula ball security: no giveaways, no hero throws', 'Ride the veteran O-line and the run game', 'Replace the pass rush, not just the pass rushers', 'Let the pass defense win the rebuilt-receiver matchup'],
         players_a=[("CJ Bailey", "QB — yr 3; 2025: 3,105 yds, 25-9 at 68.8%; top-5 returning ACC QB"),
                    ("Duke Scott", "RB — 2025: 595 yds at 5.6/carry, 4 TD, plus 15 catches (Jayden on the stat sheet)"),
                    ("JoJo Trader", "WR — Miami transfer; 2025: 13 rec, 178 yds, 1 TD"),
@@ -310,6 +314,8 @@ GAMES = [
         ],
         honesty="July 14 YEL alert: JSU +10, edge 7.3 — the market has since moved 3 points to the model's side (−7 at both books Aug 23). MAX UNCERTAINTY: NDSU has zero FBS ratings history, so the 57% deserves a range, not a point.",
         lean="Model side: JSU at −7 or worse — already paid in line movement",
+                keys_a=['Run into a front with no FBS tape — the identity must survive the RB change', "Stay ahead of the chains; don't make Creel throw 30 times", 'No hidden-yardage leaks indoors', 'Make Hayes beat you in his first start — disguise, third-and-long'],
+        keys_b=['Protect Hayes early: scripted, short, on schedule', 'Lean on the run game and the O-line', "Tackle Creel in space — the rebuilt CB room's test", "Take the free points JSU's special teams give"],
         players_a=[("Caden Creel", "QB — 2025: 1,514 pass + 1,075 rush (5.9/carry), 16 total TD; dual-threat = Bison D's soft spot"),
                    ("Khristian Lando", "RB — the 'unleash' key; 2025: 201 yds on 51 carries behind Creel"),
                    ("Khurtiss Perry", "DT — 2025: 20 tkl, 4.5 TFL, 2 sacks"),
@@ -334,6 +340,8 @@ GAMES = [
         ],
         honesty="Hawai'i's +5.8 residual: ESPN's 2025 rating ran ahead of its inputs, and the two sack leaders left. The line moved −3 → −5.5 toward Stanford since it opened — the market is not buying the machine's Hawai'i lean.",
         lean="Lean: Hawai'i +5.5 — a 4-pt gap, not a conviction; the opener at +3 was the worse number",
+                keys_a=['Volume through the air at a bottom-20 pass defense', "Find the targets if Ashlock can't go", "Keep Alejado upright against Stanford's one good unit — the run front", "Three stops, not ten — and don't lose the kicking game with a new kicker"],
+        keys_b=['Warren efficient, not expansive — first game back from the ACL', 'Make the run game exist', 'Tackle in space against four wide', 'Hold serve on special teams'],
         players_a=[("Micah Alejado", "QB — MWC Preseason POY; 2025: 66.3%, 3,106 yds, 24-9"),
                    ("Pofele Ashlock", "WR — 2025: 76 rec, 827 yds, 8 TD; the top target left (Jackson Harris, 963 yds)"),
                    ("Cam Barfield", "RB/KR — 2025: 371 rush yds, 4 TD; 28.7 per kick return with an 86-yd TD"),
@@ -358,6 +366,8 @@ GAMES = [
         ],
         honesty="The machine's −6.2 is built on 2025 unit ranks for a Memphis roster that is 53 transfers new — both sides' numbers are stale in opposite directions. Residuals are flat (MEM −1.8, UNLV +0.7); the line already moved to our side.",
         lean="Model side UNLV — the edge was at −3 and it's gone; at −5.5 this is a watch and the first film_study run, not a play",
+                keys_a=["Don't ask the (unannounced) quarterback to win it — run first", 'Run at the worst run defense in the league', 'Tapp has to get home on Arnold', 'Survive the hidden-yardage swing without Sutton Smith'],
+        keys_b=["Feed Jai'Den Thomas", 'No turnovers from the quarterback, whoever it is', 'Make the new receivers real', "The run defense cannot be last year's unit against Huff-ball"],
         players_a=[("Air Noland / Marcus Stokes", "QB derby — Noland threw 3 passes at South Carolina in 2025; Stokes: 3,297 yds, 30 TD at D-II West Florida"),
                    ("Dallan Hayden", "RB — Colorado transfer; 2025: 326 yds at 4.7/carry, 1 TD"),
                    ("Tychaun Chapman", "WR — Southern Miss transfer; 2025: 24 rec, 444 yds, 3 TD"),
@@ -420,75 +430,67 @@ for g in GAMES:
 
     # right: navy score bug
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.7, 3.9, 4.78, NAVY)
-    txt(s, 8.8, 1.9, 3.3, 0.3, "THE NUMBER", 12, ORANGE, bold=True)
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.75, 3.9, 4.6, NAVY)
+    txt(s, 8.8, 1.98, 3.3, 0.3, "THE NUMBER", 12, ORANGE, bold=True)
     # machine line as a book would post it + fair odds from our win prob
-    txt(s, 8.8, 2.2, 3.3, 0.5, g["machine"], 26, WHITE, bold=True)
-    txt(s, 8.8, 2.68, 3.3, 0.3, g.get("fair", ""), 11.5, WHITE, bold=True)
-    txt(s, 8.8, 2.94, 3.3, 0.28,
+    txt(s, 8.8, 2.3, 3.3, 0.55, g["machine"], 28, WHITE, bold=True)
+    txt(s, 8.8, 2.84, 3.3, 0.3, g.get("fair", ""), 12, WHITE, bold=True)
+    txt(s, 8.8, 3.12, 3.3, 0.28,
         "machine line · fair odds, no vig · raw margin " + g.get("raw_margin", ""),
         8.5, PALE)
-    # projected score (model margin over the market total)
-    txt(s, 8.8, 3.3, 3.3, 0.4, g.get("score", ""), 17, WHITE, bold=True)
-    txt(s, 8.8, 3.64, 3.3, 0.28, g.get("score_note", ""), 8.5, PALE)
     # market
-    txt(s, 8.8, 3.98, 3.3, 0.4, g["market"], 17, WHITE, bold=True)
-    txt(s, 8.8, 4.32, 3.3, 0.4, "market (DK / Bovada) · " + g.get("market_ml", ""),
+    txt(s, 8.8, 3.55, 3.3, 0.45, g["market"], 20, WHITE, bold=True)
+    txt(s, 8.8, 3.98, 3.3, 0.4, "market (DK / Bovada) · " + g.get("market_ml", ""),
         8.5, PALE)
     # the gap (authored)
-    txt(s, 8.8, 4.72, 3.3, 0.35, g["value"], 14 if len(g["value"]) <= 20 else 11.5,
+    txt(s, 8.8, 4.45, 3.3, 0.4, g["value"], 15 if len(g["value"]) <= 20 else 12,
         ORANGE, bold=True)
-    txt(s, 8.8, 5.02, 3.3, 0.25, "the gap", 8.5, PALE)
+    txt(s, 8.8, 4.82, 3.3, 0.25, "the gap", 8.5, PALE)
     wa, pa, wb, pb = g["wp"]
-    wp_bar(s, 8.8, 5.34, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
+    wp_bar(s, 8.8, 5.2, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
            wb, pb, TEAMS[wb]["color"])
-    txt(s, 8.8, 5.8, 3.3, 0.25, "win probability (machine)", 8.5, PALE)
+    txt(s, 8.8, 5.66, 3.3, 0.25, "win probability (machine)", 8.5, PALE)
     strip, flags = LEDGER[g["title"]]
     if flags:
-        txt(s, 8.8, 6.07, 3.3, 0.3, "FLAGS  " + " · ".join(flags), 9.5,
+        txt(s, 8.8, 5.95, 3.3, 0.3, "FLAGS  " + " · ".join(flags), 9.5,
             ORANGE, bold=True)
     if strip:
         txt(s, 0.9, 6.62, 11.5, 0.25, "Line ledger: " + strip, 9, MUTE)
 
     txt(s, 0.9, 6.85, 11.5, 0.4, g["lean"], 13, NAVY, bold=True)
 
-    # -- players slide --
+    # -- keys slide (segment flow: what decides it -> keys -> score) --
     s = blank()
     logo_badge(s, 0.9, 0.42, 0.8, g["a"])
     txt(s, 1.82, 0.52, 0.5, 0.5, g["vs"], 14, MUTE, align=PP_ALIGN.CENTER)
     logo_badge(s, 2.35, 0.42, 0.8, g["b"])
-    txt(s, 3.45, 0.42, 8.9, 0.55, "Players to watch", 27, NAVY, bold=True)
+    txt(s, 3.45, 0.42, 8.9, 0.55, "Keys to the game", 27, NAVY, bold=True)
 
-    for col, (key, players) in enumerate(
-            [(g["a"], g["players_a"]), (g["b"], g["players_b"])]):
+    for col, (key, keys) in enumerate([(g["a"], g["keys_a"]), (g["b"], g["keys_b"])]):
         x = 0.9 + col * 6.0
-        has_flags = bool(QUAL_FLAGS.get(CODE2NAME[key]))
-        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65,
-              5.5 if has_flags else 5.2, ICE)
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65, 4.55, ICE)
         logo_badge(s, x + 0.3, 1.85, 0.62, key)
-        txt(s, x + 1.1, 1.95, 4.2, 0.45, g["title"].split(" at ")[col]
-            if " at " in g["title"] and col < 2 else "", 1, ICE)  # spacer
-        txt(s, x + 1.1, 1.92, 4.3, 0.5,
-            {"UNC": "North Carolina", "TCU": "TCU", "NCSU": "NC State",
-             "UVA": "Virginia", "JSU": "Jacksonville State",
-             "NDSU": "North Dakota State", "HAW": "Hawai'i",
-             "STAN": "Stanford", "MEM": "Memphis", "UNLV": "UNLV"}[key],
-            17, INK, bold=True)
-        team_flags = QUAL_FLAGS.get(CODE2NAME[key], [])
-        pitch = 0.84 if team_flags else 0.98
-        yy = 2.75
-        for name, note in players:
-            txt(s, x + 0.35, yy, 5.0, 0.35, name, 14.5, INK, bold=True)
-            txt(s, x + 0.35, yy + 0.34, 5.0, 0.55, note, 11.5, MUTE)
-            yy += pitch
+        txt(s, x + 1.1, 1.9, 4.3, 0.5, CODE2NAME[key] + " — what it takes",
+            16, INK, bold=True)
+        yy = 2.7
+        for k in keys:
+            shape(s, MSO_SHAPE.OVAL, x + 0.38, yy + 0.1, 0.13, 0.13, ORANGE)
+            txt(s, x + 0.68, yy, 4.7, 0.7, k, 13, INK)
+            yy += 0.72
+        team_flags = QUAL_FLAGS.get(CODE2NAME[key], [])[:2]
         if team_flags:
-            # qualitative overlay (review item D): cards/week1_flags.json —
-            # displayed, not priced
-            shape(s, MSO_SHAPE.RECTANGLE, x + 0.35, yy + 0.02, 5.0, 0.012,
-                  RGBColor(0xF4, 0x73, 0x21))
-            txt(s, x + 0.35, yy + 0.07, 5.0, 0.7,
-                "FLAGS  " + " · ".join(f["text"] for f in team_flags[:3]),
-                9.5, RGBColor(0xB6, 0x4F, 0x0F), bold=True)
+            txt(s, x + 0.35, 5.55, 5.0, 0.5,
+                "FLAGS  " + " · ".join(f["text"] for f in team_flags), 9,
+                RGBColor(0xB6, 0x4F, 0x0F), bold=True)
+
+    # score prediction banner — last, per the segment flow
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, 6.28, 11.5, 0.78, NAVY)
+    txt(s, 1.2, 6.38, 2.6, 0.3, "SCORE PREDICTION", 11, ORANGE, bold=True)
+    txt(s, 1.2, 6.62, 4.5, 0.4, g.get("score", ""), 20, WHITE, bold=True)
+    txt(s, 5.9, 6.4, 6.3, 0.6,
+        f"machine {g['machine']} · market {g['market']} · "
+        + (g.get("score_note", "") or ""), 9.5,
+        RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     txt(s, 0.9, 7.13, 11.5, 0.3, "EP 1 · WEEK 0 · " + g["title"], 9, MUTE)
 
 # ---------------- closing card ----------------
