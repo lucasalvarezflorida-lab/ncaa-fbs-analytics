@@ -120,23 +120,31 @@ TEAMS = {
     "UVA": dict(code="UVA", color=(0x23, 0x2D, 0x4B), logo="uva.png"),
     "JSU": dict(code="JSU", color=(0xB5, 0x12, 0x1B), logo="jsu.png"),
     "NDSU": dict(code="NDSU", color=(0x0A, 0x56, 0x40), logo="ndsu.png"),
+    "HAW": dict(code="HAW", color=(0x00, 0x34, 0x20), logo="hawaii.png"),
+    "STAN": dict(code="STAN", color=(0x8C, 0x15, 0x15), logo="stanford.png"),
+    "MEM": dict(code="MEM", color=(0x00, 0x49, 0x91), logo="memphis.png"),
+    "UNLV": dict(code="UNLV", color=(0xB1, 0x02, 0x02), logo="unlv.png"),
 }
+
+# Lines re-pulled live from CFBD /lines on 2026-08-23 (DraftKings / Bovada);
+# the Aug 18 card's numbers had moved on every game by the Aug 22 audit.
+LINES_AS_OF = "Aug 23"
 
 GAMES = [
     dict(
         a="UNC", b="TCU", vs="vs", title="North Carolina vs TCU",
         where="Dublin, Ireland · Aviva Stadium",
         sub="Sat Aug 29 · noon ET · ESPN · Aer Lingus Classic · Belichick year two opens abroad",
-        machine="TCU –1.5", market="–6.5 / –8.5", value="5–7 pts on UNC",
+        machine="TCU –1.5", market="–7.5 / –8", value="6–6.5 pts on UNC",
         wp=("TCU", 54, "UNC", 46),
         decides=[
             "UNC rush offense #127 vs TCU rush defense #28 — June may find nothing",
             "UNC's path: Edwards at TCU's #103 pass defense",
             "TCU pass offense #29 vs UNC pass defense #49 — best-on-best",
-            "Hidden yards: special teams UNC #31 vs TCU #84",
+            "STRUCTURAL DISAGREEMENT: moneyline says TCU ~71%, machine says 54% — a 17-pt gap, not a spread quibble",
         ],
-        honesty="Honesty check: UNC's −12.1 residual was 2025's biggest ACC market-overrating — the skepticism premium is earned.",
-        lean="Lean: UNC ATS at −6.5 or worse · O/U no lean",
+        honesty="Honesty check: UNC's −12.1 residual was 2025's biggest ACC market-overrating — the skepticism premium is earned. Line moved from −6.5 to −7.5 since Aug 18: the market is leaning further into TCU, not toward us.",
+        lean="Lean: UNC ATS at −7.5 — research, not a play, while the win-prob gap is this wide · O/U no lean",
         players_a=[("Billy Edwards Jr.", "QB — Maryland grad; 2,881 yds/15 TD in '24; '25 at Wisconsin lost to injury (7/16, 113 yds); Belichick's pick"),
                    ("Demon June", "RB — 2025: 464 yds at 5.5/carry, 3 total TD — Corey's key, but see the run-front matchup"),
                    ("Jordan Shipp", "WR — the X; 2025: 60 rec, 671 yds, 6 TD"),
@@ -150,16 +158,16 @@ GAMES = [
         a="NCSU", b="UVA", vs="at", title="NC State at Virginia",
         where="Charlottesville · Scott Stadium",
         sub="Sat Aug 29 · 3:30 ET · revenge of the 35-31 end-zone INT · UVA: 11 wins, ACC CG loss in 2025",
-        machine="UVA –6.7", market="–3 / –6", value="3.7 pts on UVA at DK",
+        machine="UVA –6.7", market="–5.5 / –5.5", value="EDGE GONE — market converged",
         wp=("UVA", 65, "NCSU", 35),
         decides=[
-            "THE BOOKS DISAGREE BY A FULL FIELD GOAL — shop the number on air",
+            "The books converged: −3 / −6 on Aug 18 → −5.5 everywhere by Aug 22 — the edge we stated is gone",
             "UVA's #26 pass defense vs CJ Bailey's #36 pass offense decides it",
             "NC State explosiveness bottom-third: sustain or stall",
             "Special teams: UVA #56 vs NCSU #101 — ST cost State two 2025 games",
         ],
-        honesty="UVA's card weakness: turnover-luck regression + a senior-driven pass rush now gone.",
-        lean="Lean: UVA — value at −3, fair at −6",
+        honesty="UVA's +11.7 residual (11th-highest in FBS) says ESPN rates them well above what public inputs explain — and the roster lost 6 of its top 7 receivers and its senior pass rush. The machine's −6.7 is the stalest number on this card.",
+        lean="No play: value was at −3, fair is −6, the market sits at −5.5 · machine still leans UVA",
         players_a=[("CJ Bailey", "QB — yr 3; 2025: 3,105 yds, 25-9 at 68.8%; top-5 returning ACC QB"),
                    ("Duke Scott", "RB — 2025: 595 yds at 5.6/carry, 4 TD, plus 15 catches (Jayden on the stat sheet)"),
                    ("JoJo Trader", "WR — Miami transfer; 2025: 13 rec, 178 yds, 1 TD"),
@@ -181,7 +189,7 @@ GAMES = [
             "JSU special teams #123 — hidden-yardage leaks compound indoors",
             "NDSU has no ratings history — ESPN's −8.3 is a guess; max uncertainty",
         ],
-        honesty="July 14 YEL alert: JSU +10, edge 7.3 — the market has since moved 3+ points to the model's side.",
+        honesty="July 14 YEL alert: JSU +10, edge 7.3 — the market has since moved 3 points to the model's side (−7 at both books Aug 23). MAX UNCERTAINTY: NDSU has zero FBS ratings history, so the 57% deserves a range, not a point.",
         lean="Model side: JSU at −7 or worse — already paid in line movement",
         players_a=[("Caden Creel", "QB — 2025: 1,514 pass + 1,075 rush (5.9/carry), 16 total TD; dual-threat = Bison D's soft spot"),
                    ("Khristian Lando", "RB — the 'unleash' key; 2025: 201 yds on 51 carries behind Creel"),
@@ -192,29 +200,75 @@ GAMES = [
                    ("Mekhi Collins", "WR — 2025: 6 catches, 159 yds, 2 TD — 26.5 per grab"),
                    ("Rebuilt CB room", "the one unit with no returning proof")],
     ),
+    dict(
+        a="HAW", b="STAN", vs="at", title="Hawai'i at Stanford",
+        where="Palo Alto · Stanford Stadium",
+        sub="Sat Aug 29 · 7:00 ET · ACC Network · Pritchard's first game · the machine rates Hawai'i the better team",
+        machine="Stanford –1.6", market="–5.5 / –5.5", value="3.9 pts on Hawai'i",
+        wp=("STAN", 54, "HAW", 46),
+        decides=[
+            "Neither side can run: Stanford rush offense #128 vs Hawai'i rush D #70; Hawai'i rush O #117 vs Stanford's #15 front",
+            "So it's Alejado (#52 pass offense) at Stanford's #115 pass defense — the run-and-shoot's whole path",
+            "Stanford QB Davis Warren: zero 2025 snaps at Michigan, career 7 TD–10 INT — unmodeled QB-tier risk",
+            "Hawai'i's #8 special teams was Matsuzawa (27/29) + Barfield's return TD — the kicker is gone; unit rank overstates",
+        ],
+        honesty="Hawai'i's +5.8 residual: ESPN's 2025 rating ran ahead of its inputs, and the two sack leaders left. The line moved −3 → −5.5 toward Stanford since it opened — the market is not buying the machine's Hawai'i lean.",
+        lean="Lean: Hawai'i +5.5 — a 4-pt gap, not a conviction; the opener at +3 was the worse number",
+        players_a=[("Micah Alejado", "QB — MWC Preseason POY; 2025: 66.3%, 3,106 yds, 24-9"),
+                   ("Pofele Ashlock", "WR — 2025: 76 rec, 827 yds, 8 TD; the top target left (Jackson Harris, 963 yds)"),
+                   ("Cam Barfield", "RB/KR — 2025: 371 rush yds, 4 TD; 28.7 per kick return with an 86-yd TD"),
+                   ("Lesterlaisene Lagafuaina", "DL — 2025: 7.5 TFL, 3.5 sacks; the returning piece of a front that lost both sack leaders")],
+        players_b=[("Davis Warren", "QB — Michigan transfer; 2025: no stat line (backup); career 5.4 yds/dropback, 7 TD–10 INT"),
+                   ("Micah Ford", "RB — 2025: 643 yds at 4.4/carry, 4 TD, plus 11 catches"),
+                   ("Nico Brown", "WR — Yale transfer; 2025: 71 rec, 1,085 yds, 11 TD in the Ivy"),
+                   ("Matt Rose", "ILB — 2025: team-high 106 tkl, 8 TFL, 3 sacks")],
+    ),
+    dict(
+        a="MEM", b="UNLV", vs="at", title="Memphis at UNLV",
+        where="Las Vegas · Allegiant Stadium",
+        sub="Sat Aug 29 · 10:00 ET · FOX · G5 heavyweight opener · Huff's 53-transfer debut · first film_study game",
+        machine="UNLV –6.2", market="–5.5 / –5.5", value="market came to us: –3 → –5.5",
+        wp=("UNLV", 64, "MEM", 36),
+        decides=[
+            "Memphis rush offense #5 vs UNLV rush defense #130 — but that #5 was Silverfield's roster; Huff flipped 53 players (111th returning production)",
+            "UNLV rush offense #9 (Thomas, 7.0 a carry) vs Memphis rush D #20 — now led by transfers",
+            "Arnold (#32 pass O context) at Memphis's #118 pass defense; Memphis's QB derby is a zero-FBS-snap tier",
+            "Memphis's #16 special teams was Sutton Smith's 99-yd return TD — he's gone; UNLV #65",
+        ],
+        honesty="The machine's −6.2 is built on 2025 unit ranks for a Memphis roster that is 53 transfers new — both sides' numbers are stale in opposite directions. Residuals are flat (MEM −1.8, UNLV +0.7); the line already moved to our side.",
+        lean="Model side UNLV — the edge was at −3 and it's gone; at −5.5 this is a watch and the first film_study run, not a play",
+        players_a=[("Air Noland / Marcus Stokes", "QB derby — Noland threw 3 passes at South Carolina in 2025; Stokes: 3,297 yds, 30 TD at D-II West Florida"),
+                   ("Dallan Hayden", "RB — Colorado transfer; 2025: 326 yds at 4.7/carry, 1 TD"),
+                   ("Tychaun Chapman", "WR — Southern Miss transfer; 2025: 24 rec, 444 yds, 3 TD"),
+                   ("J'Mond Tapp", "DL — Southern Miss transfer; 2025: 69 tkl, 12 TFL, 7.5 sacks, 10 hurries")],
+        players_b=[("Jackson Arnold", "QB — Auburn transfer; 2025: 63.3%, 1,309 yds, 6-2, +311 rush/8 TD in 8 starts (4-4); Orji still pushing"),
+                   ("Jai'Den Thomas", "RB — MW POY candidate; 2025: 1,034 yds at 7.0/carry, 12 TD, +38 catches"),
+                   ("Rebuilt WR room", "every 2025 target gone (Bradley 931, Omeire, Reynolds); Reddicks, Stellato, Walker via portal"),
+                   ("Dee Crayton", "LB — Clemson transfer; 2025: 5 tkl as a reserve — the defense's 'patch' is unproven")],
+    ),
 ]
 
 # ---------------- title slide ----------------
 s = blank(NAVY)
 txt(s, 0.9, 0.85, 11.5, 0.45, "EPISODE 1 · WEEK 0 · AUG 29, 2026", 14, ORANGE,
     bold=True)
-txt(s, 0.9, 1.3, 11.5, 1.3, "Three Games, One Card", 46, WHITE, bold=True)
-y = 3.0
+txt(s, 0.9, 1.2, 11.5, 1.1, "Five Games, One Card", 44, WHITE, bold=True)
+y = 2.4
 for g in GAMES:
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 1.0, NAVY2)
-    logo_badge(s, 1.15, y + 0.16, 0.68, g["a"], plate=True)
-    logo_badge(s, 2.0, y + 0.16, 0.68, g["b"], plate=True)
-    txt(s, 2.95, y + 0.14, 6.3, 0.45, g["title"], 17, WHITE, bold=True)
-    txt(s, 2.95, y + 0.56, 6.3, 0.35, g["where"], 11,
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.8, NAVY2)
+    logo_badge(s, 1.1, y + 0.1, 0.6, g["a"], plate=True)
+    logo_badge(s, 1.85, y + 0.1, 0.6, g["b"], plate=True)
+    txt(s, 2.7, y + 0.1, 6.5, 0.4, g["title"], 15, WHITE, bold=True)
+    txt(s, 2.7, y + 0.46, 6.5, 0.3, g["where"], 10,
         RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 9.3, y + 0.14, 2.9, 0.4, g["machine"], 16, ORANGE, bold=True,
+    txt(s, 9.3, y + 0.1, 2.9, 0.4, g["machine"], 15, ORANGE, bold=True,
         align=PP_ALIGN.RIGHT)
-    txt(s, 9.3, y + 0.56, 2.9, 0.35, "machine", 10,
+    txt(s, 9.3, y + 0.47, 2.9, 0.3, "machine", 9.5,
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
-    y += 1.22
-txt(s, 0.9, 6.75, 11.5, 0.5,
+    y += 0.88
+txt(s, 0.9, 6.85, 11.5, 0.5,
     "Machine = ESPN 2026 preseason FPI + 2.5 HFA, empirical margin curve "
-    "(σ 17.9, 2021–25 fit) · lines as of Aug 18 · model plays graded vs "
+    f"(σ 17.9, 2021–25 fit) · lines as of {LINES_AS_OF} · model plays graded vs "
     "first-seen lines", 10.5,
     RGBColor(0x8F, 0xA5, 0xC4))
 
@@ -273,7 +327,9 @@ for g in GAMES:
         txt(s, x + 1.1, 1.92, 4.3, 0.5,
             {"UNC": "North Carolina", "TCU": "TCU", "NCSU": "NC State",
              "UVA": "Virginia", "JSU": "Jacksonville State",
-             "NDSU": "North Dakota State"}[key], 17, INK, bold=True)
+             "NDSU": "North Dakota State", "HAW": "Hawai'i",
+             "STAN": "Stanford", "MEM": "Memphis", "UNLV": "UNLV"}[key],
+            17, INK, bold=True)
         yy = 2.75
         for name, note in players:
             txt(s, x + 0.35, yy, 5.0, 0.35, name, 14.5, INK, bold=True)
@@ -284,24 +340,24 @@ for g in GAMES:
 # ---------------- closing card ----------------
 s = blank(NAVY)
 txt(s, 0.9, 0.7, 11.5, 0.45, "EPISODE 1 · THE CARD", 14, ORANGE, bold=True)
-txt(s, 0.9, 1.15, 11.5, 0.9, "Where the machine stands", 38, WHITE, bold=True)
-y = 2.5
+txt(s, 0.9, 1.1, 11.5, 0.9, "Where the machine stands", 36, WHITE, bold=True)
+y = 2.15
 for g in GAMES:
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 1.15, NAVY2)
-    logo_badge(s, 1.15, y + 0.24, 0.68, g["a"], plate=True)
-    logo_badge(s, 2.0, y + 0.24, 0.68, g["b"], plate=True)
-    txt(s, 2.95, y + 0.16, 5.6, 0.45, g["title"], 16, WHITE, bold=True)
-    txt(s, 2.95, y + 0.6, 5.6, 0.4, g["lean"].replace("Lean: ", "").replace(
-        "Model side: ", ""), 12, RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 8.7, y + 0.16, 3.5, 0.4, g["machine"] + "   ·   " + g["market"],
-        14, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, 8.7, y + 0.6, 3.5, 0.35, "machine · market", 9.5,
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.84, NAVY2)
+    logo_badge(s, 1.1, y + 0.12, 0.6, g["a"], plate=True)
+    logo_badge(s, 1.85, y + 0.12, 0.6, g["b"], plate=True)
+    txt(s, 2.7, y + 0.08, 5.9, 0.4, g["title"], 14.5, WHITE, bold=True)
+    txt(s, 2.7, y + 0.44, 6.3, 0.38, g["lean"].replace("Lean: ", "").replace(
+        "Model side: ", "").replace("Model side ", ""), 10, RGBColor(0xCA, 0xDC, 0xFC))
+    txt(s, 9.0, y + 0.08, 3.2, 0.4, g["machine"] + "   ·   " + g["market"],
+        12.5, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, 9.0, y + 0.46, 3.2, 0.3, "machine · market", 9,
         RGBColor(0x8F, 0xA5, 0xC4), align=PP_ALIGN.RIGHT)
-    y += 1.38
+    y += 0.92
 txt(s, 0.9, 6.85, 11.5, 0.5,
     "Paper record starts Week 0 — graded vs first-seen lines, never moved "
     "ones. Research, not picks.", 11, RGBColor(0x8F, 0xA5, 0xC4), italic=True)
 
 out = r"C:\Users\lucas\Fun Projects\Sports Data Analysis\ncaa-fbs-model\decks\2026_Week0_Episode1.pptx"
 prs.save(out)
-print("wrote", out, "- 8 slides")
+print("wrote", out, f"- {len(prs.slides)} slides")
