@@ -1615,8 +1615,13 @@ def build_watch_list(wb, games: list[dict], refresh: bool):
 
 # ---------------- season sim ----------------
 
-# transitioning programs: play a league schedule but cannot take a CG seed
-TITLE_INELIGIBLE = {"North Dakota State", "Sacramento State"}
+# transitioning programs used to be barred from a CG seed (and bowls/CFP) for
+# two years. The NCAA D-I Cabinet repealed that penalty on 2026-06-24; NDSU
+# and Sacramento State are eligible for the MWC/MAC title games, bowls and
+# the CFP in 2026 (InForum 2026-06-24, Valley News Live 2026-06-26). Keep the
+# mechanism (the "*" marker and seeding exclusion still work) with an empty
+# set; repopulate if a future transition class is penalized again.
+TITLE_INELIGIBLE: set[str] = set()
 SIM_SIGMA = 13.5  # fallback sd if the fitted margin curve is missing
 
 
@@ -1852,8 +1857,8 @@ def build_season_sim(wb, games: list[dict], fpi: dict[str, dict],
         "pct; 2-way ties for the 1-seed break on head-to-head; neutral-site "
         "title game. Shaded rows = projected title-game pair. 'Split' = share "
         "of sims where the champion is NOT the team with the league's best "
-        "overall record (2025 ACC: 8-5 Duke won it while 10-2 Miami sat home). "
-        "* = title-ineligible (transition)."))
+        "overall record (2025 ACC: 8-5 Duke won it while 10-2 Miami sat home)."
+        + (" * = title-ineligible (transition)." if TITLE_INELIGIBLE else "")))
     exp.font = Font(name="Arial", italic=True, size=9)
     exp.alignment = Alignment(wrap_text=True, vertical="top")
     ws.merge_cells(start_row=row + 1, start_column=1, end_row=row + 1,

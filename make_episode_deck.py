@@ -290,7 +290,7 @@ GAMES = [
                    ("Duke Scott", "RB — 2025: 595 yds at 5.6/carry, 4 TD, plus 15 catches (Jayden on the stat sheet)"),
                    ("JoJo Trader", "WR — Miami transfer; 2025: 13 rec, 178 yds, 1 TD"),
                    ("Joseph Adedire", "DE — 2025: 6 tkl, 2 TFL, 1 sack")],
-        players_b=[("Beau Pribula", "QB — Missouri transfer; 2025: 67.4%, 1,946 yds, 11-9 TD-INT (+6 rush TD); named starter Jul 19"),
+        players_b=[("Beau Pribula", "QB — Missouri transfer; 2025: 67.4%, 1,946 yds, 11-9 TD-INT (+6 rush TD); named starter Jul 15 at ACC Kickoff"),
                    ("Peyton Lewis", "RB — Tennessee transfer; 2025: 290 yds, 7 TD on 70 carries"),
                    ("Rico Flores Jr.", "WR — UCLA transfer; 2025: 26 rec, 274 yds"),
                    ("Fisher Camac", "DE — 2025: 44 tkl, 5.5 TFL, 3.5 sacks")],
@@ -462,7 +462,9 @@ for g in GAMES:
     for col, (key, players) in enumerate(
             [(g["a"], g["players_a"]), (g["b"], g["players_b"])]):
         x = 0.9 + col * 6.0
-        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65, 5.2, ICE)
+        has_flags = bool(QUAL_FLAGS.get(CODE2NAME[key]))
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65,
+              5.5 if has_flags else 5.2, ICE)
         logo_badge(s, x + 0.3, 1.85, 0.62, key)
         txt(s, x + 1.1, 1.95, 4.2, 0.45, g["title"].split(" at ")[col]
             if " at " in g["title"] and col < 2 else "", 1, ICE)  # spacer
@@ -473,7 +475,7 @@ for g in GAMES:
              "STAN": "Stanford", "MEM": "Memphis", "UNLV": "UNLV"}[key],
             17, INK, bold=True)
         team_flags = QUAL_FLAGS.get(CODE2NAME[key], [])
-        pitch = 0.88 if team_flags else 0.98
+        pitch = 0.84 if team_flags else 0.98
         yy = 2.75
         for name, note in players:
             txt(s, x + 0.35, yy, 5.0, 0.35, name, 14.5, INK, bold=True)
@@ -484,10 +486,10 @@ for g in GAMES:
             # displayed, not priced
             shape(s, MSO_SHAPE.RECTANGLE, x + 0.35, yy + 0.02, 5.0, 0.012,
                   RGBColor(0xF4, 0x73, 0x21))
-            txt(s, x + 0.35, yy + 0.08, 5.0, 0.6,
+            txt(s, x + 0.35, yy + 0.07, 5.0, 0.7,
                 "FLAGS  " + " · ".join(f["text"] for f in team_flags[:3]),
-                10, RGBColor(0xB6, 0x4F, 0x0F), bold=True)
-    txt(s, 0.9, 6.95, 11.5, 0.35, "EP 1 · WEEK 0 · " + g["title"], 9.5, MUTE)
+                9.5, RGBColor(0xB6, 0x4F, 0x0F), bold=True)
+    txt(s, 0.9, 7.13, 11.5, 0.3, "EP 1 · WEEK 0 · " + g["title"], 9, MUTE)
 
 # ---------------- closing card ----------------
 s = blank(NAVY)

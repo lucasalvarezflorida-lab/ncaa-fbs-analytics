@@ -1,0 +1,320 @@
+{
+  "_meta": {
+    "research_date": "2026-08-23",
+    "note": "As reported; re-check morning of Aug 29. Only sourced items included. text <= 90 chars for slides.",
+    "games": [
+      "North Carolina vs TCU (Dublin)",
+      "NC State at Virginia",
+      "Jacksonville State at North Dakota State",
+      "Hawai'i at Stanford",
+      "Memphis at UNLV"
+    ]
+  },
+  "North Carolina": [
+    {
+      "type": "coaching",
+      "text": "DC Steve Belichick on indefinite medical leave since Aug 6; no return timeline",
+      "source": "https://www.espn.com/college-football/story/_/id/49545085/north-carolina-dc-steve-belichick-indefinite-medical-leave",
+      "date": "2026-08-06",
+      "confidence": "high"
+    },
+    {
+      "type": "coaching",
+      "text": "No interim DC named; Belichick says defense coached 'collectively' - play-caller unknown",
+      "source": "https://chathamjournal.com/2026/08/14/bill-belichick-says-unc-quarterback-race-remains-open/",
+      "date": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "type": "coaching",
+      "text": "GM Michael Lombardi on paid admin leave since Jul 27 (HR complaint); open-ended",
+      "source": "https://www.espn.com/college-football/story/_/id/49461839/unc-football-gm-michael-lombardi-paid-administrative-leave",
+      "date": "2026-07-27",
+      "confidence": "high"
+    },
+    {
+      "type": "coaching",
+      "text": "UNC hired 3 outside attorneys for Lombardi probe; his lawyer says no contact yet",
+      "source": "https://www.wral.com/sports/north-carolina-tar-heels-michael-lombardi-investigation-hires-outside-lawyers-to-assist-august-2026/",
+      "date": "2026-08-06",
+      "confidence": "high"
+    },
+    {
+      "type": "other",
+      "text": "Report: College Sports Commission (NIL enforcement) also looking at UNC program",
+      "source": "https://www.on3.com/news/report-unc-football-team-under-investigation-by-college-sports-commission-on-heels-of-michael-lombardi-leave/",
+      "date": "2026-08-05",
+      "confidence": "medium"
+    },
+    {
+      "type": "qb_tier",
+      "text": "Billy Edwards Jr. (Wisconsin/Maryland) named starter Aug 18 over Miles O'Neill",
+      "source": "https://www.espn.com/college-football/story/_/id/49651014/sources-billy-edwards-jr-start-qb-north-carolina",
+      "date": "2026-08-18",
+      "confidence": "high"
+    },
+    {
+      "type": "injury",
+      "text": "Edwards Jr. lost most of 2025 to knee injury at Wisconsin; no current issue reported",
+      "source": "https://www.wral.com/sports/north-carolina-billy-edwards-jr-starting-quarterback-bill-belichick-august-2026/",
+      "date": "2026-08-18",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "K Rece Verhoff back via Colorado 5th-year ruling; NCAA appealing - status 'temporary'",
+      "source": "https://www.washingtonpost.com/sports/colleges/2026/08/06/unc-kicker-verhoff/1596b274-91bc-11f1-9fdc-0a725c989a7b_story.html",
+      "date": "2026-08-06",
+      "confidence": "high"
+    },
+    {
+      "type": "other",
+      "text": "Dublin: Met Eireann Aug 23 - showers possible at weekend, longer dry spells developing",
+      "source": "https://www.met.ie/forecasts/Dublin",
+      "date": "2026-08-23",
+      "confidence": "medium"
+    }
+  ],
+  "TCU": [
+    {
+      "type": "qb_tier",
+      "text": "Jaden Craig (Harvard, 0 FBS snaps) is working QB1; no formal Dykes announcement found",
+      "source": "https://bettorsinsider.com/cfb/2026/08/20/tcu-vs-north-carolina-preview-odds-prediction-best-bet-for-aer-lingus-college-football-classic/",
+      "date": "2026-08-20",
+      "confidence": "medium"
+    },
+    {
+      "type": "suspension",
+      "text": "Projected starting S Jacob Fields dismissed Aug 18 (locker-room altercation Aug 13)",
+      "source": "https://www.espn.com/college-football/story/_/id/49652328/tcu-dismisses-transfer-safety-fields-violation-team-rules",
+      "date": "2026-08-18",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "Jamel Johnson (5 INT in 2025) takes bigger safety role after Fields dismissal",
+      "source": "https://www.espn.com/college-football/story/_/id/49652328/tcu-dismisses-transfer-safety-fields-violation-team-rules",
+      "date": "2026-08-18",
+      "confidence": "high"
+    },
+    {
+      "type": "injury",
+      "text": "Entered camp healthy; one DL hand injury, expected available for UNC",
+      "source": "https://www.d210.tv/2026/07/30/tcu-football-fall-camp-preview-horned-frogs-reload-with-portal-talent-after-clean-day-1-practice/",
+      "date": "2026-07-30",
+      "confidence": "medium"
+    },
+    {
+      "type": "roster",
+      "text": "PR Jordan Dwyer: 7 ret, 77 yds, 11.0 avg, 0 TD in 2025 (no PR TD - host note wrong)",
+      "source": "https://cfbstats.com/2025/player/698/1176179/index.html",
+      "date": "2026-01-07",
+      "confidence": "high"
+    }
+  ],
+  "NC State": [
+    {
+      "type": "qb_tier",
+      "text": "CJ Bailey (3rd-yr starter) healthy; no injury reports through camp",
+      "source": "https://wkml.com/2026/08/03/n-c-state-qb-cj-bailey-shows-command-in-fall-camp-opener/",
+      "date": "2026-08-03",
+      "confidence": "high"
+    },
+    {
+      "type": "suspension",
+      "text": "WR Teddy Hoffmann (top returning WR) suspended all of 2026 - PED positive",
+      "source": "https://www.cbssports.com/college-football/news/teddy-hoffmann-suspended-nc-state-2026-ped/",
+      "date": "2026-03-17",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "Doeren: eligibility situations pending for Jamel Johnson, KaTron Evans (details paywalled)",
+      "source": "https://packinsider.com/2026/08/21/dave-doeren-nc-state-virginia-2026-season-opener/",
+      "date": "2026-08-21",
+      "confidence": "medium"
+    }
+  ],
+  "Virginia": [
+    {
+      "type": "qb_tier",
+      "text": "Beau Pribula (Missouri) named starter Jul 15 at ACC Kickoff over Eli Holstein",
+      "source": "https://www.espn.com/college-football/story/_/id/49369677/virginia-coach-tony-elliott-says-beau-pribula-cavaliers-starting-qb-entering-preseason-camp",
+      "date": "2026-07-15",
+      "confidence": "high"
+    },
+    {
+      "type": "arrest",
+      "text": "RB/KR Solomon Beebe arrested Aug 17, 3 animal-cruelty misdemeanors; no team action yet",
+      "source": "https://www.cbssports.com/college-football/news/solomon-beebe-arrested-animal-cruelty-charges-virginia-running-back/",
+      "date": "2026-08-20",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "Beebe was primary KR and rotation back behind Lewis/Middlebrook (RB3, not RB2)",
+      "source": "https://www.cbssports.com/college-football/news/solomon-beebe-arrested-animal-cruelty-charges-virginia-running-back/",
+      "date": "2026-08-20",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "Lost 5 WRs to portal (Wood, Lane, Harris, Greene, Harrison); SI: 6 of top 7 catchers gone",
+      "source": "https://www.si.com/college/virginia/what-we-learned-and-which-questions-remain-as-virginia-fall-camp-wraps-01m0c5atpayk",
+      "date": "2026-08-19",
+      "confidence": "medium"
+    },
+    {
+      "type": "roster",
+      "text": "DEs Rickert (6.5 sk) & Melton (5) graduated; Camac (4.5) + 4 portal edges replace",
+      "source": "https://virginiasports.com/news/2026/08/12/cavalier-defense-looks-to-build-on-strong-foundation",
+      "date": "2026-08-12",
+      "confidence": "high"
+    },
+    {
+      "type": "injury",
+      "text": "DE Ezekiel Larry (Yale, 10.5 sk) among players not cleared for full contact Aug 12",
+      "source": "https://virginiasports.com/news/2026/08/12/cavalier-defense-looks-to-build-on-strong-foundation",
+      "date": "2026-08-12",
+      "confidence": "medium"
+    }
+  ],
+  "Jacksonville State": [
+    {
+      "type": "qb_tier",
+      "text": "Caden Creel returns as starter (1,076 rush yds / 1,514 pass yds in 2025); no injury news",
+      "source": "https://herosports.com/fbs-2026-jacksonville-state-football-preview-prediction-betting-odds-schedule-rcrc/",
+      "date": "2026-07-24",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "RB1 Tre Cook transferred to WVU; Lando/Paul/Savage compete for carries",
+      "source": "https://herosports.com/fbs-2026-jacksonville-state-football-preview-prediction-betting-odds-schedule-rcrc/",
+      "date": "2026-07-24",
+      "confidence": "medium"
+    },
+    {
+      "type": "other",
+      "text": "No JSU football injuries, suspensions, or arrests found as of Aug 23",
+      "source": "https://abc3340.com/sports/college/jax-state-opens-fall-camp-season-opener-in-fargo-vs-north-dakota-state-august-29-charles-kelly-walker-osteen",
+      "date": "2026-07-30",
+      "confidence": "medium"
+    }
+  ],
+  "North Dakota State": [
+    {
+      "type": "qb_tier",
+      "text": "Nathan Hayes (5th-yr Sr, captain) confirmed QB1; first career start vs JSU",
+      "source": "https://www.inforum.com/sports/bison-media-zone/mens-sports/bison-notebook-four-fifth-year-seniors-among-ndsu-captains",
+      "date": "2026-08-21",
+      "confidence": "high"
+    },
+    {
+      "type": "other",
+      "text": "NOT title-ineligible: NCAA repealed 2-yr ban Jun 24 - bowl, MWC title game, CFP all open",
+      "source": "https://www.inforum.com/sports/bison-media-zone/mens-sports/bison-football-gets-ncaa-victory-will-be-bowl-eligible",
+      "date": "2026-06-24",
+      "confidence": "high"
+    },
+    {
+      "type": "injury",
+      "text": "DT Zach Vanderpool back at practice Aug 19 after slight knee tweak",
+      "source": "https://www.inforum.com/sports/bison-media-zone/mens-sports/bison-notebook-four-fifth-year-seniors-among-ndsu-captains",
+      "date": "2026-08-21",
+      "confidence": "high"
+    }
+  ],
+  "Hawai'i": [
+    {
+      "type": "roster",
+      "text": "Backup QB Maika Eugenio off roster Jul 23 ('personal and team' issues per Chang)",
+      "source": "https://www.staradvertiser.com/2026/07/23/sports/backup-hawaii-freshman-quarterback-eugenio-no-longer-with-warriors/",
+      "date": "2026-07-23",
+      "confidence": "high"
+    },
+    {
+      "type": "qb_tier",
+      "text": "Micah Alejado starts (MWC pre OPOY); Bjorn Jurgensen (Virginia) cemented QB2",
+      "source": "https://www.staradvertiser.com/2026/08/09/sports/even-after-intense-3-hour-practice-warriors-put-in-more-work/",
+      "date": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "type": "injury",
+      "text": "WR1 Pofele Ashlock (knee) sidelined all camp; return timeline unclear as of Aug 11",
+      "source": "https://www.hawaiinewsnow.com/2026/08/12/uh-football-wide-receivers-step-up-with-standout-ashlock-sidelined/",
+      "date": "2026-08-11",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "K Sean Olvera-Harle (ex-KO specialist, JC walk-on) replaces Matsuzawa; 49-yd FG in scrim",
+      "source": "https://www.staradvertiser.com/2026/08/14/sports/hawaii-has-another-cool-customer-to-handle-kicks/",
+      "date": "2026-08-14",
+      "confidence": "high"
+    }
+  ],
+  "Stanford": [
+    {
+      "type": "qb_tier",
+      "text": "Davis Warren (Michigan) named starter Aug 18 over Dylan Rizk, Michael Mitchell Jr.",
+      "source": "https://www.espn.com/college-football/story/_/id/49654443/stanford-names-ex-michigan-qb-davis-warren-starter",
+      "date": "2026-08-18",
+      "confidence": "high"
+    },
+    {
+      "type": "injury",
+      "text": "Warren tore right ACL in Dec 2024 bowl, missed all of 2025; first game back",
+      "source": "https://www.espn.com/college-football/story/_/id/49654443/stanford-names-ex-michigan-qb-davis-warren-starter",
+      "date": "2026-08-18",
+      "confidence": "high"
+    },
+    {
+      "type": "coaching",
+      "text": "Tavita Pritchard's first game as HC (hired Nov 28, 2025); Andrew Luck GM, year 2",
+      "source": "https://www.sfchronicle.com/sports/college/article/stanford-football-andrew-luck-pritchard-22356509.php",
+      "date": "2025-11-28",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "Only 4 returning offensive starters; no injuries in camp recaps",
+      "source": "https://gostanford.com/news/2026/08/16/2026-fall-camp-week-3-recap",
+      "date": "2026-08-16",
+      "confidence": "medium"
+    }
+  ],
+  "Memphis": [
+    {
+      "type": "qb_tier",
+      "text": "Huff picks Stokes vs Noland internally Aug 23 but won't announce until kickoff",
+      "source": "https://sports.yahoo.com/articles/charles-huff-name-starting-quarterback-012920149.html",
+      "date": "2026-08-20",
+      "confidence": "high"
+    },
+    {
+      "type": "coaching",
+      "text": "Charles Huff's first game as Memphis HC (hired Dec 8, 2025); 75 new players",
+      "source": "https://gotigersgo.com/news/2025/12/8/huff-named-new-tigers-head-football-coach",
+      "date": "2025-12-08",
+      "confidence": "high"
+    }
+  ],
+  "UNLV": [
+    {
+      "type": "qb_tier",
+      "text": "Mullen: no starter named, Arnold and Orji may both play vs Memphis",
+      "source": "https://www.reviewjournal.com/sports/unlv/unlv-football/dan-mullen-on-unlvs-quarterbacks-theyre-more-comfortable-3865301/",
+      "date": "2026-08-17",
+      "confidence": "high"
+    },
+    {
+      "type": "roster",
+      "text": "DT Fuller, DB Welch, LB Spellman regained eligibility via Colorado ruling (NCAA appealing)",
+      "source": "https://www.reviewjournal.com/sports/unlv/unlv-football/who-will-start-at-quarterback-for-unlv-mums-the-word-3861811/",
+      "date": "2026-08-10",
+      "confidence": "high"
+    }
+  ]
+}
