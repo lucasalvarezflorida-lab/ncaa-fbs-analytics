@@ -116,9 +116,22 @@ def load_fpi_2026() -> dict:
 
 
 def fetch_lines(refresh: bool) -> dict:
-    """{game_id: {spread, spread_open, spread_text, ou, home_ml, away_ml}}."""
+    """{game_id: {spread, spread_open, spread_text, ou, home_ml, away_ml,
+    spread_book, ml_book, books}}.
+
+    Merge is per FIELD by LINE_PROVIDERS preference (a DraftKings spread can
+    sit next to a Bovada moneyline); `spread_book` / `ml_book` record which
+    book supplied each so the devig can prefer a same-book pair, and `books`
+    keeps every book's raw line. A real pull (refresh=True) is appended to
+    lines_history.jsonl by line_ledger — the first-seen / CLV source.
+    """
     import cfbd_client as cfbd
     records = cfbd.get("/lines", {"year": 2026, "seasonType": "regular"}, refresh)
+    if refresh:
+        import line_ledger
+        n_games, n_rows = line_ledger.record(records)
+        print(f"line ledger: {n_games} games pulled, {n_rows} changed lines "
+              f"appended to {line_ledger.LEDGER.name}")
     out = {}
     for g in records:
         lines = g.get("lines") or []
@@ -128,18 +141,28 @@ def fetch_lines(refresh: bool) -> dict:
             LINE_PROVIDERS.index(ln.get("provider"))
             if ln.get("provider") in LINE_PROVIDERS else 99))
 
-        def first(field):
+        def first(field, _with_book=False):
             for ln in ranked:
                 if ln.get(field) is not None:
-                    return ln[field]
-            return None
+                    return (ln[field], ln.get("provider")) if _with_book else ln[field]
+            return (None, None) if _with_book else None
 
-        out[g.get("id")] = dict(spread=first("spread"),
+        spread, spread_book = first("spread", True)
+        home_ml, ml_book = first("homeMoneyline", True)
+        out[g.get("id")] = dict(spread=spread,
                                 spread_open=first("spreadOpen"),
                                 spread_text=first("formattedSpread"),
                                 ou=first("overUnder"),
-                                home_ml=first("homeMoneyline"),
-                                away_ml=first("awayMoneyline"))
+                                home_ml=home_ml,
+                                away_ml=first("awayMoneyline"),
+                                spread_book=spread_book, ml_book=ml_book,
+                                books={ln.get("provider"): dict(
+                                    spread=ln.get("spread"),
+                                    spread_open=ln.get("spreadOpen"),
+                                    ou=ln.get("overUnder"),
+                                    home_ml=ln.get("homeMoneyline"),
+                                    away_ml=ln.get("awayMoneyline"))
+                                    for ln in ranked})
     return out
 
 
@@ -220,6 +243,8 @@ def fetch_games(refresh: bool, fpi: dict[str, dict]) -> list[dict]:
             spread=spread, spread_text=ln.get("spread_text") or "",
             open_text=_spread_text(home, away, ln.get("spread_open")),
             ou=ln.get("ou"), home_ml=ln.get("home_ml"), away_ml=ln.get("away_ml"),
+            spread_book=ln.get("spread_book"), ml_book=ln.get("ml_book"),
+            books=ln.get("books") or {},
             home_pts=pick(g, "homePoints", "home_points"),
             away_pts=pick(g, "awayPoints", "away_points"),
             completed=bool(pick(g, "completed")),

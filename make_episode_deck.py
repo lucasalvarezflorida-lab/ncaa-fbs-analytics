@@ -126,13 +126,77 @@ TEAMS = {
     "UNLV": dict(code="UNLV", color=(0xB1, 0x02, 0x02), logo="unlv.png"),
 }
 
-# Lines re-pulled live from CFBD /lines on 2026-08-23 (DraftKings / Bovada);
-# the Aug 18 card's numbers had moved on every game by the Aug 22 audit.
-LINES_AS_OF = "Aug 23"
+NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
+             "Virginia": "UVA", "Jacksonville State": "JSU",
+             "North Dakota State": "NDSU", "Hawai'i": "HAW",
+             "Stanford": "STAN", "Memphis": "MEM", "UNLV": "UNLV"}
+
+# ---- card_data contract (review item A): market + model numbers come from
+# edge_report.py --publish, never from hand-typed literals. Narrative fields
+# (decides / honesty / lean / players) stay authored here.
+CARD_DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                         "card_data_week1.json")
+
+
+def load_card_data():
+    if not os.path.exists(CARD_DATA):
+        return {}, None
+    import json
+    d = json.load(open(CARD_DATA, encoding="utf-8"))
+    return {(g["away"], g["home"]): g for g in d["games"]}, d.get("lines_as_of")
+
+
+def _dash(x):
+    """-7.5 -> '–7.5', 3 -> '+3' (home-perspective spread for display)."""
+    return f"–{abs(x):g}" if x < 0 else (f"+{x:g}" if x > 0 else "PK")
+
+
+def _fmt_ts(ts):
+    import datetime as dt
+    if not ts:
+        return "?"
+    t = dt.datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    t = t.astimezone(dt.timezone(dt.timedelta(hours=-4)))  # ET in August
+    return f"{t:%b %d}".replace(" 0", " ")
+
+
+CARD, LINES_TS = load_card_data()
+LINES_AS_OF = _fmt_ts(LINES_TS) if LINES_TS else "Aug 23"
+
+
+def apply_card(g):
+    """Overlay pipeline numbers onto a GAMES entry; returns the ledger strip
+    text and flags (empty if the game isn't in card_data)."""
+    c = CARD.get(g["cfbd"])
+    if not c:
+        return "", []
+    ha, hb = NAME2CODE[c["home"]], NAME2CODE[c["away"]]
+    m = c["model_margin"]
+    fav, num = (ha, m) if m >= 0 else (hb, -m)
+    g["machine"] = f"{fav if fav != 'STAN' else 'Stanford'} –{num:.1f}"
+    books = c.get("books") or {}
+    dk, bov = books.get("DraftKings", {}).get("spread"), books.get("Bovada", {}).get("spread")
+    parts = [_dash(x) for x in (dk, bov) if x is not None]
+    g["market"] = " / ".join(parts) if parts else c["mkt_spread"]
+    ph = round(c["model_p_home"] * 100)
+    g["wp"] = (ha, ph, hb, 100 - ph)
+    strip = ""
+    if c.get("first_spread") is not None:
+        strip = (f"first-seen {_dash(c['first_spread'])} ({_fmt_ts(c['first_ts'])}) "
+                 f"→ now {_dash(c['now_spread'])}")
+        if c.get("opener") is not None:
+            strip += f" · opened {_dash(c['opener'])}"
+        if c.get("clv") is not None:
+            strip += f" · CLV {c['clv']:+g}"
+    flags = [f for f in (c.get("flags") or "").split() if f]
+    if c.get("mkt_src") == "ml":
+        strip += f" · market ML {c['mkt_p_home']*100:.0f}% {ha}"
+    return strip, flags
 
 GAMES = [
     dict(
         a="UNC", b="TCU", vs="vs", title="North Carolina vs TCU",
+        cfbd=("North Carolina", "TCU"),
         where="Dublin, Ireland · Aviva Stadium",
         sub="Sat Aug 29 · noon ET · ESPN · Aer Lingus Classic · Belichick year two opens abroad",
         machine="TCU –1.5", market="–7.5 / –8", value="6–6.5 pts on UNC",
@@ -141,7 +205,7 @@ GAMES = [
             "UNC rush offense #127 vs TCU rush defense #28 — June may find nothing",
             "UNC's path: Edwards at TCU's #103 pass defense",
             "TCU pass offense #29 vs UNC pass defense #49 — best-on-best",
-            "STRUCTURAL DISAGREEMENT: moneyline says TCU ~71%, machine says 54% — a 17-pt gap, not a spread quibble",
+            "STRUCTURAL DISAGREEMENT: moneyline says TCU ~73%, machine says 54% — an 18-pt gap, not a spread quibble",
         ],
         honesty="Honesty check: UNC's −12.1 residual was 2025's biggest ACC market-overrating — the skepticism premium is earned. Line moved from −6.5 to −7.5 since Aug 18: the market is leaning further into TCU, not toward us.",
         lean="Lean: UNC ATS at −7.5 — research, not a play, while the win-prob gap is this wide · O/U no lean",
@@ -156,6 +220,7 @@ GAMES = [
     ),
     dict(
         a="NCSU", b="UVA", vs="at", title="NC State at Virginia",
+        cfbd=("NC State", "Virginia"),
         where="Charlottesville · Scott Stadium",
         sub="Sat Aug 29 · 3:30 ET · revenge of the 35-31 end-zone INT · UVA: 11 wins, ACC CG loss in 2025",
         machine="UVA –6.7", market="–5.5 / –5.5", value="EDGE GONE — market converged",
@@ -179,6 +244,7 @@ GAMES = [
     ),
     dict(
         a="JSU", b="NDSU", vs="at", title="Jacksonville State at North Dakota State",
+        cfbd=("Jacksonville State", "North Dakota State"),
         where="Fargo · Fargodome",
         sub="Sat Aug 29 · 5:30 ET · CBSSN · NDSU's first FBS game · 2015 FCS title rematch · ON THE UPSET BOARD",
         machine="NDSU –2.7", market="–10 → –7", value="+3 CLV banked",
@@ -202,6 +268,7 @@ GAMES = [
     ),
     dict(
         a="HAW", b="STAN", vs="at", title="Hawai'i at Stanford",
+        cfbd=("Hawai'i", "Stanford"),
         where="Palo Alto · Stanford Stadium",
         sub="Sat Aug 29 · 7:00 ET · ACC Network · Pritchard's first game · the machine rates Hawai'i the better team",
         machine="Stanford –1.6", market="–5.5 / –5.5", value="3.9 pts on Hawai'i",
@@ -225,6 +292,7 @@ GAMES = [
     ),
     dict(
         a="MEM", b="UNLV", vs="at", title="Memphis at UNLV",
+        cfbd=("Memphis", "UNLV"),
         where="Las Vegas · Allegiant Stadium",
         sub="Sat Aug 29 · 10:00 ET · FOX · G5 heavyweight opener · Huff's 53-transfer debut · first film_study game",
         machine="UNLV –6.2", market="–5.5 / –5.5", value="market came to us: –3 → –5.5",
@@ -247,6 +315,11 @@ GAMES = [
                    ("Dee Crayton", "LB — Clemson transfer; 2025: 5 tkl as a reserve — the defense's 'patch' is unproven")],
     ),
 ]
+
+# overlay pipeline numbers (card_data) before any slide is built
+LEDGER = {g["title"]: apply_card(g) for g in GAMES}
+print("card_data:", "loaded, lines as of " + LINES_AS_OF if CARD else
+      "NOT FOUND — using hand-typed numbers")
 
 # ---------------- title slide ----------------
 s = blank(NAVY)
@@ -300,13 +373,20 @@ for g in GAMES:
     txt(s, 8.8, 3.45, 3.3, 0.55, g["market"], 22, WHITE, bold=True)
     txt(s, 8.8, 3.95, 3.3, 0.3, "market (DK / Bovada)", 10,
         RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 8.8, 4.35, 3.3, 0.45, g["value"], 16, ORANGE, bold=True)
+    txt(s, 8.8, 4.35, 3.3, 0.45, g["value"], 16 if len(g["value"]) <= 20 else 12.5,
+        ORANGE, bold=True)
     txt(s, 8.8, 4.78, 3.3, 0.3, "the gap", 10, RGBColor(0xCA, 0xDC, 0xFC))
     wa, pa, wb, pb = g["wp"]
     wp_bar(s, 8.8, 5.35, 3.3, 0.42, wa, pa, TEAMS[wa]["color"],
            wb, pb, TEAMS[wb]["color"])
     txt(s, 8.8, 5.85, 3.3, 0.3, "win probability (machine)", 9.5,
         RGBColor(0xCA, 0xDC, 0xFC))
+    strip, flags = LEDGER[g["title"]]
+    if flags:
+        txt(s, 8.8, 6.05, 3.3, 0.3, "FLAGS  " + " · ".join(flags), 9.5,
+            ORANGE, bold=True)
+    if strip:
+        txt(s, 0.9, 6.62, 11.5, 0.25, "Line ledger: " + strip, 9, MUTE)
 
     txt(s, 0.9, 6.85, 11.5, 0.4, g["lean"], 13, NAVY, bold=True)
 
