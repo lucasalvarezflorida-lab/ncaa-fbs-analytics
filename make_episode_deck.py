@@ -162,6 +162,34 @@ def _fmt_ts(ts):
 
 CARD, LINES_TS = load_card_data()
 LINES_AS_OF = _fmt_ts(LINES_TS) if LINES_TS else "Aug 23"
+CODE2NAME = {v: k for k, v in NAME2CODE.items()}
+
+
+def load_qual_flags():
+    """cards/week1_flags.json — the qualitative overlay (review item D):
+    {team: [{type, text, source, date, confidence}]}. Missing file = none."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "cards", "week1_flags.json")
+    if not os.path.exists(path):
+        return {}
+    import json
+    return json.load(open(path, encoding="utf-8"))
+
+
+QUAL_FLAGS = load_qual_flags()
+
+
+def _american(p):
+    """Fair (no-vig) American odds for win prob p."""
+    if p >= 0.5:
+        return f"–{round(100 * p / (1 - p))}"
+    return f"+{round(100 * (1 - p) / p)}"
+
+
+def _book_line(margin):
+    """Model margin -> the half-point line a book would post (home persp.)."""
+    x = round(margin * 2) / 2
+    return x
 
 
 def apply_card(g):
@@ -171,14 +199,39 @@ def apply_card(g):
     if not c:
         return "", []
     ha, hb = NAME2CODE[c["home"]], NAME2CODE[c["away"]]
+    disp = {"STAN": "Stanford"}
     m = c["model_margin"]
-    fav, num = (ha, m) if m >= 0 else (hb, -m)
-    g["machine"] = f"{fav if fav != 'STAN' else 'Stanford'} –{num:.1f}"
+    ph_raw = c["model_p_home"]
+    # 1) the machine's line the way a book posts it (half points)
+    line = _book_line(m)
+    fav, num = (ha, line) if line >= 0 else (hb, -line)
+    g["machine"] = (f"{disp.get(fav, fav)} –{num:g}" if num else "PK")
+    g["raw_margin"] = f"{disp.get(ha, ha)} {m:+.1f}" if m >= 0 else f"{disp.get(hb, hb)} {-m:+.1f}"
+    # 2) fair moneylines, both sides, from the model's win prob (no vig)
+    g["fair"] = (f"{disp.get(ha, ha)} {_american(ph_raw)} · "
+                 f"{disp.get(hb, hb)} {_american(1 - ph_raw)}")
+    # 3) projected score = model margin laid over the MARKET total (the
+    #    pipeline has no totals model; say so on the card)
+    total = c.get("ou")
+    if total is not None:
+        hp, ap = (float(total) + m) / 2, (float(total) - m) / 2
+        order = [(ha, hp), (hb, ap)] if hp >= ap else [(hb, ap), (ha, hp)]
+        g["score"] = " – ".join(f"{disp.get(t, t)} {round(p)}" for t, p in order)
+        g["score_note"] = f"projected score · machine margin on the {float(total):g} market total"
+    else:
+        g["score"], g["score_note"] = "", ""
     books = c.get("books") or {}
     dk, bov = books.get("DraftKings", {}).get("spread"), books.get("Bovada", {}).get("spread")
     parts = [_dash(x) for x in (dk, bov) if x is not None]
     g["market"] = " / ".join(parts) if parts else c["mkt_spread"]
-    ph = round(c["model_p_home"] * 100)
+    mls = []
+    for bname, short in (("DraftKings", "DK"), ("Bovada", "Bov")):
+        b = books.get(bname) or {}
+        if b.get("home_ml") is not None and b.get("away_ml") is not None:
+            mls.append(f"{short} {disp.get(ha, ha)} {int(b['home_ml']):+d} / "
+                       f"{disp.get(hb, hb)} {int(b['away_ml']):+d}")
+    g["market_ml"] = " · ".join(mls)
+    ph = round(ph_raw * 100)
     g["wp"] = (ha, ph, hb, 100 - ph)
     strip = ""
     if c.get("first_spread") is not None:
@@ -366,24 +419,33 @@ for g in GAMES:
     txt(s, 1.15, yy + 0.32, 6.7, 0.75, g["honesty"], 11.5, MUTE, italic=True)
 
     # right: navy score bug
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.75, 3.9, 4.6, NAVY)
-    txt(s, 8.8, 2.0, 3.3, 0.35, "THE NUMBER", 12, ORANGE, bold=True)
-    txt(s, 8.8, 2.4, 3.3, 0.7, g["machine"], 30, WHITE, bold=True)
-    txt(s, 8.8, 3.05, 3.3, 0.3, "machine", 10, RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 8.8, 3.45, 3.3, 0.55, g["market"], 22, WHITE, bold=True)
-    txt(s, 8.8, 3.95, 3.3, 0.3, "market (DK / Bovada)", 10,
-        RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 8.8, 4.35, 3.3, 0.45, g["value"], 16 if len(g["value"]) <= 20 else 12.5,
+    PALE = RGBColor(0xCA, 0xDC, 0xFC)
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.7, 3.9, 4.78, NAVY)
+    txt(s, 8.8, 1.9, 3.3, 0.3, "THE NUMBER", 12, ORANGE, bold=True)
+    # machine line as a book would post it + fair odds from our win prob
+    txt(s, 8.8, 2.2, 3.3, 0.5, g["machine"], 26, WHITE, bold=True)
+    txt(s, 8.8, 2.68, 3.3, 0.3, g.get("fair", ""), 11.5, WHITE, bold=True)
+    txt(s, 8.8, 2.94, 3.3, 0.28,
+        "machine line · fair odds, no vig · raw margin " + g.get("raw_margin", ""),
+        8.5, PALE)
+    # projected score (model margin over the market total)
+    txt(s, 8.8, 3.3, 3.3, 0.4, g.get("score", ""), 17, WHITE, bold=True)
+    txt(s, 8.8, 3.64, 3.3, 0.28, g.get("score_note", ""), 8.5, PALE)
+    # market
+    txt(s, 8.8, 3.98, 3.3, 0.4, g["market"], 17, WHITE, bold=True)
+    txt(s, 8.8, 4.32, 3.3, 0.4, "market (DK / Bovada) · " + g.get("market_ml", ""),
+        8.5, PALE)
+    # the gap (authored)
+    txt(s, 8.8, 4.72, 3.3, 0.35, g["value"], 14 if len(g["value"]) <= 20 else 11.5,
         ORANGE, bold=True)
-    txt(s, 8.8, 4.78, 3.3, 0.3, "the gap", 10, RGBColor(0xCA, 0xDC, 0xFC))
+    txt(s, 8.8, 5.02, 3.3, 0.25, "the gap", 8.5, PALE)
     wa, pa, wb, pb = g["wp"]
-    wp_bar(s, 8.8, 5.35, 3.3, 0.42, wa, pa, TEAMS[wa]["color"],
+    wp_bar(s, 8.8, 5.34, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
            wb, pb, TEAMS[wb]["color"])
-    txt(s, 8.8, 5.85, 3.3, 0.3, "win probability (machine)", 9.5,
-        RGBColor(0xCA, 0xDC, 0xFC))
+    txt(s, 8.8, 5.8, 3.3, 0.25, "win probability (machine)", 8.5, PALE)
     strip, flags = LEDGER[g["title"]]
     if flags:
-        txt(s, 8.8, 6.05, 3.3, 0.3, "FLAGS  " + " · ".join(flags), 9.5,
+        txt(s, 8.8, 6.07, 3.3, 0.3, "FLAGS  " + " · ".join(flags), 9.5,
             ORANGE, bold=True)
     if strip:
         txt(s, 0.9, 6.62, 11.5, 0.25, "Line ledger: " + strip, 9, MUTE)
@@ -410,11 +472,21 @@ for g in GAMES:
              "NDSU": "North Dakota State", "HAW": "Hawai'i",
              "STAN": "Stanford", "MEM": "Memphis", "UNLV": "UNLV"}[key],
             17, INK, bold=True)
+        team_flags = QUAL_FLAGS.get(CODE2NAME[key], [])
+        pitch = 0.88 if team_flags else 0.98
         yy = 2.75
         for name, note in players:
             txt(s, x + 0.35, yy, 5.0, 0.35, name, 14.5, INK, bold=True)
             txt(s, x + 0.35, yy + 0.34, 5.0, 0.55, note, 11.5, MUTE)
-            yy += 0.98
+            yy += pitch
+        if team_flags:
+            # qualitative overlay (review item D): cards/week1_flags.json —
+            # displayed, not priced
+            shape(s, MSO_SHAPE.RECTANGLE, x + 0.35, yy + 0.02, 5.0, 0.012,
+                  RGBColor(0xF4, 0x73, 0x21))
+            txt(s, x + 0.35, yy + 0.08, 5.0, 0.6,
+                "FLAGS  " + " · ".join(f["text"] for f in team_flags[:3]),
+                10, RGBColor(0xB6, 0x4F, 0x0F), bold=True)
     txt(s, 0.9, 6.95, 11.5, 0.35, "EP 1 · WEEK 0 · " + g["title"], 9.5, MUTE)
 
 # ---------------- closing card ----------------
