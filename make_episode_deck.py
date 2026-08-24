@@ -312,7 +312,7 @@ GAMES = [
             "JSU special teams #123 — hidden-yardage leaks compound indoors",
             "NDSU has no ratings history — ESPN's −8.3 is a guess; max uncertainty",
         ],
-        honesty="July 14 YEL alert: JSU +10, edge 7.3 — the market has since moved 3 points to the model's side (−7 at both books Aug 23). MAX UNCERTAINTY: NDSU has zero FBS ratings history, so the 57% deserves a range, not a point.",
+        honesty="July 14 YEL alert: JSU +10, edge 7.3 — the market has since moved 3 points to our side (−7 at both books). MAX UNCERTAINTY: zero FBS ratings history, so the 57% deserves a range, not a point. And NDSU is FULLY ELIGIBLE — the NCAA repealed the transition ban Jun 24: MWC title game, bowls and the CFP are all open in year one.",
         lean="Model side: JSU at −7 or worse — already paid in line movement",
                 keys_a=['Run into a front with no FBS tape — the identity must survive the RB change', "Stay ahead of the chains; don't make Creel throw 30 times", 'No hidden-yardage leaks indoors', 'Make Hayes beat you in his first start — disguise, third-and-long'],
         keys_b=['Protect Hayes early: scripted, short, on schedule', 'Lean on the run game and the O-line', "Tackle Creel in space — the rebuilt CB room's test", "Take the free points JSU's special teams give"],
