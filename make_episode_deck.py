@@ -133,7 +133,8 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
 
 # ---- card_data contract (review item A): market + model numbers come from
 # edge_report.py --publish, never from hand-typed literals. Narrative fields
-# (decides / honesty / lean / players) stay authored here.
+# (decides / honesty / keys) stay authored here; lean + players are kept as
+# data but no longer rendered.
 CARD_DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                          "card_data_week1.json")
 
@@ -165,20 +166,6 @@ LINES_AS_OF = _fmt_ts(LINES_TS) if LINES_TS else "Aug 23"
 CODE2NAME = {v: k for k, v in NAME2CODE.items()}
 
 
-def load_qual_flags():
-    """cards/week1_flags.json — the qualitative overlay (review item D):
-    {team: [{type, text, source, date, confidence}]}. Missing file = none."""
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "cards", "week1_flags.json")
-    if not os.path.exists(path):
-        return {}
-    import json
-    return json.load(open(path, encoding="utf-8"))
-
-
-QUAL_FLAGS = load_qual_flags()
-
-
 def _american(p):
     """Fair (no-vig) American odds for win prob p."""
     if p >= 0.5:
@@ -193,8 +180,9 @@ def _book_line(margin):
 
 
 def apply_card(g):
-    """Overlay pipeline numbers onto a GAMES entry; returns the ledger strip
-    text and flags (empty if the game isn't in card_data)."""
+    """Overlay pipeline numbers onto a GAMES entry; returns the line-movement
+    strip text (empty if the game isn't in card_data). Also sets g["move"],
+    the compact first-seen → now form for the score bug."""
     c = CARD.get(g["cfbd"])
     if not c:
         return "", []
@@ -241,10 +229,10 @@ def apply_card(g):
             strip += f" · opened {_dash(c['opener'])}"
         if c.get("clv") is not None:
             strip += f" · CLV {c['clv']:+g}"
-    flags = [f for f in (c.get("flags") or "").split() if f]
-    if c.get("mkt_src") == "ml":
-        strip += f" · market ML {c['mkt_p_home']*100:.0f}% {ha}"
-    return strip, flags
+        g["move"] = f"{_dash(c['first_spread'])} → {_dash(c['now_spread'])}"
+        if c.get("clv"):
+            g["move"] += f" · CLV {c['clv']:+g}"
+    return strip
 
 GAMES = [
     dict(
@@ -450,14 +438,12 @@ for g in GAMES:
     wp_bar(s, 8.8, 5.2, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
            wb, pb, TEAMS[wb]["color"])
     txt(s, 8.8, 5.66, 3.3, 0.25, "win probability (machine)", 8.5, PALE)
-    strip, flags = LEDGER[g["title"]]
-    if flags:
-        txt(s, 8.8, 5.95, 3.3, 0.3, "FLAGS  " + " · ".join(flags), 9.5,
+    if g.get("move"):
+        txt(s, 8.8, 5.95, 3.3, 0.3, "LINE MOVE  " + g["move"], 9.5,
             ORANGE, bold=True)
+    strip = LEDGER[g["title"]]
     if strip:
-        txt(s, 0.9, 6.62, 11.5, 0.25, "Line ledger: " + strip, 9, MUTE)
-
-    txt(s, 0.9, 6.85, 11.5, 0.4, g["lean"], 13, NAVY, bold=True)
+        txt(s, 0.9, 6.82, 11.5, 0.3, "Line movement: " + strip, 10.5, MUTE)
 
     # -- keys slide (segment flow: what decides it -> keys -> score) --
     s = blank()
@@ -468,7 +454,7 @@ for g in GAMES:
 
     for col, (key, keys) in enumerate([(g["a"], g["keys_a"]), (g["b"], g["keys_b"])]):
         x = 0.9 + col * 6.0
-        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65, 4.55, ICE)
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65, 4.35, ICE)
         logo_badge(s, x + 0.3, 1.85, 0.62, key)
         txt(s, x + 1.1, 1.9, 4.3, 0.5, CODE2NAME[key] + " — what it takes",
             16, INK, bold=True)
@@ -477,11 +463,6 @@ for g in GAMES:
             shape(s, MSO_SHAPE.OVAL, x + 0.38, yy + 0.1, 0.13, 0.13, ORANGE)
             txt(s, x + 0.68, yy, 4.7, 0.7, k, 13, INK)
             yy += 0.72
-        team_flags = QUAL_FLAGS.get(CODE2NAME[key], [])[:2]
-        if team_flags:
-            txt(s, x + 0.35, 5.55, 5.0, 0.5,
-                "FLAGS  " + " · ".join(f["text"] for f in team_flags), 9,
-                RGBColor(0xB6, 0x4F, 0x0F), bold=True)
 
     # score prediction banner — last, per the segment flow
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, 6.28, 11.5, 0.78, NAVY)
@@ -503,8 +484,8 @@ for g in GAMES:
     logo_badge(s, 1.1, y + 0.12, 0.6, g["a"], plate=True)
     logo_badge(s, 1.85, y + 0.12, 0.6, g["b"], plate=True)
     txt(s, 2.7, y + 0.08, 5.9, 0.4, g["title"], 14.5, WHITE, bold=True)
-    txt(s, 2.7, y + 0.44, 6.3, 0.38, g["lean"].replace("Lean: ", "").replace(
-        "Model side: ", "").replace("Model side ", ""), 10, RGBColor(0xCA, 0xDC, 0xFC))
+    txt(s, 2.7, y + 0.44, 6.3, 0.38, LEDGER.get(g["title"], ""), 10,
+        RGBColor(0xCA, 0xDC, 0xFC))
     txt(s, 9.0, y + 0.08, 3.2, 0.4, g["machine"] + "   ·   " + g["market"],
         12.5, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
     txt(s, 9.0, y + 0.46, 3.2, 0.3, "machine · market", 9,
