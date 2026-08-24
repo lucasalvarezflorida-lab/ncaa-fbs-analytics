@@ -63,7 +63,7 @@ After two years as a two-team scheduling orphanage, the Pac-12 relaunches with e
 
 The Mountain West lost its entire aristocracy in one realignment swing — Boise State, SDSU, Fresno State, Utah State, and Colorado State all left for the Pac-12 — and answered by holding onto rising UNLV, adding UTEP (CUSA) and Northern Illinois (MAC), and landing the biggest FCS name in the sport: NORTH DAKOTA STATE. The new lineup is 10 teams: Air Force, Hawai'i, Nevada, New Mexico, Northern Illinois, North Dakota State, San José State, UNLV, UTEP, Wyoming. Connelly still rates it the G6's second-best league, and the vacuum at the top makes it the most genuinely open race in the sport's second tier.
 
-The wrinkle you MUST explain on air: **NDSU is not eligible for the Mountain West championship during its FBS transition** — the Bison could go undefeated and be locked out of both the title game and (absent an NCAA waiver) the playoff. So the league has two races running simultaneously: the official one, and the "is the ineligible team actually the best team" shadow race. Connelly's framing sets the stakes: JMU needed four years from FCS to the CFP — can the Bison do it in three?
+The wrinkle you MUST explain on air — because it CHANGED: **NDSU is now fully eligible.** The NCAA repealed the FCS-transition postseason ban on Jun 24, 2026 — the Bison can win the Mountain West championship, go bowling, and reach the CFP in year one. The old 'shadow race' framing is dead; there is one race and the FCS invader is in it. Connelly's stakes still hold: JMU needed four years from FCS to the CFP — can the Bison do it in ONE?
 
 **2025 context:** Boise beat UNLV 38-21 in the final Boise-era title game — UNLV's THIRD straight championship-game loss to the Broncos. New Mexico, the league's lowest-projected team a year ago, went 9-4 (6-2) under first-year coach Jason Eck with its first bowl since 2016. UNLV went 10-4 in Dan Mullen's debut, running its three-year total to 30 wins at a program that had 18 losing seasons in 19 years before 2023.
 
@@ -75,7 +75,7 @@ The wrinkle you MUST explain on air: **NDSU is not eligible for the Mountain Wes
 | 2 | **New Mexico** | 9-4 (6-2) | Eck Year 2, worst-to-first arc, the market's actual favorite | +220 |
 | 3 | **Hawai'i** | rising | Timmy Chang's build one defensive step from real contention | +400 |
 | | 4 | **Air Force** | rebounding | QB Liam Szarka and the academy bounce-back | +550 |
-| 5 | **North Dakota State*** | FCS power | Tim Polasek's Bison — *ineligible for the CG; the shadow favorite | — |
+| 5 | **North Dakota State** | FCS power | Tim Polasek's Bison — fully eligible after the Jun 24 repeal; a real title contender | — |
 | 6 | **Wyoming** | 7-17 era | Sawvel's make-or-break Year 3; new Bills-assistant OC, W&M QB Tyler Hughes | +2000 |
 | 7 | **San José State** | building | Ken Niumatalolo's steady progress | long |
 | 8 | **Nevada** | rebuilding | Jeff Choate's grind continues | long |
@@ -101,7 +101,7 @@ The wrinkle you MUST explain on air: **NDSU is not eligible for the Mountain Wes
 
 ## Mountain West Rapid Fire
 
-**Dates:** Week 0 Memphis at UNLV (crossover with your American doc), Sept. 5 UNLV at Hawai'i, mid-Sept NDSU at Air Force, Oct. 10 NDSU at UNLV (the measuring stick), Oct. 17 UNLV at Air Force, Oct. 24 NDSU at New Mexico. **Pettiness:** Boise leaving after beating UNLV in three straight title games — the Rebels inherit a kingdom specifically because the king moved out; the NDSU eligibility rules turning a potential champion into a scheduling landmine; NIU and UTEP joining a league whose five best members just left. **Stat quirks:** New Mexico went from lowest-projected to market favorite in one calendar year; UNLV had 18 losing seasons in 19 years before 2023 and has 30 wins in the three years since. **One-liners:** UNLV 9-3 champs, New Mexico 9-3 CG, NDSU 8-4 shadow champs, Hawai'i 8-4, Air Force 7-5, Wyoming 6-6, SJSU 6-6, Nevada 5-7, NIU 5-7, UTEP 4-8.
+**Dates:** Week 0 Memphis at UNLV (crossover with your American doc), Sept. 5 UNLV at Hawai'i, mid-Sept NDSU at Air Force, Oct. 10 NDSU at UNLV (the measuring stick), Oct. 17 UNLV at Air Force, Oct. 24 NDSU at New Mexico. **Pettiness:** Boise leaving after beating UNLV in three straight title games — the Rebels inherit a kingdom specifically because the king moved out; the NDSU eligibility repeal (Jun 24) turning the scheduling landmine into a real title contender; NIU and UTEP joining a league whose five best members just left. **Stat quirks:** New Mexico went from lowest-projected to market favorite in one calendar year; UNLV had 18 losing seasons in 19 years before 2023 and has 30 wins in the three years since. **One-liners:** UNLV 9-3 champs, New Mexico 9-3 CG, NDSU 8-4, Hawai'i 8-4, Air Force 7-5, Wyoming 6-6, SJSU 6-6, Nevada 5-7, NIU 5-7, UTEP 4-8.
 
 ---
 
