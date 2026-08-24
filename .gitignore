@@ -16,6 +16,13 @@ market-postmortem/nfl_watchlist_run.log
 .~lock.*
 refresh_log.txt
 
+# Drive API credentials (push_deck.py) - NEVER commit (public repo)
+drive_oauth_client.json
+drive_token.json
+
+# Circa opening-board screenshots - local proof archive, not for redistribution
+circa_openers/
+
 # python
 __pycache__/
 *.pyc
