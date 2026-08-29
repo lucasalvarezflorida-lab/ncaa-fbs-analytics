@@ -176,8 +176,8 @@ def print_contest(spreads, totals, week, payout_ml, kelly_frac, bank,
     be = 0.5 if payout_ml == 100 else 110 / 210
     print(f"WEEK {week} CONTEST BOARD — spread picks + U-TAIL totals")
     print(f"cover probs: margin curve n={meta.get('n')} (resid sd "
-          f"{meta.get('resid_sd')}) at the point edge · payout ASSUMED "
-          f"{payout_s} (break-even {be:.1%}) — CONFIRM IN THE PICK UI · "
+          f"{meta.get('resid_sd')}) at the point edge · payout {payout_s} "
+          f"(break-even {be:.1%}; Bloody Duck confirmed 1:1 on 2026-08-29) · "
           f"kelly={kelly_frac:g}x" + (f" · bank={bank:g}" if bank else ""))
 
     stake_h = f" {'STAKE':>6}" if bank else ""
