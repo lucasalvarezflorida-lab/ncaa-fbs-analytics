@@ -1,1 +1,7 @@
 week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
+1,2026-08-29,North Carolina +9.5,TCU -9.5,280,0.668,0.551,W,280,1780
+1,2026-08-29,San Jose State +38.5,USC -38.5,35,0.599,0.498,W,35,1815
+1,2026-08-29,Jacksonville State +7,NDSU -7,40,0.590,0.512,L,-40,1775
+1,2026-08-29,Sacramento State +9.5,EMU -9.5,90,0.759,0.525,L,-90,1685
+1,2026-08-29,EMU/SacSt OVER 53.5,O/U 53.5,25,,0.534,L,-25,1660
+1,2026-08-29,New Mexico State +31.5,FSU -31.5,30,0.583,0.498,W,30,1690
