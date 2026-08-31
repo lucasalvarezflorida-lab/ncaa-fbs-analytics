@@ -572,6 +572,57 @@ RECAP = [
      "machine off by 12 · market off by 10 — market closer", "K"),
 ]
 
+# ---- Superdog boards (segment: pick a dog to win outright; points = the
+# spread). Computed live from card_data so a fresh pull refreshes them.
+# AP Top 25 is week-1 2026 (CFBD /rankings) — update this dict each week.
+AP_TOP25 = {"Ohio State": 1, "Oregon": 2, "Georgia": 3, "Notre Dame": 4,
+            "Texas": 5, "Indiana": 6, "Miami": 7, "Texas A&M": 8,
+            "Ole Miss": 9, "Oklahoma": 10, "LSU": 11, "Texas Tech": 12,
+            "Alabama": 13, "USC": 14, "BYU": 14, "Michigan": 16,
+            "Washington": 17, "Penn State": 18, "SMU": 19, "Tennessee": 20,
+            "Utah": 21, "Iowa": 22, "Houston": 23, "Louisville": 24,
+            "Missouri": 25}
+
+_MONTHS = dict(Jan=1, Feb=2, Mar=3, Apr=4, May=5, Jun=6, Jul=7, Aug=8,
+               Sep=9, Oct=10, Nov=11, Dec=12)
+
+
+def superdog_boards():
+    """(any-game rows, vs-top-25 rows), each sorted by EV; played games
+    (before the lines_as_of date) are excluded."""
+    import datetime as dt
+    if not CARD:
+        return [], []
+    asof = dt.datetime.fromisoformat(LINES_TS.replace("Z", "+00:00")).date()
+    rows = []
+    for g in CARD.values():
+        try:
+            _, mon, day = g["date"].split(",")[0].split()
+            gdate = dt.date(2026, _MONTHS[mon], int(day))
+        except (KeyError, ValueError):
+            continue
+        if gdate < asof:
+            continue
+        b = g["books"].get("DraftKings") or g["books"].get("Bovada") or {}
+        sp = b.get("spread")
+        if sp is None or abs(sp) < 0.5:
+            continue
+        ph = g["model_p_home"]
+        if sp < 0:
+            dog, fav, p = g["away"], g["home"], 1 - ph
+        else:
+            dog, fav, p = g["home"], g["away"], ph
+        at = "at" if dog == g["away"] else "vs"
+        mkt_ph = g.get("mkt_p_home")
+        mkt = (1 - mkt_ph if sp < 0 else mkt_ph) if mkt_ph is not None else None
+        rows.append(dict(dog=dog, fav=fav, at=at, pts=abs(sp), p=p, mkt=mkt,
+                         ev=p * abs(sp), rank=AP_TOP25.get(fav)))
+    rows.sort(key=lambda r: -r["ev"])
+    return rows, [r for r in rows if r["rank"]]
+
+
+SUPERDOG_ANY, SUPERDOG_T25 = superdog_boards()
+
 # overlay pipeline numbers (card_data) before any slide is built
 LEDGER = {g["title"]: apply_card(g) for g in GAMES}
 print("card_data:", "loaded, lines as of " + LINES_AS_OF if CARD else
@@ -700,6 +751,45 @@ for g in GAMES:
             txt(s, 1.45, yy, 10.5, 0.8, k, 15.5, INK)
             yy += 0.92
         txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · " + g["title"], 9, MUTE)
+
+# ---------------- superdog picks ----------------
+s = blank()
+txt(s, 0.9, 0.5, 11.5, 0.55, "Superdog Picks", 30, NAVY, bold=True)
+txt(s, 0.9, 1.08, 11.5, 0.3,
+    "Pick a dog to WIN OUTRIGHT — points = the spread · machine board: "
+    "model win prob vs market, expected points = prob × spread",
+    11, MUTE, italic=True)
+for px, (head, board) in enumerate(
+        [("ANY GAME", [r for r in SUPERDOG_ANY if not r["rank"]]),
+         ("GIANT KILLER — dog vs an AP top-25 team", SUPERDOG_T25)]):
+    x = 0.9 + px * 5.95
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.6, 5.55, 4.9, ICE)
+    txt(s, x + 0.3, 1.8, 5.0, 0.3, head, 12, ORANGE, bold=True)
+    yy = 2.25
+    for i, r in enumerate(board[:3]):
+        fav = (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
+        star = "★ " if i == 0 else ""
+        txt(s, x + 0.3, yy, 5.0, 0.35,
+            f"{star}{r['dog']} +{r['pts']:g} {r['at']} {fav}",
+            13 if i == 0 else 12, ORANGE if i == 0 else INK, bold=True)
+        txt(s, x + 0.3, yy + 0.36, 5.0, 0.3,
+            f"model {r['p']*100:.0f}% · market {r['mkt']*100:.0f}% · "
+            f"expected pts {r['ev']:.1f}", 10, MUTE)
+        yy += 0.95
+    if px == 1:
+        best = max(board, key=lambda r: r["p"]) if board else None
+        if best:
+            txt(s, x + 0.3, 5.35, 5.0, 0.9,
+                f"Most likely ranked upset: {best['dog']} +{best['pts']:g} "
+                f"{best['at']} #{best['rank']} {best['fav']} — "
+                f"{best['p']*100:.0f}% (low points, high cash rate)",
+                10.5, INK, italic=True)
+txt(s, 0.9, 6.7, 11.5, 0.5,
+    "Honesty: model probs ride preseason priors and σ 17.9 — the biggest "
+    "model-vs-market gaps sit exactly where the favorite-longshot bias "
+    "lives. A points game between hosts, not a betting card.", 10, MUTE,
+    italic=True)
+txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · SUPERDOG PICKS", 9, MUTE)
 
 # ---------------- closing card ----------------
 s = blank(NAVY)
