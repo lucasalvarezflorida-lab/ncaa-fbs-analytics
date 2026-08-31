@@ -560,9 +560,9 @@ for g in GAMES:
     txt(s, 2.7, y + 0.1, 6.5, 0.4, g["title"], 15, WHITE, bold=True)
     txt(s, 2.7, y + 0.46, 6.5, 0.3, g["where"], 10,
         RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 9.3, y + 0.1, 2.9, 0.4, g["machine"], 15, ORANGE, bold=True,
-        align=PP_ALIGN.RIGHT)
-    txt(s, 9.3, y + 0.47, 2.9, 0.3, "machine", 9.5,
+    txt(s, 8.4, y + 0.1, 3.8, 0.4, g["machine"] + "   ·   " + g["market"],
+        13.5, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, 8.4, y + 0.47, 3.8, 0.3, "machine · market", 9.5,
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.88
 txt(s, 0.9, 6.85, 11.5, 0.5,

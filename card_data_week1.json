@@ -1,7 +1,7 @@
 {
  "week": 1,
- "generated": "2026-08-31T10:58:30",
- "lines_as_of": "2026-08-31T16:58:30+00:00",
+ "generated": "2026-08-31T11:31:54",
+ "lines_as_of": "2026-08-31T17:31:54+00:00",
  "curve": {
   "n": 3844,
   "resid_sd": 17.94
@@ -711,7 +711,7 @@
     "DraftKings": {
      "spread": -3.5,
      "spread_open": -3.5,
-     "ou": 54.5,
+     "ou": 55.5,
      "home_ml": -175,
      "away_ml": 145
     },
@@ -724,7 +724,7 @@
     }
    },
    "mkt_spread": "Eastern Michigan -3.5",
-   "ou": 54.5,
+   "ou": 55.5,
    "ou_tail": false,
    "side": "San José State",
    "model_p": 0.48169142190093794,
@@ -734,7 +734,7 @@
    "first_spread": -3.5,
    "first_ts": "2026-08-18T16:28:32+00:00",
    "now_spread": -3.5,
-   "now_ts": "2026-08-31T16:58:30+00:00",
+   "now_ts": "2026-08-31T17:31:54+00:00",
    "opener": -3.5,
    "clv": -0.0,
    "first_edge": -3.0,
@@ -2414,56 +2414,6 @@
    "flags": "CLV-2"
   },
   {
-   "game_id": 401869960,
-   "wk": 1,
-   "home": "James Madison",
-   "away": "Liberty",
-   "neutral": false,
-   "date": "Sat Sep 05, 12:00 PM ET",
-   "venue": "Bridgeforth Stadium",
-   "model_margin": 8.2,
-   "model_spread": "James Madison -8.2",
-   "model_p_home": 0.6809,
-   "mkt_p_home": 0.6908,
-   "mkt_src": "ml",
-   "ml_book": "DraftKings",
-   "spread_book": "DraftKings",
-   "books": {
-    "DraftKings": {
-     "spread": -6.5,
-     "spread_open": -6,
-     "ou": 52.5,
-     "home_ml": -258,
-     "away_ml": 210
-    },
-    "Bovada": {
-     "spread": -7,
-     "spread_open": -6,
-     "ou": 53,
-     "home_ml": -250,
-     "away_ml": 210
-    }
-   },
-   "mkt_spread": "James Madison -6.5",
-   "ou": 52.5,
-   "ou_tail": false,
-   "side": "Liberty",
-   "model_p": 0.3190823654432756,
-   "mkt_p": 0.30920711694593195,
-   "edge_pp": 0.9875248497343669,
-   "wp_gap_pp": 1.0,
-   "first_spread": -6.0,
-   "first_ts": "2026-08-18T16:28:32+00:00",
-   "now_spread": -6.5,
-   "now_ts": "2026-08-31T16:58:30+00:00",
-   "opener": -6.0,
-   "clv": 0.5,
-   "first_edge": 2.2,
-   "now_edge": 1.7,
-   "tier": null,
-   "flags": ""
-  },
-  {
    "game_id": 401862693,
    "wk": 1,
    "home": "UNLV",
@@ -2617,6 +2567,56 @@
    "clv": 0.0,
    "first_edge": 3.2,
    "now_edge": 3.2,
+   "tier": null,
+   "flags": ""
+  },
+  {
+   "game_id": 401869960,
+   "wk": 1,
+   "home": "James Madison",
+   "away": "Liberty",
+   "neutral": false,
+   "date": "Sat Sep 05, 12:00 PM ET",
+   "venue": "Bridgeforth Stadium",
+   "model_margin": 8.2,
+   "model_spread": "James Madison -8.2",
+   "model_p_home": 0.6809,
+   "mkt_p_home": 0.6806,
+   "mkt_src": "ml",
+   "ml_book": "DraftKings",
+   "spread_book": "DraftKings",
+   "books": {
+    "DraftKings": {
+     "spread": -6.5,
+     "spread_open": -6,
+     "ou": 51.5,
+     "home_ml": -245,
+     "away_ml": 200
+    },
+    "Bovada": {
+     "spread": -7,
+     "spread_open": -6,
+     "ou": 53,
+     "home_ml": -250,
+     "away_ml": 210
+    }
+   },
+   "mkt_spread": "James Madison -6.5",
+   "ou": 51.5,
+   "ou_tail": false,
+   "side": "James Madison",
+   "model_p": 0.6809176345567244,
+   "mkt_p": 0.6805555555555556,
+   "edge_pp": 0.03620790011688024,
+   "wp_gap_pp": 0.0,
+   "first_spread": -6.0,
+   "first_ts": "2026-08-18T16:28:32+00:00",
+   "now_spread": -6.5,
+   "now_ts": "2026-08-31T17:31:54+00:00",
+   "opener": -6.0,
+   "clv": 0.5,
+   "first_edge": 2.2,
+   "now_edge": 1.7,
    "tier": null,
    "flags": ""
   }
