@@ -1,6 +1,9 @@
-"""Episode 1 Week 0 deck — logo edition + 2025 stat lines.
-Player notes carry 2025 season stats (CFBD /stats/player/season, incl.
-Harvard and NDSU FCS rows; transfers credited to their 2025 team).
+"""Episode 2 Week 1 deck — recap edition.
+Slide 2 is the Week 0 receipts board (frozen v12 predictions graded vs
+finals and the last pre-kick ledger pull). Per-game flow unchanged from
+v12: what decides it -> keys per team -> score prediction last; flags and
+lean lines retired, line movement promoted. Ep1's GAMES block is archived
+below as _GAMES_EP1 (the frozen predictions live in git + the ledger).
 Motif: real school logos (ESPN 500px PNGs in decks/logos/, URLs cached in
 rosters/data/teams_fbs_2026.json) on white pucks over navy. Navy score-bug
 panel per game with the model/market numbers and a win-probability split
@@ -124,12 +127,26 @@ TEAMS = {
     "STAN": dict(code="STAN", color=(0x8C, 0x15, 0x15), logo="stanford.png"),
     "MEM": dict(code="MEM", color=(0x00, 0x49, 0x91), logo="memphis.png"),
     "UNLV": dict(code="UNLV", color=(0xB1, 0x02, 0x02), logo="unlv.png"),
+    "BAY": dict(code="BAY", color=(0x15, 0x45, 0x35), logo="baylor.png"),
+    "AUB": dict(code="AUB", color=(0x0C, 0x24, 0x40), logo="auburn.png"),
+    "CLEM": dict(code="CLEM", color=(0xF6, 0x67, 0x33), logo="clemson.png"),
+    "LSU": dict(code="LSU", color=(0x46, 0x1D, 0x7C), logo="lsu.png"),
+    "LOU": dict(code="LOU", color=(0xAD, 0x00, 0x00), logo="louisville.png"),
+    "MISS": dict(code="MISS", color=(0x14, 0x21, 0x3D), logo="olemiss.png"),
+    "WIS": dict(code="WIS", color=(0xC5, 0x05, 0x0C), logo="wisconsin.png"),
+    "ND": dict(code="ND", color=(0x0C, 0x23, 0x40), logo="notredame.png"),
+    "SMU": dict(code="SMU", color=(0x00, 0x33, 0xA0), logo="smu.png"),
+    "FSU": dict(code="FSU", color=(0x78, 0x2F, 0x40), logo="fsu.png"),
 }
 
 NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
              "Virginia": "UVA", "Jacksonville State": "JSU",
              "North Dakota State": "NDSU", "Hawai'i": "HAW",
-             "Stanford": "STAN", "Memphis": "MEM", "UNLV": "UNLV"}
+             "Stanford": "STAN", "Memphis": "MEM", "UNLV": "UNLV",
+             "Baylor": "BAY", "Auburn": "AUB", "Clemson": "CLEM",
+             "LSU": "LSU", "Louisville": "LOU", "Ole Miss": "MISS",
+             "Wisconsin": "WIS", "Notre Dame": "ND", "SMU": "SMU",
+             "Florida State": "FSU"}
 
 # ---- card_data contract (review item A): market + model numbers come from
 # edge_report.py --publish, never from hand-typed literals. Narrative fields
@@ -187,7 +204,9 @@ def apply_card(g):
     if not c:
         return "", []
     ha, hb = NAME2CODE[c["home"]], NAME2CODE[c["away"]]
-    disp = {"STAN": "Stanford"}
+    disp = {"STAN": "Stanford", "BAY": "Baylor", "AUB": "Auburn",
+            "CLEM": "Clemson", "LOU": "Louisville", "MISS": "Ole Miss",
+            "WIS": "Wisconsin"}
     m = c["model_margin"]
     ph_raw = c["model_p_home"]
     # 1) the machine's line the way a book posts it (half points)
@@ -222,19 +241,31 @@ def apply_card(g):
     ph = round(ph_raw * 100)
     g["wp"] = (ha, ph, hb, 100 - ph)
     strip = ""
-    if c.get("first_spread") is not None:
-        strip = (f"first-seen {_dash(c['first_spread'])} ({_fmt_ts(c['first_ts'])}) "
-                 f"→ now {_dash(c['now_spread'])}")
-        if c.get("opener") is not None:
-            strip += f" · opened {_dash(c['opener'])}"
-        if c.get("clv") is not None:
-            strip += f" · CLV {c['clv']:+g}"
-        g["move"] = f"{_dash(c['first_spread'])} → {_dash(c['now_spread'])}"
-        if c.get("clv"):
-            g["move"] += f" · CLV {c['clv']:+g}"
+    first, now, clv = c.get("first_spread"), c.get("now_spread"), c.get("clv")
+    # sides-flip guard: a first-seen with the opposite sign and an absurd CLV
+    # is a known CFBD data error (e.g. Wisconsin-ND Jul 14) — fall back to the
+    # book opener as the honest starting point and drop the corrupt CLV.
+    flipped = (first is not None and now is not None and first * now < 0
+               and clv is not None and abs(clv) > 20)
+    if flipped:
+        first, clv = c.get("opener"), None
+    if first is not None:
+        if flipped:
+            strip = (f"opened {_dash(first)} → now {_dash(now)} "
+                     "(first-seen excluded: sides-flip data error)")
+        else:
+            strip = (f"first-seen {_dash(first)} ({_fmt_ts(c['first_ts'])}) "
+                     f"→ now {_dash(now)}")
+            if c.get("opener") is not None and c["opener"] != first:
+                strip += f" · opened {_dash(c['opener'])}"
+            if clv is not None:
+                strip += f" · CLV {clv + 0:+g}"
+        g["move"] = f"{_dash(first)} → {_dash(now)}"
+        if clv:
+            g["move"] += f" · CLV {clv:+g}"
     return strip
 
-GAMES = [
+_GAMES_EP1 = [  # Week 0 archive — the frozen Ep1 predictions (unrendered)
     dict(
         a="UNC", b="TCU", vs="vs", title="North Carolina vs TCU",
         cfbd=("North Carolina", "TCU"),
@@ -367,6 +398,139 @@ GAMES = [
     ),
 ]
 
+GAMES = [
+    dict(
+        a="BAY", b="AUB", vs="vs", title="Baylor vs Auburn",
+        cfbd=("Baylor", "Auburn"),
+        where="Atlanta · Mercedes-Benz Stadium",
+        sub="Sat Sep 5 · 3:30 ET · neutral site · Golesh's Auburn debut · Lagway's Baylor debut",
+        machine="Auburn –5.5", market="–7 / –7", value="1.5 on Baylor · U-TAIL under 59.5",
+        wp=("AUB", 63, "BAY", 37),
+        decides=[
+            "Lagway's arm vs Durkin's carried-over defense — the one unit here with real continuity",
+            "Two installs collide: Golesh's tempo offense vs Baylor's new-look defense under Klanderman",
+            "Auburn's top-10 DL talent vs keeping Lagway upright — his health history is the whole ballgame",
+            "U-TAIL: the model leans UNDER the 59.5 — two year-one offenses in a dome",
+        ],
+        honesty="Both sidelines are running year-one installs the preseason numbers can't see — and the machine's prior hasn't ingested a single 2026 snap yet (first in-season FPI refresh lands Tuesday). Machine −5.5 vs market −7 is a quibble, not a position.",
+        keys_a=["Keep Lagway upright and healthy — everything else is decoration",
+                "Beat the sim pressures on early downs; don't let Durkin tee off",
+                "Steal a possession with tempo of your own",
+                "Make Auburn's first-year offense play from behind"],
+        keys_b=["Lean on the defense that didn't change",
+                "Tempo without turnovers — install-week ball security",
+                "Feed the tight ends where Golesh's system lives",
+                "Let the defensive line end drives on third down"],
+    ),
+    dict(
+        a="CLEM", b="LSU", vs="at", title="Clemson at LSU",
+        cfbd=("Clemson", "LSU"),
+        where="Baton Rouge · Tiger Stadium",
+        sub="Sat Sep 5 · 7:30 ET · Kiffin's first game at LSU · Death Valley at night",
+        machine="LSU –9", market="–10.5 / –10.5", value="1.5 to Clemson — quibble, not a play",
+        wp=("LSU", 70, "CLEM", 30),
+        decides=[
+            "Leavitt in Kiffin's tempo-RPO system vs Tom Allen's 4-2-5 — the one Clemson unit that kept its standard",
+            "Vizzina and the Chad Morris throwback offense vs Baker's pressure — SP+ projects this D No. 2 nationally",
+            "LSU's portal-built offensive line on a short install runway, at night, in Death Valley",
+            "Both offenses are new identities — the first sideline that looks ordinary wins",
+        ],
+        honesty="The machine's −9.1 is a preseason guess about a team with a new head coach, new QB and new OC — and the same is true across the field. The market opened −11.5 and drifted to −10.5; the machine sits a point and a half friendlier to Clemson. Install-week variance says treat all of it gently.",
+        keys_a=["Let Allen's defense set the terms early",
+                "Give Vizzina pressure answers — quick game and screens",
+                "Win explosives; don't trade field goals with LSU's skill talent",
+                "Silence the crowd with third-down conversions"],
+        keys_b=["Protect Leavitt — the rebuilt OL is the bet of the season",
+                "Tempo early: make Allen's defense align fast, then strike",
+                "Let Baker hunt with the pressure package on obvious downs",
+                "Finish drives — red-zone scripts vs a blue-chip front"],
+    ),
+    dict(
+        a="LOU", b="MISS", vs="vs", title="Louisville vs Ole Miss",
+        cfbd=("Louisville", "Ole Miss"),
+        where="Nashville · Nissan Stadium",
+        sub="Sun Sep 6 · 7:30 ET · neutral site · Golding's debut as the head man · Chambliss back after the eligibility win",
+        machine="Ole Miss –6.5", market="–7 / –6.5", value="machine = market — no gap",
+        wp=("MISS", 65, "LOU", 35),
+        decides=[
+            "Chambliss — the nation's best at turning dead plays into first downs — vs a bust-prone Louisville back end",
+            "Brohm's third QB1 in three years: Kienholz is the least-proven starter he's had here",
+            "Golding's first game as head coach after Kiffin took the identity engine to Baton Rouge",
+            "Louisville's edge rush vs a rebuilt Ole Miss pass-pro — the one place the dog can win snaps",
+        ],
+        honesty="The market opened −8.5 and walked to −6.5/−7 — it has come to the machine's −6.5. That's agreement, not edge. And nothing in a preseason prior prices a first-year head coach's game management on a Sunday neutral floor.",
+        keys_a=["Ride the run game and keep Chambliss on the sideline",
+                "No coverage busts — the season-long bug can't show up here",
+                "Pressure with the edges, not blitz-and-bust gambles",
+                "Keep Kienholz's menu short and make an early lead real"],
+        keys_b=["Let Chambliss escape — the off-script plays are the edge",
+                "Interior line vs Louisville's backfield: end the run game early",
+                "Tempo the Brohm defense into simple, static looks",
+                "Win field position all night on a neutral floor"],
+    ),
+    dict(
+        a="WIS", b="ND", vs="vs", title="Wisconsin vs Notre Dame",
+        cfbd=("Wisconsin", "Notre Dame"),
+        where="Green Bay · Lambeau Field",
+        sub="Sun Sep 6 · 7:30 ET · neutral site · the 'Leave No Doubt' tour opens · Fickell's survival season",
+        machine="ND –21", market="–20.5 / –20", value="no gap — watch, don't touch",
+        wp=("ND", 87, "WIS", 13),
+        decides=[
+            "Fickell's run-first survival pivot vs a tite front built to erase exactly that",
+            "Colton Joseph makes the G5-to-B1G jump against elite tackling — translation risk, week one",
+            "Wisconsin's genuinely good 3-3-5 vs Carr's year-two leap — the one matchup that keeps it close",
+            "Spreads this size live in the favorite-longshot zone our market post-mortem flagged",
+        ],
+        honesty="Housekeeping: our ledger's July first-seen on this game is a known CFBD sides-flip data error, so the honest movement read is the opener — Bovada hung −16.5 and the market walked it to −20.5, four points toward the Irish. Machine −21.1, market −20.5: nothing to do but watch.",
+        keys_a=["Shorten the game: long drives, no clock stoppages, no gifts",
+                "Joseph's legs on third-and-medium — the one chain-mover that travels",
+                "Force Carr to beat the 3-3-5 from the pocket",
+                "Survive special teams — a return touchdown ends it"],
+        keys_b=["Post-Love backfield: prove the duo/counter identity early",
+                "Carr in rhythm — play-action on schedule, nothing forced",
+                "Erase explosives; make Wisconsin play 12-play drives",
+                "'Leave No Doubt' means no scoreboard mercy — bury it early"],
+    ),
+    dict(
+        a="SMU", b="FSU", vs="at", title="SMU at Florida State",
+        cfbd=("SMU", "Florida State"),
+        where="Tallahassee · Doak Campbell Stadium",
+        sub="Mon Sep 7 · 7:30 ET · Labor Day nightcap · ON THE UPSET BOARD — RED",
+        machine="FSU –0.5", market="+3 / +3", value="RED: home dog outright",
+        wp=("FSU", 52, "SMU", 48),
+        decides=[
+            "RED ALERT: the machine has the home dog winning outright — FSU 52%, market 42%",
+            "Lashlee's co-coordinator troika (both coordinators left) vs Norvell taking back his own offense",
+            "FSU's top-10 trench portal haul vs SMU line play still a tier below — the run game decides Monday",
+            "Both QB rooms are new: the Jennings era closed in Dallas; Tallahassee runs portal rentals again",
+        ],
+        honesty="Respect the backtest: RED alerts hit 49.7% ATS across 2023–25 — below break-even. The flag is a research shortlist, not a pick. And FSU's 36-month whiplash (CFP → 2–10 → reset) makes its preseason prior the least trustworthy number on this card.",
+        keys_a=["Prove the troika can call it: tempo and spacing from drive one",
+                "Protect the new quarterback against a rebuilt FSU front",
+                "Explosives, not field goals — White's 3-3-5 bends on purpose",
+                "Win the takeaway ledger: the gambling profile has to cash"],
+        keys_b=["Run it with the portal front — make it physical early",
+                "Quarterback run as the cheat code in Norvell's heavier hand",
+                "No boom-bust: field position over hero ball",
+                "Start fast and let the Monday-night Doak crowd matter"],
+    ),
+]
+
+# ---- Week 0 receipts (recap slide): frozen v12 predictions vs finals vs the
+# last pre-kick ledger pull (Sat Aug 29, 10:16 ET). Verdicts = stated leans.
+RECAP = [
+    ("UNC", "TCU", "North Carolina vs TCU", "called TCU 25–23 · final UNC 15–10",
+     "machine TCU –1.5 · close –7.5 · actual UNC by 5", "LEAN CASHED — UNC +6.5 won OUTRIGHT", "W"),
+    ("NCSU", "UVA", "NC State at Virginia", "called UVA 30–23 · final UVA 34–8",
+     "machine UVA –6.5 · close –4 · actual UVA by 26", "no play — right to pass", "P"),
+    ("JSU", "NDSU", "Jacksonville State at NDSU", "called NDSU 25–22 · final NDSU 33–7",
+     "machine NDSU –2.5 · close –6.5 · actual NDSU by 26", "JSU lean LOST by 19 vs the number", "L"),
+    ("HAW", "STAN", "Hawai'i at Stanford", "called Stanford 26–24 · final Stanford 37–27",
+     "machine STAN –1.5 · close –4 · actual STAN by 10", "Hawai'i +5.5 lean LOST", "L"),
+    ("MEM", "UNLV", "Memphis at UNLV", "called UNLV 32–26 · final Memphis 27–21",
+     "machine UNLV –6 · close –4 · actual MEM by 6", "watch only — machine's side lost", "P"),
+]
+
 # overlay pipeline numbers (card_data) before any slide is built
 LEDGER = {g["title"]: apply_card(g) for g in GAMES}
 print("card_data:", "loaded, lines as of " + LINES_AS_OF if CARD else
@@ -374,7 +538,7 @@ print("card_data:", "loaded, lines as of " + LINES_AS_OF if CARD else
 
 # ---------------- title slide ----------------
 s = blank(NAVY)
-txt(s, 0.9, 0.85, 11.5, 0.45, "EPISODE 1 · WEEK 0 · AUG 29, 2026", 14, ORANGE,
+txt(s, 0.9, 0.85, 11.5, 0.45, "EPISODE 2 · WEEK 1 · SEP 5–7, 2026", 14, ORANGE,
     bold=True)
 txt(s, 0.9, 1.2, 11.5, 1.1, "Five Games, One Card", 44, WHITE, bold=True)
 y = 2.4
@@ -395,6 +559,31 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
     f"(σ 17.9, 2021–25 fit) · lines as of {LINES_AS_OF} · model plays graded vs "
     "first-seen lines", 10.5,
     RGBColor(0x8F, 0xA5, 0xC4))
+
+# ---------------- week 0 receipts ----------------
+s = blank()
+txt(s, 0.9, 0.5, 11.5, 0.55, "Week 0 — the receipts", 30, NAVY, bold=True)
+txt(s, 0.9, 1.08, 11.5, 0.3,
+    "Frozen at kickoff · graded vs finals and the last pre-kick pull "
+    "(Sat 10:16 ET) · leans graded vs first-seen lines", 11, MUTE, italic=True)
+y = 1.55
+VERD = {"W": ORANGE, "L": RGBColor(0xB5, 0x12, 0x1B), "P": MUTE}
+for a, b, tit, callfin, nums, verdict, mark in RECAP:
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.86, ICE)
+    logo_badge(s, 1.1, y + 0.13, 0.6, a)
+    logo_badge(s, 1.8, y + 0.13, 0.6, b)
+    txt(s, 2.6, y + 0.09, 4.8, 0.35, tit, 13.5, INK, bold=True)
+    txt(s, 2.6, y + 0.46, 4.9, 0.3, callfin, 10.5, INK)
+    txt(s, 7.6, y + 0.11, 4.55, 0.3, nums, 9.5, MUTE)
+    txt(s, 7.6, y + 0.44, 4.55, 0.3, verdict, 10.5, VERD[mark], bold=True)
+    y += 0.94
+shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
+txt(s, 1.15, y + 0.17, 11.0, 0.65,
+    "Accuracy: machine 13.9 avg margin miss vs closing market 14.0 — a dead "
+    "heat in week one. Stated leans 1–2, and the win came in the game with "
+    "our biggest market disagreement (18 points of win prob). Week 0 went "
+    "UNDER in 4 of 5 · σ 17.9 — one week proves nothing either way.",
+    10.5, WHITE)
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
@@ -472,11 +661,11 @@ for g in GAMES:
         f"machine {g['machine']} · market {g['market']} · "
         + (g.get("score_note", "") or ""), 9.5,
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
-    txt(s, 0.9, 7.13, 11.5, 0.3, "EP 1 · WEEK 0 · " + g["title"], 9, MUTE)
+    txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · " + g["title"], 9, MUTE)
 
 # ---------------- closing card ----------------
 s = blank(NAVY)
-txt(s, 0.9, 0.7, 11.5, 0.45, "EPISODE 1 · THE CARD", 14, ORANGE, bold=True)
+txt(s, 0.9, 0.7, 11.5, 0.45, "EPISODE 2 · THE CARD", 14, ORANGE, bold=True)
 txt(s, 0.9, 1.1, 11.5, 0.9, "Where the machine stands", 36, WHITE, bold=True)
 y = 2.15
 for g in GAMES:
@@ -492,9 +681,10 @@ for g in GAMES:
         RGBColor(0x8F, 0xA5, 0xC4), align=PP_ALIGN.RIGHT)
     y += 0.92
 txt(s, 0.9, 6.85, 11.5, 0.5,
-    "Paper record starts Week 0 — graded vs first-seen lines, never moved "
-    "ones. Research, not picks.", 11, RGBColor(0x8F, 0xA5, 0xC4), italic=True)
+    "Paper record after Week 0: stated leans 1–2 — graded vs first-seen "
+    "lines, never moved ones. Research, not picks.", 11,
+    RGBColor(0x8F, 0xA5, 0xC4), italic=True)
 
-out = r"C:\Users\lucas\Fun Projects\Sports Data Analysis\ncaa-fbs-model\decks\2026_Week0_Episode1.pptx"
+out = r"C:\Users\lucas\Fun Projects\Sports Data Analysis\ncaa-fbs-model\decks\2026_Week1_Episode2.pptx"
 prs.save(out)
 print("wrote", out, f"- {len(prs.slides)} slides")
