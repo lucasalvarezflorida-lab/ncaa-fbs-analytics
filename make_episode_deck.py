@@ -407,11 +407,17 @@ GAMES = [
         machine="Auburn –5.5", market="–7 / –7", value="1.5 on Baylor · U-TAIL under 59.5",
         wp=("AUB", 63, "BAY", 37),
         decides=[
-            "Lagway's arm vs Durkin's carried-over defense — the one unit here with real continuity",
-            "Two installs collide: Golesh's tempo offense vs Baylor's new-look defense under Klanderman",
-            "Auburn's top-10 DL talent vs keeping Lagway upright — his health history is the whole ballgame",
+            "Two rebooted programs on a neutral floor: Golesh's Auburn debut vs the biggest QB get in Baylor history",
+            "The card's starkest contrast — Auburn returns 14% of production (39 portal adds), Baylor returns 60%",
+            "Lagway's health is the single biggest variable in the Big 12 season",
             "U-TAIL: the model leans UNDER the 59.5 — two year-one offenses in a dome",
         ],
+        ctx_a=dict(coach="Aranda, year 6 — seat survived; new DC Klanderman (K-State)",
+                   qb="NEW — DJ Lagway (Florida), biggest transfer get in program history",
+                   roster="60% of offensive production back — most on this card · 31 portal adds"),
+        ctx_b=dict(coach="NEW — Alex Golesh (USF) · Durkin RETAINED as DC",
+                   qb="NEW and unsettled — open room after the Knight exit",
+                   roster="14% back — most retooled roster on the card · 39 portal adds"),
         honesty="Both sidelines are running year-one installs the preseason numbers can't see — and the machine's prior hasn't ingested a single 2026 snap yet (first in-season FPI refresh lands Tuesday). Machine −5.5 vs market −7 is a quibble, not a position.",
         keys_a=["Keep Lagway upright and healthy — everything else is decoration",
                 "Beat the sim pressures on early downs; don't let Durkin tee off",
@@ -430,11 +436,17 @@ GAMES = [
         machine="LSU –9", market="–10.5 / –10.5", value="1.5 to Clemson — quibble, not a play",
         wp=("LSU", 70, "CLEM", 30),
         decides=[
-            "Leavitt in Kiffin's tempo-RPO system vs Tom Allen's 4-2-5 — the one Clemson unit that kept its standard",
-            "Vizzina and the Chad Morris throwback offense vs Baker's pressure — SP+ projects this D No. 2 nationally",
-            "LSU's portal-built offensive line on a short install runway, at night, in Death Valley",
-            "Both offenses are new identities — the first sideline that looks ordinary wins",
+            "Kiffin's first game at LSU — a CFP-or-bust construction unveiled at night in Death Valley",
+            "Dabo answering the worst season in 15 years with a first-year QB and a throwback OC",
+            "LSU returns 21% of production with 44 portal adds — the most aggressive retool on the card; Clemson added 11",
+            "Week 1 loser burns a playoff mulligan immediately — both fanbases know it",
         ],
+        ctx_a=dict(coach="Dabo, year 18 — Chad Morris returns as OC",
+                   qb="NEW — Vizzina, first-year starter post-Klubnik",
+                   roster="41% back · just 11 portal adds — still portal-light by choice"),
+        ctx_b=dict(coach="NEW — Lane Kiffin, off Ole Miss's 13-win CFP season",
+                   qb="NEW — Sam Leavitt (Arizona State), the spring's biggest QB move",
+                   roster="21% back · 44 portal adds — the biggest retool here"),
         honesty="The machine's −9.1 is a preseason guess about a team with a new head coach, new QB and new OC — and the same is true across the field. The market opened −11.5 and drifted to −10.5; the machine sits a point and a half friendlier to Clemson. Install-week variance says treat all of it gently.",
         keys_a=["Let Allen's defense set the terms early",
                 "Give Vizzina pressure answers — quick game and screens",
@@ -453,11 +465,17 @@ GAMES = [
         machine="Ole Miss –6.5", market="–7 / –6.5", value="machine = market — no gap",
         wp=("MISS", 65, "LOU", 35),
         decides=[
-            "Chambliss — the nation's best at turning dead plays into first downs — vs a bust-prone Louisville back end",
-            "Brohm's third QB1 in three years: Kienholz is the least-proven starter he's had here",
-            "Golding's first game as head coach after Kiffin took the identity engine to Baton Rouge",
-            "Louisville's edge rush vs a rebuilt Ole Miss pass-pro — the one place the dog can win snaps",
+            "Golding's first game as the head man — keeping a 13-win CFP program's identity after Kiffin left with it",
+            "Chambliss is the rare continuity star (50% of production back); Brohm counters with his third new QB1 in three years",
+            "Sunday night in Nashville — neutral on paper, Ole Miss crowd in practice",
+            "Both need this one: Louisville's easiest big-name scalp; Ole Miss defending the CFP-program label",
         ],
+        ctx_a=dict(coach="Brohm, year 4",
+                   qb="NEW — Kienholz: third QB1 in three years, least-proven yet",
+                   roster="35% back · 33 portal adds — the annual Brohm re-skin"),
+        ctx_b=dict(coach="NEW — Pete Golding, promoted; kept the defensive spine",
+                   qb="RETURNS — Chambliss, SEC Newcomer of the Year; won his eligibility appeal",
+                   roster="50% back · 28 portal adds — the spine stayed"),
         honesty="The market opened −8.5 and walked to −6.5/−7 — it has come to the machine's −6.5. That's agreement, not edge. And nothing in a preseason prior prices a first-year head coach's game management on a Sunday neutral floor.",
         keys_a=["Ride the run game and keep Chambliss on the sideline",
                 "No coverage busts — the season-long bug can't show up here",
@@ -476,16 +494,22 @@ GAMES = [
         machine="ND –21", market="–20.5 / –20", value="no gap — watch, don't touch",
         wp=("ND", 87, "WIS", 13),
         decides=[
-            "Fickell's run-first survival pivot vs a tite front built to erase exactly that",
-            "Colton Joseph makes the G5-to-B1G jump against elite tackling — translation risk, week one",
-            "Wisconsin's genuinely good 3-3-5 vs Carr's year-two leap — the one matchup that keeps it close",
-            "Spreads this size live in the favorite-longshot zone our market post-mortem flagged",
+            "The revenge tour begins — 'Leave No Doubt' opens at Lambeau Field",
+            "ND is the card's continuity outlier: Carr in year two, 51% of production back, just 7 portal adds",
+            "Fickell's survival season starts as a 20-point dog, with a new QB again (Joseph, 31% back)",
+            "A No. 1-seed résumé game for the Irish; a cover is Wisconsin's moral win",
         ],
+        ctx_a=dict(coach="Fickell, year 4 — survival season; the Air Raid detour is dead",
+                   qb="NEW — Colton Joseph (Old Dominion), a real dual threat",
+                   roster="31% back · 33 portal adds — retooled around a veteran OL"),
+        ctx_b=dict(coach="Freeman — full staff and identity continuity",
+                   qb="RETURNS — CJ Carr, year two: the top-10's likeliest QB leap",
+                   roster="51% back · just 7 portal adds — the continuity program"),
         honesty="Housekeeping: our ledger's July first-seen on this game is a known CFBD sides-flip data error, so the honest movement read is the opener — Bovada hung −16.5 and the market walked it to −20.5, four points toward the Irish. Machine −21.1, market −20.5: nothing to do but watch.",
         keys_a=["Shorten the game: long drives, no clock stoppages, no gifts",
+                "Find counters vs a tite front built to erase the run-first pivot",
                 "Joseph's legs on third-and-medium — the one chain-mover that travels",
-                "Force Carr to beat the 3-3-5 from the pocket",
-                "Survive special teams — a return touchdown ends it"],
+                "Force Carr to beat the 3-3-5 from the pocket"],
         keys_b=["Post-Love backfield: prove the duo/counter identity early",
                 "Carr in rhythm — play-action on schedule, nothing forced",
                 "Erase explosives; make Wisconsin play 12-play drives",
@@ -499,11 +523,17 @@ GAMES = [
         machine="FSU –0.5", market="+3 / +3", value="RED: home dog outright",
         wp=("FSU", 52, "SMU", 48),
         decides=[
-            "RED ALERT: the machine has the home dog winning outright — FSU 52%, market 42%",
-            "Lashlee's co-coordinator troika (both coordinators left) vs Norvell taking back his own offense",
-            "FSU's top-10 trench portal haul vs SMU line play still a tier below — the run game decides Monday",
-            "Both QB rooms are new: the Jennings era closed in Dallas; Tallahassee runs portal rentals again",
+            "Monday night, alone on the calendar — the week's last word",
+            "FSU's 36-month whiplash (CFP → 2–10 → reset) meets SMU's post-CFP expectations",
+            "SMU kept the roster (57% back) but lost both coordinators; FSU kept Norvell but reloads via portal again",
+            "RED ALERT: the machine takes the home dog outright — FSU 52%, market 42%",
         ],
+        ctx_a=dict(coach="Lashlee, year 5 — both coordinators left; co-coordinator troikas",
+                   qb="NEW — post-Jennings; the system made 3 straight top-25 offenses with 3 QBs",
+                   roster="57% back · 15 portal adds — kept the roster, lost the callers"),
+        ctx_b=dict(coach="Norvell, year 7 — Harris promoted to OC (Malzahn retired)",
+                   qb="NEW — veteran portal room again",
+                   roster="40% back · 22 portal adds — another portal reload"),
         honesty="Respect the backtest: RED alerts hit 49.7% ATS across 2023–25 — below break-even. The flag is a research shortlist, not a pick. And FSU's 36-month whiplash (CFP → 2–10 → reset) makes its preseason prior the least trustworthy number on this card.",
         keys_a=["Prove the troika can call it: tempo and spacing from drive one",
                 "Protect the new quarterback against a rebuilt FSU front",
@@ -608,7 +638,7 @@ for g in GAMES:
     txt(s, 3.45, 0.94, 8.9, 0.35, g["sub"], 11, MUTE, italic=True)
 
     # left: what decides it
-    txt(s, 0.9, 1.75, 7.2, 0.4, "WHAT DECIDES IT", 13, NAVY, bold=True)
+    txt(s, 0.9, 1.75, 7.2, 0.4, "WHY IT MATTERS", 13, NAVY, bold=True)
     yy = 2.25
     for d in g["decides"]:
         shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09, 0.14, 0.14, ORANGE)
@@ -647,18 +677,28 @@ for g in GAMES:
         txt(s, 0.9, 6.82, 11.5, 0.3, "Line movement: " + strip, 10.5, MUTE)
 
     # -- team slides (Corey's format: one full slide per team; the score
-    #    predictions live only on the closing card, truly LAST) --
-    for key, keys in ((g["a"], g["keys_a"]), (g["b"], g["keys_b"])):
+    #    predictions live only on the closing card, truly LAST). Context band
+    #    = the significance frame: coach status, QB situation, roster
+    #    continuity (CFBD returning offensive PPA + portal-add counts). --
+    for key, keys, ctx in ((g["a"], g["keys_a"], g["ctx_a"]),
+                           (g["b"], g["keys_b"], g["ctx_b"])):
         s = blank()
         logo_badge(s, 0.9, 0.55, 1.15, key)
         txt(s, 2.35, 0.66, 9.9, 0.62, CODE2NAME[key], 32, NAVY, bold=True)
         txt(s, 2.35, 1.34, 9.9, 0.35, "What it takes to win · " + g["title"],
             13, MUTE, italic=True)
-        yy = 2.35
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, 1.95, 11.5, 1.05, ICE)
+        for i, (label, val) in enumerate((("COACH", ctx["coach"]),
+                                          ("QB", ctx["qb"]),
+                                          ("ROSTER", ctx["roster"]))):
+            x = 1.15 + i * 3.85
+            txt(s, x, 2.08, 3.55, 0.25, label, 9.5, ORANGE, bold=True)
+            txt(s, x, 2.34, 3.55, 0.6, val, 10.5, INK)
+        yy = 3.4
         for k in keys:
-            shape(s, MSO_SHAPE.OVAL, 1.0, yy + 0.14, 0.16, 0.16, ORANGE)
-            txt(s, 1.45, yy, 10.5, 0.85, k, 17, INK)
-            yy += 1.05
+            shape(s, MSO_SHAPE.OVAL, 1.0, yy + 0.12, 0.15, 0.15, ORANGE)
+            txt(s, 1.45, yy, 10.5, 0.8, k, 15.5, INK)
+            yy += 0.92
         txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · " + g["title"], 9, MUTE)
 
 # ---------------- closing card ----------------
