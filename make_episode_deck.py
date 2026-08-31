@@ -713,10 +713,12 @@ for g in GAMES:
     txt(s, 8.8, 3.55, 3.3, 0.45, g["market"], 20, WHITE, bold=True)
     txt(s, 8.8, 3.98, 3.3, 0.4, "market (DK / Bovada) · " + g.get("market_ml", ""),
         8.5, PALE)
-    # the gap (authored)
-    txt(s, 8.8, 4.45, 3.3, 0.4, g["value"], 15 if len(g["value"]) <= 20 else 12,
+    # score prediction (replaced "the gap" per Lucas's in-Slides edit 8/31;
+    # the authored value/gap strings stay in GAMES as data)
+    score = g.get("score", "")
+    txt(s, 8.8, 4.45, 3.3, 0.4, score, 15 if len(score) <= 22 else 13,
         ORANGE, bold=True)
-    txt(s, 8.8, 4.82, 3.3, 0.25, "the gap", 8.5, PALE)
+    txt(s, 8.8, 4.82, 3.3, 0.25, "score prediction", 8.5, PALE)
     wa, pa, wb, pb = g["wp"]
     wp_bar(s, 8.8, 5.2, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
            wb, pb, TEAMS[wb]["color"])
