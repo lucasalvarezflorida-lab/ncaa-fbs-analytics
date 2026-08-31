@@ -759,32 +759,31 @@ txt(s, 0.9, 1.08, 11.5, 0.3,
     "Pick a dog to WIN OUTRIGHT — points = the spread · machine board: "
     "model win prob vs market, expected points = prob × spread",
     11, MUTE, italic=True)
+# one machine pick per category; the note line is authored weekly
+SUPERDOG_NOTES = {
+    0: "The board's biggest model-vs-market fight — the machine never "
+       "bought the move from −17.5 to −21.5.",
+    1: "The Apple Cup — rivalry chaos at a 23-point price, and the "
+       "machine has the dog at more than double the market's chance.",
+}
 for px, (head, board) in enumerate(
         [("ANY GAME", [r for r in SUPERDOG_ANY if not r["rank"]]),
          ("GIANT KILLER — dog vs an AP top-25 team", SUPERDOG_T25)]):
     x = 0.9 + px * 5.95
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.6, 5.55, 4.9, ICE)
-    txt(s, x + 0.3, 1.8, 5.0, 0.3, head, 12, ORANGE, bold=True)
-    yy = 2.25
-    for i, r in enumerate(board[:3]):
-        fav = (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
-        star = "★ " if i == 0 else ""
-        txt(s, x + 0.3, yy, 5.0, 0.35,
-            f"{star}{r['dog']} +{r['pts']:g} {r['at']} {fav}",
-            13 if i == 0 else 12, ORANGE if i == 0 else INK, bold=True)
-        txt(s, x + 0.3, yy + 0.36, 5.0, 0.3,
-            f"model {r['p']*100:.0f}% · market {r['mkt']*100:.0f}% · "
-            f"expected pts {r['ev']:.1f}", 10, MUTE)
-        yy += 0.95
-    if px == 1:
-        best = max(board, key=lambda r: r["p"]) if board else None
-        if best:
-            txt(s, x + 0.3, 5.35, 5.0, 0.9,
-                f"Most likely ranked upset: {best['dog']} +{best['pts']:g} "
-                f"{best['at']} #{best['rank']} {best['fav']} — "
-                f"{best['p']*100:.0f}% (low points, high cash rate)",
-                10.5, INK, italic=True)
-txt(s, 0.9, 6.7, 11.5, 0.5,
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.7, 5.55, 3.1, ICE)
+    txt(s, x + 0.3, 1.95, 5.0, 0.3, head, 12, ORANGE, bold=True)
+    if not board:
+        continue
+    r = board[0]
+    fav = (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
+    txt(s, x + 0.3, 2.45, 5.0, 0.5,
+        f"★ {r['dog']} +{r['pts']:g} {r['at']} {fav}", 17, ORANGE, bold=True)
+    txt(s, x + 0.3, 3.05, 5.0, 0.3,
+        f"model {r['p']*100:.0f}% to win outright · market {r['mkt']*100:.0f}% "
+        f"· expected pts {r['ev']:.1f}", 10.5, MUTE)
+    txt(s, x + 0.3, 3.55, 5.0, 0.95, SUPERDOG_NOTES.get(px, ""), 11, INK,
+        italic=True)
+txt(s, 0.9, 5.25, 11.5, 0.5,
     "Honesty: model probs ride preseason priors and σ 17.9 — the biggest "
     "model-vs-market gaps sit exactly where the favorite-longshot bias "
     "lives. A points game between hosts, not a betting card.", 10, MUTE,
