@@ -517,18 +517,29 @@ GAMES = [
 ]
 
 # ---- Week 0 receipts (recap slide): frozen v12 predictions vs finals vs the
-# last pre-kick ledger pull (Sat Aug 29, 10:16 ET). Verdicts = stated leans.
+# last pre-kick ledger pull (Sat Aug 29, 10:16 ET). "off by" = distance of
+# each side's line from the actual margin; mark M/K = machine/market closer.
 RECAP = [
-    ("UNC", "TCU", "North Carolina vs TCU", "called TCU 25–23 · final UNC 15–10",
-     "machine TCU –1.5 · close –7.5 · actual UNC by 5", "LEAN CASHED — UNC +6.5 won OUTRIGHT", "W"),
-    ("NCSU", "UVA", "NC State at Virginia", "called UVA 30–23 · final UVA 34–8",
-     "machine UVA –6.5 · close –4 · actual UVA by 26", "no play — right to pass", "P"),
-    ("JSU", "NDSU", "Jacksonville State at NDSU", "called NDSU 25–22 · final NDSU 33–7",
-     "machine NDSU –2.5 · close –6.5 · actual NDSU by 26", "JSU lean LOST by 19 vs the number", "L"),
-    ("HAW", "STAN", "Hawai'i at Stanford", "called Stanford 26–24 · final Stanford 37–27",
-     "machine STAN –1.5 · close –4 · actual STAN by 10", "Hawai'i +5.5 lean LOST", "L"),
-    ("MEM", "UNLV", "Memphis at UNLV", "called UNLV 32–26 · final Memphis 27–21",
-     "machine UNLV –6 · close –4 · actual MEM by 6", "watch only — machine's side lost", "P"),
+    ("UNC", "TCU", "North Carolina vs TCU",
+     "we called TCU 25–23 · FINAL UNC 15–10",
+     "our line TCU –1.5 · closing TCU –7.5",
+     "machine off by 6.5 · market off by 12.5 — machine closer", "M"),
+    ("NCSU", "UVA", "NC State at Virginia",
+     "we called UVA 30–23 · FINAL UVA 34–8",
+     "our line UVA –6.5 · closing UVA –4",
+     "machine off by 19.5 · market off by 22 — machine closer", "M"),
+    ("JSU", "NDSU", "Jacksonville State at NDSU",
+     "we called NDSU 25–22 · FINAL NDSU 33–7",
+     "our line NDSU –2.5 · closing NDSU –6.5",
+     "machine off by 23.5 · market off by 19.5 — market closer", "K"),
+    ("HAW", "STAN", "Hawai'i at Stanford",
+     "we called Stanford 26–24 · FINAL Stanford 37–27",
+     "our line Stanford –1.5 · closing Stanford –4",
+     "machine off by 8.5 · market off by 6 — market closer", "K"),
+    ("MEM", "UNLV", "Memphis at UNLV",
+     "we called UNLV 32–26 · FINAL Memphis 27–21",
+     "our line UNLV –6 · closing UNLV –4",
+     "machine off by 12 · market off by 10 — market closer", "K"),
 ]
 
 # overlay pipeline numbers (card_data) before any slide is built
@@ -564,25 +575,26 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
 s = blank()
 txt(s, 0.9, 0.5, 11.5, 0.55, "Week 0 — the receipts", 30, NAVY, bold=True)
 txt(s, 0.9, 1.08, 11.5, 0.3,
-    "Frozen at kickoff · graded vs finals and the last pre-kick pull "
-    "(Sat 10:16 ET) · leans graded vs first-seen lines", 11, MUTE, italic=True)
+    "Our call frozen at kickoff · closing line = last pre-kick pull "
+    "(Sat 10:16 ET) · “off by” = miss vs the final margin",
+    11, MUTE, italic=True)
 y = 1.55
-VERD = {"W": ORANGE, "L": RGBColor(0xB5, 0x12, 0x1B), "P": MUTE}
-for a, b, tit, callfin, nums, verdict, mark in RECAP:
+VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B)}
+for a, b, tit, callfin, lines_, miss, mark in RECAP:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.86, ICE)
     logo_badge(s, 1.1, y + 0.13, 0.6, a)
     logo_badge(s, 1.8, y + 0.13, 0.6, b)
     txt(s, 2.6, y + 0.09, 4.8, 0.35, tit, 13.5, INK, bold=True)
     txt(s, 2.6, y + 0.46, 4.9, 0.3, callfin, 10.5, INK)
-    txt(s, 7.6, y + 0.11, 4.55, 0.3, nums, 9.5, MUTE)
-    txt(s, 7.6, y + 0.44, 4.55, 0.3, verdict, 10.5, VERD[mark], bold=True)
+    txt(s, 7.35, y + 0.11, 4.8, 0.3, lines_, 9.5, MUTE)
+    txt(s, 7.35, y + 0.44, 4.8, 0.3, miss, 10, VERD[mark], bold=True)
     y += 0.94
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
 txt(s, 1.15, y + 0.17, 11.0, 0.65,
-    "Accuracy: machine 13.9 avg margin miss vs closing market 14.0 — a dead "
-    "heat in week one. Stated leans 1–2, and the win came in the game with "
-    "our biggest market disagreement (18 points of win prob). Week 0 went "
-    "UNDER in 4 of 5 · σ 17.9 — one week proves nothing either way.",
+    "Total miss across five games: machine 70.0 points, closing market "
+    "70.0 — a literal dead heat. Stated leans 1–2, the win coming where we "
+    "disagreed with the market most (UNC, 18 points of win prob). Week 0 "
+    "went UNDER in 4 of 5 · σ 17.9 — one week proves nothing either way.",
     10.5, WHITE)
 
 # ---------------- per-game slides ----------------
