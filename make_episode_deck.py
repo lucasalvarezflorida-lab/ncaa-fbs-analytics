@@ -646,50 +646,38 @@ for g in GAMES:
     if strip:
         txt(s, 0.9, 6.82, 11.5, 0.3, "Line movement: " + strip, 10.5, MUTE)
 
-    # -- keys slide (segment flow: what decides it -> keys -> score) --
-    s = blank()
-    logo_badge(s, 0.9, 0.42, 0.8, g["a"])
-    txt(s, 1.82, 0.52, 0.5, 0.5, g["vs"], 14, MUTE, align=PP_ALIGN.CENTER)
-    logo_badge(s, 2.35, 0.42, 0.8, g["b"])
-    txt(s, 3.45, 0.42, 8.9, 0.55, "Keys to the game", 27, NAVY, bold=True)
-
-    for col, (key, keys) in enumerate([(g["a"], g["keys_a"]), (g["b"], g["keys_b"])]):
-        x = 0.9 + col * 6.0
-        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.55, 5.65, 4.35, ICE)
-        logo_badge(s, x + 0.3, 1.85, 0.62, key)
-        txt(s, x + 1.1, 1.9, 4.3, 0.5, CODE2NAME[key] + " — what it takes",
-            16, INK, bold=True)
-        yy = 2.7
+    # -- team slides (Corey's format: one full slide per team; the score
+    #    predictions live only on the closing card, truly LAST) --
+    for key, keys in ((g["a"], g["keys_a"]), (g["b"], g["keys_b"])):
+        s = blank()
+        logo_badge(s, 0.9, 0.55, 1.15, key)
+        txt(s, 2.35, 0.66, 9.9, 0.62, CODE2NAME[key], 32, NAVY, bold=True)
+        txt(s, 2.35, 1.34, 9.9, 0.35, "What it takes to win · " + g["title"],
+            13, MUTE, italic=True)
+        yy = 2.35
         for k in keys:
-            shape(s, MSO_SHAPE.OVAL, x + 0.38, yy + 0.1, 0.13, 0.13, ORANGE)
-            txt(s, x + 0.68, yy, 4.7, 0.7, k, 13, INK)
-            yy += 0.72
-
-    # score prediction banner — last, per the segment flow
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, 6.28, 11.5, 0.78, NAVY)
-    txt(s, 1.2, 6.38, 2.6, 0.3, "SCORE PREDICTION", 11, ORANGE, bold=True)
-    txt(s, 1.2, 6.62, 4.5, 0.4, g.get("score", ""), 20, WHITE, bold=True)
-    txt(s, 5.9, 6.4, 6.3, 0.6,
-        f"machine {g['machine']} · market {g['market']} · "
-        + (g.get("score_note", "") or ""), 9.5,
-        RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
-    txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · " + g["title"], 9, MUTE)
+            shape(s, MSO_SHAPE.OVAL, 1.0, yy + 0.14, 0.16, 0.16, ORANGE)
+            txt(s, 1.45, yy, 10.5, 0.85, k, 17, INK)
+            yy += 1.05
+        txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · " + g["title"], 9, MUTE)
 
 # ---------------- closing card ----------------
 s = blank(NAVY)
-txt(s, 0.9, 0.7, 11.5, 0.45, "EPISODE 2 · THE CARD", 14, ORANGE, bold=True)
+txt(s, 0.9, 0.7, 11.5, 0.45, "EPISODE 2 · THE CARD · OUR PREDICTIONS", 14,
+    ORANGE, bold=True)
 txt(s, 0.9, 1.1, 11.5, 0.9, "Where the machine stands", 36, WHITE, bold=True)
 y = 2.15
 for g in GAMES:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.84, NAVY2)
     logo_badge(s, 1.1, y + 0.12, 0.6, g["a"], plate=True)
     logo_badge(s, 1.85, y + 0.12, 0.6, g["b"], plate=True)
-    txt(s, 2.7, y + 0.08, 5.9, 0.4, g["title"], 14.5, WHITE, bold=True)
-    txt(s, 2.7, y + 0.44, 6.3, 0.38, LEDGER.get(g["title"], ""), 10,
+    txt(s, 2.7, y + 0.08, 5.4, 0.4, g["title"], 14.5, WHITE, bold=True)
+    txt(s, 2.7, y + 0.44, 5.4, 0.38, LEDGER.get(g["title"], ""), 9.5,
         RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 9.0, y + 0.08, 3.2, 0.4, g["machine"] + "   ·   " + g["market"],
-        12.5, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, 9.0, y + 0.46, 3.2, 0.3, "machine · market", 9,
+    txt(s, 8.1, y + 0.06, 4.1, 0.42, g.get("score", ""), 15.5, ORANGE,
+        bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, 8.1, y + 0.5, 4.1, 0.3,
+        "machine " + g["machine"] + " · market " + g["market"], 8.5,
         RGBColor(0x8F, 0xA5, 0xC4), align=PP_ALIGN.RIGHT)
     y += 0.92
 txt(s, 0.9, 6.85, 11.5, 0.5,
