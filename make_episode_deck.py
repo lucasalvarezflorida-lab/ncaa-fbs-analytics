@@ -615,8 +615,9 @@ def superdog_boards():
         at = "at" if dog == g["away"] else "vs"
         mkt_ph = g.get("mkt_p_home")
         mkt = (1 - mkt_ph if sp < 0 else mkt_ph) if mkt_ph is not None else None
+        ml = b.get("away_ml") if dog == g["away"] else b.get("home_ml")
         rows.append(dict(dog=dog, fav=fav, at=at, pts=abs(sp), p=p, mkt=mkt,
-                         ev=p * abs(sp), rank=AP_TOP25.get(fav)))
+                         ml=ml, ev=p * abs(sp), rank=AP_TOP25.get(fav)))
     rows.sort(key=lambda r: -r["ev"])
     return rows, [r for r in rows if r["rank"]]
 
@@ -752,67 +753,41 @@ for g in GAMES:
             yy += 0.92
         txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · " + g["title"], 9, MUTE)
 
-# ---------------- superdog picks ----------------
-s = blank()
-txt(s, 0.9, 0.5, 11.5, 0.55, "Superdog Picks", 30, NAVY, bold=True)
-txt(s, 0.9, 1.08, 11.5, 0.3,
-    "Pick a dog to WIN OUTRIGHT — points = the spread · machine board: "
-    "model win prob vs market, expected points = prob × spread",
-    11, MUTE, italic=True)
-# one machine pick per category; the note line is authored weekly
-SUPERDOG_NOTES = {
-    0: "The board's biggest model-vs-market fight — the machine never "
-       "bought the move from −17.5 to −21.5.",
-    1: "The Apple Cup — rivalry chaos at a 23-point price, and the "
-       "machine has the dog at more than double the market's chance.",
-}
-for px, (head, board) in enumerate(
-        [("ANY GAME", [r for r in SUPERDOG_ANY if not r["rank"]]),
-         ("GIANT KILLER — dog vs an AP top-25 team", SUPERDOG_T25)]):
-    x = 0.9 + px * 5.95
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.7, 5.55, 3.1, ICE)
-    txt(s, x + 0.3, 1.95, 5.0, 0.3, head, 12, ORANGE, bold=True)
+# ---------------- closing card: predictions + superdogs ----------------
+s = blank(NAVY)
+PALE = RGBColor(0xCA, 0xDC, 0xFC)
+txt(s, 0.9, 0.55, 11.5, 0.45, "EPISODE 2 · THE CARD", 14, ORANGE, bold=True)
+txt(s, 0.9, 0.95, 11.5, 0.8, "Our predictions", 36, WHITE, bold=True)
+y = 1.95
+for g in GAMES:
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.72, NAVY2)
+    logo_badge(s, 1.1, y + 0.1, 0.52, g["a"], plate=True)
+    logo_badge(s, 1.75, y + 0.1, 0.52, g["b"], plate=True)
+    txt(s, 2.5, y + 0.19, 5.4, 0.4, g["title"], 14, WHITE, bold=True)
+    txt(s, 7.0, y + 0.09, 5.2, 0.42, g.get("score", ""), 15.5, ORANGE,
+        bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, 7.0, y + 0.47, 5.2, 0.25, "market " + g["market"], 8.5,
+        RGBColor(0x8F, 0xA5, 0xC4), align=PP_ALIGN.RIGHT)
+    y += 0.8
+# superdog band
+shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.08, 11.5, 1.02, ORANGE)
+for i, (label, board) in enumerate(
+        [("SUPERDOG", [r for r in SUPERDOG_ANY if not r["rank"]]),
+         ("GIANT KILLER", SUPERDOG_T25)]):
     if not board:
         continue
     r = board[0]
     fav = (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
-    txt(s, x + 0.3, 2.45, 5.0, 0.5,
-        f"★ {r['dog']} +{r['pts']:g} {r['at']} {fav}", 17, ORANGE, bold=True)
-    txt(s, x + 0.3, 3.05, 5.0, 0.3,
-        f"model {r['p']*100:.0f}% to win outright · market {r['mkt']*100:.0f}% "
-        f"· expected pts {r['ev']:.1f}", 10.5, MUTE)
-    txt(s, x + 0.3, 3.55, 5.0, 0.95, SUPERDOG_NOTES.get(px, ""), 11, INK,
-        italic=True)
-txt(s, 0.9, 5.25, 11.5, 0.5,
-    "Honesty: model probs ride preseason priors and σ 17.9 — the biggest "
-    "model-vs-market gaps sit exactly where the favorite-longshot bias "
-    "lives. A points game between hosts, not a betting card.", 10, MUTE,
-    italic=True)
-txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · SUPERDOG PICKS", 9, MUTE)
-
-# ---------------- closing card ----------------
-s = blank(NAVY)
-txt(s, 0.9, 0.7, 11.5, 0.45, "EPISODE 2 · THE CARD · OUR PREDICTIONS", 14,
-    ORANGE, bold=True)
-txt(s, 0.9, 1.1, 11.5, 0.9, "Where the machine stands", 36, WHITE, bold=True)
-y = 2.15
-for g in GAMES:
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.84, NAVY2)
-    logo_badge(s, 1.1, y + 0.12, 0.6, g["a"], plate=True)
-    logo_badge(s, 1.85, y + 0.12, 0.6, g["b"], plate=True)
-    txt(s, 2.7, y + 0.08, 5.4, 0.4, g["title"], 14.5, WHITE, bold=True)
-    txt(s, 2.7, y + 0.44, 5.4, 0.38, LEDGER.get(g["title"], ""), 9.5,
-        RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 8.1, y + 0.06, 4.1, 0.42, g.get("score", ""), 15.5, ORANGE,
-        bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, 8.1, y + 0.5, 4.1, 0.3,
-        "machine " + g["machine"] + " · market " + g["market"], 8.5,
-        RGBColor(0x8F, 0xA5, 0xC4), align=PP_ALIGN.RIGHT)
-    y += 0.92
-txt(s, 0.9, 6.85, 11.5, 0.5,
-    "Paper record after Week 0: stated leans 1–2 — graded vs first-seen "
-    "lines, never moved ones. Research, not picks.", 11,
-    RGBColor(0x8F, 0xA5, 0xC4), italic=True)
+    ml = f" · ML {int(r['ml']):+d}" if r.get("ml") is not None else ""
+    txt(s, 1.2, y + 0.17 + i * 0.44, 3.0, 0.35, "★ " + label, 13, NAVY,
+        bold=True)
+    txt(s, 3.6, y + 0.17 + i * 0.44, 8.6, 0.35,
+        f"{r['dog']} +{r['pts']:g} {r['at']} {fav}{ml}", 13.5, WHITE,
+        bold=True)
+txt(s, 0.9, 7.18, 11.5, 0.3,
+    "projected scores = machine margin on the market total · superdogs = "
+    "dog to win outright, points = the spread · graded vs first-seen lines "
+    "· research, not picks", 9, RGBColor(0x8F, 0xA5, 0xC4), italic=True)
 
 out = r"C:\Users\lucas\Fun Projects\Sports Data Analysis\ncaa-fbs-model\decks\2026_Week1_Episode2.pptx"
 prs.save(out)
