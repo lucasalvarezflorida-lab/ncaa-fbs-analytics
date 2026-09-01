@@ -278,7 +278,7 @@ def fetch_games(refresh: bool, fpi: dict[str, dict]) -> list[dict]:
 
 
 def _result_text(g: dict, team_is_home: bool) -> str:
-    if not g["completed"] or g["home_pts"] is None:
+    if not g["completed"] or g["home_pts"] is None or g["away_pts"] is None:
         return ""
     us = g["home_pts"] if team_is_home else g["away_pts"]
     them = g["away_pts"] if team_is_home else g["home_pts"]
@@ -1235,7 +1235,7 @@ def update_alerts_log(games: list[dict]) -> dict:
 
 def _grade(entry: dict, g: dict) -> tuple[str, str]:
     """(ats, outright) for the logged model side vs the logged spread."""
-    if not g["completed"] or g["home_pts"] is None:
+    if not g["completed"] or g["home_pts"] is None or g["away_pts"] is None:
         return "", ""
     margin = g["home_pts"] - g["away_pts"]  # home perspective
     covered = margin + float(entry["spread"])  # >0 = home covered
@@ -1518,7 +1518,7 @@ def update_watch_log(games: list[dict], ranks: dict,
 
 def _grade_watch(e: dict, g: dict) -> str:
     """W/L/P vs the first-seen number; '' while pending."""
-    if not g["completed"] or g["home_pts"] is None:
+    if not g["completed"] or g["home_pts"] is None or g["away_pts"] is None:
         return ""
     if e["rule"] == "EARLY_UNDER":
         diff = float(e["total"]) - (g["home_pts"] + g["away_pts"])
