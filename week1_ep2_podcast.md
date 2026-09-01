@@ -196,7 +196,8 @@ post-CFP expectations. SMU kept the roster (57% back, 15 adds) but lost the
 play-callers; FSU kept Norvell but runs portal-rental QBs again (40% back, 22
 adds; Harris promoted to OC after Malzahn retired).
 
-**Keys — SMU:** prove the troika can call it; protect the new QB from the
+**Keys — SMU:** prove the troika can call it; protect Jennings (RETURNING — live
+on-air correction 9/1: he did NOT leave) from the
 rebuilt front; explosives, not field goals (White's 3-3-5 bends on purpose);
 win takeaways. **Keys — FSU:** run it with the portal front; QB run as the
 cheat code; field position over hero ball; start fast, let the Doak matter.
