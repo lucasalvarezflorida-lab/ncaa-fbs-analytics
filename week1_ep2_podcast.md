@@ -1,9 +1,9 @@
 # Episode 2 — Week 1 · "Man vs Machine" podcast notes
 
 Recording Tue Sep 1, 2026 · games Sat Sep 5 – Mon Sep 7
-Deck: `2026_Week1_Episode2` (18 slides, shared with Corey) · lines as of **Aug 31**
-(run the pre-record pull before air — lines were still moving Monday night:
-DK went LSU −10.5 → −10 and FSU +130 → +136 after the deck's last pull).
+Deck: `2026_Week1_Episode2` (18 slides, shared with Corey) · lines as of
+**Sep 1, 3:10 PM CT — the final pre-record pull (done)**. All five score
+predictions and both superdog picks held; only the market columns moved.
 
 Machine = ESPN 2026 **preseason** FPI + 2.5 home field (0 at neutral sites),
 empirical margin curve (σ 17.9, 2021–25 fit). The prior has not ingested a
@@ -44,8 +44,8 @@ the closest thing this business has to proof you're not just lucky."*
 ## Game 1 — Baylor vs Auburn (Atlanta, Sat 3:30 ET)
 
 **The number:** machine **Auburn −5.5** (fair −168/+168, AUB 63%) ·
-market **−7 / −7** (DK −298/+240, Bov −270/+220) · O/U 59.5 ·
-score: **Auburn 33 – Baylor 27**
+market **−7.5 / −7** (DK −285/+230 — moved a half toward Auburn overnight) ·
+O/U 59.5 · score: **Auburn 33 – Baylor 27**
 
 **Why the machine favors Auburn:** preseason FPI has Auburn 12.0, Baylor 6.5 —
 a 5.5-point gap, no home-field bump (neutral site). The 63% comes from running
@@ -80,8 +80,8 @@ feed the tight ends; let the DL end drives on third down.
 ## Game 2 — Clemson at LSU (Baton Rouge, Sat 7:30 ET)
 
 **The number:** machine **LSU −9** (fair −231-ish, LSU 70%) · market
-**−10.5 / −10.5** (DK −380/+300, Bov −480/+350; DK moved to −10 Monday night)
-· O/U 51.5 · score: **LSU 30 – Clemson 21**
+**−10 / −10** (DK −375/+295; came off −10.5, total down to 50.5) ·
+O/U 50.5 · score: **LSU 30 – Clemson 21**
 
 **Why the machine favors LSU:** FPI LSU 20.0 vs Clemson 13.4 = 6.6-point gap,
 plus 2.5 for Death Valley = 9.1. LSU's prior is top-8-caliber; Clemson's 13.4
@@ -108,8 +108,8 @@ early; let Baker hunt; finish red-zone drives.
 
 ## Game 3 — Louisville vs Ole Miss (Nashville, Sun 7:30 ET)
 
-**The number:** machine **Ole Miss −6.5** (MISS 65%) · market **−7 / −6.5**
-(DK −258/+210, Bov −270/+220) · O/U 55.5 · score: **Ole Miss 31 – Louisville 25**
+**The number:** machine **Ole Miss −6.5** (MISS 65%) · market **−7 / −7**
+(DK −265/+215) · O/U 55.5 · score: **Ole Miss 31 – Louisville 25**
 
 **Why the machine favors Ole Miss:** FPI Ole Miss 16.0 vs Louisville 9.5 =
 6.5, no HFA (neutral). Machine = market here — the market opened −8.5 and
@@ -136,8 +136,8 @@ position.
 
 ## Game 4 — Wisconsin vs Notre Dame (Lambeau Field, Sun 7:30 ET)
 
-**The number:** machine **ND −21** (ND 87%) · market **−20.5 / −20**
-(DK −1800/+1000) · O/U 47.5 · score: **ND 34 – Wisconsin 13**
+**The number:** machine **ND −21** (ND 87%) · market **−20.5 / −20.5**
+(DK −1650/+950) · O/U 47.5 · score: **ND 34 – Wisconsin 13**
 
 **Why the machine favors ND (hugely):** FPI ND 25.9 (top-4 nationally) vs
 Wisconsin 4.8 = the full 21.1, no HFA at Lambeau. Machine and market agree
@@ -164,7 +164,8 @@ rhythm, nothing forced; erase explosives; no scoreboard mercy.
 ## Game 5 — SMU at Florida State (Tallahassee, Mon 7:30 ET) · RED ALERT
 
 **The number:** machine **FSU −0.5** (FSU 52.3%) · market **SMU −3 / −3**
-(DK FSU +136/SMU −162 as of Monday night) · O/U 53.5 · score: **FSU 27 – SMU 26**
+(DK FSU +136 / SMU −162 — unchanged at the final pull) · O/U 53.5 ·
+score: **FSU 27 – SMU 26**
 
 **WHY WE'RE PREDICTING FSU TO WIN — the full explanation:**
 - Preseason FPI: **SMU 11.1, FSU 9.3**. The machine agrees with the market
@@ -204,10 +205,11 @@ cheat code; field position over hero ball; start fast, let the Doak matter.
 
 ## Superdog Picks (points = the spread; dog must win outright)
 
-- **★ SUPERDOG (any game): Coastal Carolina +21.5 at West Virginia · ML +1000**
-  Model 21% to win outright vs the market's 9% — the board's biggest
+- **★ SUPERDOG (any game): Coastal Carolina +21 at West Virginia · ML +950**
+  Model 21% to win outright vs the market's ~9% — the board's biggest
   model-vs-market fight. The machine never bought the move from −17.5 to
-  −21.5 (and WVU carried a CLV −4 flag all week). Worth 21.5 points if it hits.
+  −21.5, and by air time the market blinked half a point back our way
+  (−21.5 → −21). Worth 21 points if it hits.
 - **★ GIANT KILLER (vs AP top-25): Washington State +23.5 at #17 Washington ·
   ML +1300** — the Apple Cup. Model 18% vs market 7%; rivalry chaos at a
   23-point price. Worth 23.5 points.
