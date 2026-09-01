@@ -58,8 +58,13 @@ than the market.
 **Why it matters:** Golesh's Auburn debut vs the biggest QB get in Baylor
 history (Lagway). Starkest roster contrast on the card — Auburn 14% of
 production back / 39 portal adds vs Baylor 60% back. Lagway's health is the
-Big 12's biggest single variable. **U-TAIL: model leans UNDER 59.5** — two
-year-one offenses in a dome.
+Big 12's biggest single variable. **U-TAIL: lean UNDER the 59.5.** How to say
+it on air: *"We audited five years of closing lines and almost everything
+checked out — Vegas is good. The one thing that survived: when they hang a
+monster total, take the under. Top-decile totals have gone under 55% of the
+time for five straight years, and 59.5 is that class of game — with two
+year-one offenses in a dome on top."* (Tulsa–Oklahoma State at 61.5 also
+qualifies this week, off-card.)
 
 **Contexts:** BAY — Aranda yr 6, new DC Klanderman (K-State); QB NEW Lagway
 (Florida); 60% back, 31 adds. AUB — NEW Golesh (USF), Durkin RETAINED as DC;

@@ -410,7 +410,7 @@ GAMES = [
             "Two rebooted programs on a neutral floor: Golesh's Auburn debut vs the biggest QB get in Baylor history",
             "The card's starkest contrast — Auburn returns 14% of production (39 portal adds), Baylor returns 60%",
             "Lagway's health is the single biggest variable in the Big 12 season",
-            "U-TAIL: the model leans UNDER the 59.5 — two year-one offenses in a dome",
+            "The 59.5 total is top-decile — five years of closing lines say that class of game goes UNDER 55% of the time",
         ],
         ctx_a=dict(coach="Aranda, year 6 — seat survived; new DC Klanderman (K-State)",
                    qb="NEW — DJ Lagway (Florida), biggest transfer get in program history",
