@@ -5,6 +5,7 @@ fpi-decomposition/data/
 # generated output (kept locally; charts regenerable)
 fpi-decomposition/output/*
 !fpi-decomposition/output/residuals_2025.png
+!fpi-decomposition/output/residuals_2026.png
 film_study/
 
 # live nflverse download (refetched every nfl_watchlist.py run)
