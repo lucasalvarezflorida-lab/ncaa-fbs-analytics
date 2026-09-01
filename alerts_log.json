@@ -8,7 +8,7 @@
 "edge": -7.3,
 "tier": "YEL",
 "model_side": "Jacksonville State",
-"close_spread": -10
+"close_spread": -6.5
 },
 "401866408": {
 "first_seen": "2026-07-14",
@@ -34,7 +34,7 @@
 "edge": -9.4,
 "tier": "YEL",
 "model_side": "Massachusetts",
-"close_spread": -30.5
+"close_spread": -28.5
 },
 "401858425": {
 "first_seen": "2026-07-14",
@@ -61,5 +61,103 @@
 "ml_guard": true,
 "ml_backfilled": "2026-07-15",
 "close_spread": -20.5
+},
+"401856766": {
+"first_seen": "2026-08-25",
+"wk": 1,
+"home": "TCU",
+"away": "North Carolina",
+"spread": -7.5,
+"edge": -6.0,
+"tier": "YEL",
+"model_side": "North Carolina",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -7.5
+},
+"401856780": {
+"first_seen": "2026-08-25",
+"wk": 1,
+"home": "West Virginia",
+"away": "Coastal Carolina",
+"spread": -21.5,
+"edge": -6.7,
+"tier": "YEL",
+"model_side": "Coastal Carolina",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -21
+},
+"401856668": {
+"first_seen": "2026-08-25",
+"wk": 1,
+"home": "Texas A&M",
+"away": "Missouri State",
+"spread": -40.5,
+"edge": -7.7,
+"tier": "YEL",
+"model_side": "Missouri State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -40.5
+},
+"401858428": {
+"first_seen": "2026-08-25",
+"wk": 1,
+"home": "Michigan",
+"away": "Western Michigan",
+"spread": -28.5,
+"edge": -6.1,
+"tier": "YEL",
+"model_side": "Western Michigan",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -27.5
+},
+"401858437": {
+"first_seen": "2026-08-25",
+"wk": 1,
+"home": "Washington",
+"away": "Washington State",
+"spread": -22.5,
+"edge": -6.0,
+"tier": "YEL",
+"model_side": "Washington State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -23.5
+},
+"401858212": {
+"first_seen": "2026-09-01",
+"wk": 1,
+"home": "Florida State",
+"away": "SMU",
+"spread": 3,
+"edge": 3.7,
+"tier": "RED",
+"model_side": "Florida State",
+"dog": "Florida State",
+"dog_ml": 136,
+"ml_guard": false,
+"close_spread": 3
+},
+"401856849": {
+"first_seen": "2026-09-01",
+"wk": 10,
+"home": "Utah",
+"away": "BYU",
+"spread": -3,
+"edge": -5.1,
+"tier": "RED",
+"model_side": "BYU",
+"dog": "BYU",
+"dog_ml": 130,
+"ml_guard": false,
+"close_spread": -3
 }
 }
