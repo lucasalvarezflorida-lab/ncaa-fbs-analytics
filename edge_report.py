@@ -3,7 +3,7 @@
 VIEW: contest (default) — spread picks + totals for a spreads/O-U points
 contest (e.g. favordog). P(cover) = the fitted margin curve evaluated at the
 point edge (model margin minus market margin), sorted by cover prob; totals
-via the U-TAIL rule. --payout sets what a winning pick pays (even money vs
+via the MONSTER UNDER rule. --payout sets what a winning pick pays (even money vs
 -110), which moves break-even (50% vs 52.38%).
 
     python edge_report.py --week 1 --bank 1500
@@ -36,7 +36,7 @@ spread-gap play).
 
 Notes. Spread pushes: integer lines carry push mass the continuous curve
 splits between the sides — treat cover probs within ~1pp of break-even as no
-edge, especially at 3 and 7. Totals: no totals model exists; U-TAIL is the
+edge, especially at 3 and 7. Totals: no totals model exists; MONSTER UNDER is the
 lone FDR survivor of the market post-mortem (unders 55.1% on top-decile
 totals, 2021-25 pooled — a base rate, not a per-game estimate; the Kelly
 number is a ceiling). ML view: Bovada ships -100000 placeholder MLs on huge
@@ -69,7 +69,7 @@ STRUCT_PP = 15.0
 
 # unders on top-decile totals, 2021-25 pooled (the lone FDR survivor);
 # a base rate, not a per-game estimate
-U_TAIL_P = 0.551
+MONSTER_UNDER_P = 0.551
 
 # a real two-way ML market books 2-8% of vig; Bovada ships -100000
 # placeholder MLs on huge favorites, which would devig to ~50/50 and top the
@@ -128,14 +128,14 @@ def build_contest_rows(week: int, refresh: bool, payout_ml: int,
             continue
 
         if g["ou_tail"]:
-            kf = kelly(U_TAIL_P, payout_ml, kelly_frac)
+            kf = kelly(MONSTER_UNDER_P, payout_ml, kelly_frac)
             totals.append(dict(
                 market="total",
                 game=f"{g['away']} @ {g['home']}" + (" (N)" if g["neutral"] else ""),
                 mkt_line=f"O/U {g['ou']:g}", model_line="",
-                pick=f"UNDER {g['ou']:g}", p=U_TAIL_P, kelly_frac=kf,
+                pick=f"UNDER {g['ou']:g}", p=MONSTER_UNDER_P, kelly_frac=kf,
                 stake_pts=round(bank * kf) if bank else None,
-                flags="U-TAIL"))
+                flags="MONSTER UNDER"))
 
         if g["model_margin"] is None:
             no_model += 1
@@ -174,7 +174,7 @@ def print_contest(spreads, totals, week, payout_ml, kelly_frac, bank,
     meta = curve.meta
     payout_s = "even money" if payout_ml == 100 else str(payout_ml)
     be = 0.5 if payout_ml == 100 else 110 / 210
-    print(f"WEEK {week} CONTEST BOARD — spread picks + U-TAIL totals")
+    print(f"WEEK {week} CONTEST BOARD — spread picks + MONSTER UNDER totals")
     print(f"cover probs: margin curve n={meta.get('n')} (resid sd "
           f"{meta.get('resid_sd')}) at the point edge · payout {payout_s} "
           f"(break-even {be:.1%}; Bloody Duck confirmed 1:1 on 2026-08-29) · "
@@ -190,7 +190,7 @@ def print_contest(spreads, totals, week, payout_ml, kelly_frac, bank,
               f"{r['model_line'][:25]:>25} {r['pick'][:26]:>26} "
               f"{r['p']:>9.1%} {r['kelly_frac']:>6.1%}{stake}  {r['flags']}")
 
-    print(f"\n=== TOTALS (U-TAIL unders: {U_TAIL_P:.1%} on top-decile "
+    print(f"\n=== TOTALS (MONSTER UNDER unders: {MONSTER_UNDER_P:.1%} on top-decile "
           f"totals, pooled 2021-25 — base rate, not a model) ===")
     if totals:
         for r in totals:
@@ -201,7 +201,7 @@ def print_contest(spreads, totals, week, payout_ml, kelly_frac, bank,
     else:
         print("no games in the top total decile this week")
 
-    print(f"\n{len(spreads)} spread picks priced, {len(totals)} U-TAIL "
+    print(f"\n{len(spreads)} spread picks priced, {len(totals)} MONSTER UNDER "
           f"unders. skipped: {no_line} without a posted spread, {no_model} "
           f"without a model price (FCS/unrated opponent).\n"
           f"INT = integer line, push possible — treat cover probs within "

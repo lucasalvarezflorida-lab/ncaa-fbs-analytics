@@ -404,7 +404,7 @@ GAMES = [
         cfbd=("Baylor", "Auburn"),
         where="Atlanta · Mercedes-Benz Stadium",
         sub="Sat Sep 5 · 3:30 ET · neutral site · Golesh's Auburn debut · Lagway's Baylor debut",
-        machine="Auburn –5.5", market="–7 / –7", value="1.5 on Baylor · U-TAIL under 59.5",
+        machine="Auburn –5.5", market="–7 / –7", value="1.5 on Baylor · MONSTER UNDER under 59.5",
         wp=("AUB", 63, "BAY", 37),
         decides=[
             "Two rebooted programs on a neutral floor: Golesh's Auburn debut vs the biggest QB get in Baylor history",

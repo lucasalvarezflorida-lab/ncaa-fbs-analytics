@@ -252,7 +252,7 @@ def fetch_games(refresh: bool, fpi: dict[str, dict]) -> list[dict]:
             model_side=model_side))
 
     # Market-postmortem flags (market-postmortem/MARKET_POSTMORTEM.md):
-    # U-TAIL = total in the season's top decile (2021-25: unders 55.1% on 60+
+    # MONSTER UNDER = total in the season's top decile (2021-25: unders 55.1% on 60+
     # totals, the only spread/total bias to survive FDR). Percentile, not a
     # fixed 60 — the scoring era moves. ML guardrail = RED-alert dogs at +401
     # or longer on the road/neutral render ATS-only (longshot MLs bled -22.9%
@@ -272,7 +272,7 @@ def fetch_games(refresh: bool, fpi: dict[str, dict]) -> list[dict]:
                         and (g["neutral"] or dog == g["away"]))
         g["dog"], g["dog_ml"], g["ml_guard"] = dog, dog_ml, ml_guard
     if tail_thresh is not None:
-        print(f"U-TAIL: totals >= {tail_thresh:g} (top decile of {len(posted)} "
+        print(f"MONSTER UNDER: totals >= {tail_thresh:g} (top decile of {len(posted)} "
               f"posted; {sum(1 for g in games if g['ou_tail'])} games flagged)")
     return games
 
@@ -302,7 +302,7 @@ def derive_team_sched(games: list[dict], fpi_rank: dict[str, int]) -> dict[str, 
             ml = g["home_ml"] if is_home else g["away_ml"]
             ou_disp = ""
             if g["ou"] is not None:
-                ou_disp = (f"{float(g['ou']):g} ⚑U-TAIL"
+                ou_disp = (f"{float(g['ou']):g} ⚑MONSTER UNDER"
                            if g.get("ou_tail") else g["ou"])
             sched.setdefault(team, []).append(
                 [g["wk"], g["date"], opp, f"#{rk}" if rk else "n/a", ha,
@@ -547,7 +547,7 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
                    value="Opp FPI = opponent's 2025 final FPI rank. Lines: DraftKings/Bovada via CFBD as of refresh. "
                          "Edge = FPI-implied margin minus market margin for THIS team; "
                          "\U0001F534 model likes the dog outright, \U0001F7E1 6+ pt disagreement. "
-                         "⚑U-TAIL = total in the season's top decile (2021-25 post-mortem: unders 55%).")
+                         "⚑MONSTER UNDER = total in the season's top decile (2021-25 post-mortem: unders 55%).")
     note.font = Font(name="Arial", italic=True, size=9)
     for j, h in enumerate(["Wk", "Date", "Opponent", "Opp FPI", "H/A", "Spread",
                            "Open", "O/U", "ML", "Edge", "Result", "Venue"], 1):
@@ -1268,7 +1268,7 @@ def build_upset_board(wb, games: list[dict]):
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
     tail_thresh = next((g["ou_tail_thresh"] for g in games
                         if g.get("ou_tail_thresh") is not None), None)
-    ws["A3"] = ("Post-mortem rules (market-postmortem/MARKET_POSTMORTEM.md): ⚑U-TAIL = total in the season's "
+    ws["A3"] = ("Post-mortem rules (market-postmortem/MARKET_POSTMORTEM.md): ⚑MONSTER UNDER = total in the season's "
                 f"top decile{f' (>= {tail_thresh:g})' if tail_thresh else ''} — unders went 55.1% on 60+ totals "
                 "2021-25, the only spread/total bias to survive FDR. ⛔ATS-only = RED dog at +401 or longer on the "
                 "road/neutral — longshot moneylines bled -22.9% ROI 2021-25; take the points, not the ML. "
@@ -1309,7 +1309,7 @@ def build_upset_board(wb, games: list[dict]):
             outright = ""  # guardrail: the alert is ATS-only, no ML framing
         ou_disp = ""
         if g["ou"] is not None:
-            ou_disp = (f"{float(g['ou']):g} ⚑U-TAIL" if g.get("ou_tail")
+            ou_disp = (f"{float(g['ou']):g} ⚑MONSTER UNDER" if g.get("ou_tail")
                        else g["ou"])
         dog_ml_disp = ""
         if e["tier"] == "RED":
