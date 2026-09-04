@@ -5,3 +5,7 @@ week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
 1,2026-08-29,Sacramento State +9.5,EMU -9.5,90,0.759,0.525,L,-90,1685
 1,2026-08-29,EMU/SacSt OVER 53.5,O/U 53.5,25,,0.534,L,-25,1660
 1,2026-08-29,New Mexico State +31.5,FSU -31.5,30,0.583,0.498,W,30,1690
+2,2026-09-03,Massachusetts +28.5,Rutgers -28.5,60,0.665,0.475,W,60,1750
+2,2026-09-03,Akron +24.5,Wake Forest -24.5,20,0.545,0.502,W,20,1770
+2,2026-09-03,Colorado +6.5,Georgia Tech -6.5,45,0.602,0.502,W,45,1815
+2,2026-09-03,UAB +27.5,Illinois -27.5,35,0.579,0.502,W,35,1850
