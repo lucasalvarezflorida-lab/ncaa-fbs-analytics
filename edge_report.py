@@ -89,10 +89,19 @@ def _signed(x: float) -> str:
 
 
 def _load_inputs(refresh: bool):
-    fpi = {k: {"fpi": v} for k, v in load_fpi_2026().items()}
-    if not fpi:
+    """Machine = preseason snapshot updated with every completed 2026 game
+    (inseason_ratings, pre-registered lam=3/cap 28); the curve runs at the
+    in-season residual sd once games exist."""
+    from inseason_ratings import machine_ratings, sigma_for
+    pre = load_fpi_2026()
+    if not pre:
         sys.exit("no 2026 preseason FPI snapshot found — run refresh_all.py first")
-    return fetch_games(refresh, fpi), load_curve("model")
+    mr = machine_ratings(pre, refresh=refresh)
+    fpi = {k: {"fpi": v["cur"]} for k, v in mr.items()}
+    n_games = sum(v["gp"] for v in mr.values()) // 2
+    print(f"machine: preseason FPI + in-season update ({n_games} rated games, "
+          f"curve sd {sigma_for(n_games)})")
+    return fetch_games(refresh, fpi), load_curve("model", sd=sigma_for(n_games))
 
 
 def resolve_week(week: str, games: list[dict]) -> int:

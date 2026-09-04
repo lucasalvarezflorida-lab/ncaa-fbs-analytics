@@ -264,10 +264,15 @@ def write_fpi_sheet(book: Path, refresh: bool):
                 f"Generated {datetime.date.today():%Y-%m-%d}.")
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
 
+    from inseason_ratings import espn_live_fpi, machine_ratings
+    machine = machine_ratings(fpi26, refresh=False, write=False) if fpi26 else {}
+    live = espn_live_fpi(refresh=True) if fpi26 else {}
+
     headers = ["2025 Rank", "Team", "Conf", "ESPN FPI\n2025 Final",
                "ESPN FPI\n2026 Preseason", "Our Model\n(public inputs)",
                "Residual\n(ESPN − Model)", "Resid Rank", "Prior SP+", "Ret PPA",
-               "Talent", "Recruiting 4yr"]
+               "Talent", "Recruiting 4yr",
+               "Machine\n(in-season)", "Δ vs\npreseason", "ESPN FPI\n(live)"]
     for i, h in enumerate(headers, 1):
         c = ws.cell(row=4, column=i, value=h)
         c.font = WHITE_B
@@ -278,25 +283,32 @@ def write_fpi_sheet(book: Path, refresh: bool):
     POS = Font(name="Arial", color="006100")
     NEG = Font(name="Arial", color="9C0006")
     for r, row in enumerate(t.itertuples(index=False), start=5):
-        f26 = fpi26.get(normalize_name(row.team), "")
+        k = normalize_name(row.team)
+        f26 = fpi26.get(k, "")
+        m = machine.get(k, {})
         vals = [row.fpi_rank, row.team, row.conference, row.fpi, f26,
                 row.predicted, row.residual, row.resid_rank, row.prior_sp_raw,
-                row.returning_prod_raw, row.talent_raw, row.recruiting_4yr_raw]
+                row.returning_prod_raw, row.talent_raw, row.recruiting_4yr_raw,
+                m.get("cur", ""), m.get("delta", ""), live.get(k, "")]
         for ci, v in enumerate(vals, 1):
             c = ws.cell(row=r, column=ci, value=round(v, 2) if isinstance(v, float) else v)
             c.font = ARIAL
-            if ci in (4, 5, 6, 7, 9, 10, 11, 12):
+            if ci in (4, 5, 6, 7, 9, 10, 11, 12, 13, 15):
                 c.number_format = "0.0"
+            if ci == 14:
+                c.number_format = "+0.0;-0.0;0.0"
         ws.cell(row=r, column=7).font = POS if row.residual >= 0 else NEG
+        if isinstance(m.get("delta"), float):
+            ws.cell(row=r, column=14).font = POS if m["delta"] >= 0 else NEG
     if not fpi26:
         ws["E5"].value = None
         ws.cell(row=5, column=5, value="— pending ESPN release —").font = Font(
             name="Arial", italic=True, size=9, color="5C6B7E")
 
-    for i, w in enumerate([9, 22, 18, 11, 13, 13, 12, 10, 10, 9, 9, 13], 1):
+    for i, w in enumerate([9, 22, 18, 11, 13, 13, 12, 10, 10, 9, 9, 13, 12, 10, 11], 1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "A5"
-    ws.auto_filter.ref = f"A4:L{4 + len(t)}"
+    ws.auto_filter.ref = f"A4:O{4 + len(t)}"
 
     stats = [("Model", "std coef", "p-value")]
     for name in FEATURE_COLS:
@@ -314,7 +326,7 @@ def write_fpi_sheet(book: Path, refresh: bool):
         ("Adj R-sq + portal QW", round(model_q.rsquared_adj, 4), ""),
     ]
     for ri, tup in enumerate(stats, start=4):
-        for ci, v in enumerate(tup, start=14):
+        for ci, v in enumerate(tup, start=17):  # R..T, clear of the M..O rating columns
             c = ws.cell(row=ri, column=ci, value=v)
             c.font = WHITE_B if ri == 4 else ARIAL
             if ri == 4:

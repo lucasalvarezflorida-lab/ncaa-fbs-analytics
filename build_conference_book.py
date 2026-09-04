@@ -369,6 +369,30 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
             e.setdefault("resid_rank", "n/a")
         print(f"prior: ESPN 2026 preseason FPI ({len(fpi26)} teams, snapshot)")
 
+        # our own in-season update (inseason_ratings): the machine rating
+        # every consumer reads is now the ridge posterior; the preseason
+        # value, delta, games used and ESPN's live FPI ride along as the
+        # reference columns (AQ..AV on _Teams)
+        from inseason_ratings import espn_live_fpi, machine_ratings, sigma_for
+        mr = machine_ratings(fpi26, refresh=refresh)
+        live = espn_live_fpi(refresh=True)  # one cheap call; falls back to cache
+        rank_cur = {k: i + 1 for i, (k, _) in enumerate(
+            sorted(mr.items(), key=lambda kv: -kv[1]["cur"]))}
+        rank_live = {k: i + 1 for i, (k, _) in enumerate(
+            sorted(live.items(), key=lambda kv: -kv[1]))}
+        for k, v in mr.items():
+            e = fpi[k]
+            e["pre"], e["pre_rank"] = v["pre"], e["rank"]
+            e["fpi"], e["rank"] = v["cur"], rank_cur[k]
+            e["delta"], e["gp"] = v["delta"], v["gp"]
+        for k, v in live.items():
+            e = fpi.setdefault(k, {})
+            e["live"], e["live_rank"] = round(v, 1), rank_live[k]
+        n_games = sum(v["gp"] for v in mr.values()) // 2
+        print(f"machine: in-season update over {n_games} rated games "
+              f"(lam 3, cap 28, curve sd {sigma_for(n_games)}); ESPN live FPI "
+              f"{len(live)} teams as reference")
+
     games = fetch_games(refresh, fpi)
     sched = derive_team_sched(games, {k: v["rank"] for k, v in fpi.items()})
     sched_by_norm = {norm(t): g for t, g in sched.items()}
@@ -422,6 +446,10 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
                 g_row, scheme_label,
                 deep.get("intro", ""), deep.get("roster", ""),
                 deep.get("identity", ""), deep.get("prediction", "")]
+        # AQ..AV: preseason FPI + rank, machine delta, games used, ESPN live + rank
+        row += [fp.get("pre", "n/a"), fp.get("pre_rank", "n/a"),
+                fp.get("delta", "n/a"), fp.get("gp", "n/a"),
+                fp.get("live", "n/a"), fp.get("live_rank", "n/a")]
         ws_t.append(row)
         for pos, depth4 in grid:
             ws_g.append([team, pos] + depth4)
@@ -515,7 +543,7 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
 
     info = [
         ("Conference", _txt("B")),
-        ("ESPN FPI (2026 preseason)", _num_pair("D", "C")),
+        ("Machine rating (in-season)", _num_pair("D", "C")),
         ("Residual (2025 decomposition)", _num_pair("F", "G")),
         ("Composite (0-10)", _num_pair("H", "I")),
         ("SP+ (rescaled 0-10)", _num_pair("J", "K")),
@@ -523,6 +551,18 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
     for i, (label, f) in enumerate(info):
         ws.cell(row=R_INFO + i, column=1, value=label).font = ARIAL_B
         c = ws.cell(row=R_INFO + i, column=2, value=f)
+        c.font = ARIAL
+    # second block: where the machine started, how far it has moved, and
+    # ESPN's own live number ("the man uses ESPN FPI") — _Teams AQ..AV
+    info2 = [
+        ("ESPN FPI (2026 preseason)", _num_pair("AQ", "AR")),
+        ("Machine Δ vs preseason", _txt("AS")),
+        ("Games used by the machine", _txt("AT")),
+        ("ESPN FPI (live)", _num_pair("AU", "AV")),
+    ]
+    for i, (label, f) in enumerate(info2):
+        ws.cell(row=R_INFO + i, column=5, value=label).font = ARIAL_B
+        c = ws.cell(row=R_INFO + i, column=6, value=f)
         c.font = ARIAL
 
     # unit ratings
@@ -1633,11 +1673,15 @@ def _margin_model():
     tails included). Falls back to the old Normal(0, 13.5) if the curve
     JSON hasn't been built, so a fresh checkout still refreshes."""
     try:
+        from inseason_ratings import OUT_JSON, sigma_for
         from margin_prob import load_curve
-        curve = load_curve("model")
+        gp = json.load(open(OUT_JSON, encoding="utf-8"))["games_used"] if OUT_JSON.exists() else 0
+        curve = load_curve("model", sd=sigma_for(gp))
         desc = (f"empirical margin curve (margin_prob_curve.json, "
                 f"n={curve.meta.get('n')} games 2021-25, "
-                f"resid sd {curve.meta.get('resid_sd')})")
+                f"resid sd {curve.meta.get('resid_sd')}"
+                + (f", rescaled to {curve.meta['rescaled_to']} for the "
+                   f"in-season update over {gp} games" if gp else "") + ")")
         return curve.win_prob, curve.residuals, desc
     except FileNotFoundError:
         from statistics import NormalDist

@@ -1692,5 +1692,104 @@
 "side": "Army",
 "spread": 2.5,
 "bet": "Army +2.5 ATS"
+},
+"401856674:FPI_FADE": {
+"first_seen": "2026-09-04",
+"rule": "FPI_FADE",
+"gid": 401856674,
+"wk": 2,
+"home": "Kentucky",
+"away": "Alabama",
+"side": "Kentucky",
+"spread": 10.5,
+"bet": "Kentucky +10.5 ATS vs FPI-elite"
+},
+"401858217:FPI_FADE": {
+"first_seen": "2026-09-04",
+"rule": "FPI_FADE",
+"gid": 401858217,
+"wk": 2,
+"home": "Illinois",
+"away": "Duke",
+"side": "Duke",
+"spread": -8.5,
+"bet": "Duke +8.5 ATS vs FPI-elite"
+},
+"401860884:G5_DOG": {
+"first_seen": "2026-09-04",
+"rule": "G5_DOG",
+"gid": 401860884,
+"wk": 2,
+"home": "Texas State",
+"away": "UTSA",
+"side": "UTSA",
+"spread": -1.5,
+"bet": "UTSA +1.5 ATS"
+},
+"401860884:LUCAS_CALL": {
+"first_seen": "2026-09-04",
+"rule": "LUCAS_CALL",
+"gid": 401860884,
+"wk": 2,
+"home": "Texas State",
+"away": "UTSA",
+"side": "UTSA",
+"spread": -1.5,
+"bet": "UTSA +1.5 ATS (Lucas call)"
+},
+"401860881:G5_DOG": {
+"first_seen": "2026-09-04",
+"rule": "G5_DOG",
+"gid": 401860881,
+"wk": 2,
+"home": "Boise State",
+"away": "Memphis",
+"side": "Memphis",
+"spread": -6.5,
+"bet": "Memphis +6.5 ATS"
+},
+"401860881:LUCAS_CALL": {
+"first_seen": "2026-09-04",
+"rule": "LUCAS_CALL",
+"gid": 401860881,
+"wk": 2,
+"home": "Boise State",
+"away": "Memphis",
+"side": "Memphis",
+"spread": -6.5,
+"bet": "Memphis +6.5 ATS (Lucas call)"
+},
+"401856681:FPI_FADE": {
+"first_seen": "2026-09-04",
+"rule": "FPI_FADE",
+"gid": 401856681,
+"wk": 2,
+"home": "Georgia Tech",
+"away": "Tennessee",
+"side": "Georgia Tech",
+"spread": 8.5,
+"bet": "Georgia Tech +8.5 ATS vs FPI-elite"
+},
+"401856681:LUCAS_CALL": {
+"first_seen": "2026-09-04",
+"rule": "LUCAS_CALL",
+"gid": 401856681,
+"wk": 2,
+"home": "Georgia Tech",
+"away": "Tennessee",
+"side": "Georgia Tech",
+"spread": 8.5,
+"bet": "Georgia Tech +8.5 ATS (Lucas call)"
+},
+"401858443:LUCAS_CALL": {
+"first_seen": "2026-09-04",
+"rule": "LUCAS_CALL",
+"gid": 401858443,
+"wk": 2,
+"home": "UCLA",
+"away": "San Diego State",
+"side": "UCLA",
+"spread": -9.5,
+"bet": "UCLA -9.5 ATS (Lucas call)"
 }
 }

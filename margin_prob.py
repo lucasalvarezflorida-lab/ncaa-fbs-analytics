@@ -50,6 +50,15 @@ class MarginCurve:
                  / self.bandwidth).mean(axis=1)
         return float(p[0]) if np.ndim(margin) == 0 else p
 
+    def rescaled(self, target_sd: float) -> "MarginCurve":
+        """Same curve shape, residual spread scaled to target_sd — used when
+        the ratings feeding it are tighter than the ones it was fit on
+        (in-season updated ratings: sd ~15.9 vs the frozen prior's 17.9)."""
+        k = float(target_sd) / float(self.residuals.std())
+        meta = dict(self.meta)
+        meta.update(rescaled_to=round(float(target_sd), 2), scale=round(k, 4))
+        return MarginCurve(self.residuals * k, self.bandwidth * k, meta)
+
     def to_dict(self) -> dict:
         return dict(residuals=[round(float(x), 2) for x in self.residuals],
                     bandwidth=self.bandwidth, meta=self.meta)
@@ -64,9 +73,13 @@ def save_curves(curves: dict[str, MarginCurve], path: Path = CURVE_JSON) -> None
     Path(path).write_text(json.dumps(payload), encoding="utf-8")
 
 
-def load_curve(name: str = "model", path: Path = CURVE_JSON) -> MarginCurve:
+def load_curve(name: str = "model", path: Path = CURVE_JSON,
+               sd: float | None = None) -> MarginCurve:
+    """sd: rescale the curve's residual spread (see MarginCurve.rescaled);
+    None keeps the fitted spread."""
     p = Path(path)
     if not p.exists():
         raise FileNotFoundError(
             f"{p} not found — run fit_margin_curve.py once to build it")
-    return MarginCurve.from_dict(json.loads(p.read_text(encoding="utf-8"))[name])
+    curve = MarginCurve.from_dict(json.loads(p.read_text(encoding="utf-8"))[name])
+    return curve.rescaled(sd) if sd else curve
