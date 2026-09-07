@@ -5,7 +5,7 @@ Pipeline:
   2. Rebuild FBS_Rosters_2026.xlsx (kept as the raw-roster archive workbook)
   3. Import each team's roster into its tab in NCAA_FBS_Teams (replacing the
      previous roster section - idempotent)
-  4. Re-fetch FPI decomposition inputs and rewrite the "FPI Decomposition" sheet
+  4. Re-fetch FPI decomposition inputs and rewrite the "Our Rankings" sheet
 
 Usage:
   python refresh_all.py                 # full refresh
@@ -205,7 +205,7 @@ def import_rosters(book: Path) -> tuple[int, list, list]:
             continue
         write_team_roster(wb[tab], players, stamp)
         done += 1
-    skip = {"Overview", "FPI Decomposition"}
+    skip = {"Overview", "Our Rankings", "FPI Decomposition"}
     mapped_tabs = {tab_for_team(wb.sheetnames, t) for t in teams}
     empty_tabs = [s for s in wb.sheetnames if s not in skip and s not in mapped_tabs]
     wb.save(book)
@@ -232,7 +232,7 @@ def load_fpi_2026() -> dict:
 
 
 def write_fpi_sheet(book: Path, refresh: bool):
-    """'FPI Decomposition' sheet = OUR rankings: the in-season machine
+    """'Our Rankings' sheet (formerly 'FPI Decomposition'): the in-season machine
     (ESPN preseason FPI updated with every completed game) as the spine,
     ESPN's live FPI + AP / CFP polls as reference columns, and last year's
     decomposition inputs as the 'why' block on the right."""
@@ -274,9 +274,10 @@ def write_fpi_sheet(book: Path, refresh: bool):
     n_games = sum(v["gp"] for v in machine.values()) // 2 if machine else 0
 
     wb = load_book(book)
-    if "FPI Decomposition" in wb.sheetnames:
-        del wb["FPI Decomposition"]
-    ws = wb.create_sheet("FPI Decomposition", 1)
+    for old in ("Our Rankings", "FPI Decomposition"):  # idempotent across the rename
+        if old in wb.sheetnames:
+            del wb[old]
+    ws = wb.create_sheet("Our Rankings", 1)
 
     ws["A1"] = ("Our Rankings — 2026 in-season machine (ESPN + AP/CFP as reference, "
                 "2025 decomposition as the why)")

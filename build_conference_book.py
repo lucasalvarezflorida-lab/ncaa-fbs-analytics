@@ -1995,15 +1995,15 @@ def restructure(book: Path, refresh: bool = False, drop_team_tabs: bool = True):
         build_conference_tab(wb, conf, teams, counts.get(conf, 130), stamp,
                              prior.get(conf))
 
-    # order: Overview, FPI Decomposition, conferences, hidden data sheets
+    # order: Overview, Our Rankings, conferences, hidden data sheets
     if drop_team_tabs:
-        keep = {"Overview", "FPI Decomposition", "Upset Board", "Watch List",
+        keep = {"Overview", "Our Rankings", "Upset Board", "Watch List",
                 "Season Sim", "_Teams", "_Rosters", "_Sched", "_DepthGrid"}
         keep |= set(CONF_ORDER)
         for name in list(wb.sheetnames):
             if name not in keep:
                 del wb[name]
-    order = ["Overview", "FPI Decomposition", "Upset Board", "Watch List",
+    order = ["Overview", "Our Rankings", "Upset Board", "Watch List",
              "Season Sim"] + \
             [c for c in CONF_ORDER if c in wb.sheetnames] + \
             ["_Teams", "_Rosters", "_Sched", "_DepthGrid"]
