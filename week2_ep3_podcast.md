@@ -155,6 +155,10 @@ ND "watch, don't touch" — ND covered by 7.5, but we said don't touch.
 
 ## Segment 2 — The machine after Week 1 (Our Rankings tab)
 
+*Slide 1 of the deck is now "Our Top 25" — built from ratings_current_2026.json
+at deck time (rating, Δ vs preseason, AP column, and a footer with the biggest
+machine-vs-voters splits). It refreshes itself every rebuild.*
+
 50 rated games in. **Top 10**: 1 Notre Dame 27.3 · 2 Texas 25.8 · 3 Georgia
 24.8 · 4 Ohio State 24.6 · 5 LSU 23.8 · 6 Miami 23.2 · 7 Indiana 22.3 ·
 8 Oregon 21.9 · 9 Alabama 21.1 · 10 Texas Tech 20.0.

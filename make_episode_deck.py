@@ -865,6 +865,111 @@ print("card_data:", "loaded, lines as of " + LINES_AS_OF if CARD else
 print(f"AP poll: week {AP_WEEK} ({len(AP_TOP25)} ranked) · receipts graded "
       f"{RECAP_SUM['n']}/{len(RECAP_ROWS)}")
 
+# ---------------- slide 1: the machine's top 25 ----------------
+# Data: ratings_current_2026.json (our in-season rating, sorted) joined to
+# rosters/data/teams_fbs_2026.json for display names + ESPN logo URLs (logos
+# are fetched into decks/logos on first use). AP column = the cached poll.
+import json as _json
+import re as _re
+import urllib.request as _urlreq
+
+_TEAMS_FBS = {}
+try:
+    for _t in _json.load(open(os.path.join(HERE, "rosters", "data",
+                                           "teams_fbs_2026.json"),
+                              encoding="utf-8")):
+        _TEAMS_FBS[normalize_name(_t["school"])] = _t
+except FileNotFoundError:
+    pass
+
+
+def logo_for(norm):
+    """decks/logos/<slug>.png for a normalized team name; fetched from the
+    cached ESPN URL on first use. None if unavailable."""
+    t = _TEAMS_FBS.get(norm)
+    if not t or not t.get("logos"):
+        return None
+    path = os.path.join(LOGO_DIR, _re.sub(r"[^a-z0-9]", "", norm) + ".png")
+    if not os.path.exists(path):
+        url = t["logos"][0].replace("http://", "https://")
+        try:
+            req = _urlreq.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with open(path, "wb") as f:
+                f.write(_urlreq.urlopen(req, timeout=20).read())
+        except Exception as e:  # keep building; the row just has no logo
+            print("logo fetch failed:", norm, e)
+            return None
+    return path
+
+
+def school(norm):
+    return _TEAMS_FBS.get(norm, {}).get("school", norm.title())
+
+
+_r = _json.load(open(os.path.join(HERE, "ratings_current_2026.json"),
+                     encoding="utf-8"))
+_top = _r["teams"][:25]
+_top_set = {t["team"] for t in _top}
+
+s = blank(NAVY)
+PALE = RGBColor(0xCA, 0xDC, 0xFC)
+UP, DOWN = RGBColor(0x5C, 0xD6, 0x8A), RGBColor(0xFF, 0x7A, 0x7A)
+txt(s, 0.9, 0.42, 11.5, 0.4,
+    f"EPISODE {EPISODE} · WEEK {WEEK} · THE MACHINE'S TOP 25", 14, ORANGE,
+    bold=True)
+txt(s, 0.9, 0.76, 11.5, 0.8, "Our Top 25", 40, WHITE, bold=True)
+txt(s, 0.9, 1.5, 11.5, 0.3,
+    f"our in-season rating after {_r.get('games_used')} rated games · "
+    "Δ = move vs ESPN's preseason FPI (0.0 = no rated game yet) · "
+    f"AP = week {AP_WEEK} poll · NR = not ranked", 11, PALE, italic=True)
+TOP, RH, CW = 1.98, 0.36, 5.5
+for x0 in (0.9, 6.95):
+    txt(s, x0 + 3.3, TOP - 0.24, 0.75, 0.22, "RATING", 8, PALE,
+        bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, x0 + 4.05, TOP - 0.24, 0.75, 0.22, "Δ PRE", 8, PALE,
+        bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, x0 + 4.8, TOP - 0.24, 0.65, 0.22, "VOTERS", 8, PALE,
+        bold=True, align=PP_ALIGN.RIGHT)
+for col, (x0, rows) in enumerate(((0.9, _top[:13]), (6.95, _top[13:]))):
+    for i, t in enumerate(rows):
+        rank, y = i + 1 + col * 13, TOP + i * RH
+        if i % 2 == 0:
+            shape(s, MSO_SHAPE.RECTANGLE, x0, y, CW, RH, NAVY2)
+        txt(s, x0 + 0.02, y + 0.035, 0.45, 0.3, str(rank), 13, ORANGE,
+            bold=True, align=PP_ALIGN.RIGHT)
+        lp = logo_for(t["team"])
+        if lp:
+            shape(s, MSO_SHAPE.OVAL, x0 + 0.6, y + 0.04, 0.28, 0.28, WHITE)
+            s.shapes.add_picture(lp, Inches(x0 + 0.63), Inches(y + 0.07),
+                                 Inches(0.22), Inches(0.22))
+        txt(s, x0 + 1.0, y + 0.035, 2.3, 0.3, school(t["team"]), 12.5, WHITE,
+            bold=True)
+        txt(s, x0 + 3.3, y + 0.035, 0.75, 0.3, f"{t['cur']:.1f}", 12.5,
+            WHITE, align=PP_ALIGN.RIGHT)
+        d = t["delta"]
+        txt(s, x0 + 4.05, y + 0.05, 0.75, 0.3, f"{d:+.1f}" if d else "0.0",
+            11, UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d),
+            align=PP_ALIGN.RIGHT)
+        ap = AP_TOP25.get(t["team"])
+        txt(s, x0 + 4.8, y + 0.05, 0.65, 0.3, f"AP {ap}" if ap else "NR", 10,
+            PALE, align=PP_ALIGN.RIGHT)
+# man-vs-machine footer: biggest rank disagreements, computed from the data
+_gaps = sorted(((abs(AP_TOP25[t["team"]] - i), -i, i, AP_TOP25[t["team"]],
+                 school(t["team"])) for i, t in enumerate(_top, 1)
+                if t["team"] in AP_TOP25), reverse=True)  # ties -> higher-ranked team first
+_ours_only = [school(t["team"]) for t in _top if t["team"] not in AP_TOP25]
+_theirs_only = sorted(((v, school(k)) for k, v in AP_TOP25.items()
+                       if k not in _top_set))
+_line1 = "Biggest splits with the voters: " + " · ".join(
+    f"{n} (machine #{i}, AP #{a})" for _, _, i, a, n in _gaps[:4])
+_line2 = ("In our 25, not theirs: " + ", ".join(_ours_only[:4]) +
+          "   |   In theirs, not ours: " +
+          ", ".join(f"{n} (AP {v})" for v, n in _theirs_only[:4]))
+_fy = TOP + 13 * RH + 0.08
+shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.55, 0.62, NAVY2)
+txt(s, 1.1, _fy + 0.06, 11.2, 0.28, _line1, 9.5, WHITE, bold=True)
+txt(s, 1.1, _fy + 0.32, 11.2, 0.28, _line2, 9.5, PALE)
+
 # ---------------- title slide ----------------
 s = blank(NAVY)
 txt(s, 0.9, 0.85, 11.5, 0.45, f"EPISODE {EPISODE} · WEEK {WEEK} · {EP_DATE}", 14, ORANGE,
