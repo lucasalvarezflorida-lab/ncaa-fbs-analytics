@@ -8,6 +8,7 @@ upload -> Import slides -> delete-old-slides recipe.
 Usage:
     python push_deck.py                     # push the default episode pptx
     python push_deck.py --pptx decks\\X.pptx  [--file-id <driveFileId>]
+    python push_deck.py --pptx decks\\X.pptx --new "Ep3 - Week 2"   # NEW file
 
 One-time setup (needs Lucas, ~10 min):
     1. console.cloud.google.com -> create project (e.g. "ncaa-deck-push").
@@ -42,6 +43,9 @@ SCOPES = ["https://www.googleapis.com/auth/drive"]
 
 # The stable Ep deck Slides file (shared with Corey as commenter).
 STABLE_FILE_ID = "14G1HYYFIyKVG3JDPdtflzUU-3FGYulhbPsr7iThMJNg"
+# Per-episode Slides files (Ep2 shared with Corey as commenter; Ep3 not yet shared):
+EP2_FILE_ID = "1h8IJ42vjSwQJgWzJnLF7dPpiIsclP25Qq5sakYY5r1o"
+EP3_FILE_ID = "1TxsZ9dG3JQ5yuHaPC-T10UZPq_WbH5rTXKU84GXzvUI"
 DEFAULT_PPTX = os.path.join(HERE, "decks", "2026_Week0_Episode1.pptx")
 
 PPTX_MIME = ("application/vnd.openxmlformats-officedocument"
@@ -83,6 +87,34 @@ def get_credentials():
     return creds
 
 
+def create(pptx_path, name, creds):
+    """Create a NEW Google Slides file (pptx -> Slides conversion) in My
+    Drive; returns the file metadata (id, webViewLink). Not shared."""
+    with open(pptx_path, "rb") as f:
+        pptx = f.read()
+    meta = json.dumps({"name": name, "mimeType": SLIDES_MIME}).encode("utf-8")
+    boundary = b"deckpush_boundary_7f3a91"
+    body = (
+        b"--" + boundary + b"\r\n"
+        b"Content-Type: application/json; charset=UTF-8\r\n\r\n"
+        + meta + b"\r\n"
+        b"--" + boundary + b"\r\n"
+        b"Content-Type: " + PPTX_MIME.encode() + b"\r\n\r\n"
+        + pptx + b"\r\n"
+        b"--" + boundary + b"--"
+    )
+    url = ("https://www.googleapis.com/upload/drive/v3/files"
+           "?uploadType=multipart&fields=id,name,modifiedTime,webViewLink")
+    req = urllib.request.Request(url, data=body, method="POST", headers={
+        "Authorization": f"Bearer {creds.token}",
+        "Content-Type": f"multipart/related; boundary="
+                        f"{boundary.decode()}",
+    })
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    with urllib.request.urlopen(req, context=ctx) as resp:
+        return json.load(resp)
+
+
 def push(pptx_path, file_id, creds):
     with open(pptx_path, "rb") as f:
         pptx = f.read()
@@ -113,18 +145,27 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--pptx", default=DEFAULT_PPTX)
     ap.add_argument("--file-id", default=STABLE_FILE_ID)
+    ap.add_argument("--new", metavar="NAME",
+                    help="create a NEW Slides file with this name instead of "
+                         "replacing --file-id (not shared with anyone)")
     args = ap.parse_args()
     if not os.path.exists(args.pptx):
         sys.exit(f"pptx not found: {args.pptx}")
     creds = get_credentials()
     size_kb = os.path.getsize(args.pptx) / 1024
-    print(f"pushing {os.path.basename(args.pptx)} ({size_kb:.0f} KB) "
-          f"-> Slides file {args.file_id} (contents replaced in place)")
     try:
-        info = push(args.pptx, args.file_id, creds)
+        if args.new:
+            print(f"creating NEW Slides file '{args.new}' from "
+                  f"{os.path.basename(args.pptx)} ({size_kb:.0f} KB)")
+            info = create(args.pptx, args.new, creds)
+        else:
+            print(f"pushing {os.path.basename(args.pptx)} ({size_kb:.0f} KB) "
+                  f"-> Slides file {args.file_id} (contents replaced in place)")
+            info = push(args.pptx, args.file_id, creds)
     except urllib.error.HTTPError as e:
         sys.exit(f"Drive API error {e.code}: {e.read().decode()[:500]}")
-    print(f"done: '{info.get('name')}' updated {info.get('modifiedTime')}")
+    print(f"done: '{info.get('name')}' (id {info.get('id')}) "
+          f"{info.get('modifiedTime')}")
     print(info.get("webViewLink", ""))
 
 

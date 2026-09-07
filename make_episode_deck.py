@@ -1,15 +1,18 @@
-"""Episode 2 Week 1 deck — recap edition.
-Slide 2 is the Week 0 receipts board (frozen v12 predictions graded vs
-finals and the last pre-kick ledger pull). Per-game flow unchanged from
-v12: what decides it -> keys per team -> score prediction last; flags and
-lean lines retired, line movement promoted. Ep1's GAMES block is archived
-below as _GAMES_EP1 (the frozen predictions live in git + the ledger).
+"""Episode 3 Week 2 deck — the frozen Ep2 template with Week 2 data.
+Slide 2 is the Week 1 receipts board (frozen Ep2 predictions graded vs
+finals and the last pre-kick ledger pull; finals are looked up from the
+CFBD games cache so a pending game fills itself in after the refresh).
+Per-game flow unchanged: why it matters -> one slide per team -> closing
+card with score predictions + superdogs. Ep1/Ep2 GAMES blocks are archived
+below as _GAMES_EP1/_GAMES_EP2 (frozen predictions live in git + ledger).
+Rule (Lucas 9/7): slides stay lean; all depth lives in week{N}_ep{M}_podcast.md.
 Motif: real school logos (ESPN 500px PNGs in decks/logos/, URLs cached in
 rosters/data/teams_fbs_2026.json) on white pucks over navy. Navy score-bug
 panel per game with the model/market numbers and a win-probability split
 bar. Dark title + dark 'The Card' closer around light content slides."""
 
 import os
+import sys
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -25,6 +28,12 @@ WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 INK = RGBColor(0x16, 0x27, 0x3D)
 MUTE = RGBColor(0x5C, 0x6B, 0x7E)
 LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
+
+EPISODE, WEEK = 3, 2
+EP_DATE = "SEP 12, 2026"
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
+from name_mapping import normalize_name  # noqa: E402
 
 prs = Presentation()
 prs.slide_width = Inches(13.333)
@@ -137,6 +146,16 @@ TEAMS = {
     "ND": dict(code="ND", color=(0x0C, 0x23, 0x40), logo="notredame.png"),
     "SMU": dict(code="SMU", color=(0x00, 0x33, 0xA0), logo="smu.png"),
     "FSU": dict(code="FSU", color=(0x78, 0x2F, 0x40), logo="fsu.png"),
+    "OSU": dict(code="OSU", color=(0xBB, 0x00, 0x00), logo="ohiostate.png"),
+    "TEX": dict(code="TEX", color=(0xBF, 0x57, 0x00), logo="texas.png"),
+    "OU": dict(code="OU", color=(0x84, 0x16, 0x17), logo="oklahoma.png"),
+    "MICH": dict(code="MICH", color=(0x00, 0x27, 0x4C), logo="michigan.png"),
+    "ASU": dict(code="ASU", color=(0x8C, 0x1D, 0x40), logo="arizonastate.png"),
+    "TAMU": dict(code="TAMU", color=(0x50, 0x00, 0x00), logo="texasam.png"),
+    "ARIZ": dict(code="ARIZ", color=(0x0C, 0x23, 0x4B), logo="arizona.png"),
+    "BYU": dict(code="BYU", color=(0x00, 0x22, 0xE0), logo="byu.png"),
+    "BAMA": dict(code="BAMA", color=(0x9E, 0x16, 0x32), logo="alabama.png"),
+    "UK": dict(code="UK", color=(0x00, 0x33, 0xA0), logo="kentucky.png"),
 }
 
 NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
@@ -146,14 +165,16 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
              "Baylor": "BAY", "Auburn": "AUB", "Clemson": "CLEM",
              "LSU": "LSU", "Louisville": "LOU", "Ole Miss": "MISS",
              "Wisconsin": "WIS", "Notre Dame": "ND", "SMU": "SMU",
-             "Florida State": "FSU"}
+             "Florida State": "FSU", "Ohio State": "OSU", "Texas": "TEX",
+             "Oklahoma": "OU", "Michigan": "MICH", "Arizona State": "ASU",
+             "Texas A&M": "TAMU", "Arizona": "ARIZ", "BYU": "BYU",
+             "Alabama": "BAMA", "Kentucky": "UK"}
 
 # ---- card_data contract (review item A): market + model numbers come from
 # edge_report.py --publish, never from hand-typed literals. Narrative fields
 # (decides / honesty / keys) stay authored here; lean + players are kept as
 # data but no longer rendered.
-CARD_DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                         "card_data_week1.json")
+CARD_DATA = os.path.join(HERE, f"card_data_week{WEEK}.json")
 
 
 def load_card_data():
@@ -174,12 +195,12 @@ def _fmt_ts(ts):
     if not ts:
         return "?"
     t = dt.datetime.fromisoformat(ts.replace("Z", "+00:00"))
-    t = t.astimezone(dt.timezone(dt.timedelta(hours=-4)))  # ET in August
+    t = t.astimezone(dt.timezone(dt.timedelta(hours=-4)))  # EDT
     return f"{t:%b %d}".replace(" 0", " ")
 
 
 CARD, LINES_TS = load_card_data()
-LINES_AS_OF = _fmt_ts(LINES_TS) if LINES_TS else "Aug 23"
+LINES_AS_OF = _fmt_ts(LINES_TS) if LINES_TS else "?"
 CODE2NAME = {v: k for k, v in NAME2CODE.items()}
 
 
@@ -204,9 +225,7 @@ def apply_card(g):
     if not c:
         return "", []
     ha, hb = NAME2CODE[c["home"]], NAME2CODE[c["away"]]
-    disp = {"STAN": "Stanford", "BAY": "Baylor", "AUB": "Auburn",
-            "CLEM": "Clemson", "LOU": "Louisville", "MISS": "Ole Miss",
-            "WIS": "Wisconsin"}
+    disp = CODE2NAME
     m = c["model_margin"]
     ph_raw = c["model_p_home"]
     # 1) the machine's line the way a book posts it (half points)
@@ -398,7 +417,7 @@ _GAMES_EP1 = [  # Week 0 archive — the frozen Ep1 predictions (unrendered)
     ),
 ]
 
-GAMES = [
+_GAMES_EP2 = [  # Week 1 archive — the frozen Ep2 predictions (unrendered)
     dict(
         a="BAY", b="AUB", vs="vs", title="Baylor vs Auburn",
         cfbd=("Baylor", "Auburn"),
@@ -546,42 +565,257 @@ GAMES = [
     ),
 ]
 
-# ---- Week 0 receipts (recap slide): frozen v12 predictions vs finals vs the
-# last pre-kick ledger pull (Sat Aug 29, 10:16 ET). "off by" = distance of
-# each side's line from the actual margin; mark M/K = machine/market closer.
-RECAP = [
-    ("UNC", "TCU", "North Carolina vs TCU",
-     "we called TCU 25–23 · FINAL UNC 15–10",
-     "our line TCU –1.5 · closing TCU –7.5",
-     "machine off by 6.5 · market off by 12.5 — machine closer", "M"),
-    ("NCSU", "UVA", "NC State at Virginia",
-     "we called UVA 30–23 · FINAL UVA 34–8",
-     "our line UVA –6.5 · closing UVA –4",
-     "machine off by 19.5 · market off by 22 — machine closer", "M"),
-    ("JSU", "NDSU", "Jacksonville State at NDSU",
-     "we called NDSU 25–22 · FINAL NDSU 33–7",
-     "our line NDSU –2.5 · closing NDSU –6.5",
-     "machine off by 23.5 · market off by 19.5 — market closer", "K"),
-    ("HAW", "STAN", "Hawai'i at Stanford",
-     "we called Stanford 26–24 · FINAL Stanford 37–27",
-     "our line Stanford –1.5 · closing Stanford –4",
-     "machine off by 8.5 · market off by 6 — market closer", "K"),
-    ("MEM", "UNLV", "Memphis at UNLV",
-     "we called UNLV 32–26 · FINAL Memphis 27–21",
-     "our line UNLV –6 · closing UNLV –4",
-     "machine off by 12 · market off by 10 — market closer", "K"),
+GAMES = [
+    dict(
+        a="OSU", b="TEX", vs="at", title="Ohio State at Texas",
+        cfbd=("Ohio State", "Texas"),
+        where="Austin · DKR–Texas Memorial Stadium",
+        sub="Sat Sep 12 · 7:30 ET · No. 1 at No. 5 · the 2025 opener rematch (OSU 14–7) · Arch's last tour vs Sayin-to-Smith",
+        machine="Texas –3.5", market="–1.5 / –2", value="machine 2 points past the market — mostly bookkeeping, see honesty box",
+        wp=("TEX", 60, "OSU", 40),
+        decides=[
+            "The rematch of the year: Ohio State won last year's opener 14–7 in Columbus and the 2024 CFP semifinal — Texas gets it at home, at night, with Arch Manning in what is almost certainly his last season",
+            "Two title-or-bust rosters and one coordinator gamble each: Arthur Smith installing an NFL run game around Sayin–Smith, Will Muschamp replacing the coordinator whose defense outranked Sark's offense two years running",
+            "Continuity edge is Texas: 72% of its offensive production back plus the sport's most talked-about portal class (Coleman, Smothers, Biles); Ohio State returns 68% on offense but only two of nine defensive starters",
+            "Week 1 said nothing and everything: 56–3 and 59–7 — Sayin 21-of-25, Arch 4 touchdowns — but Texas allowed 349 yards to Texas State and Ohio State took nine flags",
+        ],
+        ctx_a=dict(coach="Day, year 8 — NEW OC Arthur Smith (ex-Falcons HC); Patricia year two on defense",
+                   qb="RETURNS — Julian Sayin, year two: No. 1 in success rate as a freshman",
+                   roster="68% of offensive production back · 17 portal adds — but 2 of 9 defensive starters return"),
+        ctx_b=dict(coach="Sarkisian, year 6 — NEW DC Will Muschamp (the league's riskiest coordinator swap)",
+                   qb="RETURNS — Arch Manning, year two as the starter; final season, Heisman favorite",
+                   roster="72% back · 22 portal adds — the headline portal class (Coleman, Smothers, Biles, Siani)"),
+        honesty="The machine says Texas by 3.7; the market says 1.5; ESPN's own live FPI says 0.7. Three points of our number are bookkeeping — the ±28 margin cap turned 56–3 into an 'underperformance' and docked Ohio State 4.1 rating points for winning by 53. Strip the artifact and this is a pick'em plus home field, which is exactly what everyone else says. No position.",
+        keys_a=["Make Arthur Smith's run game real — 237 yards at 6.8 a carry last week; if wide zone travels, Sayin plays on schedule instead of in a phone booth",
+                "Sayin-to-Smith vs the back end Kwiatkowski built and Muschamp inherited: McDonald, Littleton and portal corner Mascoe held this offense to 14 last year",
+                "Prove the eight-transfer defense — Russaw, Smith, Moore, Little — against the deepest skill corps in the sport; two of nine starters back is the season's real question",
+                "Urgency: last year's slow-tempo offense died in the two games that mattered — play with pace, and cut the nine penalties from Week 1"],
+        keys_b=["Arch on the move: designed movement is Sark's 2026 wrinkle and accuracy on the run is Arch's last flaw — Patricia's disguises will test exactly that",
+                "Protect the interior — the 2025 OL regression was the whole story of a preseason No. 1 that missed the CFP; Ohio State's transfer front arrives Saturday",
+                "Explosives over efficiency: Coleman, Wingo, Smothers (4.4 yards after contact) vs a rally-tackle defense that squeezes chunk plays — win the big-play count",
+                "Muschamp's first real test: 349 yards allowed to Texas State is a flag; Simmons off the edge and Biles inside have to make Sayin uncomfortable early"],
+    ),
+    dict(
+        a="OU", b="MICH", vs="at", title="Oklahoma at Michigan",
+        cfbd=("Oklahoma", "Michigan"),
+        where="Ann Arbor · Michigan Stadium",
+        sub="Sat Sep 12 · 12:00 ET · rematch of OU's 24–13 win in Norman · Whittingham's first Big House test · the card's biggest machine-market gap",
+        machine="Oklahoma –2", market="–5.5 / –5.5", value="3.5 to Michigan — the card's widest gap (11.6 pp of win prob) · lean, not a position",
+        wp=("OU", 54, "MICH", 46),
+        decides=[
+            "The line swung eight points in a week: Michigan opened –1.5, survived Western Michigan 13–12 (three turnovers, 19:52 of possession) and is now +5.5 — the market re-priced a program; the machine moved 4.3",
+            "Two rebuilds at opposite speeds: Whittingham's Utah operating system (OC Beck, DC Hill, three Utah starters) is one game old; Venables' defense is in year five and was the SEC's best in 2025",
+            "The QB question is the whole show: Underwood's year-two leap (12-of-22 last week) vs Mateer's rebuilt throwing motion (11-of-17, three TDs) — both offenses are built around their QB's legs",
+            "Payback with stakes: OU won 24–13 in Norman last September; a Michigan loss at home to open Whittingham's era puts an 8–4 program's floor in play by mid-September",
+        ],
+        ctx_a=dict(coach="Venables, year 5 — calls the defense himself; OC Arbuckle year two",
+                   qb="RETURNS — John Mateer, senior; new throwing motion after the 2025 thumb injury",
+                   roster="63% back · 16 portal adds — five OL transfers, WR room rebuilt around Sategna"),
+        ctx_b=dict(coach="NEW — Kyle Whittingham (Utah, 177 wins) after Moore's December firing; Beck OC, Hill DC",
+                   qb="RETURNS — Bryce Underwood, year two: the No. 1 recruit's Heisman-track season",
+                   roster="69% back · 17 portal adds — the Utah pipeline (Daley, Snowden, Lea'ea, Buchanan)"),
+        honesty="The market moved seven points on one MAC game; the pre-registered machine moved 4.3 — that gap is the entire 'edge'. It is a bet that 13–12 was noise, made about a first-year head coach and a year-two QB the July prior can't see. Lean Michigan +5.5 as research; the backtest never rewarded us for chasing chaos.",
+        keys_a=["Mateer's legs vs Jay Hill's sim pressures — the designed QB run (8 TDs in 2025) is the answer to a blitz-heavy front that punishes hesitation",
+                "The five-transfer OL vs Michigan's DL two-deep — 2025's run game ranked 124th in yards per carry; 170 at 4.4 against UTEP proved nothing",
+                "Erase the bad-QB day: Underwood went 12-of-22 with a pick — Venables' back seven (Guillory, the Bowens) has to cash on the road at noon",
+                "Hidden yards travel: 115 punt-return yards and a defensive score last week — special teams is how a 2-point machine number becomes a cover"],
+        keys_b=["Own the ball — 19:52 of possession and three turnovers against a MAC team; Beck's system is built on 30-minute halves and zero gifts",
+                "Run Underwood like Dampier: 47 yards on nine carries was the first look — the QB-run leverage is the identity Whittingham imported from Utah",
+                "Find receiver No. 2: Buchanan's 126 yards was the whole passing game — Marsh has to be a real target or Venables squeezes one side",
+                "Hill's defense allowed 221 yards and 4.2 per pass to WMU — bring that to Mateer's Air Raid without the explosive concessions the pressure invites"],
+    ),
+    dict(
+        a="ASU", b="TAMU", vs="at", title="Arizona State at Texas A&M",
+        cfbd=("Arizona State", "Texas A&M"),
+        where="College Station · Kyle Field",
+        sub="Sat Sep 12 · 12:00 ET · Boley's second start vs an SEC secondary · Elko's portal-built trenches get a tempo test",
+        machine="Texas A&M –16.5", market="–14.5 / –14", value="machine 2 past the market — agreement, no play",
+        wp=("TAMU", 85, "ASU", 15),
+        decides=[
+            "Dillingham's post-Leavitt reboot (16% of production back — the least on the card, 24 transfers) meets an 11-win Aggie roster that kept its skill talent and rebuilt both trenches through the portal",
+            "Cutter Boley's debut was 21-of-27 for 387 and six touchdowns — against Morgan State; Kyle Field at noon with Elko's disguises is the real audition",
+            "A&M's story is its lines: six of the top seven OL and five of seven DL are gone, replaced by transfers with 42 combined SEC starts — a tempo offense is the stress test they'd choose least",
+            "Neither rating has a 2026 snap in it: both teams beat FCS opponents the machine doesn't rate, so this number is July's prior plus home field — and the market agrees within two points",
+        ],
+        ctx_a=dict(coach="Dillingham, year 4 — a full reset after the injury-shredded 2025",
+                   qb="NEW — Cutter Boley (Kentucky), won a four-way derby; 387 yards, 6 TDs in the debut",
+                   roster="16% back — least on the card · 24 portal adds · 11 of 34 regulars return"),
+        ctx_b=dict(coach="Elko, year 3 — two NEW coordinators (Wiggins OC, Hemphill DC)",
+                   qb="RETURNS — Marcel Reed: 3,000 pass / 550 rush in 2025, and 12 interceptions",
+                   roster="73% back · 19 portal adds — skill talent kept, both trenches rebuilt"),
+        honesty="Machine –16.7, market –14.5: two points apart on a 14-point spread is agreement. The 70–7 and 50–0 scores are zero evidence — FCS opponents aren't rated, so neither team's number moved. The scouting risk the prior can't price is Reed's turnover habit (four picks in last year's two losses) against a 3-3-5 that gambles for exactly that.",
+        keys_a=["Tempo the transfer defensive line — five new starters up front are the one A&M unit that hasn't played together; 4-of-5 on fourth down says Dillingham will push it",
+                "Boley's second start against real disguise: Ricks, Ratcliffe, Brooks and portal corner Gibson rotate late — the six-touchdown debut came against Morgan State",
+                "Contain before you gamble: the 3-3-5 is undersized by design, and Reed's designed run in the red zone is exactly what it concedes",
+                "Fix special teams (No. 125 last year) — at Kyle Field a +14.5 cover lives or dies in field position"],
+        keys_b=["Reed's ball security — 12 picks last year, four in the two losses; a gambling defense wants the hero throw, take the checkdown",
+                "Prove the portal OL: 236 rushing yards at 5.0 and 43 minutes of possession last week — run it 45 times again against a light front",
+                "Havoc from the new front — Saka (12.5% pressure rate) and Henderson vs a QB making his second start",
+                "Finish drives and cut the flags (8 for 75 last week) — style points are the whole game when the spread is 14.5"],
+    ),
+    dict(
+        a="ARIZ", b="BYU", vs="at", title="Arizona at BYU",
+        cfbd=("Arizona", "BYU"),
+        where="Provo · LaVell Edwards Stadium",
+        sub="Sat Sep 12 · 3:30 ET · Big 12 opener · BYU has won three straight in the series (33–27 in Tucson last year) · Fifita's final tour",
+        machine="BYU –8.5", market="–7.5 / –7.5", value="machine = market — no gap",
+        wp=("BYU", 70, "ARIZ", 30),
+        decides=[
+            "The Big 12's continuity kings: BYU returns 79% of its production and 177 starts — most in the league — with Bachmeier in year two; Arizona returns the QB (Fifita, 9,183 career yards) and eleven defensive starters",
+            "Provo's biggest home game in program memory until Notre Dame arrives: a 12-win team that lost twice, both to Texas Tech, opens the league with the one opponent that 'plays everybody'",
+            "The coordinator change is BYU's: Jay Hill took the 3-3-5 to Michigan and Poppinga inherits ten rotation defenders — Fifita is the first quarterback who can make that matter",
+            "Week 1 receipts: BYU ran for 308 at 6.7 and forced four turnovers; Arizona put up 520 yards but coughed it up three times — the exact ledger this spread is built on",
+        ],
+        ctx_a=dict(coach="Brennan, year 3 — DC Danny Gonzales returns eleven 2025 starters",
+                   qb="RETURNS — Noah Fifita, year four as the starter: 9,183 yards, 73 TDs",
+                   roster="65% back · 22 portal adds — leading rusher and top two receivers gone"),
+        ctx_b=dict(coach="Sitake, year 11 — NEW DC Kelly Poppinga (Hill left for Michigan)",
+                   qb="RETURNS — Bear Bachmeier, year two: the Big 12's safest QB bet",
+                   roster="79% back — most on the card · 9 portal adds · 177 returning starts"),
+        honesty="Machine –8.4, market –7.5: agreement. Both ratings are still the July prior — Utah Tech and Northern Arizona aren't rated, so 63–7 and 35–7 moved nothing. BYU has won three straight in the series and the honest lean is that its 79% continuity is the most reliable number on this card; the caveat is a first-time coordinator on the side of the ball that made BYU's last two years.",
+        keys_a=["Attack Poppinga's first game plan — hit the corners early with Fifita's quick game before the disguises settle in",
+                "Front-six physicality: BYU ran for 308 last week and LJ Martin is a 1,300-yard back — the rebuilt front has to hold the line or the play-action never gets tested",
+                "Ball security — three giveaways against Northern Arizona; BYU's defense manufactured four takeaways and a touchdown last week",
+                "Play the field-position game Brennan wins — a top-tier secondary, fourth-down aggression, and the hidden yards decide a 7.5-point spread in Provo"],
+        keys_b=["Run first, then punish: Bachmeier's QB-run and deep play-action beat single-high all last year — Arizona's secondary is the first one that will make him earn it",
+                "Martin and Eka behind four returning linemen — 6.7 a carry last week; this is where the continuity edge shows up on the field",
+                "Prove the new receivers: Glasker (65 yards, two scores) and Kasper stepped in for the departed top three — a real secondary is the first real test",
+                "Win the hidden margin — 183 return yards and a defensive score last week; against a team that turned it over three times, takeaways are the cover"],
+    ),
+    dict(
+        a="BAMA", b="UK", vs="at", title="Alabama at Kentucky",
+        cfbd=("Alabama", "Kentucky"),
+        where="Lexington · Kroger Field",
+        sub="Sat Sep 12 · 3:30 ET · SEC opener · Keelon Russell's first road start · Will Stein's first SEC game · Kentucky hasn't beaten Alabama since 1997",
+        machine="Alabama –13", market="–10.5 / –10.5", value="2.7 to Alabama — quibble, not a play",
+        wp=("BAMA", 79, "UK", 21),
+        decides=[
+            "DeBoer's referendum year opens on the road with a redshirt-freshman quarterback: Russell went 18-of-30 for 256 with zero touchdowns in the opener — the offense scored five rushing TDs instead",
+            "Will Stein's Kentucky is the anti-Stoops: motion, pace, a Notre Dame transfer QB (Minchey: 301 yards, four TDs in the debut) behind six transfer linemen averaging 6-5, 323",
+            "Continuity is the card's lowest on both sides: Alabama returns 26% of its offensive production, Kentucky 19% — 31 transfers in Lexington, the most of anyone we cover this week",
+            "The market's early landmine: the deep dive called Kentucky Week 2 one of three early traps — Alabama lost its opener a year ago and DeBoer has lost as many games in two years as Saban did in five",
+        ],
+        ctx_a=dict(coach="DeBoer, year 3 — the referendum season; Wommack year 3 on defense",
+                   qb="NEW — Keelon Russell, RS freshman, the No. 2 recruit in the 2025 class",
+                   roster="26% back · 17 portal adds — six of the top seven OL gone, QB gone"),
+        ctx_b=dict(coach="NEW — Will Stein (Oregon OC) after the Stoops era ended at 5–7",
+                   qb="NEW — Kenny Minchey (Notre Dame): accurate, mobile, one start of proof",
+                   roster="19% back · 31 portal adds — most on the card; six transfer OL, ten defensive starters back"),
+        honesty="Machine –13.2, market –10.5: 2.7 to Alabama sits right at the noise line, and it comes with the two hedges a prior can't price — a teenager's first road start and a year-one head coach whose rating has zero 2026 snaps in it (Youngstown State isn't rated). Treat it as a quibble; the real information arrives at 3:30.",
+        keys_a=["Russell's first road start — zero passing touchdowns against ECU; DeBoer's rhythm game needs him to attack the intermediate middle, not just survive",
+                "Run it 49 times again: 227 yards and five rushing scores last week — the rebuilt OL vs Kentucky's returning front is where an SEC road game is decided",
+                "Wommack's secondary (Brown, Lee, Sabb) vs the receiver room the deep dive called a void — make Minchey hold the ball",
+                "Special teams: 107th last year and projected 109th — a 10.5-point spread at Kroger dies in hidden yards"],
+        keys_b=["The mauling line: six transfers, 49 FBS starts, three all-conference — vs an Alabama interior that lost four of its top five tackles; Baxter and Patterson downhill",
+                "Minchey's profile: four touchdowns, no picks, 11.1 a throw — keep it clean against the best secondary in America and the spread is in play all afternoon",
+                "The defense is the strength — ten of nineteen starters back plus Castell; make Russell win from the pocket on third-and-long",
+                "Clean up the two Week 1 leaks: 3-of-8 on third down and six penalties for 70 — those are the stats that lose to Alabama"],
+    ),
 ]
+
+# ---- Week 1 receipts (recap slide): frozen Ep2 predictions vs finals vs the
+# last pre-kick ledger pull (Fri Sep 4 5 PM ET; Mon Sep 7 9:25 AM ET for
+# SMU–FSU). Finals are read from the CFBD games cache; a game not yet
+# played renders as a pending row and grades itself after the next refresh.
+# Lines are home-perspective spreads (negative = home favored).
+RECAP_ROWS = [
+    # a, b, title, (away, home), our call, our line, closing line
+    ("BAY", "AUB", "Baylor vs Auburn", ("Baylor", "Auburn"), "Auburn 33–27", -5.5, -7.5),
+    ("CLEM", "LSU", "Clemson at LSU", ("Clemson", "LSU"), "LSU 30–21", -9.0, -10.0),
+    ("LOU", "MISS", "Louisville vs Ole Miss", ("Louisville", "Ole Miss"), "Ole Miss 31–25", -6.5, -6.5),
+    ("WIS", "ND", "Wisconsin vs Notre Dame", ("Wisconsin", "Notre Dame"), "ND 34–13", -21.0, -20.5),
+    ("SMU", "FSU", "SMU at Florida State", ("SMU", "Florida State"), "FSU 27–26", -0.5, 2.5),
+]
+WEEK0_MISS = (70.0, 70.0)  # machine, market — carried forward for the running total
+
+
+def _finals():
+    """(away, home) -> (away_pts, home_pts) from the CFBD 2026 games cache."""
+    import json
+    p = os.path.join(HERE, "fpi-decomposition", "data",
+                     "games_seasonType-regular_year-2026.json")
+    out = {}
+    if os.path.exists(p):
+        for g in json.load(open(p, encoding="utf-8")):
+            if g.get("homePoints") is not None and g.get("awayPoints") is not None:
+                out[(g["awayTeam"], g["homeTeam"])] = (g["awayPoints"], g["homePoints"])
+    return out
+
+
+def _line_txt(a, b, sp):
+    """home-perspective spread -> 'Fav –x' with the short team name."""
+    if sp < 0:
+        return f"{CODE2NAME[b]} –{-sp:g}"
+    if sp > 0:
+        return f"{CODE2NAME[a]} –{sp:g}"
+    return "PK"
+
+
+def build_recap():
+    finals = _finals()
+    rows, tot_m, tot_k, n_m, n_k, n_t = [], 0.0, 0.0, 0, 0, 0
+    for a, b, title, key, call, ours, close in RECAP_ROWS:
+        lines_ = f"our line {_line_txt(a, b, ours)} · closing {_line_txt(a, b, close)}"
+        fin = finals.get(key)
+        if fin is None:
+            rows.append((a, b, title, f"we called {call} · FINAL pending",
+                         lines_, "graded before air — see the notes", "P"))
+            continue
+        ap_, hp_ = fin
+        win, lose = (CODE2NAME[b], CODE2NAME[a]) if hp_ >= ap_ else (CODE2NAME[a], CODE2NAME[b])
+        callfin = f"we called {call} · FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)}"
+        margin = hp_ - ap_                       # actual home margin
+        off_m, off_k = abs(margin + ours), abs(margin + close)
+        tot_m, tot_k = tot_m + off_m, tot_k + off_k
+        if off_m < off_k:
+            verdict, mark = "machine closer", "M"
+            n_m += 1
+        elif off_k < off_m:
+            verdict, mark = "market closer", "K"
+            n_k += 1
+        else:
+            verdict, mark = "dead tie", "T"
+            n_t += 1
+        rows.append((a, b, title, callfin, lines_,
+                     f"machine off by {off_m:g} · market off by {off_k:g} — {verdict}", mark))
+    graded = n_m + n_k + n_t
+    return rows, dict(m=tot_m, k=tot_k, n=graded, nm=n_m, nk=n_k, nt=n_t)
+
+
+RECAP, RECAP_SUM = build_recap()
 
 # ---- Superdog boards (segment: pick a dog to win outright; points = the
 # spread). Computed live from card_data so a fresh pull refreshes them.
-# AP Top 25 is week-1 2026 (CFBD /rankings) — update this dict each week.
-AP_TOP25 = {"Ohio State": 1, "Oregon": 2, "Georgia": 3, "Notre Dame": 4,
+# AP Top 25 comes from the CFBD /rankings cache via inseason_ratings (the
+# Tuesday refresh and every edge_report --publish keep it current); the hand
+# dict below is only a fallback if the cache is missing.
+_AP_FALLBACK = {"Ohio State": 1, "Oregon": 2, "Georgia": 3, "Notre Dame": 4,
             "Texas": 5, "Indiana": 6, "Miami": 7, "Texas A&M": 8,
             "Ole Miss": 9, "Oklahoma": 10, "LSU": 11, "Texas Tech": 12,
             "Alabama": 13, "USC": 14, "BYU": 14, "Michigan": 16,
             "Washington": 17, "Penn State": 18, "SMU": 19, "Tennessee": 20,
             "Utah": 21, "Iowa": 22, "Houston": 23, "Louisville": 24,
             "Missouri": 25}
+
+
+def _load_ap():
+    try:
+        from inseason_ratings import latest_rankings
+        r = latest_rankings(refresh=False)
+        if r.get("ap"):
+            return dict(r["ap"]), r.get("week")
+    except Exception as e:  # cache missing / import problem -> fallback
+        print("AP poll: cache unavailable,", e)
+    return {normalize_name(k): v for k, v in _AP_FALLBACK.items()}, None
+
+
+AP_TOP25, AP_WEEK = _load_ap()
+
+
+def ap_rank(team):
+    return AP_TOP25.get(normalize_name(team))
+
+
 
 _MONTHS = dict(Jan=1, Feb=2, Mar=3, Apr=4, May=5, Jun=6, Jul=7, Aug=8,
                Sep=9, Oct=10, Nov=11, Dec=12)
@@ -617,7 +851,7 @@ def superdog_boards():
         mkt = (1 - mkt_ph if sp < 0 else mkt_ph) if mkt_ph is not None else None
         ml = b.get("away_ml") if dog == g["away"] else b.get("home_ml")
         rows.append(dict(dog=dog, fav=fav, at=at, pts=abs(sp), p=p, mkt=mkt,
-                         ml=ml, ev=p * abs(sp), rank=AP_TOP25.get(fav)))
+                         ml=ml, ev=p * abs(sp), rank=ap_rank(fav)))
     rows.sort(key=lambda r: -r["ev"])
     return rows, [r for r in rows if r["rank"]]
 
@@ -628,10 +862,12 @@ SUPERDOG_ANY, SUPERDOG_T25 = superdog_boards()
 LEDGER = {g["title"]: apply_card(g) for g in GAMES}
 print("card_data:", "loaded, lines as of " + LINES_AS_OF if CARD else
       "NOT FOUND — using hand-typed numbers")
+print(f"AP poll: week {AP_WEEK} ({len(AP_TOP25)} ranked) · receipts graded "
+      f"{RECAP_SUM['n']}/{len(RECAP_ROWS)}")
 
 # ---------------- title slide ----------------
 s = blank(NAVY)
-txt(s, 0.9, 0.85, 11.5, 0.45, "EPISODE 2 · WEEK 1 · SEP 5–7, 2026", 14, ORANGE,
+txt(s, 0.9, 0.85, 11.5, 0.45, f"EPISODE {EPISODE} · WEEK {WEEK} · {EP_DATE}", 14, ORANGE,
     bold=True)
 txt(s, 0.9, 1.2, 11.5, 1.1, "Five Games, One Card", 44, WHITE, bold=True)
 y = 2.4
@@ -648,20 +884,20 @@ for g in GAMES:
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.88
 txt(s, 0.9, 6.85, 11.5, 0.5,
-    "Machine = ESPN 2026 preseason FPI + 2.5 HFA, empirical margin curve "
-    f"(σ 17.9, 2021–25 fit) · lines as of {LINES_AS_OF} · model plays graded vs "
-    "first-seen lines", 10.5,
+    "Machine = our in-season rating (ESPN preseason FPI prior + 2026 results, "
+    f"λ 3, cap ±28) + 2.5 HFA · empirical margin curve (σ 15.9) · lines as of "
+    f"{LINES_AS_OF} · model plays graded vs first-seen lines", 10.5,
     RGBColor(0x8F, 0xA5, 0xC4))
 
 # ---------------- week 0 receipts ----------------
 s = blank()
-txt(s, 0.9, 0.5, 11.5, 0.55, "Week 0 — the receipts", 30, NAVY, bold=True)
+txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
 txt(s, 0.9, 1.08, 11.5, 0.3,
-    "Our call frozen at kickoff · closing line = last pre-kick pull "
-    "(Sat 10:16 ET) · “off by” = miss vs the final margin",
+    "Our call frozen at the Ep2 recording · closing line = last pre-kick pull "
+    "(Fri 5 PM ET · Mon 9:25 AM ET) · “off by” = miss vs the final margin",
     11, MUTE, italic=True)
 y = 1.55
-VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B)}
+VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "T": MUTE, "P": MUTE}
 for a, b, tit, callfin, lines_, miss, mark in RECAP:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.86, ICE)
     logo_badge(s, 1.1, y + 0.13, 0.6, a)
@@ -672,11 +908,15 @@ for a, b, tit, callfin, lines_, miss, mark in RECAP:
     txt(s, 7.35, y + 0.44, 4.8, 0.3, miss, 10, VERD[mark], bold=True)
     y += 0.94
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
+_rs = RECAP_SUM
+_run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
 txt(s, 1.15, y + 0.17, 11.0, 0.65,
-    "Total miss across five games: machine 70.0 points, closing market "
-    "70.0 — a literal dead heat. Stated leans 1–2, the win coming where we "
-    "disagreed with the market most (UNC, 18 points of win prob). Week 0 "
-    "went UNDER in 4 of 5 · σ 17.9 — one week proves nothing either way.",
+    f"Total miss across {_rs['n']} graded games: machine {_rs['m']:.1f} points, "
+    f"closing market {_rs['k']:.1f} — machine closer in {_rs['nm']}, market in "
+    f"{_rs['nk']}, {_rs['nt']} tie. Stated positions 2–0: Baylor +7.5 covered "
+    "and the MONSTER UNDER on 59.5 cashed (33 total). Two weeks in: machine "
+    f"{_run_m:.1f} vs market {_run_k:.1f} across {5 + _rs['n']} games — still a "
+    "coin flip with Vegas. Stated leans 3–2 on the season.",
     10.5, WHITE)
 
 # ---------------- per-game slides ----------------
@@ -753,12 +993,12 @@ for g in GAMES:
             shape(s, MSO_SHAPE.OVAL, 1.0, yy + 0.12, 0.15, 0.15, ORANGE)
             txt(s, 1.45, yy, 10.5, 0.8, k, 15.5, INK)
             yy += 0.92
-        txt(s, 0.9, 7.13, 11.5, 0.3, "EP 2 · WEEK 1 · " + g["title"], 9, MUTE)
+        txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · " + g["title"], 9, MUTE)
 
 # ---------------- closing card: predictions + superdogs ----------------
 s = blank(NAVY)
 PALE = RGBColor(0xCA, 0xDC, 0xFC)
-txt(s, 0.9, 0.55, 11.5, 0.45, "EPISODE 2 · THE CARD", 14, ORANGE, bold=True)
+txt(s, 0.9, 0.55, 11.5, 0.45, f"EPISODE {EPISODE} · THE CARD", 14, ORANGE, bold=True)
 txt(s, 0.9, 0.95, 11.5, 0.8, "Our predictions", 36, WHITE, bold=True)
 y = 1.95
 for g in GAMES:
@@ -791,6 +1031,6 @@ txt(s, 0.9, 7.18, 11.5, 0.3,
     "dog to win outright, points = the spread · graded vs first-seen lines "
     "· research, not picks", 9, RGBColor(0x8F, 0xA5, 0xC4), italic=True)
 
-out = r"C:\Users\lucas\Fun Projects\Sports Data Analysis\ncaa-fbs-model\decks\2026_Week1_Episode2.pptx"
+out = os.path.join(HERE, "decks", f"2026_Week{WEEK}_Episode{EPISODE}.pptx")
 prs.save(out)
 print("wrote", out, f"- {len(prs.slides)} slides")
