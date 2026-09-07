@@ -373,7 +373,8 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
         # every consumer reads is now the ridge posterior; the preseason
         # value, delta, games used and ESPN's live FPI ride along as the
         # reference columns (AQ..AV on _Teams)
-        from inseason_ratings import espn_live_fpi, machine_ratings, sigma_for
+        from inseason_ratings import (espn_live_fpi, latest_rankings,
+                                      machine_ratings, sigma_for)
         mr = machine_ratings(fpi26, refresh=refresh)
         live = espn_live_fpi(refresh=True)  # one cheap call; falls back to cache
         rank_cur = {k: i + 1 for i, (k, _) in enumerate(
@@ -388,6 +389,10 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
         for k, v in live.items():
             e = fpi.setdefault(k, {})
             e["live"], e["live_rank"] = round(v, 1), rank_live[k]
+        polls = latest_rankings(refresh=True)
+        for key in ("ap", "cfp"):
+            for k, r in polls[key].items():
+                fpi.setdefault(k, {})[key] = r
         n_games = sum(v["gp"] for v in mr.values()) // 2
         print(f"machine: in-season update over {n_games} rated games "
               f"(lam 3, cap 28, curve sd {sigma_for(n_games)}); ESPN live FPI "
@@ -449,7 +454,8 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
         # AQ..AV: preseason FPI + rank, machine delta, games used, ESPN live + rank
         row += [fp.get("pre", "n/a"), fp.get("pre_rank", "n/a"),
                 fp.get("delta", "n/a"), fp.get("gp", "n/a"),
-                fp.get("live", "n/a"), fp.get("live_rank", "n/a")]
+                fp.get("live", "n/a"), fp.get("live_rank", "n/a"),
+                fp.get("ap", ""), fp.get("cfp", "")]  # AW, AX: AP / CFP rank
         ws_t.append(row)
         for pos, depth4 in grid:
             ws_g.append([team, pos] + depth4)
@@ -559,6 +565,7 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
         ("Machine Δ vs preseason", _txt("AS")),
         ("Games used by the machine", _txt("AT")),
         ("ESPN FPI (live)", _num_pair("AU", "AV")),
+        ("AP / CFP rank", '=IF($AG$1=0,"",IF(ISNUMBER(INDEX(_Teams!$AW:$AW,$AG$1)),"AP #"&INDEX(_Teams!$AW:$AW,$AG$1),"AP unranked")&IF(ISNUMBER(INDEX(_Teams!$AX:$AX,$AG$1)),"  ·  CFP #"&INDEX(_Teams!$AX:$AX,$AG$1),""))'),
     ]
     for i, (label, f) in enumerate(info2):
         ws.cell(row=R_INFO + i, column=5, value=label).font = ARIAL_B

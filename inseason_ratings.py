@@ -125,6 +125,34 @@ def espn_live_fpi(refresh: bool = True) -> dict[str, float]:
             for r in rows if r.get("fpi") is not None and (r.get("team") or r.get("school"))}
 
 
+def latest_rankings(refresh: bool = True) -> dict:
+    """Latest available polls this season: {'week', 'season_type',
+    'ap': {team: rank}, 'cfp': {team: rank}}. 'cfp' stays empty until the
+    committee's first release (early November) and then fills on its own."""
+    import cfbd_client as cfbd
+    try:
+        weeks = cfbd.get("/rankings", {"year": 2026}, refresh)
+    except Exception as e:  # network hiccup: fall back to the cache
+        print(f"rankings: pull failed ({e}); using cache")
+        weeks = cfbd.get("/rankings", {"year": 2026}, False)
+    out = dict(week=None, season_type=None, ap={}, cfp={})
+    if not weeks:
+        return out
+    order = {"regular": 0, "postseason": 1}
+    latest = max(weeks, key=lambda w: (order.get(w.get("seasonType"), 0), w.get("week") or 0))
+    out["week"], out["season_type"] = latest.get("week"), latest.get("seasonType")
+    for poll in latest.get("polls", []):
+        name = (poll.get("poll") or "").lower()
+        key = "ap" if name.startswith("ap") else (
+            "cfp" if ("playoff" in name or "committee" in name) else None)
+        if key:
+            for r in poll.get("ranks", []):
+                team = r.get("school") or r.get("team")
+                if team and r.get("rank") is not None:
+                    out[key][normalize_name(team)] = int(r["rank"])
+    return out
+
+
 if __name__ == "__main__":
     from build_conference_book import load_fpi_2026
     pre = load_fpi_2026()
