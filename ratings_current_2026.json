@@ -1,12 +1,12 @@
 {
- "as_of": "2026-09-07T21:51:31+00:00",
+ "as_of": "2026-09-08T14:21:06+00:00",
  "params": {
   "lam": 3.0,
   "cap": 28.0,
   "hfa": 2.5,
   "sigma": 15.9
  },
- "games_used": 50,
+ "games_used": 51,
  "teams": [
   {
    "team": "notre dame",
@@ -156,18 +156,18 @@
    "gp": 1
   },
   {
+   "team": "smu",
+   "pre": 11.1,
+   "cur": 11.4,
+   "delta": 0.3,
+   "gp": 1
+  },
+  {
    "team": "auburn",
    "pre": 12.0,
    "cur": 11.1,
    "delta": -0.9,
    "gp": 1
-  },
-  {
-   "team": "smu",
-   "pre": 11.1,
-   "cur": 11.1,
-   "delta": 0.0,
-   "gp": 0
   },
   {
    "team": "south carolina",
@@ -254,18 +254,18 @@
    "gp": 1
   },
   {
-   "team": "florida state",
-   "pre": 9.3,
-   "cur": 7.2,
-   "delta": -2.1,
-   "gp": 1
-  },
-  {
    "team": "arizona",
    "pre": 7.2,
    "cur": 7.2,
    "delta": 0.0,
    "gp": 0
+  },
+  {
+   "team": "florida state",
+   "pre": 9.3,
+   "cur": 6.9,
+   "delta": -2.4,
+   "gp": 2
   },
   {
    "team": "cincinnati",
@@ -870,18 +870,18 @@
    "gp": 1
   },
   {
-   "team": "new mexico state",
-   "pre": -15.7,
-   "cur": -13.6,
-   "delta": 2.1,
-   "gp": 1
-  },
-  {
    "team": "bowling green",
    "pre": -13.7,
    "cur": -13.7,
    "delta": 0.0,
    "gp": 0
+  },
+  {
+   "team": "new mexico state",
+   "pre": -15.7,
+   "cur": -13.7,
+   "delta": 2.0,
+   "gp": 1
   },
   {
    "team": "uab",

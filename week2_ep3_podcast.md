@@ -1,14 +1,15 @@
 # Episode 3 — Week 2 · "Man vs Machine" podcast notes
 
-Status (Mon Sep 7, evening): Week 1 graded through Sunday; **SMU @ Florida
-State kicks tonight** (7:30 ET) — the receipts slide grades it by itself
-after Tuesday's 7:30 AM refresh (it reads the final from the CFBD cache).
-Week 2 card is set: Ohio State–Texas, Oklahoma–Michigan, Arizona State–Texas
-A&M, Arizona–BYU, Alabama–Kentucky. Lines below are the Mon Sep 7, 5:51 PM ET
-pull — re-pull before recording (`edge_report.py --week 2 --view ml
---publish`, then `make_episode_deck.py`). The AP poll in the deck is still
-the Week 1 poll; the Week 2 poll lands Tuesday and the deck picks it up from
-the cache automatically.
+Status (Tue Sep 8, 8:30 AM MT): **Week 1 fully graded — SMU won 27–24 at
+Florida State.** The 8:01 AM refresh re-solved the machine on 51 rated games
+and the receipts slide picked up the final on rebuild. Week 2 card: Ohio
+State–Texas, Oklahoma–Michigan, Arizona State–Texas A&M, Arizona–BYU,
+Alabama–Kentucky. Lines below are the Tue Sep 8 morning pull (none of our
+five moved overnight) — re-pull before recording (`edge_report.py --week 2
+--view ml --publish`, then `make_episode_deck.py`). The AP poll in the deck
+is still the Week 1 poll as of 8:20 AM MT; the Week 2 poll usually posts
+Tuesday afternoon and the deck picks it up from the cache on the next
+rebuild.
 
 Format rule (Lucas, 9/7): the deck stays the Ep2 template — lean. Everything
 we say on air lives HERE. Every slide bullet and key gets its backing below.
@@ -27,11 +28,11 @@ Frozen Ep2 calls (recorded Tue Sep 1) vs finals vs the last pre-kick line
 | Clemson at LSU | LSU 30–21 | **LSU 51–10** | LSU −9 | LSU −10 | 32 / **31** | market (barely) |
 | Louisville vs Ole Miss | Ole Miss 31–25 | **Ole Miss 41–38** | MISS −6.5 | MISS −6.5 | 3.5 / 3.5 | tie |
 | Wisconsin vs Notre Dame | ND 34–13 | **ND 41–13** | ND −21 | ND −20.5 | **7** / 7.5 | machine |
-| SMU at Florida State | FSU 27–26 | *tonight* | FSU −0.5 | SMU −2.5 | — | — |
+| SMU at Florida State | FSU 27–26 | **SMU 27–24** | FSU −0.5 | SMU −2.5 | 3.5 / **0.5** | market |
 
-Four graded: machine total miss **47.0**, closing market **48.5** — machine
-closer in 2, market in 1, one dead tie. Two weeks in: machine 117.0 vs
-market 118.5 across nine games. Still a coin flip with Vegas — which, for a
+All five graded: machine total miss **50.5**, closing market **49.0** —
+machine closer in 2, market in 2, one dead tie. Two weeks in: machine 120.5
+vs market 119.0 across ten games. Still a coin flip with Vegas — which, for a
 model that hadn't seen a 2026 snap until this week, is the whole point.
 
 **Stated positions this week: 2–0.** Baylor +7.5 (a "1.5-point lean, not a
@@ -39,7 +40,10 @@ position") covered by 6.5; the **Monster Under on 59.5 cashed by 26.5 points**
 (33 total). The three no-plays were all correct passes: Clemson +10 (our
 "quibble") would have lost by 31; Ole Miss "machine = market" pushed nothing;
 ND "watch, don't touch" — ND covered by 7.5, but we said don't touch.
-**Paper record: stated leans 3–2 through two weeks** (Wk0 1–2, Wk1 2–0).
+SMU–FSU was a RED flag, not a position — the deck said "research shortlist,
+not a pick" — so it doesn't touch the record. **Paper record: stated leans
+3–2 through two weeks** (Wk0 1–2, Wk1 2–0). Frozen RED alerts: 1–1 outright
+(UNC won in Week 0, FSU didn't).
 
 ### Baylor vs Auburn — Auburn 17, Baylor 16 (Atlanta)
 
@@ -138,18 +142,73 @@ ND "watch, don't touch" — ND covered by 7.5, but we said don't touch.
   points. That's the superdog game — the model can be right about the price
   and still get nothing, because we're paid on the win."
 
-### SMU at Florida State — tonight, and a machine split worth staging
+### SMU at Florida State — SMU 27, Florida State 24 (Monday night)
 
-- **Frozen call (for grading)**: FSU 27–26, FSU 52%, machine FSU −0.5.
-- **The in-season machine has already moved**: FSU −2.1 for beating New
-  Mexico State by only 17 (its rating implied ~27), so the live machine now
-  says **SMU by 1.4** — the RED flag would be off today.
-- **Market**: opened SMU −3, closed **SMU −2.5** (FSU +124) — the market
-  moved a half point *toward* FSU while our machine moved away from it.
-- **How to grade it Tuesday**: the frozen call is the one on the record.
-  Whichever way it goes, the story is the split: "the machine we recorded
-  with picked FSU; the machine we have now picks SMU; the market moved toward
-  FSU. One night, three opinions."
+- **The number**: frozen machine FSU −0.5 (the call was FSU 27–26), closing
+  DK SMU −2.5 (Bovada −3), actual SMU by 3. Machine off by 3.5, market off
+  by 0.5 — the market's cleanest week-1 read. The **total** side of the call
+  was nearly perfect (53 projected, 51 scored); the winner was wrong by a
+  field goal.
+- **The three-opinion story, resolved**: the machine we recorded with (July
+  prior, +2.5 for the Doak) said FSU by 0.5; the machine we had on game night
+  — after FSU's 17-point win over New Mexico State cost it 2.1 points — said
+  **SMU by 1.4**; the market said SMU by 2.5. Actual: SMU by 3. Rank them by
+  miss: market 0.5, live machine 1.6, frozen machine 3.5. Say it that way:
+  "the machine that had watched one FSU game picked the winner; the one that
+  hadn't, didn't."
+- **The RED flag receipt**: the alert was "home dog outright" and the dog
+  lost. Frozen RED alerts are 1–1 on the season (UNC yes, FSU no) — right on
+  the backtest's coin-flip (49.7% ATS across 2023–25). ATS it was a push at
+  +3 (Bovada) and a loss at +2.5 (DK). The honesty box said research
+  shortlist, not a pick; that held.
+- **The game in one line**: SMU out-gained FSU **585 to 324**, threw for 430
+  at 11.9 a throw, went 8-of-14 on third down — and gave the ball away FOUR
+  times (two Jennings picks, two lost fumbles) against one FSU turnover.
+  FSU got a +3 turnover margin on Monday night at home and lost, because it
+  went **2-of-15 on third down** and averaged 5.4 yards per pass attempt.
+  Line score: 7–7 after one, SMU 17–10 at the half, 17–17 after three, SMU
+  10–7 in the fourth.
+- **What the keys said vs what happened**:
+  - SMU "prove the troika can call it — tempo and spacing from drive one":
+    **hit.** 585 yards and 23 first downs with two first-time co-callers.
+  - SMU "protect Jennings from the portal front": **hit** — zero sacks
+    allowed; SMU's own front produced 3 sacks and 8 TFL.
+  - SMU "explosives, not field goals": **hit.** Jennings 26-of-36 for 430
+    and 3 TD (Pittman 75, Hale 70, Knight 49); no field-goal offense.
+  - SMU "win the takeaway ledger": **failed as badly as a key can fail** —
+    minus-three on turnovers — and they won anyway. That is the Jennings
+    profile in one game: 430 yards, two picks, still the best player on the
+    field.
+  - FSU "run it with the portal front": **hit** — 199 rushing at 4.4, Kromah
+    116 on 22.
+  - FSU "quarterback run is the cheat code": **hit** — Daniels 16 carries for
+    71 and a score.
+  - FSU "no boom-bust, don't beat yourself": **hit on paper** (one turnover,
+    three penalties) and irrelevant, because the dropback game was 12-of-23
+    for 125 and third down was 2-of-15.
+  - FSU "start fast and make the Doak matter": **missed** — 7–7 after a
+    quarter, trailing at the half; the 2.5-point home bump was the entire
+    machine case and it never showed up.
+- **Machine reaction**: FSU −0.3 more (6.9 now, −2.4 on the season — the
+  whiplash program's prior keeps sliding); SMU +0.3 (11.4). Small moves
+  because the live machine expected SMU by 1.4 and got SMU by 3.
+- **Jennings correction, for the record**: after last week's on-air slip we
+  said Jennings returns — he threw for 430 in Tallahassee. Keep the scouting
+  hedges hedged, but that one is settled.
+
+### Alert-tier receipts — Week 1 (the Upset Board, graded)
+
+- **YEL alerts (6+ points of model-vs-market win prob): model side 16–4 ATS,
+  8–12 outright** across 20 flagged games. The covers included Tulsa +13.5
+  (won outright), UMass +29.5 (won outright at Rutgers), Virginia −4 (won by
+  26), Coastal +21, Wazzu +23.5, Boise +24.5. The four misses were three
+  cupcake blowouts the machine wanted to keep closer (Ball State +49.5,
+  UTEP +40.5, Missouri State +38.5) and Sacramento State +8.5.
+- **Caveat before anyone gets excited**: the backtest put YEL at ~52% ATS
+  over three seasons. One 16–4 week is exactly the kind of sample the
+  pre-registration is designed to stop us from reacting to. Say the number,
+  then say the caveat.
+- **RED (frozen at the Ep deck)**: 1–1 outright — UNC +7.5 won, FSU +3 lost.
 
 ---
 
@@ -675,11 +734,9 @@ the win."
 
 ## Pre-record checklist (Tuesday)
 
-1. Confirm the 7:30 AM refresh ran (ratings_current_2026.json `as_of`
-   Tuesday; 51 rated games if SMU–FSU counted).
-2. Grade SMU–FSU in Segment 1 (frozen FSU −0.5 vs close SMU −2.5) and
-   update the "stated leans" line only if it changes (it shouldn't — RED
-   flag was research, not a position).
+1. ~~Confirm the 7:30 AM refresh ran~~ — done: as_of Tue 8:01 AM MT, 51
+   rated games.
+2. ~~Grade SMU–FSU~~ — done above (market closer; RED 1–1; leans still 3–2).
 3. `python edge_report.py --week 2 --view ml --publish` then
    `python make_episode_deck.py` — re-check the superdog boards (the Week 2
    AP poll may move the Giant Killer) and the Oklahoma–Michigan line (it was

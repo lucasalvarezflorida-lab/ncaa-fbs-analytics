@@ -144,7 +144,7 @@
 "dog": "Florida State",
 "dog_ml": 136,
 "ml_guard": false,
-"close_spread": 2.5
+"close_spread": 3
 },
 "401856849": {
 "first_seen": "2026-09-01",
@@ -424,7 +424,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -17.5
+"close_spread": -18.5
 },
 "401862702": {
 "first_seen": "2026-09-07",
@@ -494,7 +494,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -31.5
+"close_spread": -33.5
 },
 "401856670": {
 "first_seen": "2026-09-07",
@@ -508,7 +508,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -13.5
+"close_spread": -12.5
 },
 "401860883": {
 "first_seen": "2026-09-07",
