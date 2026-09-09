@@ -1019,6 +1019,14 @@ the win."
 
 ## Pre-record checklist
 
+**Push freeze (Wed 9/9, 10:35 AM MT):** Corey edited the shared Slides file
+directly (added "man off by" numbers to the receipts rows) and is removing
+the two superdog rows himself. No deck pushes until after tonight's
+recording. Local deck + git are the five-row version; the Slides file is
+Corey's edit. Next week: consider a proper "man off by" column on the
+receipts slide so his side of the scoreboard is generated, not hand-typed.
+
+
 1. ~~Confirm the 7:30 AM refresh ran~~ — done: as_of Tue 8:01 AM MT, 51
    rated games.
 2. ~~Grade SMU–FSU~~ — done above (market closer; RED 1–1; leans still 3–2).
