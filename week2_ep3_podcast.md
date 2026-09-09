@@ -13,9 +13,250 @@ Michigan dropped out. Heisman market unchanged from Tuesday (DK).
 Format rule (Lucas, 9/7): the deck stays the Ep2 template — lean. Everything
 we say on air lives HERE. Every slide bullet and key gets its backing below.
 
+**Order below = the deck, slide by slide.** Slide 1 Our Top 25 · 2 Hot Seat
+Top 10 · 3 Our Heisman favorite · 4 Five Games, One Card · 5 Week 1 receipts
+· 6–20 the five games (the number, then one slide per team) · 21 Our
+predictions + superdogs.
+
 ---
 
-## Segment 1 — Week 1: the receipts
+## Slide 1 — Our Top 25 (the machine after Week 1)
+
+51 rated games in. **Top 10**: 1 Notre Dame 27.3 · 2 Texas 25.8 · 3 Georgia
+24.8 · 4 Ohio State 24.6 · 5 LSU 23.8 · 6 Miami 23.2 · 7 Indiana 22.3 ·
+8 Oregon 21.9 · 9 Alabama 21.1 · 10 Texas Tech 20.0.
+
+Machine vs the AP voters (Week 2 poll, the weekly Man vs Machine column):
+Ohio State AP #1 / machine #4 (−4.1 after Week 1); Notre Dame machine #1 /
+AP #3; Texas machine #2 / AP #4; LSU AP #8 / machine #5; Ole Miss AP #9 /
+machine #13; SMU AP #17 / machine #22; Virginia machine #20 / AP #25 (new
+this week); Michigan machine #21 / dropped out. In the voters' 25 and not
+ours: Washington (19), Utah (20), Houston (22), Louisville (24).
+
+Biggest movers: UMass +7.4, Nevada +6.5, San Jose State +4.9, UCLA +4.8,
+Tulsa +4.8, NDSU +4.7 · Rutgers −7.4, Western Kentucky −6.5, Cal −4.8,
+Oklahoma State −4.8, Jax State −4.7, Michigan −4.3, Hawai'i −4.3.
+
+How to explain the update on air: "Preseason FPI is worth about three games
+of evidence — that's what the backtest said. So after one game a team moves
+roughly a quarter of the way toward what it just showed you. By November the
+games run the machine, not the July guess."
+
+### Machine housekeeping — two blind spots to say out loud this week
+
+1. **The cap punishes blowouts of bad teams.** Margins are capped at ±28
+   before the update (pre-registered, tuned on 2021–24). Ohio State beat Ball
+   State 56–3; the machine expected ~48 (28.7 + 17.3 + 2.5 home), counted it
+   as a 28-point win, and docked the Buckeyes **4.1 points** for winning by
+   53. Same mechanism: Oregon −3.4, Oklahoma −1.8, Texas −1.1, Texas A&M
+   −1.0. It's a bookkeeping artifact, not a judgment — and it is why the
+   machine's Ohio State–Texas number is 3 points more Texas than everyone
+   else's. We don't change pre-registered rules mid-season; the fix (cap the
+   *residual* instead of the raw margin) goes on the postseason backtest list.
+2. **FCS games are invisible.** Only games between two rated FBS teams enter
+   the update, so Arizona State's 70–7, BYU's 63–7, Arizona's 35–7 and
+   Kentucky's 45–13 changed nothing — those four ratings are still the July
+   prior. The market saw those games; we didn't. (It cuts the other way on
+   the superdog board — see Buffalo below.)
+
+---
+
+## Slide 2 — Hot Seat Top 10
+
+**How the list is built (say this first).** Seat score = 60% the man + 40%
+the machine. The man is CBS Sports' preseason hot-seat rating (0–5, Aug 29;
+5.0 = "win or be fired", 4 = "start improving now", 3 = "pressure is
+mounting"). The machine is the probability, from our season sim, that the
+team reaches the win total that keeps the job — and that bar is OUR judgment
+call from the deep-dive "how he escapes" write-ups (8 for Norvell, 6 for
+Fickell, 7 for Aranda, 10 for DeBoer, 9 for Dabo…). Different bars, same
+rating, different seat. Re-computes every rebuild (`hot_seat_heisman.py`).
+
+| # | Coach · school | Tenure | CBS | Needs | P(gets it) | Machine wins | Score | Week 1 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Norvell · Florida State | 38–34, yr 7 | 5.0 | 8 | 20% | 6.2 (4–8) | 92 | L 24–27 SMU |
+| 2 | Locksley · Maryland | 37–49, yr 8 | 4.9 | 6 | 50% | 5.5 (4–7) | 79 | W 62–0 Hampton |
+| 3 | Aranda · Baylor | 36–37, yr 7 | 5.0 | 7 | 63% | 7.0 (5–9) | 75 | L 16–17 Auburn |
+| 4 | Schiano · Rutgers | 31–41 2nd stint | 3.0* | 6 | 5% | 3.6 (2–5) | 74 | L 21–37 UMass |
+| 5 | Fickell · Wisconsin | 17–21, yr 4 | 5.0 | 6 | 67% | 6.2 (4–8) | 73 | L 13–41 Notre Dame |
+| 6 | Beamer · South Carolina | 33–30, yr 6 | 4.3 | 7 | 47% | 6.4 (5–8) | 73 | W 57–0 Kent State |
+| 7 | Mason · Middle Tennessee | 3–9 in 2024, yr 3 | 3.6 | 6 | 30% | 4.7 (3–7) | 71 | W 38–14 Murray St |
+| 8 | O'Brien · Boston College | 9–16, yr 3 | 3.5 | 5 | 28% | 3.8 (2–5) | 71 | L 15–34 Cincinnati |
+| 9 | Swinney · Clemson | 186–53, yr 18 | 3.1 | 9 | 22% | 7.3 (5–9) | 68 | L 10–51 LSU |
+| 10 | Belichick · North Carolina | 4–8, yr 2 | 4.1 | 6 | 63% | 6.0 (4–8) | 64 | W 15–10 TCU |
+
+Next three: DeBoer (Alabama, 64 — bar 10, machine 30%), Doeren (NC State,
+64), Vincent (UL Monroe, 63*). *Rutgers's CBS number wasn't in the published
+list; 3.0 is our estimate from the Big Ten prep board.
+
+**The talking points, one per seat.**
+1. **Norvell — the only 5.0 whose machine number got WORSE.** 7–17 across
+   2024–25, the $50M+ buyout as the stated reason he's employed, and now a
+   home loss to SMU with the transfer O-line the whole plan rests on. The
+   machine has FSU at 6.2 wins with Alabama, Louisville and Miami by
+   mid-October; 20% to reach the 8 wins that save him. Say it: "the seat
+   board says win-or-be-fired, the machine says one-in-five."
+2. **Locksley — the machine's most endangered Power-4 coach.** Maryland is
+   #98 in our ratings (1.0) with a 5.5-win projection — a coin flip for the
+   bowl that was the entire point of the Malik Washington development year.
+   37–49 over eight seasons; back-to-back 4–8s. The 62–0 over Hampton (FCS)
+   changed nothing in the machine.
+3. **Aranda — 5.0, but the machine likes the roster.** 36–37 in year seven,
+   three straight bottom-tier defenses, and a Lagway-plus-Klanderman
+   save-my-job bet. The machine says 7.0 wins, 63% to hit the 7-win bar —
+   which is why he's third, not first. The 16–17 loss to Auburn (three Auburn
+   interceptions Baylor couldn't cash) was the coin flip the prep said
+   decides his year.
+4. **Schiano — the machine's alarm.** Rutgers lost 37–21 AT HOME to UMass
+   (preseason −18.8 in our ratings) and fell 7.4 points to **#138, dead last
+   in FBS**. The prep called the FCS-coordinator defensive teardown "a gamble
+   a legacy coach makes once"; the sim now gives Rutgers a 5% shot at six
+   wins. CBS didn't have him high preseason; the machine has him fourth after
+   one Saturday.
+5. **Fickell — retained in November with more NIL money instead of a buyout.**
+   17–21, the offense 86th-or-worse three straight years. The machine
+   actually likes his bowl odds (67%) because the bar is only six; the 13–41
+   at Lambeau (67 rushing yards at 2.2) was the expected result. His seat
+   is about the bar nobody has published.
+6. **Beamer — the SEC's hottest, and the machine says a coin flip.** 33–30
+   overall but 16–24 in the SEC; a preseason top-13 team went 4–8 with the
+   30–3 A&M meltdown. Machine: 6.4 wins, 47% for the seven that buys year
+   seven. 57–0 over Kent State was the right start; the schedule has zero
+   margin.
+7. **Mason — the machine doesn't care about brands.** MTSU is #123 in our
+   ratings (−16.1), 4.7 projected wins, 30% for six. CBS 3.6. He's on the
+   list because the math puts him there; on air, one line and move on.
+8. **O'Brien — the only Power-4 coach the machine gives under 30%.** BC is
+   #137 (−4.6), 3.8 projected wins, 28% to reach even five. The prep said the
+   Cincinnati and Rutgers trips "tell you everything by mid-September";
+   Cincinnati was 34–15. CBS 1–11 projection is live.
+9. **Dabo — pressure, not peril, until the machine looked at the schedule.**
+   186–53 and a buyout that makes firing him a fantasy; CBS only 3.1. But we
+   set his bar at nine wins (a redemption year needs the CFP conversation)
+   and after the 51–10 at LSU the sim says 7.3 wins, 22% for nine. That's
+   why he's ninth: the machine thinks Clemson's season, not Dabo's job, is
+   the story.
+10. **Belichick — the machine says he's fine, the man says he isn't.** 4.1
+    from CBS on the strength of the 2025 circus; the machine has UNC at
+    6.0 wins with 63% for the bowl-eligible six that "buys year three" —
+    and the 15–10 win at TCU (our Week 0 superdog moment) already banked
+    one. Petrino's offense managed only 15 points, but the defense held TCU
+    to 10 — the prep's "ride the defense" plan in one game.
+
+**Where man and machine disagree (the segment's actual content).**
+- *Machine hotter than the man*: Schiano (est. 3.0 → #4), Dabo (3.1 → #9),
+  DeBoer (3.0 → #11 with a 30% shot at ten wins).
+- *Man hotter than the machine*: Fickell (5.0 → #5 because the bar is six),
+  Belichick (4.1 → #10), Aranda (5.0 → #3).
+- *Out of the top 10 that people expect*: Lebby (3.3, but the bar is five
+  and MSU projects 4.8 — 55% to get there after the 62–13 over ULM);
+  Satterfield (3.5, Cincinnati projects 7.0 — 83% for a bowl); Deion (3.1,
+  6.3 wins, 69% for a bowl after the 14–13 at Georgia Tech).
+- *Caveat, said out loud*: the bars are ours. Move Norvell's bar to 7 and
+  his odds double; move Dabo's to 8 and he drops off the list. The formula
+  is transparent so Corey can argue with the inputs, not the math.
+
+---
+
+## Slide 3 — Our Heisman favorite
+
+**How the board is built.** Index = team factor × blended efficiency.
+Team factor = 0.5 + half the machine's odds of 10+ wins (winners come from
+ten-win teams; the 0.5 floor keeps a great QB on a nine-win team alive).
+Efficiency = CFBD predicted points added per play, 2026 blended with 150
+plays' weight of the 2025 line — the same "the prior is worth about three
+games" logic as the machine, at QB pace. QBs only on the main board; PPA per
+target isn't comparable, so receivers get their own line.
+
+| # | QB · team | 2026 PPA (plays) | 2025 prior | Blend | Team P(10+) | Index | Market (DK 9/8) |
+|---|---|---|---|---|---|---|---|
+| 1 | **Julian Sayin · Ohio State** | 0.934 (28) | 0.545 | 0.606 | 47% | **44.7** | +1400 (#8) |
+| 2 | Darian Mensah · Miami | 1.107 (31) | 0.371 | 0.497 | 74% | 43.2 | +600 (#1) |
+| 3 | C.J. Carr · Notre Dame | 0.398 (31) | 0.433 | 0.427 | 91% | 40.9 | +1100 (#4) |
+| 4 | Josh Hoover · Indiana | 1.639 (15) | 0.353 | 0.470 | 73% | 40.6 | +1900 (#11) |
+| 5 | Will Hammond · Texas Tech | 0.420 (35) | 0.376 | 0.384 | 80% | 34.5 | off board |
+| 6 | Dante Moore · Oregon | 0.367 (39) | 0.409 | 0.400 | 57% | 31.3 | +1300 (#6) |
+| 7 | Jayden Maiava · USC | 0.569 (60) | 0.517 | 0.532 | 16% | 30.9 | +1750 (#10) |
+| 8 | Arch Manning · Texas | 0.808 (30) | 0.338 | 0.416 | 47% | 30.6 | +950 (#2) |
+| 9 | Sam Leavitt · LSU | 0.506 (39) | 0.314 | 0.354 | 47% | 25.9 | +1500 (#9) |
+
+Non-QB watch: Jeremiah Smith 1.62 PPA per target (+1000, #3 in the market;
+2025 prior 0.94 — the best receiver line in the country), Malachi Toney 1.40
+(+1250; 234 yards and three scores at Stanford), Ryan Wingo 1.55, Koby Howard
+(Penn State) 2.09 on a tiny sample.
+
+**★ Our favorite: Julian Sayin.** The case in three lines:
+1. **The prior is the whole argument.** Sayin's 2025 line — 0.545 PPA per
+   play, first nationally in success rate — is the best returning QB
+   efficiency in the sport. Mensah's 2025 was 0.371 at Duke; Arch's was
+   0.338. One game moves the 2026 column; the 2025 column is 700 plays.
+2. **The team factor is honest, not flattering.** Ohio State's P(10+) is
+   47% — dragged down by the ±28 cap artifact (the machine docked the
+   Buckeyes 4.1 for winning 56–3) and the No. 4 schedule. Strip the artifact
+   and Sayin's lead over Mensah grows.
+3. **The market has him eighth at +1400.** That's the Man vs Machine line:
+   "the market is pricing one Miami game; the machine is pricing two years
+   of Sayin." Saturday in Austin is the referendum — a Sayin-to-Smith night
+   on that stage and the odds halve.
+
+**Why not Mensah (the market's favorite at +600)?** 401 yards, five TDs, 90%
+completions — the sixth 90%/400/5 game by any QB since 2000 — and Miami's
+74% P(10+) is the best team factor on the board. But the prior is a Duke
+season at 0.371, and the Week 1 opponent was Stanford (−3.3 in our ratings).
+He's second by 1.5 index points; if he does it again against Wake Forest and
+Central Michigan the blend catches Sayin by October. Also the honest problem
+with a Miami QB: Toney is taking his own ballots (+1250).
+
+**Why Arch is eighth (the take Corey will push back on).** The 2025 prior
+was mediocre (0.338 — 2025 "underdelivered", drops and the interior line, not
+Manning, per the deep dive), and 305 yards on Texas State doesn't move a
+700-play prior much. The machine's Texas team factor is the same 47% as Ohio
+State's. Arch's path is the same as Sayin's — Saturday — with the difference
+that a Texas win over No. 1 at home is a bigger narrative swing than the
+efficiency line will show. Say both things.
+
+**The two live longshots.** Hoover (+1900, #4 on our board) — 1.639 per play
+on 15 plays is a tiny sample, but Indiana's 73% P(10+) and Cignetti's
+offense turned a Cal transfer into a Heisman winner last year. Hammond (off
+the board, #5 for us) — Texas Tech's 80% P(10+) is the second-best team
+factor on the board and nobody is pricing him.
+
+**Caveats to say.** One game of 2026 data; the index will swing weekly
+until October. The team factor uses the season sim, which inherits the cap
+artifact. And the index can't see narrative — the Heisman is a vote, and
+votes love a Saturday-night highlight more than a PPA column.
+
+---
+
+## Slide 4 — Five Games, One Card (the numbers at a glance)
+
+Machine line = our rating gap + 2.5 for the home team, then the empirical
+margin curve (σ 15.9) turns the margin into a win probability. Projected
+scores lay the machine margin over the *market* total (we have no totals
+model — say so). Superdog EV = P(dog wins outright) × spread.
+
+| Game (kick, ET) | Machine | Market (DK / Bov) | Score call | Machine win % | Read |
+|---|---|---|---|---|---|
+| Ohio State at Texas (7:30) | TEX −3.7 | TEX −1.5 / −2 · O/U 49.5 | Texas 27–23 | TEX 60% | agreement once you strip the cap artifact — no play |
+| Oklahoma at Michigan (12:00) | OU −1.9 | OU −5.5 / −5.5 · O/U 43.5 | OU 23–21 | MICH 46% | **lean Michigan +5.5** — widest gap on the card (11.6 pp) |
+| Arizona State at Texas A&M (12:00) | TAMU −16.7 | TAMU −14.5 / −14 · O/U 50.5 | A&M 34–17 | TAMU 85% | agreement — no play |
+| Arizona at BYU (3:30) | BYU −8.4 | BYU −7.5 / −7.5 · O/U 47.5 | BYU 28–20 | BYU 70% | machine = market — no play |
+| Alabama at Kentucky (3:30) | BAMA −13.2 | BAMA −10.5 / −10.5 · O/U 49.5 | Bama 31–18 | BAMA 79% | 2.7 to Alabama — quibble, not a position |
+
+Reference column ("the man uses ESPN FPI"): ESPN's live FPI has Ohio State
+28.7 / Texas 26.9 (Texas −0.7 at home), Oklahoma 18.8 / Michigan 15.9 (OU
+−0.4), Texas A&M 20.0 / Arizona State 4.8 (−17.7), BYU 13.1 / Arizona 7.2
+(−8.4), Alabama 20.1 / Kentucky 5.4 (−12.2). SP+ 2026: Ohio State #1, Texas
+#6, A&M #9, Oklahoma #11, Alabama #13, Michigan #15, BYU #21, Arizona #31,
+Kentucky #47, Arizona State #51.
+
+No Monster Under this week: the top-decile threshold is 58.5 and none of
+our five totals (43.5 to 50.5) is close. Say that — "the tool has nothing to
+say on this card, which is the tool working."
+
+---
+
+## Slide 5 — Week 1: the receipts
 
 Frozen Ep2 calls (recorded Tue Sep 1) vs finals vs the last pre-kick line
 (the Fri 5 PM pull for the weekend games; the Mon 9:25 AM pull for SMU–FSU).
@@ -211,247 +452,9 @@ not a pick" — so it doesn't touch the record. **Paper record: stated leans
 
 ---
 
-## Segment 2 — The machine after Week 1 (Our Rankings tab)
+## Slides 6–8 — Ohio State at Texas — Sat Sep 12, 7:30 ET, DKR (Austin)
 
-*Slide 1 of the deck is now "Our Top 25" — built from ratings_current_2026.json
-at deck time (rating, Δ vs preseason, AP column, and a footer with the biggest
-machine-vs-voters splits). It refreshes itself every rebuild.*
-
-50 rated games in. **Top 10**: 1 Notre Dame 27.3 · 2 Texas 25.8 · 3 Georgia
-24.8 · 4 Ohio State 24.6 · 5 LSU 23.8 · 6 Miami 23.2 · 7 Indiana 22.3 ·
-8 Oregon 21.9 · 9 Alabama 21.1 · 10 Texas Tech 20.0.
-
-Machine vs the AP voters (Week 2 poll, the weekly Man vs Machine column):
-Ohio State AP #1 / machine #4 (−4.1 after Week 1); Notre Dame machine #1 /
-AP #3; Texas machine #2 / AP #4; LSU AP #8 / machine #5; Ole Miss AP #9 /
-machine #13; SMU AP #17 / machine #22; Virginia machine #20 / AP #25 (new
-this week); Michigan machine #21 / dropped out. In the voters' 25 and not
-ours: Washington (19), Utah (20), Houston (22), Louisville (24).
-
-Biggest movers: UMass +7.4, Nevada +6.5, San Jose State +4.9, UCLA +4.8,
-Tulsa +4.8, NDSU +4.7 · Rutgers −7.4, Western Kentucky −6.5, Cal −4.8,
-Oklahoma State −4.8, Jax State −4.7, Michigan −4.3, Hawai'i −4.3.
-
-How to explain the update on air: "Preseason FPI is worth about three games
-of evidence — that's what the backtest said. So after one game a team moves
-roughly a quarter of the way toward what it just showed you. By November the
-games run the machine, not the July guess."
-
-### Machine housekeeping — two blind spots to say out loud this week
-
-1. **The cap punishes blowouts of bad teams.** Margins are capped at ±28
-   before the update (pre-registered, tuned on 2021–24). Ohio State beat Ball
-   State 56–3; the machine expected ~48 (28.7 + 17.3 + 2.5 home), counted it
-   as a 28-point win, and docked the Buckeyes **4.1 points** for winning by
-   53. Same mechanism: Oregon −3.4, Oklahoma −1.8, Texas −1.1, Texas A&M
-   −1.0. It's a bookkeeping artifact, not a judgment — and it is why the
-   machine's Ohio State–Texas number is 3 points more Texas than everyone
-   else's. We don't change pre-registered rules mid-season; the fix (cap the
-   *residual* instead of the raw margin) goes on the postseason backtest list.
-2. **FCS games are invisible.** Only games between two rated FBS teams enter
-   the update, so Arizona State's 70–7, BYU's 63–7, Arizona's 35–7 and
-   Kentucky's 45–13 changed nothing — those four ratings are still the July
-   prior. The market saw those games; we didn't. (It cuts the other way on
-   the superdog board — see Buffalo below.)
-
----
-
-## Segment 2b — Hot Seat Top 10 (slide 2)
-
-**How the list is built (say this first).** Seat score = 60% the man + 40%
-the machine. The man is CBS Sports' preseason hot-seat rating (0–5, Aug 29;
-5.0 = "win or be fired", 4 = "start improving now", 3 = "pressure is
-mounting"). The machine is the probability, from our season sim, that the
-team reaches the win total that keeps the job — and that bar is OUR judgment
-call from the deep-dive "how he escapes" write-ups (8 for Norvell, 6 for
-Fickell, 7 for Aranda, 10 for DeBoer, 9 for Dabo…). Different bars, same
-rating, different seat. Re-computes every rebuild (`hot_seat_heisman.py`).
-
-| # | Coach · school | Tenure | CBS | Needs | P(gets it) | Machine wins | Score | Week 1 |
-|---|---|---|---|---|---|---|---|---|
-| 1 | Norvell · Florida State | 38–34, yr 7 | 5.0 | 8 | 20% | 6.2 (4–8) | 92 | L 24–27 SMU |
-| 2 | Locksley · Maryland | 37–49, yr 8 | 4.9 | 6 | 50% | 5.5 (4–7) | 79 | W 62–0 Hampton |
-| 3 | Aranda · Baylor | 36–37, yr 7 | 5.0 | 7 | 63% | 7.0 (5–9) | 75 | L 16–17 Auburn |
-| 4 | Schiano · Rutgers | 31–41 2nd stint | 3.0* | 6 | 5% | 3.6 (2–5) | 74 | L 21–37 UMass |
-| 5 | Fickell · Wisconsin | 17–21, yr 4 | 5.0 | 6 | 67% | 6.2 (4–8) | 73 | L 13–41 Notre Dame |
-| 6 | Beamer · South Carolina | 33–30, yr 6 | 4.3 | 7 | 47% | 6.4 (5–8) | 73 | W 57–0 Kent State |
-| 7 | Mason · Middle Tennessee | 3–9 in 2024, yr 3 | 3.6 | 6 | 30% | 4.7 (3–7) | 71 | W 38–14 Murray St |
-| 8 | O'Brien · Boston College | 9–16, yr 3 | 3.5 | 5 | 28% | 3.8 (2–5) | 71 | L 15–34 Cincinnati |
-| 9 | Swinney · Clemson | 186–53, yr 18 | 3.1 | 9 | 22% | 7.3 (5–9) | 68 | L 10–51 LSU |
-| 10 | Belichick · North Carolina | 4–8, yr 2 | 4.1 | 6 | 63% | 6.0 (4–8) | 64 | W 15–10 TCU |
-
-Next three: DeBoer (Alabama, 64 — bar 10, machine 30%), Doeren (NC State,
-64), Vincent (UL Monroe, 63*). *Rutgers's CBS number wasn't in the published
-list; 3.0 is our estimate from the Big Ten prep board.
-
-**The talking points, one per seat.**
-1. **Norvell — the only 5.0 whose machine number got WORSE.** 7–17 across
-   2024–25, the $50M+ buyout as the stated reason he's employed, and now a
-   home loss to SMU with the transfer O-line the whole plan rests on. The
-   machine has FSU at 6.2 wins with Alabama, Louisville and Miami by
-   mid-October; 20% to reach the 8 wins that save him. Say it: "the seat
-   board says win-or-be-fired, the machine says one-in-five."
-2. **Locksley — the machine's most endangered Power-4 coach.** Maryland is
-   #98 in our ratings (1.0) with a 5.5-win projection — a coin flip for the
-   bowl that was the entire point of the Malik Washington development year.
-   37–49 over eight seasons; back-to-back 4–8s. The 62–0 over Hampton (FCS)
-   changed nothing in the machine.
-3. **Aranda — 5.0, but the machine likes the roster.** 36–37 in year seven,
-   three straight bottom-tier defenses, and a Lagway-plus-Klanderman
-   save-my-job bet. The machine says 7.0 wins, 63% to hit the 7-win bar —
-   which is why he's third, not first. The 16–17 loss to Auburn (three Auburn
-   interceptions Baylor couldn't cash) was the coin flip the prep said
-   decides his year.
-4. **Schiano — the machine's alarm.** Rutgers lost 37–21 AT HOME to UMass
-   (preseason −18.8 in our ratings) and fell 7.4 points to **#138, dead last
-   in FBS**. The prep called the FCS-coordinator defensive teardown "a gamble
-   a legacy coach makes once"; the sim now gives Rutgers a 5% shot at six
-   wins. CBS didn't have him high preseason; the machine has him fourth after
-   one Saturday.
-5. **Fickell — retained in November with more NIL money instead of a buyout.**
-   17–21, the offense 86th-or-worse three straight years. The machine
-   actually likes his bowl odds (67%) because the bar is only six; the 13–41
-   at Lambeau (67 rushing yards at 2.2) was the expected result. His seat
-   is about the bar nobody has published.
-6. **Beamer — the SEC's hottest, and the machine says a coin flip.** 33–30
-   overall but 16–24 in the SEC; a preseason top-13 team went 4–8 with the
-   30–3 A&M meltdown. Machine: 6.4 wins, 47% for the seven that buys year
-   seven. 57–0 over Kent State was the right start; the schedule has zero
-   margin.
-7. **Mason — the machine doesn't care about brands.** MTSU is #123 in our
-   ratings (−16.1), 4.7 projected wins, 30% for six. CBS 3.6. He's on the
-   list because the math puts him there; on air, one line and move on.
-8. **O'Brien — the only Power-4 coach the machine gives under 30%.** BC is
-   #137 (−4.6), 3.8 projected wins, 28% to reach even five. The prep said the
-   Cincinnati and Rutgers trips "tell you everything by mid-September";
-   Cincinnati was 34–15. CBS 1–11 projection is live.
-9. **Dabo — pressure, not peril, until the machine looked at the schedule.**
-   186–53 and a buyout that makes firing him a fantasy; CBS only 3.1. But we
-   set his bar at nine wins (a redemption year needs the CFP conversation)
-   and after the 51–10 at LSU the sim says 7.3 wins, 22% for nine. That's
-   why he's ninth: the machine thinks Clemson's season, not Dabo's job, is
-   the story.
-10. **Belichick — the machine says he's fine, the man says he isn't.** 4.1
-    from CBS on the strength of the 2025 circus; the machine has UNC at
-    6.0 wins with 63% for the bowl-eligible six that "buys year three" —
-    and the 15–10 win at TCU (our Week 0 superdog moment) already banked
-    one. Petrino's offense managed only 15 points, but the defense held TCU
-    to 10 — the prep's "ride the defense" plan in one game.
-
-**Where man and machine disagree (the segment's actual content).**
-- *Machine hotter than the man*: Schiano (est. 3.0 → #4), Dabo (3.1 → #9),
-  DeBoer (3.0 → #11 with a 30% shot at ten wins).
-- *Man hotter than the machine*: Fickell (5.0 → #5 because the bar is six),
-  Belichick (4.1 → #10), Aranda (5.0 → #3).
-- *Out of the top 10 that people expect*: Lebby (3.3, but the bar is five
-  and MSU projects 4.8 — 55% to get there after the 62–13 over ULM);
-  Satterfield (3.5, Cincinnati projects 7.0 — 83% for a bowl); Deion (3.1,
-  6.3 wins, 69% for a bowl after the 14–13 at Georgia Tech).
-- *Caveat, said out loud*: the bars are ours. Move Norvell's bar to 7 and
-  his odds double; move Dabo's to 8 and he drops off the list. The formula
-  is transparent so Corey can argue with the inputs, not the math.
-
----
-
-## Segment 2c — Our Heisman favorite (slide 3)
-
-**How the board is built.** Index = team factor × blended efficiency.
-Team factor = 0.5 + half the machine's odds of 10+ wins (winners come from
-ten-win teams; the 0.5 floor keeps a great QB on a nine-win team alive).
-Efficiency = CFBD predicted points added per play, 2026 blended with 150
-plays' weight of the 2025 line — the same "the prior is worth about three
-games" logic as the machine, at QB pace. QBs only on the main board; PPA per
-target isn't comparable, so receivers get their own line.
-
-| # | QB · team | 2026 PPA (plays) | 2025 prior | Blend | Team P(10+) | Index | Market (DK 9/8) |
-|---|---|---|---|---|---|---|---|
-| 1 | **Julian Sayin · Ohio State** | 0.934 (28) | 0.545 | 0.606 | 47% | **44.7** | +1400 (#8) |
-| 2 | Darian Mensah · Miami | 1.107 (31) | 0.371 | 0.497 | 74% | 43.2 | +600 (#1) |
-| 3 | C.J. Carr · Notre Dame | 0.398 (31) | 0.433 | 0.427 | 91% | 40.9 | +1100 (#4) |
-| 4 | Josh Hoover · Indiana | 1.639 (15) | 0.353 | 0.470 | 73% | 40.6 | +1900 (#11) |
-| 5 | Will Hammond · Texas Tech | 0.420 (35) | 0.376 | 0.384 | 80% | 34.5 | off board |
-| 6 | Dante Moore · Oregon | 0.367 (39) | 0.409 | 0.400 | 57% | 31.3 | +1300 (#6) |
-| 7 | Jayden Maiava · USC | 0.569 (60) | 0.517 | 0.532 | 16% | 30.9 | +1750 (#10) |
-| 8 | Arch Manning · Texas | 0.808 (30) | 0.338 | 0.416 | 47% | 30.6 | +950 (#2) |
-| 9 | Sam Leavitt · LSU | 0.506 (39) | 0.314 | 0.354 | 47% | 25.9 | +1500 (#9) |
-
-Non-QB watch: Jeremiah Smith 1.62 PPA per target (+1000, #3 in the market;
-2025 prior 0.94 — the best receiver line in the country), Malachi Toney 1.40
-(+1250; 234 yards and three scores at Stanford), Ryan Wingo 1.55, Koby Howard
-(Penn State) 2.09 on a tiny sample.
-
-**★ Our favorite: Julian Sayin.** The case in three lines:
-1. **The prior is the whole argument.** Sayin's 2025 line — 0.545 PPA per
-   play, first nationally in success rate — is the best returning QB
-   efficiency in the sport. Mensah's 2025 was 0.371 at Duke; Arch's was
-   0.338. One game moves the 2026 column; the 2025 column is 700 plays.
-2. **The team factor is honest, not flattering.** Ohio State's P(10+) is
-   47% — dragged down by the ±28 cap artifact (the machine docked the
-   Buckeyes 4.1 for winning 56–3) and the No. 4 schedule. Strip the artifact
-   and Sayin's lead over Mensah grows.
-3. **The market has him eighth at +1400.** That's the Man vs Machine line:
-   "the market is pricing one Miami game; the machine is pricing two years
-   of Sayin." Saturday in Austin is the referendum — a Sayin-to-Smith night
-   on that stage and the odds halve.
-
-**Why not Mensah (the market's favorite at +600)?** 401 yards, five TDs, 90%
-completions — the sixth 90%/400/5 game by any QB since 2000 — and Miami's
-74% P(10+) is the best team factor on the board. But the prior is a Duke
-season at 0.371, and the Week 1 opponent was Stanford (−3.3 in our ratings).
-He's second by 1.5 index points; if he does it again against Wake Forest and
-Central Michigan the blend catches Sayin by October. Also the honest problem
-with a Miami QB: Toney is taking his own ballots (+1250).
-
-**Why Arch is eighth (the take Corey will push back on).** The 2025 prior
-was mediocre (0.338 — 2025 "underdelivered", drops and the interior line, not
-Manning, per the deep dive), and 305 yards on Texas State doesn't move a
-700-play prior much. The machine's Texas team factor is the same 47% as Ohio
-State's. Arch's path is the same as Sayin's — Saturday — with the difference
-that a Texas win over No. 1 at home is a bigger narrative swing than the
-efficiency line will show. Say both things.
-
-**The two live longshots.** Hoover (+1900, #4 on our board) — 1.639 per play
-on 15 plays is a tiny sample, but Indiana's 73% P(10+) and Cignetti's
-offense turned a Cal transfer into a Heisman winner last year. Hammond (off
-the board, #5 for us) — Texas Tech's 80% P(10+) is the second-best team
-factor on the board and nobody is pricing him.
-
-**Caveats to say.** One game of 2026 data; the index will swing weekly
-until October. The team factor uses the season sim, which inherits the cap
-artifact. And the index can't see narrative — the Heisman is a vote, and
-votes love a Saturday-night highlight more than a PPA column.
-
----
-
-## Segment 3 — Week 2: the card
-
-Machine line = our rating gap + 2.5 for the home team, then the empirical
-margin curve (σ 15.9) turns the margin into a win probability. Projected
-scores lay the machine margin over the *market* total (we have no totals
-model — say so). Superdog EV = P(dog wins outright) × spread.
-
-| Game (kick, ET) | Machine | Market (DK / Bov) | Score call | Machine win % | Read |
-|---|---|---|---|---|---|
-| Ohio State at Texas (7:30) | TEX −3.7 | TEX −1.5 / −2 · O/U 49.5 | Texas 27–23 | TEX 60% | agreement once you strip the cap artifact — no play |
-| Oklahoma at Michigan (12:00) | OU −1.9 | OU −5.5 / −5.5 · O/U 43.5 | OU 23–21 | MICH 46% | **lean Michigan +5.5** — widest gap on the card (11.6 pp) |
-| Arizona State at Texas A&M (12:00) | TAMU −16.7 | TAMU −14.5 / −14 · O/U 50.5 | A&M 34–17 | TAMU 85% | agreement — no play |
-| Arizona at BYU (3:30) | BYU −8.4 | BYU −7.5 / −7.5 · O/U 47.5 | BYU 28–20 | BYU 70% | machine = market — no play |
-| Alabama at Kentucky (3:30) | BAMA −13.2 | BAMA −10.5 / −10.5 · O/U 49.5 | Bama 31–18 | BAMA 79% | 2.7 to Alabama — quibble, not a position |
-
-Reference column ("the man uses ESPN FPI"): ESPN's live FPI has Ohio State
-28.7 / Texas 26.9 (Texas −0.7 at home), Oklahoma 18.8 / Michigan 15.9 (OU
-−0.4), Texas A&M 20.0 / Arizona State 4.8 (−17.7), BYU 13.1 / Arizona 7.2
-(−8.4), Alabama 20.1 / Kentucky 5.4 (−12.2). SP+ 2026: Ohio State #1, Texas
-#6, A&M #9, Oklahoma #11, Alabama #13, Michigan #15, BYU #21, Arizona #31,
-Kentucky #47, Arizona State #51.
-
-No Monster Under this week: the top-decile threshold is 58.5 and none of
-our five totals (43.5 to 50.5) is close. Say that — "the tool has nothing to
-say on this card, which is the tool working."
-
----
-
-### Ohio State at Texas — Sat Sep 12, 7:30 ET, DKR (Austin)
+### Slide 6 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** Texas 25.8 (machine #2) vs Ohio State 24.6 (#4); +2.5
 for Austin → Texas by 3.7 → 60% on the curve → fair Texas −150 / Ohio State
@@ -491,6 +494,16 @@ first to say why.**
   yards, Arch 20-of-27 for 305, 4 TD, 1 INT, Coleman 2 TD, 11-of-15 on third
   down, a defensive score; but **349 yards and 18 first downs allowed** to a
   Sun Belt team.
+
+**Honesty box on air.** "Three numbers: we say Texas by 3.7, Vegas says 1.5,
+ESPN says 0.7. Three points of ours is the cap doing bookkeeping on a 56–3
+game. This is a pick'em plus home field. We have no position, and if we're
+honest, nobody should."
+
+### Slides 7–8 — the team slides (Ohio State, then Texas)
+
+*The COACH / QB / ROSTER band sits on both team slides; the four keys are
+the bullets. Every key below names the players and the Week 1 evidence.*
 
 **COACH / QB / ROSTER (the band).** Ohio State: Day year 8, Smith OC,
 Patricia year two (back-to-back No. 1 SP+ defenses). Sayin year two —
@@ -533,14 +546,11 @@ favorite; "lone remaining flaw is accuracy throwing on the run."
    sacks in 2025) and Biles (15 TFL, 4.5 sacks at Pitt) are the two players
    who can make Sayin uncomfortable early.
 
-**Honesty box on air.** "Three numbers: we say Texas by 3.7, Vegas says 1.5,
-ESPN says 0.7. Three points of ours is the cap doing bookkeeping on a 56–3
-game. This is a pick'em plus home field. We have no position, and if we're
-honest, nobody should."
-
 ---
 
-### Oklahoma at Michigan — Sat Sep 12, 12:00 ET, Michigan Stadium
+## Slides 9–11 — Oklahoma at Michigan — Sat Sep 12, 12:00 ET, Michigan Stadium
+
+### Slide 9 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** Oklahoma 16.0 (#12) vs Michigan 11.6 (#21); +2.5 for
 Ann Arbor → Oklahoma by 1.9 → Michigan 46% → fair OU −118 / Michigan +118.
@@ -580,6 +590,19 @@ just moved 7 and we moved 4.
 - *Payback.* Oklahoma 24, Michigan 13 in Norman last September (Week 2,
   2025). The deep dive's Michigan prediction was 8–4 "competitive in
   everything" — a home loss to open the era makes the floor the story.
+
+**Honesty box on air.** "The market moved seven points on one MAC game; the
+machine moved four. That three-point gap is the whole edge, and it's a bet
+that 13–12 was noise — about a first-year head coach and a year-two
+quarterback the July prior can't see. The backtest never paid us for chasing
+chaos. Lean Michigan +5.5 as research, not a position." Note for the
+closer: Michigan +5.5 vs #11 Oklahoma is sixth on the Giant Killer
+board (EV 2.5) — it's a lean on the spread, not the outright.
+
+### Slides 10–11 — the team slides (Oklahoma, then Michigan)
+
+*The COACH / QB / ROSTER band sits on both team slides; the four keys are
+the bullets. Every key below names the players and the Week 1 evidence.*
 
 **COACH / QB / ROSTER.** OU: Venables yr 5; Mateer RETURNS; 63% back, 16
 adds — five OL transfers (E'Marion Harris from Arkansas), RB Avant (CSU), WR
@@ -622,17 +645,11 @@ three QBs (Warren, Davis, Keene) — Underwood is the whole enterprise.
    concessions when the pressure loses." Mateer's Air Raid is designed to
    find those.
 
-**Honesty box on air.** "The market moved seven points on one MAC game; the
-machine moved four. That three-point gap is the whole edge, and it's a bet
-that 13–12 was noise — about a first-year head coach and a year-two
-quarterback the July prior can't see. The backtest never paid us for chasing
-chaos. Lean Michigan +5.5 as research, not a position." Note for the
-superdog segment: Michigan +5.5 vs #10 Oklahoma is fifth on the Giant Killer
-board (EV 2.5) — it's a lean on the spread, not the outright.
-
 ---
 
-### Arizona State at Texas A&M — Sat Sep 12, 12:00 ET, Kyle Field
+## Slides 12–14 — Arizona State at Texas A&M — Sat Sep 12, 12:00 ET, Kyle Field
+
+### Slide 12 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** Texas A&M 19.0 (#11) vs Arizona State 4.8 (#48); +2.5
 for Kyle Field → A&M by 16.7 → 85% → fair −560 / +560. Market: DK A&M −14.5
@@ -666,6 +683,16 @@ ASU's rating is the July prior to the decimal.
   champion's rebuild against an 11-win team whose 2025 schedule was
   "schedule-flavored" (CBS). ASU then plays Kansas at Wembley on Sept 19.
 
+**Honesty box on air.** "Two points apart on a fourteen-point spread is
+agreement. Neither team has a 2026 snap in its rating — those FCS blowouts
+were invisible to the machine. The thing the prior can't price is Reed's
+turnover habit against a defense built to bait it. No play."
+
+### Slides 13–14 — the team slides (Arizona State, then Texas A&M)
+
+*The COACH / QB / ROSTER band sits on both team slides; the four keys are
+the bullets. Every key below names the players and the Week 1 evidence.*
+
 **COACH / QB / ROSTER.** ASU: Dillingham yr 4 ("develops QBs regardless of
 the name"); Boley NEW; 16% back, 24 adds (Omarion Miller from Colorado, Reed
 Harris from BC, edge Jalen Thompson from Michigan State). A&M: Elko yr 3,
@@ -697,14 +724,11 @@ Alabama, Saka).
 4. *Finish and stay clean.* 8 flags for 75 last week; the spread is 14.5,
    so style points are the whole grade.
 
-**Honesty box on air.** "Two points apart on a fourteen-point spread is
-agreement. Neither team has a 2026 snap in its rating — those FCS blowouts
-were invisible to the machine. The thing the prior can't price is Reed's
-turnover habit against a defense built to bait it. No play."
-
 ---
 
-### Arizona at BYU — Sat Sep 12, 3:30 ET, LaVell Edwards Stadium (Provo)
+## Slides 15–17 — Arizona at BYU — Sat Sep 12, 3:30 ET, LaVell Edwards Stadium (Provo)
+
+### Slide 15 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** BYU 13.1 (#18) vs Arizona 7.2 (#37); +2.5 → BYU by 8.4
 → 70% → fair −239 / +239. Market: DK BYU −7.5 (−290 / +235; opened −6.5,
@@ -735,6 +759,17 @@ Tech and Northern Arizona are FCS, so 63–7 and 35–7 moved nothing.
   PR yards, a defensive TD. Arizona 35–7 — 520 yards, Fifita 22-of-29 for
   262 and 2 TD, 206 rushing at 5.9, 5 sacks and 11 TFL on defense, NAU held
   to −7 rushing yards; but **3 turnovers** (two lost fumbles, a backup INT).
+
+**Honesty box on air.** "Eight-four and seven-and-a-half — that's
+agreement. Neither number has moved since July because both teams played
+FCS opponents. BYU's 79% continuity is the most reliable fact on the card;
+the thing we can't price is a first-time coordinator running the side of the
+ball that made BYU the last two years. No play."
+
+### Slides 16–17 — the team slides (Arizona, then BYU)
+
+*The COACH / QB / ROSTER band sits on both team slides; the four keys are
+the bullets. Every key below names the players and the Week 1 evidence.*
 
 **COACH / QB / ROSTER.** Arizona: Brennan yr 3 ("stabilized a sinking
 program"); Fifita RETURNS; leading rusher and top two receivers gone —
@@ -772,15 +807,11 @@ Bruce Mitchell plus Washington OT Paki Finau; top three pass targets gone
 4. *The hidden margin.* 183 return yards and a defensive score last week;
    against a team that turned it over three times, takeaways are the cover.
 
-**Honesty box on air.** "Eight-four and seven-and-a-half — that's
-agreement. Neither number has moved since July because both teams played
-FCS opponents. BYU's 79% continuity is the most reliable fact on the card;
-the thing we can't price is a first-time coordinator running the side of the
-ball that made BYU the last two years. No play."
-
 ---
 
-### Alabama at Kentucky — Sat Sep 12, 3:30 ET, Kroger Field (Lexington)
+## Slides 18–20 — Alabama at Kentucky — Sat Sep 12, 3:30 ET, Kroger Field (Lexington)
+
+### Slide 18 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** Alabama 21.1 (#9) vs Kentucky 5.4 (#42); Kentucky gets
 the 2.5 → Alabama by 13.2 → 79% → fair −380 / +380. Market: DK Alabama −10.5
@@ -814,6 +845,17 @@ State is FCS).
   Alabama's three early traps (with FSU Week 3 and South Carolina Week 4).
   Kentucky's last win in the series: 1997. Last meeting: Alabama 49–21 at
   Kroger (2023).
+
+**Honesty box on air.** "Thirteen-two against ten-and-a-half is 2.7 points to
+Alabama — noise. And it comes with two hedges the prior can't price: a
+redshirt freshman's first road start and a first-year head coach whose
+rating has zero 2026 snaps in it. Quibble, not a position. The real
+information arrives at 3:30."
+
+### Slides 19–20 — the team slides (Alabama, then Kentucky)
+
+*The COACH / QB / ROSTER band sits on both team slides; the four keys are
+the bullets. Every key below names the players and the Week 1 evidence.*
 
 **COACH / QB / ROSTER.** Alabama: DeBoer yr 3, Wommack yr 3 (4-2-5 "swarm";
 "maybe the best secondary in America": Zabien Brown, Dijon Lee, nickel Red
@@ -854,15 +896,9 @@ Rodriguez the one sure thing; Kenny Darby 74 yards in Week 1).
 4. *Clean up the leaks.* 3-of-8 on third down and 6 penalties for 70 against
    an FCS team — those are the two stats that lose to Alabama.
 
-**Honesty box on air.** "Thirteen-two against ten-and-a-half is 2.7 points to
-Alabama — noise. And it comes with two hedges the prior can't price: a
-redshirt freshman's first road start and a first-year head coach whose
-rating has zero 2026 snaps in it. Quibble, not a position. The real
-information arrives at 3:30."
-
 ---
 
-## Segment 4 — Superdogs (one per category, computed from the live card)
+## Slide 21 — Our predictions + superdogs (the closer)
 
 Rule: dog wins outright → we bank the spread. EV = P(win) × spread from the
 machine's win probability; boards exclude played games. Ranks are the AP
@@ -902,7 +938,7 @@ the win."
 
 ---
 
-## Pre-record checklist (Tuesday)
+## Pre-record checklist
 
 1. ~~Confirm the 7:30 AM refresh ran~~ — done: as_of Tue 8:01 AM MT, 51
    rated games.
