@@ -254,6 +254,173 @@ games run the machine, not the July guess."
 
 ---
 
+## Segment 2b — Hot Seat Top 10 (slide 2)
+
+**How the list is built (say this first).** Seat score = 60% the man + 40%
+the machine. The man is CBS Sports' preseason hot-seat rating (0–5, Aug 29;
+5.0 = "win or be fired", 4 = "start improving now", 3 = "pressure is
+mounting"). The machine is the probability, from our season sim, that the
+team reaches the win total that keeps the job — and that bar is OUR judgment
+call from the deep-dive "how he escapes" write-ups (8 for Norvell, 6 for
+Fickell, 7 for Aranda, 10 for DeBoer, 9 for Dabo…). Different bars, same
+rating, different seat. Re-computes every rebuild (`hot_seat_heisman.py`).
+
+| # | Coach · school | Tenure | CBS | Needs | P(gets it) | Machine wins | Score | Week 1 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Norvell · Florida State | 38–34, yr 7 | 5.0 | 8 | 20% | 6.2 (4–8) | 92 | L 24–27 SMU |
+| 2 | Locksley · Maryland | 37–49, yr 8 | 4.9 | 6 | 50% | 5.5 (4–7) | 79 | W 62–0 Hampton |
+| 3 | Aranda · Baylor | 36–37, yr 7 | 5.0 | 7 | 63% | 7.0 (5–9) | 75 | L 16–17 Auburn |
+| 4 | Schiano · Rutgers | 31–41 2nd stint | 3.0* | 6 | 5% | 3.6 (2–5) | 74 | L 21–37 UMass |
+| 5 | Fickell · Wisconsin | 17–21, yr 4 | 5.0 | 6 | 67% | 6.2 (4–8) | 73 | L 13–41 Notre Dame |
+| 6 | Beamer · South Carolina | 33–30, yr 6 | 4.3 | 7 | 47% | 6.4 (5–8) | 73 | W 57–0 Kent State |
+| 7 | Mason · Middle Tennessee | 3–9 in 2024, yr 3 | 3.6 | 6 | 30% | 4.7 (3–7) | 71 | W 38–14 Murray St |
+| 8 | O'Brien · Boston College | 9–16, yr 3 | 3.5 | 5 | 28% | 3.8 (2–5) | 71 | L 15–34 Cincinnati |
+| 9 | Swinney · Clemson | 186–53, yr 18 | 3.1 | 9 | 22% | 7.3 (5–9) | 68 | L 10–51 LSU |
+| 10 | Belichick · North Carolina | 4–8, yr 2 | 4.1 | 6 | 63% | 6.0 (4–8) | 64 | W 15–10 TCU |
+
+Next three: DeBoer (Alabama, 64 — bar 10, machine 30%), Doeren (NC State,
+64), Vincent (UL Monroe, 63*). *Rutgers's CBS number wasn't in the published
+list; 3.0 is our estimate from the Big Ten prep board.
+
+**The talking points, one per seat.**
+1. **Norvell — the only 5.0 whose machine number got WORSE.** 7–17 across
+   2024–25, the $50M+ buyout as the stated reason he's employed, and now a
+   home loss to SMU with the transfer O-line the whole plan rests on. The
+   machine has FSU at 6.2 wins with Alabama, Louisville and Miami by
+   mid-October; 20% to reach the 8 wins that save him. Say it: "the seat
+   board says win-or-be-fired, the machine says one-in-five."
+2. **Locksley — the machine's most endangered Power-4 coach.** Maryland is
+   #98 in our ratings (1.0) with a 5.5-win projection — a coin flip for the
+   bowl that was the entire point of the Malik Washington development year.
+   37–49 over eight seasons; back-to-back 4–8s. The 62–0 over Hampton (FCS)
+   changed nothing in the machine.
+3. **Aranda — 5.0, but the machine likes the roster.** 36–37 in year seven,
+   three straight bottom-tier defenses, and a Lagway-plus-Klanderman
+   save-my-job bet. The machine says 7.0 wins, 63% to hit the 7-win bar —
+   which is why he's third, not first. The 16–17 loss to Auburn (three Auburn
+   interceptions Baylor couldn't cash) was the coin flip the prep said
+   decides his year.
+4. **Schiano — the machine's alarm.** Rutgers lost 37–21 AT HOME to UMass
+   (preseason −18.8 in our ratings) and fell 7.4 points to **#138, dead last
+   in FBS**. The prep called the FCS-coordinator defensive teardown "a gamble
+   a legacy coach makes once"; the sim now gives Rutgers a 5% shot at six
+   wins. CBS didn't have him high preseason; the machine has him fourth after
+   one Saturday.
+5. **Fickell — retained in November with more NIL money instead of a buyout.**
+   17–21, the offense 86th-or-worse three straight years. The machine
+   actually likes his bowl odds (67%) because the bar is only six; the 13–41
+   at Lambeau (67 rushing yards at 2.2) was the expected result. His seat
+   is about the bar nobody has published.
+6. **Beamer — the SEC's hottest, and the machine says a coin flip.** 33–30
+   overall but 16–24 in the SEC; a preseason top-13 team went 4–8 with the
+   30–3 A&M meltdown. Machine: 6.4 wins, 47% for the seven that buys year
+   seven. 57–0 over Kent State was the right start; the schedule has zero
+   margin.
+7. **Mason — the machine doesn't care about brands.** MTSU is #123 in our
+   ratings (−16.1), 4.7 projected wins, 30% for six. CBS 3.6. He's on the
+   list because the math puts him there; on air, one line and move on.
+8. **O'Brien — the only Power-4 coach the machine gives under 30%.** BC is
+   #137 (−4.6), 3.8 projected wins, 28% to reach even five. The prep said the
+   Cincinnati and Rutgers trips "tell you everything by mid-September";
+   Cincinnati was 34–15. CBS 1–11 projection is live.
+9. **Dabo — pressure, not peril, until the machine looked at the schedule.**
+   186–53 and a buyout that makes firing him a fantasy; CBS only 3.1. But we
+   set his bar at nine wins (a redemption year needs the CFP conversation)
+   and after the 51–10 at LSU the sim says 7.3 wins, 22% for nine. That's
+   why he's ninth: the machine thinks Clemson's season, not Dabo's job, is
+   the story.
+10. **Belichick — the machine says he's fine, the man says he isn't.** 4.1
+    from CBS on the strength of the 2025 circus; the machine has UNC at
+    6.0 wins with 63% for the bowl-eligible six that "buys year three" —
+    and the 15–10 win at TCU (our Week 0 superdog moment) already banked
+    one. Petrino's offense managed only 15 points, but the defense held TCU
+    to 10 — the prep's "ride the defense" plan in one game.
+
+**Where man and machine disagree (the segment's actual content).**
+- *Machine hotter than the man*: Schiano (est. 3.0 → #4), Dabo (3.1 → #9),
+  DeBoer (3.0 → #11 with a 30% shot at ten wins).
+- *Man hotter than the machine*: Fickell (5.0 → #5 because the bar is six),
+  Belichick (4.1 → #10), Aranda (5.0 → #3).
+- *Out of the top 10 that people expect*: Lebby (3.3, but the bar is five
+  and MSU projects 4.8 — 55% to get there after the 62–13 over ULM);
+  Satterfield (3.5, Cincinnati projects 7.0 — 83% for a bowl); Deion (3.1,
+  6.3 wins, 69% for a bowl after the 14–13 at Georgia Tech).
+- *Caveat, said out loud*: the bars are ours. Move Norvell's bar to 7 and
+  his odds double; move Dabo's to 8 and he drops off the list. The formula
+  is transparent so Corey can argue with the inputs, not the math.
+
+---
+
+## Segment 2c — Our Heisman favorite (slide 3)
+
+**How the board is built.** Index = team factor × blended efficiency.
+Team factor = 0.5 + half the machine's odds of 10+ wins (winners come from
+ten-win teams; the 0.5 floor keeps a great QB on a nine-win team alive).
+Efficiency = CFBD predicted points added per play, 2026 blended with 150
+plays' weight of the 2025 line — the same "the prior is worth about three
+games" logic as the machine, at QB pace. QBs only on the main board; PPA per
+target isn't comparable, so receivers get their own line.
+
+| # | QB · team | 2026 PPA (plays) | 2025 prior | Blend | Team P(10+) | Index | Market (DK 9/8) |
+|---|---|---|---|---|---|---|---|
+| 1 | **Julian Sayin · Ohio State** | 0.934 (28) | 0.545 | 0.606 | 47% | **44.7** | +1400 (#8) |
+| 2 | Darian Mensah · Miami | 1.107 (31) | 0.371 | 0.497 | 74% | 43.2 | +600 (#1) |
+| 3 | C.J. Carr · Notre Dame | 0.398 (31) | 0.433 | 0.427 | 91% | 40.9 | +1100 (#4) |
+| 4 | Josh Hoover · Indiana | 1.639 (15) | 0.353 | 0.470 | 73% | 40.6 | +1900 (#11) |
+| 5 | Will Hammond · Texas Tech | 0.420 (35) | 0.376 | 0.384 | 80% | 34.5 | off board |
+| 6 | Dante Moore · Oregon | 0.367 (39) | 0.409 | 0.400 | 57% | 31.3 | +1300 (#6) |
+| 7 | Jayden Maiava · USC | 0.569 (60) | 0.517 | 0.532 | 16% | 30.9 | +1750 (#10) |
+| 8 | Arch Manning · Texas | 0.808 (30) | 0.338 | 0.416 | 47% | 30.6 | +950 (#2) |
+| 9 | Sam Leavitt · LSU | 0.506 (39) | 0.314 | 0.354 | 47% | 25.9 | +1500 (#9) |
+
+Non-QB watch: Jeremiah Smith 1.62 PPA per target (+1000, #3 in the market;
+2025 prior 0.94 — the best receiver line in the country), Malachi Toney 1.40
+(+1250; 234 yards and three scores at Stanford), Ryan Wingo 1.55, Koby Howard
+(Penn State) 2.09 on a tiny sample.
+
+**★ Our favorite: Julian Sayin.** The case in three lines:
+1. **The prior is the whole argument.** Sayin's 2025 line — 0.545 PPA per
+   play, first nationally in success rate — is the best returning QB
+   efficiency in the sport. Mensah's 2025 was 0.371 at Duke; Arch's was
+   0.338. One game moves the 2026 column; the 2025 column is 700 plays.
+2. **The team factor is honest, not flattering.** Ohio State's P(10+) is
+   47% — dragged down by the ±28 cap artifact (the machine docked the
+   Buckeyes 4.1 for winning 56–3) and the No. 4 schedule. Strip the artifact
+   and Sayin's lead over Mensah grows.
+3. **The market has him eighth at +1400.** That's the Man vs Machine line:
+   "the market is pricing one Miami game; the machine is pricing two years
+   of Sayin." Saturday in Austin is the referendum — a Sayin-to-Smith night
+   on that stage and the odds halve.
+
+**Why not Mensah (the market's favorite at +600)?** 401 yards, five TDs, 90%
+completions — the sixth 90%/400/5 game by any QB since 2000 — and Miami's
+74% P(10+) is the best team factor on the board. But the prior is a Duke
+season at 0.371, and the Week 1 opponent was Stanford (−3.3 in our ratings).
+He's second by 1.5 index points; if he does it again against Wake Forest and
+Central Michigan the blend catches Sayin by October. Also the honest problem
+with a Miami QB: Toney is taking his own ballots (+1250).
+
+**Why Arch is eighth (the take Corey will push back on).** The 2025 prior
+was mediocre (0.338 — 2025 "underdelivered", drops and the interior line, not
+Manning, per the deep dive), and 305 yards on Texas State doesn't move a
+700-play prior much. The machine's Texas team factor is the same 47% as Ohio
+State's. Arch's path is the same as Sayin's — Saturday — with the difference
+that a Texas win over No. 1 at home is a bigger narrative swing than the
+efficiency line will show. Say both things.
+
+**The two live longshots.** Hoover (+1900, #4 on our board) — 1.639 per play
+on 15 plays is a tiny sample, but Indiana's 73% P(10+) and Cignetti's
+offense turned a Cal transfer into a Heisman winner last year. Hammond (off
+the board, #5 for us) — Texas Tech's 80% P(10+) is the second-best team
+factor on the board and nobody is pricing him.
+
+**Caveats to say.** One game of 2026 data; the index will swing weekly
+until October. The team factor uses the season sim, which inherits the cap
+artifact. And the index can't see narrative — the Heisman is a vote, and
+votes love a Saturday-night highlight more than a PPA column.
+
+---
+
 ## Segment 3 — Week 2: the card
 
 Machine line = our rating gap + 2.5 for the home team, then the empirical

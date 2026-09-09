@@ -970,6 +970,141 @@ shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.55, 0.62, NAVY2)
 txt(s, 1.1, _fy + 0.06, 11.2, 0.28, _line1, 9.5, WHITE, bold=True)
 txt(s, 1.1, _fy + 0.32, 11.2, 0.28, _line2, 9.5, PALE)
 
+# ---------------- slides 2-3: hot seat + Heisman boards ----------------
+# Data: boards_week{N}.json from hot_seat_heisman.py (CBS rating x season-sim
+# odds of hitting the job-saving win total; QB PPA blend x team P(10+)).
+_BP = os.path.join(HERE, f"boards_week{WEEK}.json")
+BOARDS = _json.load(open(_BP, encoding="utf-8")) if os.path.exists(_BP) else None
+if BOARDS:
+    PALE = RGBColor(0xCA, 0xDC, 0xFC)
+    UP, DOWN = RGBColor(0x5C, 0xD6, 0x8A), RGBColor(0xFF, 0x7A, 0x7A)
+
+    def _row_logo(s, x, y, team):
+        lp = logo_for(normalize_name(team))
+        if lp:
+            shape(s, MSO_SHAPE.OVAL, x, y + 0.05, 0.3, 0.3, WHITE)
+            s.shapes.add_picture(lp, Inches(x + 0.035), Inches(y + 0.085),
+                                 Inches(0.23), Inches(0.23))
+
+    def _hdr(s, x, w, y, label, align=PP_ALIGN.LEFT):
+        txt(s, x, y, w, 0.22, label, 8, PALE, bold=True, align=align)
+
+    # -- hot seat --
+    s = blank(NAVY)
+    txt(s, 0.9, 0.42, 11.5, 0.4,
+        f"EPISODE {EPISODE} · WEEK {WEEK} · THE SEAT BOARD", 14, ORANGE, bold=True)
+    txt(s, 0.9, 0.76, 11.5, 0.8, "Hot Seat Top 10", 40, WHITE, bold=True)
+    txt(s, 0.9, 1.5, 11.5, 0.3,
+        "seat score = 60% the man (CBS hot-seat rating 0–5, Aug 29) + 40% the machine "
+        "(odds of missing the job-saving win total, from our season sim) · * = estimated",
+        10.5, PALE, italic=True)
+    TOP, RH = 2.08, 0.4
+    R = PP_ALIGN.RIGHT
+    _hdr(s, 1.75, 2.8, TOP - 0.25, "COACH · SCHOOL")
+    _hdr(s, 4.6, 1.5, TOP - 0.25, "TENURE")
+    _hdr(s, 6.15, 0.55, TOP - 0.25, "CBS", R)
+    _hdr(s, 6.75, 0.55, TOP - 0.25, "NEEDS", R)
+    _hdr(s, 7.35, 0.7, TOP - 0.25, "P(GETS IT)", R)
+    _hdr(s, 8.1, 0.95, TOP - 0.25, "MACHINE WINS", R)
+    _hdr(s, 9.1, 0.5, TOP - 0.25, "Δ", R)
+    _hdr(s, 9.65, 0.55, TOP - 0.25, "SCORE", R)
+    _hdr(s, 10.3, 2.1, TOP - 0.25, "LAST RESULT")
+    for i, r in enumerate(BOARDS["hot_seat"][:10]):
+        y = TOP + i * RH
+        if i % 2 == 0:
+            shape(s, MSO_SHAPE.RECTANGLE, 0.9, y, 11.5, RH, NAVY2)
+        txt(s, 0.9, y + 0.06, 0.4, 0.3, str(i + 1), 13, ORANGE, bold=True, align=R)
+        _row_logo(s, 1.35, y, r["team"])
+        txt(s, 1.75, y + 0.06, 2.8, 0.3, f"{r['coach']} · {r['team']}", 12, WHITE, bold=True)
+        txt(s, 4.6, y + 0.09, 1.5, 0.3, r["tenure"], 8.5, PALE)
+        txt(s, 6.15, y + 0.07, 0.55, 0.3, f"{r['cbs']:.1f}{'*' if r['cbs_est'] else ''}",
+            11, WHITE, bold=True, align=R)
+        txt(s, 6.75, y + 0.07, 0.55, 0.3, f"{r['bar']} W", 11, WHITE, align=R)
+        txt(s, 7.35, y + 0.07, 0.7, 0.3, f"{round(100 * r['p_bar'])}%", 11,
+            DOWN if r["p_bar"] < 0.4 else (UP if r["p_bar"] > 0.6 else WHITE),
+            bold=True, align=R)
+        txt(s, 8.1, y + 0.07, 0.95, 0.3, f"{r['proj']:.1f} ({r['p10']:g}–{r['p90']:g})",
+            10.5, WHITE, align=R)
+        d = r["delta"] or 0.0
+        txt(s, 9.1, y + 0.09, 0.5, 0.3, f"{d:+.1f}" if d else "0.0", 10,
+            UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d), align=R)
+        txt(s, 9.65, y + 0.06, 0.55, 0.3, f"{r['score']:.0f}", 12.5, ORANGE, bold=True, align=R)
+        last = (r["results"] or ["—"])[-1].replace("vs ", "vs ").replace("at ", "at ")
+        txt(s, 10.3, y + 0.09, 2.1, 0.3, last, 8.5, PALE)
+    _fy = TOP + 10 * RH + 0.12
+    _nxt = BOARDS["hot_seat"][10:13]
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.62, NAVY2)
+    txt(s, 1.1, _fy + 0.06, 11.2, 0.28,
+        "Next three: " + " · ".join(f"{x['coach']} ({x['team']}, {x['score']:.0f})" for x in _nxt),
+        9.5, WHITE, bold=True)
+    txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
+        "NEEDS = the win total that keeps the job (from the deep-dive write-ups — a "
+        "judgment call) · P(GETS IT) = the machine's odds of reaching it · MACHINE WINS = "
+        f"projected wins (10th–90th pct), {BOARDS['games_used']} rated games in",
+        8.5, PALE)
+
+    # -- Heisman --
+    s = blank(NAVY)
+    txt(s, 0.9, 0.42, 11.5, 0.4,
+        f"EPISODE {EPISODE} · WEEK {WEEK} · OUR HEISMAN BOARD", 14, ORANGE, bold=True)
+    txt(s, 0.9, 0.76, 11.5, 0.8, "Our Heisman Favorite", 40, WHITE, bold=True)
+    txt(s, 0.9, 1.5, 11.5, 0.3,
+        "index = team factor (0.5 + half the odds of 10+ wins) × blended PPA per play "
+        "(2026 + 150 plays of the 2025 line as prior) · market = DraftKings, Sep 8",
+        10.5, PALE, italic=True)
+    _mkt = {x["name"]: x["market"] for x in BOARDS["heisman"] + BOARDS["heisman_non_qb"]
+            if x.get("market")}
+    _order = sorted(_mkt, key=lambda n: _mkt[n])
+    _mrank = {n: i + 1 for i, n in enumerate(_order)}
+    TOP, RH = 2.08, 0.36
+    _hdr(s, 1.75, 2.7, TOP - 0.25, "QUARTERBACK · TEAM")
+    _hdr(s, 4.5, 1.2, TOP - 0.25, "2026 PPA (PLAYS)", R)
+    _hdr(s, 5.75, 0.8, TOP - 0.25, "2025 PRIOR", R)
+    _hdr(s, 6.6, 0.7, TOP - 0.25, "BLEND", R)
+    _hdr(s, 7.35, 0.9, TOP - 0.25, "TEAM P(10+)", R)
+    _hdr(s, 8.3, 0.7, TOP - 0.25, "INDEX", R)
+    _hdr(s, 9.05, 0.9, TOP - 0.25, "MARKET", R)
+    _hdr(s, 10.0, 0.9, TOP - 0.25, "MKT RANK", R)
+    _hdr(s, 10.95, 1.45, TOP - 0.25, "MAN VS MACHINE", R)
+    for i, r in enumerate(BOARDS["heisman"][:9]):
+        y = TOP + i * RH
+        if i % 2 == 0:
+            shape(s, MSO_SHAPE.RECTANGLE, 0.9, y, 11.5, RH, NAVY2)
+        txt(s, 0.9, y + 0.04, 0.4, 0.3, str(i + 1), 13, ORANGE, bold=True, align=R)
+        _row_logo(s, 1.35, y - 0.02, r["team"])
+        txt(s, 1.75, y + 0.04, 2.7, 0.3, f"{r['name']} · {r['team']}", 12, WHITE, bold=True)
+        txt(s, 4.5, y + 0.05, 1.2, 0.3, f"{r['ppa26']:.3f} ({r['plays26']})", 10.5, WHITE, align=R)
+        txt(s, 5.75, y + 0.05, 0.8, 0.3, f"{r['ppa25']:.3f}" if r["ppa25"] is not None else "new", 10.5, PALE, align=R)
+        txt(s, 6.6, y + 0.05, 0.7, 0.3, f"{r['blend']:.3f}", 10.5, WHITE, align=R)
+        txt(s, 7.35, y + 0.05, 0.9, 0.3, f"{round(100 * r['p10w'])}%", 10.5, WHITE, align=R)
+        txt(s, 8.3, y + 0.04, 0.7, 0.3, f"{r['index']:.1f}", 12.5, ORANGE, bold=True, align=R)
+        txt(s, 9.05, y + 0.05, 0.9, 0.3, f"+{r['market']}" if r["market"] else "off board",
+            10.5, WHITE if r["market"] else PALE, align=R)
+        mr = _mrank.get(r["name"])
+        txt(s, 10.0, y + 0.05, 0.9, 0.3, f"#{mr}" if mr else "—", 10.5, PALE, align=R)
+        gap = (mr - (i + 1)) if mr else None
+        lab = ("market too low" if gap and gap >= 3 else "market too high" if gap is not None and gap <= -3
+               else "agree" if gap is not None else "unpriced")
+        txt(s, 10.95, y + 0.05, 1.45, 0.3, lab, 9.5,
+            UP if lab == "market too low" else (DOWN if lab == "market too high" else PALE),
+            bold=lab != "agree", align=R)
+    fav = BOARDS["heisman"][0]
+    _fy = TOP + 9 * RH + 0.12
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.72, ORANGE)
+    txt(s, 1.2, _fy + 0.1, 3.0, 0.5, "★ OUR FAVORITE", 15, NAVY, bold=True)
+    txt(s, 4.0, _fy + 0.08, 8.2, 0.55,
+        f"{fav['name']}, {fav['team']} — index {fav['index']:.1f} · market "
+        f"+{fav['market']} (#{_mrank.get(fav['name'], '—')} on the board)", 17, WHITE, bold=True)
+    _non = BOARDS["heisman_non_qb"]
+    txt(s, 0.9, _fy + 0.85, 11.5, 0.3,
+        "Non-QB watch (own scale — PPA per target, not comparable to the QB column): " +
+        " · ".join(f"{x['name']} {x['ppa26']:.2f}" + (f" (+{x['market']})" if x.get("market") else "")
+                   for x in _non[:4]), 9.5, PALE)
+    txt(s, 0.9, 7.13, 11.5, 0.3,
+        "PPA = CFBD predicted points added per play · a great QB on a 9-win team stays "
+        "alive (team factor floor 0.5) · the board re-computes every rebuild", 8.5, PALE,
+        italic=True)
+
 # ---------------- title slide ----------------
 s = blank(NAVY)
 txt(s, 0.9, 0.85, 11.5, 0.45, f"EPISODE {EPISODE} · WEEK {WEEK} · {EP_DATE}", 14, ORANGE,
