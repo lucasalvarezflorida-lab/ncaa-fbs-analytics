@@ -175,10 +175,38 @@ target isn't comparable, so receivers get their own line.
 | 3 | C.J. Carr · Notre Dame | 0.398 (31) | 0.433 | 0.427 | 91% | 40.9 | +1100 (#4) |
 | 4 | Josh Hoover · Indiana | 1.639 (15) | 0.353 | 0.470 | 73% | 40.6 | +1900 (#11) |
 | 5 | Will Hammond · Texas Tech | 0.420 (35) | 0.376 | 0.384 | 80% | 34.5 | off board |
-| 6 | Dante Moore · Oregon | 0.367 (39) | 0.409 | 0.400 | 57% | 31.3 | +1300 (#6) |
-| 7 | Jayden Maiava · USC | 0.569 (60) | 0.517 | 0.532 | 16% | 30.9 | +1750 (#10) |
-| 8 | Arch Manning · Texas | 0.808 (30) | 0.338 | 0.416 | 47% | 30.6 | +950 (#2) |
-| 9 | Sam Leavitt · LSU | 0.506 (39) | 0.314 | 0.354 | 47% | 25.9 | +1500 (#9) |
+
+Next up (not on the slide): Dante Moore 31.3 (market #6), Jayden Maiava
+30.9 (#10), Arch Manning 30.6 (#2), Sam Leavitt 25.9 (#9).
+
+**Why each of the five is there (the line under each row on the slide).**
+1. **Sayin** — the prior. 0.545 PPA per play in 2025, first nationally in
+   success rate, is the best returning QB efficiency in the sport, and Ohio
+   State is a title favorite. One Week 1 game moved the 2026 column; the
+   2025 column is 700 plays. The market has him eighth at +1400.
+2. **Mensah** — the Week 1 game. 401 yards, five touchdowns, 90% at
+   Stanford (the sixth 90/400/5 game by any QB since 2000). The prior is a
+   Duke season at 0.371 and the opponent was −3.3 in our ratings; Miami's
+   74% P(10+) is the best team factor on the board, which is what keeps him
+   within 1.5 points of Sayin.
+3. **Carr** — the team. Notre Dame's 91% P(10+) is the highest team factor
+   on the board, and the index is built so the QB of the likeliest 10-win
+   team stays in the race. His own line is average so far: 0.398 on 31
+   plays (19-of-29 for 239 at Lambeau), 0.433 prior. If Notre Dame goes
+   11–1 he's a finalist on résumé; the efficiency has to arrive.
+4. **Hoover** — the sample. 1.639 per play on 15 plays against North Texas
+   is the best number on the board and the least reliable one. What makes
+   it worth listing: Indiana's 73% P(10+), and the Cignetti–Shanahan offense
+   that turned a Cal transfer into a Heisman winner last year. +1900 is the
+   longest price of the five.
+5. **Hammond** — the situation. Texas Tech's 80% P(10+) is second on the
+   board (a No. 10 rating over a schedule with no top-90 nonconference
+   game and none of the Big 12's next three contenders); his efficiency is
+   eighth of nine (0.384 — 26-of-33 for 298 against Abilene Christian; a
+   0.376 prior from 150 backup plays in 2025, most of the value in his
+   legs). He came back from an October ACL to start over Tulsa transfer
+   Kirk Francis. Houston in Lubbock in Week 3 is the first real test, and
+   he's not on the DraftKings board at all — "unpriced," not "value."
 
 Non-QB watch: Jeremiah Smith 1.62 PPA per target (+1000, #3 in the market;
 2025 prior 0.94 — the best receiver line in the country), Malachi Toney 1.40

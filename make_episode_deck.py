@@ -1052,11 +1052,19 @@ if BOARDS:
         "index = team factor (0.5 + half the odds of 10+ wins) × blended PPA per play "
         "(2026 + 150 plays of the 2025 line as prior) · market = DraftKings, Sep 8",
         10.5, PALE, italic=True)
+    HEISMAN_WHY = {
+        "Julian Sayin": "Best returning efficiency in the sport (0.545 in 2025, No. 1 in success rate) on a title favorite — the market has him 8th at +1400",
+        "Darian Mensah": "401 yards, 5 TD, 90% at Stanford — but the prior is a Duke season (0.371); Miami's 74% P(10+) is the best team factor on the board",
+        "C.J. Carr": "Carried by the team: Notre Dame's 91% P(10+) is the board's highest; the efficiency line is average so far (0.398 on 31 plays, 0.433 prior)",
+        "Josh Hoover": "1.639 per play on 15 plays — a tiny sample — plus Indiana's 73% P(10+) and the offense that made a Heisman winner of a transfer last year",
+        "Will Hammond": "Situation, not tape: Texas Tech's 80% P(10+) is 2nd on the board while his efficiency is 8th of 9 (0.384) — Houston in Lubbock is the first real test",
+        "Arch Manning": "The market's No. 2 at +950, our 8th: a mediocre 2025 prior (0.338) and the same 47% team factor as Ohio State — Saturday is the referendum",
+    }
     _mkt = {x["name"]: x["market"] for x in BOARDS["heisman"] + BOARDS["heisman_non_qb"]
             if x.get("market")}
     _order = sorted(_mkt, key=lambda n: _mkt[n])
     _mrank = {n: i + 1 for i, n in enumerate(_order)}
-    TOP, RH = 2.08, 0.36
+    TOP, RH = 2.08, 0.62
     _hdr(s, 1.75, 2.7, TOP - 0.25, "QUARTERBACK · TEAM")
     _hdr(s, 4.5, 1.2, TOP - 0.25, "2026 PPA (PLAYS)", R)
     _hdr(s, 5.75, 0.8, TOP - 0.25, "2025 PRIOR", R)
@@ -1066,12 +1074,16 @@ if BOARDS:
     _hdr(s, 9.05, 0.9, TOP - 0.25, "MARKET", R)
     _hdr(s, 10.0, 0.9, TOP - 0.25, "MKT RANK", R)
     _hdr(s, 10.95, 1.45, TOP - 0.25, "MAN VS MACHINE", R)
-    for i, r in enumerate(BOARDS["heisman"][:9]):
+    for i, r in enumerate(BOARDS["heisman"][:5]):
         y = TOP + i * RH
         if i % 2 == 0:
             shape(s, MSO_SHAPE.RECTANGLE, 0.9, y, 11.5, RH, NAVY2)
         txt(s, 0.9, y + 0.04, 0.4, 0.3, str(i + 1), 13, ORANGE, bold=True, align=R)
         _row_logo(s, 1.35, y - 0.02, r["team"])
+        why = HEISMAN_WHY.get(r["name"]) or (
+            f"team factor {r['team_factor']:.2f} × blended efficiency {r['blend']:.3f} "
+            f"(2026 {r['ppa26']:.3f} on {r['plays26']} plays, prior {r['ppa25']})")
+        txt(s, 1.75, y + 0.33, 10.6, 0.28, why, 9.5, PALE)
         txt(s, 1.75, y + 0.04, 2.7, 0.3, f"{r['name']} · {r['team']}", 12, WHITE, bold=True)
         txt(s, 4.5, y + 0.05, 1.2, 0.3, f"{r['ppa26']:.3f} ({r['plays26']})", 10.5, WHITE, align=R)
         txt(s, 5.75, y + 0.05, 0.8, 0.3, f"{r['ppa25']:.3f}" if r["ppa25"] is not None else "new", 10.5, PALE, align=R)
@@ -1088,8 +1100,13 @@ if BOARDS:
         txt(s, 10.95, y + 0.05, 1.45, 0.3, lab, 9.5,
             UP if lab == "market too low" else (DOWN if lab == "market too high" else PALE),
             bold=lab != "agree", align=R)
+    _nx = BOARDS["heisman"][5:9]
+    txt(s, 0.9, TOP + 5 * RH + 0.04, 11.5, 0.28,
+        "Next up: " + " · ".join(f"{x['name']} {x['index']:.1f}" +
+                                (f" (market #{_mrank[x['name']]})" if x['name'] in _mrank else "")
+                                for x in _nx), 9.5, PALE, italic=True)
     fav = BOARDS["heisman"][0]
-    _fy = TOP + 9 * RH + 0.12
+    _fy = TOP + 5 * RH + 0.4
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.72, ORANGE)
     txt(s, 1.2, _fy + 0.1, 3.0, 0.5, "★ OUR FAVORITE", 15, NAVY, bold=True)
     txt(s, 4.0, _fy + 0.08, 8.2, 0.55,
