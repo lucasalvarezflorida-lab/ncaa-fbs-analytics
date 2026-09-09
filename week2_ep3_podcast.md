@@ -396,19 +396,70 @@ not a pick" — so it doesn't touch the record. **Paper record: stated leans
 - **Machine reaction**: ND +1.4 → **#1 in our rankings** (27.3). AP has
   them #3 this week.
 
-### Superdog receipts — 0 for 2, both covered by a mile
+### Superdog + Giant Killer receipts — 0 for 2 outright, 2 for 2 against the spread
 
-- **★ Coastal Carolina +21 at West Virginia: lost 31–24.** Covered by 14
-  (the machine's read that WVU was mispriced at −21 was dead right), but the
-  superdog needs the outright win. Coastal threw for 373 and ran for 52 (1.9
-  a carry), lost two fumbles, went 2-of-10 on third down. WVU ran for 281.
-  The 21% outright shot missed; the 21 points stay on the table.
-- **★ Washington State +23.5 at #17 Washington: lost 24–10.** Covered by
-  9.5. Wazzu: three turnovers, **0-for-9 on third down**. Washington took 12
-  penalties for 130 yards and still won by two scores.
-- **On air**: "Both dogs beat the number by double digits and earned zero
-  points. That's the superdog game — the model can be right about the price
-  and still get nothing, because we're paid on the win."
+The rule, restated: the dog has to WIN. Points = the spread at the pick. A
+cover earns nothing. Both picks were frozen at the Ep2 recording (Tue Sep 1)
+off the DraftKings line; the "close" is the Fri 5 PM ET pull.
+
+| Pick | Line at pick (DK) | First-seen → close | Machine P(dog) | Market P(dog) | FINAL | vs the spread | Outright | Points |
+|---|---|---|---|---|---|---|---|---|
+| ★ SUPERDOG — Coastal Carolina +21 at West Virginia | +21 (ML +950) | +17.5 (Aug 18) → +21 | 23% | 10% | **WVU 31–24** | covered by 14 | lost by 7 | **0** |
+| ★ GIANT KILLER — Washington State +23.5 at #17 Washington | +23.5 (ML +1300) | +21.5 (Aug 18) → +23.5 | 17% | 7% | **UW 24–10** | covered by 9.5 | lost by 14 | **0** |
+
+**Coastal Carolina at West Virginia — WVU 31, Coastal 24 (Sat, noon,
+Morgantown).**
+- *Why it was the pick*: the machine had WVU by 11.6 against a market that
+  had walked from −17.5 to −21.5 in a week (it settled at −21). Machine 23%
+  for the outright vs a market 10%, times 21 points = the best EV on the
+  board (4.9). The board flagged it 🟡 YEL with −3.5 of CLV — the line kept
+  moving against us after we saw it, which the post-mortem says is the
+  usual shape of a loud alert.
+- *What happened*: WVU led **24–0 at halftime** (14 and 10). Coastal
+  outscored them 24–7 after the break and got the margin to 7 — a 14-point
+  cover that never threatened the win (post-game win probability for
+  Coastal peaked in garbage time; CFBD's final away WP 12%).
+- *The box score*: Coastal threw for 373 and ran for 52 at 1.9 a carry,
+  lost two fumbles, went 2-of-10 on third down. WVU ran for 281. The
+  machine's read that −21 was too many points was right; the thing that
+  wins a superdog — a run game and clean possessions — wasn't there.
+- *Machine reaction*: Coastal +1.6 (to −10.5), West Virginia −1.6 (to
+  −1.4). A 7-point loss at an 11.6 expectation is the same information the
+  cover told you.
+
+**Washington State at #17 Washington — UW 24, Wazzu 10 (Sun, 4 PM,
+Husky Stadium).**
+- *Why it was the pick*: the only Giant Killer candidate with a real
+  machine number — Washington by 15.5 against a −23.5 market (opened −21.5
+  and moved toward the Huskies all week). Machine 17% vs market 7% for the
+  outright, times 23.5 points = EV 4.0. Note the ⛔ guard: at +1300 the dog
+  moneyline is exactly the longshot class the post-mortem says bleeds
+  −22.9% ROI; the superdog format pays on the win, not the ML price, so the
+  guard doesn't apply — but it tells you what kind of shot it was.
+- *What happened*: Washington led 10–0 at the half, 24–0 before Wazzu's
+  only points in the fourth. Covered by 9.5; never a game (CFBD final away
+  WP 3%).
+- *The box score*: Wazzu three turnovers, **0-for-9 on third down**;
+  Washington took 12 penalties for 130 yards and still won by two scores.
+  The machine said the number was fat; the offense never gave the number a
+  chance to matter.
+- *Machine reaction*: Washington State +0.5 (to −3.6), Washington −0.5
+  (to 9.4).
+
+**The ledger.** Superdog: 0–1 outright, 0 points. Giant Killer: 0–1
+outright, 0 points. Both picks 2–0 against the spread by a combined 23.5
+points. Season superdog points: **0**.
+
+**The lesson, in one line for air.** "The machine was right about the
+price both times — 23.5 points of cover — and we banked nothing, because
+the superdog is paid on the win. A 23% shot and a 17% shot both missed;
+that's the expected outcome, not a broken model. We keep taking the best
+EV on the board and we expect to be 0-for-most until one lands."
+
+**This week's picks, graded the same way next Tuesday**: Buffalo +10.5 at
+FIU (machine 46%, market 22%) and Arkansas +12.5 at #20 Utah (machine 33%,
+market 20%) — both higher-probability shots than last week's, which is why
+they carry fewer points.
 
 ### SMU at Florida State — SMU 27, Florida State 24 (Monday night)
 
