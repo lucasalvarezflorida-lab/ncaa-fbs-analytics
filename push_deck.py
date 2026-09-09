@@ -43,7 +43,8 @@ SCOPES = ["https://www.googleapis.com/auth/drive"]
 
 # The stable Ep deck Slides file (shared with Corey as commenter).
 STABLE_FILE_ID = "14G1HYYFIyKVG3JDPdtflzUU-3FGYulhbPsr7iThMJNg"
-# Per-episode Slides files (Ep2 shared with Corey as commenter; Ep3 not yet shared):
+# Per-episode Slides files (Ep2: Corey commenter; Ep3: Corey EDITOR - the push
+# replaces contents in place, so last_modifier_guard() refuses to clobber his edits):
 EP2_FILE_ID = "1h8IJ42vjSwQJgWzJnLF7dPpiIsclP25Qq5sakYY5r1o"
 EP3_FILE_ID = "1TxsZ9dG3JQ5yuHaPC-T10UZPq_WbH5rTXKU84GXzvUI"
 DEFAULT_PPTX = os.path.join(HERE, "decks", "2026_Week0_Episode1.pptx")
@@ -115,6 +116,36 @@ def create(pptx_path, name, creds):
         return json.load(resp)
 
 
+OWNER_EMAIL = "lucasalvarezflorida@gmail.com"
+
+
+def last_modifier(file_id, creds):
+    """(modifiedTime, lastModifyingUser email) for a Drive file."""
+    url = (f"https://www.googleapis.com/drive/v3/files/{file_id}"
+           "?fields=modifiedTime,lastModifyingUser(emailAddress,displayName)")
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"Bearer {creds.token}"})
+    ctx = ssl.create_default_context(cafile=certifi.where())
+    with urllib.request.urlopen(req, context=ctx) as resp:
+        d = json.load(resp)
+    u = d.get("lastModifyingUser") or {}
+    return d.get("modifiedTime"), (u.get("emailAddress") or "").lower(), u.get("displayName")
+
+
+def last_modifier_guard(file_id, creds, force):
+    """Refuse to replace a shared file that someone else edited last (a push
+    overwrites every slide, so an editor's changes would be lost)."""
+    when, email, name = last_modifier(file_id, creds)
+    if email and email != OWNER_EMAIL.lower():
+        msg = (f"last modified {when} by {name or email} ({email}) - a push would "
+               "overwrite those edits.")
+        if not force:
+            sys.exit("REFUSED: " + msg + " Re-run with --force after checking with them.")
+        print("WARNING (forced): " + msg)
+    else:
+        print(f"last modified {when} by {email or 'owner'} - safe to replace")
+
+
 def push(pptx_path, file_id, creds):
     with open(pptx_path, "rb") as f:
         pptx = f.read()
@@ -145,6 +176,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--pptx", default=DEFAULT_PPTX)
     ap.add_argument("--file-id", default=STABLE_FILE_ID)
+    ap.add_argument("--force", action="store_true",
+                    help="replace the file even if someone else edited it last")
     ap.add_argument("--new", metavar="NAME",
                     help="create a NEW Slides file with this name instead of "
                          "replacing --file-id (not shared with anyone)")
@@ -159,6 +192,7 @@ def main():
                   f"{os.path.basename(args.pptx)} ({size_kb:.0f} KB)")
             info = create(args.pptx, args.new, creds)
         else:
+            last_modifier_guard(args.file_id, creds, args.force)
             print(f"pushing {os.path.basename(args.pptx)} ({size_kb:.0f} KB) "
                   f"-> Slides file {args.file_id} (contents replaced in place)")
             info = push(args.pptx, args.file_id, creds)

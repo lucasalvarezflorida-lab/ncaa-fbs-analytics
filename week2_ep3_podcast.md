@@ -910,7 +910,8 @@ the win."
    still moving Monday).
 4. Push: `python push_deck.py --pptx decks\2026_Week2_Episode3.pptx
    --file-id 1TxsZ9dG3JQ5yuHaPC-T10UZPq_WbH5rTXKU84GXzvUI` (the Ep3 Slides
-   file, created Mon 9/7 in Lucas's Drive — NOT shared with Corey yet).
+   file — Corey has EDITOR access, so the push refuses to overwrite if he was
+   the last to modify it; re-run with --force only after checking with him).
 
 *Drafted 2026-09-07 from card_data_week2.json (Mon 5:51 PM ET pull),
 ratings_current_2026.json, CFBD box scores, scouting_top25.json and the
