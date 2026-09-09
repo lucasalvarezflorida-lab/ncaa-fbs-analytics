@@ -788,14 +788,13 @@ RECAP, RECAP_SUM = build_recap()
 # spread). Computed live from card_data so a fresh pull refreshes them.
 # AP Top 25 comes from the CFBD /rankings cache via inseason_ratings (the
 # Tuesday refresh and every edge_report --publish keep it current); the hand
-# dict below is only a fallback if the cache is missing.
-_AP_FALLBACK = {"Ohio State": 1, "Oregon": 2, "Georgia": 3, "Notre Dame": 4,
-            "Texas": 5, "Indiana": 6, "Miami": 7, "Texas A&M": 8,
-            "Ole Miss": 9, "Oklahoma": 10, "LSU": 11, "Texas Tech": 12,
-            "Alabama": 13, "USC": 14, "BYU": 14, "Michigan": 16,
-            "Washington": 17, "Penn State": 18, "SMU": 19, "Tennessee": 20,
-            "Utah": 21, "Iowa": 22, "Houston": 23, "Louisville": 24,
-            "Missouri": 25}
+# dict below is only a fallback if the cache is missing (last synced: week 2).
+_AP_FALLBACK = {"Ohio State": 1, "Georgia": 2, "Notre Dame": 3, "Texas": 4,
+            "Indiana": 5, "Oregon": 6, "Miami": 7, "LSU": 8, "Ole Miss": 9,
+            "Texas A&M": 10, "Oklahoma": 11, "Alabama": 12, "Texas Tech": 13,
+            "USC": 14, "BYU": 15, "Penn State": 16, "SMU": 17, "Tennessee": 18,
+            "Washington": 19, "Utah": 20, "Iowa": 21, "Houston": 22,
+            "Missouri": 23, "Louisville": 24, "Virginia": 25}  # AP week 2
 
 
 def _load_ap():
