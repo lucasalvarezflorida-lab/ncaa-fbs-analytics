@@ -398,6 +398,9 @@ not a pick" — so it doesn't touch the record. **Paper record: stated leans
 
 ### Superdog + Giant Killer receipts — 0 for 2 outright, 2 for 2 against the spread
 
+*Rows 6–7 on the receipts slide; graded automatically from the finals like
+the games.*
+
 The rule, restated: the dog has to WIN. Points = the spread at the pick. A
 cover earns nothing. Both picks were frozen at the Ep2 recording (Tue Sep 1)
 off the DraftKings line; the "close" is the Fri 5 PM ET pull.

@@ -1146,35 +1146,90 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
     f"{LINES_AS_OF} · model plays graded vs first-seen lines", 10.5,
     RGBColor(0x8F, 0xA5, 0xC4))
 
-# ---------------- week 0 receipts ----------------
+# ---------------- week 1 receipts (games + the two superdog picks) ----------------
+# Superdog picks frozen at the Ep2 recording: (label, dog, favorite display,
+# (away, home), spread at pick, dog ML, machine P(dog), market P(dog)).
+SUPERDOG_RECAP = [
+    ("SUPERDOG", "Coastal Carolina", "West Virginia", ("Coastal Carolina", "West Virginia"),
+     21.0, 950, 0.23, 0.10),
+    ("GIANT KILLER", "Washington State", "#17 Washington", ("Washington State", "Washington"),
+     23.5, 1300, 0.17, 0.07),
+]
+
+
+def build_superdog_recap():
+    finals = _finals()
+    rows, won, covered, pts = [], 0, 0, 0.0
+    for label, dog, fav, key, sp, ml, pm, pk in SUPERDOG_RECAP:
+        away, home = key
+        _short = {"Washington State": "Wazzu", "Coastal Carolina": "Coastal"}
+        tit = f"★ {label} · {_short.get(dog, dog)} +{sp:g} {'at' if dog == away else 'vs'} {fav}"
+        lines_ = f"machine {pm:.0%} to win outright · market {pk:.0%} · pays only on the win"
+        fin = finals.get(key)
+        if fin is None:
+            rows.append((away, home, tit, f"we took {dog} +{sp:g} (ML +{ml}) · FINAL pending",
+                         lines_, "graded before air", "P"))
+            continue
+        ap_, hp_ = fin
+        dpts, fpts = (ap_, hp_) if dog == away else (hp_, ap_)
+        margin = dpts - fpts
+        w = margin > 0
+        c = margin + sp > 0
+        winner = dog if w else fav.replace("#17 ", "")
+        callfin = f"we took {dog} +{sp:g} (ML +{ml}) · FINAL {winner} {max(dpts, fpts)}–{min(dpts, fpts)}"
+        if w:
+            miss = f"DOG WON by {margin} — +{sp:g} points banked"
+            won += 1
+            pts += sp
+        else:
+            miss = (f"lost by {-margin} · {'covered by ' + f'{margin + sp:g}' if c else 'no cover'}"
+                    " — 0 points")
+        covered += int(c)
+        rows.append((away, home, tit, callfin, lines_, miss, "M" if w else "K"))
+    return rows, dict(won=won, covered=covered, n=len(rows), pts=pts)
+
+
+DOG_RECAP, DOG_SUM = build_superdog_recap()
+
+
+def _recap_logo(slide, x, y, d, key_or_name):
+    if key_or_name in TEAMS:
+        logo_badge(slide, x, y, d, key_or_name)
+        return
+    lp = logo_for(normalize_name(key_or_name))
+    if lp:
+        slide.shapes.add_picture(lp, Inches(x), Inches(y), Inches(d), Inches(d))
+
+
 s = blank()
-txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
-txt(s, 0.9, 1.08, 11.5, 0.3,
+txt(s, 0.9, 0.45, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
+txt(s, 0.9, 1.0, 11.5, 0.3,
     "Our call frozen at the Ep2 recording · closing line = last pre-kick pull "
-    "(Fri 5 PM ET · Mon 9:25 AM ET) · “off by” = miss vs the final margin",
-    11, MUTE, italic=True)
-y = 1.55
+    "(Fri 5 PM ET · Mon 9:25 AM ET) · “off by” = miss vs the final margin · "
+    "superdogs pay only on the outright win", 10.5, MUTE, italic=True)
+y, RH_, STEP_ = 1.42, 0.68, 0.72
 VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "T": MUTE, "P": MUTE}
-for a, b, tit, callfin, lines_, miss, mark in RECAP:
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.86, ICE)
-    logo_badge(s, 1.1, y + 0.13, 0.6, a)
-    logo_badge(s, 1.8, y + 0.13, 0.6, b)
-    txt(s, 2.6, y + 0.09, 4.8, 0.35, tit, 13.5, INK, bold=True)
-    txt(s, 2.6, y + 0.46, 4.9, 0.3, callfin, 10.5, INK)
-    txt(s, 7.35, y + 0.11, 4.8, 0.3, lines_, 9.5, MUTE)
-    txt(s, 7.35, y + 0.44, 4.8, 0.3, miss, 10, VERD[mark], bold=True)
-    y += 0.94
-shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
+for a, b, tit, callfin, lines_, miss, mark in RECAP + DOG_RECAP:
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, RH_, ICE)
+    _recap_logo(s, 1.1, y + 0.09, 0.5, a)
+    _recap_logo(s, 1.7, y + 0.09, 0.5, b)
+    txt(s, 2.4, y + 0.05, 5.0, 0.32, tit, 12.5, INK, bold=True)
+    txt(s, 2.4, y + 0.36, 5.0, 0.28, callfin, 10, INK)
+    txt(s, 7.45, y + 0.07, 4.8, 0.28, lines_, 9, MUTE)
+    txt(s, 7.45, y + 0.35, 4.8, 0.28, miss, 10, VERD[mark], bold=True)
+    y += STEP_
+shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.04, 11.5, 0.78, NAVY)
 _rs = RECAP_SUM
 _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
-txt(s, 1.15, y + 0.17, 11.0, 0.65,
-    f"Total miss across {_rs['n']} graded games: machine {_rs['m']:.1f} points, "
-    f"closing market {_rs['k']:.1f} — machine closer in {_rs['nm']}, market in "
-    f"{_rs['nk']}, {_rs['nt']} tie. Stated positions 2–0: Baylor +7.5 covered "
-    "and the MONSTER UNDER on 59.5 cashed (33 total). Two weeks in: machine "
-    f"{_run_m:.1f} vs market {_run_k:.1f} across {5 + _rs['n']} games — still a "
-    "coin flip with Vegas. Stated leans 3–2 on the season.",
-    10.5, WHITE)
+txt(s, 1.15, y + 0.12, 11.0, 0.65,
+    f"Games: machine miss {_rs['m']:.1f} points, closing market {_rs['k']:.1f} — machine "
+    f"closer in {_rs['nm']}, market in {_rs['nk']}, {_rs['nt']} tie; two weeks in machine "
+    f"{_run_m:.1f} vs market {_run_k:.1f} across {5 + _rs['n']} games, still a coin flip. "
+    "Stated positions 2–0 (Baylor +7.5 covered, MONSTER UNDER 59.5 cashed) — leans 3–2 on "
+    f"the season. Superdogs: {DOG_SUM['won']}-for-{DOG_SUM['n']} outright, "
+    f"{DOG_SUM['covered']}-for-{DOG_SUM['n']} against the spread — {DOG_SUM['pts']:g} points "
+    "banked. Right about the price, paid on the win.",
+    10, WHITE)
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
