@@ -1,7 +1,7 @@
 # Episode 3 — Week 2 · "Man vs Machine" podcast notes
 
 Status (Wed Sep 9, 8:30 AM MT — **RECORDING TONIGHT**): final lines pulled
-8:22 AM MT and the deck is rebuilt and pushed (22 slides). Week 1 is fully
+8:22 AM MT and the deck is rebuilt and pushed (21 slides). Week 1 is fully
 graded (SMU 27–24 at FSU). Card: Ohio State–Texas, Oklahoma–Michigan, Arizona
 State–Texas A&M, Arizona–BYU, Alabama–Kentucky — none of the five spreads
 moved since Monday; two totals did (OSU–Texas to 49.5, Arizona–BYU to 47.5),
@@ -15,8 +15,8 @@ we say on air lives HERE. Every slide bullet and key gets its backing below.
 
 **Order below = the deck, slide by slide.** Slide 1 Our Top 25 · 2 Hot Seat
 Top 10 · 3 Our Heisman favorite · 4 Five Games, One Card · 5 Week 1 receipts
-· 6–20 the five games (the number, then one slide per team) · 21 The Upset
-Board · 22 Our predictions + superdogs.
+· 6–20 the five games (the number, then one slide per team) · 21 Our
+predictions + superdogs.
 
 ---
 
@@ -898,67 +898,7 @@ Rodriguez the one sure thing; Kenny Darby 74 yards in Week 1).
 
 ---
 
-## Slide 21 — The Upset Board (the machine's alerts, Week 2)
-
-**The rules (say them once).** Machine margin = our rating gap + 2.5 home
-field. 🔴 RED = the machine takes the underdog outright and the spread is 3
-or more. 🟡 YEL = same side as the market, but 6+ points of disagreement.
-Every alert is graded against the line first seen at alert time, and the
-backtest (2023–25, stale prior) ran **49.7% ATS** — a research shortlist and
-a narrative engine, not a bet slip. Two post-mortem guards: ⚑ Monster Under
-(total in the season's top decile, now 59.5+; unders 55.1% on 60+ totals
-2021–25) and ⛔ ATS-only (a RED dog at +401 or longer on the road — longshot
-moneylines bled −22.9% ROI, take the points not the ML).
-
-**This week: 9 alerts, 1 red.**
-
-| Tier | Game (Sat Sep 12) | Alert line → now | CLV | Machine (home) | Edge | Machine side | Dog ML / O/U |
-|---|---|---|---|---|---|---|---|
-| 🔴 | South Florida at Army (12:00) | Army −3.5 (unchanged) | 0 | Army −1.4 | 4.9 | **South Florida outright** | +154 · 46.5 |
-| 🟡 | Charlotte at Ole Miss (7:45) | Ole Miss −47.5 | 0 | Ole Miss +32.4 | 15.1 | Charlotte | 60.5 ⚑ |
-| 🟡 | Southern Miss at Auburn (7:45) | Auburn −31.5 → −33.5 | −2 | Auburn +18.7 | 12.8 | Southern Miss | 56.5 |
-| 🟡 | Buffalo at FIU (6:00) | FIU −10.5 | 0 | FIU +1.5 | 9.0 | Buffalo | 47.5 |
-| 🟡 | San Diego State at UCLA (7:15) | UCLA −9.5 → −11.5 | −2 | UCLA +6.4 | 7.9 | San Diego State | 55.5 |
-| 🟡 | Utah State at Washington (3:30) | Washington −26.5 | 0 | Washington +18.6 | 7.9 | Utah State | 55.5 |
-| 🟡 | Arkansas at Utah (10:15) | Utah −13.5 → −12.5 | +1 | Utah +6.6 | 6.9 | Arkansas | 54.5 |
-| 🟡 | Sacramento State at Fresno State (10:30) | Fresno −18.5 | 0 | Fresno +11.6 | 6.9 | Sacramento State | 45.5 |
-| 🟡 | Washington State at Kansas State (12:00) | K-State −17.5 → −19.5 | −2 | K-State +11.2 | 6.3 | Washington State | 48.5 |
-
-**The one RED — South Florida +3.5 at Army.** The machine has USF by 1.4 on
-the road (USF −1.7 after the 19–9 over FIU; Army −5.6 with no rated game
-yet, so Army is still the July prior). Market Army −3.5, dog +154 — under
-the +401 guard, so the outright is "allowed" by the post-mortem rules.
-Hartline's first road game at USF against the Army option: the honest read
-is that the prior can't see either side's 2026, and the alert is exactly the
-kind of coin flip the backtest says it is. Say the record: RED dogs are
-**1–2 outright** on the season (San José State won at Eastern Michigan;
-Sacramento State and Florida State lost), and the ML-guarded one (Wisconsin
-at +1000) doesn't count.
-
-**How the board connects to the closer.** The superdog (Buffalo +10.5 at
-FIU) and the Giant Killer (Arkansas +12.5 at Utah) are both on this list as
-YEL flags — the same disagreement, expressed as points. Charlotte at Ole
-Miss is on the board only because the model says "45 not 47.5"; the useful
-part of that row is the ⚑ — 60.5 is a Monster Under total. Three Monster
-Under totals this week (UTSA at Texas State 66.5, Charlotte at Ole Miss
-60.5, Louisiana at USC 59.5); none on our card.
-
-**CLV note.** Three alerts lost two points to the close (Southern Miss,
-SDSU, Wazzu — the market kept moving toward the favorite after we flagged);
-Arkansas gained one. Season average CLV on graded alerts is **+2.04
-points**, and the alert line beat the close 8 times, tied once, lost 16 — the
-engine is loud more often than early, which is what a 49.7% backtest looks
-like in practice.
-
-**Scorecard (2026, graded vs first-seen lines).** 41 alerts logged · model
-side **19–5–1 ATS** · RED dogs outright 1–2 · 1 ML-guarded · 16 pending.
-Caveat before the number gets quoted: two weeks, mostly cupcake-week
-blowouts the machine wanted closer, and a backtest that says 50%. Quote the
-19–5–1, then quote the 49.7%.
-
----
-
-## Slide 22 — Our predictions + superdogs (the closer)
+## Slide 21 — Our predictions + superdogs (the closer)
 
 Rule: dog wins outright → we bank the spread. EV = P(win) × spread from the
 machine's win probability; boards exclude played games. Ranks are the AP

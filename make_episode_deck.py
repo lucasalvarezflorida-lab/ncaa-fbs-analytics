@@ -30,6 +30,7 @@ MUTE = RGBColor(0x5C, 0x6B, 0x7E)
 LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
 EPISODE, WEEK = 3, 2
+RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
 EP_DATE = "SEP 12, 2026"
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
@@ -1235,7 +1236,7 @@ for g in GAMES:
         txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · " + g["title"], 9, MUTE)
 
 # ---------------- upset board (this week's alerts + the scorecard) ----------------
-if BOARDS and BOARDS.get("upset_board"):
+if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):
     UB = BOARDS["upset_board"]
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
     UP, DOWN = RGBColor(0x5C, 0xD6, 0x8A), RGBColor(0xFF, 0x7A, 0x7A)
