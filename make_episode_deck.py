@@ -1122,87 +1122,28 @@ if BOARDS:
         "alive (team factor floor 0.5) · the board re-computes every rebuild", 8.5, PALE,
         italic=True)
 
-# ---------------- title slide: the card (games + superdog rows) ----------------
-_WORDS = {5: "Five", 6: "Six", 7: "Seven", 8: "Eight"}
-
-
-def _card_entry(team_a, team_b):
-    for c in CARD.values():
-        if {c["home"], c["away"]} == {team_a, team_b}:
-            return c
-    return None
-
-
-def _mkt_str(c):
-    books = c.get("books") or {}
-    parts = [_dash(books.get(b, {}).get("spread")) for b in ("DraftKings", "Bovada")
-             if books.get(b, {}).get("spread") is not None]
-    return " / ".join(parts) if parts else c["mkt_spread"]
-
-
-def _machine_str(c):
-    line = _book_line(c["model_margin"])
-    if not line:
-        return "PK"
-    fav = c["home"] if line > 0 else c["away"]
-    return f"{fav} –{abs(line):g}"
-
-
-def _badge_any(slide, x, y, d, key_or_name):
-    """logo puck for a TEAMS code or any CFBD team name."""
-    if key_or_name in TEAMS:
-        logo_badge(slide, x, y, d, key_or_name, plate=True)
-        return
-    lp = logo_for(normalize_name(key_or_name))
-    shape(slide, MSO_SHAPE.OVAL, x, y, d, d, WHITE)
-    if lp:
-        inset = d * 0.10
-        slide.shapes.add_picture(lp, Inches(x + inset), Inches(y + inset),
-                                 Inches(d - 2 * inset), Inches(d - 2 * inset))
-
-
-CARD_ROWS = []
-for g in GAMES:
-    CARD_ROWS.append(dict(a=g["a"], b=g["b"], title=g["title"], where=g["where"],
-                          right=g["machine"] + "   ·   " + g["market"], tag=None))
-for label, board in (("★ SUPERDOG", [r for r in SUPERDOG_ANY if not r["rank"]]),
-                     ("★ GIANT KILLER", SUPERDOG_T25)):
-    if not board:
-        continue
-    r = board[0]
-    c = _card_entry(r["dog"], r["fav"])
-    if not c:
-        continue
-    fav = (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
-    ml = f" · ML {int(r['ml']):+d}" if r.get("ml") is not None else ""
-    CARD_ROWS.append(dict(a=c["away"], b=c["home"], title=f"{c['away']} at {c['home']}",
-                          where=f"{label} — {r['dog']} +{r['pts']:g} {r['at']} {fav}{ml} · "
-                                f"{c['date'].split(',')[0]} · {c.get('venue') or ''}",
-                          right=_machine_str(c) + "   ·   " + _mkt_str(c), tag=label))
-
+# ---------------- title slide ----------------
 s = blank(NAVY)
-txt(s, 0.9, 0.5, 11.5, 0.4, f"EPISODE {EPISODE} · WEEK {WEEK} · {EP_DATE}", 14, ORANGE,
+txt(s, 0.9, 0.85, 11.5, 0.45, f"EPISODE {EPISODE} · WEEK {WEEK} · {EP_DATE}", 14, ORANGE,
     bold=True)
-txt(s, 0.9, 0.82, 11.5, 0.9, f"{_WORDS.get(len(CARD_ROWS), len(CARD_ROWS))} Games, One Card",
-    40, WHITE, bold=True)
-y, RH_, STEP_ = 1.92, 0.6, 0.66
-for row in CARD_ROWS:
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, RH_, NAVY2)
-    _badge_any(s, 1.05, y + 0.07, 0.46, row["a"])
-    _badge_any(s, 1.6, y + 0.07, 0.46, row["b"])
-    txt(s, 2.25, y + 0.04, 6.6, 0.32, row["title"], 14, WHITE, bold=True)
-    txt(s, 2.25, y + 0.33, 6.6, 0.26, row["where"], 9,
-        ORANGE if row["tag"] else RGBColor(0xCA, 0xDC, 0xFC), bold=bool(row["tag"]))
-    txt(s, 8.5, y + 0.05, 3.7, 0.34, row["right"], 12.5, ORANGE, bold=True,
-        align=PP_ALIGN.RIGHT)
-    txt(s, 8.5, y + 0.35, 3.7, 0.25, "machine · market", 8.5,
+txt(s, 0.9, 1.2, 11.5, 1.1, "Five Games, One Card", 44, WHITE, bold=True)
+y = 2.4
+for g in GAMES:
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.8, NAVY2)
+    logo_badge(s, 1.1, y + 0.1, 0.6, g["a"], plate=True)
+    logo_badge(s, 1.85, y + 0.1, 0.6, g["b"], plate=True)
+    txt(s, 2.7, y + 0.1, 6.5, 0.4, g["title"], 15, WHITE, bold=True)
+    txt(s, 2.7, y + 0.46, 6.5, 0.3, g["where"], 10,
+        RGBColor(0xCA, 0xDC, 0xFC))
+    txt(s, 8.4, y + 0.1, 3.8, 0.4, g["machine"] + "   ·   " + g["market"],
+        13.5, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, 8.4, y + 0.47, 3.8, 0.3, "machine · market", 9.5,
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
-    y += STEP_
-txt(s, 0.9, 6.7, 11.5, 0.5,
+    y += 0.88
+txt(s, 0.9, 6.85, 11.5, 0.5,
     "Machine = our in-season rating (ESPN preseason FPI prior + 2026 results, "
     f"λ 3, cap ±28) + 2.5 HFA · empirical margin curve (σ 15.9) · lines as of "
-    f"{LINES_AS_OF} · superdog rows = dog to win outright, points = the spread · "
-    "model plays graded vs first-seen lines", 10,
+    f"{LINES_AS_OF} · model plays graded vs first-seen lines", 10.5,
     RGBColor(0x8F, 0xA5, 0xC4))
 
 # ---------------- week 0 receipts ----------------

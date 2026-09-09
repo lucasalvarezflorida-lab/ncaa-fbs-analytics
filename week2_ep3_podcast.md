@@ -14,7 +14,7 @@ Format rule (Lucas, 9/7): the deck stays the Ep2 template — lean. Everything
 we say on air lives HERE. Every slide bullet and key gets its backing below.
 
 **Order below = the deck, slide by slide.** Slide 1 Our Top 25 · 2 Hot Seat
-Top 10 · 3 Our Heisman favorite · 4 Seven Games, One Card · 5 Week 1 receipts
+Top 10 · 3 Our Heisman favorite · 4 Five Games, One Card · 5 Week 1 receipts
 · 6–20 the five games (the number, then one slide per team) · 21 Our
 predictions + superdogs.
 
@@ -256,7 +256,7 @@ votes love a Saturday-night highlight more than a PPA column.
 
 ---
 
-## Slide 4 — Seven Games, One Card (the numbers at a glance)
+## Slide 4 — Five Games, One Card (the numbers at a glance)
 
 Machine line = our rating gap + 2.5 for the home team, then the empirical
 margin curve (σ 15.9) turns the margin into a win probability. Projected
@@ -270,13 +270,6 @@ model — say so). Superdog EV = P(dog wins outright) × spread.
 | Arizona State at Texas A&M (12:00) | TAMU −16.7 | TAMU −14.5 / −14 · O/U 50.5 | A&M 34–17 | TAMU 85% | agreement — no play |
 | Arizona at BYU (3:30) | BYU −8.4 | BYU −7.5 / −7.5 · O/U 47.5 | BYU 28–20 | BYU 70% | machine = market — no play |
 | Alabama at Kentucky (3:30) | BAMA −13.2 | BAMA −10.5 / −10.5 · O/U 49.5 | Bama 31–18 | BAMA 79% | 2.7 to Alabama — quibble, not a position |
-| ★ SUPERDOG · Buffalo at FIU (6:00) | FIU −1.5 | FIU −10.5 / −10 · O/U 47.5 | — | Buffalo 46% | dog to win outright, +10.5 points if it does · ML +340 |
-| ★ GIANT KILLER · Arkansas at #20 Utah (10:15) | Utah −6.6 | Utah −12.5 · O/U 54.5 | — | Arkansas 33% | dog to win outright vs a ranked team, +12.5 · ML +390 |
-
-Rows 6–7 are the two superdog picks (full reasoning under Slide 21): the
-machine's number is why each is on the card, the market's number is the
-payout. Neither is a spread position — the superdog game pays only on the
-outright win.
 
 Reference column ("the man uses ESPN FPI"): ESPN's live FPI has Ohio State
 28.7 / Texas 26.9 (Texas −0.7 at home), Oklahoma 18.8 / Michigan 15.9 (OU
