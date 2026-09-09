@@ -1234,6 +1234,64 @@ for g in GAMES:
             yy += 0.92
         txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · " + g["title"], 9, MUTE)
 
+# ---------------- upset board (this week's alerts + the scorecard) ----------------
+if BOARDS and BOARDS.get("upset_board"):
+    UB = BOARDS["upset_board"]
+    PALE = RGBColor(0xCA, 0xDC, 0xFC)
+    UP, DOWN = RGBColor(0x5C, 0xD6, 0x8A), RGBColor(0xFF, 0x7A, 0x7A)
+    s = blank(NAVY)
+    txt(s, 0.9, 0.42, 11.5, 0.4,
+        f"EPISODE {EPISODE} · WEEK {WEEK} · THE MACHINE'S ALERTS", 14, ORANGE, bold=True)
+    txt(s, 0.9, 0.76, 11.5, 0.8, "The Upset Board", 40, WHITE, bold=True)
+    txt(s, 0.9, 1.5, 11.5, 0.3,
+        "RED = machine takes the dog outright (spread ≥ 3) · YEL = same side, 6+ points "
+        "of disagreement · ⚑ = Monster Under total · graded vs the line first seen",
+        10.5, PALE, italic=True)
+    TOP, RH = 2.08, 0.38
+    R = PP_ALIGN.RIGHT
+    for x, w, lab, al in ((0.9, 0.5, "TIER", PP_ALIGN.LEFT), (1.45, 3.0, "MATCHUP", PP_ALIGN.LEFT),
+                          (4.5, 2.2, "ALERT LINE → NOW", PP_ALIGN.LEFT), (6.75, 0.55, "CLV", R),
+                          (7.35, 1.3, "MACHINE (HOME)", R), (8.7, 0.6, "EDGE", R),
+                          (9.45, 1.65, "MACHINE SIDE", PP_ALIGN.LEFT), (11.15, 1.25, "DOG ML / O/U", R)):
+        txt(s, x, TOP - 0.25, w, 0.22, lab, 8, PALE, bold=True, align=al)
+    rows = UB["rows"][:11]
+    for i, r in enumerate(rows):
+        y = TOP + i * RH
+        if i % 2 == 0:
+            shape(s, MSO_SHAPE.RECTANGLE, 0.9, y, 11.5, RH, NAVY2)
+        red = r["tier"] == "🔴"
+        txt(s, 0.95, y + 0.05, 0.5, 0.3, "RED" if red else "YEL", 10,
+            DOWN if red else ORANGE, bold=True)
+        txt(s, 1.45, y + 0.05, 3.0, 0.3, r["matchup"], 11.5, WHITE, bold=True)
+        _short = lambda t: str(t).replace("Florida International", "FIU").replace("Kansas State", "K-State").replace("Sacramento State", "Sac State").replace("Washington State", "Wazzu")
+        mv = (f"{_short(r['alert_line'])} → {_short(r['now'])}" if r["now"] and r["now"] != r["alert_line"]
+              else f"{_short(r['alert_line'])} (unch.)")
+        txt(s, 4.5, y + 0.07, 2.2, 0.3, mv, 9, PALE)
+        clv = r["clv"] or 0
+        txt(s, 6.75, y + 0.06, 0.55, 0.3, f"{clv:+g}" if clv else "0", 10,
+            UP if clv > 0 else (DOWN if clv < 0 else PALE), bold=bool(clv), align=R)
+        m = r["margin_home"]
+        txt(s, 7.35, y + 0.06, 1.3, 0.3, f"{m:+.1f}" if m is not None else "—", 10, WHITE, align=R)
+        txt(s, 8.7, y + 0.06, 0.6, 0.3, f"{abs(r['edge']):.1f}" if r["edge"] is not None else "—",
+            10.5, ORANGE, bold=True, align=R)
+        txt(s, 9.45, y + 0.06, 1.65, 0.3, r["side"] or "", 10, WHITE)
+        tail = f"{r['dog_ml']}" if r["dog_ml"] else ""
+        ou = r["ou"].replace(" ⚑MONSTER UNDER", " ⚑")
+        txt(s, 11.15, y + 0.07, 1.25, 0.3, (tail + " · " if tail else "") + ou, 9,
+            ORANGE if "⚑" in ou or tail else PALE, bold="⚑" in ou or bool(tail), align=R)
+    _fy = TOP + len(rows) * RH + 0.12
+    sc = {k: v for k, v in UB["scorecard"]}
+    line1 = (f"Scorecard 2026 (vs first-seen lines): {sc.get('Alerts logged')} alerts · model side "
+             f"{sc.get('Model side ATS')} ATS · RED dogs outright {sc.get('Red dogs outright*')} · "
+             f"avg CLV {sc.get('Avg CLV, graded (pts)')} · beat/tie/lost the close "
+             f"{sc.get('CLV beat-tie-lost close')} · {sc.get('Pending')} pending")
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.62, NAVY2)
+    txt(s, 1.1, _fy + 0.06, 11.2, 0.28, line1, 9.5, WHITE, bold=True)
+    txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
+        "Backtest 2023–25: these rules ran 49.7% ATS — a research shortlist and a "
+        "narrative engine, not a bet slip · RED dogs at +401 or longer on the road are "
+        "ATS-only (longshot moneylines bled −22.9% ROI 2021–25)", 8.5, PALE)
+
 # ---------------- closing card: predictions + superdogs ----------------
 s = blank(NAVY)
 PALE = RGBColor(0xCA, 0xDC, 0xFC)

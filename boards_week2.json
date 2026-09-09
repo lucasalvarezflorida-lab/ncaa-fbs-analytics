@@ -1,7 +1,7 @@
 {
  "week": 2,
- "generated": "2026-09-09T08:11:19",
- "ratings_as_of": "2026-09-08T14:21:06+00:00",
+ "generated": "2026-09-09T09:01:10",
+ "ratings_as_of": "2026-09-09T14:57:46+00:00",
  "games_used": 51,
  "cbs_date": "2026-08-29",
  "market_date": "2026-09-08",
@@ -1012,5 +1012,187 @@
    "p10w": 0.47,
    "market": null
   }
- ]
+ ],
+ "upset_board": {
+  "rows": [
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 12:00 PM ET",
+    "matchup": "South Florida at Army",
+    "alert_line": "Army -3.5",
+    "now": "Army -3.5",
+    "clv": 0,
+    "ou": "46.5",
+    "margin_home": -1.4,
+    "edge": -4.9,
+    "tier": "🔴",
+    "dog_ml": "+154",
+    "side": "South Florida",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 7:45 PM ET",
+    "matchup": "Charlotte at Ole Miss",
+    "alert_line": "Ole Miss -47.5",
+    "now": "Ole Miss -47.5",
+    "clv": 0,
+    "ou": "60.5 ⚑MONSTER UNDER",
+    "margin_home": 32.4,
+    "edge": -15.1,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "Charlotte",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 7:45 PM ET",
+    "matchup": "Southern Miss at Auburn",
+    "alert_line": "Auburn -31.5",
+    "now": "Auburn -33.5",
+    "clv": -2,
+    "ou": "56.5",
+    "margin_home": 18.7,
+    "edge": -12.8,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "Southern Miss",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 6:00 PM ET",
+    "matchup": "Buffalo at Florida International",
+    "alert_line": "Florida International -10.5",
+    "now": "Florida International -10.5",
+    "clv": 0,
+    "ou": "47.5",
+    "margin_home": 1.5,
+    "edge": -9,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "Buffalo",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 7:15 PM ET",
+    "matchup": "San Diego State at UCLA",
+    "alert_line": "UCLA -9.5",
+    "now": "UCLA -11.5",
+    "clv": -2,
+    "ou": "55.5",
+    "margin_home": 6.4,
+    "edge": -7.9,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "San Diego State",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 3:30 PM ET",
+    "matchup": "Utah State at Washington",
+    "alert_line": "Washington -26.5",
+    "now": "Washington -26.5",
+    "clv": 0,
+    "ou": "55.5",
+    "margin_home": 18.6,
+    "edge": -7.9,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "Utah State",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 10:15 PM ET",
+    "matchup": "Arkansas at Utah",
+    "alert_line": "Utah -13.5",
+    "now": "Utah -12.5",
+    "clv": 1,
+    "ou": "54.5",
+    "margin_home": 6.6,
+    "edge": -6.9,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "Arkansas",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 10:30 PM ET",
+    "matchup": "Sacramento State at Fresno State",
+    "alert_line": "Fresno State -18.5",
+    "now": "Fresno State -18.5",
+    "clv": 0,
+    "ou": "45.5",
+    "margin_home": 11.6,
+    "edge": -6.9,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "Sacramento State",
+    "final": null,
+    "ats": "pending"
+   },
+   {
+    "wk": 2,
+    "date": "Sat Sep 12, 12:00 PM ET",
+    "matchup": "Washington State at Kansas State",
+    "alert_line": "Kansas State -17.5",
+    "now": "Kansas State -19.5",
+    "clv": -2,
+    "ou": "48.5",
+    "margin_home": 11.2,
+    "edge": -6.3,
+    "tier": "🟡",
+    "dog_ml": null,
+    "side": "Washington State",
+    "final": null,
+    "ats": "pending"
+   }
+  ],
+  "scorecard": [
+   [
+    "Alerts logged",
+    41
+   ],
+   [
+    "Model side ATS",
+    "19-5-1"
+   ],
+   [
+    "Red dogs outright*",
+    "1-2"
+   ],
+   [
+    "ML-guarded (ATS-only)",
+    1
+   ],
+   [
+    "Avg CLV, graded (pts)",
+    "+2.04"
+   ],
+   [
+    "CLV beat-tie-lost close",
+    "8-1-16"
+   ],
+   [
+    "Pending",
+    16
+   ],
+   [
+    "*excludes ⛔ML-guarded",
+    null
+   ]
+  ]
+ }
 }

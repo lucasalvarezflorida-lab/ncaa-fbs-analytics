@@ -124,6 +124,31 @@ def season_sim():
     return out
 
 
+def upset_board(week):
+    """This week's Upset Board rows + the scorecard, straight from the
+    workbook tab (built by build_conference_book from alerts_log.json)."""
+    from openpyxl import load_workbook
+    ws = load_workbook(WORKBOOK, read_only=True, data_only=True)["Upset Board"]
+    rows, score, hdr = [], [], None
+    for r in ws.iter_rows(min_row=1, values_only=True):
+        if hdr is None:
+            if r and r[0] == "Wk":
+                hdr = r
+            continue
+        if r[0] is None and not (len(r) > 15 and r[15]):
+            continue
+        if isinstance(r[0], (int, float)) and int(r[0]) == week:
+            rows.append(dict(wk=int(r[0]), date=r[1], matchup=r[2], alert_line=r[3],
+                             now=r[4], clv=r[5], ou=str(r[6]) if r[6] is not None else "",
+                             margin_home=r[7], edge=r[8], tier=r[9], dog_ml=r[10],
+                             side=r[11], final=r[12], ats=r[13]))
+        if len(r) > 16 and r[15] and r[15] != "Scorecard":
+            score.append((str(r[15]), r[16] if r[16] is not None else (r[17] if len(r) > 17 else None)))
+    order = {"🔴": 0, "🟡": 1}
+    rows.sort(key=lambda x: (order.get(x["tier"], 2), -abs(x["edge"] or 0)))
+    return dict(rows=rows, scorecard=score)
+
+
 def p_at_least(bar, proj, p10, p90):
     """P(wins >= bar) with wins ~ Normal(proj, sd from the 10-90 spread)."""
     sd = max((p90 - p10) / 2.563, 0.9)
@@ -222,10 +247,11 @@ def main():
             results.setdefault(me, []).append(f"{'W' if mp > op else 'L'} {mp}-{op} {ha} {opp}")
     hs = hot_seat(sim, ratings, results)
     hb, non = heisman(sim, a.refresh)
+    ub = upset_board(a.week)
     out = dict(week=a.week, generated=dt.datetime.now().isoformat(timespec="seconds"),
                ratings_as_of=rt.get("as_of"), games_used=rt.get("games_used"),
                cbs_date=CBS_DATE, market_date=MARKET_DATE,
-               hot_seat=hs, heisman=hb, heisman_non_qb=non)
+               hot_seat=hs, heisman=hb, heisman_non_qb=non, upset_board=ub)
     path = HERE / f"boards_week{a.week}.json"
     json.dump(out, open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"HOT SEAT (CBS {CBS_DATE} x machine, {rt.get('games_used')} rated games)")
@@ -240,6 +266,11 @@ def main():
               f"prior {r['ppa25']}  blend {r['blend']:.3f}  P(10+) {r['p10w']:.2f}  "
               f"index {r['index']}  market {('+' + str(r['market'])) if r['market'] else '—'}")
     print("non-QB:", [(x['name'], x['ppa26'], x['tot26'], x['ppa25'], x['market']) for x in non])
+    print(f"\nUPSET BOARD week {a.week}: {len(ub['rows'])} alerts")
+    for r in ub["rows"]:
+        print(f"  {r['tier']} {r['matchup']:<42} alert {r['alert_line']:<26} now {r['now']:<24} "
+              f"CLV {r['clv']}  edge {r['edge']}  side {r['side']}  ML {r['dog_ml']}  O/U {r['ou']}")
+    print("  scorecard:", ub["scorecard"])
     print("wrote", path.name)
 
 
