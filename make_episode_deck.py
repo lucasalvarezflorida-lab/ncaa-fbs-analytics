@@ -570,7 +570,7 @@ GAMES = [
         a="OSU", b="TEX", vs="at", title="Ohio State at Texas",
         cfbd=("Ohio State", "Texas"),
         where="Austin · DKR–Texas Memorial Stadium",
-        sub="Sat Sep 12 · 7:30 ET · No. 1 at No. 5 · the 2025 opener rematch (OSU 14–7) · Arch's last tour vs Sayin-to-Smith",
+        sub="Sat Sep 12 · 7:30 ET · No. 1 at No. 4 · the 2025 opener rematch (OSU 14–7) · Arch's last tour vs Sayin-to-Smith",
         machine="Texas –3.5", market="–1.5 / –2", value="machine 2 points past the market — mostly bookkeeping, see honesty box",
         wp=("TEX", 60, "OSU", 40),
         decides=[

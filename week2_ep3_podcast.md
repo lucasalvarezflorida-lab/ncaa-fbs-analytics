@@ -1,15 +1,14 @@
 # Episode 3 — Week 2 · "Man vs Machine" podcast notes
 
-Status (Tue Sep 8, 8:30 AM MT): **Week 1 fully graded — SMU won 27–24 at
-Florida State.** The 8:01 AM refresh re-solved the machine on 51 rated games
-and the receipts slide picked up the final on rebuild. Week 2 card: Ohio
-State–Texas, Oklahoma–Michigan, Arizona State–Texas A&M, Arizona–BYU,
-Alabama–Kentucky. Lines below are the Tue Sep 8 morning pull (none of our
-five moved overnight) — re-pull before recording (`edge_report.py --week 2
---view ml --publish`, then `make_episode_deck.py`). The AP poll in the deck
-is still the Week 1 poll as of 8:20 AM MT; the Week 2 poll usually posts
-Tuesday afternoon and the deck picks it up from the cache on the next
-rebuild.
+Status (Wed Sep 9, 8:30 AM MT — **RECORDING TONIGHT**): final lines pulled
+8:22 AM MT and the deck is rebuilt and pushed (21 slides). Week 1 is fully
+graded (SMU 27–24 at FSU). Card: Ohio State–Texas, Oklahoma–Michigan, Arizona
+State–Texas A&M, Arizona–BYU, Alabama–Kentucky — none of the five spreads
+moved since Monday; two totals did (OSU–Texas to 49.5, Arizona–BYU to 47.5),
+which nudged two score calls. **The Week 2 AP poll is in**: Ohio State 1,
+Georgia 2, Notre Dame 3, Texas 4, Indiana 5, Oregon 6, Miami 7, LSU 8, Ole
+Miss 9, Texas A&M 10, Oklahoma 11, Alabama 12 … BYU 15, Utah 20, Virginia 25;
+Michigan dropped out. Heisman market unchanged from Tuesday (DK).
 
 Format rule (Lucas, 9/7): the deck stays the Ep2 template — lean. Everything
 we say on air lives HERE. Every slide bullet and key gets its backing below.
@@ -126,7 +125,7 @@ not a pick" — so it doesn't touch the record. **Paper record: stated leans
   rhythm, nothing forced" to the letter; 284 allowed with the explosives
   erased; and "no scoreboard mercy" — 41.
 - **Machine reaction**: ND +1.4 → **#1 in our rankings** (27.3). AP has
-  them #4.
+  them #3 this week.
 
 ### Superdog receipts — 0 for 2, both covered by a mile
 
@@ -222,9 +221,12 @@ machine-vs-voters splits). It refreshes itself every rebuild.*
 24.8 · 4 Ohio State 24.6 · 5 LSU 23.8 · 6 Miami 23.2 · 7 Indiana 22.3 ·
 8 Oregon 21.9 · 9 Alabama 21.1 · 10 Texas Tech 20.0.
 
-Machine vs the AP voters (the weekly Man vs Machine column): Ohio State AP
-#1 / machine #4 (−4.1 after Week 1); LSU AP #11 / machine #5; Notre Dame
-machine #1 / AP #4.
+Machine vs the AP voters (Week 2 poll, the weekly Man vs Machine column):
+Ohio State AP #1 / machine #4 (−4.1 after Week 1); Notre Dame machine #1 /
+AP #3; Texas machine #2 / AP #4; LSU AP #8 / machine #5; Ole Miss AP #9 /
+machine #13; SMU AP #17 / machine #22; Virginia machine #20 / AP #25 (new
+this week); Michigan machine #21 / dropped out. In the voters' 25 and not
+ours: Washington (19), Utah (20), Houston (22), Louisville (24).
 
 Biggest movers: UMass +7.4, Nevada +6.5, San Jose State +4.9, UCLA +4.8,
 Tulsa +4.8, NDSU +4.7 · Rutgers −7.4, Western Kentucky −6.5, Cal −4.8,
@@ -430,10 +432,10 @@ model — say so). Superdog EV = P(dog wins outright) × spread.
 
 | Game (kick, ET) | Machine | Market (DK / Bov) | Score call | Machine win % | Read |
 |---|---|---|---|---|---|
-| Ohio State at Texas (7:30) | TEX −3.7 | TEX −1.5 / −2 · O/U 48.5 | Texas 26–22 | TEX 60% | agreement once you strip the cap artifact — no play |
+| Ohio State at Texas (7:30) | TEX −3.7 | TEX −1.5 / −2 · O/U 49.5 | Texas 27–23 | TEX 60% | agreement once you strip the cap artifact — no play |
 | Oklahoma at Michigan (12:00) | OU −1.9 | OU −5.5 / −5.5 · O/U 43.5 | OU 23–21 | MICH 46% | **lean Michigan +5.5** — widest gap on the card (11.6 pp) |
-| Arizona State at Texas A&M (12:00) | TAMU −16.7 | TAMU −14.5 / −14 · O/U 51.5 | A&M 34–17 | TAMU 85% | agreement — no play |
-| Arizona at BYU (3:30) | BYU −8.4 | BYU −7.5 / −7.5 · O/U 50.5 | BYU 29–21 | BYU 70% | machine = market — no play |
+| Arizona State at Texas A&M (12:00) | TAMU −16.7 | TAMU −14.5 / −14 · O/U 50.5 | A&M 34–17 | TAMU 85% | agreement — no play |
+| Arizona at BYU (3:30) | BYU −8.4 | BYU −7.5 / −7.5 · O/U 47.5 | BYU 28–20 | BYU 70% | machine = market — no play |
 | Alabama at Kentucky (3:30) | BAMA −13.2 | BAMA −10.5 / −10.5 · O/U 49.5 | Bama 31–18 | BAMA 79% | 2.7 to Alabama — quibble, not a position |
 
 Reference column ("the man uses ESPN FPI"): ESPN's live FPI has Ohio State
@@ -444,7 +446,7 @@ Reference column ("the man uses ESPN FPI"): ESPN's live FPI has Ohio State
 Kentucky #47, Arizona State #51.
 
 No Monster Under this week: the top-decile threshold is 58.5 and none of
-our five totals (43.5 to 51.5) is close. Say that — "the tool has nothing to
+our five totals (43.5 to 50.5) is close. Say that — "the tool has nothing to
 say on this card, which is the tool working."
 
 ---
@@ -453,8 +455,8 @@ say on this card, which is the tool working."
 
 **The arithmetic.** Texas 25.8 (machine #2) vs Ohio State 24.6 (#4); +2.5
 for Austin → Texas by 3.7 → 60% on the curve → fair Texas −150 / Ohio State
-+150. Market: DK Texas −1.5 (−120 / +100), Bovada −2; total 48.5. Score call
-26–22 is that 3.7 laid over 48.5.
++150. Market: DK Texas −1.5 (−122 / +102), Bovada −2; total 49.5. Score call
+27–23 is that 3.7 laid over 49.5.
 
 **Why the machine is 2 points "too Texas" — the cap.** In July the same two
 ratings were Ohio State 28.7 / Texas 26.9 → *Texas by 0.7* at home. Week 1
@@ -542,7 +544,7 @@ honest, nobody should."
 
 **The arithmetic.** Oklahoma 16.0 (#12) vs Michigan 11.6 (#21); +2.5 for
 Ann Arbor → Oklahoma by 1.9 → Michigan 46% → fair OU −118 / Michigan +118.
-Market: DK Oklahoma −5.5 (−218 / +180), Bovada −5.5; total 43.5. Score call
+Market: DK Oklahoma −5.5 (−230 / +190), Bovada −5.5; total 43.5. Score call
 OU 23–21. **The machine has Michigan at 46%; the market has 34% — 11.6
 points of win probability, the widest gap on the card (EDGE_FLIP flag).**
 
@@ -634,7 +636,7 @@ board (EV 2.5) — it's a lean on the spread, not the outright.
 
 **The arithmetic.** Texas A&M 19.0 (#11) vs Arizona State 4.8 (#48); +2.5
 for Kyle Field → A&M by 16.7 → 85% → fair −560 / +560. Market: DK A&M −14.5
-(−625 / +455), Bovada −14; total 51.5. Score call A&M 34–17. Gap: 2.2 points
+(−650 / +470), Bovada −14; total 50.5. Score call A&M 34–17. Gap: 2.2 points
 in A&M's favor — agreement on a two-touchdown spread.
 
 **Zero 2026 evidence in this number.** ASU beat Morgan State (FCS), A&M
@@ -705,8 +707,8 @@ turnover habit against a defense built to bait it. No play."
 ### Arizona at BYU — Sat Sep 12, 3:30 ET, LaVell Edwards Stadium (Provo)
 
 **The arithmetic.** BYU 13.1 (#18) vs Arizona 7.2 (#37); +2.5 → BYU by 8.4
-→ 70% → fair −239 / +239. Market: DK BYU −7.5 (−285 / +230; opened −6.5,
-first-seen −7 on Sep 4), Bovada −7.5; total 50.5. Score call BYU 29–21.
+→ 70% → fair −239 / +239. Market: DK BYU −7.5 (−290 / +235; opened −6.5,
+first-seen −7 on Sep 4), Bovada −7.5; total 47.5. Score call BYU 28–20.
 Machine = market to within a point. Both ratings are the July prior — Utah
 Tech and Northern Arizona are FCS, so 63–7 and 35–7 moved nothing.
 
@@ -782,7 +784,7 @@ ball that made BYU the last two years. No play."
 
 **The arithmetic.** Alabama 21.1 (#9) vs Kentucky 5.4 (#42); Kentucky gets
 the 2.5 → Alabama by 13.2 → 79% → fair −380 / +380. Market: DK Alabama −10.5
-(−410 / +320), Bovada −10.5; total 49.5. Score call Alabama 31–18. Gap 2.7 to
+(−425 / +330), Bovada −10.5; total 49.5. Score call Alabama 31–18. Gap 2.7 to
 Alabama — right at the noise line. Alabama +1.0 after Week 1 (ECU is rated;
 48–10 capped to 28 beat a ~23 expectation); Kentucky unchanged (Youngstown
 State is FCS).
@@ -867,9 +869,10 @@ machine's win probability; boards exclude played games. Ranks are the AP
 poll in the cache (Week 1 poll until Tuesday — re-check after the refresh).
 
 **★ SUPERDOG (any game): Buffalo +10.5 at Florida International** — machine
-45.5% (ML +340, market 22%), EV 4.8. Runners-up: Sacramento State +18.5 at
-Fresno State (23%, EV 4.3), Washington State +17.5 at Kansas State (24%, EV
-4.2), Southern Miss +32.5 at Auburn (12.5%, EV 4.1).
+45.5% (ML +340, market 22%), EV 4.8. Runners-up: Washington State +19.5 at
+Kansas State (24%, EV 4.7 — the line moved two more points our way),
+Sacramento State +18.5 at Fresno State (23%, EV 4.3), Southern Miss +33.5 at
+Auburn (12.5%, EV 4.2).
 
 *The caveat to say out loud*: the machine has FIU −1 and the market has FIU
 −10.5 — the biggest disagreement on the whole board. Why: Buffalo beat
@@ -879,19 +882,19 @@ covering. So half the "edge" is a blind spot. It stays the pick because the
 rule is the rule; the honest framing is "the machine likes a team it hasn't
 watched yet."
 
-**★ GIANT KILLER (vs an AP top-25 favorite): Arkansas +13.5 at #21 Utah** —
-machine 33% (ML +400, market 19%), EV 4.5. Runners-up: Georgia Tech +12.5
-vs #20 Tennessee (29%, EV 3.6), Utah State +26.5 at #17 Washington (13%, EV
-3.4), Iowa State +14.5 at #22 Iowa (19%, EV 2.8), Michigan +5.5 vs #10
-Oklahoma (46%, EV 2.5).
+**★ GIANT KILLER (vs an AP top-25 favorite): Arkansas +12.5 at #20 Utah** —
+machine 33% (ML +390, market 20%), EV 4.2 (the line came down a point from
+Monday's 13.5). Runners-up: Georgia Tech +12.5 vs #18 Tennessee (29%, EV
+3.6), Utah State +26.5 at #19 Washington (13%, EV 3.4), Iowa State +14 at
+#21 Iowa (19%, EV 2.7), Michigan +5.5 vs #11 Oklahoma (46%, EV 2.5).
 
 *Why Arkansas*: Utah is Morgan Scalley's first year with five new OL
 starters and OC Beck gone to Michigan; the machine's Utah number is still
 the July prior (66–14 over Idaho, FCS, didn't count) and Arkansas is a
 near-total teardown under Silverfield (31–14 over North Alabama, also
-uncounted). The market's −13.5 vs our −6.6 says the market has already
+uncounted). The market's −12.5 vs our −6.6 says the market has already
 priced the Utah transition as smoother than our prior does. It's a 1-in-3
-shot at 13.5 points — the best ratio on the ranked board.
+shot at 12.5 points — still the best ratio on the ranked board.
 
 *Week 1 superdog receipts to reference*: Coastal +21 covered by 14, Wazzu
 +23.5 covered by 9.5, zero points banked. "Right about the price, paid on
@@ -904,10 +907,9 @@ the win."
 1. ~~Confirm the 7:30 AM refresh ran~~ — done: as_of Tue 8:01 AM MT, 51
    rated games.
 2. ~~Grade SMU–FSU~~ — done above (market closer; RED 1–1; leans still 3–2).
-3. `python edge_report.py --week 2 --view ml --publish` then
-   `python make_episode_deck.py` — re-check the superdog boards (the Week 2
-   AP poll may move the Giant Killer) and the Oklahoma–Michigan line (it was
-   still moving Monday).
+3. ~~Final pull + rebuild~~ — done Wed 8:22 AM MT: spreads unchanged,
+   Giant Killer now Arkansas +12.5 at #20 Utah, Oklahoma–Michigan held at
+   −5.5, AP Week 2 poll in.
 4. Push: `python push_deck.py --pptx decks\2026_Week2_Episode3.pptx
    --file-id 1TxsZ9dG3JQ5yuHaPC-T10UZPq_WbH5rTXKU84GXzvUI` (the Ep3 Slides
    file — Corey has EDITOR access, so the push refuses to overwrite if he was
