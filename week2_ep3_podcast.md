@@ -265,11 +265,11 @@ model — say so). Superdog EV = P(dog wins outright) × spread.
 
 | Game (kick, ET) | Machine | Market (DK / Bov) | Score call | Machine win % | Read |
 |---|---|---|---|---|---|
-| Ohio State at Texas (7:30) | TEX −3.7 | TEX −1.5 / −2 · O/U 49.5 | Texas 27–23 | TEX 60% | agreement once you strip the cap artifact — no play |
 | Oklahoma at Michigan (12:00) | OU −1.9 | OU −5.5 / −5.5 · O/U 43.5 | OU 23–21 | MICH 46% | **lean Michigan +5.5** — widest gap on the card (11.6 pp) |
 | Arizona State at Texas A&M (12:00) | TAMU −16.7 | TAMU −14.5 / −14 · O/U 50.5 | A&M 34–17 | TAMU 85% | agreement — no play |
 | Arizona at BYU (3:30) | BYU −8.4 | BYU −7.5 / −7.5 · O/U 47.5 | BYU 28–20 | BYU 70% | machine = market — no play |
 | Alabama at Kentucky (3:30) | BAMA −13.2 | BAMA −10.5 / −10.5 · O/U 49.5 | Bama 31–18 | BAMA 79% | 2.7 to Alabama — quibble, not a position |
+| Ohio State at Texas (7:30) | TEX −3.7 | TEX −1.5 / −2 · O/U 49.5 | Texas 27–23 | TEX 60% | agreement once you strip the cap artifact — no play |
 
 Reference column ("the man uses ESPN FPI"): ESPN's live FPI has Ohio State
 28.7 / Texas 26.9 (Texas −0.7 at home), Oklahoma 18.8 / Michigan 15.9 (OU
@@ -531,105 +531,9 @@ they carry fewer points.
 
 ---
 
-## Slides 6–8 — Ohio State at Texas — Sat Sep 12, 7:30 ET, DKR (Austin)
+## Slides 6–8 — Oklahoma at Michigan — Sat Sep 12, 12:00 ET, Michigan Stadium
 
 ### Slide 6 — the number (WHY IT MATTERS + the score bug)
-
-**The arithmetic.** Texas 25.8 (machine #2) vs Ohio State 24.6 (#4); +2.5
-for Austin → Texas by 3.7 → 60% on the curve → fair Texas −150 / Ohio State
-+150. Market: DK Texas −1.5 (−122 / +102), Bovada −2; total 49.5. Score call
-27–23 is that 3.7 laid over 49.5.
-
-**Why the machine is 2 points "too Texas" — the cap.** In July the same two
-ratings were Ohio State 28.7 / Texas 26.9 → *Texas by 0.7* at home. Week 1
-moved Ohio State −4.1 (56–3 capped to 28 against a −17 team = a 20-point
-"miss") and Texas −1.1 (59–7 capped, Texas State a −4 team). ESPN's live FPI
-still says Texas by 0.7; the market says 1.5. Our 3.7 minus the artifact is
-the same pick'em-plus-home-field everyone has. **No position, and be the
-first to say why.**
-
-**Stakes (slide bullets, backed).**
-- *Rematch of the year*: Ohio State beat Texas 14–7 in last year's Columbus
-  opener and 28–14 in the 2024 CFP semifinal (AT&T Stadium). Texas hasn't
-  beaten Ohio State in this three-game run; Arch Manning is almost certainly
-  in his final college season (the deep dive: "Arch likely leaves after this
-  year").
-- *One coordinator gamble each*: Ohio State hired **Arthur Smith** (Falcons
-  HC, Steelers OC) after Hartline left for USF — first-year college OC, and
-  the scouting file's own flag is "NFL-to-CFB transitions are not
-  automatic." Texas replaced Pete Kwiatkowski with **Will Muschamp**, whose
-  last top-10 defense was 2014, on a unit that outranked Sark's offense two
-  years running — "the single riskiest coordinator hire in the league."
-- *Continuity*: Texas 72% of offensive production back (CFBD PPA), 22
-  portal adds — Coleman (No. 1 portal WR), Smothers (No. 2 RB, 4.4 yards
-  after contact), Biles (No. 3 LB), Siani (No. 3 OT), Brown (No. 5 RB).
-  Ohio State 68% back on offense, 17 adds — but **two of nine every-game
-  defensive starters return** (McClain, Mathews); three defenders went in
-  the first 11 picks. Eight defensive transfers: Russaw and Smith (Alabama),
-  Moore (Duke), Little (FSU), Kelly (Georgia).
-- *Week 1*: Ohio State 56–3 Ball State — 671 yards, Sayin 21-of-25 for 320
-  and 3 TD, Bo Jackson 83 on 9 carries, 237 rushing at 6.8; but **9
-  penalties for 81** and 5-of-11 on third down. Texas 59–7 Texas State — 516
-  yards, Arch 20-of-27 for 305, 4 TD, 1 INT, Coleman 2 TD, 11-of-15 on third
-  down, a defensive score; but **349 yards and 18 first downs allowed** to a
-  Sun Belt team.
-
-**Honesty box on air.** "Three numbers: we say Texas by 3.7, Vegas says 1.5,
-ESPN says 0.7. Three points of ours is the cap doing bookkeeping on a 56–3
-game. This is a pick'em plus home field. We have no position, and if we're
-honest, nobody should."
-
-### Slides 7–8 — the team slides (Ohio State, then Texas)
-
-*The COACH / QB / ROSTER band sits on both team slides; the four keys are
-the bullets. Every key below names the players and the Week 1 evidence.*
-
-**COACH / QB / ROSTER (the band).** Ohio State: Day year 8, Smith OC,
-Patricia year two (back-to-back No. 1 SP+ defenses). Sayin year two —
-first nationally in success rate as a freshman, "trained-wheels version."
-Texas: Sarkisian year 6, Muschamp DC. Arch year two as the starter, Heisman
-favorite; "lone remaining flaw is accuracy throwing on the run."
-
-**Ohio State keys, explained.**
-1. *Make Arthur Smith's run game real.* Smith's NFL identity is wide zone
-   plus play-action; 2025 Ohio State was "slow-tempo, short-throw efficiency
-   ball" that died in the two games that mattered. 237 at 6.8 vs Ball State
-   is the first data point; against Texas's front (Simmons, Geffrard, Biles)
-   it's the test. If the run game travels, Sayin plays on schedule.
-2. *Sayin-to-Smith vs the back end.* Jeremiah Smith: 2,558 yards, 29 TD in
-   two seasons — "the best QB-WR axis in the sport." Texas's secondary
-   (McDonald, nickel Littleton, portal CB Mascoe, sophomore Kade Phillips)
-   held this offense to 14 last year under Kwiatkowski; same players, new
-   caller.
-3. *Prove the eight-transfer defense.* Two of nine starters back; the
-   sophomore wave (Grady, Pettijohn, Sanchez, Roker) plus the transfers meet
-   Coleman/Wingo/Mosley/Smothers — "the deepest skill corps in the sport."
-   Ball State managed 165 yards; that told us nothing.
-4. *Urgency.* Connelly's sharpest point: the schedule and defensive turnover
-   might *force* the urgency that's been missing. Nine flags in Week 1 is
-   the discipline note.
-
-**Texas keys, explained.**
-1. *Arch on the move.* Sark's 2026 wrinkle is designed Manning movement;
-   accuracy on the run is the one flaw. Patricia's multiple front disguises
-   coverage shells — that is exactly the thing that punishes a QB throwing
-   late off movement.
-2. *Protect the interior.* The 2025 story: OL regression and drops, not
-   Manning, sank a preseason No. 1 (offensive SP+ slid from 6th to 30th
-   since 2023). Ohio State's front is now Russaw, James Smith and the
-   sophomores. Texas allowed 1 sack in Week 1.
-3. *Explosives over efficiency.* Patricia's defense "rally-tackles and
-   squeezes explosives"; Texas's edge is matchup wins at every skill spot.
-   The game is the big-play count, not the drive count.
-4. *Muschamp's first real test.* 349 to Texas State is the flag. Simmons (12
-   sacks in 2025) and Biles (15 TFL, 4.5 sacks at Pitt) are the two players
-   who can make Sayin uncomfortable early.
-
----
-
-## Slides 9–11 — Oklahoma at Michigan — Sat Sep 12, 12:00 ET, Michigan Stadium
-
-### Slide 9 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** Oklahoma 16.0 (#12) vs Michigan 11.6 (#21); +2.5 for
 Ann Arbor → Oklahoma by 1.9 → Michigan 46% → fair OU −118 / Michigan +118.
@@ -678,7 +582,7 @@ chaos. Lean Michigan +5.5 as research, not a position." Note for the
 closer: Michigan +5.5 vs #11 Oklahoma is sixth on the Giant Killer
 board (EV 2.5) — it's a lean on the spread, not the outright.
 
-### Slides 10–11 — the team slides (Oklahoma, then Michigan)
+### Slides 7–8 — the team slides (Oklahoma, then Michigan)
 
 *The COACH / QB / ROSTER band sits on both team slides; the four keys are
 the bullets. Every key below names the players and the Week 1 evidence.*
@@ -726,9 +630,9 @@ three QBs (Warren, Davis, Keene) — Underwood is the whole enterprise.
 
 ---
 
-## Slides 12–14 — Arizona State at Texas A&M — Sat Sep 12, 12:00 ET, Kyle Field
+## Slides 9–11 — Arizona State at Texas A&M — Sat Sep 12, 12:00 ET, Kyle Field
 
-### Slide 12 — the number (WHY IT MATTERS + the score bug)
+### Slide 9 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** Texas A&M 19.0 (#11) vs Arizona State 4.8 (#48); +2.5
 for Kyle Field → A&M by 16.7 → 85% → fair −560 / +560. Market: DK A&M −14.5
@@ -767,7 +671,7 @@ agreement. Neither team has a 2026 snap in its rating — those FCS blowouts
 were invisible to the machine. The thing the prior can't price is Reed's
 turnover habit against a defense built to bait it. No play."
 
-### Slides 13–14 — the team slides (Arizona State, then Texas A&M)
+### Slides 10–11 — the team slides (Arizona State, then Texas A&M)
 
 *The COACH / QB / ROSTER band sits on both team slides; the four keys are
 the bullets. Every key below names the players and the Week 1 evidence.*
@@ -805,9 +709,9 @@ Alabama, Saka).
 
 ---
 
-## Slides 15–17 — Arizona at BYU — Sat Sep 12, 3:30 ET, LaVell Edwards Stadium (Provo)
+## Slides 12–14 — Arizona at BYU — Sat Sep 12, 3:30 ET, LaVell Edwards Stadium (Provo)
 
-### Slide 15 — the number (WHY IT MATTERS + the score bug)
+### Slide 12 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** BYU 13.1 (#18) vs Arizona 7.2 (#37); +2.5 → BYU by 8.4
 → 70% → fair −239 / +239. Market: DK BYU −7.5 (−290 / +235; opened −6.5,
@@ -845,7 +749,7 @@ FCS opponents. BYU's 79% continuity is the most reliable fact on the card;
 the thing we can't price is a first-time coordinator running the side of the
 ball that made BYU the last two years. No play."
 
-### Slides 16–17 — the team slides (Arizona, then BYU)
+### Slides 13–14 — the team slides (Arizona, then BYU)
 
 *The COACH / QB / ROSTER band sits on both team slides; the four keys are
 the bullets. Every key below names the players and the Week 1 evidence.*
@@ -888,9 +792,9 @@ Bruce Mitchell plus Washington OT Paki Finau; top three pass targets gone
 
 ---
 
-## Slides 18–20 — Alabama at Kentucky — Sat Sep 12, 3:30 ET, Kroger Field (Lexington)
+## Slides 15–17 — Alabama at Kentucky — Sat Sep 12, 3:30 ET, Kroger Field (Lexington)
 
-### Slide 18 — the number (WHY IT MATTERS + the score bug)
+### Slide 15 — the number (WHY IT MATTERS + the score bug)
 
 **The arithmetic.** Alabama 21.1 (#9) vs Kentucky 5.4 (#42); Kentucky gets
 the 2.5 → Alabama by 13.2 → 79% → fair −380 / +380. Market: DK Alabama −10.5
@@ -931,7 +835,7 @@ redshirt freshman's first road start and a first-year head coach whose
 rating has zero 2026 snaps in it. Quibble, not a position. The real
 information arrives at 3:30."
 
-### Slides 19–20 — the team slides (Alabama, then Kentucky)
+### Slides 16–17 — the team slides (Alabama, then Kentucky)
 
 *The COACH / QB / ROSTER band sits on both team slides; the four keys are
 the bullets. Every key below names the players and the Week 1 evidence.*
@@ -974,6 +878,102 @@ Rodriguez the one sure thing; Kenny Darby 74 yards in Week 1).
    beat you from the pocket on third-and-long.
 4. *Clean up the leaks.* 3-of-8 on third down and 6 penalties for 70 against
    an FCS team — those are the two stats that lose to Alabama.
+
+---
+
+## Slides 18–20 — Ohio State at Texas — Sat Sep 12, 7:30 ET, DKR (Austin)
+
+### Slide 18 — the number (WHY IT MATTERS + the score bug)
+
+**The arithmetic.** Texas 25.8 (machine #2) vs Ohio State 24.6 (#4); +2.5
+for Austin → Texas by 3.7 → 60% on the curve → fair Texas −150 / Ohio State
++150. Market: DK Texas −1.5 (−122 / +102), Bovada −2; total 49.5. Score call
+27–23 is that 3.7 laid over 49.5.
+
+**Why the machine is 2 points "too Texas" — the cap.** In July the same two
+ratings were Ohio State 28.7 / Texas 26.9 → *Texas by 0.7* at home. Week 1
+moved Ohio State −4.1 (56–3 capped to 28 against a −17 team = a 20-point
+"miss") and Texas −1.1 (59–7 capped, Texas State a −4 team). ESPN's live FPI
+still says Texas by 0.7; the market says 1.5. Our 3.7 minus the artifact is
+the same pick'em-plus-home-field everyone has. **No position, and be the
+first to say why.**
+
+**Stakes (slide bullets, backed).**
+- *Rematch of the year*: Ohio State beat Texas 14–7 in last year's Columbus
+  opener and 28–14 in the 2024 CFP semifinal (AT&T Stadium). Texas hasn't
+  beaten Ohio State in this three-game run; Arch Manning is almost certainly
+  in his final college season (the deep dive: "Arch likely leaves after this
+  year").
+- *One coordinator gamble each*: Ohio State hired **Arthur Smith** (Falcons
+  HC, Steelers OC) after Hartline left for USF — first-year college OC, and
+  the scouting file's own flag is "NFL-to-CFB transitions are not
+  automatic." Texas replaced Pete Kwiatkowski with **Will Muschamp**, whose
+  last top-10 defense was 2014, on a unit that outranked Sark's offense two
+  years running — "the single riskiest coordinator hire in the league."
+- *Continuity*: Texas 72% of offensive production back (CFBD PPA), 22
+  portal adds — Coleman (No. 1 portal WR), Smothers (No. 2 RB, 4.4 yards
+  after contact), Biles (No. 3 LB), Siani (No. 3 OT), Brown (No. 5 RB).
+  Ohio State 68% back on offense, 17 adds — but **two of nine every-game
+  defensive starters return** (McClain, Mathews); three defenders went in
+  the first 11 picks. Eight defensive transfers: Russaw and Smith (Alabama),
+  Moore (Duke), Little (FSU), Kelly (Georgia).
+- *Week 1*: Ohio State 56–3 Ball State — 671 yards, Sayin 21-of-25 for 320
+  and 3 TD, Bo Jackson 83 on 9 carries, 237 rushing at 6.8; but **9
+  penalties for 81** and 5-of-11 on third down. Texas 59–7 Texas State — 516
+  yards, Arch 20-of-27 for 305, 4 TD, 1 INT, Coleman 2 TD, 11-of-15 on third
+  down, a defensive score; but **349 yards and 18 first downs allowed** to a
+  Sun Belt team.
+
+**Honesty box on air.** "Three numbers: we say Texas by 3.7, Vegas says 1.5,
+ESPN says 0.7. Three points of ours is the cap doing bookkeeping on a 56–3
+game. This is a pick'em plus home field. We have no position, and if we're
+honest, nobody should."
+
+### Slides 19–20 — the team slides (Ohio State, then Texas)
+
+*The COACH / QB / ROSTER band sits on both team slides; the four keys are
+the bullets. Every key below names the players and the Week 1 evidence.*
+
+**COACH / QB / ROSTER (the band).** Ohio State: Day year 8, Smith OC,
+Patricia year two (back-to-back No. 1 SP+ defenses). Sayin year two —
+first nationally in success rate as a freshman, "trained-wheels version."
+Texas: Sarkisian year 6, Muschamp DC. Arch year two as the starter, Heisman
+favorite; "lone remaining flaw is accuracy throwing on the run."
+
+**Ohio State keys, explained.**
+1. *Make Arthur Smith's run game real.* Smith's NFL identity is wide zone
+   plus play-action; 2025 Ohio State was "slow-tempo, short-throw efficiency
+   ball" that died in the two games that mattered. 237 at 6.8 vs Ball State
+   is the first data point; against Texas's front (Simmons, Geffrard, Biles)
+   it's the test. If the run game travels, Sayin plays on schedule.
+2. *Sayin-to-Smith vs the back end.* Jeremiah Smith: 2,558 yards, 29 TD in
+   two seasons — "the best QB-WR axis in the sport." Texas's secondary
+   (McDonald, nickel Littleton, portal CB Mascoe, sophomore Kade Phillips)
+   held this offense to 14 last year under Kwiatkowski; same players, new
+   caller.
+3. *Prove the eight-transfer defense.* Two of nine starters back; the
+   sophomore wave (Grady, Pettijohn, Sanchez, Roker) plus the transfers meet
+   Coleman/Wingo/Mosley/Smothers — "the deepest skill corps in the sport."
+   Ball State managed 165 yards; that told us nothing.
+4. *Urgency.* Connelly's sharpest point: the schedule and defensive turnover
+   might *force* the urgency that's been missing. Nine flags in Week 1 is
+   the discipline note.
+
+**Texas keys, explained.**
+1. *Arch on the move.* Sark's 2026 wrinkle is designed Manning movement;
+   accuracy on the run is the one flaw. Patricia's multiple front disguises
+   coverage shells — that is exactly the thing that punishes a QB throwing
+   late off movement.
+2. *Protect the interior.* The 2025 story: OL regression and drops, not
+   Manning, sank a preseason No. 1 (offensive SP+ slid from 6th to 30th
+   since 2023). Ohio State's front is now Russaw, James Smith and the
+   sophomores. Texas allowed 1 sack in Week 1.
+3. *Explosives over efficiency.* Patricia's defense "rally-tackles and
+   squeezes explosives"; Texas's edge is matchup wins at every skill spot.
+   The game is the big-play count, not the drive count.
+4. *Muschamp's first real test.* 349 to Texas State is the flag. Simmons (12
+   sacks in 2025) and Biles (15 TFL, 4.5 sacks at Pitt) are the two players
+   who can make Sayin uncomfortable early.
 
 ---
 
