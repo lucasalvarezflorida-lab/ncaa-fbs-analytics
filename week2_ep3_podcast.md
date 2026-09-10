@@ -1,14 +1,12 @@
 # Episode 3 — Week 2 · "Man vs Machine" podcast notes
 
-Status (Wed Sep 9, 8:30 AM MT — **RECORDING TONIGHT**): final lines pulled
-8:22 AM MT and the deck is rebuilt and pushed (21 slides). Week 1 is fully
-graded (SMU 27–24 at FSU). Card: Ohio State–Texas, Oklahoma–Michigan, Arizona
-State–Texas A&M, Arizona–BYU, Alabama–Kentucky — none of the five spreads
-moved since Monday; two totals did (OSU–Texas to 49.5, Arizona–BYU to 47.5),
-which nudged two score calls. **The Week 2 AP poll is in**: Ohio State 1,
-Georgia 2, Notre Dame 3, Texas 4, Indiana 5, Oregon 6, Miami 7, LSU 8, Ole
-Miss 9, Texas A&M 10, Oklahoma 11, Alabama 12 … BYU 15, Utah 20, Virginia 25;
-Michigan dropped out. Heisman market unchanged from Tuesday (DK).
+Status: **RECORDED Wed Sep 9.** The shared Ep3 Slides file is the record of
+what aired (it carries Corey's hand-typed "man off by" numbers on the receipts
+slide and the surgical edits made during the day) — don't push over it; Ep4
+gets a new file. Frozen Ep3 calls for next Tuesday's grading are the Slide 4
+table below (machine lines: Texas −3.7, Oklahoma −1.9, A&M −16.7, BYU −8.4,
+Alabama −13.2; superdogs Buffalo +10.5, Arkansas +12.5; closing lines = the
+Fri 5 PM ET pull).
 
 Format rule (Lucas, 9/7): the deck stays the Ep2 template — lean. Everything
 we say on air lives HERE. Every slide bullet and key gets its backing below.
@@ -1019,12 +1017,9 @@ the win."
 
 ## Pre-record checklist
 
-**Push freeze (Wed 9/9, 10:35 AM MT):** Corey edited the shared Slides file
-directly (added "man off by" numbers to the receipts rows) and is removing
-the two superdog rows himself. No deck pushes until after tonight's
-recording. Local deck + git are the five-row version; the Slides file is
-Corey's edit. Next week: consider a proper "man off by" column on the
-receipts slide so his side of the scoreboard is generated, not hand-typed.
+**Push freeze lifted (recorded 9/9).** Ep3 file stays as-is. Next week: a
+proper generated "man off by" column on the receipts slide if Corey sends
+his calls (he typed 6 / 31 / 4 / 7 / 0 for the five Week 1 games).
 
 
 1. ~~Confirm the 7:30 AM refresh ran~~ — done: as_of Tue 8:01 AM MT, 51
