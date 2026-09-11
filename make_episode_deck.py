@@ -924,9 +924,8 @@ txt(s, 0.9, 0.42, 11.5, 0.4,
     bold=True)
 txt(s, 0.9, 0.76, 11.5, 0.8, "Our Top 25", 40, WHITE, bold=True)
 txt(s, 0.9, 1.5, 11.5, 0.3,
-    f"our in-season rating after {_r.get('games_used')} rated games · "
-    "Δ = move vs ESPN's preseason FPI (0.0 = no rated game yet) · "
-    f"AP = week {AP_WEEK} poll · NR = not ranked", 11, PALE, italic=True)
+    f"Machine rating · Δ vs preseason · AP week {AP_WEEK} poll", 13, PALE,
+    bold=True)
 TOP, RH, CW = 1.98, 0.36, 5.5
 for x0 in (0.9, 6.95):
     txt(s, x0 + 3.3, TOP - 0.24, 0.75, 0.22, "RATING", 8, PALE,
@@ -965,15 +964,14 @@ _gaps = sorted(((abs(AP_TOP25[t["team"]] - i), -i, i, AP_TOP25[t["team"]],
 _ours_only = [school(t["team"]) for t in _top if t["team"] not in AP_TOP25]
 _theirs_only = sorted(((v, school(k)) for k, v in AP_TOP25.items()
                        if k not in _top_set))
-_line1 = "Biggest splits with the voters: " + " · ".join(
-    f"{n} (machine #{i}, AP #{a})" for _, _, i, a, n in _gaps[:4])
-_line2 = ("In our 25, not theirs: " + ", ".join(_ours_only[:4]) +
-          "   |   In theirs, not ours: " +
-          ", ".join(f"{n} (AP {v})" for v, n in _theirs_only[:4]))
+_line1 = "Biggest splits: " + " · ".join(
+    f"{n} #{i} vs AP #{a}" for _, _, i, a, n in _gaps[:3])
+_line2 = ("Ours, not theirs: " + ", ".join(_ours_only[:4]) +
+          "   ·   Theirs, not ours: " + ", ".join(n for _, n in _theirs_only[:4]))
 _fy = TOP + 13 * RH + 0.08
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.55, 0.62, NAVY2)
-txt(s, 1.1, _fy + 0.06, 11.2, 0.28, _line1, 9.5, WHITE, bold=True)
-txt(s, 1.1, _fy + 0.32, 11.2, 0.28, _line2, 9.5, PALE)
+txt(s, 1.1, _fy + 0.05, 11.2, 0.28, _line1, 11, WHITE, bold=True)
+txt(s, 1.1, _fy + 0.32, 11.2, 0.28, _line2, 10.5, PALE)
 
 # ---------------- slides 2-3: hot seat + Heisman boards ----------------
 # Data: boards_week{N}.json from hot_seat_heisman.py (CBS rating x season-sim
@@ -1000,9 +998,7 @@ if BOARDS:
         f"EPISODE {EPISODE} · WEEK {WEEK} · THE SEAT BOARD", 14, ORANGE, bold=True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "Hot Seat Top 10", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "seat score = 60% the man (CBS hot-seat rating 0–5, Aug 29) + 40% the machine "
-        "(odds of missing the job-saving win total, from our season sim) · * = estimated",
-        10.5, PALE, italic=True)
+        "60% CBS rating + 40% machine odds of missing the bar", 13, PALE, bold=True)
     TOP, RH = 2.08, 0.4
     R = PP_ALIGN.RIGHT
     _hdr(s, 1.75, 2.8, TOP - 0.25, "COACH · SCHOOL")
@@ -1040,13 +1036,11 @@ if BOARDS:
     _nxt = BOARDS["hot_seat"][10:13]
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.62, NAVY2)
     txt(s, 1.1, _fy + 0.06, 11.2, 0.28,
-        "Next three: " + " · ".join(f"{x['coach']} ({x['team']}, {x['score']:.0f})" for x in _nxt),
-        9.5, WHITE, bold=True)
+        "Next three: " + " · ".join(f"{x['coach']} {x['score']:.0f}" for x in _nxt),
+        11, WHITE, bold=True)
     txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
-        "NEEDS = the win total that keeps the job (from the deep-dive write-ups — a "
-        "judgment call) · P(GETS IT) = the machine's odds of reaching it · MACHINE WINS = "
-        f"projected wins (10th–90th pct), {BOARDS['games_used']} rated games in",
-        8.5, PALE)
+        "NEEDS = wins that keep the job · P(GETS IT) = the machine's odds · "
+        "MACHINE WINS = projected (10th–90th)", 10.5, PALE)
 
     # -- Heisman --
     s = blank(NAVY)
@@ -1054,16 +1048,15 @@ if BOARDS:
         f"EPISODE {EPISODE} · WEEK {WEEK} · OUR HEISMAN BOARD", 14, ORANGE, bold=True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "Our Heisman Favorite", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "index = team factor (0.5 + half the odds of 10+ wins) × blended PPA per play "
-        "(2026 + 150 plays of the 2025 line as prior) · market = DraftKings, Sep 8",
-        10.5, PALE, italic=True)
+        "Team factor × QB efficiency (PPA per play) · market = DraftKings", 13, PALE,
+        bold=True)
     HEISMAN_WHY = {
-        "Julian Sayin": "Best returning efficiency in the sport (0.545 in 2025, No. 1 in success rate) on a title favorite — the market has him 8th at +1400",
-        "Darian Mensah": "401 yards, 5 TD, 90% at Stanford — but the prior is a Duke season (0.371); Miami's 74% P(10+) is the best team factor on the board",
-        "C.J. Carr": "Carried by the team: Notre Dame's 91% P(10+) is the board's highest; the efficiency line is average so far (0.398 on 31 plays, 0.433 prior)",
-        "Josh Hoover": "1.639 per play on 15 plays — a tiny sample — plus Indiana's 73% P(10+) and the offense that made a Heisman winner of a transfer last year",
-        "Will Hammond": "Situation, not tape: Texas Tech's 80% P(10+) is 2nd on the board while his efficiency is 8th of 9 (0.384) — Houston in Lubbock is the first real test",
-        "Arch Manning": "The market's No. 2 at +950, our 8th: a mediocre 2025 prior (0.338) and the same 47% team factor as Ohio State — Saturday is the referendum",
+        "Julian Sayin": "Best returning efficiency in the sport · market has him 8th",
+        "Darian Mensah": "One huge game vs Stanford · Duke prior · best team factor",
+        "C.J. Carr": "Carried by Notre Dame's 91% · average line so far",
+        "Josh Hoover": "1.639 on 15 plays · Indiana's offense",
+        "Will Hammond": "Situation, not tape · Texas Tech's 80%",
+        "Arch Manning": "Market's No. 2, our 8th · mediocre 2025 prior",
     }
     _mkt = {x["name"]: x["market"] for x in BOARDS["heisman"] + BOARDS["heisman_non_qb"]
             if x.get("market")}
@@ -1088,7 +1081,7 @@ if BOARDS:
         why = HEISMAN_WHY.get(r["name"]) or (
             f"team factor {r['team_factor']:.2f} × blended efficiency {r['blend']:.3f} "
             f"(2026 {r['ppa26']:.3f} on {r['plays26']} plays, prior {r['ppa25']})")
-        txt(s, 1.75, y + 0.33, 10.6, 0.28, why, 9.5, PALE)
+        txt(s, 1.75, y + 0.31, 10.6, 0.3, why, 11.5, PALE)
         txt(s, 1.75, y + 0.04, 2.7, 0.3, f"{r['name']} · {r['team']}", 12, WHITE, bold=True)
         txt(s, 4.5, y + 0.05, 1.2, 0.3, f"{r['ppa26']:.3f} ({r['plays26']})", 10.5, WHITE, align=R)
         txt(s, 5.75, y + 0.05, 0.8, 0.3, f"{r['ppa25']:.3f}" if r["ppa25"] is not None else "new", 10.5, PALE, align=R)
@@ -1115,16 +1108,15 @@ if BOARDS:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.72, ORANGE)
     txt(s, 1.2, _fy + 0.1, 3.0, 0.5, "★ OUR FAVORITE", 15, NAVY, bold=True)
     txt(s, 4.0, _fy + 0.08, 8.2, 0.55,
-        f"{fav['name']}, {fav['team']} — index {fav['index']:.1f} · market "
-        f"+{fav['market']} (#{_mrank.get(fav['name'], '—')} on the board)", 17, WHITE, bold=True)
+        f"{fav['name']}, {fav['team']} · index {fav['index']:.1f} · market "
+        f"+{fav['market']}", 18, WHITE, bold=True)
     _non = BOARDS["heisman_non_qb"]
     txt(s, 0.9, _fy + 0.85, 11.5, 0.3,
-        "Non-QB watch (own scale — PPA per target, not comparable to the QB column): " +
-        " · ".join(f"{x['name']} {x['ppa26']:.2f}" + (f" (+{x['market']})" if x.get("market") else "")
-                   for x in _non[:4]), 9.5, PALE)
+        "Non-QB watch: " +
+        " · ".join(f"{x['name']}" + (f" (+{x['market']})" if x.get("market") else "")
+                   for x in _non[:4]), 11, PALE)
     txt(s, 0.9, 7.13, 11.5, 0.3,
-        "PPA = CFBD predicted points added per play · a great QB on a 9-win team stays "
-        "alive (team factor floor 0.5) · the board re-computes every rebuild", 8.5, PALE,
+        "PPA = predicted points added per play · re-computes every rebuild", 10, PALE,
         italic=True)
 
 # ---------------- title slide ----------------
@@ -1146,10 +1138,8 @@ for g in GAMES:
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.88
 txt(s, 0.9, 6.85, 11.5, 0.5,
-    "Machine = our in-season rating (ESPN preseason FPI prior + 2026 results, "
-    f"λ 3, cap ±28) + 2.5 HFA · empirical margin curve (σ 15.9) · lines as of "
-    f"{LINES_AS_OF} · model plays graded vs first-seen lines", 10.5,
-    RGBColor(0x8F, 0xA5, 0xC4))
+    f"Machine = our in-season rating + 2.5 home field · lines as of {LINES_AS_OF}",
+    11.5, RGBColor(0xCA, 0xDC, 0xFC))
 
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
 SHORT = {
@@ -1223,9 +1213,8 @@ def slide_text(g):
 s = blank()
 txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
 txt(s, 0.9, 1.08, 11.5, 0.3,
-    "Our call frozen at the Ep2 recording · closing line = last pre-kick pull "
-    "(Fri 5 PM ET · Mon 9:25 AM ET) · “off by” = miss vs the final margin",
-    11, MUTE, italic=True)
+    "Calls frozen at recording · closing line = last pre-kick pull · "
+    "off by = miss vs the final margin", 12, MUTE, bold=True)
 y = 1.55
 VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "T": MUTE, "P": MUTE}
 for a, b, tit, callfin, lines_, miss, mark in RECAP:
@@ -1240,14 +1229,12 @@ for a, b, tit, callfin, lines_, miss, mark in RECAP:
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
 _rs = RECAP_SUM
 _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
-txt(s, 1.15, y + 0.17, 11.0, 0.65,
-    f"Total miss across {_rs['n']} graded games: machine {_rs['m']:.1f} points, "
-    f"closing market {_rs['k']:.1f} — machine closer in {_rs['nm']}, market in "
-    f"{_rs['nk']}, {_rs['nt']} tie. Stated positions 2–0: Baylor +7.5 covered "
-    "and the MONSTER UNDER on 59.5 cashed (33 total). Two weeks in: machine "
-    f"{_run_m:.1f} vs market {_run_k:.1f} across {5 + _rs['n']} games — still a "
-    "coin flip with Vegas. Stated leans 3–2 on the season.",
-    10.5, WHITE)
+txt(s, 1.15, y + 0.13, 11.0, 0.35,
+    f"Machine {_rs['m']:.1f} · market {_rs['k']:.1f} · machine closer in "
+    f"{_rs['nm']}, market {_rs['nk']}, {_rs['nt']} tie", 15, WHITE, bold=True)
+txt(s, 1.15, y + 0.5, 11.0, 0.3,
+    f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} · stated leans 3–2 · "
+    "Monster Under cashed", 11.5, RGBColor(0xCA, 0xDC, 0xFC))
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
