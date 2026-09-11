@@ -1402,11 +1402,11 @@ for g in GAMES:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.72, NAVY2)
     logo_badge(s, 1.1, y + 0.1, 0.52, g["a"], plate=True)
     logo_badge(s, 1.75, y + 0.1, 0.52, g["b"], plate=True)
-    txt(s, 2.5, y + 0.19, 5.4, 0.4, g["title"], 14, WHITE, bold=True)
-    txt(s, 7.0, y + 0.09, 5.2, 0.42, g.get("score", ""), 15.5, ORANGE,
+    txt(s, 2.5, y + 0.17, 5.4, 0.4, g["title"], 16, WHITE, bold=True)
+    txt(s, 7.0, y + 0.06, 5.2, 0.45, g.get("score", ""), 19, ORANGE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, 7.0, y + 0.47, 5.2, 0.25, "market " + g["market"], 8.5,
-        RGBColor(0x8F, 0xA5, 0xC4), align=PP_ALIGN.RIGHT)
+    txt(s, 7.0, y + 0.47, 5.2, 0.25, "market " + g["market"].split(" / ")[0], 9.5,
+        RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.8
 # superdog band
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.08, 11.5, 1.02, ORANGE)
@@ -1418,15 +1418,14 @@ for i, (label, board) in enumerate(
     r = board[0]
     fav = (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
     ml = f" · ML {int(r['ml']):+d}" if r.get("ml") is not None else ""
-    txt(s, 1.2, y + 0.17 + i * 0.44, 3.0, 0.35, "★ " + label, 13, NAVY,
+    txt(s, 1.2, y + 0.15 + i * 0.44, 3.0, 0.38, "★ " + label, 14, NAVY,
         bold=True)
-    txt(s, 3.6, y + 0.17 + i * 0.44, 8.6, 0.35,
-        f"{r['dog']} +{r['pts']:g} {r['at']} {fav}{ml}", 13.5, WHITE,
+    txt(s, 3.6, y + 0.15 + i * 0.44, 8.6, 0.38,
+        f"{r['dog']} +{r['pts']:g} {r['at']} {fav}{ml}", 16, WHITE,
         bold=True)
-txt(s, 0.9, 7.18, 11.5, 0.3,
-    "projected scores = machine margin on the market total · superdogs = "
-    "dog to win outright, points = the spread · graded vs first-seen lines "
-    "· research, not picks", 9, RGBColor(0x8F, 0xA5, 0xC4), italic=True)
+txt(s, 0.9, 7.15, 11.5, 0.3,
+    "Superdogs pay only on the win · research, not picks", 11,
+    RGBColor(0xCA, 0xDC, 0xFC), italic=True)
 
 out = os.path.join(HERE, "decks", f"2026_Week{WEEK}_Episode{EPISODE}.pptx")
 prs.save(out)
