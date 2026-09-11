@@ -9,3 +9,9 @@ week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
 2,2026-09-03,Akron +24.5,Wake Forest -24.5,20,0.545,0.502,W,20,1770
 2,2026-09-03,Colorado +6.5,Georgia Tech -6.5,45,0.602,0.502,W,45,1815
 2,2026-09-03,UAB +27.5,Illinois -27.5,35,0.579,0.502,W,35,1850
+2,2026-09-04,GSU/NCAT UNDER 62.5,O/U 62.5,275,,0.565,L,-275,1575
+2,2026-09-05,North Texas +40.5,Indiana -40.5,88,0.69,0.502,W,88,1663
+2,2026-09-05,Coastal Carolina +21,West Virginia -21,65,0.64,0.502,W,65,1728
+2,2026-09-05,Missouri State +40.5,Texas A&M -40.5,79,0.67,0.502,L,-79,1649
+2,2026-09-05,California +2.5,UCLA -2.5,60,0.63,0.502,L,-60,1589
+2,2026-09-06,Washington State +23.5,Washington -23.5,74,0.66,0.502,W,74,1663
