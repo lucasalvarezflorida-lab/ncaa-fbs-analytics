@@ -1154,6 +1154,8 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
 SHORT = {
     "Ohio State at Texas": dict(
+        ctx_a=dict(coach="Day, year 8 · new OC Arthur Smith", qb="Sayin returns, year two", roster="68% back · 2 of 9 D starters"),
+        ctx_b=dict(coach="Sarkisian, year 6 · new DC Muschamp", qb="Arch returns, final season", roster="72% back · 22 portal adds"),
         decides=["The rematch", "One coordinator gamble each",
                  "Texas has the continuity edge", "Week 1 proved nothing yet"],
         honesty="Machine 3.7, market 1.5, ESPN 0.7 — three points of ours is the cap artifact. No position.",
@@ -1162,6 +1164,8 @@ SHORT = {
         keys_b=["Arch on the move", "Protect the interior",
                 "Explosives over efficiency", "Muschamp's first real test"]),
     "Oklahoma at Michigan": dict(
+        ctx_a=dict(coach="Venables, year 5", qb="Mateer returns, senior", roster="63% back · 16 portal adds"),
+        ctx_b=dict(coach="NEW — Whittingham (Utah)", qb="Underwood, year two", roster="69% back · the Utah pipeline"),
         decides=["An eight-point line swing", "Whittingham's first Big House test",
                  "Underwood vs Mateer", "Payback for 24–13"],
         honesty="The market moved 7, the machine moved 4.3 — lean Michigan +5.5 as research, not a position.",
@@ -1170,6 +1174,8 @@ SHORT = {
         keys_b=["Own the ball", "Run Underwood like Dampier",
                 "Find receiver No. 2", "Pressure without the busts"]),
     "Arizona State at Texas A&M": dict(
+        ctx_a=dict(coach="Dillingham, year 4", qb="NEW — Cutter Boley", roster="16% back · 24 portal adds"),
+        ctx_b=dict(coach="Elko, year 3 · two new coordinators", qb="Reed returns", roster="73% back · both lines rebuilt"),
         decides=["Dillingham's reboot vs an 11-win roster", "Boley's second start",
                  "A&M's portal-built lines", "No 2026 snaps in the number"],
         honesty="Two points apart on a 14-point spread is agreement — no play.",
@@ -1178,6 +1184,8 @@ SHORT = {
         keys_b=["Reed's ball security", "Prove the portal line",
                 "Havoc from the new front", "Finish drives, cut the flags"]),
     "Arizona at BYU": dict(
+        ctx_a=dict(coach="Brennan, year 3", qb="Fifita returns, year four", roster="65% back · 22 portal adds"),
+        ctx_b=dict(coach="Sitake, year 11 · new DC Poppinga", qb="Bachmeier, year two", roster="79% back · most on the card"),
         decides=["The Big 12's continuity kings", "Provo's biggest game until Notre Dame",
                  "Poppinga replaces Hill", "BYU took four, Arizona gave three"],
         honesty="Machine 8.4, market 7.5, both still the July prior — no play.",
@@ -1186,6 +1194,8 @@ SHORT = {
         keys_b=["Run first, then punish", "Martin and Eka behind the veterans",
                 "Prove the new receivers", "Win the hidden margin"]),
     "Alabama at Kentucky": dict(
+        ctx_a=dict(coach="DeBoer, year 3 · the referendum", qb="NEW — Keelon Russell, RS freshman", roster="26% back · 17 portal adds"),
+        ctx_b=dict(coach="NEW — Will Stein (Oregon OC)", qb="NEW — Kenny Minchey", roster="19% back · 31 portal adds"),
         decides=["DeBoer's referendum, on the road", "Stein's anti-Stoops",
                  "Lowest continuity on the card", "The early landmine"],
         honesty="2.7 to Alabama sits right at the noise line — quibble, not a position.",
@@ -1291,8 +1301,9 @@ for g in GAMES:
     #    predictions live only on the closing card, truly LAST). Context band
     #    = the significance frame: coach status, QB situation, roster
     #    continuity (CFBD returning offensive PPA + portal-add counts). --
-    for key, keys, ctx in ((g["a"], _ka, g["ctx_a"]),
-                           (g["b"], _kb, g["ctx_b"])):
+    _sh = SHORT.get(g["title"], {})
+    for key, keys, ctx in ((g["a"], _ka, _sh.get("ctx_a", g["ctx_a"])),
+                           (g["b"], _kb, _sh.get("ctx_b", g["ctx_b"]))):
         s = blank()
         logo_badge(s, 0.9, 0.55, 1.15, key)
         txt(s, 2.35, 0.66, 9.9, 0.62, CODE2NAME[key], 32, NAVY, bold=True)
@@ -1304,7 +1315,8 @@ for g in GAMES:
                                           ("ROSTER", ctx["roster"]))):
             x = 1.15 + i * 3.85
             txt(s, x, 2.08, 3.55, 0.25, label, 9.5, ORANGE, bold=True)
-            txt(s, x, 2.34, 3.55, 0.6, val, 10.5, INK)
+            txt(s, x, 2.34, 3.55, 0.6, val, 15 if _short else 10.5, INK,
+                bold=_short)
         yy = 3.4
         for k in keys:
             shape(s, MSO_SHAPE.OVAL, 1.0, yy + (0.2 if _short else 0.12), 0.15, 0.15, ORANGE)
