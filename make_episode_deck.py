@@ -1154,6 +1154,7 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
 SHORT = {
     "Ohio State at Texas": dict(
+        sub="Sat Sep 12 · 7:30 ET · Austin · No. 1 at No. 4",
         ctx_a=dict(coach="Day, year 8 · new OC Arthur Smith", qb="Sayin returns, year two", roster="68% back · 2 of 9 D starters"),
         ctx_b=dict(coach="Sarkisian, year 6 · new DC Muschamp", qb="Arch returns, final season", roster="72% back · 22 portal adds"),
         decides=["The rematch", "One coordinator gamble each",
@@ -1164,6 +1165,7 @@ SHORT = {
         keys_b=["Arch on the move", "Protect the interior",
                 "Explosives over efficiency", "Muschamp's first real test"]),
     "Oklahoma at Michigan": dict(
+        sub="Sat Sep 12 · 12:00 ET · Ann Arbor",
         ctx_a=dict(coach="Venables, year 5", qb="Mateer returns, senior", roster="63% back · 16 portal adds"),
         ctx_b=dict(coach="NEW — Whittingham (Utah)", qb="Underwood, year two", roster="69% back · the Utah pipeline"),
         decides=["An eight-point line swing", "Whittingham's first Big House test",
@@ -1174,6 +1176,7 @@ SHORT = {
         keys_b=["Own the ball", "Run Underwood like Dampier",
                 "Find receiver No. 2", "Pressure without the busts"]),
     "Arizona State at Texas A&M": dict(
+        sub="Sat Sep 12 · 12:00 ET · College Station",
         ctx_a=dict(coach="Dillingham, year 4", qb="NEW — Cutter Boley", roster="16% back · 24 portal adds"),
         ctx_b=dict(coach="Elko, year 3 · two new coordinators", qb="Reed returns", roster="73% back · both lines rebuilt"),
         decides=["Dillingham's reboot vs an 11-win roster", "Boley's second start",
@@ -1184,6 +1187,7 @@ SHORT = {
         keys_b=["Reed's ball security", "Prove the portal line",
                 "Havoc from the new front", "Finish drives, cut the flags"]),
     "Arizona at BYU": dict(
+        sub="Sat Sep 12 · 3:30 ET · Provo · Big 12 opener",
         ctx_a=dict(coach="Brennan, year 3", qb="Fifita returns, year four", roster="65% back · 22 portal adds"),
         ctx_b=dict(coach="Sitake, year 11 · new DC Poppinga", qb="Bachmeier, year two", roster="79% back · most on the card"),
         decides=["The Big 12's continuity kings", "Provo's biggest game until Notre Dame",
@@ -1194,6 +1198,7 @@ SHORT = {
         keys_b=["Run first, then punish", "Martin and Eka behind the veterans",
                 "Prove the new receivers", "Win the hidden margin"]),
     "Alabama at Kentucky": dict(
+        sub="Sat Sep 12 · 3:30 ET · Lexington · SEC opener",
         ctx_a=dict(coach="DeBoer, year 3 · the referendum", qb="NEW — Keelon Russell, RS freshman", roster="26% back · 17 portal adds"),
         ctx_b=dict(coach="NEW — Will Stein (Oregon OC)", qb="NEW — Kenny Minchey", roster="19% back · 31 portal adds"),
         decides=["DeBoer's referendum, on the road", "Stein's anti-Stoops",
@@ -1252,10 +1257,12 @@ for g in GAMES:
     txt(s, 1.82, 0.52, 0.5, 0.5, g["vs"], 14, MUTE, align=PP_ALIGN.CENTER)
     logo_badge(s, 2.35, 0.42, 0.8, g["b"])
     txt(s, 3.45, 0.38, 8.9, 0.55, g["title"], 27, NAVY, bold=True)
-    txt(s, 3.45, 0.94, 8.9, 0.35, g["sub"], 11, MUTE, italic=True)
+    _dec, _hon, _ka, _kb, _short = slide_text(g)
+    _sub = SHORT.get(g["title"], {}).get("sub", g["sub"])
+    txt(s, 3.45, 0.94, 8.9, 0.35, _sub, 14 if _short else 11, MUTE,
+        italic=not _short, bold=_short)
 
     # left: what decides it (headline form when SHORT is authored)
-    _dec, _hon, _ka, _kb, _short = slide_text(g)
     txt(s, 0.9, 1.75, 7.2, 0.4, "WHY IT MATTERS", 13, NAVY, bold=True)
     yy = 2.25
     for d in _dec:
