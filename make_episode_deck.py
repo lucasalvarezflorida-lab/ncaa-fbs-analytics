@@ -6,6 +6,11 @@ Per-game flow unchanged: why it matters -> one slide per team -> closing
 card with score predictions + superdogs. Ep1/Ep2 GAMES blocks are archived
 below as _GAMES_EP1/_GAMES_EP2 (frozen predictions live in git + ledger).
 Rule (Lucas 9/7): slides stay lean; all depth lives in week{N}_ep{M}_podcast.md.
+Rule (Lucas 9/11): slide text is the HEADLINE only — keys are 2-6 words
+("Attack Poppinga early"), WHY IT MATTERS is one line each, the honesty
+box is one sentence. The sentence behind every headline lives in the notes.
+SHORT below carries the slide text; long-form strings stay in GAMES as the
+archive of the reasoning.
 Motif: real school logos (ESPN 500px PNGs in decks/logos/, URLs cached in
 rosters/data/teams_fbs_2026.json) on white pucks over navy. Navy score-bug
 panel per game with the model/market numbers and a win-probability split
@@ -1146,6 +1151,69 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
     f"{LINES_AS_OF} · model plays graded vs first-seen lines", 10.5,
     RGBColor(0x8F, 0xA5, 0xC4))
 
+# ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
+SHORT = {
+    "Ohio State at Texas": dict(
+        decides=["The rematch: OSU won 14–7 last year and the 2024 semifinal",
+                 "Two title rosters, one coordinator gamble each",
+                 "Texas has the continuity edge — 72% back plus the portal class",
+                 "Week 1: 56–3 and 59–7, with nine flags and 349 allowed underneath"],
+        honesty="Machine 3.7, market 1.5, ESPN 0.7 — three points of ours is the cap artifact. No position.",
+        keys_a=["Make the run game real", "Sayin-to-Smith vs the back end",
+                "Prove the eight-transfer defense", "Play with pace, cut the flags"],
+        keys_b=["Arch on the move", "Protect the interior",
+                "Explosives over efficiency", "Muschamp's first real test"]),
+    "Oklahoma at Michigan": dict(
+        decides=["The line swung eight points on one MAC game",
+                 "Whittingham's Utah system, one game old, vs Venables' year-five defense",
+                 "Underwood's year two vs Mateer's rebuilt motion",
+                 "Payback: OU won 24–13 in Norman last year"],
+        honesty="The market moved 7, the machine moved 4.3 — lean Michigan +5.5 as research, not a position.",
+        keys_a=["Mateer's legs vs Hill's pressure", "The portal line has to prove it",
+                "Erase Underwood's bad day", "Win the hidden yards"],
+        keys_b=["Own the ball", "Run Underwood like Dampier",
+                "Find receiver No. 2", "Pressure without the busts"]),
+    "Arizona State at Texas A&M": dict(
+        decides=["Dillingham's 16%-back reboot vs an 11-win roster",
+                 "Boley's six-TD debut came against Morgan State",
+                 "A&M's story is its portal-built lines",
+                 "Neither rating has a 2026 snap in it"],
+        honesty="Two points apart on a 14-point spread is agreement — no play.",
+        keys_a=["Tempo the transfer front", "Boley vs real disguise",
+                "Contain before you gamble", "Fix special teams"],
+        keys_b=["Reed's ball security", "Prove the portal line",
+                "Havoc from the new front", "Finish drives, cut the flags"]),
+    "Arizona at BYU": dict(
+        decides=["The Big 12's continuity kings: 79% back, 177 starts",
+                 "Provo's biggest home game until Notre Dame",
+                 "BYU's coordinator change: Poppinga replaces Hill",
+                 "Week 1: BYU ran for 308 and took four; Arizona gave three away"],
+        honesty="Machine 8.4, market 7.5, both still the July prior — no play.",
+        keys_a=["Attack Poppinga early", "Hold the line vs Martin",
+                "Ball security", "Win field position"],
+        keys_b=["Run first, then punish", "Martin and Eka behind the veterans",
+                "Prove the new receivers", "Win the hidden margin"]),
+    "Alabama at Kentucky": dict(
+        decides=["DeBoer's referendum year opens on the road with a freshman QB",
+                 "Stein's anti-Stoops: pace, motion, a transfer line",
+                 "Lowest continuity on the card, both sides",
+                 "The deep dive called this an early landmine"],
+        honesty="2.7 to Alabama sits right at the noise line — quibble, not a position.",
+        keys_a=["Russell's first road start", "Run it 49 times again",
+                "Wommack's secondary vs the void", "Special teams can't leak"],
+        keys_b=["The mauling line", "Minchey keeps it clean",
+                "The defense is the strength", "Fix third down and the flags"]),
+}
+
+
+def slide_text(g):
+    """(decides, honesty, keys_a, keys_b, is_short) — SHORT if authored,
+    else the long GAMES strings."""
+    sh = SHORT.get(g["title"], {})
+    return (sh.get("decides", g["decides"]), sh.get("honesty", g["honesty"]),
+            sh.get("keys_a", g["keys_a"]), sh.get("keys_b", g["keys_b"]), bool(sh))
+
+
 # ---------------- week 0 receipts ----------------
 s = blank()
 txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
@@ -1186,15 +1254,17 @@ for g in GAMES:
     txt(s, 3.45, 0.38, 8.9, 0.55, g["title"], 27, NAVY, bold=True)
     txt(s, 3.45, 0.94, 8.9, 0.35, g["sub"], 11, MUTE, italic=True)
 
-    # left: what decides it
+    # left: what decides it (headline form when SHORT is authored)
+    _dec, _hon, _ka, _kb, _short = slide_text(g)
     txt(s, 0.9, 1.75, 7.2, 0.4, "WHY IT MATTERS", 13, NAVY, bold=True)
     yy = 2.25
-    for d in g["decides"]:
-        shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09, 0.14, 0.14, ORANGE)
-        txt(s, 1.3, yy, 6.8, 0.8, d, 13.5)
+    for d in _dec:
+        shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09 + (0.04 if _short else 0), 0.14, 0.14, ORANGE)
+        txt(s, 1.3, yy, 6.8, 0.8, d, 16 if _short else 13.5)
         yy += 0.78
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, yy + 0.15, 7.2, 1.05, ICE)
-    txt(s, 1.15, yy + 0.32, 6.7, 0.75, g["honesty"], 11.5, MUTE, italic=True)
+    txt(s, 1.15, yy + 0.32, 6.7, 0.75, _hon, 13 if _short else 11.5, MUTE,
+        italic=True)
 
     # right: navy score bug
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
@@ -1231,8 +1301,8 @@ for g in GAMES:
     #    predictions live only on the closing card, truly LAST). Context band
     #    = the significance frame: coach status, QB situation, roster
     #    continuity (CFBD returning offensive PPA + portal-add counts). --
-    for key, keys, ctx in ((g["a"], g["keys_a"], g["ctx_a"]),
-                           (g["b"], g["keys_b"], g["ctx_b"])):
+    for key, keys, ctx in ((g["a"], _ka, g["ctx_a"]),
+                           (g["b"], _kb, g["ctx_b"])):
         s = blank()
         logo_badge(s, 0.9, 0.55, 1.15, key)
         txt(s, 2.35, 0.66, 9.9, 0.62, CODE2NAME[key], 32, NAVY, bold=True)
@@ -1247,8 +1317,9 @@ for g in GAMES:
             txt(s, x, 2.34, 3.55, 0.6, val, 10.5, INK)
         yy = 3.4
         for k in keys:
-            shape(s, MSO_SHAPE.OVAL, 1.0, yy + 0.12, 0.15, 0.15, ORANGE)
-            txt(s, 1.45, yy, 10.5, 0.8, k, 15.5, INK)
+            shape(s, MSO_SHAPE.OVAL, 1.0, yy + (0.2 if _short else 0.12), 0.15, 0.15, ORANGE)
+            txt(s, 1.45, yy, 10.5, 0.8, k, 24 if _short else 15.5, INK,
+                bold=_short)
             yy += 0.92
         txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · " + g["title"], 9, MUTE)
 
