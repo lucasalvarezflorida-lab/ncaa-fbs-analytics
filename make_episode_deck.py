@@ -1158,7 +1158,7 @@ SHORT = {
         ctx_b=dict(coach="Sarkisian, year 6 · new DC Muschamp", qb="Arch returns, final season", roster="72% back · 22 portal adds"),
         decides=["The rematch", "One coordinator gamble each",
                  "Texas has the continuity edge", "Week 1 proved nothing yet"],
-        honesty="Machine 3.7, market 1.5, ESPN 0.7 — three points of ours is the cap artifact. No position.",
+        honesty="Pick'em plus home field — no position",
         keys_a=["Make the run game real", "Sayin-to-Smith vs the back end",
                 "Prove the eight-transfer defense", "Play with pace, cut the flags"],
         keys_b=["Arch on the move", "Protect the interior",
@@ -1168,7 +1168,7 @@ SHORT = {
         ctx_b=dict(coach="NEW — Whittingham (Utah)", qb="Underwood, year two", roster="69% back · the Utah pipeline"),
         decides=["An eight-point line swing", "Whittingham's first Big House test",
                  "Underwood vs Mateer", "Payback for 24–13"],
-        honesty="The market moved 7, the machine moved 4.3 — lean Michigan +5.5 as research, not a position.",
+        honesty="Lean Michigan +5.5 — research, not a position",
         keys_a=["Mateer's legs vs Hill's pressure", "The portal line has to prove it",
                 "Erase Underwood's bad day", "Win the hidden yards"],
         keys_b=["Own the ball", "Run Underwood like Dampier",
@@ -1178,7 +1178,7 @@ SHORT = {
         ctx_b=dict(coach="Elko, year 3 · two new coordinators", qb="Reed returns", roster="73% back · both lines rebuilt"),
         decides=["Dillingham's reboot vs an 11-win roster", "Boley's second start",
                  "A&M's portal-built lines", "No 2026 snaps in the number"],
-        honesty="Two points apart on a 14-point spread is agreement — no play.",
+        honesty="Agreement — no play",
         keys_a=["Tempo the transfer front", "Boley vs real disguise",
                 "Contain before you gamble", "Fix special teams"],
         keys_b=["Reed's ball security", "Prove the portal line",
@@ -1188,7 +1188,7 @@ SHORT = {
         ctx_b=dict(coach="Sitake, year 11 · new DC Poppinga", qb="Bachmeier, year two", roster="79% back · most on the card"),
         decides=["The Big 12's continuity kings", "Provo's biggest game until Notre Dame",
                  "Poppinga replaces Hill", "BYU took four, Arizona gave three"],
-        honesty="Machine 8.4, market 7.5, both still the July prior — no play.",
+        honesty="Machine = market — no play",
         keys_a=["Attack Poppinga early", "Hold the line vs Martin",
                 "Ball security", "Win field position"],
         keys_b=["Run first, then punish", "Martin and Eka behind the veterans",
@@ -1198,7 +1198,7 @@ SHORT = {
         ctx_b=dict(coach="NEW — Will Stein (Oregon OC)", qb="NEW — Kenny Minchey", roster="19% back · 31 portal adds"),
         decides=["DeBoer's referendum, on the road", "Stein's anti-Stoops",
                  "Lowest continuity on the card", "The early landmine"],
-        honesty="2.7 to Alabama sits right at the noise line — quibble, not a position.",
+        honesty="Quibble, not a position",
         keys_a=["Russell's first road start", "Run it 49 times again",
                 "Wommack's secondary vs the void", "Special teams can't leak"],
         keys_b=["The mauling line", "Minchey keeps it clean",
@@ -1263,8 +1263,10 @@ for g in GAMES:
         txt(s, 1.3, yy, 6.8, 0.8, d, 21 if _short else 13.5, INK, bold=_short)
         yy += 0.78
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, yy + 0.15, 7.2, 1.05, ICE)
-    txt(s, 1.15, yy + 0.32, 6.7, 0.75, _hon, 13 if _short else 11.5, MUTE,
-        italic=True)
+    if _short:
+        txt(s, 1.15, yy + 0.4, 6.7, 0.55, _hon, 20, NAVY, bold=True)
+    else:
+        txt(s, 1.15, yy + 0.32, 6.7, 0.75, _hon, 11.5, MUTE, italic=True)
 
     # right: navy score bug
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
