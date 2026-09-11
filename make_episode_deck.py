@@ -1154,50 +1154,40 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
 SHORT = {
     "Ohio State at Texas": dict(
-        decides=["The rematch: OSU won 14–7 last year and the 2024 semifinal",
-                 "Two title rosters, one coordinator gamble each",
-                 "Texas has the continuity edge — 72% back plus the portal class",
-                 "Week 1: 56–3 and 59–7, with nine flags and 349 allowed underneath"],
+        decides=["The rematch", "One coordinator gamble each",
+                 "Texas has the continuity edge", "Week 1 proved nothing yet"],
         honesty="Machine 3.7, market 1.5, ESPN 0.7 — three points of ours is the cap artifact. No position.",
         keys_a=["Make the run game real", "Sayin-to-Smith vs the back end",
                 "Prove the eight-transfer defense", "Play with pace, cut the flags"],
         keys_b=["Arch on the move", "Protect the interior",
                 "Explosives over efficiency", "Muschamp's first real test"]),
     "Oklahoma at Michigan": dict(
-        decides=["The line swung eight points on one MAC game",
-                 "Whittingham's Utah system, one game old, vs Venables' year-five defense",
-                 "Underwood's year two vs Mateer's rebuilt motion",
-                 "Payback: OU won 24–13 in Norman last year"],
+        decides=["An eight-point line swing", "Whittingham's first Big House test",
+                 "Underwood vs Mateer", "Payback for 24–13"],
         honesty="The market moved 7, the machine moved 4.3 — lean Michigan +5.5 as research, not a position.",
         keys_a=["Mateer's legs vs Hill's pressure", "The portal line has to prove it",
                 "Erase Underwood's bad day", "Win the hidden yards"],
         keys_b=["Own the ball", "Run Underwood like Dampier",
                 "Find receiver No. 2", "Pressure without the busts"]),
     "Arizona State at Texas A&M": dict(
-        decides=["Dillingham's 16%-back reboot vs an 11-win roster",
-                 "Boley's six-TD debut came against Morgan State",
-                 "A&M's story is its portal-built lines",
-                 "Neither rating has a 2026 snap in it"],
+        decides=["Dillingham's reboot vs an 11-win roster", "Boley's second start",
+                 "A&M's portal-built lines", "No 2026 snaps in the number"],
         honesty="Two points apart on a 14-point spread is agreement — no play.",
         keys_a=["Tempo the transfer front", "Boley vs real disguise",
                 "Contain before you gamble", "Fix special teams"],
         keys_b=["Reed's ball security", "Prove the portal line",
                 "Havoc from the new front", "Finish drives, cut the flags"]),
     "Arizona at BYU": dict(
-        decides=["The Big 12's continuity kings: 79% back, 177 starts",
-                 "Provo's biggest home game until Notre Dame",
-                 "BYU's coordinator change: Poppinga replaces Hill",
-                 "Week 1: BYU ran for 308 and took four; Arizona gave three away"],
+        decides=["The Big 12's continuity kings", "Provo's biggest game until Notre Dame",
+                 "Poppinga replaces Hill", "BYU took four, Arizona gave three"],
         honesty="Machine 8.4, market 7.5, both still the July prior — no play.",
         keys_a=["Attack Poppinga early", "Hold the line vs Martin",
                 "Ball security", "Win field position"],
         keys_b=["Run first, then punish", "Martin and Eka behind the veterans",
                 "Prove the new receivers", "Win the hidden margin"]),
     "Alabama at Kentucky": dict(
-        decides=["DeBoer's referendum year opens on the road with a freshman QB",
-                 "Stein's anti-Stoops: pace, motion, a transfer line",
-                 "Lowest continuity on the card, both sides",
-                 "The deep dive called this an early landmine"],
+        decides=["DeBoer's referendum, on the road", "Stein's anti-Stoops",
+                 "Lowest continuity on the card", "The early landmine"],
         honesty="2.7 to Alabama sits right at the noise line — quibble, not a position.",
         keys_a=["Russell's first road start", "Run it 49 times again",
                 "Wommack's secondary vs the void", "Special teams can't leak"],
@@ -1259,8 +1249,8 @@ for g in GAMES:
     txt(s, 0.9, 1.75, 7.2, 0.4, "WHY IT MATTERS", 13, NAVY, bold=True)
     yy = 2.25
     for d in _dec:
-        shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09 + (0.04 if _short else 0), 0.14, 0.14, ORANGE)
-        txt(s, 1.3, yy, 6.8, 0.8, d, 16 if _short else 13.5)
+        shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09 + (0.08 if _short else 0), 0.14, 0.14, ORANGE)
+        txt(s, 1.3, yy, 6.8, 0.8, d, 21 if _short else 13.5, INK, bold=_short)
         yy += 0.78
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, yy + 0.15, 7.2, 1.05, ICE)
     txt(s, 1.15, yy + 0.32, 6.7, 0.75, _hon, 13 if _short else 11.5, MUTE,
