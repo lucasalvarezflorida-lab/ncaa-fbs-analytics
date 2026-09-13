@@ -139,7 +139,13 @@ def latest_rankings(refresh: bool = True) -> dict:
     if not weeks:
         return out
     order = {"regular": 0, "postseason": 1}
-    latest = max(weeks, key=lambda w: (order.get(w.get("seasonType"), 0), w.get("week") or 0))
+    # CFBD sometimes lists the new week before the AP poll is attached to it
+    # (e.g. only the coaches poll on Sunday morning) - use the latest week
+    # that actually carries an AP poll.
+    with_ap = [w for w in weeks if any((p.get("poll") or "").lower().startswith("ap")
+                                       for p in w.get("polls", []))]
+    pool = with_ap or weeks
+    latest = max(pool, key=lambda w: (order.get(w.get("seasonType"), 0), w.get("week") or 0))
     out["week"], out["season_type"] = latest.get("week"), latest.get("seasonType")
     for poll in latest.get("polls", []):
         name = (poll.get("poll") or "").lower()

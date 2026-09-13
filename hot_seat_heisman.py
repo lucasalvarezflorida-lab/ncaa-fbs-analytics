@@ -91,19 +91,20 @@ TENURE = {
     "Wyoming": "7-17, yr 3", "UL Monroe": "8-16, yr 3",
 }
 
-# Heisman market (DraftKings via NBC Sports, Sep 8 2026) — refresh weekly
-MARKET_DATE = "2026-09-08"
+# Heisman market (DraftKings via Covers, Sun Sep 13 2026) — refresh weekly
+MARKET_DATE = "2026-09-13"
 MARKET = {
-    "Darian Mensah": 600, "Arch Manning": 950, "Jeremiah Smith": 1000,
-    "C.J. Carr": 1100, "Malachi Toney": 1250, "Dante Moore": 1300,
-    "Trinidad Chambliss": 1300, "Julian Sayin": 1400, "Sam Leavitt": 1500,
-    "Jayden Maiava": 1750, "Josh Hoover": 1900, "John Mateer": 2800,
+    "Darian Mensah": 550, "Jeremiah Smith": 650, "Arch Manning": 1000,
+    "C.J. Carr": 1050, "Trinidad Chambliss": 1300, "Malachi Toney": 1300,
+    "Julian Sayin": 1500, "Josh Hoover": 1700, "Jayden Maiava": 1900,
+    "Sam Leavitt": 2500,
 }
 QB_POOL = ["Julian Sayin", "Darian Mensah", "C.J. Carr", "Josh Hoover",
            "Arch Manning", "Dante Moore", "Jayden Maiava", "Will Hammond",
            "Sam Leavitt", "Trinidad Chambliss", "Marcel Reed", "John Mateer",
            "Bear Bachmeier", "Devon Dampier", "Avery Johnson", "Keelon Russell",
-           "Kevin Jennings", "Bryce Underwood", "Byrum Brown"]
+           "Kevin Jennings", "Bryce Underwood", "Byrum Brown", "Kamario Taylor",
+           "LaNorris Sellers", "Lanorris Sellers", "Lincoln Kienholz"]
 NON_QB = ["Jeremiah Smith", "Malachi Toney", "Ryan Wingo", "Trent Mosley",
           "Jadan Baugh", "Koby Howard"]
 K_PRIOR = 150.0

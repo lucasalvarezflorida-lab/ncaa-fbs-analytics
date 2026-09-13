@@ -1,0 +1,733 @@
+# Episode 4 — Week 3 · "Man vs Machine" podcast notes
+
+Status (Sun Sep 13, 12:30 PM MT): Week 2 graded (5 of 5 plus both
+superdogs), the machine re-solved on **100 rated games** (12:21 PM MT), the
+workbook rebuilt, and the Week 3 AP poll is in (pulled from the wire; CFBD
+hadn't attached it yet — the deck falls back to the hand-typed Week 3 list
+until the cache catches up). Lines are the Sun 12:21 PM MT pull. **Houston at
+Texas Tech (Friday) has no total or moneyline posted yet** — the score call
+fills in on the next re-pull. Re-pull before recording: `edge_report.py
+--week 3 --view ml --publish`, `hot_seat_heisman.py --week 3 --refresh`,
+`make_episode_deck.py`.
+
+Format rule: slides carry the headline, this file carries the sentence.
+Every slide line has its backing below, in deck order.
+
+**Order below = the deck, slide by slide.** 1 Our Top 25 · 2 Hot Seat Top 10
+· 3 Our Heisman favorite · 4 Five Games, One Card · 5 Week 2 receipts ·
+6–20 the five games in kickoff order (the number, then one slide per team) ·
+21 Our predictions + superdogs. Kiffin's return to Oxford closes the show.
+
+---
+
+## Slide 1 — Our Top 25 (the machine after Week 2)
+
+100 rated games in. **Top 10**: 1 Ohio State 25.0 · 2 Texas 25.0 · 3 Notre
+Dame 24.8 · 4 Indiana 23.8 · 5 Miami 23.1 · 6 Alabama 23.0 · 7 Georgia 22.6
+· 8 LSU 22.3 · 9 Texas A&M 20.9 · 10 Tennessee 17.6.
+
+**The headline: the machine's No. 1 lost on Saturday.** Ohio State lost
+24–23 in Austin and moved UP 0.4, Texas won and moved DOWN 0.8, and they now
+sit 25.0 and 25.0 with the Buckeyes ahead on decimals. Why: the machine
+expected Texas by 3.7 at home. Losing by one is 2.7 points better than
+expected for Ohio State and 2.7 worse for Texas. The voters flipped them
+(Texas AP 1, Ohio State AP 6). Say it plainly: "the voters grade the
+scoreboard; the machine grades the margin against the expectation."
+
+**Machine vs the AP voters (Week 3 poll), the weekly column:**
+- Ohio State machine #1 / AP #6 · Texas machine #2 / AP #1.
+- Oregon machine #11 / AP #21 — the 39–31 home loss to Oklahoma State cost
+  4.6 rating points (−8.0 on the season, the biggest fall in the top 25);
+  the voters dropped them 15 spots.
+- Oklahoma machine #15 / AP #24 after the 17–10 loss at Michigan.
+- BYU machine #19 / AP #11 — the voters like 2–0 with a Big 12 win more than
+  the machine likes a 13.6 rating.
+- In our 25, not theirs: Florida (#16, 14.4), Auburn (#22), South Carolina
+  (#25). In theirs, not ours: Iowa (AP 18), Houston (AP 22), Louisville
+  (AP 23).
+
+**Biggest Week 2 movers (rating points):** North Texas +5.9, Oklahoma State
++5.0 (won at Oregon), Georgia State +4.5, Utah +4.3 (43–10 over Arkansas),
+Mississippi State +4.0 (38–13 at Minnesota) · UNLV −5.1, Minnesota −4.9,
+Oregon −4.6, Kennesaw State −4.5, Arkansas −4.3.
+
+**Machine housekeeping (say it once).** The ±28 cap keeps docking elite
+teams for cupcake blowouts: Notre Dame −2.5 for 52–0 over Rice, Georgia
+−2.2 for its Week 2 blowout, Texas A&M's 50–0 last week. It's a
+pre-registered rule; the fix (cap the residual, not the margin) is on the
+postseason list. FCS games are still invisible — Houston's 77–6 over
+Southern, South Carolina's 45–9 over Towson and Florida's 52–3 over Campbell
+moved nothing.
+
+---
+
+## Slide 2 — Hot Seat Top 10
+
+Seat score = 60% the man (CBS Sports' preseason hot-seat rating, 0–5, Aug 29
+— no new CBS list has published, so the ratings are unchanged) + 40% the
+machine (season-sim odds of missing the win total that keeps the job; the
+bars are our judgment from the deep-dive "how he escapes" write-ups).
+
+| # | Coach · school | Tenure | CBS | Needs | P(gets it) | Machine wins | Score | Week 2 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Norvell · Florida State | 38–34, yr 7 | 5.0 | 8 | 20% | 6.2 (4–8) | 92 | off (L 24–27 SMU last) |
+| 2 | Schiano · Rutgers | 31–41 2nd stint | 3.0* | 6 | 4% | 3.4 (2–5) | 74 | L 21–28 at Boston College |
+| 3 | Aranda · Baylor | 36–37, yr 7 | 5.0 | 7 | 65% | 7.1 (5–9) | 74 | W 44–3 Prairie View |
+| 4 | Fickell · Wisconsin | 17–21, yr 4 | 5.0 | 6 | 67% | 6.2 (4–8) | 73 | W 36–9 Western Illinois |
+| 5 | Locksley · Maryland | 37–49, yr 8 | 4.9 | 6 | 65% | 6.1 (4–8) | 73 | W 38–14 at UConn |
+| 6 | Beamer · South Carolina | 33–30, yr 6 | 4.3 | 7 | 50% | 6.5 (5–8) | 72 | W 45–9 Towson |
+| 7 | Swinney · Clemson | 186–53, yr 18 | 3.1 | 9 | 17% | 7.0 (5–9) | 70 | W 22–7 Georgia Southern |
+| 8 | O'Brien · Boston College | 9–16, yr 3 | 3.5 | 5 | 35% | 3.9 (2–6) | 68 | W 28–21 Rutgers |
+| 9 | Mason · Middle Tennessee | 3–9 in 2024, yr 3 | 3.6 | 6 | 40% | 5.1 (3–7) | 67 | L 26–28 at Marshall |
+| 10 | Doeren · NC State | yr 14 | 3.0 | 7 | 30% | 5.7 (4–8) | 64 | W 73–0 Richmond |
+
+Next three: Fleck (Minnesota, 62 — lost 38–13 at home to Mississippi State;
+7% for seven wins), Belichick (62 — dropped off the ten after 35–3 over ETSU;
+67% for six), Vincent (UL Monroe, 62*). *Rutgers's CBS number is our
+estimate.
+
+**What moved this week (the segment):**
+1. **Schiano to No. 2.** Rutgers lost 28–21 AT Boston College — to the
+   coach who was eighth on our list — and fell to −7.9, dead last in FBS. The
+   sim gives him 4% to reach six wins. Two games, two losses, to UMass and
+   BC. That's the machine's alarm, again.
+2. **Locksley cooled, Belichick fell off.** Maryland won 38–14 at UConn and
+   gained 2.9 rating points; the sim now gives him 65% for the bowl. UNC's
+   35–3 over ETSU didn't count (FCS), but the Week 1 win at TCU keeps the
+   machine at 67% for six wins — Belichick is 12th now.
+3. **Dabo up to No. 7.** Clemson beat Georgia Southern 22–7 and lost another
+   1.2 rating points for the effort (expected ~24). The sim says 7.0 wins
+   and 17% for the nine that make a redemption year. The machine keeps
+   saying Clemson's season is the story.
+4. **Beamer and Lebby meet Saturday.** Beamer sits sixth (50% for seven
+   wins); Lebby fell off the list entirely after 38–13 at Minnesota lifted
+   State 4.0 points (57% for a bowl now). The MSST–South Carolina game is
+   slide 12 — one of them is 0–1 in the SEC on Saturday night.
+5. **Venables is 14th** after the loss at Michigan (14.5 rating, 33% for
+   eight wins). Not on the list, but the direction matters: 1–1 with
+   Georgia and Texas still to come.
+6. **Norvell is unchanged at No. 1** — FSU was idle. Alabama in Tallahassee
+   next week is the machine's next data point (and our Giant Killer board
+   has FSU +18.5 at #10 Alabama seventh).
+
+**Caveat, said out loud:** the bars are ours; the CBS ratings are three weeks
+old. The formula is transparent so Corey can argue the inputs.
+
+---
+
+## Slide 3 — Our Heisman favorite
+
+Index = team factor (0.5 + half the machine's odds of 10+ wins) × blended
+efficiency (2026 PPA per play with 150 plays of the 2025 line as prior).
+Market = DraftKings, Sunday Sep 13 (Covers).
+
+| # | QB · team | 2026 PPA (plays) | 2025 prior | Blend | Team P(10+) | Index | Market |
+|---|---|---|---|---|---|---|---|
+| 1 | **Darian Mensah · Miami** | 1.133 (48) | 0.371 | 0.556 | 75% | **48.5** | +550 (#1) |
+| 2 | Josh Hoover · Indiana | 1.424 (29) | 0.353 | 0.526 | 79% | 47.1 | +1700 (#8) |
+| 3 | C.J. Carr · Notre Dame | 0.614 (51) | 0.433 | 0.479 | 86% | 44.4 | +1050 (#4) |
+| 4 | Julian Sayin · Ohio State | 0.616 (64) | 0.545 | 0.566 | 52% | 43.1 | +1500 (#7) |
+| 5 | Jayden Maiava · USC | 0.651 (90) | 0.517 | 0.567 | 16% | 32.9 | +1900 (#9) |
+
+Next up: Dampier 31.5 (unpriced), Hammond 29.8, Jennings 29.3, Kienholz
+27.2, **Arch Manning 25.4 (market #3 at +1000)**, Bachmeier 24.5, Kamario
+Taylor 24.4.
+
+**★ Our favorite: Darian Mensah — and the machine now agrees with the
+market.** Last week we had Sayin first and the market had him eighth. Two
+things changed:
+1. **Sayin's 2026 column caught up with reality.** 17-of-32 for 278, one
+   touchdown, one pick in the loss at Texas: his season line is 0.616 per
+   play on 64 plays. The 2025 prior (0.545) still keeps him top four, but
+   Ohio State's P(10+) fell to 52% after the loss and that's the team-factor
+   drag.
+2. **Mensah did it again.** 41-of-45 for 653 yards and eight touchdowns
+   through two games — 90% completions in both. His 2025 Duke prior (0.371)
+   is the only thing holding the blend at 0.556; Miami's 75% P(10+) is the
+   second-best team factor on the board. Index 48.5, and he's +550.
+
+**Hoover is the market's mistake (No. 2 for us, No. 8 for them).** 1.424
+per play on 29 plays is still a small sample, but Indiana's 79% P(10+) is
+the second-highest on the board and the offense made a Heisman winner out of
+a transfer last year. +1700 for a quarterback the machine has within 1.4
+index points of the favorite.
+
+**Arch is the market's No. 3 and our No. 10.** The market bought the
+fourth quarter (three straight touchdown drives to beat No. 1); the machine
+graded the whole game: 23-of-37 for 195, one touchdown, one interception,
+5.3 yards per attempt. His season line is 0.417 per play on 75 plays, the
+worst of the ten priced quarterbacks. Say both things — the comeback was
+real, and so is the efficiency.
+
+**Jeremiah Smith (+650, market No. 2)** is the non-QB story: 164 yards and a
+score in Austin, 1.19 PPA per target on the season with a 0.94 prior. He
+doesn't go on the QB board (per-target isn't per-play), but if a receiver
+wins it, it's him.
+
+**Caveats:** two games of data; the team factor uses the sim, which inherits
+the cap artifact (Ohio State's 52% would be higher without it); and the index
+can't see a highlight — the Heisman is a vote.
+
+---
+
+## Slide 4 — Five Games, One Card (the numbers at a glance)
+
+| Game (kick, ET) | Machine | Market (DK) | Score call | Machine win % | Read |
+|---|---|---|---|---|---|
+| Houston at Texas Tech (Fri 8:00) | TTU −13.0 | TTU −9.5 · total not posted | pending the total | TTU 79% | 3.5 to Tech — a small lean |
+| SMU at Louisville (Sat 3:30) | LOU −1.1 | LOU −1.5 · O/U 59.5 ⚑ | Louisville 30–29 | LOU 54% | machine = market · MONSTER UNDER |
+| Mississippi State at South Carolina (Sat 4:15) | SC −4.9 | SC −3.5 · O/U 58.5 ⚑ | SC 32–27 | SC 63% | 1.4 to SC — no play · MONSTER UNDER |
+| Florida at Auburn (Sat 7:00) | AUB −0.7 | FLA −2.5 · O/U 53.5 | Auburn 27–26 | AUB 52% | **lean Auburn +2.5** — the home dog, 7.6 pp gap |
+| LSU at Ole Miss (Sat 7:30) | LSU −5.2 | LSU −2.5 · O/U 58.5 ⚑ | LSU 32–27 | LSU 62% | 2.7 to LSU — quibble · MONSTER UNDER |
+
+**Three Monster Unders on one card.** The top-decile threshold is 58.5 this
+week (404 totals posted). LSU–Ole Miss 58.5, State–South Carolina 58.5,
+SMU–Louisville 59.5 all qualify. The rule: totals in the season's top decile
+went under 55.1% of the time across 2021–25, the only spread-or-total bias
+that survived the post-mortem. Week 1's Monster Under (59.5 → 33) cashed;
+say the record (1–0) and the base rate in the same breath.
+
+**Line movement, all one direction.** Four of the five moved four points
+since first-seen — Houston +4 (toward the dog), Florida +4, LSU +4, State
++4. The machine's side got the CLV on all four. SMU–Louisville hasn't moved.
+
+**No stated position of size this week.** The Auburn lean (+2.5) is the
+widest machine-market gap on the card at 7.6 points of win probability; the
+Tech lean is 5.9 points, under the 6-point flag. Everything else is
+agreement.
+
+---
+
+## Slide 5 — Week 2: the receipts
+
+Frozen Ep3 calls (recorded Wed Sep 9) vs finals vs the Friday 5 PM ET pull.
+
+| Game | We called | FINAL | Our line | Close | Off by (us / market) | Closer |
+|---|---|---|---|---|---|---|
+| Ohio State at Texas | Texas 27–23 | **Texas 24–23** | TEX −3.5 | TEX −1.5 | 2.5 / **0.5** | market |
+| Oklahoma at Michigan | Oklahoma 23–21 | **Michigan 17–10** | OU −2 | OU −5.5 | **9** / 12.5 | machine |
+| Arizona State at Texas A&M | A&M 34–17 | **A&M 48–20** | TAMU −16.5 | TAMU −14.5 | **11.5** / 13.5 | machine |
+| Arizona at BYU | BYU 28–20 | **BYU 28–17** | BYU −8.5 | BYU −7.5 | **2.5** / 3.5 | machine |
+| Alabama at Kentucky | Alabama 31–18 | **Alabama 45–17** | BAMA −13 | BAMA −10 | **15** / 18 | machine |
+
+**Machine 40.5, market 48.0 — closer in four of five.** Season: machine
+161.0 vs market 167.0 across 15 games — the machine leads for the first
+time. Two score calls were near-exact: Texas 27–23 vs 24–23, and BYU 28–20
+vs 28–17 (BYU's 28 on the nose).
+
+**Stated positions: 1–0.** Michigan +5.5 ("lean, research") won outright
+17–10. The Alabama "quibble" (−13 vs −10.5) also covered by 18, but it was
+called a quibble, not a position. **Season leans 4–2.**
+
+### Ohio State at Texas — Texas 24, Ohio State 23
+
+- **The number**: machine Texas −3.5, close −1.5, actual Texas by 1. The
+  market's cleanest read of the week. Our 27–23 was three total points off.
+- **The game**: Ohio State led 23–3 through three quarters (10, 10, 3) and
+  Texas scored 21 in the fourth on three straight touchdown drives. Texas
+  336 total yards; Arch 23-of-37 for 195, one touchdown, one pick, 5.3 per
+  attempt; Smothers 74 and two scores. Ohio State 372; Sayin 17-of-32 for
+  278, one and one; Jeremiah Smith 164; the run game 94 yards at 3.0.
+- **Keys vs reality — Ohio State**: "make the run game real" FAILED (3.0 a
+  carry); "Sayin-to-Smith" HIT (164); "prove the eight-transfer defense" hit
+  for 45 minutes — three points allowed through three quarters — then 21;
+  "play with pace, cut the flags" — four flags (hit), but the fourth-quarter
+  offense scored zero, the same disease as the Miami quarterfinal.
+- **Keys vs reality — Texas**: "Arch on the move" — 24 rushing yards and a
+  fourth quarter that was the whole case; "protect the interior" — two
+  sacks; "explosives over efficiency" FAILED (5.3 per attempt) and they won
+  on efficiency instead (9-of-16 on third down); "Muschamp's first real
+  test" — 23 allowed, then a shutout fourth quarter.
+- **Machine reaction**: Ohio State +0.4, Texas −0.8 — a one-point loss at a
+  3.7-point expectation is a small win for the machine's Ohio State. The
+  voters went the other way by five spots.
+
+### Oklahoma at Michigan — Michigan 17, Oklahoma 10
+
+- **The number**: machine OU −2, close −5.5, actual Michigan by 7. Machine
+  off by 9, market by 12.5. **Our lean, Michigan +5.5, won outright** — the
+  first stated position to win a game outright this season.
+- **The game**: Michigan 263 yards, 152 rushing at 3.7, 33:17 of possession,
+  zero turnovers; Underwood 9-of-17 for 111 and no touchdowns — but 18
+  carries for 87 and a score. Oklahoma 289; Mateer 17-of-33 for 189, one
+  and one; 3-of-13 on third down; two turnovers; three sacks taken.
+- **Keys vs reality — Michigan**: "own the ball" HIT (33 minutes, no
+  giveaways); "run Underwood like Dampier" HIT — 18 carries, the most of his
+  career; "find receiver No. 2" — nobody over 48 yards, and it didn't
+  matter; "pressure without the busts" HIT — three sacks, 5.7 per pass
+  allowed.
+- **Keys vs reality — Oklahoma**: "Mateer's legs" — 45 yards, not enough;
+  "the portal line has to prove it" FAILED (three sacks, 3.4 a carry);
+  "erase Underwood's bad day" — they did (111 passing) and lost anyway;
+  "win the hidden yards" FAILED — nine penalties for 76.
+- **Machine reaction**: Michigan +1.6 (to #20, back in the AP at 19),
+  Oklahoma −1.5 (to #15, AP 24). The market's seven-point swing on the WMU
+  game was the overreaction; the machine's four-point move was closer.
+
+### Arizona State at Texas A&M — A&M 48, ASU 20
+
+- **The number**: machine −16.5, close −14.5, actual A&M by 28. Machine
+  closer by two. The 34–17 call had the shape and not the scale.
+- **The game**: A&M gained only 255 yards and scored 48 — two defensive
+  touchdowns and four ASU turnovers (Boley 21-of-34 for 254, two and two;
+  two lost fumbles). Reed 15-of-25 for 163 and three scores. The portal OL
+  ran for 92 at 2.6.
+- **Keys vs reality — A&M**: "havoc from the new front" HIT (four
+  takeaways, two scores); "Reed's ball security" — one pick; "prove the
+  portal OL" FAILED (2.6 a carry); "finish drives" — 3-of-12 on third down
+  and it didn't matter.
+- **Keys vs reality — ASU**: "Boley vs real disguise" FAILED (two picks);
+  "tempo the transfer front" — 369 yards, four giveaways; Reed Harris 189
+  receiving was the bright spot.
+- **Machine reaction**: A&M +1.9 (to #9), ASU −2.3.
+
+### Arizona at BYU — BYU 28, Arizona 17
+
+- **The number**: machine −8.5, close −7.5, actual BYU by 11. Machine
+  closer by one. **BYU 28 exact.**
+- **The game**: Arizona led 17–14 at halftime and scored zero after. BYU
+  365 yards; Bachmeier 16-of-26 for 217 and three scores, Kasper two of
+  them; Martin 98 on 20. Arizona 327; Fifita 23-of-31 for 230, one and one;
+  97 rushing at 3.1.
+- **Keys vs reality — Arizona**: "attack Poppinga early" HIT (17 in the
+  first half) and then the adjustments won; "hold the line vs Martin" — 98
+  on 20, held; "ball security" — one pick; the second-half shutout is the
+  story.
+- **Keys vs reality — BYU**: "run first, then punish" HIT (148 at 4.9,
+  three passing scores off it); "prove the new receivers" HIT (Kasper two
+  TDs, Glasker 74); "win the hidden margin" HIT (zero turnovers).
+- **Machine reaction**: BYU +0.5, Arizona −0.5.
+
+### Alabama at Kentucky — Alabama 45, Kentucky 17
+
+- **The number**: machine −13, close −10, actual Alabama by 28. Both way
+  under; machine closer by three.
+- **The game**: Alabama scored 45 on 343 yards with THREE turnovers
+  (Russell 16-of-23 for 188, one and two) — a defensive touchdown and
+  Kentucky's own three giveaways did the rest. Daniel Hill 104 on 18.
+  Kentucky 209 yards, **1-of-14 on third down**, 63 rushing at 2.0.
+- **Keys vs reality — Kentucky**: "the mauling line" FAILED completely
+  (2.0 a carry, four sacks allowed); "Minchey keeps it clean" FAILED (a pick
+  and 146 yards); "the defense is the strength" — 45 allowed, though three
+  of Alabama's scores came off short fields.
+- **Keys vs reality — Alabama**: "Wommack's secondary vs the void" HIT
+  (146 passing allowed); "run it 49 times again" — 40 carries, 155 yards;
+  "Russell's first road start" — two picks and a win; "special teams can't
+  leak" — no leak.
+- **Machine reaction**: Alabama +1.9 (to #6), Kentucky −3.2 (to #55).
+
+### Superdog + Giant Killer receipts — 0 for 2 outright, 0 for 2 against the spread
+
+| Pick | Line at pick | Machine / market P(dog) | FINAL | Spread | Outright | Points |
+|---|---|---|---|---|---|---|
+| ★ SUPERDOG — Buffalo +10.5 at FIU | +10.5 (ML +340) | 46% / 22% | FIU 33–20 | lost by 13, no cover | lost | 0 |
+| ★ GIANT KILLER — Arkansas +12.5 at #20 Utah | +12.5 (ML +390) | 33% / 20% | Utah 43–10 | lost by 33, no cover | lost | 0 |
+
+- **Buffalo**: the caveat we wrote came true — the machine liked a team it
+  hadn't watched. FIU 540 yards (Kohl 367); Buffalo three turnovers,
+  4-of-17 on third down, 2.4 a carry. FIU went +2.0 in the machine, Buffalo
+  −2.4.
+- **Arkansas**: 22-of-48 passing across two quarterbacks, 2.2 a carry; Utah
+  +4.3 (to #21) and Arkansas −4.3. The machine's Utah number was the July
+  prior; the market's −12.5 knew better.
+- **Season: 0-for-4 outright, 2-for-4 against the spread, 0 points.** Say
+  it: "two 20-percent shots and two 30-percent shots have all missed; the
+  expected count of wins through four picks is about one, so we're one miss
+  behind the math, not broken."
+
+### Alert-tier receipts — Week 2
+
+- **RED: South Florida +3 at Army WON 28–24** — the machine's outright pick
+  cashed. RED dogs are **2–2 outright** on the season (UNC and USF won;
+  Sacramento State and FSU lost).
+- **YEL: 2–5 against the spread, 0–7 outright** — the Week 1 16–4 came back
+  to earth exactly as the 49.7% backtest said it would. The big dogs (Wazzu
+  +17.5, Sac State +18.5, SDSU +12.5, Buffalo +10) all lost by more than the
+  number. Say both weeks together: **YEL 18–9 ATS through two weeks**, and
+  the base rate is 52%.
+
+---
+
+## Slides 6–8 — Houston at Texas Tech — Fri Sep 18, 8:00 ET, Jones AT&T Stadium (Lubbock)
+
+### Slide 6 — the number
+
+**The arithmetic.** Texas Tech 17.2 (machine #12) vs Houston 6.7 (#40);
++2.5 for Lubbock → Tech by 13.0 → 79% on the curve → fair Tech −380 /
+Houston +380. Market: DK Tech −9.5; **no total and no moneyline posted
+yet** (Friday game; DK usually posts the total by Tuesday). First-seen −13.5
+on Aug 23, now −9.5: four points toward Houston, and the machine hasn't
+moved off 13. Score call fills in with the total.
+
+**Why it's on the card.** The Big 12 prep flagged this game in July as "the
+league's first great litmus test — cover the 'Houston is the sleeper' take
+now." Houston is the AP's No. 22 and unranked in ours (#40); Texas Tech is
+AP 13 and our #12.
+
+**Stakes (the four headlines).**
+- *The Big 12's first litmus test*: Tech is the defending champion (12–2,
+  both losses to Tech's own ceiling — ASU without a QB and the Oregon
+  shutout). Houston's 10–3 in 2025 was Fritz's year-two rocket. Winner owns
+  the early Big 12 narrative.
+- *Fritz's year three*: his career pattern is .507 in year ones, .730 in
+  year twos, .725 in year threes — Tulane went from 2 wins to 12 on that
+  curve. Weigman is back (2,705 pass / 795 rush / 36 TD), and five-star
+  Keisean Henderson is the backup (6-of-7 for 83 and two scores vs
+  Southern). 81% of production back, the most on the card.
+- *Hammond after the scare in Corvallis*: 35–24 at Oregon State (a −7.2
+  team) cost Tech 2.8 rating points — the machine expected ~27. Hammond
+  20-of-27 for 189; J'Koby Williams 116 on 20; 8-of-16 on third down.
+- *Four points to Houston since August*: −13.5 → −9.5. Houston's 33–20 over
+  Oregon State and 77–6 over Southern (388 rushing at 8.6, 8-of-8 on third
+  down) moved the market; the machine only saw the Oregon State game
+  (Houston −0.4 for winning by 13 at home against a −7 team).
+
+**COACH / QB / ROSTER.** Houston: Fritz year 3; Weigman returns (0.600 PPA
+per play through two — 8th among the quarterbacks we track); 81% back, 18
+adds — the Tulane band (Hughes, Hurst, White) plus all-conference OL
+transfers Terrill and Boswell. Texas Tech: McGuire year 5; Hammond (0.335
+per play on 68 — the lowest of the ten Week 3 starters); 53% back, 23
+adds — the DL two-deep bought in the portal again (Trick, White, Laventure,
+Johnson) after Bailey and Rodriguez left for the NFL.
+
+**Houston keys, explained.**
+1. *Weigman's legs vs the rebuilt front* — 795 rushing yards last year;
+   Tech's portal front (Trick, White) is the best pass rush on the card, and
+   the answer to it is the quarterback leaving the pocket on purpose.
+2. *Run it 45 times* — 388 on the ground last week (three backs over 55);
+   the prep's line is "possibly the league's best combined trench play."
+3. *Make Hammond throw* — 189 yards on 27 attempts in Corvallis; force the
+   pocket game and let the secondary (Webb, Allen, James) play.
+4. *Win the trenches* — if Houston's line holds, the four-point market move
+   was right.
+
+**Texas Tech keys, explained.**
+1. *Hammond's second real start* — the ACL comeback has one FCS game and one
+   scare on it; a Friday night at home against a real front is the test.
+2. *J'Koby Williams downhill* — 116 on 20 at Oregon State; the three-headed
+   backfield (Williams, Dickey, Joyner) is the offense's floor.
+3. *The portal defense vs a real offense* — Oregon State threw for 417 on
+   it; Houston's is better balanced.
+4. *Finish drives* — 8-of-16 on third down and 155 rushing at 3.4 turned a
+   blowout projection into a two-score game.
+
+**Honesty box: "3.5 to Tech — a small lean."** Machine 13, market 9.5:
+5.9 points of win probability, under the 6-point flag. Tech has won four
+straight in the series (38–21, 33–30, 49–28, 35–11), three by double
+digits. The total isn't posted; the score call waits.
+
+---
+
+## Slides 9–11 — SMU at Louisville — Sat Sep 19, 3:30 ET, L&N Federal Credit Union Stadium
+
+### Slide 9 — the number
+
+**The arithmetic.** Louisville 10.0 (#27) vs SMU 11.4 (#24); +2.5 for
+Louisville → Louisville by 1.1 → 53.5% → fair −115 / +115. Market: DK
+Louisville −1.5 (−120 / SMU +100); **total 59.5 — Monster Under**. First-seen
+−1.5 on Aug 23, unmoved. Score call Louisville 30–29 (the machine's 1.1
+laid over a 59.5 total).
+
+**Stakes.**
+- *The ACC's biggest non-Miami game*: the ACC prep's exact phrase for this
+  trip. SMU is the AP's No. 16, Louisville No. 23; the loser is chasing
+  Charlotte by Week 3 in a league where neither plays Miami.
+- *Jennings, year three*: 430 yards at FSU in the opener (with two picks
+  and two lost fumbles, and a win anyway), then 14-of-16 for 337 and five
+  touchdowns against UC Davis. 0.914 PPA per play through two — the
+  second-best line among the ten Week 3 starters. SMU is 12–1 in his starts
+  when his QBR clears 76.
+- *Brohm's coin-flip problem*: three 2025 ACC losses by a combined seven
+  points, and the 41–38 loss to Ole Miss in Nashville already this year.
+  Kienholz: 307 vs Ole Miss, 332 vs Villanova, zero picks; 0.718 per play.
+- *Monster Under: 59.5* — SMU's defense is "havoc-rich, bust-prone,"
+  Louisville's is "top-20 havoc, bottom-40 explosives." The 55% rule doesn't
+  care why; the why is that both offenses can score fast and the total is
+  priced for it.
+
+**COACH / QB / ROSTER.** SMU: Lashlee year 5, 38–17, both coordinators gone
+(Woods to Missouri State, Symons to the Cowboys) — co-coordinator troikas on
+both sides; Jennings, third-year starter; 57% back, 15 adds — All-ACC OT PJ
+Williams fronts a line that needed no portal help. Louisville: Brohm year 4,
+28–12; Kienholz, the third QB1 in three years; 35% back, 33 adds — the RB
+duo Isaac Brown / Keyjuan Brown (1,588 combined at 8.1 per carry last year)
+is the elite returning unit; Marquise Davis 86 and two scores vs Villanova.
+
+**SMU keys, explained.**
+1. *Jennings vs the bust-prone back end* — Louisville allowed 336 passing to
+   Ole Miss; the Brohm tradeoff is one coverage bust a game.
+2. *Protect Jennings* — SMU's line is "a tier below the ACC's best" (the
+   file's words); Clev Lubin (8.5 sacks) and the edge rush are Louisville's
+   strength. Zero sacks at FSU is the standard.
+3. *Win the takeaway ledger* — minus-three at FSU and won; that doesn't
+   repeat against a top-25 offense.
+4. *Explosives, not long drives* — Louisville allows chunk plays; SMU's
+   offense manufactures them.
+
+**Louisville keys, explained.**
+1. *Ride the Browns* — 260 rushing at 6.8 vs Villanova; 162 at 4.2 vs Ole
+   Miss; against SMU's smaller front the run game is the plan.
+2. *No coverage busts* — 41 allowed to Ole Miss with 336 through the air;
+   SMU's offense is built on YAC after busts.
+3. *Kienholz keeps it clean* — zero picks in two games, the least-proven
+   Brohm QB playing like the most efficient.
+4. *Win the one-score game* — the program has lost the coin flips two
+   straight years; the machine has this one at 1.1.
+
+**Honesty box: "Machine = market · Monster Under 59.5."** No side. The
+total is the talking point: three straight top-25 offenses under Lashlee,
+Brohm's system top-25 every year, and a 59.5 that sits in the decile where
+unders hit 55%.
+
+---
+
+## Slides 12–14 — Mississippi State at South Carolina — Sat Sep 19, 4:15 ET, Williams-Brice Stadium
+
+### Slide 12 — the number
+
+**The arithmetic.** South Carolina 10.9 (#25) vs Mississippi State 8.5
+(#30); +2.5 for Columbia → South Carolina by 4.9 → 62.8% → fair −169 / +169.
+Market: DK South Carolina −3.5 (−175 / +145); **total 58.5 — Monster
+Under**. The line opened −7.5 on Friday and is −3.5 today: four points toward
+State in 48 hours. Score call SC 32–27.
+
+**Stakes.**
+- *Two hot seats, one game*: Beamer is sixth on our board (CBS 4.3, the
+  SEC's hottest; 50% for the seven wins that buy year seven). Lebby was
+  second in the SEC's preseason seat ranking (3.3, 7–18, one SEC win in two
+  years) and fell off our ten after last week. One of them is 0–1 in the
+  league by Saturday night.
+- *Kamario Taylor's breakout*: 16-of-22 for 227 and three scores plus 86
+  rushing at Minnesota (a rated team, at their place, 38–13). 0.642 PPA per
+  play through two — third among the ten Week 3 starters. State gained 4.0
+  rating points this week; the prep called him "the league's quiet breakout
+  pick."
+- *Sellers hasn't thrown yet*: 10-of-23 for 96 against Towson while the
+  team ran for 405 (Sellers 119 of it). LaNorris Sellers came back as a
+  projected top-five pick; the scouting file's one weakness is still "the OL
+  must stop getting Sellers hit — same sentence as last July."
+- *Four points to State in 48 hours*: −7.5 → −3.5. The market watched the
+  Minnesota game.
+
+**COACH / QB / ROSTER.** State: Lebby year 3, 7–18; Zach Arnett back as DC
+(the man Lebby replaced); Taylor, sophomore; 34% back, 28 adds — six of the
+top seven OL gone, eight transfers in. South Carolina: Beamer year 6, 33–30
+(16–24 SEC); fourth OC in five years (Kendal Briles); Sellers returns (0.459
+per play); 69% back, 26 adds — eight new offensive linemen, five of them FBS
+starters.
+
+**Mississippi State keys, explained.**
+1. *Taylor's legs and arm* — 86 rushing and 227 passing at Minnesota; the
+   dual threat is the whole offense.
+2. *Bothwell downhill* — Fluff Bothwell 113 and two scores at Minnesota;
+   State ran for 252 at 5.5.
+3. *Arnett's defense vs Sellers* — a 4-2-5 that held Minnesota to 13 rushing
+   yards; Sellers's sacks (the OL problem) are the target.
+4. *Win the turnover ledger* — one giveaway in two games; South Carolina
+   had two against Towson.
+
+**South Carolina keys, explained.**
+1. *Let Sellers throw* — 96 yards on 23 attempts is not a plan against a
+   defense that allowed 279 passing to Minnesota; Briles's tempo and
+   vertical shots have to show up.
+2. *Protect Sellers* — eight new linemen; four sacks allowed against Towson
+   is the warning.
+3. *Harbor deep* — Nyck Harbor's 4.2 speed vs a State secondary with six
+   transfer DBs; 35 yards last week.
+4. *Stewart off the edge* — Dylan Stewart converting pressure into sacks is
+   the defense's whole equation (97th in sack rate in 2025).
+
+**Honesty box: "1.4 to South Carolina — no play · Monster Under 58.5."**
+Machine 4.9, market 3.5. Both sides have real 2026 evidence now. The seats
+are the story; the total is the number.
+
+---
+
+## Slides 15–17 — Florida at Auburn — Sat Sep 19, 7:00 ET, Jordan-Hare Stadium
+
+### Slide 15 — the number
+
+**The arithmetic.** Auburn 12.6 (#22) vs Florida 14.4 (#16); +2.5 for
+Jordan-Hare → Auburn by 0.7 → 52.5% → fair Auburn −110 / Florida +110.
+Market: DK Florida −2.5 (Auburn +114 / Florida −135); total 53.5. First-seen
+Auburn −1.5 on Aug 23, now Florida −2.5: four points to Florida. **The machine
+takes the home dog** — 52.5% vs a market 45%, a 7.6-point gap, the widest on
+the card. Score call Auburn 27–26.
+
+**Stakes.**
+- *Two first-year coaches*: Sumrall (Troy 10–13 to 23–5; Tulane 20 wins, an
+  American title and a CFP berth in two years) vs Golesh (USF 114th to 30th
+  in SP+ in three years). The prep's Florida line: "Sumrall's floor at every
+  stop has been immediately better." The Auburn line: "Jordan-Hare in
+  year-one-energy mode is worth a home upset."
+- *The machine takes the home dog*: Florida's rating (14.4) has one rated
+  game in it (66–21 over FAU); Auburn's (12.6) has two (17–16 over Baylor,
+  43–8 over Southern Miss). The 2.5 home bump flips it.
+- *Byrum Brown vs Aaron Philo*: Brown followed Golesh from USF (3,158 pass
+  / 1,121 rush / 42 TD) — three picks in the opener, then 17-of-28 for 223
+  and 13 carries for 88 with zero turnovers. Philo is a redshirt freshman
+  Georgia Tech transfer reunited with OC Buster Faulkner: 16-of-21 for 242
+  vs Campbell, 0.753 PPA per play through two — the best line among the ten
+  Week 3 starters, on 32 career attempts... against FAU and Campbell.
+- *Jordan-Hare at night*: Auburn's Week 2 was 610 yards, 343 rushing at
+  6.7, 4-of-5 on fourth down.
+
+**COACH / QB / ROSTER.** Florida: Sumrall NEW; Philo NEW; 69% back (11th
+nationally, the quiet continuity play), 27 adds; Jadan Baugh kept (1,170
+yards; 136 and two scores last week); new DC Brad White (from Kentucky).
+Auburn: Golesh NEW, Durkin retained; Brown NEW; 14% back, 39 adds — both
+lines are transfer science experiments (top five OL gone, nine transfers).
+
+**Florida keys, explained.**
+1. *Philo's first road start* — two home games against FAU and Campbell;
+   Jordan-Hare at night with Durkin's disguises is a different sport.
+2. *Baugh downhill* — 136 at 9.7 a carry last week; Auburn allowed 103
+   rushing to Baylor and 50 to Southern Miss.
+3. *White's front vs Brown's legs* — Florida's DT vault (the one thing
+   Napier stockpiled) vs a quarterback who ran for 1,121 last year.
+4. *Fourth-down conviction* — the Sumrall trait the prep singled out;
+   Auburn went 4-of-5 on fourth down itself last week.
+
+**Auburn keys, explained.**
+1. *Brown's legs* — 88 on 13 vs Southern Miss; the designed run is the
+   offense's identity and Florida's defense is built on interior size.
+2. *Ball security* — three interceptions vs Baylor, zero since; the prep's
+   "install-week ball security" key is now a two-game trend line.
+3. *Durkin's defense at home* — 16 and 8 allowed; the carryover unit is the
+   reason Auburn is 2–0.
+4. *Tempo without turnovers* — the Golesh offense at Veer-and-Shoot pace
+   worked for 610 yards last week; Florida's defense is the first SEC test.
+
+**Honesty box: "Lean Auburn +2.5 — research, not a position."** The
+machine's case is the 2.5 home bump and Brown's legs. The risk is that
+Florida's rating is one game old and Auburn's ball security is a coin flip.
+Home dogs are the one place the post-mortem said the machine is honest (−1.2%
+ROI, not −22.9%).
+
+---
+
+## Slides 18–20 — LSU at Ole Miss — Sat Sep 19, 7:30 ET, Vaught-Hemingway Stadium (Oxford)
+
+### Slide 18 — the number
+
+**The arithmetic.** LSU 22.3 (#8) vs Ole Miss 14.6 (#14); Ole Miss gets the
+2.5 → LSU by 5.2 → 62.4% → fair LSU −166 / Ole Miss +166. Market: DK LSU
+−2.5 (−142 / Ole Miss +120); **total 58.5 — Monster Under**. First-seen Ole
+Miss −1.5 on Aug 23, now LSU −2.5: four points to LSU. Score call LSU 32–27.
+
+**Stakes.**
+- *Kiffin returns to Oxford*: the roster he built (44 transfers, the
+  Portal King's magnum opus, Umanmielen and Dottery and Watkins poached from
+  this very locker room) against the quarterback who refused to follow him
+  (Chambliss, via lawsuit and injunction). The SEC prep called it "the most
+  emotionally charged game of the 2026 season anywhere" and predicted "a
+  hostile-environment record attempt."
+- *Home team five straight*: Ole Miss 31–17 (2021), LSU 45–20 (2022), Ole
+  Miss 55–49 (2023), LSU 29–26 (2024), Ole Miss 24–19 (2025). Every one of
+  them at home.
+- *Leavitt's three picks*: 25-of-38 for 344 and three interceptions against
+  Louisiana Tech, sacked five times by a −9.6 team. LSU won 45–14 and lost
+  1.5 rating points because the machine expected ~34. Chambliss went
+  23-of-26 for 225 against Charlotte; 0.494 per play through two.
+- *Monster Under: 58.5* — in a series that produced 104 points in 2023 and
+  55 last year. The 55% rule applies regardless; say the number and the
+  caveat (this series has gone over as often as not).
+
+**COACH / QB / ROSTER.** LSU: Kiffin NEW (Weis Jr. OC, Baker DC — SP+'s
+projected No. 2 defense); Leavitt NEW (0.320 per play through two, the
+second-lowest on the card after the three picks); 21% back, 44 adds. Ole
+Miss: Golding NEW, promoted, kept the defensive spine (Echoles, Perkins) and
+Lacy (87 and two scores vs Charlotte); Chambliss returns; 50% back, 28 adds
+— the secondary returned three of nine and was patched with Aguero (Georgia)
+and Joseph (FSU).
+
+**LSU keys, explained.**
+1. *Leavitt's ball security* — three picks in a 31-point win; Ole Miss's
+   patched secondary is the weak unit on the field, and it doesn't matter if
+   the ball goes to it.
+2. *Protect Leavitt in a hostile building* — five sacks taken by a −9.6
+   team; zero taken by Clemson. Which line shows up.
+3. *Baker's front vs Chambliss's escapes* — LSU has 11 sacks in two games;
+   Chambliss is "statistically the best in the country at turning dead
+   plays into first downs."
+4. *Kiffin's tempo in his old house* — the tempo-and-leverage passing game
+   he built in Oxford, run against Golding, who called his defenses.
+
+**Ole Miss keys, explained.**
+1. *Let Chambliss escape* — the 2025 SEC Newcomer of the Year's whole game;
+   LSU's front is the best he's faced.
+2. *Lacy runs it* — 300 carries last year, 87 at 6.7 vs Charlotte; the
+   tempo offense needs the run to set the play-action.
+3. *The patched secondary* — Aguero and Joseph vs Wilson, Brown, Green (104
+   yards last week) and Harris; LSU's receivers are the best group on the
+   card.
+4. *Special teams edge* — Ole Miss was No. 1 in SP+ special teams; in a game
+   the machine has at 5.2, hidden yards are the margin.
+
+**Honesty box: "2.7 to LSU — quibble · Monster Under 58.5."** Machine 5.2,
+market 2.5. The machine's LSU number still carries the 51–10 Clemson game;
+five straight home wins in the series and a first-year coach on each
+sideline are the hedges. The total is the play to talk about.
+
+---
+
+## Slide 21 — Our predictions + superdogs (the closer)
+
+Scores are the machine margin laid over the DraftKings total: Louisville
+30–29, South Carolina 32–27, Auburn 27–26, LSU 32–27, and Houston–Texas Tech
+pending the total.
+
+**★ SUPERDOG (any FBS game): Sacramento State +26.5 vs North Dakota State**
+— machine 24% (ML +2000, market 5%), EV 6.3. Runners-up: Charlotte +19.5 at
+App State (27.5%, EV 5.4), Akron +26.5 at Minnesota (18%, EV 4.7), Tulane
++19.5 at Kansas State (23%, EV 4.4).
+
+*Say the caveat first*: this is the widest machine-market disagreement on the
+whole board — 19 points. The machine has NDSU at −3.6 (an FCS power carrying
+a July FPI prior, one rated game, +4.7 for beating Jacksonville State) and
+Sacramento State at −13.5 (two rated losses, 49–3 at Fresno State); NDSU by
+about 7 at Sacramento. The market says 26.5. When the machine and the market
+are 19 points apart, one of them is wrong about who these teams are, and the
+market has watched more of both. It stays the pick because the rule is the
+rule (CFBD lists both as FBS in 2026); the honest framing is "the machine's
+number, not ours." If you'd rather talk about a real one, Charlotte +19.5 at
+App State is next: Charlotte covered at Ole Miss (41–9 against a −47.5), App
+State hasn't played a rated team the machine trusts, and it's a 1-in-4 shot at
+19.5 points.
+
+**★ GIANT KILLER (vs an AP top-25 favorite): Utah State +27.5 at #17 Utah**
+— machine 12.5% (ML +2000, market 5%), EV 3.5. Runners-up: New Mexico +23.5
+at #24 Oklahoma (14%, EV 3.4), Wake Forest +23.5 vs #5 Miami (14%, EV 3.3),
+Arkansas +24.5 vs #2 Georgia (11%, EV 2.7), Florida State +18.5 at #10
+Alabama (13%, EV 2.3).
+
+*Why Utah State*: a one-in-eight shot at 27.5 points beats a one-in-seven
+shot at 23.5. It's the rivalry game (the Battle of the Brothers), Utah is
++4.3 in our ratings after 43–10 over Arkansas, and Utah State was +3.3 last
+week. Say the honest thing: 12.5% is the machine's number and the market's
+5% is probably closer.
+
+**The ledger going in**: superdogs 0-for-4 outright, 0 points. Rule: the dog
+has to win; points = the spread at the pick.
+
+---
+
+## Pre-record checklist
+
+1. Re-pull lines (`edge_report.py --week 3 --view ml --publish`) — the
+   Houston–Texas Tech total should post by Tuesday; the score call and the
+   Monster Under flags update on rebuild.
+2. `hot_seat_heisman.py --week 3 --refresh` if DraftKings moves the Heisman
+   board again; update MARKET/MARKET_DATE in the module by hand.
+3. `make_episode_deck.py` → push with `push_deck.py --pptx
+   decks\2026_Week3_Episode4.pptx --file-id <Ep4 id>` (the Ep4 Slides file is
+   new; Ep3's file is the record and never gets pushed again).
+4. The AP fallback in the deck is the Week 3 poll; once CFBD attaches it,
+   the cache takes over automatically.
+5. Frozen for next week's grading: TTU −13, LOU −1, SC −5, AUB −0.5, LSU −5
+   (machine lines as posted) + Sacramento State +26.5 / Utah State +27.5.
+
+*Drafted 2026-09-13 from card_data_week3.json (Sun 12:21 PM MT pull),
+ratings_current_2026.json (100 games), boards_week3.json, CFBD box scores,
+the conference deep-dive prep files and scouting_top25.json. Machine-drafted
+— review before air.*

@@ -34,9 +34,9 @@ INK = RGBColor(0x16, 0x27, 0x3D)
 MUTE = RGBColor(0x5C, 0x6B, 0x7E)
 LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
-EPISODE, WEEK = 3, 2
+EPISODE, WEEK = 4, 3
 RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
-EP_DATE = "SEP 12, 2026"
+EP_DATE = "SEP 18–19, 2026"
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
 from name_mapping import normalize_name  # noqa: E402
@@ -162,6 +162,11 @@ TEAMS = {
     "BYU": dict(code="BYU", color=(0x00, 0x22, 0xE0), logo="byu.png"),
     "BAMA": dict(code="BAMA", color=(0x9E, 0x16, 0x32), logo="alabama.png"),
     "UK": dict(code="UK", color=(0x00, 0x33, 0xA0), logo="kentucky.png"),
+    "FLA": dict(code="FLA", color=(0x00, 0x21, 0xA5), logo="florida.png"),
+    "TTU": dict(code="TTU", color=(0xCC, 0x00, 0x00), logo="texastech.png"),
+    "MSST": dict(code="MSST", color=(0x5D, 0x1A, 0x2A), logo="mississippistate.png"),
+    "SCAR": dict(code="SCAR", color=(0x73, 0x00, 0x0A), logo="southcarolina.png"),
+    "HOU": dict(code="HOU", color=(0xC8, 0x10, 0x2E), logo="houston.png"),
 }
 
 NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
@@ -174,7 +179,9 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
              "Florida State": "FSU", "Ohio State": "OSU", "Texas": "TEX",
              "Oklahoma": "OU", "Michigan": "MICH", "Arizona State": "ASU",
              "Texas A&M": "TAMU", "Arizona": "ARIZ", "BYU": "BYU",
-             "Alabama": "BAMA", "Kentucky": "UK"}
+             "Alabama": "BAMA", "Kentucky": "UK", "Florida": "FLA",
+             "Texas Tech": "TTU", "Mississippi State": "MSST",
+             "South Carolina": "SCAR", "Houston": "HOU"}
 
 # ---- card_data contract (review item A): market + model numbers come from
 # edge_report.py --publish, never from hand-typed literals. Narrative fields
@@ -251,7 +258,7 @@ def apply_card(g):
         g["score"] = " – ".join(f"{disp.get(t, t)} {int(p + 0.5)}" for t, p in order)
         g["score_note"] = f"projected score · machine margin on the {float(total):g} market total"
     else:
-        g["score"], g["score_note"] = "", ""
+        g["score"], g["score_note"] = "total not posted yet", ""
     books = c.get("books") or {}
     dk, bov = books.get("DraftKings", {}).get("spread"), books.get("Bovada", {}).get("spread")
     parts = [_dash(x) for x in (dk, bov) if x is not None]
@@ -571,7 +578,7 @@ _GAMES_EP2 = [  # Week 1 archive — the frozen Ep2 predictions (unrendered)
     ),
 ]
 
-GAMES = [
+_GAMES_EP3 = [  # Week 2 archive — the frozen Ep3 predictions (unrendered)
     dict(
         a="OU", b="MICH", vs="at", title="Oklahoma at Michigan",
         cfbd=("Oklahoma", "Michigan"),
@@ -719,20 +726,130 @@ GAMES = [
     ),
 ]
 
-# ---- Week 1 receipts (recap slide): frozen Ep2 predictions vs finals vs the
+GAMES = [  # Week 3 — order = kickoff order; the marquee game (Kiffin in Oxford) closes
+    dict(
+        a="HOU", b="TTU", vs="at", title="Houston at Texas Tech",
+        cfbd=("Houston", "Texas Tech"),
+        where="Lubbock · Jones AT&T Stadium",
+        sub="Fri Sep 18 · 8:00 ET · the Big 12's first litmus test",
+        machine="Texas Tech –13", market="–9.5", value="3.5 to Tech — small lean",
+        wp=("TTU", 79, "HOU", 21),
+        decides=["The prep flagged this as the Big 12's first great litmus test: Houston is the sleeper, Tech the defending champ",
+                 "Fritz's year three — his career pattern says this is the monster year (.725 in year threes)",
+                 "Hammond after the scare in Corvallis: 35–24 at Oregon State, 155 rushing at 3.4",
+                 "The line has moved four points toward Houston since August (−13.5 → −9.5); the machine hasn't moved"],
+        ctx_a=dict(coach="Fritz, year 3 — the year-three pattern (Tulane: 2 wins to 12)",
+                   qb="RETURNS — Conner Weigman (2,705 pass / 795 rush / 36 TD in 2025); five-star Henderson behind him",
+                   roster="81% back · 18 portal adds — the Tulane band reunited"),
+        ctx_b=dict(coach="McGuire, year 5 — Shiel Wood's portal-built defense",
+                   qb="Will Hammond, back from an October ACL — 20-of-27 at Oregon State",
+                   roster="53% back · 23 portal adds — DL two-deep bought in the portal again"),
+        honesty="Machine −13, market −9.5: 3.5 points to Tech, 5.9 points of win probability — under the 6-point flag line. Tech has won four straight in the series by double digits three times. A small lean, and the total isn't posted yet.",
+        keys_a=["Weigman's legs vs the rebuilt front", "Run it 45 times — 388 on the ground last week", "Make Hammond throw from the pocket", "Win the trenches — the league's best combined line play"],
+        keys_b=["Hammond's second real start", "J'Koby Williams downhill (116 at Oregon State)", "The portal defense vs a real offense", "Finish drives — 8-of-16 on third down in Corvallis"],
+    ),
+    dict(
+        a="SMU", b="LOU", vs="at", title="SMU at Louisville",
+        cfbd=("SMU", "Louisville"),
+        where="Louisville · L&N Federal Credit Union Stadium",
+        sub="Sat Sep 19 · 3:30 ET · the ACC's biggest non-Miami game",
+        machine="Louisville –1", market="–1.5", value="machine = market · MONSTER UNDER 59.5",
+        wp=("LOU", 54, "SMU", 46),
+        decides=["The ACC prep called this the biggest non-Miami game on the calendar — the loser is chasing Charlotte by Week 3",
+                 "Jennings in year three: 430 at FSU, then 14-of-16 for 337 and five scores",
+                 "Brohm's coin-flip problem: three 2025 ACC losses by seven combined points, and a three-point loss to Ole Miss already",
+                 "The total is 59.5 — a Monster Under number (top-decile totals went under 55% of the time, 2021–25)"],
+        ctx_a=dict(coach="Lashlee, year 5 — both coordinators left; co-coordinator troikas",
+                   qb="RETURNS — Kevin Jennings, third-year starter: SMU is 12–1 when his QBR clears 76",
+                   roster="57% back · 15 portal adds — kept the line, lost the callers"),
+        ctx_b=dict(coach="Brohm, year 4 — 28–12, three straight 9-win years",
+                   qb="Lincoln Kienholz — 307 vs Ole Miss, 332 vs Villanova, zero picks",
+                   roster="35% back · 33 portal adds — the annual re-skin"),
+        honesty="Machine Louisville by 1.1, market by 1.5 — agreement, no play on the side. The number that matters is the total: 59.5 is a Monster Under, and SMU's defense is havoc-rich and bust-prone while Louisville's is top-20 havoc, bottom-40 explosives. Say the 55% and move on.",
+        keys_a=["Jennings vs the bust-prone back end", "Protect Jennings — line play a tier below", "Win the takeaway ledger", "Explosives, not long drives"],
+        keys_b=["Ride the Browns — the country's best RB duo", "No coverage busts", "Kienholz keeps it clean", "Win the one-score game"],
+    ),
+    dict(
+        a="MSST", b="SCAR", vs="at", title="Mississippi State at South Carolina",
+        cfbd=("Mississippi State", "South Carolina"),
+        where="Columbia · Williams-Brice Stadium",
+        sub="Sat Sep 19 · 4:15 ET · two hot seats, one game",
+        machine="South Carolina –5", market="–3.5", value="1.4 to South Carolina — no play · MONSTER UNDER 58.5",
+        wp=("SCAR", 63, "MSST", 37),
+        decides=["Beamer (CBS 4.3, the SEC's hottest seat) vs Lebby (3.3, one SEC win in two years) — one of them leaves 0–1 in the league",
+                 "Kamario Taylor's breakout is real: 16-of-22 for 227 and three scores plus 86 on the ground at Minnesota; State is +4.4 in our ratings",
+                 "Sellers hasn't thrown yet: 10-of-23 for 96 against Towson while the team ran for 405",
+                 "The line opened −7.5 on Friday and is −3.5 today — four points toward State in 48 hours"],
+        ctx_a=dict(coach="Lebby, year 3 — 7–18; Arnett back as DC",
+                   qb="Kamario Taylor, sophomore — the SEC's quiet breakout pick",
+                   roster="34% back · 28 portal adds — six of seven OL gone"),
+        ctx_b=dict(coach="Beamer, year 6 — 33–30; fourth OC in five years (Briles)",
+                   qb="RETURNS — LaNorris Sellers, a top-5 draft profile who came back",
+                   roster="69% back · 26 portal adds — eight new offensive linemen"),
+        honesty="Machine −4.9, market −3.5 — 1.4 points apart, agreement. Both sides have real 2026 evidence now (State beat a rated Minnesota by 25; South Carolina's rated game was 57–0). The total is 58.5, a Monster Under. The story is the two seats, not the side.",
+        keys_a=["Taylor's legs and arm", "Bothwell downhill (113 at Minnesota)", "Arnett's defense vs Sellers", "Win the turnover ledger"],
+        keys_b=["Let Sellers throw", "Protect Sellers — the same sentence as last July", "Harbor deep", "Stewart off the edge"],
+    ),
+    dict(
+        a="FLA", b="AUB", vs="at", title="Florida at Auburn",
+        cfbd=("Florida", "Auburn"),
+        where="Auburn · Jordan-Hare Stadium",
+        sub="Sat Sep 19 · 7:00 ET · two first-year coaches",
+        machine="Auburn –0.5", market="+2.5", value="machine takes the home dog — lean Auburn +2.5",
+        wp=("AUB", 53, "FLA", 47),
+        decides=["Two first-year coaches in the SEC's most underrated game: Sumrall (Tulane to the CFP) vs Golesh (USF 114th to 30th in SP+)",
+                 "The machine takes the home dog: Auburn 52.5% vs a market 45% — the line has moved four points to Florida since August",
+                 "Byrum Brown vs Aaron Philo: a 42-touchdown transfer with three picks in the opener vs a redshirt freshman who has thrown 32 passes",
+                 "Jordan-Hare at night in year-one-energy mode — the prep's exact phrase for a home upset"],
+        ctx_a=dict(coach="NEW — Jon Sumrall (Tulane): 20 wins and a CFP berth in two years",
+                   qb="NEW — Aaron Philo, RS freshman (Georgia Tech): 16-of-21 for 242 vs Campbell",
+                   roster="69% back · 27 portal adds — Baugh (1,170 yards) kept"),
+        ctx_b=dict(coach="NEW — Alex Golesh (USF) · Durkin retained as DC",
+                   qb="NEW — Byrum Brown (USF): 223 passing and 88 rushing vs Southern Miss",
+                   roster="14% back · 39 portal adds — the most retooled roster on the card"),
+        honesty="The machine has Auburn by 0.7 at home; the market has Florida by 2.5 — 3.2 points apart and 7.6 points of win probability, the widest gap on the card. Both ratings carry one rated game each. Lean Auburn +2.5 as research: the case is Jordan-Hare and Brown's legs, and the risk is Auburn's ball security (three picks in the opener).",
+        keys_a=["Philo's first road start", "Baugh downhill (136 vs Campbell)", "White's front vs Brown's legs", "Fourth-down conviction — the Sumrall trait"],
+        keys_b=["Brown's legs — 88 yards last week", "Ball security — three picks in the opener, zero since", "Durkin's defense at home", "Tempo without turnovers"],
+    ),
+    dict(
+        a="LSU", b="MISS", vs="at", title="LSU at Ole Miss",
+        cfbd=("LSU", "Ole Miss"),
+        where="Oxford · Vaught-Hemingway Stadium",
+        sub="Sat Sep 19 · 7:30 ET · Kiffin returns to Oxford",
+        machine="LSU –5", market="–2.5", value="2.7 to LSU — quibble · MONSTER UNDER 58.5",
+        wp=("LSU", 62, "MISS", 38),
+        decides=["Kiffin walks back into the Vaught with the roster he built against the QB who refused to follow him — the most emotionally charged game of 2026",
+                 "The home team has won five straight in this series (Ole Miss 24–19 last year)",
+                 "Leavitt threw three interceptions against Louisiana Tech; Chambliss went 23-of-26 against Charlotte",
+                 "The total is 58.5 — a Monster Under, in a series that produced 104 points in 2023"],
+        ctx_a=dict(coach="NEW — Lane Kiffin, off Ole Miss's 13-win CFP season",
+                   qb="NEW — Sam Leavitt: 344 yards and three picks vs Louisiana Tech",
+                   roster="21% back · 44 portal adds — the Portal King's magnum opus"),
+        ctx_b=dict(coach="NEW — Pete Golding, promoted; kept the defensive spine",
+                   qb="RETURNS — Trinidad Chambliss, via lawsuit and injunction",
+                   roster="50% back · 28 portal adds — the secondary is the patch"),
+        honesty="Machine LSU by 5.2, market by 2.5: 2.7 to LSU, right at the noise line, and the machine's LSU number still carries the 51–10 Clemson game. Five straight home wins in the series and a first-year coach on each sideline are the hedges. Quibble, not a position. The total is the play to talk about.",
+        keys_a=["Leavitt's ball security", "Protect Leavitt in a hostile building", "Baker's front vs Chambliss's escapes", "Kiffin's tempo in his old house"],
+        keys_b=["Let Chambliss escape", "Lacy runs it (87 vs Charlotte)", "The patched secondary vs LSU's receivers", "Special teams — No. 1 in SP+"],
+    ),
+]
+
+# ---- Week 2 receipts (recap slide): frozen Ep3 predictions vs finals vs the
 # last pre-kick ledger pull (Fri Sep 4 5 PM ET; Mon Sep 7 9:25 AM ET for
 # SMU–FSU). Finals are read from the CFBD games cache; a game not yet
 # played renders as a pending row and grades itself after the next refresh.
 # Lines are home-perspective spreads (negative = home favored).
 RECAP_ROWS = [
-    # a, b, title, (away, home), our call, our line, closing line
-    ("BAY", "AUB", "Baylor vs Auburn", ("Baylor", "Auburn"), "Auburn 33–27", -5.5, -7.5),
-    ("CLEM", "LSU", "Clemson at LSU", ("Clemson", "LSU"), "LSU 30–21", -9.0, -10.0),
-    ("LOU", "MISS", "Louisville vs Ole Miss", ("Louisville", "Ole Miss"), "Ole Miss 31–25", -6.5, -6.5),
-    ("WIS", "ND", "Wisconsin vs Notre Dame", ("Wisconsin", "Notre Dame"), "ND 34–13", -21.0, -20.5),
-    ("SMU", "FSU", "SMU at Florida State", ("SMU", "Florida State"), "FSU 27–26", -0.5, 2.5),
+    # a, b, title, (away, home), our call, our line, closing line (home-perspective)
+    ("OSU", "TEX", "Ohio State at Texas", ("Ohio State", "Texas"), "Texas 27–23", -3.5, -1.5),
+    ("OU", "MICH", "Oklahoma at Michigan", ("Oklahoma", "Michigan"), "Oklahoma 23–21", 2.0, 5.5),
+    ("ASU", "TAMU", "Arizona State at Texas A&M", ("Arizona State", "Texas A&M"), "Texas A&M 34–17", -16.5, -14.5),
+    ("ARIZ", "BYU", "Arizona at BYU", ("Arizona", "BYU"), "BYU 28–20", -8.5, -7.5),
+    ("BAMA", "UK", "Alabama at Kentucky", ("Alabama", "Kentucky"), "Alabama 31–18", 13.0, 10.0),
 ]
-WEEK0_MISS = (70.0, 70.0)  # machine, market — carried forward for the running total
+WEEK0_MISS = (120.5, 119.0)  # machine, market through Week 1 (10 games) — running total
+PRIOR_GAMES = 10
+LEANS_LINE = "stated leans 4–2 · Michigan +5.5 won outright"
 
 
 def _finals():
@@ -795,23 +912,25 @@ RECAP, RECAP_SUM = build_recap()
 # AP Top 25 comes from the CFBD /rankings cache via inseason_ratings (the
 # Tuesday refresh and every edge_report --publish keep it current); the hand
 # dict below is only a fallback if the cache is missing (last synced: week 2).
-_AP_FALLBACK = {"Ohio State": 1, "Georgia": 2, "Notre Dame": 3, "Texas": 4,
-            "Indiana": 5, "Oregon": 6, "Miami": 7, "LSU": 8, "Ole Miss": 9,
-            "Texas A&M": 10, "Oklahoma": 11, "Alabama": 12, "Texas Tech": 13,
-            "USC": 14, "BYU": 15, "Penn State": 16, "SMU": 17, "Tennessee": 18,
-            "Washington": 19, "Utah": 20, "Iowa": 21, "Houston": 22,
-            "Missouri": 23, "Louisville": 24, "Virginia": 25}  # AP week 2
+_AP_FALLBACK_WEEK = 3
+_AP_FALLBACK = {"Texas": 1, "Georgia": 2, "Notre Dame": 3, "Indiana": 4,
+            "Miami": 5, "Ohio State": 6, "LSU": 7, "Ole Miss": 8,
+            "Texas A&M": 9, "Alabama": 10, "BYU": 11, "USC": 12,
+            "Texas Tech": 13, "Penn State": 14, "Tennessee": 15, "SMU": 16,
+            "Utah": 17, "Iowa": 18, "Michigan": 19, "Missouri": 20,
+            "Oregon": 21, "Houston": 22, "Louisville": 23, "Oklahoma": 24,
+            "Virginia": 25}  # AP week 3 (Sun Sep 13)  # AP week 2
 
 
 def _load_ap():
     try:
         from inseason_ratings import latest_rankings
         r = latest_rankings(refresh=False)
-        if r.get("ap"):
+        if r.get("ap") and (r.get("week") or 0) >= _AP_FALLBACK_WEEK:
             return dict(r["ap"]), r.get("week")
     except Exception as e:  # cache missing / import problem -> fallback
         print("AP poll: cache unavailable,", e)
-    return {normalize_name(k): v for k, v in _AP_FALLBACK.items()}, None
+    return {normalize_name(k): v for k, v in _AP_FALLBACK.items()}, _AP_FALLBACK_WEEK
 
 
 AP_TOP25, AP_WEEK = _load_ap()
@@ -833,8 +952,19 @@ def superdog_boards():
     if not CARD:
         return [], []
     asof = dt.datetime.fromisoformat(LINES_TS.replace("Z", "+00:00")).date()
+    fbs = set()
+    try:
+        import json as _j
+        for _g in _j.load(open(os.path.join(HERE, "fpi-decomposition", "data",
+                                            "games_seasonType-regular_year-2026.json"), encoding="utf-8")):
+            if _g.get("homeClassification") == "fbs" and _g.get("awayClassification") == "fbs":
+                fbs.add(_g["id"])
+    except FileNotFoundError:
+        pass
     rows = []
     for g in CARD.values():
+        if fbs and g.get("game_id") not in fbs:
+            continue  # superdogs are FBS-vs-FBS only (Lucas 9/13)
         try:
             _, mon, day = g["date"].split(",")[0].split()
             gdate = dt.date(2026, _MONTHS[mon], int(day))
@@ -1051,12 +1181,14 @@ if BOARDS:
         "Team factor × QB efficiency (PPA per play) · market = DraftKings", 13, PALE,
         bold=True)
     HEISMAN_WHY = {
-        "Julian Sayin": "Best returning efficiency in the sport · market has him 8th",
-        "Darian Mensah": "One huge game vs Stanford · Duke prior · best team factor",
-        "C.J. Carr": "Carried by Notre Dame's 91% · average line so far",
-        "Josh Hoover": "1.639 on 15 plays · Indiana's offense",
-        "Will Hammond": "Situation, not tape · Texas Tech's 80%",
-        "Arch Manning": "Market's No. 2, our 8th · mediocre 2025 prior",
+        "Darian Mensah": "41-of-45, 653 yards, 8 TD through two · machine and market agree",
+        "Josh Hoover": "1.42 per play on 29 plays · Indiana's 79% P(10+) · market has him 8th",
+        "C.J. Carr": "253 and four scores vs Rice · Notre Dame's 86% carries him",
+        "Julian Sayin": "The 2025 prior keeps him top 4 · 278 in the loss at Texas",
+        "Jayden Maiava": "Best blended line on the board (0.567) · USC's 16% P(10+) is the drag",
+        "Arch Manning": "Market No. 3 at +1000, our 10th · 0.417 per play on 75",
+        "Will Hammond": "Situation, not tape · 0.335 on 68 plays",
+        "Devon Dampier": "0.632 per play, 4 TD at Utah · unpriced",
     }
     _mkt = {x["name"]: x["market"] for x in BOARDS["heisman"] + BOARDS["heisman_non_qb"]
             if x.get("market")}
@@ -1143,6 +1275,46 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
 
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
 SHORT = {
+    "Houston at Texas Tech": dict(
+        sub="Fri Sep 18 · 8:00 ET · Lubbock",
+        ctx_a=dict(coach="Fritz, year 3 · the year-three pattern", qb="Weigman returns", roster="81% back · 18 portal adds"),
+        ctx_b=dict(coach="McGuire, year 5", qb="Hammond, back from the ACL", roster="53% back · portal-built defense"),
+        decides=["The Big 12's first litmus test", "Fritz's year three", "Hammond after the scare in Corvallis", "Four points to Houston since August"],
+        honesty="3.5 to Tech — a small lean",
+        keys_a=["Weigman's legs vs the rebuilt front", "Run it 45 times", "Make Hammond throw", "Win the trenches"],
+        keys_b=["Hammond's second real start", "J'Koby Williams downhill", "The portal defense vs a real offense", "Finish drives"]),
+    "SMU at Louisville": dict(
+        sub="Sat Sep 19 · 3:30 ET · Louisville",
+        ctx_a=dict(coach="Lashlee, year 5 · coordinator troikas", qb="Jennings, year-three starter", roster="57% back · 15 portal adds"),
+        ctx_b=dict(coach="Brohm, year 4", qb="Kienholz, third QB1 in three years", roster="35% back · 33 portal adds"),
+        decides=["The ACC's biggest non-Miami game", "Jennings, year three", "Brohm's coin-flip problem", "Monster Under: 59.5"],
+        honesty="Machine = market · Monster Under 59.5",
+        keys_a=["Jennings vs the bust-prone back end", "Protect Jennings", "Win the takeaway ledger", "Explosives, not long drives"],
+        keys_b=["Ride the Browns", "No coverage busts", "Kienholz keeps it clean", "Win the one-score game"]),
+    "Mississippi State at South Carolina": dict(
+        sub="Sat Sep 19 · 4:15 ET · Columbia",
+        ctx_a=dict(coach="Lebby, year 3 · Arnett DC", qb="Kamario Taylor, sophomore", roster="34% back · 28 portal adds"),
+        ctx_b=dict(coach="Beamer, year 6 · new OC Briles", qb="Sellers returns", roster="69% back · 26 portal adds"),
+        decides=["Two hot seats, one game", "Kamario Taylor's breakout", "Sellers hasn't thrown yet", "Four points to State in 48 hours"],
+        honesty="1.4 to South Carolina — no play · Monster Under 58.5",
+        keys_a=["Taylor's legs and arm", "Bothwell downhill", "Arnett's defense vs Sellers", "Win the turnover ledger"],
+        keys_b=["Let Sellers throw", "Protect Sellers", "Harbor deep", "Stewart off the edge"]),
+    "Florida at Auburn": dict(
+        sub="Sat Sep 19 · 7:00 ET · Auburn",
+        ctx_a=dict(coach="NEW — Sumrall (Tulane)", qb="NEW — Aaron Philo, RS freshman", roster="69% back · 27 portal adds"),
+        ctx_b=dict(coach="NEW — Golesh · Durkin kept", qb="NEW — Byrum Brown (USF)", roster="14% back · 39 portal adds"),
+        decides=["Two first-year coaches", "Machine takes the home dog", "Byrum Brown vs Aaron Philo", "Jordan-Hare at night"],
+        honesty="Lean Auburn +2.5 — research, not a position",
+        keys_a=["Philo's first road start", "Baugh downhill", "White's front vs Brown's legs", "Fourth-down conviction"],
+        keys_b=["Brown's legs", "Ball security", "Durkin's defense at home", "Tempo without turnovers"]),
+    "LSU at Ole Miss": dict(
+        sub="Sat Sep 19 · 7:30 ET · Oxford",
+        ctx_a=dict(coach="NEW — Kiffin", qb="NEW — Sam Leavitt", roster="21% back · 44 portal adds"),
+        ctx_b=dict(coach="NEW — Golding, promoted", qb="Chambliss returns", roster="50% back · 28 portal adds"),
+        decides=["Kiffin returns to Oxford", "Home team five straight", "Leavitt's three picks", "Monster Under: 58.5"],
+        honesty="2.7 to LSU — quibble · Monster Under 58.5",
+        keys_a=["Leavitt's ball security", "Protect Leavitt", "Baker's front vs Chambliss", "Kiffin's tempo in his old house"],
+        keys_b=["Let Chambliss escape", "Lacy runs it", "The patched secondary", "Special teams edge"]),
     "Ohio State at Texas": dict(
         sub="Sat Sep 12 · 7:30 ET · Austin · No. 1 at No. 4",
         ctx_a=dict(coach="Day, year 8 · new OC Arthur Smith", qb="Sayin returns, year two", roster="68% back · 2 of 9 D starters"),
@@ -1233,8 +1405,8 @@ txt(s, 1.15, y + 0.13, 11.0, 0.35,
     f"Machine {_rs['m']:.1f} · market {_rs['k']:.1f} · machine closer in "
     f"{_rs['nm']}, market {_rs['nk']}, {_rs['nt']} tie", 15, WHITE, bold=True)
 txt(s, 1.15, y + 0.5, 11.0, 0.3,
-    f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} · stated leans 3–2 · "
-    "Monster Under cashed", 11.5, RGBColor(0xCA, 0xDC, 0xFC))
+    f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} across "
+    f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}", 11.5, RGBColor(0xCA, 0xDC, 0xFC))
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
@@ -1274,13 +1446,13 @@ for g in GAMES:
         8.5, PALE)
     # market
     txt(s, 8.8, 3.55, 3.3, 0.45, g["market"], 20, WHITE, bold=True)
-    txt(s, 8.8, 3.98, 3.3, 0.4, "market (DK / Bovada) · " + g.get("market_ml", ""),
+    txt(s, 8.8, 3.98, 3.3, 0.4, "market (DK / Bovada) · " + (g.get("market_ml") or "ML not posted"),
         8.5, PALE)
     # score prediction (replaced "the gap" per Lucas's in-Slides edit 8/31;
     # the authored value/gap strings stay in GAMES as data)
     score = g.get("score", "")
     txt(s, 8.8, 4.45, 3.3, 0.4, score, 15 if len(score) <= 22 else 13,
-        ORANGE, bold=True)
+        ORANGE if "not posted" not in score else PALE, bold=True)
     txt(s, 8.8, 4.82, 3.3, 0.25, "score prediction", 8.5, PALE)
     wa, pa, wb, pb = g["wp"]
     wp_bar(s, 8.8, 5.2, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
