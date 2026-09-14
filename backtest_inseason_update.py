@@ -38,7 +38,15 @@ DATA = HERE / "fpi-decomposition" / "data"
 OUT = HERE / "fpi-decomposition" / "output"
 MARKET_CSV = HERE / "market-postmortem" / "market_bets_2021_2025.csv"
 LAMBDAS = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, np.inf]
-CAPS = [None, 28]            # margin cap applied to the FITTED games only
+# (cap_mode, cap) applied to the FITTED games only. 'margin' clips the
+# observed margin (pre-registered 2026-09-04); 'residual' clips margin minus
+# the prior expectation (the cap-artifact fix, 2026-09-14).
+CONFIGS = [("margin", None), ("margin", 28),
+           ("residual", 21), ("residual", 28), ("residual", 35)]
+
+
+def cfg_label(mode, cap):
+    return "none" if cap is None else f"{mode[0]}{int(cap)}"   # m28, r28, ...
 EVAL_WEEKS = range(2, 16)    # week 1 = prior only, identical for every lam
 
 
@@ -76,12 +84,13 @@ def load_games(season, prior):
     return pd.DataFrame(rows)
 
 
-def fit_ratings(games, prior, teams, lam, cap):
+def fit_ratings(games, prior, teams, lam, cap, cap_mode="margin"):
     """Ridge posterior via the production implementation (single source of
     truth with inseason_ratings.ridge_update)."""
     from inseason_ratings import ridge_update
     sub = {t: prior[t] for t in teams}
-    return ridge_update(sub, games.to_dict("records"), lam=lam, cap=cap, hfa=HFA)
+    return ridge_update(sub, games.to_dict("records"), lam=lam, cap=cap, hfa=HFA,
+                        cap_mode=cap_mode)
 
 
 def predict(games, ratings):
@@ -97,13 +106,13 @@ def run():
         prior = load_prior(season - 1)
         games = load_games(season, prior)
         teams = sorted(set(games.home) | set(games.away))
-        for cap in CAPS:
+        for mode, cap in CONFIGS:
             for lam in LAMBDAS:
                 for w in EVAL_WEEKS:
                     test = games[games.week == w]
                     if test.empty:
                         continue
-                    ratings = fit_ratings(games[games.week < w], prior, teams, lam, cap)
+                    ratings = fit_ratings(games[games.week < w], prior, teams, lam, cap, mode)
                     pred = predict(test, ratings)
                     err = test.margin.to_numpy() - pred
                     mk = np.array([market_pred.get(int(i), np.nan) if pd.notna(i) else np.nan
@@ -117,7 +126,7 @@ def run():
                     wins = np.sign(diff[live]) == np.sign(actual_vs_mkt[live])
                     pushes = actual_vs_mkt[live] == 0
                     rows.append(dict(
-                        season=season, cap=cap if cap else 0, lam=lam, week=w, n=len(test),
+                        season=season, cap=cfg_label(mode, cap), lam=lam, week=w, n=len(test),
                         mae=np.mean(np.abs(err)), rmse=np.sqrt(np.mean(err ** 2)),
                         su=np.mean(np.sign(pred) == np.sign(test.margin.to_numpy())),
                         n_mkt=int(has.sum()),
@@ -147,7 +156,7 @@ def summarize(df, seasons, label):
           f"{'market MAE':>10} {'ATS vs close':>13} {'n':>6}")
     for _, r in agg.iterrows():
         lam = "froz" if not np.isfinite(r.lam) else f"{r.lam:g}"
-        print(f"{int(r.cap):>4} {lam:>5} {r.mae:6.2f} {r.rmse:6.2f} {r.su*100:5.1f}% | "
+        print(f"{str(r.cap):>4} {lam:>5} {r.mae:6.2f} {r.rmse:6.2f} {r.su*100:5.1f}% | "
               f"{r.mae_vs_mkt:15.2f} {r.mae_mkt:10.2f} {r.ats*100:12.1f}% {int(r.ats_n):>6}")
     return agg
 
@@ -158,15 +167,15 @@ def main():
     df.to_csv(OUT / "inseason_backtest_weekly.csv", index=False)
     tune = summarize(df, TUNE, "TUNE")
     best = tune.loc[tune.mae.idxmin()]
-    print(f"\nchosen on 2021-24 MAE: cap={int(best.cap)} lam={best.lam:g}")
+    print(f"\nchosen on 2021-24 MAE: cap={best.cap} lam={best.lam:g}")
     summarize(df, VALIDATE, "VALIDATE (out of sample)")
 
     # week-by-week for chosen vs frozen vs market, validation season
-    print(f"\n=== 2025 week by week: chosen (cap={int(best.cap)}, lam={best.lam:g}) "
+    print(f"\n=== 2025 week by week: chosen (cap={best.cap}, lam={best.lam:g}) "
           "vs frozen prior vs closing market ===")
     print(f"{'wk':>3} {'n':>4} {'MAE chosen':>11} {'MAE frozen':>11} {'MAE market':>11} "
           f"{'sigma chosen':>13} {'ATS vs close':>13}")
-    v = df[(df.season == 2025) & (df.cap == int(best.cap))]
+    v = df[(df.season == 2025) & (df.cap == best.cap)]
     for w in EVAL_WEEKS:
         c = v[(v.lam == best.lam) & (v.week == w)]
         f = v[(~np.isfinite(v.lam)) & (v.week == w)]
@@ -178,7 +187,7 @@ def main():
               f"{c.rmse:13.2f} {ats:>13}")
 
     # pooled residual sd by week for the chosen config (feeds the curve scaling)
-    ch = df[(df.cap == int(best.cap)) & (df.lam == best.lam)]
+    ch = df[(df.cap == best.cap) & (df.lam == best.lam)]
     sig = (ch.groupby("week")
              .apply(lambda g: pd.Series(dict(n=g.n.sum(),
                                              sigma=np.sqrt(np.average(g.rmse ** 2, weights=g.n)),

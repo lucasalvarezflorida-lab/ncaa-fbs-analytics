@@ -61,3 +61,72 @@ once any rated game has been played (`MarginCurve.rescaled`).
   test the preseason-snapshot prior once a full season of it exists.
 - Beating the closing market ATS is **not** claimed (48–51% in both sets);
   the gain is accuracy and calibration, not a betting edge.
+
+## Amendment 2026-09-14 — the cap artifact (cap the residual, not the margin)
+
+**What was wrong.** The pre-registered rule clipped the *observed margin* at
+±28 before fitting. A team the prior expects to win by 44 that wins 52–0 is
+scored as 28 − 44 = −16: the ridge reads a blowout as under-performance.
+Through Week 2 of 2026, 26 of the 100 rated games hit the ±28 margin cap, and
+the machine docked Notre Dame 2.5 for 52–0 over Rice, Georgia 2.2 for its
+Week 2 blowout, Ohio State for 56–3 over Ball State (expected +48.5 → capped
+residual −20.5), Texas for 52–7 over Texas State. The mirror image pays
+cupcakes for losing big. The penalty depends on the schedule, not the team:
+an elite team that plays a cupcake loses rating; one that plays a peer does
+not.
+
+**The fix.** `inseason_ratings.ridge_update(cap_mode="residual")` clips the
+*residual* (margin minus the prior expectation, `y − (Xp + h)`) at ±28
+instead. One game still carries at most 28 points of evidence — the
+robustness the cap was for — but beating the expectation is never a
+penalty. Under the residual cap only 6 of the same 100 games touch the cap.
+
+**2026 effect (100 rated games, Sun 9/13 solve).** Top of the table under
+the fix: Ohio State 30.0, Texas 30.0, Notre Dame 28.8, Georgia 27.3, Miami
+25.4, Indiana 25.2, Alabama 24.8, Texas A&M 24.6, LSU 24.4, Oklahoma 18.3.
+Biggest gains: South Carolina +5.8, Texas +5.0, Ohio State +5.0, Georgia
++4.8, Notre Dame +4.0. Biggest losses: Kent State −5.8, Rice −5.0, Ball
+State −5.0, UTEP −4.8, Missouri State −4.6. Week 3 card lines move too:
+South Carolina −4.9 → −7.1, LSU −5.2 → −6.6, Florida–Auburn flips from
+Auburn +0.8 to Florida −1.6; Houston–Texas Tech and SMU–Louisville are
+unchanged — which is why the flip waits until Ep4 has recorded.
+
+**Backtest (same harness, `backtest_inseason_update.py`, configs m28 =
+margin cap, r21/r28/r35 = residual cap, none).** λ = 3 column:
+
+| config | tune MAE 2021–24 | tune RMSE | tune SU | validate MAE 2025 | validate RMSE | validate SU |
+|---|---|---|---|---|---|---|
+| margin ±28 (live) | 12.81 | 16.04 | 69.8% | 12.37 | 15.82 | 74.1% |
+| residual ±28 (fix) | 12.88 | 16.13 | 69.7% | 12.43 | 15.82 | 74.4% |
+| residual ±35 | 12.85 | 16.09 | 70.2% | 12.40 | 15.75 | 73.8% |
+| no cap | 12.84 | 16.06 | 70.0% | 12.36 | 15.71 | 73.8% |
+
+Accuracy is identical within noise (0.07 MAE across five seasons); the
+cap style is a calibration question, not an accuracy one.
+
+**Calibration (`cap_bias_check.py`).** Mean signed error from the favorite
+side (actual − predicted; negative = the machine over-rates its favorites):
+
+| bucket of predicted margin | margin ±28, 2021–24 | residual ±28, 2021–24 | margin ±28, 2025 | residual ±28, 2025 |
+|---|---|---|---|---|
+| 14–28 | −0.5 | −2.2 | +1.5 | −0.3 |
+| 28+ | +0.6 | −4.4 | +3.6 | +1.4 |
+| all games | −0.6 | −1.6 | +1.2 | +0.2 |
+
+In the tune years big favorites won by *less* than the rating gap said, and
+the margin cap happened to shrink them the right amount. In 2025 the sign
+flipped — big favorites won by *more* — and the margin cap under-rated them
+by 3.6 while the residual cap was the better-calibrated fit overall (+0.2).
+The favorite bias is season-dependent, so no cap style calibrates it
+reliably; a uniform gap-shrink factor tuned on 2021–24 (least squares k =
+0.88) makes 2025 worse (+7.2 on 28+ favorites) and is rejected.
+
+**Decision.** Adopt the residual cap: same accuracy, schedule-neutral, no
+penalty for beating the expectation, and the better out-of-sample
+calibration. It is date-gated (`CAP_SWITCH_DATE = 2026-09-20`, the Week 4
+cycle) so the Ep4 / Week 3 card and its frozen grading lines stay on the
+rule they were published under; Week 4 onward is graded on the residual cap.
+`ratings_current_2026.json` records `cap_mode` so every receipt says which
+rule produced it. Residual RMSE is within 0.1 of the margin cap (tune 16.13 vs 16.04,
+validate 15.82 vs 15.82), so the curve keeps running at sd 15.9. Caveat carried forward: the favorite-margin bias flips sign between
+seasons and is the next thing to study in the 2026 post-mortem.

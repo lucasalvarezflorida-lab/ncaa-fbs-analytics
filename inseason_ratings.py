@@ -10,6 +10,17 @@ by backtest_inseason_update.py on 2021-24 (prior-year final FPI as the
 prior) and validated out of sample on 2025 — see INSEASON_UPDATE.md.
 Pre-registered 2026-09-04: LAM = 3, margins capped at ±28, HFA 2.5.
 
+Cap-artifact fix (built 2026-09-14, see INSEASON_UPDATE.md amendment): the
+original cap clipped the MARGIN, so a 52-0 win by a team expected to win by
+44 became "28 - 44 = -16" — elite teams were docked for cupcake blowouts and
+cupcakes were paid for losing big. CAP_MODE = "residual" clips the
+RESIDUAL (margin minus the prior expectation) at ±CAP instead: one game can
+still move a rating by at most CAP points of evidence, but beating the
+expectation is never a penalty. Backtest 2021-25: accuracy identical to the
+margin cap (MAE within 0.07), schedule-neutral, better-calibrated out of
+sample. Date-gated so the Ep4 / Week 3 card (frozen on the margin cap) is
+not re-solved: from CAP_SWITCH_DATE every refresh runs the residual cap.
+
 Consumers: build_conference_book (workbook prior), edge_report (card_data
 -> deck), Season Sim. The preseason snapshot itself is never modified —
 preseason artifacts stay frozen for grading.
@@ -29,15 +40,31 @@ from name_mapping import normalize_name  # noqa: E402
 LAM = 3.0
 CAP = 28.0
 HFA = 2.5
+CAP_SWITCH_DATE = dt.date(2026, 9, 20)   # Week 4 cycle: first refresh after Ep4 records (INSEASON_UPDATE.md amendment)
+
+
+def cap_mode_today(today: dt.date | None = None) -> str:
+    """'margin' (pre-registered 2026-09-04) until CAP_SWITCH_DATE, then
+    'residual' (the cap-artifact fix). Override with --cap-mode."""
+    today = today or dt.date.today()
+    return "residual" if CAP_SWITCH_DATE and today >= CAP_SWITCH_DATE else "margin"
+
+
+CAP_MODE = cap_mode_today()
 SIGMA_FROZEN = 17.94    # curve residual sd, frozen prior (fit_margin_curve)
 SIGMA_INSEASON = 15.9   # pooled residual sd wks 2-14, chosen config (backtest)
 OUT_JSON = HERE / "ratings_current_2026.json"
 
 
 def ridge_update(prior: dict[str, float], games: list[dict], lam: float = LAM,
-                 cap: float | None = CAP, hfa: float = HFA) -> dict[str, float]:
+                 cap: float | None = CAP, hfa: float = HFA,
+                 cap_mode: str = "margin") -> dict[str, float]:
     """games: dicts with home/away (normalized names in `prior`), neutral,
-    margin (home minus away). Returns {team: rating} for every prior team."""
+    margin (home minus away). Returns {team: rating} for every prior team.
+    cap_mode: 'margin' clips the observed margin at ±cap (original rule);
+    'residual' clips margin minus the prior expectation at ±cap (the
+    cap-artifact fix: a blowout by a team expected to blow out is not a
+    penalty, but no single game carries more than `cap` points of evidence)."""
     teams = sorted(prior)
     p = np.array([prior[t] for t in teams])
     games = [g for g in games if g["home"] in prior and g["away"] in prior]
@@ -50,9 +77,13 @@ def ridge_update(prior: dict[str, float], games: list[dict], lam: float = LAM,
     X[np.arange(n), [idx[g["away"]] for g in games]] = -1.0
     h = np.array([0.0 if g["neutral"] else hfa for g in games])
     y = np.array([float(g["margin"]) for g in games])
-    if cap is not None:
+    if cap is not None and cap_mode == "margin":
         y = np.clip(y, -cap, cap)
     resid = y - (X @ p + h)
+    if cap is not None and cap_mode == "residual":
+        resid = np.clip(resid, -cap, cap)
+    elif cap_mode not in ("margin", "residual"):
+        raise ValueError(f"cap_mode must be 'margin' or 'residual', got {cap_mode!r}")
     d = np.linalg.solve(X.T @ X + lam * np.eye(len(teams)), X.T @ resid)
     return dict(zip(teams, p + d))
 
@@ -83,12 +114,14 @@ def completed_games_2026(refresh: bool = False) -> list[dict]:
 
 
 def machine_ratings(prior: dict[str, float], refresh: bool = False,
-                    write: bool = True) -> dict[str, dict]:
+                    write: bool = True, cap_mode: str | None = None) -> dict[str, dict]:
     """{team: {pre, cur, delta, gp}} for every prior team; writes
-    ratings_current_2026.json as the weekly receipt."""
+    ratings_current_2026.json as the weekly receipt. cap_mode defaults to
+    the date-gated CAP_MODE."""
+    cap_mode = cap_mode or CAP_MODE
     games = [g for g in completed_games_2026(refresh)
              if g["home"] in prior and g["away"] in prior]
-    cur = ridge_update(prior, games)
+    cur = ridge_update(prior, games, cap_mode=cap_mode)
     gp = {t: 0 for t in prior}
     for g in games:
         gp[g["home"]] += 1
@@ -99,7 +132,8 @@ def machine_ratings(prior: dict[str, float], refresh: bool = False,
         ranked = sorted(out.items(), key=lambda kv: -kv[1]["cur"])
         OUT_JSON.write_text(json.dumps(dict(
             as_of=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-            params=dict(lam=LAM, cap=CAP, hfa=HFA, sigma=sigma_for(len(games))),
+            params=dict(lam=LAM, cap=CAP, cap_mode=cap_mode, hfa=HFA,
+                        sigma=sigma_for(len(games))),
             games_used=len(games),
             teams=[dict(team=t, **v) for t, v in ranked]), indent=1),
             encoding="utf-8")
@@ -162,10 +196,13 @@ def latest_rankings(refresh: bool = True) -> dict:
 if __name__ == "__main__":
     from build_conference_book import load_fpi_2026
     pre = load_fpi_2026()
-    mr = machine_ratings(pre, refresh="--refresh" in sys.argv)
+    mode = CAP_MODE
+    if "--cap-mode" in sys.argv:
+        mode = sys.argv[sys.argv.index("--cap-mode") + 1]
+    mr = machine_ratings(pre, refresh="--refresh" in sys.argv, cap_mode=mode)
     n_games = sum(v["gp"] for v in mr.values()) // 2
     print(f"machine ratings: {len(mr)} teams, {n_games} rated games used, "
-          f"lam={LAM:g} cap={CAP:g} sigma={sigma_for(n_games)}")
+          f"lam={LAM:g} cap={CAP:g} ({mode}) sigma={sigma_for(n_games)}")
     movers = sorted(mr.items(), key=lambda kv: -abs(kv[1]["delta"]))[:12]
     print("biggest movers vs preseason:")
     for t, v in movers:

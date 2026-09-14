@@ -56,8 +56,14 @@ Oregon −4.6, Kennesaw State −4.5, Arkansas −4.3.
 **Machine housekeeping (say it once).** The ±28 cap keeps docking elite
 teams for cupcake blowouts: Notre Dame −2.5 for 52–0 over Rice, Georgia
 −2.2 for its Week 2 blowout, Texas A&M's 50–0 last week. It's a
-pre-registered rule; the fix (cap the residual, not the margin) is on the
-postseason list. FCS games are still invisible — Houston's 77–6 over
+pre-registered rule and this card was built on it, so it stands through
+Saturday. The fix is built and backtested (cap the residual — the miss
+against the expectation — not the margin, so 52–0 when you're expected to
+win by 44 is +8, not −16). Same accuracy over five seasons, no more docking
+for cupcakes; under it Ohio State and Texas sit at 30.0, Notre Dame 28.8,
+Georgia 27.3, South Carolina climbs to #15. It goes live with the Week 4
+refresh, after this episode records, so next week's Top 25 will look
+different for that reason — say so now. FCS games are still invisible — Houston's 77–6 over
 Southern, South Carolina's 45–9 over Towson and Florida's 52–3 over Campbell
 moved nothing.
 
