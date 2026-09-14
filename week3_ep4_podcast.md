@@ -246,7 +246,7 @@ machine's Texas −3.7 was the right read of the game; Michigan deserved +0.8
 (won by 7) — Oklahoma −2 was two points off the deserved number; Texas A&M
 deserved +15.1 (won by 28) — the machine's 16.7 was almost exactly the
 efficiency; BYU deserved +16.4 (won by 11); Alabama deserved +22.4 (won by
-28). Against the deserved margins the machine was off **23.5**, not 40.5.
+28). Against the deserved margins the machine was off **23.6**, not 40.5.
 Same caveat as Slide 1: we grade on the scoreboard, this is the explanation.
 
 **Stated positions: 1–0.** Michigan +5.5 ("lean, research") won outright

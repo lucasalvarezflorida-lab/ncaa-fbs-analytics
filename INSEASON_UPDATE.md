@@ -181,7 +181,7 @@ layer stays wired (`--eff-w 0.5` re-runs the solve with it) and the deserved
 margins ARE used, as information rather than as the rating:
 - **Receipts:** every graded game shows the deserved margin next to the
   final, so a right read on a wrong result is visible. Week 2: the machine
-  was off 40.5 points against the finals and 23.5 against the deserved
+  was off 40.5 points against the finals and 23.6 against the deserved
   margins (Texas deserved +5.6 and won by 1; A&M deserved +15.1 and won by
   28; BYU deserved +16.4 and won by 11; Alabama deserved +22.4 and won by 28;
   Michigan deserved +0.8 and won by 7).

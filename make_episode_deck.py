@@ -874,9 +874,23 @@ def _line_txt(a, b, sp):
     return "PK"
 
 
+def _deserved():
+    """(away, home) normalized -> deserved home margin (efficiency layer);
+    empty if the model or the box scores are missing."""
+    try:
+        from inseason_ratings import deserved_margins
+        return {(d["away"], d["home"]): d["deserved"] for d in deserved_margins().values()}
+    except Exception as e:  # pragma: no cover - deck must build without it
+        print("deserved margins unavailable:", e)
+        return {}
+
+
+DESERVED = _deserved()
+
+
 def build_recap():
     finals = _finals()
-    rows, tot_m, tot_k, n_m, n_k, n_t = [], 0.0, 0.0, 0, 0, 0
+    rows, tot_m, tot_k, tot_d, n_m, n_k, n_t = [], 0.0, 0.0, 0.0, 0, 0, 0
     for a, b, title, key, call, ours, close in RECAP_ROWS:
         lines_ = f"our line {_line_txt(a, b, ours)} · closing {_line_txt(a, b, close)}"
         fin = finals.get(key)
@@ -888,6 +902,10 @@ def build_recap():
         win, lose = (CODE2NAME[b], CODE2NAME[a]) if hp_ >= ap_ else (CODE2NAME[a], CODE2NAME[b])
         callfin = f"we called {call} · FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)}"
         margin = hp_ - ap_                       # actual home margin
+        des = DESERVED.get((normalize_name(key[0]), normalize_name(key[1])))
+        if des is not None:
+            lines_ += f" · deserved {b if des >= 0 else a} +{abs(des):.1f}"
+            tot_d += abs(des + ours)
         off_m, off_k = abs(margin + ours), abs(margin + close)
         tot_m, tot_k = tot_m + off_m, tot_k + off_k
         if off_m < off_k:
@@ -902,7 +920,7 @@ def build_recap():
         rows.append((a, b, title, callfin, lines_,
                      f"machine off by {off_m:g} · market off by {off_k:g} — {verdict}", mark))
     graded = n_m + n_k + n_t
-    return rows, dict(m=tot_m, k=tot_k, n=graded, nm=n_m, nk=n_k, nt=n_t)
+    return rows, dict(m=tot_m, k=tot_k, d=tot_d, n=graded, nm=n_m, nk=n_k, nt=n_t)
 
 
 RECAP, RECAP_SUM = build_recap()
@@ -1046,6 +1064,42 @@ _r = _json.load(open(os.path.join(HERE, "ratings_current_2026.json"),
 _top = _r["teams"][:25]
 _top_set = {t["team"] for t in _top}
 
+
+def _luck():
+    """{team: (luck per rated game, n)} = actual minus deserved margin,
+    season to date, rated games (both teams in the prior) with box scores."""
+    try:
+        from inseason_ratings import deserved_margins
+        dm = deserved_margins()
+    except Exception as e:  # pragma: no cover
+        print("luck column unavailable:", e)
+        return {}
+    rated = {t["team"] for t in _r["teams"]}
+    acc = {}
+    for gid, (ap_, hp_) in _finals_by_id().items():
+        d = dm.get(gid)
+        if not d or d["home"] not in rated or d["away"] not in rated:
+            continue
+        diff = (hp_ - ap_) - d["deserved"]
+        for team, sgn in ((d["home"], 1), (d["away"], -1)):
+            tot, n = acc.get(team, (0.0, 0))
+            acc[team] = (tot + sgn * diff, n + 1)
+    return {t: (tot / n, n) for t, (tot, n) in acc.items() if n}
+
+
+def _finals_by_id():
+    p = os.path.join(HERE, "fpi-decomposition", "data",
+                     "games_seasonType-regular_year-2026.json")
+    out = {}
+    if os.path.exists(p):
+        for g in _json.load(open(p, encoding="utf-8")):
+            if g.get("homePoints") is not None and g.get("awayPoints") is not None:
+                out[g["id"]] = (g["awayPoints"], g["homePoints"])
+    return out
+
+
+LUCK = _luck()
+
 s = blank(NAVY)
 PALE = RGBColor(0xCA, 0xDC, 0xFC)
 UP, DOWN = RGBColor(0x5C, 0xD6, 0x8A), RGBColor(0xFF, 0x7A, 0x7A)
@@ -1054,15 +1108,17 @@ txt(s, 0.9, 0.42, 11.5, 0.4,
     bold=True)
 txt(s, 0.9, 0.76, 11.5, 0.8, "Our Top 25", 40, WHITE, bold=True)
 txt(s, 0.9, 1.5, 11.5, 0.3,
-    f"Machine rating · Δ vs preseason · AP week {AP_WEEK} poll", 13, PALE,
-    bold=True)
+    f"Machine rating · Δ vs preseason · luck = actual minus deserved margin per game"
+    f" · AP week {AP_WEEK} poll", 13, PALE, bold=True)
 TOP, RH, CW = 1.98, 0.36, 5.5
 for x0 in (0.9, 6.95):
-    txt(s, x0 + 3.3, TOP - 0.24, 0.75, 0.22, "RATING", 8, PALE,
+    txt(s, x0 + 3.05, TOP - 0.24, 0.6, 0.22, "RATING", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, x0 + 4.05, TOP - 0.24, 0.75, 0.22, "Δ PRE", 8, PALE,
+    txt(s, x0 + 3.65, TOP - 0.24, 0.6, 0.22, "Δ PRE", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, x0 + 4.8, TOP - 0.24, 0.65, 0.22, "VOTERS", 8, PALE,
+    txt(s, x0 + 4.25, TOP - 0.24, 0.6, 0.22, "LUCK", 8, PALE,
+        bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, x0 + 4.85, TOP - 0.24, 0.6, 0.22, "VOTERS", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
 for col, (x0, rows) in enumerate(((0.9, _top[:13]), (6.95, _top[13:]))):
     for i, t in enumerate(rows):
@@ -1076,16 +1132,20 @@ for col, (x0, rows) in enumerate(((0.9, _top[:13]), (6.95, _top[13:]))):
             shape(s, MSO_SHAPE.OVAL, x0 + 0.6, y + 0.04, 0.28, 0.28, WHITE)
             s.shapes.add_picture(lp, Inches(x0 + 0.63), Inches(y + 0.07),
                                  Inches(0.22), Inches(0.22))
-        txt(s, x0 + 1.0, y + 0.035, 2.3, 0.3, school(t["team"]), 12.5, WHITE,
+        txt(s, x0 + 1.0, y + 0.045, 2.05, 0.3, school(t["team"]), 12, WHITE,
             bold=True)
-        txt(s, x0 + 3.3, y + 0.035, 0.75, 0.3, f"{t['cur']:.1f}", 12.5,
+        txt(s, x0 + 3.05, y + 0.035, 0.6, 0.3, f"{t['cur']:.1f}", 12.5,
             WHITE, align=PP_ALIGN.RIGHT)
         d = t["delta"]
-        txt(s, x0 + 4.05, y + 0.05, 0.75, 0.3, f"{d:+.1f}" if d else "0.0",
+        txt(s, x0 + 3.65, y + 0.05, 0.6, 0.3, f"{d:+.1f}" if d else "0.0",
             11, UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d),
             align=PP_ALIGN.RIGHT)
+        lk = LUCK.get(t["team"])
+        txt(s, x0 + 4.25, y + 0.05, 0.6, 0.3, f"{lk[0]:+.1f}" if lk else "—",
+            11, (ORANGE if abs(lk[0]) >= 5 else PALE) if lk else PALE,
+            bold=bool(lk and abs(lk[0]) >= 5), align=PP_ALIGN.RIGHT)
         ap = AP_TOP25.get(t["team"])
-        txt(s, x0 + 4.8, y + 0.05, 0.65, 0.3, f"AP {ap}" if ap else "NR", 10,
+        txt(s, x0 + 4.85, y + 0.05, 0.6, 0.3, f"AP {ap}" if ap else "NR", 10,
             PALE, align=PP_ALIGN.RIGHT)
 # man-vs-machine footer: biggest rank disagreements, computed from the data
 _gaps = sorted(((abs(AP_TOP25[t["team"]] - i), -i, i, AP_TOP25[t["team"]],
@@ -1386,7 +1446,7 @@ s = blank()
 txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
 txt(s, 0.9, 1.08, 11.5, 0.3,
     "Calls frozen at recording · closing line = last pre-kick pull · "
-    "off by = miss vs the final margin", 12, MUTE, bold=True)
+    "off by = miss vs the final margin · deserved = the efficiency margin", 12, MUTE, bold=True)
 y = 1.55
 VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "T": MUTE, "P": MUTE}
 for a, b, tit, callfin, lines_, miss, mark in RECAP:
@@ -1403,7 +1463,9 @@ _rs = RECAP_SUM
 _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
 txt(s, 1.15, y + 0.13, 11.0, 0.35,
     f"Machine {_rs['m']:.1f} · market {_rs['k']:.1f} · machine closer in "
-    f"{_rs['nm']}, market {_rs['nk']}, {_rs['nt']} tie", 15, WHITE, bold=True)
+    f"{_rs['nm']}, market {_rs['nk']}, {_rs['nt']} tie"
+    + (f" · vs the deserved margins: machine {_rs['d']:.1f}" if _rs.get("d") else ""),
+    15, WHITE, bold=True)
 txt(s, 1.15, y + 0.5, 11.0, 0.3,
     f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} across "
     f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}", 11.5, RGBColor(0xCA, 0xDC, 0xFC))
