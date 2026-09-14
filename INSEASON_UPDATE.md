@@ -130,3 +130,63 @@ rule they were published under; Week 4 onward is graded on the residual cap.
 rule produced it. Residual RMSE is within 0.1 of the margin cap (tune 16.13 vs 16.04,
 validate 15.82 vs 15.82), so the curve keeps running at sd 15.9. Caveat carried forward: the favorite-margin bias flips sign between
 seasons and is the next thing to study in the 2026 post-mortem.
+
+## Amendment 2026-09-14 (b) — the efficiency layer (deserved margins)
+
+**Idea.** Score margins carry turnover luck, special-teams scores and
+garbage time; per-play efficiency carries less of it. CFBD's
+`/stats/game/advanced` gives each team, each game, its total PPA (predicted
+points added summed over its plays), success rate and explosiveness. From
+the home side, `net_tppa` = home offense total PPA − away offense total PPA
+and `net_sr` = the success-rate difference. The **deserved margin** is a
+linear model of the two, fit once on 2021–24 rated FBS games (2,890 games)
+and frozen in `efficiency_model.json`:
+
+    deserved = 0.98 + 0.887 · net_tppa + 20.8 · net_sr     R² 0.815, rmse 8.75
+    2025 out of sample: R² 0.806, rmse 9.00
+
+The update can then fit `y = EFF_W · actual margin + (1 − EFF_W) · deserved
+margin` per game (`efficiency.py`, `inseason_ratings.machine_ratings(eff_w=)`),
+with games missing a box score falling back to the actual margin. Coverage is
+99–100% of rated games every season.
+
+**Backtest (`backtest_efficiency.py`, same harness, λ = 3, residual cap ±28,
+weeks 2–15, scored on the actual margin).**
+
+| config | tune MAE 2021–24 | tune SU | validate MAE 2025 | validate SU | validate ATS |
+|---|---|---|---|---|---|
+| margin cap, actual margin (live) | 12.81 | 69.8% | 12.37 | 74.1% | 51.4% |
+| residual cap, actual margin (Week 4 rule) | 12.88 | 69.7% | 12.43 | 74.4% | 50.1% |
+| residual cap, 75% actual / 25% deserved | 12.82 | 69.9% | 12.44 | 73.3% | 50.8% |
+| residual cap, 50 / 50 | 12.80 | 69.7% | 12.48 | 72.5% | 50.1% |
+| residual cap, 25 / 75 | 12.80 | 70.0% | 12.55 | 72.0% | 49.8% |
+| residual cap, deserved only | 12.84 | 69.9% | 12.64 | 71.7% | 49.1% |
+
+Re-tuning λ with the blend (1.5–4) changes nothing: the best out-of-sample
+number is still the actual margin (12.37–12.38 at λ 1.5–2 vs 12.38–12.42
+blended). By week group in 2025 the blend is worse in every block (weeks 2–5:
+11.95 actual vs 12.01 at 50/50; weeks 11–15: 12.18 vs 12.34).
+
+**Why it does not help.** Within a game, efficiency and margin are the same
+information (R² 0.8, slope ≈ 1); the part of the margin that efficiency
+strips out — turnovers, special teams, finishing drives — is noise for the
+*next* game only if it is unrepeatable, and the prior + λ = 3 already shrink
+each game's evidence enough that de-noising it further buys nothing. The
+model has no shortage of per-game signal; it has a shortage of information
+about *who is playing* (injuries, quarterback changes), which no box score
+carries.
+
+**Decision.** `EFF_W = 1.0` — the rating keeps fitting actual margins. The
+layer stays wired (`--eff-w 0.5` re-runs the solve with it) and the deserved
+margins ARE used, as information rather than as the rating:
+- **Receipts:** every graded game shows the deserved margin next to the
+  final, so a right read on a wrong result is visible. Week 2: the machine
+  was off 40.5 points against the finals and 23.5 against the deserved
+  margins (Texas deserved +5.6 and won by 1; A&M deserved +15.1 and won by
+  28; BYU deserved +16.4 and won by 11; Alabama deserved +22.4 and won by 28;
+  Michigan deserved +0.8 and won by 7).
+- **Luck column:** season-to-date actual minus deserved margin per rated
+  game, for the Top 25 notes (Texas +12.5, Texas Tech +14.1, Oregon −7.5
+  through Week 2).
+Caveat carried forward: re-test the blend at the post-mortem with a full
+2026 season and the live preseason prior; if it stays neutral, it stays off.

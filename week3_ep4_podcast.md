@@ -53,6 +53,21 @@ scoreboard; the machine grades the margin against the expectation."
 Mississippi State +4.0 (38–13 at Minnesota) · UNLV −5.1, Minnesota −4.9,
 Oregon −4.6, Kennesaw State −4.5, Arkansas −4.3.
 
+**New this week — the luck column (efficiency layer).** We now compute a
+*deserved margin* for every game from per-play efficiency (total PPA and
+success rate, CFBD box scores; a model fit on 2021–24 that explains 80% of
+margins). Season to date, actual minus deserved per rated game: Texas +12.5
+(deserved +14.0 a game, actual +26.5 — Texas State was a 52–7 that played
+like 30), Indiana +13.0, Tennessee +8.8, Texas A&M +8.3, Miami +8.4, Notre
+Dame +6.6; Ohio State −3.6 (deserved +29.6 a game — the efficiency says the
+Buckeyes have been the best team on the field), LSU −4.3, Oregon −7.5 (the
+Oklahoma State loss was closer than 39–31 by the efficiency: deserved +7.0 a
+game). And the one that matters Friday: **Texas Tech +14.1** — the 35–24 at
+Oregon State had a deserved margin of −3.1. Say the caveat: the backtest
+says deserved margins do NOT predict next week better than the score (five
+seasons, never better out of sample), so the rating still uses the score.
+This column is information about the games that happened, not the rating.
+
 **Machine housekeeping (say it once).** The ±28 cap keeps docking elite
 teams for cupcake blowouts: Notre Dame −2.5 for 52–0 over Rice, Georgia
 −2.2 for its Week 2 blowout, Texas A&M's 50–0 last week. It's a
@@ -224,6 +239,15 @@ Frozen Ep3 calls (recorded Wed Sep 9) vs finals vs the Friday 5 PM ET pull.
 161.0 vs market 167.0 across 15 games — the machine leads for the first
 time. Two score calls were near-exact: Texas 27–23 vs 24–23, and BYU 28–20
 vs 28–17 (BYU's 28 on the nose).
+
+**Deserved margins (new — the efficiency layer).** Next to each final,
+what the game looked like per play: Texas deserved +5.6 (won by 1) — the
+machine's Texas −3.7 was the right read of the game; Michigan deserved +0.8
+(won by 7) — Oklahoma −2 was two points off the deserved number; Texas A&M
+deserved +15.1 (won by 28) — the machine's 16.7 was almost exactly the
+efficiency; BYU deserved +16.4 (won by 11); Alabama deserved +22.4 (won by
+28). Against the deserved margins the machine was off **23.5**, not 40.5.
+Same caveat as Slide 1: we grade on the scoreboard, this is the explanation.
 
 **Stated positions: 1–0.** Michigan +5.5 ("lean, research") won outright
 17–10. The Alabama "quibble" (−13 vs −10.5) also covered by 18, but it was

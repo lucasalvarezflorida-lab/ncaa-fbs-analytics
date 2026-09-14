@@ -21,6 +21,15 @@ margin cap (MAE within 0.07), schedule-neutral, better-calibrated out of
 sample. Date-gated so the Ep4 / Week 3 card (frozen on the margin cap) is
 not re-solved: from CAP_SWITCH_DATE every refresh runs the residual cap.
 
+Efficiency layer (built 2026-09-14, efficiency.py / backtest_efficiency.py):
+each game's fitted y can be EFF_W * actual margin + (1 - EFF_W) * deserved
+margin (a per-game linear model of net total PPA and net success rate from
+CFBD /stats/game/advanced, fit on 2021-24). Backtest 2021-25: neutral -
+never better than the actual margin out of sample (2025 MAE 12.43 at EFF_W
+1.0 vs 12.44-12.64 below it), so EFF_W stays 1.0 (off) for the rating. The
+deserved margins are still produced (deserved_margins) for the receipts and
+the luck column in the notes. Override with --eff-w for experiments.
+
 Consumers: build_conference_book (workbook prior), edge_report (card_data
 -> deck), Season Sim. The preseason snapshot itself is never modified —
 preseason artifacts stay frozen for grading.
@@ -51,6 +60,7 @@ def cap_mode_today(today: dt.date | None = None) -> str:
 
 
 CAP_MODE = cap_mode_today()
+EFF_W = 1.0   # weight on the actual margin; 1.0 = efficiency layer off (backtest: neutral)
 SIGMA_FROZEN = 17.94    # curve residual sd, frozen prior (fit_margin_curve)
 SIGMA_INSEASON = 15.9   # pooled residual sd wks 2-14, chosen config (backtest)
 OUT_JSON = HERE / "ratings_current_2026.json"
@@ -113,15 +123,41 @@ def completed_games_2026(refresh: bool = False) -> list[dict]:
     return out
 
 
+def deserved_margins(refresh: bool = False) -> dict[int, dict]:
+    """{game_id: {deserved, home, away, net_tppa, net_sr}} for every 2026
+    regular-season game with both advanced box scores (home perspective).
+    Empty if efficiency_model.json is missing."""
+    from efficiency import deserved, game_efficiency, load_model
+    model = load_model()
+    if model is None:
+        return {}
+    out = {}
+    for gid, f in game_efficiency(2026, refresh).items():
+        out[gid] = dict(deserved=round(deserved(f, model), 1), home=f["home"], away=f["away"],
+                        net_tppa=round(f["net_tppa"], 1), net_sr=round(f["net_sr"], 3))
+    return out
+
+
 def machine_ratings(prior: dict[str, float], refresh: bool = False,
-                    write: bool = True, cap_mode: str | None = None) -> dict[str, dict]:
+                    write: bool = True, cap_mode: str | None = None,
+                    eff_w: float | None = None) -> dict[str, dict]:
     """{team: {pre, cur, delta, gp}} for every prior team; writes
     ratings_current_2026.json as the weekly receipt. cap_mode defaults to
-    the date-gated CAP_MODE."""
+    the date-gated CAP_MODE; eff_w to EFF_W (1.0 = actual margins only)."""
     cap_mode = cap_mode or CAP_MODE
+    eff_w = EFF_W if eff_w is None else float(eff_w)
     games = [g for g in completed_games_2026(refresh)
              if g["home"] in prior and g["away"] in prior]
-    cur = ridge_update(prior, games, cap_mode=cap_mode)
+    fit_games = games
+    if eff_w < 1.0:
+        from efficiency import blend, load_model
+        model = load_model()
+        dm = deserved_margins(refresh) if model else {}
+        fit_games = [dict(g, margin=blend(g["margin"], dm.get(g["id"]) and
+                                          dict(net_tppa=dm[g["id"]]["net_tppa"],
+                                               net_sr=dm[g["id"]]["net_sr"]),
+                                          model, eff_w)) for g in games]
+    cur = ridge_update(prior, fit_games, cap_mode=cap_mode)
     gp = {t: 0 for t in prior}
     for g in games:
         gp[g["home"]] += 1
@@ -132,7 +168,7 @@ def machine_ratings(prior: dict[str, float], refresh: bool = False,
         ranked = sorted(out.items(), key=lambda kv: -kv[1]["cur"])
         OUT_JSON.write_text(json.dumps(dict(
             as_of=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-            params=dict(lam=LAM, cap=CAP, cap_mode=cap_mode, hfa=HFA,
+            params=dict(lam=LAM, cap=CAP, cap_mode=cap_mode, eff_w=eff_w, hfa=HFA,
                         sigma=sigma_for(len(games))),
             games_used=len(games),
             teams=[dict(team=t, **v) for t, v in ranked]), indent=1),
@@ -199,10 +235,13 @@ if __name__ == "__main__":
     mode = CAP_MODE
     if "--cap-mode" in sys.argv:
         mode = sys.argv[sys.argv.index("--cap-mode") + 1]
-    mr = machine_ratings(pre, refresh="--refresh" in sys.argv, cap_mode=mode)
+    eff_w = EFF_W
+    if "--eff-w" in sys.argv:
+        eff_w = float(sys.argv[sys.argv.index("--eff-w") + 1])
+    mr = machine_ratings(pre, refresh="--refresh" in sys.argv, cap_mode=mode, eff_w=eff_w)
     n_games = sum(v["gp"] for v in mr.values()) // 2
     print(f"machine ratings: {len(mr)} teams, {n_games} rated games used, "
-          f"lam={LAM:g} cap={CAP:g} ({mode}) sigma={sigma_for(n_games)}")
+          f"lam={LAM:g} cap={CAP:g} ({mode}) eff_w={eff_w:g} sigma={sigma_for(n_games)}")
     movers = sorted(mr.items(), key=lambda kv: -abs(kv[1]["delta"]))[:12]
     print("biggest movers vs preseason:")
     for t, v in movers:

@@ -1,0 +1,13 @@
+{
+ "intercept": 0.98193456725955,
+ "net_tppa": 0.8872485852327769,
+ "net_sr": 20.782703593645856,
+ "r2": 0.8151099943197614,
+ "rmse": 8.750634389162576,
+ "n": 2890,
+ "features": [
+  "net_tppa",
+  "net_sr"
+ ],
+ "note": "fit on [2021, 2022, 2023, 2024] rated FBS games with both advanced box scores; deserved = intercept + sum(coef * net feature), home perspective"
+}
