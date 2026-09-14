@@ -47,7 +47,7 @@ STABLE_FILE_ID = "14G1HYYFIyKVG3JDPdtflzUU-3FGYulhbPsr7iThMJNg"
 # replaces contents in place, so last_modifier_guard() refuses to clobber his edits):
 EP2_FILE_ID = "1h8IJ42vjSwQJgWzJnLF7dPpiIsclP25Qq5sakYY5r1o"
 EP3_FILE_ID = "1TxsZ9dG3JQ5yuHaPC-T10UZPq_WbH5rTXKU84GXzvUI"  # RECORD of Ep3 as aired - never push over it
-EP4_FILE_ID = "1wjJAa0AL7t7sv2lPBOQUGEciNqLuctqZFMpds3yl6kw"  # created Sun 9/13; SHARED with Corey (Lucas 9/14) - last_modifier_guard applies, never --force
+EP4_FILE_ID = "1wjJAa0AL7t7sv2lPBOQUGEciNqLuctqZFMpds3yl6kw"  # created Sun 9/13; Corey EDITOR since Mon 9/14 (share_deck.py) - last_modifier_guard applies, never --force
 DEFAULT_PPTX = os.path.join(HERE, "decks", "2026_Week0_Episode1.pptx")
 
 PPTX_MIME = ("application/vnd.openxmlformats-officedocument"
