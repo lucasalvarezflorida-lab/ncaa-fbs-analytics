@@ -15,3 +15,12 @@ week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
 2,2026-09-05,Missouri State +40.5,Texas A&M -40.5,79,0.67,0.502,L,-79,1649
 2,2026-09-05,California +2.5,UCLA -2.5,60,0.63,0.502,L,-60,1589
 2,2026-09-06,Washington State +23.5,Washington -23.5,74,0.66,0.502,W,74,1663
+3,2026-09-11,NC State -30.5,NC State -30.5 (mkt -33.5),250,,0.56,W,250,1913
+3,2026-09-11,Virginia -44.5,Virginia -44.5 (mkt -46.5),125,,0.54,W,125,2038
+3,2026-09-12,Utah State +27.5,Washington -27.5,60,0.72,0.502,W,60,2098
+3,2026-09-12,Buffalo +10 (deviation),FIU -10,125,0.71,0.502,L,-125,1973
+3,2026-09-12,Lindenwood +19.5,Missouri State -19.5 (mkt -16.5),250,,0.56,L,-250,1723
+3,2026-09-12,Southern Miss +32.5,Auburn -32.5,85,0.81,0.502,L,-85,1638
+3,2026-09-12,Charlotte +45.5,Ole Miss -45.5,80,0.79,0.502,W,80,1718
+3,2026-09-12,Prairie View +39.5,Baylor -39.5 (mkt -37.5),125,,0.54,L,-125,1593
+3,2026-09-12,Sacramento State +18.5,Fresno State -18.5,45,0.67,0.502,L,-45,1548
