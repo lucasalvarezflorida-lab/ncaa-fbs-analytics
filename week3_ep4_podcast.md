@@ -1,14 +1,16 @@
 # Episode 4 — Week 3 · "Man vs Machine" podcast notes
 
-Status (Sun Sep 13, 12:30 PM MT): Week 2 graded (5 of 5 plus both
-superdogs), the machine re-solved on **100 rated games** (12:21 PM MT), the
-workbook rebuilt, and the Week 3 AP poll is in (pulled from the wire; CFBD
-hadn't attached it yet — the deck falls back to the hand-typed Week 3 list
-until the cache catches up). Lines are the Sun 12:21 PM MT pull. **Houston at
-Texas Tech (Friday) has no total or moneyline posted yet** — the score call
-fills in on the next re-pull. Re-pull before recording: `edge_report.py
---week 3 --view ml --publish`, `hot_seat_heisman.py --week 3 --refresh`,
-`make_episode_deck.py`.
+Status (Mon Sep 14, 12:35 PM MT): Week 2 graded (5 of 5 plus both
+superdogs), the machine re-solved on **100 rated games** (Sun 12:21 PM MT),
+the workbook rebuilt, and the Week 3 AP poll is in (pulled from the wire;
+CFBD hadn't attached it yet — the deck falls back to the hand-typed Week 3
+list until the cache catches up). Lines are the Mon 12:35 PM MT pull:
+**Houston at Texas Tech now has a total (Bovada 53.5) and a moneyline**, so
+every score call is filled in, and DK has walked Tech down to −7.5. Re-pull
+once more before recording: `edge_report.py --week 3 --view ml --publish`,
+`hot_seat_heisman.py --week 3 --refresh`, `make_episode_deck.py` — the market
+numbers below move by the half point; the machine's lines don't. The full
+Week 3 board (every rated game, with score calls) is the appendix at the end.
 
 Format rule: slides carry the headline, this file carries the sentence.
 Every slide line has its backing below, in deck order.
@@ -174,26 +176,28 @@ can't see a highlight — the Heisman is a vote.
 
 | Game (kick, ET) | Machine | Market (DK) | Score call | Machine win % | Read |
 |---|---|---|---|---|---|
-| Houston at Texas Tech (Fri 8:00) | TTU −13.0 | TTU −9.5 · total not posted | pending the total | TTU 79% | 3.5 to Tech — a small lean |
+| Houston at Texas Tech (Fri 8:00) | TTU −13.0 | TTU −7.5 · O/U 53.5 (Bovada; DK total not up) | Texas Tech 33–20 | TTU 79% | 5.5 to Tech — a small lean (5.7 pp) |
 | SMU at Louisville (Sat 3:30) | LOU −1.1 | LOU −1.5 · O/U 59.5 ⚑ | Louisville 30–29 | LOU 54% | machine = market · MONSTER UNDER |
-| Mississippi State at South Carolina (Sat 4:15) | SC −4.9 | SC −3.5 · O/U 58.5 ⚑ | SC 32–27 | SC 63% | 1.4 to SC — no play · MONSTER UNDER |
-| Florida at Auburn (Sat 7:00) | AUB −0.7 | FLA −2.5 · O/U 53.5 | Auburn 27–26 | AUB 52% | **lean Auburn +2.5** — the home dog, 7.6 pp gap |
-| LSU at Ole Miss (Sat 7:30) | LSU −5.2 | LSU −2.5 · O/U 58.5 ⚑ | LSU 32–27 | LSU 62% | 2.7 to LSU — quibble · MONSTER UNDER |
+| Mississippi State at South Carolina (Sat 4:15) | SC −4.9 | SC −3.5 · O/U 59.5 ⚑ | SC 32–27 | SC 63% | 1.4 to SC — no play · MONSTER UNDER |
+| Florida at Auburn (Sat 7:00) | AUB −0.7 | FLA −2.5 · O/U 53.5 | Auburn 27–26 | AUB 52% | **lean Auburn +2.5** — the home dog, 8.8 pp gap |
+| LSU at Ole Miss (Sat 7:30) | LSU −5.2 | LSU −3 · O/U 58.5 ⚑ | LSU 32–27 | LSU 62% | 2.2 to LSU — quibble · MONSTER UNDER |
 
 **Three Monster Unders on one card.** The top-decile threshold is 58.5 this
-week (404 totals posted). LSU–Ole Miss 58.5, State–South Carolina 58.5,
+week. LSU–Ole Miss 58.5, State–South Carolina 59.5,
 SMU–Louisville 59.5 all qualify. The rule: totals in the season's top decile
 went under 55.1% of the time across 2021–25, the only spread-or-total bias
 that survived the post-mortem. Week 1's Monster Under (59.5 → 33) cashed;
 say the record (1–0) and the base rate in the same breath.
 
-**Line movement, all one direction.** Four of the five moved four points
-since first-seen — Houston +4 (toward the dog), Florida +4, LSU +4, State
-+4. The machine's side got the CLV on all four. SMU–Louisville hasn't moved.
+**Line movement, all one direction.** Four of the five have moved four to
+six points since first-seen — Houston +6 (−13.5 → −7.5, toward the dog),
+LSU +4.5, Florida +4, State +4. The machine's side got the CLV on all four.
+SMU–Louisville hasn't moved off −1.5.
 
 **No stated position of size this week.** The Auburn lean (+2.5) is the
-widest machine-market gap on the card at 7.6 points of win probability; the
-Tech lean is 5.9 points, under the 6-point flag. Everything else is
+widest machine-market gap on the card at 8.8 points of win probability; the
+Tech lean is 5.7 points — 5.5 points of spread now, but the moneyline (Tech
+−300) keeps the win-prob gap under the 6-point flag. Everything else is
 agreement.
 
 ---
@@ -354,10 +358,10 @@ called a quibble, not a position. **Season leans 4–2.**
 
 **The arithmetic.** Texas Tech 17.2 (machine #12) vs Houston 6.7 (#40);
 +2.5 for Lubbock → Tech by 13.0 → 79% on the curve → fair Tech −380 /
-Houston +380. Market: DK Tech −9.5; **no total and no moneyline posted
-yet** (Friday game; DK usually posts the total by Tuesday). First-seen −13.5
-on Aug 23, now −9.5: four points toward Houston, and the machine hasn't
-moved off 13. Score call fills in with the total.
+Houston +380. Market: DK Tech −7.5 (Bovada −7.5, Tech −300 / Houston +270;
+**total 53.5 at Bovada — DK hasn't posted one**). First-seen −13.5 on Aug 23,
+−9.5 on Sunday, −7.5 today: six points toward Houston, and the machine hasn't
+moved off 13. **Score call Texas Tech 33–20** (13 laid over 53.5).
 
 **Why it's on the card.** The Big 12 prep flagged this game in July as "the
 league's first great litmus test — cover the 'Houston is the sleeper' take
@@ -377,7 +381,7 @@ AP 13 and our #12.
 - *Hammond after the scare in Corvallis*: 35–24 at Oregon State (a −7.2
   team) cost Tech 2.8 rating points — the machine expected ~27. Hammond
   20-of-27 for 189; J'Koby Williams 116 on 20; 8-of-16 on third down.
-- *Four points to Houston since August*: −13.5 → −9.5. Houston's 33–20 over
+- *Six points to Houston since August*: −13.5 → −9.5 → −7.5. Houston's 33–20 over
   Oregon State and 77–6 over Southern (388 rushing at 8.6, 8-of-8 on third
   down) moved the market; the machine only saw the Oregon State game
   (Houston −0.4 for winning by 13 at home against a −7 team).
@@ -411,10 +415,12 @@ Johnson) after Bailey and Rodriguez left for the NFL.
 4. *Finish drives* — 8-of-16 on third down and 155 rushing at 3.4 turned a
    blowout projection into a two-score game.
 
-**Honesty box: "3.5 to Tech — a small lean."** Machine 13, market 9.5:
-5.9 points of win probability, under the 6-point flag. Tech has won four
+**Honesty box: "5.5 to Tech — a small lean."** Machine 13, market 7.5:
+5.5 points of spread but 5.7 points of win probability, still under the
+6-point flag — the moneyline (Tech −300, 73.5% no-vig) prices Tech higher
+than the spread does, so the gap sits where it did Sunday. Tech has won four
 straight in the series (38–21, 33–30, 49–28, 35–11), three by double
-digits. The total isn't posted; the score call waits.
+digits. If DK posts a total under 53.5, the score call tightens on rebuild.
 
 ---
 
@@ -424,7 +430,7 @@ digits. The total isn't posted; the score call waits.
 
 **The arithmetic.** Louisville 10.0 (#27) vs SMU 11.4 (#24); +2.5 for
 Louisville → Louisville by 1.1 → 53.5% → fair −115 / +115. Market: DK
-Louisville −1.5 (−120 / SMU +100); **total 59.5 — Monster Under**. First-seen
+Louisville −1.5 (−115 / SMU −105; Bovada −1); **total 59.5 — Monster Under**. First-seen
 −1.5 on Aug 23, unmoved. Score call Louisville 30–29 (the machine's 1.1
 laid over a 59.5 total).
 
@@ -487,7 +493,7 @@ unders hit 55%.
 
 **The arithmetic.** South Carolina 10.9 (#25) vs Mississippi State 8.5
 (#30); +2.5 for Columbia → South Carolina by 4.9 → 62.8% → fair −169 / +169.
-Market: DK South Carolina −3.5 (−175 / +145); **total 58.5 — Monster
+Market: DK South Carolina −3.5 (−162 / +136); **total 59.5 — Monster
 Under**. The line opened −7.5 on Friday and is −3.5 today: four points toward
 State in 48 hours. Score call SC 32–27.
 
@@ -537,7 +543,7 @@ starters.
 4. *Stewart off the edge* — Dylan Stewart converting pressure into sacks is
    the defense's whole equation (97th in sack rate in 2025).
 
-**Honesty box: "1.4 to South Carolina — no play · Monster Under 58.5."**
+**Honesty box: "1.4 to South Carolina — no play · Monster Under 59.5."**
 Machine 4.9, market 3.5. Both sides have real 2026 evidence now. The seats
 are the story; the total is the number.
 
@@ -549,9 +555,9 @@ are the story; the total is the number.
 
 **The arithmetic.** Auburn 12.6 (#22) vs Florida 14.4 (#16); +2.5 for
 Jordan-Hare → Auburn by 0.7 → 52.5% → fair Auburn −110 / Florida +110.
-Market: DK Florida −2.5 (Auburn +114 / Florida −135); total 53.5. First-seen
+Market: DK Florida −2.5 (Auburn +120 / Florida −142); total 53.5. First-seen
 Auburn −1.5 on Aug 23, now Florida −2.5: four points to Florida. **The machine
-takes the home dog** — 52.5% vs a market 45%, a 7.6-point gap, the widest on
+takes the home dog** — 52.5% vs a market 44%, an 8.8-point gap, the widest on
 the card. Score call Auburn 27–26.
 
 **Stakes.**
@@ -612,8 +618,8 @@ ROI, not −22.9%).
 
 **The arithmetic.** LSU 22.3 (#8) vs Ole Miss 14.6 (#14); Ole Miss gets the
 2.5 → LSU by 5.2 → 62.4% → fair LSU −166 / Ole Miss +166. Market: DK LSU
-−2.5 (−142 / Ole Miss +120); **total 58.5 — Monster Under**. First-seen Ole
-Miss −1.5 on Aug 23, now LSU −2.5: four points to LSU. Score call LSU 32–27.
+−3 (−155 / Ole Miss +130); **total 58.5 — Monster Under**. First-seen Ole
+Miss −1.5 on Aug 23, now LSU −3: four and a half points to LSU. Score call LSU 32–27.
 
 **Stakes.**
 - *Kiffin returns to Oxford*: the roster he built (44 transfers, the
@@ -664,8 +670,8 @@ and Joseph (FSU).
 4. *Special teams edge* — Ole Miss was No. 1 in SP+ special teams; in a game
    the machine has at 5.2, hidden yards are the margin.
 
-**Honesty box: "2.7 to LSU — quibble · Monster Under 58.5."** Machine 5.2,
-market 2.5. The machine's LSU number still carries the 51–10 Clemson game;
+**Honesty box: "2.2 to LSU — quibble · Monster Under 58.5."** Machine 5.2,
+market 3. The machine's LSU number still carries the 51–10 Clemson game;
 five straight home wins in the series and a first-year coach on each
 sideline are the hedges. The total is the play to talk about.
 
@@ -673,50 +679,55 @@ sideline are the hedges. The total is the play to talk about.
 
 ## Slide 21 — Our predictions + superdogs (the closer)
 
-Scores are the machine margin laid over the DraftKings total: Louisville
-30–29, South Carolina 32–27, Auburn 27–26, LSU 32–27, and Houston–Texas Tech
-pending the total.
+Scores are the machine margin laid over the market total, in kickoff order:
+Texas Tech 33–20 (Bovada's 53.5; DK hasn't posted a total), Louisville 30–29,
+South Carolina 32–27, Auburn 27–26, LSU 32–27.
 
-**★ SUPERDOG (any FBS game): Sacramento State +26.5 vs North Dakota State**
-— machine 24% (ML +2000, market 5%), EV 6.3. Runners-up: Charlotte +19.5 at
-App State (27.5%, EV 5.4), Akron +26.5 at Minnesota (18%, EV 4.7), Tulane
-+19.5 at Kansas State (23%, EV 4.4).
+**★ SUPERDOG (any FBS game): Sacramento State +27.5 vs North Dakota State**
+— machine 24% (ML +2500, market 4%), EV 6.5. Runners-up: Charlotte +17.5 at
+App State (27.5%, EV 4.8), Tulane +20.5 at Kansas State (23%, EV 4.7), Ball
+State +14.5 at Liberty (30%, EV 4.4), Akron +24.5 at Minnesota (18%, EV 4.4).
 
 *Say the caveat first*: this is the widest machine-market disagreement on the
-whole board — 19 points. The machine has NDSU at −3.6 (an FCS power carrying
+whole board — 20 points. The machine has NDSU at −3.6 (an FCS power carrying
 a July FPI prior, one rated game, +4.7 for beating Jacksonville State) and
 Sacramento State at −13.5 (two rated losses, 49–3 at Fresno State); NDSU by
-about 7 at Sacramento. The market says 26.5. When the machine and the market
-are 19 points apart, one of them is wrong about who these teams are, and the
+about 7 at Sacramento. The market says 27.5 (26.5 on Sunday; DK opened
+23.5). When the machine and the market are 20 points apart, one of them is wrong about who these teams are, and the
 market has watched more of both. It stays the pick because the rule is the
 rule (CFBD lists both as FBS in 2026); the honest framing is "the machine's
-number, not ours." If you'd rather talk about a real one, Charlotte +19.5 at
+number, not ours." If you'd rather talk about a real one, Charlotte +17.5 at
 App State is next: Charlotte covered at Ole Miss (41–9 against a −47.5), App
 State hasn't played a rated team the machine trusts, and it's a 1-in-4 shot at
-19.5 points.
+17.5 points.
 
-**★ GIANT KILLER (vs an AP top-25 favorite): Utah State +27.5 at #17 Utah**
-— machine 12.5% (ML +2000, market 5%), EV 3.5. Runners-up: New Mexico +23.5
-at #24 Oklahoma (14%, EV 3.4), Wake Forest +23.5 vs #5 Miami (14%, EV 3.3),
-Arkansas +24.5 vs #2 Georgia (11%, EV 2.7), Florida State +18.5 at #10
-Alabama (13%, EV 2.3).
+**★ GIANT KILLER (vs an AP top-25 favorite): Utah State +28.5 at #17 Utah**
+— machine 12.5% (ML +2000, market 5%), EV 3.6. Runners-up: New Mexico +22.5
+at #24 Oklahoma (14%, EV 3.2), Wake Forest +21 vs #5 Miami (14%, EV 3.0),
+Arkansas +25.5 vs #2 Georgia (11%, EV 2.8), Florida State +20.5 at #10
+Alabama (13%, EV 2.6).
 
-*Why Utah State*: a one-in-eight shot at 27.5 points beats a one-in-seven
-shot at 23.5. It's the rivalry game (the Battle of the Brothers), Utah is
+*Why Utah State*: a one-in-eight shot at 28.5 points beats a one-in-seven
+shot at 22.5. It's the rivalry game (the Battle of the Brothers), Utah is
 +4.3 in our ratings after 43–10 over Arkansas, and Utah State was +3.3 last
 week. Say the honest thing: 12.5% is the machine's number and the market's
 5% is probably closer.
 
-**The ledger going in**: superdogs 0-for-4 outright, 0 points. Rule: the dog
-has to win; points = the spread at the pick.
+**The ledger going in**: superdogs 0-for-4 outright, 0 points under our rule
+(the dog has to win; points = the spread at the pick). Corey's deck scores it
+his way — 3.5-point dogs or more, 5 for a cover, 5 + the spread for a win, 1
+for a push — and has it Man 11.5 (Colorado beat Georgia Tech), Machine 10
+(Coastal Carolina and Washington State covered). Settle on one rulebook on
+air before the Week 3 picks so next week's receipts grade cleanly.
 
 ---
 
 ## Pre-record checklist
 
-1. Re-pull lines (`edge_report.py --week 3 --view ml --publish`) — the
-   Houston–Texas Tech total should post by Tuesday; the score call and the
-   Monster Under flags update on rebuild.
+1. Re-pull lines (`edge_report.py --week 3 --view ml --publish`) — Bovada's
+   Houston–Texas Tech total (53.5) is up; if DK posts one, the score call
+   re-computes on rebuild, as do the Monster Under flags and the superdog
+   points.
 2. `hot_seat_heisman.py --week 3 --refresh` if DraftKings moves the Heisman
    board again; update MARKET/MARKET_DATE in the module by hand.
 3. `make_episode_deck.py` → push with `push_deck.py --pptx
@@ -725,9 +736,79 @@ has to win; points = the spread at the pick.
 4. The AP fallback in the deck is the Week 3 poll; once CFBD attaches it,
    the cache takes over automatically.
 5. Frozen for next week's grading: TTU −13, LOU −1, SC −5, AUB −0.5, LSU −5
-   (machine lines as posted) + Sacramento State +26.5 / Utah State +27.5.
+   (machine lines as posted) + Sacramento State +27.5 / Utah State +28.5 (the
+   spread at the pick — whatever the pre-record pull shows).
 
-*Drafted 2026-09-13 from card_data_week3.json (Sun 12:21 PM MT pull),
+*Drafted 2026-09-13, numbers synced 2026-09-14 to card_data_week3.json (Mon
+12:35 PM MT pull),
 ratings_current_2026.json (100 games), boards_week3.json, CFBD box scores,
 the conference deep-dive prep files and scouting_top25.json. Machine-drafted
 — review before air.*
+
+---
+
+## Appendix — the machine's full Week 3 board (every rated FBS game)
+
+Every game the machine can price this week, in kickoff order — 57 games with a rating on both sides and a line at DraftKings or Bovada (lines as of the Mon Sep 14, 12:35 PM MT pull; FCS and unrated opponents are skipped, 254 of them). Machine = in-season rating gap + 2.5 HFA, posted to the half point. Score call = the machine margin laid over the market total (no totals model). ⚑ = Monster Under total (top decile, ≥58.5). Gap = machine win prob minus the no-vig market. Use it for any game Corey adds to his card; the five on ours are in bold.
+
+| Kick (ET) | Game | Machine | Market (DK) | O/U | Machine win % | Score call | Gap (pp) | Flags |
+|---|---|---|---|---|---|---|---|---|
+| Thu 7:30 PM | Syracuse at Pittsburgh | Pittsburgh −13 | Pittsburgh −10.5 | 51.5 | Pittsburgh 80% | Pittsburgh 32–Syracuse 19 | +1.3 Pittsburgh | — |
+| Fri 7:30 PM | Miami at Wake Forest | Miami −17.5 | Miami −21 | 55.5 | Miami 86% | Miami 36–Wake Forest 19 | +5.5 Wake Forest | — |
+| Fri 8:00 PM | **Houston at Texas Tech** | Texas Tech −13 | Texas Tech −7.5 | 53.5 | Texas Tech 79% | Texas Tech 33–Houston 20 | +5.7 Texas Tech | CLV+6 |
+| Sat 11:30 AM | Coastal Carolina at Delaware | Delaware −8 | Delaware −5.5 | 57.5 | Delaware 70% | Delaware 33–Coastal Carolina 25 | +4.3 Delaware | — |
+| Sat 12:00 PM | North Texas at Texas State | North Texas −2.5 | Texas State −3 | 63.5 ⚑ | North Texas 56% | North Texas 33–Texas State 30 | +14.3 North Texas | RED |
+| Sat 12:00 PM | Tulane at Kansas State | Kansas State −12 | Kansas State −20.5 | 49.5 | Kansas State 77% | Kansas State 31–Tulane 19 | +14.0 Tulane | YEL |
+| Sat 12:00 PM | Arizona State vs Kansas (N) | Arizona State −1.5 | Arizona State −6 | 51.5 | Arizona State 54% | Arizona State 27–Kansas 25 | +12.1 Kansas | — |
+| Sat 12:00 PM | Akron at Minnesota | Minnesota −15 | Minnesota −24.5 | 49.5 | Minnesota 82% | Minnesota 32–Akron 17 | +11.3 Akron | YEL CLV+2 |
+| Sat 12:00 PM | Bowling Green at Iowa State | Iowa State −18 | Iowa State −23.5 | 44.5 | Iowa State 86% | Iowa State 31–Bowling Green 13 | +7.5 Bowling Green | — |
+| Sat 12:00 PM | Georgia at Arkansas | Georgia −20 | Georgia −25.5 | 54.5 | Georgia 89% | Georgia 37–Arkansas 17 | +5.5 Arkansas | CLV+8 |
+| Sat 12:00 PM | Buffalo at Penn State | Penn State −29.5 | Penn State −39.5 | 48.5 | Penn State 96% | Penn State 39–Buffalo 10 | +2.9 Buffalo | YEL |
+| Sat 12:00 PM | North Carolina at Clemson | Clemson −4.5 | Clemson −3.5 | 44.5 | Clemson 62% | Clemson 25–North Carolina 20 | +2.4 Clemson | EDGE_FLIP CLV+5 |
+| Sat 12:00 PM | Kent State at Ohio State | Ohio State −44.5 | Ohio State −52.5 | 58.5 ⚑ | Ohio State 100% | Ohio State 52–Kent State 7 | +0.3 Kent State | YEL |
+| Sat 12:30 PM | Eastern Michigan at Wisconsin | Wisconsin −21.5 | Wisconsin −23.5 | 45.5 | Wisconsin 91% | Wisconsin 34–Eastern Michigan 12 | +2.3 Eastern Michigan | — |
+| Sat 12:45 PM | NC State at Vanderbilt | Vanderbilt −10 | Vanderbilt −3.5 | 51.5 | Vanderbilt 74% | Vanderbilt 31–NC State 21 | +12.6 Vanderbilt | YEL |
+| Sat 1:00 PM | Wyoming at Central Michigan | Central Michigan −3.5 | Central Michigan −1.5 | 39.5 | Central Michigan 59% | Central Michigan 21–Wyoming 18 | +7.1 Central Michigan | — |
+| Sat 3:00 PM | Temple at Toledo | Toledo −7.5 | Toledo −5.5 | 51.5 | Toledo 68% | Toledo 29–Temple 22 | +2.4 Toledo | — |
+| Sat 3:30 PM | Utah State at Utah | Utah −18.5 | Utah −28.5 | 56.5 | Utah 87% | Utah 38–Utah State 19 | +7.9 Utah State | YEL |
+| Sat 3:30 PM | Kentucky at Texas A&M | Texas A&M −21 | Texas A&M −16.5 | 49.5 | Texas A&M 90% | Texas A&M 35–Kentucky 14 | +4.5 Texas A&M | — |
+| Sat 3:30 PM | USC at Rutgers | USC −20 | USC −23.5 | 59.5 ⚑ | USC 89% | USC 40–Rutgers 20 | +3.9 Rutgers | — |
+| Sat 3:30 PM | Florida State at Alabama | Alabama −18.5 | Alabama −20.5 | 49.5 | Alabama 87% | Alabama 34–Florida State 15 | +3.5 Florida State | EDGE_FLIP CLV+5 |
+| Sat 3:30 PM | Miami (OH) at Cincinnati | Cincinnati −18.5 | Cincinnati −14.5 | 50.5 | Cincinnati 87% | Cincinnati 34–Miami (OH) 16 | +3.4 Cincinnati | — |
+| Sat 3:30 PM | **SMU at Louisville** | Louisville −1 | Louisville −1.5 | 59.5 ⚑ | Louisville 54% | Louisville 30–SMU 29 | +2.4 Louisville | — |
+| Sat 3:30 PM | UTEP at Michigan | Michigan −31 | Michigan −35.5 | 48.5 | Michigan 97% | Michigan 40–UTEP 9 | +1.6 UTEP | — |
+| Sat 4:00 PM | Ball State at Liberty | Liberty −8 | Liberty −14.5 | 49.5 | Liberty 70% | Liberty 29–Ball State 21 | +13.3 Ball State | YEL |
+| Sat 4:00 PM | Stanford at Duke | Duke −12.5 | Duke −9.5 | 51.5 | Duke 78% | Duke 32–Stanford 20 | +2.3 Duke | — |
+| Sat 4:00 PM | Western Kentucky at Indiana | Indiana −36 | Indiana −44.5 | 60.5 ⚑ | Indiana 99% | Indiana 48–Western Kentucky 12 | +1.1 Western Kentucky | YEL |
+| Sat 4:00 PM | Louisiana Tech at Baylor | Baylor −18.5 | Baylor −18.5 | 53.5 | Baylor 87% | Baylor 36–Louisiana Tech 18 | +0.7 Louisiana Tech | — |
+| Sat 4:15 PM | **Mississippi State at South Carolina** | South Carolina −5 | South Carolina −3.5 | 59.5 ⚑ | South Carolina 63% | South Carolina 32–Mississippi State 27 | +3.5 South Carolina | CLV+4 |
+| Sat 6:00 PM | Charlotte at App State | App State −9.5 | App State −17.5 | 51.5 | App State 73% | App State 30–Charlotte 21 | +15.1 Charlotte | YEL STRUCT CLV+2 |
+| Sat 6:00 PM | Florida International at Florida Atlantic | Florida Atlantic −3.5 | Florida Atlantic −6.5 | 62.5 ⚑ | Florida Atlantic 60% | Florida Atlantic 33–Florida International 29 | +8.8 Florida International | — |
+| Sat 6:00 PM | East Carolina at Old Dominion | East Carolina −0.5 | Old Dominion −3 | 49.5 | East Carolina 50% | East Carolina 25–Old Dominion 25 | +7.3 East Carolina | RED |
+| Sat 6:30 PM | Marshall at Missouri State | Missouri State −4.5 | Marshall −3.5 | 51.5 | Missouri State 61% | Missouri State 28–Marshall 24 | +21.4 Missouri State | RED · STRUCT |
+| Sat 7:00 PM | UConn at Southern Miss | Southern Miss −9.5 | UConn −3 | 54.5 | Southern Miss 73% | Southern Miss 32–UConn 22 | +31.2 Southern Miss | RED · STRUCT |
+| Sat 7:00 PM | Georgia Southern at Jacksonville State | Georgia Southern −2 | Jacksonville State −3.5 | 53.5 | Georgia Southern 55% | Georgia Southern 28–Jacksonville State 26 | +16.6 Georgia Southern | RED · STRUCT |
+| Sat 7:00 PM | **Florida at Auburn** | Auburn −0.5 | Florida −2.5 | 53.5 | Auburn 52% | Auburn 27–Florida 26 | +8.8 Auburn | CLV+4 |
+| Sat 7:00 PM | Western Michigan at Rice | Western Michigan −8.5 | Western Michigan −9.5 | 43.5 | Western Michigan 70% | Western Michigan 26–Rice 18 | +6.1 Rice | EDGE_GONE CLV+2 |
+| Sat 7:00 PM | Nevada at Middle Tennessee | Nevada −7 | Nevada −3.5 | 50.5 | Nevada 67% | Nevada 29–Middle Tennessee 22 | +5.9 Nevada | CLV-3 |
+| Sat 7:00 PM | Georgia State at UCF | UCF −16 | UCF −18.5 | 51.5 | UCF 84% | UCF 34–Georgia State 18 | +4.6 Georgia State | CLV+2.5 |
+| Sat 7:00 PM | Ohio at South Alabama | South Alabama −4.5 | South Alabama −4.5 | 51.5 | South Alabama 61% | South Alabama 28–Ohio 24 | +1.7 Ohio | — |
+| Sat 7:00 PM | Troy at Missouri | Missouri −26 | Missouri −26.5 | 50.5 | Missouri 94% | Missouri 38–Troy 12 | +0.9 Troy | — |
+| Sat 7:30 PM | Colorado at Northwestern | Colorado −0.5 | Northwestern −4.5 | 48.5 | Colorado 51% | Colorado 25–Northwestern 24 | +13.4 Colorado | RED |
+| Sat 7:30 PM | New Mexico at Oklahoma | Oklahoma −17.5 | Oklahoma −22.5 | 46.5 | Oklahoma 86% | Oklahoma 32–New Mexico 15 | +6.3 New Mexico | — |
+| Sat 7:30 PM | **LSU at Ole Miss** | LSU −5 | LSU −3 | 58.5 ⚑ | LSU 62% | LSU 32–Ole Miss 27 | +4.1 LSU | CLV+4.5 |
+| Sat 7:30 PM | West Virginia vs Virginia (N) | Virginia −13 | Virginia −10 | 53.5 | Virginia 80% | Virginia 33–West Virginia 20 | +2.9 Virginia | — |
+| Sat 7:30 PM | Michigan State at Notre Dame | Notre Dame −24.5 | Notre Dame −29.5 | 52.5 | Notre Dame 93% | Notre Dame 39–Michigan State 14 | +2.0 Michigan State | — |
+| Sat 7:30 PM | BYU at Colorado State | BYU −19.5 | BYU −17.5 | 52.5 | BYU 89% | BYU 36–Colorado State 16 | +1.6 BYU | CLV+3.5 |
+| Sat 7:30 PM | Virginia Tech at Maryland | Virginia Tech −2.5 | Virginia Tech −3 | 53.5 | Virginia Tech 56% | Virginia Tech 28–Maryland 25 | +0.1 Maryland | — |
+| Sat 7:45 PM | Kennesaw State at Tennessee | Tennessee −33.5 | Tennessee −35.5 | 59.5 ⚑ | Tennessee 98% | Tennessee 47–Kennesaw State 13 | +0.1 Kennesaw State | — |
+| Sat 8:00 PM | Arkansas State at TCU | TCU −18.5 | TCU −20.5 | 57.5 | TCU 87% | TCU 38–Arkansas State 20 | +2.7 Arkansas State | — |
+| Sat 8:00 PM | UAB at Louisiana | Louisiana −10.5 | Louisiana −7.5 | 56.5 | Louisiana 75% | Louisiana 34–UAB 23 | +2.3 Louisiana | CLV-2.5 |
+| Sat 8:00 PM | UTSA at Texas | Texas −31 | Texas −30.5 | 58.5 ⚑ | Texas 97% | Texas 45–UTSA 14 | +1.6 Texas | — |
+| Sat 10:00 PM | James Madison at San Diego State | San Diego State −3.5 | San Diego State −2.5 | 46.5 | San Diego State 60% | San Diego State 25–James Madison 21 | +5.7 San Diego State | — |
+| Sat 10:30 PM | North Dakota State at Sacramento State | North Dakota State −11.5 | North Dakota State −27.5 | 52.5 | North Dakota State 76% | North Dakota State 32–Sacramento State 20 | +20.1 Sacramento State | YEL STRUCT |
+| Sat 10:30 PM | Northern Illinois at Arizona | Arizona −24 | Arizona −34.5 | 49.5 | Arizona 93% | Arizona 37–Northern Illinois 13 | +5.3 Northern Illinois | YEL |
+| Sat 11:00 PM | Purdue at UCLA | UCLA −11 | UCLA −14.5 | 52.5 | UCLA 76% | UCLA 32–Purdue 21 | +8.4 Purdue | — |
+| Sat 11:00 PM | Fresno State at San José State | Fresno State −5.5 | Fresno State −6.5 | 50.5 | Fresno State 63% | Fresno State 28–San José State 23 | +5.4 San José State | — |
+
+Flags: RED = the machine picks the dog outright against a spread of 3+; YEL = same side, 6+ point edge; STRUCT = machine and no-vig moneyline win probs differ by 15+ pp; CLV±x = the line has moved x points toward (+) or against (−) the machine's side since first-seen; EDGE_GONE / EDGE_FLIP = a first-seen edge decayed or reversed.
