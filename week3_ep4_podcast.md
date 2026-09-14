@@ -731,8 +731,8 @@ air before the Week 3 picks so next week's receipts grade cleanly.
 2. `hot_seat_heisman.py --week 3 --refresh` if DraftKings moves the Heisman
    board again; update MARKET/MARKET_DATE in the module by hand.
 3. `make_episode_deck.py` → push with `push_deck.py --pptx
-   decks\2026_Week3_Episode4.pptx --file-id <Ep4 id>` (the Ep4 Slides file is
-   new; Ep3's file is the record and never gets pushed again).
+   decks\2026_Week3_Episode4.pptx --file-id <Ep4 id>` (the Ep4 file is shared with Corey -
+   the last_modifier guard runs before every push; Ep3's file is the record and never gets pushed again).
 4. The AP fallback in the deck is the Week 3 poll; once CFBD attaches it,
    the cache takes over automatically.
 5. Frozen for next week's grading: TTU −13, LOU −1, SC −5, AUB −0.5, LSU −5
