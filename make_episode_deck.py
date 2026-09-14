@@ -1098,7 +1098,7 @@ def _finals_by_id():
     return out
 
 
-LUCK = _luck()
+LUCK = _luck()   # internal only (Lucas 9/14): the luck column lives in the notes, not on the slide
 
 s = blank(NAVY)
 PALE = RGBColor(0xCA, 0xDC, 0xFC)
@@ -1108,17 +1108,15 @@ txt(s, 0.9, 0.42, 11.5, 0.4,
     bold=True)
 txt(s, 0.9, 0.76, 11.5, 0.8, "Our Top 25", 40, WHITE, bold=True)
 txt(s, 0.9, 1.5, 11.5, 0.3,
-    f"Machine rating · Δ vs preseason · luck = actual minus deserved margin per game"
-    f" · AP week {AP_WEEK} poll", 13, PALE, bold=True)
+    f"Machine rating · Δ vs preseason · AP week {AP_WEEK} poll", 13, PALE,
+    bold=True)
 TOP, RH, CW = 1.98, 0.36, 5.5
 for x0 in (0.9, 6.95):
-    txt(s, x0 + 3.05, TOP - 0.24, 0.6, 0.22, "RATING", 8, PALE,
+    txt(s, x0 + 3.3, TOP - 0.24, 0.75, 0.22, "RATING", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, x0 + 3.65, TOP - 0.24, 0.6, 0.22, "Δ PRE", 8, PALE,
+    txt(s, x0 + 4.05, TOP - 0.24, 0.75, 0.22, "Δ PRE", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, x0 + 4.25, TOP - 0.24, 0.6, 0.22, "LUCK", 8, PALE,
-        bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, x0 + 4.85, TOP - 0.24, 0.6, 0.22, "VOTERS", 8, PALE,
+    txt(s, x0 + 4.8, TOP - 0.24, 0.65, 0.22, "VOTERS", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
 for col, (x0, rows) in enumerate(((0.9, _top[:13]), (6.95, _top[13:]))):
     for i, t in enumerate(rows):
@@ -1132,20 +1130,16 @@ for col, (x0, rows) in enumerate(((0.9, _top[:13]), (6.95, _top[13:]))):
             shape(s, MSO_SHAPE.OVAL, x0 + 0.6, y + 0.04, 0.28, 0.28, WHITE)
             s.shapes.add_picture(lp, Inches(x0 + 0.63), Inches(y + 0.07),
                                  Inches(0.22), Inches(0.22))
-        txt(s, x0 + 1.0, y + 0.045, 2.05, 0.3, school(t["team"]), 12, WHITE,
+        txt(s, x0 + 1.0, y + 0.035, 2.3, 0.3, school(t["team"]), 12.5, WHITE,
             bold=True)
-        txt(s, x0 + 3.05, y + 0.035, 0.6, 0.3, f"{t['cur']:.1f}", 12.5,
+        txt(s, x0 + 3.3, y + 0.035, 0.75, 0.3, f"{t['cur']:.1f}", 12.5,
             WHITE, align=PP_ALIGN.RIGHT)
         d = t["delta"]
-        txt(s, x0 + 3.65, y + 0.05, 0.6, 0.3, f"{d:+.1f}" if d else "0.0",
+        txt(s, x0 + 4.05, y + 0.05, 0.75, 0.3, f"{d:+.1f}" if d else "0.0",
             11, UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d),
             align=PP_ALIGN.RIGHT)
-        lk = LUCK.get(t["team"])
-        txt(s, x0 + 4.25, y + 0.05, 0.6, 0.3, f"{lk[0]:+.1f}" if lk else "—",
-            11, (ORANGE if abs(lk[0]) >= 5 else PALE) if lk else PALE,
-            bold=bool(lk and abs(lk[0]) >= 5), align=PP_ALIGN.RIGHT)
         ap = AP_TOP25.get(t["team"])
-        txt(s, x0 + 4.85, y + 0.05, 0.6, 0.3, f"AP {ap}" if ap else "NR", 10,
+        txt(s, x0 + 4.8, y + 0.05, 0.65, 0.3, f"AP {ap}" if ap else "NR", 10,
             PALE, align=PP_ALIGN.RIGHT)
 # man-vs-machine footer: biggest rank disagreements, computed from the data
 _gaps = sorted(((abs(AP_TOP25[t["team"]] - i), -i, i, AP_TOP25[t["team"]],
