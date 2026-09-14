@@ -68,6 +68,40 @@ says deserved margins do NOT predict next week better than the score (five
 seasons, never better out of sample), so the rating still uses the score.
 This column is information about the games that happened, not the rating.
 
+**What luck means (internal — the slides stay simple; this is the
+explanation to have in your head).** Luck is the gap between a team's
+scoreboard results and what its play-by-play efficiency says it earned.
+
+- *How it's computed.* For every game with a box score, the efficiency layer
+  produces a deserved margin from two things: net total predicted points
+  added (how many points each team's plays were worth) and net success rate
+  (how often each team's plays kept it on schedule). A model fit on 2021–24
+  turns those into the margin the game "should" have had; it explains about
+  80% of real margins. Luck for one game is the actual margin minus the
+  deserved margin, from that team's side. A team's luck number is the
+  average over its rated games so far.
+- *Positive* = the scoreboard has been kinder than the play. Texas at +12.5
+  won its two games by 26.5 a game while its efficiency was worth about 14.
+  Texas Tech at +14.1 beat Oregon State by 11 in a game its efficiency says
+  it should have lost by 3.
+- *Negative* = the team has played better than its results. Oregon at −7.5
+  lost to Oklahoma State by 8, but by efficiency it played like a 7-point
+  favorite across its two games. Ohio State at −3.6 has been the most
+  efficient team on the field even though it lost in Austin.
+- *Near zero* = the results are earned. Georgia at +1.2 won by 50 and
+  deserved 49.
+- *Where the gap comes from.* The parts of a game efficiency doesn't credit:
+  turnovers and where they happened, special-teams scores, red-zone
+  finishing, garbage time. Those are mostly unrepeatable, which is why a big
+  positive number is a caution flag about a record and a big negative number
+  is an argument that the record undersells the team.
+- *What it isn't.* A forecast. The backtest showed that fitting the rating on
+  deserved margins instead of scores does not predict next week any better,
+  five seasons running, so the rating still uses the score. Luck is the
+  explanation you carry into the conversation: it says when a result was
+  earned and when it wasn't — the machine's honest answer to "were they
+  really that good on Saturday."
+
 **Machine housekeeping (say it once).** The ±28 cap keeps docking elite
 teams for cupcake blowouts: Notre Dame −2.5 for 52–0 over Rice, Georgia
 −2.2 for its Week 2 blowout, Texas A&M's 50–0 last week. It's a
