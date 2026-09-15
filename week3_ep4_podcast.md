@@ -466,8 +466,8 @@ Johnson) after Bailey and Rodriguez left for the NFL.
    the prep's line is "possibly the league's best combined trench play."
 3. *Make Hammond throw* — 189 yards on 27 attempts in Corvallis; force the
    pocket game and let the secondary (Webb, Allen, James) play.
-4. *Win the trenches* — if Houston's line holds, the four-point market move
-   was right.
+4. *Win the trenches* — if Houston's line holds, the six-point market move (Vegas, not ours:
+   the machine has sat at Tech −13 all season) was right.
 
 **Texas Tech keys, explained.**
 1. *Hammond's second real start* — the ACL comeback has one FCS game and one

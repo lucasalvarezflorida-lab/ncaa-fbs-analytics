@@ -1514,12 +1514,8 @@ for g in GAMES:
     wp_bar(s, 8.8, 5.2, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
            wb, pb, TEAMS[wb]["color"])
     txt(s, 8.8, 5.66, 3.3, 0.25, "win probability (machine)", 8.5, PALE)
-    if g.get("move"):
-        txt(s, 8.8, 5.95, 3.3, 0.3, "LINE MOVE  " + g["move"], 9.5,
-            ORANGE, bold=True)
-    strip = LEDGER[g["title"]]
-    if strip:
-        txt(s, 0.9, 6.82, 11.5, 0.3, "Line movement: " + strip, 10.5, MUTE)
+    # Line movement (g["move"], LEDGER[title]) is INTERNAL (Lucas 9/15): it stays
+    # in the ledger and the notes, not on the slide.
 
     # -- team slides (Corey's format: one full slide per team; the score
     #    predictions live only on the closing card, truly LAST). Context band
