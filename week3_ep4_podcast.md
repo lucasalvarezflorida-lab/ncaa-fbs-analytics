@@ -48,10 +48,59 @@ scoreboard; the machine grades the margin against the expectation."
   (#25). In theirs, not ours: Iowa (AP 18), Houston (AP 22), Louisville
   (AP 23).
 
-**Biggest Week 2 movers (rating points):** North Texas +5.9, Oklahoma State
-+5.0 (won at Oregon), Georgia State +4.5, Utah +4.3 (43–10 over Arkansas),
-Mississippi State +4.0 (38–13 at Minnesota) · UNLV −5.1, Minnesota −4.9,
-Oregon −4.6, Kennesaw State −4.5, Arkansas −4.3.
+**The segment: biggest movers in the Top 25, up or down.** Rating points
+and rank, Week 2 board (51 games) → Week 3 board (100 games). The machine
+moves a team on one thing only: the margin against what it expected. Say
+the direction, the game, and whether the team beat or missed the number.
+
+*Risers:*
+1. **Utah — +4.3, the biggest rise in the 25** (8.5 → 12.8, #32 → #21, the
+   only new team in the 25). 43–10 over Arkansas against an expectation
+   around 10. Giant Killer board has Utah State at +28.5 there Saturday.
+2. **Tennessee — +2.5** (15.1 → 17.6, #15 → #10). 45–24 at Georgia Tech, a
+   rated road win by three touchdowns; back in the top ten.
+3. **Missouri — +2.0** (12.2 → 14.2, #19 → #17). 38–21 at Kansas — the game
+   that put Leipold on the hot-seat movers.
+4. **Alabama — +1.9** (21.1 → 23.0, #9 → #6) and **Texas A&M — +1.9** (19.0 →
+   20.9, #11 → #9). 45–17 at Kentucky and 48–20 over Arizona State: both
+   beat the number by two touchdowns, both climb three spots.
+5. **Indiana — +1.5** (22.3 → 23.8, #7 → #4) and **Michigan — +1.6** (11.6 →
+   13.2, #21 → #20). Indiana's 55–0 was FCS and moved nothing — its climb
+   is the teams above it falling; Michigan's is real, 17–10 over Oklahoma
+   as a home dog on the machine's number.
+
+*Fallers:*
+1. **Oregon — −4.6, the biggest fall in the 25** (21.9 → 17.3, #8 → #11; −8.0
+   on the season, the biggest fall from preseason in the 25). 39–31 at home
+   to Oklahoma State, a team the machine had at −1.5. The voters dropped
+   them 15 spots; the machine three. (Internal: luck −7.5 — the efficiency
+   says it was closer than the score.)
+2. **Texas Tech — −2.8** (20.0 → 17.2, #10 → #12). WON 35–24 at Oregon State
+   and fell, because the machine expected ~27 against a −7.2 team. Friday's
+   opponent. (Internal: luck +14.1 — the efficiency says it deserved to lose
+   by 3.)
+3. **Notre Dame — −2.5** (27.3 → 24.8, #1 → #3) and **Georgia — −2.2** (24.8 →
+   22.6, #3 → #7). 52–0 over Rice and 70–20 over Western Kentucky. The cap
+   artifact, both of them: a blowout by a team expected to blow out reads
+   as under-performance. Say the housekeeping line below; the fix goes live
+   next week.
+4. **Oklahoma — −1.5** (16.0 → 14.5, #12 → #15). 17–10 at Michigan; the
+   machine had it Oklahoma −2, so a seven-point loss is a nine-point miss.
+5. **LSU — −1.5** (23.8 → 22.3, #5 → #8). Won 45–14 over Louisiana Tech and
+   fell: expected ~34 against a −9.6 team, and Leavitt threw three picks.
+6. **Iowa — −1.9, out of the 25** (10.7 → 8.8, #25 → #29). Beat Iowa State
+   16–13 and dropped out; the voters have them AP 18.
+
+*Unmoved at the top:* **Ohio State 25.0 (#4 → #1) and Texas 25.0 (#2 → #2).**
+The Buckeyes lost 24–23 in Austin and moved UP 0.4; Texas won and moved
+DOWN 0.8 — the machine expected Texas by 3.7. That's the whole Slide 1
+argument: the voters grade the scoreboard, the machine grades the margin
+against the expectation.
+
+*Elsewhere in FBS (the biggest moves anywhere):* North Texas +5.9 (44–6
+over UNLV), Oklahoma State +5.0 (the Oregon win), Georgia State +4.5,
+Mississippi State +4.0 (38–13 at Minnesota — Saturday's opponent for South
+Carolina) · UNLV −5.1, Minnesota −4.9, Kennesaw State −4.5, Arkansas −4.3.
 
 **New this week — the luck column (efficiency layer).** We now compute a
 *deserved margin* for every game from per-play efficiency (total PPA and
