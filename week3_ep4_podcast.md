@@ -469,8 +469,14 @@ Johnson) after Bailey and Rodriguez left for the NFL.
    the prep's line is "possibly the league's best combined trench play."
 3. *Make Hammond throw* — 189 yards on 27 attempts in Corvallis; force the
    pocket game and let the secondary (Webb, Allen, James) play.
-4. *Win the trenches* — if Houston's line holds, the six-point market move (Vegas, not ours:
-   the machine has sat at Tech −13 all season) was right.
+4. *Win the trenches* — line play on both sides of the ball, and the game.
+   Houston's transfer offensive line (all-conference adds Terrill and
+   Boswell; 388 rushing last week, against Southern) vs Tech's portal-built
+   front (Trick, White, Laventure, Johnson), the best pass rush on the card:
+   if Terrill and Boswell hold up, Weigman gets his 45 carries and the
+   play-action off them; if Tech's front wins, Houston is throwing into the
+   best rush it sees this month. Flip it: Tech's line couldn't run on Oregon
+   State (155 at 3.4) and Houston's front is better than Oregon State's.
 
 **Texas Tech keys, explained.**
 1. *Hammond's second real start* — the ACL comeback has one FCS game and one
@@ -513,10 +519,12 @@ laid over a 59.5 total).
 - *Brohm's coin-flip problem*: three 2025 ACC losses by a combined seven
   points, and the 41–38 loss to Ole Miss in Nashville already this year.
   Kienholz: 307 vs Ole Miss, 332 vs Villanova, zero picks; 0.718 per play.
-- *Monster Under: 59.5* — SMU's defense is "havoc-rich, bust-prone,"
-  Louisville's is "top-20 havoc, bottom-40 explosives." The 55% rule doesn't
-  care why; the why is that both offenses can score fast and the total is
-  priced for it.
+- *Both offenses score fast*: three straight top-25 offenses under Lashlee,
+  Brohm's system top-25 every year, and two defenses that bust — SMU's is
+  "havoc-rich, bust-prone," Louisville's "top-20 havoc, bottom-40
+  explosives." One coverage bust a game is the Brohm tradeoff; SMU's offense
+  is built to cash exactly that. (Internal: the total is 59.5, a Monster
+  Under number — top-decile totals went under 55% of the time, 2021–25.)
 
 **COACH / QB / ROSTER.** SMU: Lashlee year 5, 38–17, both coordinators gone
 (Woods to Missouri State, Symons to the Cowboys) — co-coordinator troikas on
@@ -579,8 +587,13 @@ State in 48 hours. Score call SC 32–27.
   team ran for 405 (Sellers 119 of it). LaNorris Sellers came back as a
   projected top-five pick; the scouting file's one weakness is still "the OL
   must stop getting Sellers hit — same sentence as last July."
-- *Four points to State in 48 hours*: −7.5 → −3.5. The market watched the
-  Minnesota game.
+- *Arnett's defense, back in Starkville*: Zach Arnett — the head coach
+  Lebby replaced — is State's defensive coordinator again. His 4-2-5 held
+  Minnesota to 13 rushing yards and allowed 279 through the air, and it
+  faces a quarterback who hasn't thrown yet (Sellers 10-of-23 for 96 against
+  Towson). Whether Briles makes Sellers throw into that soft spot, or State
+  makes him beat the front, is the game. (Internal: the market moved four
+  points toward State in 48 hours after the Minnesota game, −7.5 → −3.5.)
 
 **COACH / QB / ROSTER.** State: Lebby year 3, 7–18; Zach Arnett back as DC
 (the man Lebby replaced); Taylor, sophomore; 34% back, 28 adds — six of the
@@ -633,9 +646,14 @@ the card. Score call Auburn 27–26.
   in SP+ in three years). The prep's Florida line: "Sumrall's floor at every
   stop has been immediately better." The Auburn line: "Jordan-Hare in
   year-one-energy mode is worth a home upset."
-- *The machine takes the home dog*: Florida's rating (14.4) has one rated
-  game in it (66–21 over FAU); Auburn's (12.6) has two (17–16 over Baylor,
-  43–8 over Southern Miss). The 2.5 home bump flips it.
+- *Auburn's rebuilt lines vs Florida's front*: 14% of production back and
+  39 adds — the top five offensive linemen gone, nine transfer linemen in —
+  against the one thing Napier stockpiled, Florida's interior defensive
+  line. Auburn ran for 343 at 6.7 last week, against Southern Miss; Baylor
+  held it to 103. Whether the transfer line holds is the game, because
+  Brown's legs (88 on 13) only work behind blocking. (Internal: the machine
+  has Auburn by 0.7 — Florida's 14.4 has one rated game in it, 66–21 over
+  FAU; Auburn's 12.6 has two — and the 2.5 home bump flips it.)
 - *Byrum Brown vs Aaron Philo*: Brown followed Golesh from USF (3,158 pass
   / 1,121 rush / 42 TD) — three picks in the opener, then 17-of-28 for 223
   and 13 carries for 88 with zero turnovers. Philo is a redshirt freshman
@@ -702,9 +720,12 @@ Miss −1.5 on Aug 23, now LSU −3: four and a half points to LSU. Score call L
   Louisiana Tech, sacked five times by a −9.6 team. LSU won 45–14 and lost
   1.5 rating points because the machine expected ~34. Chambliss went
   23-of-26 for 225 against Charlotte; 0.494 per play through two.
-- *Monster Under: 58.5* — in a series that produced 104 points in 2023 and
-  55 last year. The 55% rule applies regardless; say the number and the
-  caveat (this series has gone over as often as not).
+- *55–49 or 24–19*: the last three in this series were a 104-point shootout
+  (2023) and two grinders (29–26, 24–19). LSU has 11 sacks in two games,
+  Golding kept the defensive spine (Echoles, Perkins), and Leavitt has three
+  picks on his card — the two fronts decide which version shows up.
+  (Internal: the total is 58.5, a Monster Under number; this series has gone
+  over as often as not.)
 
 **COACH / QB / ROSTER.** LSU: Kiffin NEW (Weis Jr. OC, Baker DC — SP+'s
 projected No. 2 defense); Leavitt NEW (0.320 per play through two, the
