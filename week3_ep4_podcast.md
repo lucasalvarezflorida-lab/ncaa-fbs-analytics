@@ -213,6 +213,61 @@ Next up: Dampier 31.5 (unpriced), Hammond 29.8, Jennings 29.3, Kienholz
 27.2, **Arch Manning 25.4 (market #3 at +1000)**, Bachmeier 24.5, Kamario
 Taylor 24.4.
 
+**The segment: biggest movers, up or down.** Index = team factor (0.5 +
+half the team's odds of 10+ wins) × blended efficiency (2026 PPA per play
+with 150 plays of the 2025 line as a prior). Two things move it week to
+week: what the quarterback did per play, and what the sim now thinks of
+his team. Week 2 board → Week 3 board. Say the direction, the game, and
+which of the two inputs did it.
+
+*Risers:*
+1. **Hoover, Indiana — +6.5, the biggest rise** (40.6 → 47.1, #4 → #2).
+   1.424 per play on 29 plays — the best line on the board — and Indiana's
+   P(10+) went 73% → 79%. Both inputs up. The market moved him +1900 →
+   +1700 and still has him eighth.
+2. **Jennings, SMU — +6.4** (22.9 → 29.3, #13 → #8). 14-of-16 for 337 and
+   five touchdowns vs UC Davis took his season line 0.611 → 0.914 per play
+   on 58. All quarterback: SMU's P(10+) sat at 20%. Unpriced.
+3. **Dampier, Utah — +6.3** (25.2 → 31.5, #10 → #6). His line barely moved
+   (0.654 → 0.632); Utah's P(10+) went 13% → 33% after 43–10 over Arkansas.
+   All team factor. Unpriced — the market's blind spot on this board.
+4. **Mensah, Miami — +5.3** (43.2 → 48.5, #2 → #1). 41-of-45 for 653 and
+   eight touchdowns through two, 1.133 per play on 48; Miami's P(10+) 75%.
+   Market +600 → +550, No. 1 both places.
+5. **Carr, Notre Dame — +3.5** (40.9 → 44.4, held #3). 253 and four scores
+   vs Rice lifted him 0.398 → 0.614 per play; Notre Dame's P(10+) slipped
+   91% → 86% (the cap docked the 52–0). Quarterback up, team down.
+
+*Fallers:*
+1. **Moore, Oregon — −7.4, the biggest fall** (31.3 → 23.9, #6 → #13).
+   0.293 per play on 74 — and Oregon's P(10+) collapsed 57% → 29% after
+   the 39–31 home loss to Oklahoma State. Both inputs down. The market
+   pulled his price entirely (+1300 → unpriced).
+2. **Manning, Texas — −5.2** (30.6 → 25.4, #8 → #10). 0.808 → 0.417 per play
+   on 75: 23-of-37 for 195, one touchdown, one pick, 5.3 an attempt against
+   Ohio State. Texas's P(10+) 47% → 40% on the loss. The market bought the
+   fourth quarter (+950 → +1000, still No. 3); the index graded the game.
+3. **Hammond, Texas Tech — −4.7** (34.5 → 29.8, #5 → #7). 0.335 per play on
+   68, the lowest of the ten Week 3 starters, after 20-of-27 for 189 at
+   Oregon State; Tech's P(10+) 80% → 64%. He plays Friday — slide 6.
+4. **Leavitt, LSU — −4.5** (25.9 → 21.4, #9 → #16). Three picks and five
+   sacks against Louisiana Tech: 0.506 → 0.320 per play on 88. LSU's P(10+)
+   47% → 35%. The market went +1500 → +2500. He plays Saturday night —
+   slide 18.
+5. **Sayin, Ohio State — −1.6, but #1 → #4.** 0.934 → 0.616 per play (17-of-32
+   for 278 in Austin); the 2025 prior holds him top four. Ohio State's
+   P(10+) actually rose 47% → 52% because losing by one was better than
+   the machine expected. Small fall, big rank move — three quarterbacks
+   passed him.
+6. Also down: Mateer (Oklahoma, −3.0, #18 → #22, 0.337 per play at Michigan,
+   price pulled).
+
+*New to the board:* **Kienholz, Louisville, straight in at #9** (27.2; 0.718
+per play on 71, no 2025 prior — the least-proven Brohm QB playing like the
+most efficient; slide 9), **Kamario Taylor, Mississippi State, #12** (24.4;
+0.642 per play, 86 rushing at Minnesota; slide 12), Sellers, South
+Carolina, #20 (15.3 — he hasn't thrown yet).
+
 **★ Our favorite: Darian Mensah — and the machine now agrees with the
 market.** Last week we had Sayin first and the market had him eighth. Two
 things changed:
