@@ -445,10 +445,13 @@ AP 13 and our #12.
 - *Hammond after the scare in Corvallis*: 35–24 at Oregon State (a −7.2
   team) cost Tech 2.8 rating points — the machine expected ~27. Hammond
   20-of-27 for 189; J'Koby Williams 116 on 20; 8-of-16 on third down.
-- *Six points to Houston since August*: −13.5 → −9.5 → −7.5. Houston's 33–20 over
-  Oregon State and 77–6 over Southern (388 rushing at 8.6, 8-of-8 on third
-  down) moved the market; the machine only saw the Oregon State game
-  (Houston −0.4 for winning by 13 at home against a −7 team).
+- *Four straight for Tech in the series*: 38–21, 33–30, 49–28, 35–11 —
+  three of the four by double digits, and the machine's 13 says the pattern
+  holds. Internal, not for the slide: the market has moved six points toward
+  Houston since August (−13.5 → −9.5 → −7.5) on the 33–20 over Oregon State
+  and the 77–6 over Southern (388 rushing at 8.6, 8-of-8 on third down); the
+  machine only saw the Oregon State game (Houston −0.4 for winning by 13 at
+  home against a −7 team).
 
 **COACH / QB / ROSTER.** Houston: Fritz year 3; Weigman returns (0.600 PPA
 per play through two — 8th among the quarterbacks we track); 81% back, 18
