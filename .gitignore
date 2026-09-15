@@ -38,3 +38,7 @@ decks/2026_*_Projections.pptx
 
 # ESPN CDN logo pulls (re-download via URLs in rosters/data/teams_fbs_2026.json)
 decks/logos/
+
+# other people's decks and merges built from them (Corey's content stays out of the repo)
+decks/corey_*_export.pptx
+decks/*_merged.pptx

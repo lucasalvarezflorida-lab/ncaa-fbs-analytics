@@ -15,14 +15,16 @@ Week 3 board (every rated game, with score calls) is the appendix at the end.
 Format rule: slides carry the headline, this file carries the sentence.
 Every slide line has its backing below, in deck order.
 
-**Order below = COREY'S deck, slide by slide** (his Ep4 file, read Tue
-9/15; numbering counts his content slides and skips the blank divider
-slides — if the numbers drift, follow the section names). 2 Receipts · 3
+**Order below = the MERGED deck, slide by slide** (Corey's Ep4 order with
+our current slides swapped in — decks/2026_Week3_Episode4_merged.pptx;
+his blank divider slides are counted, so the numbers match the file — if
+they drift, follow the section names). 2 Receipts · 3
 Week 2 Winners and Losers · 4 Our Heisman board · 5 Corey's Heisman five ·
 6 Our Top 25 · 7–11 Corey's Top 25 · 12 Hot Seat · 13 Corey's Hot Seat ten
-· 14 Five Games, One Card · 15–43 the five games (his keys, our team slide,
-his keys, our team slide, his score, our number) · 44 Superdog rules and
-standings · 45 Superdog picks · 46 Our predictions. Kiffin's return to
+· 14 Five Games, One Card · 16–49 the five games (a blank divider slide,
+then his keys, our team slide, his keys, our team slide, his score, our
+number) · 50 Superdog rules and standings · 51 Superdog picks · 52 Our
+predictions. Kiffin's return to
 Oxford closes the games.
 
 ---
@@ -271,11 +273,11 @@ which of the two inputs did it.
    fourth quarter (+950 → +1000, still No. 3); the index graded the game.
 3. **Hammond, Texas Tech — −4.7** (34.5 → 29.8, #5 → #7). 0.335 per play on
    68, the lowest of the ten Week 3 starters, after 20-of-27 for 189 at
-   Oregon State; Tech's P(10+) 80% → 64%. He plays Friday — slide 20.
+   Oregon State; Tech's P(10+) 80% → 64%. He plays Friday — slide 21.
 4. **Leavitt, LSU — −4.5** (25.9 → 21.4, #9 → #16). Three picks and five
    sacks against Louisiana Tech: 0.506 → 0.320 per play on 88. LSU's P(10+)
    47% → 35%. The market went +1500 → +2500. He plays Saturday night —
-   slide 43.
+   slide 49.
 5. **Sayin, Ohio State — −1.6, but #1 → #4.** 0.934 → 0.616 per play (17-of-32
    for 278 in Austin); the 2025 prior holds him top four. Ohio State's
    P(10+) actually rose 47% → 52% because losing by one was better than
@@ -286,8 +288,8 @@ which of the two inputs did it.
 
 *New to the board:* **Kienholz, Louisville, straight in at #9** (27.2; 0.718
 per play on 71, no 2025 prior — the least-proven Brohm QB playing like the
-most efficient; slide 26), **Kamario Taylor, Mississippi State, #12** (24.4;
-0.642 per play, 86 rushing at Minnesota; slide 32), Sellers, South
+most efficient; slide 28), **Kamario Taylor, Mississippi State, #12** (24.4;
+0.642 per play, 86 rushing at Minnesota; slide 35), Sellers, South
 Carolina, #20 (15.3 — he hasn't thrown yet).
 
 **★ Our favorite: Darian Mensah — and the machine now agrees with the
@@ -558,7 +560,7 @@ games). Say the direction, the game that did it, and the number.
 2. **Lebby, Mississippi State — −8.9** (56.6 → 47.7, #21 → #27). 38–13 at
    Minnesota lifted State 4.4 rating points; 58% → 80% for a bowl,
    projected 5.8. He meets Beamer (sixth, 50% for seven wins) on Saturday —
-   slide 32 — and one of them is 0–1 in the SEC by Saturday night.
+   slide 35 — and one of them is 0–1 in the SEC by Saturday night.
 3. **Locksley, Maryland — −6.0** (78.8 → 72.8, #2 → #5). 38–14 at UConn,
    rating +2.9, 50% → 65% for six wins. This is why Schiano is No. 2 now:
    Rutgers's score barely moved (74 → 74.5), Locksley fell past him.
@@ -625,12 +627,12 @@ agreement.
 
 ---
 
-## Slides 15–20 — Houston at Texas Tech — Fri Sep 18, 8:00 ET, Jones AT&T Stadium (Lubbock)
+## Slides 16–21 — Houston at Texas Tech — Fri Sep 18, 8:00 ET, Jones AT&T Stadium (Lubbock)
 
 Corey's block: his keys for Houston → our Houston team slide → his keys for Texas Tech →
 our Texas Tech team slide → his score → our number slide.
 
-### Slides 15–16 — Houston
+### Slides 16–17 — Houston
 
 **Corey's keys (Houston):** Stop the Run · Defend the Pass · Convert on 3rd Down.
 
@@ -656,7 +658,7 @@ transfers Terrill and Boswell.
    best rush it sees this month. Flip it: Tech's line couldn't run on Oregon
    State (155 at 3.4) and Houston's front is better than Oregon State's.
 
-### Slides 17–18 — Texas Tech
+### Slides 18–19 — Texas Tech
 
 **Corey's keys (Texas Tech):** Score in the Red Zone · Defend the Pass · Stop the Run.
 
@@ -675,14 +677,14 @@ Johnson) after Bailey and Rodriguez left for the NFL.
 4. *Finish drives* — 8-of-16 on third down and 155 rushing at 3.4 turned a
    blowout projection into a two-score game.
 
-### Slide 19 — the score calls
+### Slide 20 — the score calls
 
 Corey's slide shows **24 / 35** (top / bottom). If the top number is
 the home team — the Week 2 receipts fit that reading — his call is
 **Houston 35–24 (the upset)**; read the other way it is Texas Tech 35–24.
 Confirm with him before air. Machine: **Texas Tech 33–20**.
 
-### Slide 20 — the number
+### Slide 21 — the number
 
 
 **The arithmetic.** Texas Tech 17.2 (machine #12) vs Houston 6.7 (#40);
@@ -727,12 +729,12 @@ digits. If DK posts a total under 53.5, the score call tightens on rebuild.
 
 ---
 
-## Slides 21–26 — SMU at Louisville — Sat Sep 19, 3:30 ET, L&N Federal Credit Union Stadium
+## Slides 23–28 — SMU at Louisville — Sat Sep 19, 3:30 ET, L&N Federal Credit Union Stadium
 
 Corey's block: his keys for SMU → our SMU team slide → his keys for Louisville →
 our Louisville team slide → his score → our number slide.
 
-### Slides 21–22 — SMU
+### Slides 23–24 — SMU
 
 **Corey's keys (SMU):** Kevin Jennings wins the day · Win the time of possession battle · Stay strong on 3rd Down.
 
@@ -752,7 +754,7 @@ Williams fronts a line that needed no portal help.
 4. *Explosives, not long drives* — Louisville allows chunk plays; SMU's
    offense manufactures them.
 
-### Slides 23–24 — Louisville
+### Slides 25–26 — Louisville
 
 **Corey's keys (Louisville):** Score in the Red Zone · Defend the Pass · Attack through the air.
 
@@ -771,14 +773,14 @@ is the elite returning unit; Marquise Davis 86 and two scores vs Villanova.
 4. *Win the one-score game* — the program has lost the coin flips two
    straight years; the machine has this one at 1.1.
 
-### Slide 25 — the score calls
+### Slide 27 — the score calls
 
 Corey's slide shows **35 / 34** (top / bottom). If the top number is
 the home team — the Week 2 receipts fit that reading — his call is
 **Louisville 35–34**; read the other way it is SMU 35–34.
 Confirm with him before air. Machine: **Louisville 30–29**.
 
-### Slide 26 — the number
+### Slide 28 — the number
 
 
 **The arithmetic.** Louisville 10.0 (#27) vs SMU 11.4 (#24); +2.5 for
@@ -813,12 +815,12 @@ unders hit 55%.
 
 ---
 
-## Slides 27–32 — Mississippi State at South Carolina — Sat Sep 19, 4:15 ET, Williams-Brice Stadium
+## Slides 30–35 — Mississippi State at South Carolina — Sat Sep 19, 4:15 ET, Williams-Brice Stadium
 
 Corey's block: his keys for Mississippi State → our Mississippi State team slide → his keys for South Carolina →
 our South Carolina team slide → his score → our number slide.
 
-### Slides 27–28 — Mississippi State
+### Slides 30–31 — Mississippi State
 
 **Corey's keys (Mississippi State):** Stand Tall in the Red Zone · Slow the game down · Win on the ground.
 
@@ -836,7 +838,7 @@ top seven OL gone, eight transfers in.
 4. *Win the turnover ledger* — one giveaway in two games; South Carolina
    had two against Towson.
 
-### Slides 29–30 — South Carolina
+### Slides 32–33 — South Carolina
 
 **Corey's keys (South Carolina):** Attack with the run · Slow the game down · Convert on 3rd Down.
 
@@ -856,14 +858,14 @@ starters.
 4. *Stewart off the edge* — Dylan Stewart converting pressure into sacks is
    the defense's whole equation (97th in sack rate in 2025).
 
-### Slide 31 — the score calls
+### Slide 34 — the score calls
 
 Corey's slide shows **31 / 27** (top / bottom). If the top number is
 the home team — the Week 2 receipts fit that reading — his call is
 **South Carolina 31–27**; read the other way it is Mississippi State 31–27.
 Confirm with him before air. Machine: **South Carolina 32–27**.
 
-### Slide 32 — the number
+### Slide 35 — the number
 
 
 **The arithmetic.** South Carolina 10.9 (#25) vs Mississippi State 8.5
@@ -901,12 +903,12 @@ are the story; the total is the number.
 
 ---
 
-## Slides 33–37 — Florida at Auburn — Sat Sep 19, 7:00 ET, Jordan-Hare Stadium
+## Slides 37–42 — Florida at Auburn — Sat Sep 19, 7:00 ET, Jordan-Hare Stadium
 
 Corey's block: his keys for Florida → our Florida team slide → his keys for Auburn →
 our Auburn team slide → his score → our number slide.
 
-### Slides 33–34 — Florida
+### Slides 37–38 — Florida
 
 **Corey's keys (Florida):** Protect Philo · Make stops on 3rd Down · Score in the Red Zone.
 
@@ -924,7 +926,7 @@ yards; 136 and two scores last week); new DC Brad White (from Kentucky).
 4. *Fourth-down conviction* — the Sumrall trait the prep singled out;
    Auburn went 4-of-5 on fourth down itself last week.
 
-### Slide 35 — Auburn (Corey's keys; his copy has no Auburn team slide yet)
+### Slides 39–40 — Auburn
 
 **Corey's keys (Auburn):** Start scoring in the Red Zone · Stop the run · Protect Byrum Brown.
 
@@ -941,14 +943,14 @@ lines are transfer science experiments (top five OL gone, nine transfers).
 4. *Tempo without turnovers* — the Golesh offense at Veer-and-Shoot pace
    worked for 610 yards last week; Florida's defense is the first SEC test.
 
-### Slide 36 — the score calls
+### Slide 41 — the score calls
 
 Corey's slide shows **28 / 27** (top / bottom). If the top number is
 the home team — the Week 2 receipts fit that reading — his call is
 **Auburn 28–27**; read the other way it is Florida 28–27.
 Confirm with him before air. Machine: **Auburn 27–26**.
 
-### Slide 37 — the number
+### Slide 42 — the number
 
 
 **The arithmetic.** Auburn 12.6 (#22) vs Florida 14.4 (#16); +2.5 for
@@ -989,12 +991,12 @@ ROI, not −22.9%).
 
 ---
 
-## Slides 38–43 — LSU at Ole Miss — Sat Sep 19, 7:30 ET, Vaught-Hemingway Stadium (Oxford)
+## Slides 44–49 — LSU at Ole Miss — Sat Sep 19, 7:30 ET, Vaught-Hemingway Stadium (Oxford)
 
 Corey's block: his keys for LSU → our LSU team slide → his keys for Ole Miss →
 our Ole Miss team slide → his score → our number slide.
 
-### Slides 38–39 — LSU
+### Slides 44–45 — LSU
 
 **Corey's keys (LSU):** Stop the run · Stay disciplined · Make stops on 3rd down.
 
@@ -1018,7 +1020,7 @@ and Joseph (FSU).
 4. *Kiffin's tempo in his old house* — the tempo-and-leverage passing game
    he built in Oxford, run against Golding, who called his defenses.
 
-### Slides 40–41 — Ole Miss
+### Slides 46–47 — Ole Miss
 
 **Corey's keys (Ole Miss):** Score in the Red Zone · Slow the game down · Protect Trinidad Chambliss.
 
@@ -1035,14 +1037,14 @@ and Joseph (FSU).
 4. *Special teams edge* — Ole Miss was No. 1 in SP+ special teams; in a game
    the machine has at 5.2, hidden yards are the margin.
 
-### Slide 42 — the score calls
+### Slide 48 — the score calls
 
 Corey's slide shows **28 / 34** (top / bottom). If the top number is
 the home team — the Week 2 receipts fit that reading — his call is
 **LSU 34–28**; read the other way it is Ole Miss 34–28.
 Confirm with him before air. Machine: **LSU 32–27**.
 
-### Slide 43 — the number
+### Slide 49 — the number
 
 
 **The arithmetic.** LSU 22.3 (#8) vs Ole Miss 14.6 (#14); Ole Miss gets the
@@ -1078,7 +1080,7 @@ sideline are the hedges. The total is the play to talk about.
 
 ---
 
-## Slide 44 — Superdog / Giant Killer rules and standings
+## Slide 50 — Superdog / Giant Killer rules and standings
 
 Corey's slide: **3.5-point dogs or more; Superdog is any matchup, Giant
 Killer is unranked vs Top 25; 5 points for a cover, 5 + the spread for a
@@ -1094,7 +1096,7 @@ the Week 3 picks so next week's receipts grade cleanly.
 
 ---
 
-## Slide 45 — Superdog / Giant Killer picks
+## Slide 51 — Superdog / Giant Killer picks
 
 Corey's picks: **Superdog FIU +7 at Florida Atlantic · Giant Killer Colorado
 State +18 vs BYU.** The machine on his two: FIU–FAU is the one place the
@@ -1107,7 +1109,7 @@ Machine picks: Sacramento State +27.5 vs North Dakota State and Utah State
 
 ---
 
-## Slide 46 — Our predictions (the closer)
+## Slide 52 — Our predictions (the closer)
 
 Scores are the machine margin laid over the market total, in kickoff order:
 Texas Tech 33–20 (Bovada's 53.5; DK hasn't posted a total), Louisville 30–29,
