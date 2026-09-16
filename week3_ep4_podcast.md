@@ -368,6 +368,44 @@ Mensah, our #1 and the market's #1, is not on his five — ask him why.
 Dame 24.8 · 4 Indiana 23.8 · 5 Miami 23.1 · 6 Alabama 23.0 · 7 Georgia 22.6
 · 8 LSU 22.3 · 9 Texas A&M 20.9 · 10 Tennessee 17.6.
 
+**What the number means (say this once, early — it explains every row).**
+The rating is points: how many points better than an average FBS team the
+machine thinks you are on a neutral field. Ohio State 25.0 means "beats an
+average team by 25." Zero is average (Wake Forest, #50, is 3.3; the median
+team is −1.1; UL Monroe, last, is −18.6). The rank is just the order of the
+ratings, and a game line is the difference plus 2.5 for the home team —
+LSU 22.3 at Ole Miss 14.6 is 7.7 minus 2.5 = LSU by 5.2.
+
+*Where it comes from.* It starts as ESPN's preseason FPI, frozen in July.
+Then every game against a rated FBS opponent moves it — not by win or loss,
+but by how much you beat or missed the margin the machine expected. The
+July number is worth three games of evidence, so two games in, the prior is
+still most of the rating; by mid-October the games outweigh July. FCS games
+count for nothing (the opponent has no rating).
+
+*Oregon, the example — 11th with a −8.0.* July had Oregon at 25.3, fourth in
+the country. Week 1: the machine expected Oregon to beat Boise State by 23.8;
+they won by 7, a 16.8-point miss. Week 2: it expected Oregon by 19.5 at
+Oklahoma State; they lost by 8, a 27.5-point miss. Two games, 44 points
+short of expectation, diluted by the prior, and the rating falls 8.0 to
+17.3 — the biggest fall in the 25 since August. But 17.3 still says "beats an
+average team by 17," and only ten teams say more. Texas Tech is 17.2, USC
+14.7. To fall out of the 25 Oregon would need to reach South Carolina's
+10.9 — another 6.4 points, roughly two more 20-point misses. The voters
+dropped them 15 spots to 21 because a poll ranks the résumé and a loss is a
+loss; the machine ranks the margin against the expectation, and Oregon's
+expectation was set very high in July. The Δ PRE column (−8.0) is the
+machine's version of "how far they have fallen"; the rating is "how good
+they still are."
+
+*The same rule, the other direction.* Ohio State is No. 1 after losing
+because the machine expected to lose at Texas by 0.7 and lost by 1 — no
+news, and its Week 1 (expected +48.5, won by 53) was a small plus. Utah
+went from #31 to #21 on one game: expected to beat Arkansas by 6.6, won by
+33, a 26-point miss in its favor. Texas Tech won at Oregon State by 11 and
+fell 2.8, because the machine expected 25.6. Same arithmetic every time:
+result minus expectation, then shrunk toward July.
+
 **The headline: the machine's No. 1 lost on Saturday.** Ohio State lost
 24–23 in Austin and moved UP 0.4, Texas won and moved DOWN 0.8, and they now
 sit 25.0 and 25.0 with the Buckeyes ahead on decimals. Why: the machine
