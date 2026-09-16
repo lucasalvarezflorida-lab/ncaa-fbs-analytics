@@ -203,16 +203,18 @@ Corey's slide: **Man — Winner North Texas, Loser Washington. Machine —
 Winner "Upset Weekend", Loser "Preseason top QB draft stock falling."**
 
 The machine's data behind his two lines:
-- *Upset weekend* — AP top-25 teams losing, and three did, including Nos.
-  1 and 2 on the same Saturday: **#1 Ohio State** lost 24–23 at #5 Texas;
-  **#2 Oregon** lost 39–31 at unranked Oklahoma State — the only ranked team
-  to lose to an unranked one, the true upset; **#10 Oklahoma** lost 17–10 at
-  #16 Michigan. The machine's read on each: Ohio State moved UP 0.4 (it
-  expected to lose by 3.7 and lost by one), Oregon fell 4.6 (the biggest
-  fall in the 25; Oklahoma State rose 5.0, the biggest rise in FBS),
-  Oklahoma fell 1.5 (the machine had it −2, so a seven-point loss was a
-  nine-point miss). The rest of the 25 survived: #17 Washington by two over
-  Utah State, #22 Iowa by three over Iowa State.
+- *Upset weekend* — AP top-25 teams losing, by the poll in force that
+  Saturday (the AP Week 2 poll, released Sept 7). Three ranked teams lost,
+  two of them to unranked opponents: **#6 Oregon** lost 39–31 at unranked
+  Oklahoma State; **#11 Oklahoma** lost 17–10 at unranked Michigan; and
+  **#1 Ohio State** lost 24–23 at #4 Texas — a ranked-on-ranked game, so the
+  No. 1 team going down but not an upset by the definition. The machine's
+  read on each: Oregon fell 4.6 (the biggest fall in the 25; Oklahoma State
+  rose 5.0, the biggest rise in FBS), Oklahoma fell 1.5 (the machine had it
+  −2, so a seven-point loss was a nine-point miss; Michigan is back in the
+  Week 3 poll at 19), Ohio State moved UP 0.4 (it expected to lose by 3.7 and
+  lost by one). The near-misses that held: #19 Washington by two over Utah
+  State, #21 Iowa by three over Iowa State.
 - *QB draft stock*: on the Heisman index Manning −5.2 (#8 → #10), Moore −7.4
   (#6 → #13, the biggest fall), Leavitt −4.5 (#9 → #16), Hammond −4.7. The
   index graded the games; the market only moved on Leavitt (+1500 → +2500).
