@@ -203,19 +203,25 @@ Corey's slide: **Man — Winner North Texas, Loser Washington. Machine —
 Winner "Upset Weekend", Loser "Preseason top QB draft stock falling."**
 
 The machine's data behind his two lines:
-- *Upset weekend*: two of the five card games went to the side the machine
-  did not have — Oklahoma State over Oregon (the machine had Oregon −1.5;
-  Oklahoma State +5.0 rating points, the biggest riser in FBS) and Michigan
-  over Oklahoma (machine Oklahoma −2; Michigan won 17–10). Add North Texas
-  +5.9 (44–6 over UNLV) as the man's winner and the machine agrees: the
-  biggest single-week rating gain anywhere.
+- *Upset weekend* — AP top-25 teams losing, and three did, including Nos.
+  1 and 2 on the same Saturday: **#1 Ohio State** lost 24–23 at #5 Texas;
+  **#2 Oregon** lost 39–31 at unranked Oklahoma State — the only ranked team
+  to lose to an unranked one, the true upset; **#10 Oklahoma** lost 17–10 at
+  #16 Michigan. The machine's read on each: Ohio State moved UP 0.4 (it
+  expected to lose by 3.7 and lost by one), Oregon fell 4.6 (the biggest
+  fall in the 25; Oklahoma State rose 5.0, the biggest rise in FBS),
+  Oklahoma fell 1.5 (the machine had it −2, so a seven-point loss was a
+  nine-point miss). The rest of the 25 survived: #17 Washington by two over
+  Utah State, #22 Iowa by three over Iowa State.
 - *QB draft stock*: on the Heisman index Manning −5.2 (#8 → #10), Moore −7.4
   (#6 → #13, the biggest fall), Leavitt −4.5 (#9 → #16), Hammond −4.7. The
   index graded the games; the market only moved on Leavitt (+1500 → +2500).
 - *Machine's own winner / loser if asked*: Utah (+4.3, the only new team in
   the 25) and Oregon (−4.6, the biggest fall in the 25; the voters dropped
-  them 15 spots). Washington, the man's loser, fell 9.4 → 6.1 (#29 → #44) for
-  beating Utah State by two.
+  them 15 spots). On the man's two: North Texas, his winner, is the machine's
+  too — +5.9 for 44–6 over UNLV, the biggest single-week rating gain
+  anywhere; Washington, his loser, fell 9.4 → 6.1 (#29 → #44) for beating
+  Utah State by two.
 
 ---
 
