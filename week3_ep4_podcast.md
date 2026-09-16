@@ -827,6 +827,15 @@ Confirm with him before air. Machine: **Texas Tech 33–20**.
 ### Slide 21 — the number
 
 
+**The game in three lines.** Houston runs Weigman by design and lets him
+scramble when Tech's front gets home; that threat is what slows the best
+pass rush on the card. Tech's job is early downs — stop the run, get
+Houston into third-and-long, then let Trick and White rush. Hammond has
+thrown 60 passes since the knee, took four sacks at Oregon State, and
+converted 29% of passing downs; Tech stalled its way from a 27-point
+expectation to an 11-point win, and Houston converts the downs Tech
+doesn't.
+
 **The arithmetic.** Texas Tech 17.2 (machine #12) vs Houston 6.7 (#40);
 +2.5 for Lubbock → Tech by 13.0 → 79% on the curve → fair Tech −380 /
 Houston +380. Market: DK Tech −7.5 (Bovada −7.5, Tech −300 / Houston +270;
@@ -967,6 +976,13 @@ Confirm with him before air. Machine: **Louisville 30–29**.
 ### Slide 28 — the number
 
 
+**The game in three lines.** Jennings is 40-of-52 for 767 and 8 TD and
+Louisville's busts come on standard downs, where SMU's play-action lives.
+SMU won at FSU despite four giveaways because FSU went 2-of-15 on third
+down; Louisville has zero giveaways and lost to Ole Miss anyway — the
+coin-flip story in one line. Louisville's real run game was Keyjuan Brown
+and Kienholz (34-of-50, no picks, three rushing scores), not Isaac Brown.
+
 **The arithmetic.** Louisville 10.0 (#27) vs SMU 11.4 (#24); +2.5 for
 Louisville → Louisville by 1.1 → 53.5% → fair −115 / +115. Market: DK
 Louisville −1.5 (−115 / SMU −105; Bovada −1); **total 59.5 — Monster Under**. First-seen
@@ -1094,6 +1110,14 @@ Confirm with him before air. Machine: **South Carolina 32–27**.
 
 ### Slide 35 — the number
 
+
+**The game in three lines.** Taylor is 7 TD, 0 INT with 145 rushing
+yards and State converted half its passing downs at Minnesota; Bothwell's
+113 came against a Big Ten front and nobody has tested South Carolina's run
+defense. Arnett's 4-2-5 held Minnesota to 13 rushing yards but allowed 279
+passing on 48 throws — the matchup says throw, and Sellers hasn't
+(10-of-23 for 96). South Carolina's line has allowed one sack in two games;
+the four against Towson were its own defense's.
 
 **The arithmetic.** South Carolina 10.9 (#25) vs Mississippi State 8.5
 (#30); +2.5 for Columbia → South Carolina by 4.9 → 62.8% → fair −169 / +169.
@@ -1228,6 +1252,14 @@ Confirm with him before air. Machine: **Auburn 27–26**.
 
 ### Slide 42 — the number
 
+
+**The game in three lines.** Philo's per-play line is the best on the
+card, all at home against FAU and Campbell, and Florida has converted only
+36% and 22% of its passing downs — Jordan-Hare at night tests exactly
+that. Auburn is two different teams: three picks and five sacks taken
+against Baylor, then 610 yards and zero turnovers against Southern Miss.
+Durkin's defense has held both opponents under 3 a carry; Baugh is the
+first 1,100-yard back it sees.
 
 **The arithmetic.** Auburn 12.6 (#22) vs Florida 14.4 (#16); +2.5 for
 Jordan-Hare → Auburn by 0.7 → 52.5% → fair Auburn −110 / Florida +110.
@@ -1372,6 +1404,14 @@ Confirm with him before air. Machine: **LSU 32–27**.
 
 ### Slide 49 — the number
 
+
+**The game in three lines.** Leavitt is 2 TD, 4 INT, and LSU took zero
+sacks against Clemson and five against Louisiana Tech — which line shows
+up in the Vaught is the game. LSU's defense has 11 sacks and allowed 5% and
+12% on passing downs; Ole Miss converted 67% of its passing downs last
+week, so something gives, and Chambliss's escapes are the counter. Lacy
+has to keep the play-action honest against a front that held two
+opponents to 40 and minus-3 rushing yards.
 
 **The arithmetic.** LSU 22.3 (#8) vs Ole Miss 14.6 (#14); Ole Miss gets the
 2.5 → LSU by 5.2 → 62.4% → fair LSU −166 / Ole Miss +166. Market: DK LSU
