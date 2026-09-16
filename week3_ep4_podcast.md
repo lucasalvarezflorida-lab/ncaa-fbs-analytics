@@ -14,7 +14,10 @@ numbers below move by the half point; the machine's lines don't. The full
 Week 3 board (every rated game, with score calls) is the appendix at the end.
 
 Format rule: slides carry the headline, this file carries the sentence.
-Every slide line has its backing below, in deck order.
+Every slide line has its backing below, in deck order. Corey (9/15): the
+slides now show ONE why-it-matters point, THREE keys per team, and one fact
+per COACH / QB / ROSTER cell; this file keeps all four bullets and all four
+keys — the fourth of each is the reserve, not on the slide.
 
 **Order below = the MERGED deck, slide by slide** (Corey's Ep4 order with
 our current slides swapped in — decks/2026_Week3_Episode4_merged.pptx;

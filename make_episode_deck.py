@@ -1433,12 +1433,26 @@ SHORT = {
 }
 
 
+# Corey's feedback (9/15): one WHY IT MATTERS point and three keys per slide;
+# the notes keep all four of each (the fourth is the reserve). Applies to the
+# headline (SHORT) form only.
+SLIDE_POINTS = 1
+SLIDE_KEYS = 3
+
+
 def slide_text(g):
     """(decides, honesty, keys_a, keys_b, is_short) — SHORT if authored,
     else the long GAMES strings."""
     sh = SHORT.get(g["title"], {})
-    return (sh.get("decides", g["decides"]), sh.get("honesty", g["honesty"]),
-            sh.get("keys_a", g["keys_a"]), sh.get("keys_b", g["keys_b"]), bool(sh))
+    if sh:
+        return (sh.get("decides", g["decides"])[:SLIDE_POINTS], sh.get("honesty", g["honesty"]),
+                sh.get("keys_a", g["keys_a"])[:SLIDE_KEYS], sh.get("keys_b", g["keys_b"])[:SLIDE_KEYS], True)
+    return (g["decides"], g["honesty"], g["keys_a"], g["keys_b"], False)
+
+
+def one_fact(val, short):
+    """COACH / QB / ROSTER cell: the first fact only in headline form."""
+    return val.split(" · ")[0].strip() if short else val
 
 
 # ---------------- week 0 receipts ----------------
@@ -1487,14 +1501,16 @@ for g in GAMES:
     txt(s, 0.9, 1.75, 7.2, 0.4, "WHY IT MATTERS", 13, NAVY, bold=True)
     yy = 2.25
     for d in _dec:
-        shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09 + (0.08 if _short else 0), 0.14, 0.14, ORANGE)
-        txt(s, 1.3, yy, 6.8, 0.8, d, 21 if _short else 13.5, INK, bold=_short)
+        shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09 + (0.1 if _short else 0), 0.14, 0.14, ORANGE)
+        txt(s, 1.3, yy, 6.8, 0.9, d, (24 if len(_dec) == 1 else 21) if _short else 13.5, INK, bold=_short)
         yy += 0.78
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, yy + 0.15, 7.2, 1.05, ICE)
+    # one point leaves room: drop the honesty box to the bottom of the bug's height
+    box_y = max(yy + 0.15, 5.2) if _short else yy + 0.15
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, box_y, 7.2, 1.05, ICE)
     if _short:
-        txt(s, 1.15, yy + 0.4, 6.7, 0.55, _hon, 20, NAVY, bold=True)
+        txt(s, 1.15, box_y + 0.25, 6.7, 0.55, _hon, 20, NAVY, bold=True)
     else:
-        txt(s, 1.15, yy + 0.32, 6.7, 0.75, _hon, 11.5, MUTE, italic=True)
+        txt(s, 1.15, box_y + 0.17, 6.7, 0.75, _hon, 11.5, MUTE, italic=True)
 
     # right: navy score bug
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
@@ -1541,14 +1557,15 @@ for g in GAMES:
                                           ("ROSTER", ctx["roster"]))):
             x = 1.15 + i * 3.85
             txt(s, x, 2.08, 3.55, 0.25, label, 9.5, ORANGE, bold=True)
-            txt(s, x, 2.34, 3.55, 0.6, val, 15 if _short else 10.5, INK,
+            txt(s, x, 2.34, 3.55, 0.6, one_fact(val, _short), 15 if _short else 10.5, INK,
                 bold=_short)
-        yy = 3.4
+        yy = 3.5
+        step = 1.1 if (_short and len(keys) <= 3) else 0.92
         for k in keys:
             shape(s, MSO_SHAPE.OVAL, 1.0, yy + (0.2 if _short else 0.12), 0.15, 0.15, ORANGE)
             txt(s, 1.45, yy, 10.5, 0.8, k, 24 if _short else 15.5, INK,
                 bold=_short)
-            yy += 0.92
+            yy += step
         txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · " + g["title"], 9, MUTE)
 
 # ---------------- upset board (this week's alerts + the scorecard) ----------------
