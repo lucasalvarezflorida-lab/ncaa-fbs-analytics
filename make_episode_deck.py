@@ -1234,15 +1234,21 @@ if BOARDS:
     txt(s, 0.9, 1.5, 11.5, 0.3,
         "Team factor × QB efficiency (PPA per play) · market = DraftKings", 13, PALE,
         bold=True)
+    # Row subtitles = box-score lines (Lucas 9/15: stats, not model terms).
+    # Season totals from the CFBD player box scores through Week 2.
     HEISMAN_WHY = {
-        "Darian Mensah": "41-of-45, 653 yards, 8 TD through two · machine and market agree",
-        "Josh Hoover": "1.42 per play on 29 plays · Indiana's 79% P(10+) · market has him 8th",
-        "C.J. Carr": "253 and four scores vs Rice · Notre Dame's 86% carries him",
-        "Julian Sayin": "The 2025 prior keeps him top 4 · 278 in the loss at Texas",
-        "Jayden Maiava": "Best blended line on the board (0.567) · USC's 16% P(10+) is the drag",
-        "Arch Manning": "Market No. 3 at +1000, our 10th · 0.417 per play on 75",
-        "Will Hammond": "Situation, not tape · 0.335 on 68 plays",
-        "Devon Dampier": "0.632 per play, 4 TD at Utah · unpriced",
+        "Darian Mensah": "41-of-45, 653 yards, 8 TD, 0 INT through two",
+        "Josh Hoover": "19-of-27, 376 yards, 8 TD, 0 INT through two",
+        "C.J. Carr": "35-of-49, 492 yards, 6 TD, 0 INT · 253 and 4 TD vs Rice",
+        "Julian Sayin": "38-of-57, 598 yards, 4 TD, 1 INT · 278 in the loss at Texas",
+        "Jayden Maiava": "67-of-83, 896 yards, 10 TD, 1 INT through three",
+        "Arch Manning": "43-of-64, 500 yards, 5 TD, 2 INT · 195 and a pick vs Ohio State",
+        "Will Hammond": "46-of-60, 487 yards, 2 TD, 1 INT through two",
+        "Devon Dampier": "31-of-42, 437 yards, 5 TD · 81 rushing, 2 TD",
+        "Kevin Jennings": "40-of-52, 767 yards, 8 TD, 2 INT through two",
+        "Lincoln Kienholz": "34-of-50, 639 yards, 4 TD, 0 INT · 111 rushing, 3 TD",
+        "Kamario Taylor": "38-of-56, 581 yards, 7 TD, 0 INT · 145 rushing",
+        "Sam Leavitt": "41-of-66, 574 yards, 2 TD, 4 INT · 135 rushing, 5 TD",
     }
     _mkt = {x["name"]: x["market"] for x in BOARDS["heisman"] + BOARDS["heisman_non_qb"]
             if x.get("market")}

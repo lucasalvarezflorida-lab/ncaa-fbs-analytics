@@ -241,6 +241,15 @@ Market = DraftKings, Sunday Sep 13 (Covers).
 | 4 | Julian Sayin · Ohio State | 0.616 (64) | 0.545 | 0.566 | 52% | 43.1 | +1500 (#7) |
 | 5 | Jayden Maiava · USC | 0.651 (90) | 0.517 | 0.567 | 16% | 32.9 | +1900 (#9) |
 
+**Box-score lines (what the slide row says now):** Mensah 41-of-45, 653,
+8 TD, 0 INT · Hoover 19-of-27, 376, 8 TD, 0 INT · Carr 35-of-49, 492, 6 TD,
+0 INT · Sayin 38-of-57, 598, 4 TD, 1 INT · Maiava 67-of-83, 896, 10 TD, 1 INT
+(three games) · Manning 43-of-64, 500, 5 TD, 2 INT · Hammond 46-of-60, 487,
+2 TD, 1 INT · Dampier 31-of-42, 437, 5 TD + 81 rushing, 2 TD · Jennings
+40-of-52, 767, 8 TD, 2 INT · Kienholz 34-of-50, 639, 4 TD + 111 rushing, 3 TD
+· Kamario Taylor 38-of-56, 581, 7 TD, 0 INT + 145 rushing · Leavitt 41-of-66,
+574, 2 TD, 4 INT + 135 rushing, 5 TD. (CFBD box scores through Week 2.)
+
 Next up: Dampier 31.5 (unpriced), Hammond 29.8, Jennings 29.3, Kienholz
 27.2, **Arch Manning 25.4 (market #3 at +1000)**, Bachmeier 24.5, Kamario
 Taylor 24.4.
@@ -494,6 +503,38 @@ refresh, after this episode records, so next week's Top 25 will look
 different for that reason — say so now. FCS games are still invisible — Houston's 77–6 over
 Southern, South Carolina's 45–9 over Towson and Florida's 52–3 over Campbell
 moved nothing.
+
+### Lucas's Top 25 — EDIT ME (prefilled with the machine's order)
+
+Reorder, swap, cut. Columns: your rank · team · (machine rank, last week's machine rank) · last week · this week.
+
+1. **Ohio State** (up from 4) · machine #1 25.0 · last week: L 23-24 at Texas · this week: vs Kent State
+2. **Texas** (unchanged) · machine #2 25.0 · last week: W 24-23 vs Ohio State · this week: vs UTSA
+3. **Notre Dame** (down from 1) · machine #3 24.8 · last week: W 52-0 vs Rice · this week: vs Michigan State
+4. **Indiana** (up from 7) · machine #4 23.8 · last week: W 55-0 vs Howard · this week: vs Western Kentucky
+5. **Miami** (up from 6) · machine #5 23.1 · last week: W 77-7 vs Florida A&M · this week: at Wake Forest
+6. **Alabama** (up from 9) · machine #6 23.0 · last week: W 45-17 at Kentucky · this week: vs Florida State
+7. **Georgia** (down from 3) · machine #7 22.6 · last week: W 70-20 vs Western Kentucky · this week: at Arkansas
+8. **LSU** (down from 5) · machine #8 22.3 · last week: W 45-14 vs Louisiana Tech · this week: at Ole Miss
+9. **Texas A&M** (up from 11) · machine #9 20.9 · last week: W 48-20 vs Arizona State · this week: vs Kentucky
+10. **Tennessee** (up from 15) · machine #10 17.6 · last week: W 45-24 at Georgia Tech · this week: vs Kennesaw State
+11. **Oregon** (down from 8) · machine #11 17.3 · last week: L 31-39 at Oklahoma State · this week: vs Portland State
+12. **Texas Tech** (down from 10) · machine #12 17.2 · last week: W 35-24 at Oregon State · this week: vs Houston
+13. **USC** (up from 14) · machine #13 14.7 · last week: W 49-30 vs Louisiana · this week: at Rutgers
+14. **Ole Miss** (down from 13) · machine #14 14.6 · last week: W 41-9 vs Charlotte · this week: vs LSU
+15. **Oklahoma** (down from 12) · machine #15 14.5 · last week: L 10-17 at Michigan · this week: vs New Mexico
+16. **Florida** (up from 17) · machine #16 14.4 · last week: W 52-3 vs Campbell · this week: at Auburn
+17. **Missouri** (up from 19) · machine #17 14.2 · last week: W 38-21 at Kansas · this week: vs Troy
+18. **Penn State** (down from 16) · machine #18 13.7 · last week: W 27-9 at Temple · this week: vs Buffalo
+19. **BYU** (down from 18) · machine #19 13.6 · last week: W 28-17 vs Arizona · this week: at Colorado State
+20. **Michigan** (up from 21) · machine #20 13.2 · last week: W 17-10 vs Oklahoma · this week: vs UTEP
+21. **Utah** (up from unranked) · machine #21 12.8 · last week: W 43-10 vs Arkansas · this week: vs Utah State
+22. **Auburn** (up from 23) · machine #22 12.6 · last week: W 43-8 vs Southern Miss · this week: vs Florida
+23. **Virginia** (down from 20) · machine #23 11.8 · last week: W 59-3 vs Norfolk State · this week: vs West Virginia
+24. **SMU** (down from 22) · machine #24 11.4 · last week: W 56-10 vs UC Davis · this week: at Louisville
+25. **South Carolina** (down from 24) · machine #25 10.9 · last week: W 45-9 vs Towson · this week: vs Mississippi State
+
+Just outside the machine's 25: Nebraska (#26), Louisville (#27), Virginia Tech (#28), Iowa (#29), Mississippi State (#30).
 
 ---
 
