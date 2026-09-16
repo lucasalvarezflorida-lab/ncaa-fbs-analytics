@@ -49,8 +49,22 @@ first two games, never from a game against each other.
     - Line unmoved since August
   - SMU keys
     - Jennings vs the bust-prone back end
-      - Louisville allowed 336 passing and a 47% success rate to Ole Miss; 41 points
-      - Jennings 26-of-36 for 430 at FSU, 14-of-16 for 337 and five scores vs UC Davis
+      - Why "bust-prone": it is not third-and-long, it is the deep ball on normal downs
+        - On third-and-6 or longer Louisville has allowed 3 of 13 conversions (23%) — the back end holds when everyone knows a pass is coming
+        - But 6 of the 70 pass plays against it went 20+ yards and 5 went 30+ — one of every 14 dropbacks is a 30-yard play, the worst rate on the card
+        - Two 62-yarders to Deuce Alexander and a 35 to Odom in one game vs Ole Miss; a 65-yarder allowed to Villanova, an FCS team
+        - "Deep" throws against it: 3 completions on 9 tries, but the three went 62, 62 and 31
+        - 7.3 yards per attempt allowed is fine; 12.5 per completion is the tell — the catches are long ones
+      - Why it happens: a rebuilt secondary in a pressure scheme that is not getting home
+        - 35% of production back, 33 portal adds — the back end is new to each other
+        - The prep file's 2025 label was "top-20 havoc, bottom-40 explosives": the scheme trades pressure for busts
+        - Zero sacks in two games, so this year it is getting the busts without the pressure
+        - Not an injury story in the data — a scheme-and-continuity one
+      - What SMU brings to it
+        - 15 of Jennings's 69 dropbacks went 20+ yards (22%), 11 went 30+ — the most explosive passing game on the card
+        - 4-of-4 on "deep" throws; 12.8 yards per attempt, 16.7 per completion
+        - 26-of-36 for 430 at FSU, 14-of-16 for 337 and five scores vs UC Davis
+      - The matchup in one line: the offense that hits a 30-yarder every 6 dropbacks vs the defense that allows one every 14
     - Protect Jennings
       - Zero sacks allowed at FSU, one vs UC Davis; Louisville's rush has one sack in two games
       - Line yards 3.3 then 2.5 — a pass-protection line, not a run-blocking one
@@ -62,7 +76,10 @@ first two games, never from a game against each other.
       - Real-game version: Keyjuan 7 for 56, Isaac 16 for 36; Kienholz 14 for 69 with a 41-yard TD run
       - Line yards 2.2 vs Ole Miss; SMU's run D allowed 199 at 4.4 to FSU — the softest thing on SMU's side
     - No coverage busts
+      - The same numbers from Louisville's side: 5 completions of 30+ allowed in 70 dropbacks; 12.5 yards per completion
+      - The rest of the pass defense is fine — 23% on third-and-long, 7.3 an attempt — so the fix is the one deep shot a quarter, not the scheme
       - 41 allowed to Ole Miss while winning turnovers 2–0; nine penalties for 82
+      - SMU's defense is the contrast: 4.5 an attempt, five sacks, 4 explosives allowed in 64 dropbacks
     - Kienholz keeps it clean
       - 34-of-50, 639, 4 TD, 0 INT + 111 rushing, 3 TD; third QB1 in three years, most efficient so far
       - SMU's defense: four takeaways in two games
