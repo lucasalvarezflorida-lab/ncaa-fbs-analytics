@@ -42,3 +42,5 @@ decks/logos/
 # other people's decks and merges built from them (Corey's content stays out of the repo)
 decks/corey_*_export.pptx
 decks/*_merged.pptx
+decks/*_merged_*.pptx
+decks/*_export.pptx
