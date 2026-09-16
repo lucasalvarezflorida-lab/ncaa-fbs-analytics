@@ -883,16 +883,37 @@ our Louisville team slide → his score → our number slide.
 both sides; Jennings, third-year starter; 57% back, 15 adds — All-ACC OT PJ
 Williams fronts a line that needed no portal help.
 
-**SMU keys, explained.**
-1. *Jennings vs the bust-prone back end* — Louisville allowed 336 passing to
-   Ole Miss; the Brohm tradeoff is one coverage bust a game.
-2. *Protect Jennings* — SMU's line is "a tier below the ACC's best" (the
-   file's words); Clev Lubin (8.5 sacks) and the edge rush are Louisville's
-   strength. Zero sacks at FSU is the standard.
-3. *Win the takeaway ledger* — minus-three at FSU and won; that doesn't
-   repeat against a top-25 offense.
-4. *Explosives, not long drives* — Louisville allows chunk plays; SMU's
-   offense manufactures them.
+**SMU keys, explained (the deep dive).**
+1. *Jennings vs the bust-prone back end.* Louisville's first real test was
+   Ole Miss in Nashville, and Chambliss threw for 336 on it (21-of-36, three
+   touchdowns) with a 66-yard Caleb Odom score; the defense allowed a 47%
+   success rate and 41 points. Jennings is the better version of that
+   problem: 26-of-36 for 430 at Florida State in the opener (Pittman 5-75-1,
+   Hale 2-70), then 14-of-16 for 337 and five touchdowns against UC Davis —
+   40-of-52, 767 yards, 8 TD on the season, a 61% and then 67% passing
+   success rate. Louisville's pass defense on passing downs was actually
+   good against Ole Miss (19% allowed), so the busts come on standard downs,
+   which is exactly where SMU's play-action lives.
+2. *Protect Jennings.* The ledger says the line is holding: zero sacks
+   allowed at Florida State, one against UC Davis (he also took a hit that
+   forced two fumbles in Tallahassee — see key 3). Louisville's rush against
+   Ole Miss produced zero sacks, and one against Villanova; Clev Lubin's 8.5
+   from last year hasn't shown up yet. The line yards tell the honest story
+   about SMU's front — 3.3 at FSU, 2.5 against an FCS team — it is a
+   pass-protection line, not a run-blocking one.
+3. *Win the takeaway ledger.* Four giveaways at Florida State (Jennings's
+   two interceptions and two lost fumbles) and SMU still won 27–24 because
+   the defense held FSU to 2-of-15 on third down and 125 passing. Zero
+   turnovers against UC Davis. Louisville has zero giveaways in two games
+   and Kienholz has zero picks; the Ole Miss loss came with Louisville
+   winning the turnover count 2–0 and still losing, which is the Brohm
+   coin-flip story in one line.
+4. *Explosives, not long drives.* SMU's explosiveness was 1.29 at FSU and
+   1.60 against UC Davis — top of the card — and it ran for only 93 yards
+   on 24 carries last week, so the offense is built on chunk plays, not
+   14-play drives. Louisville allowed a 1.31 explosiveness to Ole Miss and
+   1.48 the other way is what SMU brings. The game is who hits more 30-yard
+   plays; the total (59.5) says the market agrees.
 
 ### Slides 25–26 — Louisville
 
@@ -903,15 +924,38 @@ Williams fronts a line that needed no portal help.
 duo Isaac Brown / Keyjuan Brown (1,588 combined at 8.1 per carry last year)
 is the elite returning unit; Marquise Davis 86 and two scores vs Villanova.
 
-**Louisville keys, explained.**
-1. *Ride the Browns* — 260 rushing at 6.8 vs Villanova; 162 at 4.2 vs Ole
-   Miss; against SMU's smaller front the run game is the plan.
-2. *No coverage busts* — 41 allowed to Ole Miss with 336 through the air;
-   SMU's offense is built on YAC after busts.
-3. *Kienholz keeps it clean* — zero picks in two games, the least-proven
-   Brohm QB playing like the most efficient.
-4. *Win the one-score game* — the program has lost the coin flips two
-   straight years; the machine has this one at 1.1.
+**Louisville keys, explained (the deep dive).**
+1. *Ride the Browns.* Against Ole Miss it was Keyjuan Brown 7 for 56 (8.0)
+   and Isaac Brown 16 for 36 (2.3) — the run game was Keyjuan and Kienholz
+   (14 carries, 69 yards, a 41-yard touchdown run). Against Villanova the
+   third back, Marquise Davis, went 7 for 86 with two scores and the team
+   ran for 260 at 6.8. The line yards were 2.2 against Ole Miss and 3.9
+   against the FCS team, so the real-game version of this run game is
+   modest. SMU's run defense against FSU allowed 199 yards at 4.4 and a 41%
+   rushing success rate — the softest thing on SMU's side of the ball, and
+   the reason the run is the plan.
+2. *No coverage busts.* Ole Miss threw for 336 and Louisville lost 41–38
+   while winning the turnover battle 2–0 and out-gaining nothing — it was
+   the explosives. Nine penalties for 82 helped. SMU's offense is the exact
+   shape that punishes it: 585 yards at FSU, an explosiveness of 1.29 and
+   then 1.60, Jennings averaging 12 yards an attempt in the opener. The
+   question for Brohm's defense is whether the standard-down busts against
+   Ole Miss were Week 1 rust or the tradeoff the prep file described.
+3. *Kienholz keeps it clean.* 18-of-29 for 307 and two touchdowns against
+   Ole Miss, 16-of-21 for 332 and two against Villanova; zero
+   interceptions, 34-of-50 for 639 on the season, plus 111 rushing yards
+   and three rushing touchdowns. Third quarterback in three years under
+   Brohm and so far the most efficient: 0.718 PPA per play, ninth on the
+   Heisman board straight from unranked. SMU's defense forced four
+   takeaways in two games and held FSU to 2-of-15 on third down, so the
+   clean sheet gets its first real test.
+4. *Win the one-score game.* Three ACC losses by seven combined points last
+   year, then 41–38 to Ole Miss with a 7-of-16 third-down day and nine
+   flags. The machine has this at Louisville by 1.1, the market by 1.5 —
+   everyone agrees it's a coin flip, and the program's recent coin flips
+   have landed the wrong way. Field goals, penalties and the last
+   possession decide it; the run game (key 1) is how Louisville shortens
+   the game and keeps Jennings on the sideline.
 
 ### Slide 27 — the score calls
 
@@ -968,15 +1012,37 @@ our South Carolina team slide → his score → our number slide.
 (the man Lebby replaced); Taylor, sophomore; 34% back, 28 adds — six of the
 top seven OL gone, eight transfers in.
 
-**Mississippi State keys, explained.**
-1. *Taylor's legs and arm* — 86 rushing and 227 passing at Minnesota; the
-   dual threat is the whole offense.
-2. *Bothwell downhill* — Fluff Bothwell 113 and two scores at Minnesota;
-   State ran for 252 at 5.5.
-3. *Arnett's defense vs Sellers* — a 4-2-5 that held Minnesota to 13 rushing
-   yards; Sellers's sacks (the OL problem) are the target.
-4. *Win the turnover ledger* — one giveaway in two games; South Carolina
-   had two against Towson.
+**Mississippi State keys, explained (the deep dive).**
+1. *Taylor's legs and arm.* Week 1 vs UL Monroe: 22-of-34 for 354 and four
+   touchdowns plus 6 carries for 59. Week 2 at Minnesota: 16-of-22 for 227
+   and three touchdowns plus 13 carries for 86 (a 26-yard run), zero
+   turnovers, 6-of-10 on third down. Season: 38-of-56, 581 yards, 7 TD, 0
+   INT, 145 rushing. Anthony Evans III (7-121-1) and Zion Ragins are the
+   targets. State's offense converted 50% of its passing downs at Minnesota,
+   which is the number that says the offense doesn't stall when Taylor
+   has to throw on third-and-6. Twelfth on the Heisman board, and the man
+   has him third.
+2. *Bothwell downhill.* Fluff Bothwell 18 for 113 (6.3) and two touchdowns
+   at Minnesota, a 30-yard run; State 46 carries for 252 at 5.5 with a 61%
+   rushing success rate and 3.5 line yards against a Big Ten front. Add
+   Taylor's 86 and Kolin Wilson's 34 and it's a run game that had three
+   options. South Carolina's run defense has faced Kent State and Towson
+   (25 carries for 100, then 29 for 21); the honest number is that nobody
+   has tested it, and a 61% rushing success rate would.
+3. *Arnett's defense vs Sellers.* Zach Arnett, the head coach Lebby
+   replaced, is back as the coordinator and his 4-2-5 held Minnesota to 15
+   carries for 13 yards (0.9 a carry) and a 31% rushing success rate — but
+   Drake Lindsey threw 48 times for 279 with a 40% passing success rate,
+   so the soft spot is the back end, not the front. Sellers hasn't thrown
+   yet (10-of-23 for 96 last week); if Briles makes him, State's 14%
+   passing-downs rate allowed says the defense gets off the field on third
+   down. State had two sacks at Minnesota; South Carolina's line allowed
+   one to Towson.
+4. *Win the turnover ledger.* One giveaway in two games (a fumble at
+   Minnesota), 7 TD and 0 INT from the quarterback. South Carolina turned it
+   over twice against Towson (a Sellers pick and a fumble) and not at all
+   against Kent State. In a game the machine has at 4.9 and the market at 4,
+   one extra possession is the spread.
 
 ### Slides 32–33 — South Carolina
 
@@ -987,16 +1053,37 @@ top seven OL gone, eight transfers in.
 per play); 69% back, 26 adds — eight new offensive linemen, five of them FBS
 starters.
 
-**South Carolina keys, explained.**
-1. *Let Sellers throw* — 96 yards on 23 attempts is not a plan against a
-   defense that allowed 279 passing to Minnesota; Briles's tempo and
-   vertical shots have to show up.
-2. *Protect Sellers* — eight new linemen; four sacks allowed against Towson
-   is the warning.
-3. *Harbor deep* — Nyck Harbor's 4.2 speed vs a State secondary with six
-   transfer DBs; 35 yards last week.
-4. *Stewart off the edge* — Dylan Stewart converting pressure into sacks is
-   the defense's whole equation (97th in sack rate in 2025).
+**South Carolina keys, explained (the deep dive).**
+1. *Let Sellers throw.* Two games, two different quarterbacks: 19-of-23 for
+   270 and three touchdowns against Kent State (a 70% passing success
+   rate), then 10-of-23 for 96, no touchdowns and a pick against Towson (a
+   23% passing success rate) while the team ran for 405. Season 0.459 PPA
+   per play, 20th on the Heisman board. State's defense just allowed 279
+   passing on 48 attempts to Minnesota with a 40% passing success rate;
+   its run defense allowed 13 yards. The matchup says throw. Briles's
+   offense (the fourth coordinator in five years) has to show the tempo and
+   the vertical shots that made him the hire.
+2. *Protect Sellers.* Eight new offensive linemen, five of them FBS
+   starters elsewhere. The correction to the earlier note: the line has
+   allowed one sack in two games (one against Towson, one against Kent
+   State) — the four sacks last week were South Carolina's defense, not
+   its problem. The scouting file's one weakness is still "the OL must stop
+   getting Sellers hit," and Arnett's front produced two sacks and a 31%
+   stuff rate against Minnesota; this is the first front that will test the
+   rebuilt line.
+3. *Harbor deep.* Nyck Harbor: 2 catches for 35 against Towson, the top
+   target on a day the team threw for 97. The 4.2 speed is the one thing
+   State's secondary — six transfer defensive backs behind Arnett's 4-2-5 —
+   hasn't seen. Minnesota's receivers averaged 12.6 a catch on it; the shot
+   plays are there, and key 1 is whether Briles calls them.
+4. *Stewart off the edge.* The defense had four sacks against Towson and
+   one against Kent State, and it held Towson to 21 rushing yards on 29
+   carries (a 12% rushing success rate) — the front is winning against
+   FCS lines. Last year the problem was converting pressure into sacks
+   (97th in sack rate); Dylan Stewart is the player who fixes that. Taylor
+   has been sacked twice in two games and runs when the pocket breaks (145
+   yards), so the edge has to rush with contain — the same problem Tech's
+   ends have with Weigman on Friday.
 
 ### Slide 34 — the score calls
 
@@ -1058,15 +1145,40 @@ our Auburn team slide → his score → our number slide.
 nationally, the quiet continuity play), 27 adds; Jadan Baugh kept (1,170
 yards; 136 and two scores last week); new DC Brad White (from Kentucky).
 
-**Florida keys, explained.**
-1. *Philo's first road start* — two home games against FAU and Campbell;
-   Jordan-Hare at night with Durkin's disguises is a different sport.
-2. *Baugh downhill* — 136 at 9.7 a carry last week; Auburn allowed 103
-   rushing to Baylor and 50 to Southern Miss.
-3. *White's front vs Brown's legs* — Florida's DT vault (the one thing
-   Napier stockpiled) vs a quarterback who ran for 1,121 last year.
-4. *Fourth-down conviction* — the Sumrall trait the prep singled out;
-   Auburn went 4-of-5 on fourth down itself last week.
+**Florida keys, explained (the deep dive).**
+1. *Philo's first road start.* 16-of-21 for 275, three touchdowns and a pick
+   against FAU; 16-of-21 for 242 and two against Campbell. Season 32-of-42,
+   517 yards, 5 TD, 1 INT — the best per-play line among the ten Week 3
+   starters (0.753) on 42 career attempts, all at home, against a
+   Conference USA defense and an FCS one. Dallas Wilson
+   (5-104-1) and Vernell Brown are the targets. The number to carry: on
+   passing downs Florida succeeded 36% and then 22% of the time — when the
+   drive gets behind schedule, the redshirt freshman hasn't yet shown he
+   gets it back. Jordan-Hare at night against Durkin's disguises (Baylor's
+   Lagway went 27-of-54 on it) is where that gets tested.
+2. *Baugh downhill.* 14 for 136 (9.7) and two touchdowns with a 75-yard run
+   against Campbell; Florida 214 rushing at 7.1 that day, 281 at 6.9 against
+   FAU, a 50% rushing success rate both weeks. Auburn's run defense allowed
+   103 at 2.3 to Baylor and 50 at 2.0 to Southern Miss — 29% and 40%
+   rushing success rates — so it has held up; Baugh is the first
+   1,100-yard back it sees. The machine's Auburn lean (key 3 below, the
+   home bump) survives only if Durkin's front does this again.
+3. *White's front vs Brown's legs.* Byrum Brown: 13 carries for 88 (a
+   20-yard run) against Southern Miss, part of a 343-yard, 6.7-a-carry
+   rushing day with Mabson (15-108) and Cobb (12-85); against Baylor the
+   same offense ran for 130 at 3.2 and Brown threw three picks. Florida's
+   interior — the defensive-tackle vault Napier stockpiled, now under Brad
+   White from Kentucky — allowed 120 rushing at 3.2 to FAU and 62 to
+   Campbell but let FAU throw 53 times for 276 with a 44% passing success
+   rate. The front is the strength; the back end is the question, and
+   Brown's legs are what turn a covered play into a first down.
+4. *Fourth-down conviction.* The Sumrall trait: at Tulane he went for it
+   and won 20 games in two years. Florida's third-down numbers are
+   5-of-9 and 3-of-9 — the offense has been so explosive it hasn't needed
+   long drives. Auburn went 4-of-5 on fourth down against Southern Miss and
+   10-of-18 on third down against Baylor: Golesh keeps the ball too. In a
+   game the machine has at 0.7, one fourth-and-2 call at Jordan-Hare is
+   the difference between the home bump mattering and not.
 
 ### Slides 39–40 — Auburn
 
@@ -1075,15 +1187,37 @@ yards; 136 and two scores last week); new DC Brad White (from Kentucky).
 **COACH / QB / ROSTER — Auburn.** Golesh NEW, Durkin retained; Brown NEW; 14% back, 39 adds — both
 lines are transfer science experiments (top five OL gone, nine transfers).
 
-**Auburn keys, explained.**
-1. *Brown's legs* — 88 on 13 vs Southern Miss; the designed run is the
-   offense's identity and Florida's defense is built on interior size.
-2. *Ball security* — three interceptions vs Baylor, zero since; the prep's
-   "install-week ball security" key is now a two-game trend line.
-3. *Durkin's defense at home* — 16 and 8 allowed; the carryover unit is the
-   reason Auburn is 2–0.
-4. *Tempo without turnovers* — the Golesh offense at Veer-and-Shoot pace
-   worked for 610 yards last week; Florida's defense is the first SEC test.
+**Auburn keys, explained (the deep dive).**
+1. *Brown's legs.* Byrum Brown followed Golesh from USF (3,158 passing,
+   1,121 rushing, 42 touchdowns last year). Week 1 vs Baylor: 26-of-35 for
+   259, no touchdowns, three interceptions, sacked five times, the offense
+   at a 39% success rate and 2.7 line yards. Week 2 vs Southern Miss:
+   17-of-28 for 223 and two scores, 13 carries for 88, zero turnovers, the
+   offense at 52% with a 61% rushing success rate. The designed
+   quarterback run is the identity — Golesh's offense ran it 51 times last
+   week — and Florida's interior is built to stop exactly that. Whether
+   the Southern Miss version of Brown shows up against an SEC front is the
+   game.
+2. *Ball security.* Three picks and five sacks against Baylor, and Auburn
+   won 17–16 anyway because Baylor went 7-of-22 on third down. Zero
+   turnovers, one sack allowed against Southern Miss. The trend line is two
+   games long. Florida's defense forced three FAU turnovers and two from
+   Campbell; if Brown throws it to Florida twice, the 2.5-point home bump
+   is gone and so is the machine's lean.
+3. *Durkin's defense at home.* 16 allowed to Baylor (103 rushing at 2.3,
+   Lagway 27-of-54, Baylor 7-of-22 on third down) and 8 to Southern Miss
+   (50 rushing at 2.0, four sacks,
+   two picks, a 6% passing-downs rate allowed). The carryover unit under a
+   retained coordinator, and the reason Auburn is 2–0 with a quarterback
+   who threw three picks in the opener. Florida's offense is the first one
+   it sees that runs for 6.9 a carry and throws for 275 in the same game.
+4. *Tempo without turnovers.* 610 yards on 84 plays against Southern Miss —
+   343 rushing, 267 passing — with ten penalties for 73 and one giveaway.
+   That's the Golesh offense at the pace he ran at USF. The two things that
+   break it are the two things Baylor did: sack the quarterback (five) and
+   take the ball (three). Florida had two sacks in each game and five
+   takeaways in two; the pace only helps Auburn if the ball stays with
+   Auburn.
 
 ### Slide 41 — the score calls
 
@@ -1150,17 +1284,46 @@ Lacy (87 and two scores vs Charlotte); Chambliss returns; 50% back, 28 adds
 — the secondary returned three of nine and was patched with Aguero (Georgia)
 and Joseph (FSU).
 
-**LSU keys, explained.**
-1. *Leavitt's ball security* — three picks in a 31-point win; Ole Miss's
-   patched secondary is the weak unit on the field, and it doesn't matter if
-   the ball goes to it.
-2. *Protect Leavitt in a hostile building* — five sacks taken by a −9.6
-   team; zero taken by Clemson. Which line shows up.
-3. *Baker's front vs Chambliss's escapes* — LSU has 11 sacks in two games;
-   Chambliss is "statistically the best in the country at turning dead
-   plays into first downs."
-4. *Kiffin's tempo in his old house* — the tempo-and-leverage passing game
-   he built in Oxford, run against Golding, who called his defenses.
+**LSU keys, explained (the deep dive).**
+1. *Leavitt's ball security.* Week 1 vs Clemson: 16-of-28 for 230, a
+   touchdown and a pick, plus 12 carries for 113 and two rushing scores in
+   a 51–10 rout. Week 2 vs Louisiana Tech: 25-of-38 for 344 (Trey'Dez Green
+   6-104-1, Wilson 6-93, Harris 3-80), one touchdown, THREE interceptions,
+   three rushing touchdowns; LSU had four giveaways and won by 31 because
+   Louisiana Tech ran 31 times for minus-3 yards. Season: 41-of-66, 574
+   yards, 2 TD, 4 INT, 135 rushing, 5 rushing TD; 0.320 PPA per play,
+   second-lowest on the card, 16th on the Heisman board after falling from
+   9th. Ole Miss's patched secondary (Aguero, Joseph) allowed 307 to
+   Louisville's Kienholz and then 179 to Charlotte. The picks are the whole
+   LSU key: the receivers are the
+   best group on the card and it doesn't matter if the ball goes to the
+   other team.
+2. *Protect Leavitt in a hostile building.* Zero sacks taken against
+   Clemson (LSU ran for 309 on 58 carries, 3.5 line yards), FIVE taken
+   against Louisiana Tech (147 rushing at 3.3, 2.0 line yards, ten
+   penalties for 101). Two different offensive lines in two weeks. Ole
+   Miss's defense had three sacks against Louisville and one against
+   Charlotte, a 34% stuff rate last week. In the Vaught, with the crowd the
+   SEC prep called a "hostile-environment record attempt," the Louisiana
+   Tech line loses.
+3. *Baker's front vs Chambliss's escapes.* LSU's defense: four sacks and a
+   1-of-13 third-down day against Clemson (145 total yards allowed, a 5%
+   passing-downs rate), then seven sacks against Louisiana Tech (140 total
+   yards, 3-of-14, minus-3 rushing). Eleven sacks, a 24% and then 14%
+   success rate allowed — SP+'s projected No. 2 defense is playing like it.
+   Chambliss is the counter: 21-of-36 for 336 and three touchdowns against
+   Louisville, 23-of-26 for 225 against Charlotte, "statistically the best
+   in the country at turning dead plays into first downs." Ole Miss
+   converted 67% of its passing downs last week; LSU has allowed 5% and
+   12%. Something gives.
+4. *Kiffin's tempo in his old house.* The tempo-and-leverage passing game
+   is what Kiffin built in Oxford, and the LSU version so far has run 94
+   plays against Clemson and 85 against Louisiana Tech — 644 and 528
+   yards. Golding called Kiffin's defenses for years and kept the spine
+   (Echoles, Perkins); he knows the concepts. The tell will be third down:
+   LSU is 11-of-16 and 8-of-17, Ole Miss's defense held Louisville to
+   7-of-16 and Charlotte to 3-of-14. Whoever owns third down owns the
+   tempo.
 
 ### Slides 46–47 — Ole Miss
 
@@ -1168,16 +1331,37 @@ and Joseph (FSU).
 
 
 
-**Ole Miss keys, explained.**
-1. *Let Chambliss escape* — the 2025 SEC Newcomer of the Year's whole game;
-   LSU's front is the best he's faced.
-2. *Lacy runs it* — 300 carries last year, 87 at 6.7 vs Charlotte; the
-   tempo offense needs the run to set the play-action.
-3. *The patched secondary* — Aguero and Joseph vs Wilson, Brown, Green (104
-   yards last week) and Harris; LSU's receivers are the best group on the
-   card.
-4. *Special teams edge* — Ole Miss was No. 1 in SP+ special teams; in a game
-   the machine has at 5.2, hidden yards are the margin.
+**Ole Miss keys, explained (the deep dive).**
+1. *Let Chambliss escape.* 21-of-36 for 336, three touchdowns and a pick
+   against Louisville (Odom 3-66-1, Fields 5-47), then 23-of-26 for 225 and
+   two scores against Charlotte with an 8-catch day from Deuce Alexander.
+   Season 44-of-62, 561 yards, 5 TD, 1 INT; 0.494 PPA per play. He was
+   sacked three times by Louisville — the escapes are how a sack becomes a
+   completion — and LSU's front has eleven sacks in two games. The whole
+   Ole Miss offense on Saturday is Chambliss buying time against the best
+   pass rush he has faced; the 2025 SEC Newcomer of the Year did it for a
+   season, and Kiffin knows exactly how, because he coached it.
+2. *Lacy runs it.* Kewan Lacy: 17 for 61 (3.6) and a touchdown against
+   Louisville, 13 for 87 (6.7) with a 28-yard run and two touchdowns
+   against Charlotte; 300 carries last year. Ole Miss ran for 152 at 3.7
+   against Louisville with 2.8 line yards — the real-game number — and 127
+   at 5.3 against Charlotte. LSU's run defense: Clemson 26 carries for 40,
+   Louisiana Tech 31 for minus-3, a 32% and 15% rushing success rate
+   allowed. Lacy has to be enough of a threat to make the play-action
+   honest; against this front that is the hardest key on the card.
+3. *The patched secondary.* Three of nine returned; Aguero (Georgia) and
+   Joseph (FSU) patched it. Louisville threw for 307 on it with Kienholz
+   at 10.6 an attempt; Charlotte 179. Now LSU's receivers: Trey'Dez Green
+   6-104-1 last week, Eugene Wilson 6-93 (4-35 the week before), Jackson
+   Harris 3-80, Jayce Brown — the best group on the card, with a quarterback
+   who threw for 344 and three picks. The picks (LSU key 1) are the
+   secondary's chance; the 80- and 104-yard receivers are its risk.
+4. *Special teams edge.* Ole Miss was No. 1 in SP+ special teams last year;
+   LSU's were middle of the pack. In a game the machine has at 5.2 and the
+   market at 3,
+   a returned kick or a missed field goal is the whole gap between the two
+   numbers. Ole Miss also gets the 2.5 for home and the crowd; the machine's
+   number already includes the 2.5. The hidden yards are what it doesn't.
 
 ### Slide 48 — the score calls
 
