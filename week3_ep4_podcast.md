@@ -617,52 +617,52 @@ Next three: Fleck (Minnesota, 62 — lost 38–13 at home to Mississippi State;
 67% for six), Vincent (UL Monroe, 62*). *Rutgers's CBS number is our
 estimate.
 
-**The segment: biggest movers, hotter or cooler.** Seat score = 60% CBS
-rating + 40% the machine's odds of missing the win total that keeps the
-job. The CBS half hasn't changed since Aug 29, so every move below is the
-machine reacting to a game. Week 2 board → Week 3 board (51 → 100 rated
-games). Say the direction, the game that did it, and the number.
+**The segment: who moved into the ten, who fell out, who moved inside it.**
+Seat score = 60% CBS rating + 40% the machine's odds of missing the win
+total that keeps the job. The CBS half hasn't changed since Aug 29, so
+every move is the machine reacting to a game. Week 2 board → Week 3 board.
 
-*Seats that got HOTTER:*
-1. **Leipold, Kansas — +7.9, the biggest jump on the board** (40.7 → 48.6,
-   #31 → #25). Lost 38–21 to Missouri at home; the sim's odds of six wins
-   fell from 67% to 47%, projected wins 6.2 → 5.4. Not on our ten yet, but
-   he's the only coach who lost twenty points of probability in one week.
-2. **Fleck, Minnesota — +6.0** (56.4 → 62.4, #22 → #11). Lost 38–13 AT HOME
-   to Mississippi State; rating −4.9 on the week; 7% for the seven wins
-   that keep him. Projected 4.2 wins. One game took him from the middle of
-   the list to the edge of the ten.
-3. **Venables, Oklahoma — +3.9** (57.8 → 61.7, #17 → #14). The 17–10 loss at
-   Michigan cost 3.3 rating points; 33% for eight wins, projected 6.8, with
-   Georgia and Texas still to come. Direction matters more than the rank.
-4. **Swinney, Clemson — +2.1** (68.4 → 70.5, #9 → #7). WON 22–7 over Georgia
-   Southern and got hotter anyway: the machine expected ~24 and docked
-   Clemson 1.2 (−5.0 on the season). 17% for the nine that make a
-   redemption year, projected 7.0. The rare seat that heats up on a win.
+*INTO the top ten — Doeren, NC State (#12 → #10).* He didn't move at all —
+63.8 both weeks, 30% for the seven wins the job needs, 73–0 over Richmond
+was FCS and counted for nothing. He is tenth because the man above him
+fell past him. That is the honest read: NC State's seat is exactly as warm
+as it was; the list around it cooled.
 
-*Seats that COOLED:*
-1. **McGee, Georgia State — −10.9, the biggest drop on the board** (58.6 →
-   47.7, #14 → #28). Won 31–17 at Kennesaw State; rating +4.5; the sim's
-   bowl odds went 53% → 80%, projected 4.6 → 5.8. Off the radar in one
-   Saturday.
-2. **Lebby, Mississippi State — −8.9** (56.6 → 47.7, #21 → #27). 38–13 at
-   Minnesota lifted State 4.4 rating points; 58% → 80% for a bowl,
-   projected 5.8. He meets Beamer (sixth, 50% for seven wins) on Saturday —
-   slide 35 — and one of them is 0–1 in the SEC by Saturday night.
-3. **Locksley, Maryland — −6.0** (78.8 → 72.8, #2 → #5). 38–14 at UConn,
-   rating +2.9, 50% → 65% for six wins. This is why Schiano is No. 2 now:
-   Rutgers's score barely moved (74 → 74.5), Locksley fell past him.
-4. **DeBoer, Alabama — −3.8** (63.8 → 60.0, #11 → #16). 45–17 at Kentucky,
-   rating +2.9, 30% → 40% for the ten wins the job demands. Still the
-   highest bar on the board.
-5. Also cooler: Mason (Middle Tennessee, −3.8, #7 → #9, 40% for six even
-   after the 28–26 loss at Marshall — rating went UP 1.5 because the machine
-   expected worse), O'Brien (BC, −3.0, held #8, 35% for five after beating
-   Rutgers).
+*OUT of the top ten — Belichick, North Carolina (#10 → #12).* 64.2 → 62.3.
+35–3 over East Tennessee State didn't count (FCS), but the Week 1 win at
+TCU keeps the sim at 67% for the six wins that make a bowl, projected 6.2.
+The machine has said since Week 1 that he's fine; the CBS 4.1 is what keeps
+him near the line. Two spots outside, and one bad Saturday puts him back.
 
-*Unmoved at the top:* **Norvell is No. 1 at 91.9** — FSU was idle. Alabama
-in Tallahassee next week is the machine's next data point (and the Giant
-Killer board has FSU +20.5 at #10 Alabama fifth).
+*Inside the ten, the order changed:*
+1. **Schiano up to No. 2 (#4 → #2, 73.9 → 74.5).** Rutgers lost 28–21 at
+   Boston College — to the coach who is eighth on this list — and sits at
+   −7.7, last in FBS. 4% for six wins, projected 3.4. His score barely
+   moved; he rose because Locksley fell past him.
+2. **Locksley down to No. 5 (#2 → #5, 78.8 → 72.8, the biggest drop inside
+   the ten).** 38–14 at UConn; rating +2.9; 50% → 65% for six wins,
+   projected 6.1. Winning a road game cooled the seat six points.
+3. **Swinney up to No. 7 (#9 → #7, 68.4 → 70.5).** Won 22–7 over Georgia
+   Southern and got hotter anyway — the machine expected ~24 and docked
+   Clemson 1.2. 17% for the nine wins that make a redemption year. The rare
+   seat that heats up on a win.
+4. **Mason down to No. 9 (#7 → #9, 71.0 → 67.2).** Lost 28–26 at Marshall
+   and cooled: the machine expected worse, rating +1.5, 30% → 40% for six.
+5. **Fickell up one to No. 4** on Locksley's fall, score unchanged at 73.1
+   (67% for six). Norvell (#1, 91.9, FSU idle), Aranda (#3), Beamer (#6 —
+   plays Lebby on Saturday, slide 35) and O'Brien (#8) held their spots.
+
+*Knocking on the door:* **Fleck, Minnesota, #11 (from #22, +6.0, the
+biggest jump on the board)** — 38–13 at home to Mississippi State, 7% for
+the seven wins that keep him, projected 4.2; one more loss and he's in.
+Then Belichick #12, Vincent (UL Monroe) #13, Venables #14 (from #17 after
+the loss at Michigan, 33% for eight).
+
+*Biggest moves anywhere, for the record:* hotter — Leipold (Kansas, +7.9,
+#31 → #25, 67% → 47% for six after 38–21 to Missouri), Fleck +6.0,
+Venables +3.9; cooler — McGee (Georgia State, −10.9, bowl odds 53% → 80%),
+Lebby (Mississippi State, −8.9, 58% → 80%, Saturday's opponent for Beamer),
+Locksley −6.0, DeBoer (Alabama, −3.8, 30% → 40% for ten).
 
 **Caveat, said out loud:** the bars are ours; the CBS ratings are three weeks
 old. The formula is transparent so Corey can argue the inputs.
