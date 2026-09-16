@@ -731,9 +731,13 @@ adds — the Tulane band (Hughes, Hurst, White) plus all-conference OL
 transfers Terrill and Boswell.
 
 **Houston keys, explained.**
-1. *Weigman's legs vs the rebuilt front* — 795 rushing yards last year;
-   Tech's portal front (Trick, White) is the best pass rush on the card, and
-   the answer to it is the quarterback leaving the pocket on purpose.
+1. *Weigman's legs vs the rebuilt front* — 795 rushing yards last year,
+   but Houston would rather he run on broken plays than on designed ones
+   (the injury history is why the designed runs stay off him). The value is
+   the threat: when Tech's portal front (Trick, White), the best pass rush on
+   the card, gets home, Weigman turns a sack into a scramble and a first
+   down. That is what makes the ends play contain instead of pinning their
+   ears back, and it is the only thing that slows this rush down.
 2. *Run it 45 times* — 388 on the ground last week (three backs over 55);
    the prep's line is "possibly the league's best combined trench play."
 3. *Make Hammond throw* — 189 yards on 27 attempts in Corvallis; force the
