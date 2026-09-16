@@ -1501,8 +1501,8 @@ for g in GAMES:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.75, 3.9, 4.6, NAVY)
     txt(s, 8.8, 1.98, 3.3, 0.3, "THE NUMBER", 12, ORANGE, bold=True)
     # machine line as a book would post it + fair odds from our win prob
-    txt(s, 8.8, 2.3, 3.3, 0.55, g["machine"], 28, WHITE, bold=True)
-    txt(s, 8.8, 2.84, 3.3, 0.3, g.get("fair", ""), 12, WHITE, bold=True)
+    txt(s, 8.8, 2.3, 3.3, 0.55, g["machine"], 28 if len(g["machine"]) <= 16 else 21, WHITE, bold=True)
+    txt(s, 8.8, 2.84, 3.3, 0.3, g.get("fair", ""), 12 if len(g.get("fair", "")) <= 34 else 9.5, WHITE, bold=True)
     txt(s, 8.8, 3.12, 3.3, 0.28,
         "machine line · fair odds, no vig · raw margin " + g.get("raw_margin", ""),
         8.5, PALE)
@@ -1513,7 +1513,7 @@ for g in GAMES:
     # score prediction (replaced "the gap" per Lucas's in-Slides edit 8/31;
     # the authored value/gap strings stay in GAMES as data)
     score = g.get("score", "")
-    txt(s, 8.8, 4.45, 3.3, 0.4, score, 15 if len(score) <= 22 else 13,
+    txt(s, 8.8, 4.45, 3.3, 0.4, score, 15 if len(score) <= 22 else (13 if len(score) <= 30 else 10.5),
         ORANGE if "not posted" not in score else PALE, bold=True)
     txt(s, 8.8, 4.82, 3.3, 0.25, "score prediction", 8.5, PALE)
     wa, pa, wb, pb = g["wp"]
