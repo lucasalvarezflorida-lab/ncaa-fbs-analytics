@@ -760,15 +760,62 @@ per play on 68 — the lowest of the ten Week 3 starters); 53% back, 23
 adds — the DL two-deep bought in the portal again (Trick, White, Laventure,
 Johnson) after Bailey and Rodriguez left for the NFL.
 
-**Texas Tech keys, explained.**
-1. *Hammond's second real start* — the ACL comeback has one FCS game and one
-   scare on it; a Friday night at home against a real front is the test.
-2. *J'Koby Williams downhill* — 116 on 20 at Oregon State; the three-headed
-   backfield (Williams, Dickey, Joyner) is the offense's floor.
-3. *The portal defense vs a real offense* — Oregon State threw for 417 on
-   it; Houston's is better balanced.
-4. *Finish drives* — 8-of-16 on third down and 155 rushing at 3.4 turned a
-   blowout projection into a two-score game.
+**Texas Tech keys, explained (the deep dive).**
+1. *Hammond's second real start.* The background: Kirk Francis (Tulsa, 12
+   career starts) was the projected Week 1 starter while Will Hammond came
+   back from the October ACL; Hammond won the job and has two starts. Week 1
+   vs Abilene Christian (FCS): 26-of-33 for 298, a touchdown, a pick, 9.0 an
+   attempt — the 64-yard Malcolm Simmons touchdown was the highlight. Week 2
+   at Oregon State: 20-of-27 for 189, one touchdown, no picks, 7.0 an
+   attempt, QBR 64. Season line 46-of-60, 487 yards, 2 TD, 1 INT: accurate,
+   short, and the least productive of the ten Week 3 starters at 0.335 PPA
+   per play. The tell inside the numbers: Tech's passing success rate on
+   schedule was fine (50%) but on passing downs it was 29% — when a drive got
+   behind the chains, he didn't get it back. He was also sacked four times
+   in Corvallis. Friday is the first real front he has faced since the knee,
+   at home, on a short week, with Trick and White on the other sideline
+   watching a quarterback who has thrown 60 college passes since surgery.
+   Tech also carries a short-yardage package for Thomas Castellanos (five
+   carries, a touchdown, and a throw at Oregon State) — watch for it near
+   the goal line.
+2. *J'Koby Williams downhill.* At Oregon State: 20 carries, 116 yards, 5.8 a
+   carry, a 38-yard run and a touchdown. Now the rest of the backfield: the
+   other 26 carries went for 39 yards, 1.5 a carry — Dickey 10 for 21,
+   Joyner 5 for 25. The line yards were 2.8 (3.3 vs the FCS team) and the
+   rushing success rate 36%, so the offensive line — three returning
+   starters, the Louisville guard Church, the five-star freshman tackle Ojo —
+   is not creating push yet; Williams is creating it himself. The
+   three-headed backfield (Williams and Dickey had 1,992 yards and 20
+   touchdowns between them last year; Joyner averaged 7.6 at USC in 2024) is
+   the offense's floor only if the line gets Williams to the second level.
+   Houston's run defense against a real team (Oregon State, Week 1) allowed a
+   33% rushing success rate and almost no stuffs — there is room, if Tech
+   commits to it.
+3. *The portal defense vs a real offense.* Oregon State threw for 417 on
+   Shiel Wood's rebuilt front seven: Braden Atkinson 31-of-51 for 413,
+   Jesse Legree 8 catches for 240 with a 75-yarder and two scores. The two
+   sides of that: Tech's defense allowed only a 30% success rate and got off
+   the field on third down (Oregon State 4-of-15), but its explosiveness
+   allowed was 2.05 — the worst number on the card — so it was
+   bend-don't-break with busts. The pass rush that is supposed to be the best
+   on the card produced two sacks (Roberts, Holmes) and single hurries from
+   Trick, Mathis and Romaine; Mathis had 2.5 sacks against the FCS team. Now
+   Houston: against the same Oregon State team in Week 1 it ran a 45%
+   rushing success rate and a 53% passing success rate, and converted 48% of
+   its passing downs — it is the balanced version of what Oregon State did
+   to Tech, with a quarterback who can run. Houston's 8-of-8 on third down
+   last week was against Southern; the Oregon State number is the honest
+   one, and it says Houston stays on schedule.
+4. *Finish drives.* The machine expected Tech to win at Oregon State by
+   about 27; it won by 11, and the box score says why: 8-of-16 on third
+   down, 46 carries for 155 at 3.4, four sacks taken, seven penalties for 70,
+   a turnover, and an offensive success rate that fell from 50% in Week 1 to
+   40%. On passing downs the offense succeeded 29% of the time. That is what
+   "finish drives" means here — Tech moved the ball (22 first downs, 352
+   yards) and stalled: drives that reached Oregon State territory ended in
+   field-goal tries and punts instead of touchdowns. Against Houston, a team
+   that converted 48% of its own passing downs, stalled drives are how a
+   13-point favorite ends up in a one-score game in the fourth quarter.
 
 ### Slide 20 — the score calls
 
