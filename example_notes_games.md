@@ -1,8 +1,11 @@
 # Ep4 · Week 3 — GAMES
 
-Outline notes: game → the read, the number, each team's keys with the facts
-under them, the honesty line, Corey's call. Stats are from each team's
-first two games, never from a game against each other.
+Outline notes: game → the read, the number, each team's keys with the WHY
+and the numbers under them, the honesty line, Corey's call. Stats are from
+each team's first two games (CFBD play-by-play and box scores), never from a
+game against each other. "Dropbacks" = pass plays including sacks;
+"explosive" = a 20+ yard pass or 10+ yard run; "stuffed" = a run for zero or
+less; "third-and-long" = third-and-6 or more.
 
 - **Houston at Texas Tech — Fri 8:00 ET, Lubbock**
   - The read
@@ -15,28 +18,51 @@ first two games, never from a game against each other.
     - Series: four straight for Tech (38–21, 33–30, 49–28, 35–11)
   - Houston keys
     - Weigman's legs vs the rebuilt front
-      - 795 rushing yards last year; Houston would rather he run on broken plays than designed ones (injury history)
-      - When Tech's front gets home, a sack becomes a scramble — that's what makes the ends play contain
+      - Why it matters: Tech's front is the one unit on the card built to end drives with a sack
+        - Tech's defense has 5 sacks and 2 picks in 89 dropbacks faced; Mathis 2.5 sacks vs Abilene Christian
+        - It allowed only 6.0 yards per attempt and 6 of 20 on third-and-long
+      - Why Weigman is the answer: he turns a lost play into a gained one
+        - 795 rushing yards last year; Houston would rather he run on broken plays than designed ones (injury history)
+        - Houston has taken ONE sack in 51 dropbacks this year — the ball comes out or he leaves
+        - Houston is 12-of-12 on third-and-1 or 2: when he keeps it short, they convert every time
+      - The catch: on third-and-long Houston is 3 of 8 — get him into long yardage and the legs matter less
     - Run it 45 times
-      - 388 rushing at 8.6 last week, three backs over 55 — against Southern
-      - Against Oregon State: 45% rushing success, 53% passing, 48% on passing downs — stays on schedule
+      - Why: the run game is where Houston is elite and Tech's defense is merely fine
+        - 84 carries at 7.3 a carry; 15 runs of 10+ (18% of carries), 6 of 20+; stuffed on only 8% of runs — best on the card
+        - 388 at 8.6 last week was against Southern; against Oregon State the rushing success rate was still 45%
+        - Tech's run defense allowed 4.0 a carry, 6 runs of 10+ (14%), and stuffed only 17% — average, not special
+      - The point: 45 carries keeps Tech's pass rush off the field and keeps third downs short
     - Make Hammond throw
-      - Force the pocket game; secondary Webb, Allen, James
+      - Why: Hammond's numbers say he is efficient on schedule and lost off it
+        - 65 dropbacks: 7.6 an attempt, 10.5 per completion, 5 explosive passes (8%) — the least explosive passing game on the card
+        - Third-and-long: 4 of 15 converted; sacked 4 times
+      - Houston's pass defense is the weak side: 7.0 an attempt and 7 explosives allowed (10%), two 70-yarders
+        - So the plan is not "cover everything" — it is "make him drive 12 plays without a chunk play"
   - Texas Tech keys
     - Hammond's second real start
-      - Francis (Tulsa) was the projected starter; Hammond won the job coming off the October ACL
-      - 26-of-33 for 298 vs Abilene Christian; 20-of-27 for 189 at Oregon State; 0.335 per play, lowest of the ten starters
-      - 50% passing success on schedule but 29% on passing downs — doesn't recover once behind the chains
+      - Why it's the key: Tech's ceiling is the quarterback, and the sample is two games
+        - Francis (Tulsa) was the projected starter; Hammond won the job coming off the October ACL
+        - 26-of-33 for 298 vs Abilene Christian; 20-of-27 for 189 at Oregon State; 0.335 PPA per play, lowest of the ten starters
+        - 50% passing success on schedule but 29% on passing downs — doesn't recover once behind the chains
+        - 2-of-4 on "deep" throws; 3 completions of 30+ in 65 dropbacks
+      - What he faces: Houston's rush has 4 sacks and its coverage allows 12.9 per completion — throw short, throw early
       - Castellanos short-yardage package: five carries, a touchdown at Oregon State
     - Williams downhill
-      - 20 for 116 (5.8) with a 38-yarder; the other 26 carries went for 39 yards
-      - Line yards 2.8, rushing success 36% — the line isn't creating push, Williams is
-      - Houston's run D vs Oregon State: 33% success allowed, almost no stuffs — there's room
+      - Why: he is the only part of the run game producing, and the run game is the offense's floor
+        - 20 for 116 (5.8) with a 38-yarder at Oregon State; the other 26 carries went for 39 yards
+        - Tech: 79 carries at 4.4, 7 runs of 10+ (9% — second-lowest on the card), stuffed 14%
+        - Line yards 2.8, rushing success 36% — the line isn't creating push, Williams is
+      - What he faces: the best run defense on the card
+        - Houston allowed 1.9 a carry, ZERO runs of 10+ in 41 carries, stuffed 24%
+        - Oregon State ran 19 times for 55 against Tech; against Houston nobody has run at all
     - The portal defense vs a real offense
-      - Oregon State threw for 417 (Atkinson 31-of-51, Legree 8-240 with a 75-yarder)
-      - Allowed only 30% success and 4-of-15 on third down, but explosiveness 2.05 — bend-don't-break with busts
-      - Two sacks (Roberts, Holmes); Trick, Mathis, Romaine a hurry each
-    - Reserve: finish drives — 8-of-16 on third down, 46 for 155 at 3.4, 4 sacks taken turned a 27-point expectation into an 11-point win
+      - Why: the rebuilt front seven gets stops but gives up the one big play
+        - Oregon State threw for 417 (Atkinson 31-of-51, Legree 8-240 with a 75-yarder)
+        - Allowed only 30% success and 6 of 20 on third-and-long, but 3 completions of 30+ (75, 41, 37) all in one game
+        - Explosiveness allowed 2.05 — bend-don't-break with busts
+      - What it faces: Houston is 20% explosive passing (10 of 51 dropbacks, five of 30+) and 18% explosive rushing
+        - Balanced in a way Oregon State was not — Oregon State ran 19 times; Houston runs 40
+    - Reserve: finish drives — 8-of-16 on third down, 46 for 155 at 3.4, 4 sacks taken; 7 touchdowns in 23 red-zone plays turned a 27-point expectation into an 11-point win
   - Corey: Houston 35–24 (confirm his top/bottom convention) — the one winner we split on
 
 - **SMU at Louisville — Sat 3:30 ET**
@@ -66,24 +92,37 @@ first two games, never from a game against each other.
         - 26-of-36 for 430 at FSU, 14-of-16 for 337 and five scores vs UC Davis
       - The matchup in one line: the offense that hits a 30-yarder every 6 dropbacks vs the defense that allows one every 14
     - Protect Jennings
-      - Zero sacks allowed at FSU, one vs UC Davis; Louisville's rush has one sack in two games
-      - Line yards 3.3 then 2.5 — a pass-protection line, not a run-blocking one
+      - Why: SMU's line is built to pass-protect, not to run-block, and the offense only works standing up
+        - One sack allowed in 69 dropbacks (zero at FSU); 2 interceptions, both at FSU
+        - The run side is the weakness: 4.8 a carry, stuffed on 19% of runs, only 93 rushing yards vs UC Davis
+      - What it faces: a rush that has not arrived — Louisville has zero sacks in 70 dropbacks faced
+        - Clev Lubin had 8.5 last year; the prep called this the strength; the numbers say it hasn't shown up yet
     - Explosives, not long drives
-      - Explosiveness 1.29 at FSU, 1.60 vs UC Davis — top of the card; only 93 rushing yards last week
-    - Reserve: takeaway ledger — four giveaways at FSU and still won; zero vs UC Davis
+      - Why: SMU does not sustain, it strikes
+        - Explosiveness 1.29 at FSU, 1.60 vs UC Davis; 11 completions of 30+ in two games
+        - Third-and-long is 7 of 15 (47%) — the best on the card — because the throw on third-and-8 is a shot, not a checkdown
+      - What it faces: a run defense that is soft (3.9 a carry allowed) but a pass defense that only breaks deep — so the shots are the plan, and the checkdowns aren't
+    - Reserve: takeaway ledger — four giveaways at FSU and still won (FSU 2-of-15 on third down); zero vs UC Davis
   - Louisville keys
     - Ride the Browns
-      - Real-game version: Keyjuan 7 for 56, Isaac 16 for 36; Kienholz 14 for 69 with a 41-yard TD run
-      - Line yards 2.2 vs Ole Miss; SMU's run D allowed 199 at 4.4 to FSU — the softest thing on SMU's side
+      - Why: the run game is the one place Louisville is clearly better than what SMU defends
+        - 71 carries at 6.5, 13 runs of 10+ (18%), 5 of 20+ — second-most explosive run game on the card
+        - The real-game version: Keyjuan 7 for 56, Isaac 16 for 36 (2.3), Kienholz 14 for 69 with a 41-yard TD run; line yards 2.2 vs Ole Miss
+      - What it faces: SMU's run defense allowed 4.7 a carry and 199 yards to FSU — the softest unit on SMU's side
+        - SMU stuffs 21% of runs, so it is boom-or-bust against them; the 10+ runs are the play
+      - The point: running keeps Jennings on the bench — 4-of-5 on third-and-1 or 2 says Louisville can stay on the field
     - No coverage busts
-      - The same numbers from Louisville's side: 5 completions of 30+ allowed in 70 dropbacks; 12.5 yards per completion
-      - The rest of the pass defense is fine — 23% on third-and-long, 7.3 an attempt — so the fix is the one deep shot a quarter, not the scheme
-      - 41 allowed to Ole Miss while winning turnovers 2–0; nine penalties for 82
-      - SMU's defense is the contrast: 4.5 an attempt, five sacks, 4 explosives allowed in 64 dropbacks
+      - Why: the same numbers from the other side — 5 completions of 30+ allowed in 70 dropbacks, 12.5 per completion
+        - The rest of the pass defense is fine (23% on third-and-long, 7.3 an attempt), so the fix is the one deep shot a quarter, not the scheme
+        - 41 allowed to Ole Miss while winning turnovers 2–0; nine penalties for 82
+      - What it faces: 4-of-4 on deep throws and 11 completions of 30+ — SMU will test the exact thing that broke
     - Kienholz keeps it clean
-      - 34-of-50, 639, 4 TD, 0 INT + 111 rushing, 3 TD; third QB1 in three years, most efficient so far
-      - SMU's defense: four takeaways in two games
-    - Reserve: win the one-score game — three ACC losses by seven combined points last year, then 41–38
+      - Why: Louisville's margin for error is the turnover column, and so far it is empty
+        - 34-of-50, 639, 4 TD, 0 INT + 111 rushing, 3 TD; 11.4 an attempt, 17.5 per completion, 13 explosives (22% of dropbacks)
+        - Zero giveaways in two games; third QB1 in three years, most efficient so far
+        - One soft spot: third-and-long is 2 of 11 — when the drive stalls, it stalls
+      - What it faces: SMU's defense has 5 sacks, a pick and a fumble recovery in two games; 4.5 an attempt allowed, 3 of 17 on third-and-long
+    - Reserve: win the one-score game — three ACC losses by seven combined points last year, then 41–38 to Ole Miss with 7-of-16 on third down and nine flags
   - Corey: Louisville 35–34
 
 - **Mississippi State at South Carolina — Sat 4:15 ET**
@@ -96,25 +135,45 @@ first two games, never from a game against each other.
     - Two hot seats: Beamer #6 (50% for seven), Lebby cooled 8.9 after Minnesota
   - Mississippi State keys
     - Taylor's legs and arm
-      - 22-of-34 for 354 and four TD vs ULM; 16-of-22 for 227 and three plus 13 for 86 at Minnesota
-      - Evans 7-121-1 and Ragins are the targets; 12th on the Heisman board, Corey has him 3rd
+      - Why: the whole offense runs through one player, and both halves of him are working
+        - Passing: 64 dropbacks, 10.1 an attempt, 15.0 per completion, 10 explosives (16%), 4-of-10 on deep throws, ZERO sacks, ZERO picks
+        - Rushing: 145 yards on 19 carries himself; State's run game is 7.3 a carry with 17 runs of 10+ (21% — most on the card)
+        - 22-of-34 for 354 and four TD vs ULM; 16-of-22 for 227 and three plus 13 for 86 at Minnesota
+        - Evans 7-121-1 and Ragins are the targets; 12th on the Heisman board, Corey has him 3rd
+      - What he faces: the stingiest pass defense on the card — 4.3 an attempt, zero completions of 30+, 3 of 21 on third-and-long
+        - So the test is whether the deep ball (4 of 10) exists against a secondary that has not allowed one
     - Bothwell downhill
-      - 18 for 113 (6.3), two TD, a 30-yarder at Minnesota; State 46 for 252, 61% rushing success vs a Big Ten front
-      - Nobody has tested South Carolina's run D (Kent State, Towson)
+      - Why: State's run game is explosive and South Carolina's run defense has not been tested
+        - 18 for 113 (6.3), two TD, a 30-yarder at Minnesota; State 46 for 252 that day, 61% rushing success vs a Big Ten front
+        - 6 runs of 20+ in two games, stuffed only 16%
+      - What it faces: South Carolina allowed 3.0 a carry and stuffed 24% — but that was Kent State and Towson (29 carries for 21)
+        - Nobody has run a 7-yards-a-carry offense at this front
     - Arnett's defense vs Sellers
-      - The head coach Lebby replaced is his coordinator; 15 carries for 13 yards allowed
-      - Passing-downs success allowed 14% — gets off the field on third down; two sacks at Minnesota
-    - Reserve: turnover ledger — one giveaway in two games; SC had two vs Towson
+      - Why: the head coach Lebby replaced is his coordinator, and the unit is a run-stopping, third-down defense
+        - Run: 3.4 a carry allowed, zero runs of 20+, Minnesota 15 carries for 13 yards
+        - Third down: 2 of 16 allowed on third-and-long (13%) — best on the card; passing-downs success allowed 14%
+        - The soft spot is the pass on normal downs: Minnesota threw 48 times for 279; 5.2 an attempt but volume
+      - What it faces: a quarterback who was 19-of-23 for 270 one week and 10-of-23 for 96 the next; four sacks by the front so far
+    - Reserve: turnover ledger — one giveaway in two games (a fumble at Minnesota); SC had two vs Towson
   - South Carolina keys
     - Let Sellers throw
-      - 19-of-23 for 270 and three TD vs Kent State (70% passing success), then 23% vs Towson
-      - Briles is the fourth coordinator in five years — the tempo and vertical shots are the hire
+      - Why: two games, two quarterbacks
+        - 19-of-23 for 270 and three TD vs Kent State (70% passing success), then 10-of-23 for 96 and a pick vs Towson (23%)
+        - Season: 7.6 an attempt, 12.1 per completion, 7 explosives (12%), 3-of-9 on deep throws
+        - The offense is 6 of 10 on third-and-long — when he has thrown on third down, it has worked
+      - What he faces: a defense that gives up 5.2 an attempt but faced 80 dropbacks — teams throw on it because they cannot run on it
+        - Briles is the fourth coordinator in five years; the tempo and the vertical shots are the hire
     - Protect Sellers
-      - Eight new linemen; the line has allowed ONE sack in two games (the four vs Towson were SC's defense)
-      - Arnett's front: two sacks and a 31% stuff rate at Minnesota — first real test
+      - Why: eight new linemen, and the line has allowed one sack in two games — the question is who it has blocked
+        - The four sacks vs Towson were South Carolina's defense, not sacks allowed
+        - Run blocking is ahead of pass blocking: 8.9 a carry, 16 runs of 10+ (21%), stuffed only 8% — but Kent State and Towson
+      - What it faces: State's front has 4 sacks in 80 dropbacks and stuffed 16% — real pressure for the first time
     - Harbor deep
-      - 2 for 35 vs Towson; 4.2 speed vs six transfer DBs; Minnesota's receivers averaged 12.6 a catch on them
-    - Reserve: Stewart off the edge — four sacks vs Towson; converting pressure was the 2025 problem (97th in sack rate)
+      - Why: State's secondary allows volume, not shots, and Harbor is the one shot player
+        - 2 for 35 vs Towson; 4.2 speed vs six transfer defensive backs
+        - State has allowed 2 completions of 30+ in 80 dropbacks (40 and 34 yards); Minnesota's receivers averaged 12.6 a catch
+      - The point: a 5.2-an-attempt defense gives up the intermediate stuff; the 40-yarder is the one that changes the game
+    - Reserve: Stewart off the edge — five sacks in 61 dropbacks faced, stuffed 24% of runs; converting pressure was the 2025 problem (97th in sack rate)
   - Corey: South Carolina 31–27
 
 - **Florida at Auburn — Sat 7:00 ET, Jordan-Hare**
@@ -128,27 +187,43 @@ first two games, never from a game against each other.
     - Florida's rating has one rated game in it; Auburn's has two
   - Florida keys
     - Philo's first road start
-      - 16-of-21 for 275 and three TD vs FAU; 16-of-21 for 242 and two vs Campbell; 42 career attempts
-      - Wilson 5-104-1, Vernell Brown the targets
-      - Durkin's disguises held Lagway to 27-of-54
+      - Why: the numbers are elite and the sample is soft
+        - 16-of-21 for 275 and three TD vs FAU; 16-of-21 for 242 and two vs Campbell; 42 career attempts, all at home
+        - 11.1 an attempt, 14.6 per completion, 10 explosives (17%), 5-of-8 on deep throws, one sack taken
+        - The one soft number: third-and-long is 2 of 10 — the offense has scored without needing it
+        - Wilson 5-104-1, Vernell Brown the targets
+      - What he faces: a defense that has faced 90 dropbacks and allowed 5.6 an attempt, 4 sacks and 2 picks; Baylor's Lagway went 27-of-54 on it
+        - Durkin's disguises at night are the first thing that could make third-and-long happen
     - Baugh downhill
-      - 14 for 136 (9.7) with a 75-yarder vs Campbell; Florida 50% rushing success both weeks
-      - Auburn allowed 103 at 2.3 to Baylor, 50 at 2.0 to Southern Miss
+      - Why: Florida's run game is explosive and Auburn's run defense is the strength of the defense
+        - Baugh 14 for 136 (9.7) with a 75-yarder vs Campbell; Florida 7.1 a carry, 13 runs of 10+ (19%), stuffed 9%
+        - Auburn allowed 3.1 a carry, 2 runs of 10+ in 62 carries (3% — best on the card), stuffed 18%
+      - The point: if Baugh gets his 10-yarders, Philo never sees third-and-long; if Durkin's front holds like it has, he does
     - White's front vs Brown's legs
-      - The DT vault Napier stockpiled, now under Brad White (Kentucky)
-      - Allowed 120 rushing at 3.2 to FAU but 276 passing on 53 throws, 44% passing success — the back end is the question
-    - Reserve: fourth-down conviction — the Sumrall trait; Florida 5-of-9 and 3-of-9 on third down, hasn't needed long drives
+      - Why: Florida's front is the strength and its back end is the question
+        - Run defense: 3.8 a carry, zero runs of 20+ allowed
+        - Pass defense: 4.5 an attempt but 94 dropbacks faced, 8 of 22 allowed on third-and-long (36%), 6-of-6 on third-and-short allowed
+        - FAU ran 22 third downs and converted 11 — Florida lets drives live
+      - What it faces: a quarterback who ran 13 times for 88 and an offense that is 6 of 16 on third-and-long but 4 of 5 on third-and-short
+    - Reserve: fourth-down conviction — the Sumrall trait; Florida 5-of-9 and 3-of-9 on third down, 3-of-3 on third-and-short
   - Auburn keys
     - Brown's legs
-      - Followed Golesh from USF: 3,158 passing, 1,121 rushing, 42 TD last year
-      - 13 for 88 vs Southern Miss in a 343-yard, 6.7-a-carry day (Mabson 108, Cobb 85); 51 runs called
+      - Why: the designed quarterback run is the offense's identity, and it is the part that worked against Baylor too
+        - 13 for 88 vs Southern Miss in a 343-yard day (Mabson 108, Cobb 85); Auburn 5.7 a carry, 14 runs of 10+ (17%), 6 of 20+
+        - Followed Golesh from USF: 3,158 passing, 1,121 rushing, 42 TD last year
+      - What it faces: a Florida front that allows 3.8 a carry and no 20-yard runs — the legs have to win on 6-yard gains, not 30-yard ones
     - Ball security
-      - Three picks and five sacks vs Baylor, won 17–16 anyway (Baylor 7-of-22 on third down)
-      - Zero turnovers, one sack vs Southern Miss; Florida has five takeaways in two games
+      - Why: it is the difference between Auburn's two games
+        - Baylor: three picks, five sacks taken, 6.9 an attempt; Southern Miss: zero turnovers, one sack, 610 yards
+        - Season: 74 dropbacks, 6 sacks, 3 picks — the most sacks and picks of any offense on the card
+      - What it faces: Florida's defense has 3 sacks and 2 picks in 94 dropbacks — it takes the ball when the quarterback gives it
+        - Two Florida takeaways and the 2.5-point home bump is gone
     - Durkin's defense at home
-      - 16 and 8 allowed; four sacks and a 6% passing-downs rate vs Southern Miss
-      - Retained coordinator — the carryover unit, the reason Auburn is 2–0
-    - Reserve: tempo without turnovers — 610 yards on 84 plays; ten penalties for 73
+      - Why: the retained coordinator's unit is the reason Auburn is 2–0
+        - 16 and 8 allowed; 3.1 a carry, 5.6 an attempt, 3 of 18 on third-and-long (17%)
+        - Four sacks and two picks vs Southern Miss; passing-downs success allowed 6%
+      - What it faces: an offense at 11.1 an attempt and 7.1 a carry — the first one that can do both
+    - Reserve: tempo without turnovers — 610 yards on 84 plays; ten penalties for 73; 22 red-zone plays, 6 touchdowns
   - Corey: Auburn 28–27
 
 - **LSU at Ole Miss — Sat 7:30 ET, Oxford — the closer**
@@ -162,27 +237,45 @@ first two games, never from a game against each other.
     - Say: "Kiffin walks back into the Vaught with the roster he built, against the QB who refused to follow him"
   - LSU keys
     - Leavitt's ball security
-      - 16-of-28 for 230 + 113 rushing and two TD vs Clemson; 25-of-38 for 344 and THREE picks vs La Tech
-      - 41-of-66, 574, 2 TD, 4 INT, 135 rushing, 5 rushing TD; 0.320 per play, second-lowest on the card
-      - Receivers: Green 6-104-1, Wilson 6-93, Harris 3-80 — best group on the card
+      - Why: LSU's offense moves the ball on everyone and gives it away
+        - 81 dropbacks, 8.7 an attempt, 13 explosives (16%), 4-of-11 deep — and 4 picks, 5 sacks; 98 carries, 16 stuffed
+        - 16-of-28 for 230 + 113 rushing and two TD vs Clemson; 25-of-38 for 344 and THREE picks vs La Tech
+        - 9 of 14 on third-and-long and 7 of 9 on third-and-short — the offense converts; it just also turns it over
+        - Receivers: Green 6-104-1, Wilson 6-93, Harris 3-80 — best group on the card
+      - What it faces: Ole Miss has 4 sacks and a pick in 61 dropbacks, and allowed 8.0 an attempt — a defense you can throw on, and one that will take a gift
     - Protect Leavitt
-      - Zero sacks vs Clemson (309 rushing on 58 carries, 3.5 line yards); five vs La Tech (2.0 line yards, ten penalties for 101)
-      - Ole Miss: three sacks vs Louisville, 34% stuff rate vs Charlotte
+      - Why: two different lines in two weeks
+        - Zero sacks vs Clemson (309 rushing on 58 carries, 3.5 line yards); five vs La Tech (2.0 line yards, ten penalties for 101)
+        - The run game is grind, not burst: 4.7 a carry, only 1 run of 20+ in 98 carries
+      - What it faces: Ole Miss stuffed 28% of runs (second-best on the card) and had three sacks vs Louisville — the front is real even if the coverage isn't
     - Baker's front vs Chambliss
-      - Clemson 1-of-13 on third down, 145 yards; La Tech 3-of-14, 140 yards, minus-3 rushing
-      - Chambliss: "the best in the country at turning dead plays into first downs"
-    - Reserve: Kiffin's tempo — 94 and 85 plays; LSU 11-of-16 and 8-of-17 on third down; Golding called his defenses
+      - Why: SP+'s projected No. 2 defense is playing like it
+        - 11 sacks in 55 dropbacks faced — one every five; 4.2 an attempt, 3 of 20 on third-and-long
+        - Run: 2.0 a carry, one run of 10+ in 45 carries, stuffed 31% — best on the card by a mile
+        - Clemson 1-of-13 on third down; La Tech 3-of-14 and minus-3 rushing; 2 touchdowns allowed in 3 red-zone plays faced
+      - What it faces: a quarterback sacked ONCE in 70 dropbacks — "the best in the country at turning dead plays into first downs"
+    - Reserve: Kiffin's tempo — 94 and 85 plays; 40 red-zone plays, 11 touchdowns; Golding called his defenses for years
   - Ole Miss keys
     - Let Chambliss escape
-      - 21-of-36 for 336 and three TD vs Louisville (sacked three times); 23-of-26 for 225 vs Charlotte
-      - 44-of-62, 561, 5 TD, 1 INT on the season
+      - Why: the escape is the whole offense, and the numbers show it
+        - Sacked once in 70 dropbacks — against a Louisville rush that had none and a Charlotte rush that had one
+        - 9.0 an attempt, 13.1 per completion, 6 completions of 30+ (62 Richardson, 54 McCoy in one game)
+        - Third-and-long is 1 of 8 — when he cannot escape, the drive is over; third-and-short 4 of 5
+        - 21-of-36 for 336 vs Louisville; 23-of-26 for 225 vs Charlotte; 44-of-62, 561, 5 TD, 1 INT
+      - What it faces: a sack every five dropbacks — the first front that gets home before the escape
     - Lacy runs it
-      - 17 for 61 (3.6) vs Louisville, 13 for 87 (6.7) with two TD vs Charlotte; 300 carries last year
-      - Line yards 2.8 in the real game; LSU allowed 32% then 15% rushing success
+      - Why: the play-action needs a run game the defense has to respect, and LSU's front has not respected anyone
+        - 17 for 61 (3.6) vs Louisville, 13 for 87 (6.7) with two TD vs Charlotte; 300 carries last year
+        - Ole Miss run game: 4.9 a carry, 8 runs of 10+ (13%), 1 of 20+, stuffed 18%; line yards 2.8 in the real game
+      - What it faces: 2.0 a carry allowed, 31% stuffed, one 10-yard run allowed in two games
+        - The hardest key on the card — and the one that decides whether Chambliss ever gets a clean play-action look
     - The patched secondary
-      - Three of nine returned; Aguero (Georgia) and Joseph (FSU) patched it
-      - Louisville threw for 307 on it at 10.6 an attempt; Charlotte 179
-    - Reserve: special teams — Ole Miss was No. 1 in SP+ special teams; hidden yards are the gap between 5.2 and 3
+      - Why: three of nine returned, and the numbers say it is the softest pass defense on the card
+        - 8.0 an attempt allowed, 12.8 per completion, 9 explosives in 61 dropbacks (15% — worst on the card), 4 of 30+
+        - 62 to Richardson and 54 to McCoy in one game vs Louisville; 3-of-7 on deep throws allowed
+        - Aguero (Georgia) and Joseph (FSU) patched it; Louisville's Kienholz averaged 10.6 an attempt on them
+      - What it faces: LSU's receivers (Green, Wilson, Harris) and a quarterback who throws deep 4-of-11 and picks 4 in 81 — the shots and the gifts both come
+    - Reserve: special teams — Ole Miss was No. 1 in SP+ special teams; LSU's were middle of the pack; the hidden yards are the gap between 5.2 and 3
   - Corey: LSU 34–28
 
 - **Our predictions — closer slide**
