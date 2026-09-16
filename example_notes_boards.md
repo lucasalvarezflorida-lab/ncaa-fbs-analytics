@@ -1,80 +1,144 @@
-# Ep4 · Week 3 — BOARDS (notes, not a script)
+# Ep4 · Week 3 — BOARDS
 
-Cue-card rule: one number per line, one "Say:" per section, nothing you
-would not say out loud. Depth lives in the archive file if you need it.
+Outline notes: topic → the points → the facts under each point. Read the
+level you need.
 
-## Slide 2 — Receipts (Week 2)
+- **Receipts (Week 2) — Slide 2**
+  - Three-way total, lower is better: Machine 40.5 · Market 48.0 · Man 39.0
+    - Machine closer than the market in 4 of 5
+    - The one miss: Texas — market off 0.5, machine 2.5, man 2
+    - Corey's Michigan number reads 3, not 11, if his call was Michigan 21–17 → his week would be 31.0
+  - Season: Machine 161.0 vs Market 167.0 across 15 games
+    - Machine leads for the first time; Week 0 was a dead heat at 70.0 each
+    - Man over Weeks 1–2 (10 games): 87.0 vs machine 91.0 vs market 97.0
+  - Deserved margins (efficiency layer): machine off 23.6 against the play, 40.5 against the score
+    - Texas deserved +5.6, won by 1 → our Texas −3.7 was the right read
+    - A&M deserved +15.1, won by 28 → our 16.7 nailed the efficiency
+    - Say: "we grade the scoreboard; the efficiency is the explanation"
+  - Stated leans: 1–0 this week, 4–2 on the season
+    - Michigan +5.5 ("lean, research") won outright 17–10
+    - Alabama "quibble" also covered, but it was called a quibble, not a position
 
-- Machine 40.5 · Market 48.0 · Man 39.0 (Corey's column)
-- Machine closer in 4 of 5. Only miss: Texas (market 0.5, us 2.5)
-- Season, 15 games: machine 161.0 · market 167.0 — machine leads first time
-- Deserved margins: machine off 23.6 vs the play, 40.5 vs the score
-- Leans: Michigan +5.5 won outright → 1–0 · season 4–2
-- Check with Corey: his Michigan miss reads 3, not 11
-- Say: "we grade the scoreboard; the efficiency is the explanation"
+- **Winners and Losers — Slide 3**
+  - Upset weekend = AP top-25 teams losing, by the poll in force that Saturday
+    - #6 Oregon lost 39–31 at unranked Oklahoma State — the true upset
+    - #11 Oklahoma lost 17–10 at unranked Michigan
+    - #1 Ohio State lost 24–23 at #4 Texas — ranked on ranked, not an upset by the rule
+    - Near misses: #19 Washington by 2 over Utah State, #21 Iowa by 3 over Iowa State
+  - Machine's read on each
+    - Oregon −4.6, biggest fall in the 25; Oklahoma State +5.0, biggest rise in FBS
+    - Oklahoma −1.5: machine had it −2, so a 7-point loss was a 9-point miss
+    - Ohio State UP 0.4: expected to lose by 3.7, lost by 1
+  - Man's picks and the machine's answer
+    - Winner North Texas: machine agrees, +5.9 for 44–6 over UNLV, biggest one-week gain anywhere
+    - Loser Washington: 9.4 → 6.1, #29 → #44, for beating Utah State by two
+    - Machine's own if asked: Utah (+4.3, only new team in the 25) and Oregon
 
-## Slide 3 — Winners & Losers
+- **Heisman board (machine) — Slide 4**
+  - How it works: index = team factor × blended efficiency
+    - Team factor = 0.5 + half the team's odds of 10+ wins (from the sim)
+    - Efficiency = 2026 PPA per play, with 150 plays of the 2025 line as a prior
+    - Market = DraftKings; the slide rows now show box-score lines
+  - The five: Mensah 48.5 · Hoover 47.1 · Carr 44.4 · Sayin 43.1 · Maiava 32.9
+    - Mensah: 41-of-45, 653 yards, 8 TD, 0 INT; market +550, #1 both places
+    - Hoover: 19-of-27, 376, 8 TD, 0 INT; 1.42 per play; market +1700, has him 8th → "market too low"
+    - Carr: 35-of-49, 492, 6 TD; Notre Dame's 86% for 10 wins carries him
+    - Sayin: 38-of-57, 598, 4 TD, 1 INT; the 2025 prior keeps him top four
+    - Maiava: 67-of-83, 896, 10 TD in three games; USC's 16% for 10 wins is the drag
+  - Biggest risers (Week 2 board → Week 3 board)
+    - Hoover +6.5 (#4 → #2): line and team factor both up
+    - Jennings +6.4 (#13 → #8): 14-of-16 for 337 and five scores; all quarterback
+    - Dampier +6.3 (#10 → #6): Utah's 10-win odds 13% → 33%; all team factor; unpriced
+  - Biggest fallers
+    - Moore −7.4 (#6 → #13): 0.293 per play, Oregon's odds 57% → 29%; market pulled his price
+    - Manning −5.2 (#8 → #10): 23-of-37 for 195 and a pick vs Ohio State; market still #3 at +1000
+    - Hammond −4.7, Leavitt −4.5 (three picks, +1500 → +2500) — both play on this card
+    - Sayin −1.6 but #1 → #4: three quarterbacks passed him
+  - New to the board: Kienholz #9, Kamario Taylor #12, Sellers #20
+  - Say: "the market bought the fourth quarter; the index graded the game"
 
-- Upset weekend, by the poll that Saturday: #6 Oregon (at unranked OK State), #11 Oklahoma (at unranked Michigan), #1 Ohio State (at #4 Texas — ranked on ranked)
-- Machine winner: Utah +4.3, only new team in the 25 · Loser: Oregon −4.6
-- Man's North Texas: machine agrees, +5.9, biggest gain in FBS
+- **Heisman (Corey's five) — Slide 5**
+  - Maiava (stayed 1), Sheppard RB Duke (new), Kamario Taylor (stayed 3), Kienholz (new), Leavitt (new)
+    - Where the machine has them: Maiava #5 · Sheppard not on the board (QBs only) · Taylor #12 · Kienholz #9 · Leavitt #16
+    - He ranks players; the machine ranks player × team, which is how the vote goes
+    - Ask him: why no Mensah, ours and the market's #1
 
-## Slide 4 — Heisman (machine)
+- **Top 25 (machine) — Slide 6**
+  - What the number means
+    - Rating = points better than an average FBS team on a neutral field; 0 is average, median team −1.1, last −18.6
+    - A game line = the difference + 2.5 for home (LSU 22.3 at Ole Miss 14.6 → LSU by 5.2)
+    - Starts as ESPN's July FPI; every rated game moves it by margin vs expectation, not W/L
+    - The July prior is worth three games, so two games in it's still most of the rating; FCS games count nothing
+  - Ohio State 25.0 (#1) and Texas 25.0 (#2) after Texas won the game
+    - Machine expected Texas by 3.7; losing by one beat the expectation → OSU up 0.4, Texas down 0.8
+    - Say: "voters grade the scoreboard; the machine grades the margin against the expectation"
+  - Oregon #11 at 17.3 with a −8.0 — the example
+    - July had them 25.3, fourth in the country
+    - Week 1: expected +23.8 vs Boise State, won by 7 → 16.8 short
+    - Week 2: expected +19.5 at Oklahoma State, lost by 8 → 27.5 short
+    - 44 points short, diluted by the prior → −8.0; 17.3 still says "beats an average team by 17," only ten say more
+    - To fall out of the 25 they need to reach 10.9 — two more 20-point misses
+  - Same rule the other way
+    - Utah #31 → #21 on one game: expected +6.6 vs Arkansas, won by 33
+    - Texas Tech won by 11 at Oregon State and fell 2.8: expected 25.6
+  - Voters vs us (Week 3 poll)
+    - Oregon 21 vs 11 · Oklahoma 24 vs 15 · BYU 11 vs 19
+    - Ours not theirs: Florida, Auburn, South Carolina · Theirs not ours: Iowa, Houston, Louisville
+  - Internal only, not on the slide
+    - Luck (actual minus deserved, per game): Texas +12.5, Texas Tech +14.1, Oregon −7.5, Ohio State −3.6
+    - The cap docks blowouts (Notre Dame −2.5 for 52–0); the fix goes live with the Week 4 refresh — say it now so next week's jump is explained
 
-- #1 Mensah 48.5 (+550, market #1) · #2 Hoover 47.1 (+1700, market #8) · #3 Carr 44.4 · #4 Sayin 43.1 · #5 Maiava 32.9
-- Mover up: Hoover +6.5 — 1.42 per play, Indiana 79% for 10 wins
-- Mover down: Moore −7.4 (#6 → #13), Oregon's 10-win odds 57% → 29%
-- Manning: market #3, ours #10 — 23-of-37 for 195 vs Ohio State
-- New: Kienholz straight in at #9
-- Say: "the market bought the fourth quarter; the index graded the game"
+- **Top 25 (Corey's) — Slides 7–11**
+  - His top ten: Texas, Notre Dame, Georgia, Miami, Indiana, Alabama, A&M, LSU, Tennessee, Ohio State
+    - Biggest splits: Ohio State (his 10 / ours 1) · Oregon (22 / 11) · Nebraska (18 / our 26) · Penn State (12 / 18)
+    - Agree: Alabama 6/6, LSU 8/8, SMU 24/24; 15 of his 25 within three spots of ours
+    - His errors to flag: BYU beat Arizona not Arkansas; UTEP is AT Michigan; Notre Dame was 3rd not 2nd last week
 
-## Slide 5 — Heisman (Corey's five)
+- **Hot Seat (machine) — Slide 12**
+  - How the score works (0–100)
+    - 60 points × (CBS rating ÷ 5) + 40 points × chance of MISSING the bar
+    - CBS half frozen since Aug 29 → every move this week is the machine reacting to a game
+    - One point of score = 2.5 points of bar probability
+    - Norvell 92: CBS 5.0 = 60, plus 80% to miss eight wins = 32
+  - Into the ten: Doeren, NC State, #12 → #10
+    - Did not move — same 63.8, same 30% for seven wins; 73–0 over Richmond was FCS
+    - Tenth because the man above him fell past him
+  - Out of the ten: Belichick, North Carolina, #10 → #12
+    - 64.2 → 62.3; the TCU win keeps the sim at 67% for a bowl
+    - Machine has said since Week 1 he's fine; the CBS 4.1 keeps him near the line
+  - Order changes inside the ten
+    - Schiano #4 → #2 on Locksley's fall, not his own move; 4% for six wins, −7.7 rating, last in FBS
+    - Locksley #2 → #5, biggest drop inside the ten: 38–14 at UConn, bowl odds 50% → 65%
+    - Swinney #9 → #7 on a win: 22–7 over Georgia Southern was under expectation; 17% for nine
+    - Mason #7 → #9 after a loss the machine expected to be worse
+  - Knocking: Fleck #11 from #22, biggest jump on the board
+    - 38–13 at home to Mississippi State; 7% for the seven wins that keep him; one more loss and he's in
+  - Norvell #1 at 92 unmoved, FSU idle; Alabama in Tallahassee next
+  - Caveat, say it: the bars are ours; the CBS ratings are three weeks old
 
-- Maiava (ours #5) · Sheppard (RB, not on our board) · K. Taylor (#12) · Kienholz (#9) · Leavitt (#16, −4.5 this week)
-- Ask him: why no Mensah
+- **Hot Seat (Corey's ten) — Slide 13**
+  - Venables, Aranda, Norvell, Dykes, Swinney, Fickell, Doeren, Key, Fran Brown, Leipold
+    - Venables his #1, ours #14: 33% for eight wins with Georgia and Texas still to come
+    - Dykes, Key, Fran Brown: not on the machine board (no CBS rating in August) — he covers three seats we can't see
+    - Leipold his #10, our #25 but the biggest riser on the board (+7.9, 67% → 47% for six)
+    - Ours he skipped: Schiano #2, Locksley #5, Beamer #6 (plays Saturday), O'Brien #8, Mason #9
 
-## Slide 6 — Top 25 (machine)
+- **Superdog rules and standings — Slide 50**
+  - Ours: the dog must win; points = the spread at the pick
+    - 0-for-4 outright, 0 points
+  - His: 3.5-point dogs or more; 5 for a cover, 5 + spread for a win, 1 for a push
+    - Man 23 (Colorado beat Georgia Tech, Duke beat Illinois) · Machine 10 (two Week 1 covers)
+  - Settle one rulebook before the picks so next week's receipts grade cleanly
 
-- Rating = points better than an average FBS team, neutral field
-- Ohio State 25.0 and Texas 25.0 — OSU up 0.4 after losing, Texas down 0.8 after winning
-- Say: "expected Texas by 3.7; losing by one beat the expectation"
-- Oregon #11 at 17.3 despite −8.0: July had them 25.3; two misses of 17 and 27 points
-- Voters vs us: Oregon 21 vs 11 · Oklahoma 24 vs 15 · BYU 11 vs 19
-- Ours not theirs: Florida, Auburn, South Carolina · Theirs not ours: Iowa, Houston, Louisville
-- Internal only: luck — Texas +12.5, Texas Tech +14.1, Oregon −7.5
-- Housekeeping: cap docks blowouts (ND −2.5 for 52–0). Fix goes live Week 4
-
-## Slides 7–11 — Top 25 (Corey's)
-
-- Biggest splits: Ohio State (his 10 / ours 1) · Oregon (22 / 11) · Nebraska (18 / our 26)
-- Agree: Alabama 6, LSU 8, SMU 24
-
-## Slide 12 — Hot Seat (machine)
-
-- Score = 60% CBS rating + 40% odds of missing the bar. CBS half frozen since Aug 29
-- In: Doeren #10 (from 12) — did not move; Locksley fell past him
-- Out: Belichick #12 (from 10) — 67% for a bowl, machine says he's fine
-- Schiano #2 on Locksley's fall, not his own move — 4% for six wins
-- Swinney #7: hotter on a win (22–7 was under expectation)
-- Knocking: Fleck #11 from #22 — 7% for seven wins
-- Norvell #1 at 92, FSU idle; Alabama next
-
-## Slide 13 — Hot Seat (Corey's ten)
-
-- Venables his #1, ours #14 (33% for eight) · Dykes, Key, Fran Brown: not on our board (no CBS rating)
-- Ours he skipped: Schiano #2, Locksley #5, Beamer #6, O'Brien #8
-
-## Slide 50 — Superdog rules
-
-- Ours: dog must win, points = spread. 0-for-4, 0 pts
-- His: 5 cover / 5+spread win / 1 push. Man 23, Machine 10
-- Settle one rulebook before the picks
-
-## Slide 51 — Superdog picks
-
-- Machine: Sacramento State +27.5 vs NDSU — 24% to win, 84% to cover, market 4%
-- Say the caveat first: 20-point machine/market gap; "the machine's number, not ours"
-- Giant Killer: Utah State +28.5 at #17 Utah — 12.5% to win, market 4%
-- Real one if asked: Charlotte +17.5 at App State, 27.5% to win
-- Corey: FIU +7 (machine likes it more than the market, 40% to win) · Colorado State +18 (machine 11%, no)
-- Same order under both rulebooks
+- **Superdog picks — Slide 51**
+  - Machine Superdog: Sacramento State +27.5 vs North Dakota State
+    - 24% to win, 84% to cover; market 4%; EV 6.5 our rule, 10.7 his
+    - Say the caveat first: 20-point machine/market gap — NDSU is FBS in the data for the first time, both teams on a July prior
+    - "The machine's number, not ours"; it stays the pick because the rule is the rule
+  - Machine Giant Killer: Utah State +28.5 at #17 Utah
+    - 12.5% to win, 73% to cover; market 4%; Utah +4.3 after 43–10 over Arkansas
+  - The real one if asked: Charlotte +17.5 at App State — 27.5% to win, 69% to cover
+  - Corey's picks, priced
+    - FIU +7 at FAU: 40% to win (market 30%), 58% to cover — decent; line is 6.5 now
+    - Colorado State +18 vs BYU: 11% to win, 45% to cover — machine has BYU −19.7, the weakest pick on the board
+  - Both rulebooks give the same order, so the rulebook doesn't change the pick

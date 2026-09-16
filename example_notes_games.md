@@ -1,56 +1,175 @@
-# Ep4 · Week 3 — GAMES (notes, not a script)
+# Ep4 · Week 3 — GAMES
 
-Per game: the read in three lines · the number · three keys a side · the
-call. Nothing repeats from the boards file.
+Outline notes: game → the read, the number, each team's keys with the facts
+under them, the honesty line, Corey's call. Stats are from each team's
+first two games, never from a game against each other.
 
-## Houston at Texas Tech — Fri 8:00 ET
+- **Houston at Texas Tech — Fri 8:00 ET, Lubbock**
+  - The read
+    - Houston runs Weigman by design and lets him scramble when the front gets home — that threat slows the best pass rush on the card
+    - Tech wins on early downs: stop the run, get Houston to third-and-long, then Trick and White rush
+    - Hammond has thrown 60 passes since the knee and took 4 sacks at Oregon State
+  - The number: Tech −13, 79% · Market −7.5 · Call Tech 33–20
+    - Line has moved six points toward Houston since August (−13.5 → −7.5); the machine hasn't moved
+    - Honesty: 5.5 to Tech, a small lean — 5.7 points of win probability, under the 6-point flag
+    - Series: four straight for Tech (38–21, 33–30, 49–28, 35–11)
+  - Houston keys
+    - Weigman's legs vs the rebuilt front
+      - 795 rushing yards last year; Houston would rather he run on broken plays than designed ones (injury history)
+      - When Tech's front gets home, a sack becomes a scramble — that's what makes the ends play contain
+    - Run it 45 times
+      - 388 rushing at 8.6 last week, three backs over 55 — against Southern
+      - Against Oregon State: 45% rushing success, 53% passing, 48% on passing downs — stays on schedule
+    - Make Hammond throw
+      - Force the pocket game; secondary Webb, Allen, James
+  - Texas Tech keys
+    - Hammond's second real start
+      - Francis (Tulsa) was the projected starter; Hammond won the job coming off the October ACL
+      - 26-of-33 for 298 vs Abilene Christian; 20-of-27 for 189 at Oregon State; 0.335 per play, lowest of the ten starters
+      - 50% passing success on schedule but 29% on passing downs — doesn't recover once behind the chains
+      - Castellanos short-yardage package: five carries, a touchdown at Oregon State
+    - Williams downhill
+      - 20 for 116 (5.8) with a 38-yarder; the other 26 carries went for 39 yards
+      - Line yards 2.8, rushing success 36% — the line isn't creating push, Williams is
+      - Houston's run D vs Oregon State: 33% success allowed, almost no stuffs — there's room
+    - The portal defense vs a real offense
+      - Oregon State threw for 417 (Atkinson 31-of-51, Legree 8-240 with a 75-yarder)
+      - Allowed only 30% success and 4-of-15 on third down, but explosiveness 2.05 — bend-don't-break with busts
+      - Two sacks (Roberts, Holmes); Trick, Mathis, Romaine a hurry each
+    - Reserve: finish drives — 8-of-16 on third down, 46 for 155 at 3.4, 4 sacks taken turned a 27-point expectation into an 11-point win
+  - Corey: Houston 35–24 (confirm his top/bottom convention) — the one winner we split on
 
-- Read: Houston runs Weigman by design, scrambles when the front gets home. Tech wins on early downs, then rushes on third-and-long. Hammond: 60 passes since the knee, 4 sacks at Oregon State
-- Machine: Tech −13 (79%) · Market −7.5 · Call: Tech 33–20
-- Houston: Weigman's legs vs the front · Run it 45 times · Make Hammond throw
-- Tech: Hammond's second real start · Williams downhill (116; other backs 39 on 26) · Portal D vs a real offense (417 allowed)
-- Honesty: 5.5 to Tech, small lean. Four straight for Tech in the series
-- Corey: Houston 35–24 (confirm) — the one winner we split on
+- **SMU at Louisville — Sat 3:30 ET**
+  - The read
+    - Jennings 40-of-52, 767, 8 TD; Louisville's busts come on standard downs, where SMU's play-action lives
+    - SMU won at FSU despite four giveaways because FSU went 2-of-15 on third down
+    - Louisville has zero giveaways and lost to Ole Miss anyway — the coin-flip story in one line
+  - The number: Louisville −1, 54% · Market −1.5 · Call Louisville 30–29 · Monster Under 59.5
+    - Honesty: machine = market, no side; the total is the talk
+    - Line unmoved since August
+  - SMU keys
+    - Jennings vs the bust-prone back end
+      - Louisville allowed 336 passing and a 47% success rate to Ole Miss; 41 points
+      - Jennings 26-of-36 for 430 at FSU, 14-of-16 for 337 and five scores vs UC Davis
+    - Protect Jennings
+      - Zero sacks allowed at FSU, one vs UC Davis; Louisville's rush has one sack in two games
+      - Line yards 3.3 then 2.5 — a pass-protection line, not a run-blocking one
+    - Explosives, not long drives
+      - Explosiveness 1.29 at FSU, 1.60 vs UC Davis — top of the card; only 93 rushing yards last week
+    - Reserve: takeaway ledger — four giveaways at FSU and still won; zero vs UC Davis
+  - Louisville keys
+    - Ride the Browns
+      - Real-game version: Keyjuan 7 for 56, Isaac 16 for 36; Kienholz 14 for 69 with a 41-yard TD run
+      - Line yards 2.2 vs Ole Miss; SMU's run D allowed 199 at 4.4 to FSU — the softest thing on SMU's side
+    - No coverage busts
+      - 41 allowed to Ole Miss while winning turnovers 2–0; nine penalties for 82
+    - Kienholz keeps it clean
+      - 34-of-50, 639, 4 TD, 0 INT + 111 rushing, 3 TD; third QB1 in three years, most efficient so far
+      - SMU's defense: four takeaways in two games
+    - Reserve: win the one-score game — three ACC losses by seven combined points last year, then 41–38
+  - Corey: Louisville 35–34
 
-## SMU at Louisville — Sat 3:30 ET
+- **Mississippi State at South Carolina — Sat 4:15 ET**
+  - The read
+    - Taylor 7 TD, 0 INT, 145 rushing; State converted half its passing downs at Minnesota
+    - Arnett's 4-2-5 held Minnesota to 13 rushing yards but allowed 279 passing on 48 throws — throw on it
+    - Sellers hasn't thrown: 10-of-23 for 96 vs Towson
+  - The number: SC −5, 63% · Market −4 · Call SC 32–27
+    - Honesty: 0.9 to South Carolina, no play; the total (58.5) slipped under the Monster Under line Tuesday
+    - Two hot seats: Beamer #6 (50% for seven), Lebby cooled 8.9 after Minnesota
+  - Mississippi State keys
+    - Taylor's legs and arm
+      - 22-of-34 for 354 and four TD vs ULM; 16-of-22 for 227 and three plus 13 for 86 at Minnesota
+      - Evans 7-121-1 and Ragins are the targets; 12th on the Heisman board, Corey has him 3rd
+    - Bothwell downhill
+      - 18 for 113 (6.3), two TD, a 30-yarder at Minnesota; State 46 for 252, 61% rushing success vs a Big Ten front
+      - Nobody has tested South Carolina's run D (Kent State, Towson)
+    - Arnett's defense vs Sellers
+      - The head coach Lebby replaced is his coordinator; 15 carries for 13 yards allowed
+      - Passing-downs success allowed 14% — gets off the field on third down; two sacks at Minnesota
+    - Reserve: turnover ledger — one giveaway in two games; SC had two vs Towson
+  - South Carolina keys
+    - Let Sellers throw
+      - 19-of-23 for 270 and three TD vs Kent State (70% passing success), then 23% vs Towson
+      - Briles is the fourth coordinator in five years — the tempo and vertical shots are the hire
+    - Protect Sellers
+      - Eight new linemen; the line has allowed ONE sack in two games (the four vs Towson were SC's defense)
+      - Arnett's front: two sacks and a 31% stuff rate at Minnesota — first real test
+    - Harbor deep
+      - 2 for 35 vs Towson; 4.2 speed vs six transfer DBs; Minnesota's receivers averaged 12.6 a catch on them
+    - Reserve: Stewart off the edge — four sacks vs Towson; converting pressure was the 2025 problem (97th in sack rate)
+  - Corey: South Carolina 31–27
 
-- Read: Jennings 40-of-52, 767, 8 TD; Louisville busts on standard downs. SMU won at FSU with 4 giveaways. Louisville lost to Ole Miss with 0
-- Machine: Louisville −1 (54%) · Market −1.5 · Call: Louisville 30–29 · Monster Under 59.5
-- SMU: Jennings vs the bust-prone back end · Protect Jennings (0 sacks at FSU) · Explosives, not long drives
-- Louisville: Ride the Browns (Keyjuan, not Isaac) · No coverage busts · Kienholz keeps it clean (0 INT)
-- Honesty: machine = market, no side. The total is the talk
-- Corey: Louisville 35–34
+- **Florida at Auburn — Sat 7:00 ET, Jordan-Hare**
+  - The read
+    - Philo's line is the best per play on the card, all at home vs FAU and Campbell; 36% then 22% on passing downs
+    - Auburn is two teams: three picks and five sacks taken vs Baylor, then 610 yards and zero turnovers
+    - Durkin's defense has held both opponents under 3 a carry; Baugh is the first 1,100-yard back it sees
+  - The number: Auburn −0.5, 52% · Market Florida −2.5 · Call Auburn 27–26
+    - Honesty: lean Auburn +2.5, research not a position — the 2.5 home bump is the whole gap
+    - Widest machine/market gap on the card: 8.8 points of win probability
+    - Florida's rating has one rated game in it; Auburn's has two
+  - Florida keys
+    - Philo's first road start
+      - 16-of-21 for 275 and three TD vs FAU; 16-of-21 for 242 and two vs Campbell; 42 career attempts
+      - Wilson 5-104-1, Vernell Brown the targets
+      - Durkin's disguises held Lagway to 27-of-54
+    - Baugh downhill
+      - 14 for 136 (9.7) with a 75-yarder vs Campbell; Florida 50% rushing success both weeks
+      - Auburn allowed 103 at 2.3 to Baylor, 50 at 2.0 to Southern Miss
+    - White's front vs Brown's legs
+      - The DT vault Napier stockpiled, now under Brad White (Kentucky)
+      - Allowed 120 rushing at 3.2 to FAU but 276 passing on 53 throws, 44% passing success — the back end is the question
+    - Reserve: fourth-down conviction — the Sumrall trait; Florida 5-of-9 and 3-of-9 on third down, hasn't needed long drives
+  - Auburn keys
+    - Brown's legs
+      - Followed Golesh from USF: 3,158 passing, 1,121 rushing, 42 TD last year
+      - 13 for 88 vs Southern Miss in a 343-yard, 6.7-a-carry day (Mabson 108, Cobb 85); 51 runs called
+    - Ball security
+      - Three picks and five sacks vs Baylor, won 17–16 anyway (Baylor 7-of-22 on third down)
+      - Zero turnovers, one sack vs Southern Miss; Florida has five takeaways in two games
+    - Durkin's defense at home
+      - 16 and 8 allowed; four sacks and a 6% passing-downs rate vs Southern Miss
+      - Retained coordinator — the carryover unit, the reason Auburn is 2–0
+    - Reserve: tempo without turnovers — 610 yards on 84 plays; ten penalties for 73
+  - Corey: Auburn 28–27
 
-## Mississippi State at South Carolina — Sat 4:15 ET
+- **LSU at Ole Miss — Sat 7:30 ET, Oxford — the closer**
+  - The read
+    - Leavitt 2 TD, 4 INT; LSU took zero sacks vs Clemson, five vs Louisiana Tech — which line shows up is the game
+    - LSU's defense: 11 sacks, 5% and 12% allowed on passing downs; Ole Miss converted 67% of its passing downs — something gives
+    - Lacy has to keep the play-action honest vs a front that held two opponents to 40 and minus-3 rushing
+  - The number: LSU −5, 62% · Market −3 · Call LSU 32–27 · Monster Under 59.5
+    - Honesty: 2.2 to LSU, a quibble; the machine's LSU number still carries the 51–10 Clemson game
+    - Home team five straight: 31–17, 45–20, 55–49, 29–26, 24–19
+    - Say: "Kiffin walks back into the Vaught with the roster he built, against the QB who refused to follow him"
+  - LSU keys
+    - Leavitt's ball security
+      - 16-of-28 for 230 + 113 rushing and two TD vs Clemson; 25-of-38 for 344 and THREE picks vs La Tech
+      - 41-of-66, 574, 2 TD, 4 INT, 135 rushing, 5 rushing TD; 0.320 per play, second-lowest on the card
+      - Receivers: Green 6-104-1, Wilson 6-93, Harris 3-80 — best group on the card
+    - Protect Leavitt
+      - Zero sacks vs Clemson (309 rushing on 58 carries, 3.5 line yards); five vs La Tech (2.0 line yards, ten penalties for 101)
+      - Ole Miss: three sacks vs Louisville, 34% stuff rate vs Charlotte
+    - Baker's front vs Chambliss
+      - Clemson 1-of-13 on third down, 145 yards; La Tech 3-of-14, 140 yards, minus-3 rushing
+      - Chambliss: "the best in the country at turning dead plays into first downs"
+    - Reserve: Kiffin's tempo — 94 and 85 plays; LSU 11-of-16 and 8-of-17 on third down; Golding called his defenses
+  - Ole Miss keys
+    - Let Chambliss escape
+      - 21-of-36 for 336 and three TD vs Louisville (sacked three times); 23-of-26 for 225 vs Charlotte
+      - 44-of-62, 561, 5 TD, 1 INT on the season
+    - Lacy runs it
+      - 17 for 61 (3.6) vs Louisville, 13 for 87 (6.7) with two TD vs Charlotte; 300 carries last year
+      - Line yards 2.8 in the real game; LSU allowed 32% then 15% rushing success
+    - The patched secondary
+      - Three of nine returned; Aguero (Georgia) and Joseph (FSU) patched it
+      - Louisville threw for 307 on it at 10.6 an attempt; Charlotte 179
+    - Reserve: special teams — Ole Miss was No. 1 in SP+ special teams; hidden yards are the gap between 5.2 and 3
+  - Corey: LSU 34–28
 
-- Read: Taylor 7 TD, 0 INT, 145 rushing; State converted half its passing downs at Minnesota. Arnett's D: 13 rush yards allowed, 279 passing — throw on it. Sellers hasn't: 10-of-23 for 96
-- Machine: SC −5 (63%) · Market −4 · Call: SC 32–27
-- State: Taylor's legs and arm · Bothwell downhill (113 vs a Big Ten front) · Arnett's D vs Sellers
-- SC: Let Sellers throw · Protect Sellers (1 sack allowed, not 4) · Harbor deep
-- Honesty: 0.9 to SC, no play. Two hot seats: Beamer #6, Lebby cooled 8.9
-- Corey: SC 31–27
-
-## Florida at Auburn — Sat 7:00 ET
-
-- Read: Philo's line is the best on the card, all at home vs FAU/Campbell; 36% then 22% on passing downs. Auburn: 3 INT + 5 sacks vs Baylor, then 610 yards and 0 turnovers. Durkin's D under 3 a carry both games
-- Machine: Auburn −0.5 (52%) · Market Florida −2.5 · Call: Auburn 27–26
-- Florida: Philo's first road start · Baugh downhill (136 at 9.7) · White's front vs Brown's legs
-- Auburn: Brown's legs · Ball security · Durkin's defense at home
-- Honesty: lean Auburn +2.5, research not a position — the home bump is the whole gap
-- Corey: Auburn 28–27
-
-## LSU at Ole Miss — Sat 7:30 ET · closer
-
-- Read: Leavitt 2 TD, 4 INT; LSU took 0 sacks vs Clemson, 5 vs La Tech. LSU D: 11 sacks, 5% and 12% allowed on passing downs; Ole Miss converted 67% of its passing downs. Lacy has to keep play-action honest vs a front that allowed 40 and −3 rushing
-- Machine: LSU −5 (62%) · Market −3 · Call: LSU 32–27 · Monster Under 59.5
-- LSU: Leavitt's ball security · Protect Leavitt · Baker's front vs Chambliss
-- Ole Miss: Let Chambliss escape · Lacy runs it · The patched secondary
-- Honesty: 2.2 to LSU, quibble. Home team five straight
-- Corey: LSU 34–28
-- Say: "Kiffin walks back into the Vaught against the QB who refused to follow him"
-
-## Our predictions (closer slide)
-
-- Tech 33–20 · Louisville 30–29 · SC 32–27 · Auburn 27–26 · LSU 32–27
-- Man vs Machine: 4 of 5 winners agree; Friday is the split
-- Frozen for grading: TTU −13, LOU −1, SC −5, AUB −0.5, LSU −5
+- **Our predictions — closer slide**
+  - Tech 33–20 · Louisville 30–29 · South Carolina 32–27 · Auburn 27–26 · LSU 32–27
+    - Man vs Machine: four of five winners agree; Friday is the split
+    - Frozen for grading: TTU −13, LOU −1, SC −5, AUB −0.5, LSU −5
+    - Superdogs: Sacramento State +27.5, Utah State +28.5 (spread at the pick)
