@@ -925,8 +925,10 @@ def build_recap():
 
 RECAP, RECAP_SUM = build_recap()
 
-# ---- Superdog boards (segment: pick a dog to win outright; points = the
-# spread). Computed live from card_data so a fresh pull refreshes them.
+# ---- Superdog boards. RULEBOOK (settled with Corey 2026-09-19): a 3.5+ point
+# dog; SUPERDOG = any matchup, GIANT KILLER = an unranked dog vs an AP Top 25
+# team; 5 points for a cover, 5 + the spread for an outright win, 1 for a
+# push. Picks + standings live in superdog_ledger.json. Computed live from card_data so a fresh pull refreshes them.
 # AP Top 25 comes from the CFBD /rankings cache via inseason_ratings (the
 # Tuesday refresh and every edge_report --publish keep it current); the hand
 # dict below is only a fallback if the cache is missing (last synced: week 2).
@@ -963,10 +965,11 @@ _MONTHS = dict(Jan=1, Feb=2, Mar=3, Apr=4, May=5, Jun=6, Jul=7, Aug=8,
                Sep=9, Oct=10, Nov=11, Dec=12)
 
 
-SUPERDOG_MIN_SPREAD = 3.5   # a superdog is a 3.5+ point dog (same floor as Corey's board)
+SUPERDOG_MIN_SPREAD = 3.5   # rulebook: a superdog is a 3.5+ point dog
+SUPERDOG_COVER_PTS, SUPERDOG_PUSH_PTS = 5, 1   # rulebook: cover 5, win 5 + spread, push 1
 SUPERDOG_MAX_SPREAD = 28.0  # the rating caps a game's evidence at 28: lines past it are outside what the machine can price
 SUPERDOG_MAX_EDGE = 15.0    # model-vs-market gaps this big went 46.8% ATS 2023-25: stale prior, not an edge
-SUPERDOG_TIE_PP = 0.02      # cover probs within 2 pp of the leader are a tie -> home dog first
+SUPERDOG_TIE_PTS = 0.25     # expected points within a quarter point of the leader are a tie -> home dog first
 
 
 def _cover_curve():
@@ -982,19 +985,19 @@ def _cover_curve():
 
 
 def home_dog_tiebreak(rows):
-    """rows sorted by cover prob; inside the leader's tie band a home dog goes
-    first (2026 through Wk 3: home dogs 30% outright, road dogs 14%)."""
+    """rows sorted by expected points; inside the leader's tie band a home dog
+    goes first (2026 through Wk 3: home dogs 30% outright, road dogs 14%)."""
     if not rows:
         return rows
-    band = [r for r in rows if rows[0]["p_cover"] - r["p_cover"] <= SUPERDOG_TIE_PP]
+    band = [r for r in rows if rows[0]["exp_pts"] - r["exp_pts"] <= SUPERDOG_TIE_PTS]
     band.sort(key=lambda r: r["at"] != "vs")   # stable: home dogs first
     return band + rows[len(band):]
 
 
 def superdog_boards():
-    """(any-game rows, vs-top-25 rows), each sorted by the dog's P(COVER) -
-    the margin curve at the dog's model margin plus the points (Lucas 9/19:
-    favor the dog covering, not the best outright chance or p x spread) -
+    """(any-game rows, vs-top-25 rows), each sorted by EXPECTED RULEBOOK POINTS
+    = 5 x P(cover) + spread x P(win) (Lucas 9/19, once the rulebook settled;
+    P(cover) = the margin curve at the dog's model margin plus the points),
     with the home-dog tiebreak. Played games (before the lines_as_of date)
     are excluded."""
     import datetime as dt
@@ -1043,9 +1046,13 @@ def superdog_boards():
             continue
         rows.append(dict(dog=dog, fav=fav, at=at, pts=abs(sp), p=p, mkt=mkt,
                          ml=ml, ev=p * abs(sp), edge=edge,
-                         p_cover=float(curve.win_prob(edge)), rank=ap_rank(fav)))
-    rows.sort(key=lambda r: -r["p_cover"])
-    return home_dog_tiebreak(rows), home_dog_tiebreak([r for r in rows if r["rank"]])
+                         p_cover=float(curve.win_prob(edge)), rank=ap_rank(fav),
+                         dog_rank=ap_rank(dog)))
+    for r in rows:   # expected rulebook points: a cover pays 5, a win pays 5 + the spread
+        r["exp_pts"] = SUPERDOG_COVER_PTS * r["p_cover"] + r["pts"] * r["p"]
+    rows.sort(key=lambda r: -r["exp_pts"])
+    giant = [r for r in rows if r["rank"] and not r["dog_rank"]]   # unranked dog vs Top 25
+    return home_dog_tiebreak(rows), home_dog_tiebreak(giant)
 
 
 SUPERDOG_ANY, SUPERDOG_T25 = superdog_boards()
@@ -1684,7 +1691,8 @@ for g in GAMES:
 # superdog band
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.08, 11.5, 1.02, ORANGE)
 for i, (label, board) in enumerate(
-        [("SUPERDOG", home_dog_tiebreak([r for r in SUPERDOG_ANY if not r["rank"]])),
+        [("SUPERDOG", [r for r in SUPERDOG_ANY   # any matchup, but not the Giant Killer pick again
+                       if not (SUPERDOG_T25 and r is SUPERDOG_T25[0])]),
          ("GIANT KILLER", SUPERDOG_T25)]):
     if not board:
         continue
@@ -1697,7 +1705,7 @@ for i, (label, board) in enumerate(
         f"{r['dog']} +{r['pts']:g} {r['at']} {fav}{ml}", 16, WHITE,
         bold=True)
 txt(s, 0.9, 7.15, 11.5, 0.3,
-    "Superdogs pay only on the win · research, not picks", 11,
+    "Superdogs: 5 for a cover · 5 + the spread for a win · 1 for a push · research, not picks", 11,
     RGBColor(0xCA, 0xDC, 0xFC), italic=True)
 
 out = os.path.join(HERE, "decks", f"2026_Week{WEEK}_Episode{EPISODE}.pptx")
