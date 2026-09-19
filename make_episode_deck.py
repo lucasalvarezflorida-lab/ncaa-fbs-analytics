@@ -963,12 +963,44 @@ _MONTHS = dict(Jan=1, Feb=2, Mar=3, Apr=4, May=5, Jun=6, Jul=7, Aug=8,
                Sep=9, Oct=10, Nov=11, Dec=12)
 
 
+SUPERDOG_MIN_SPREAD = 3.5   # a superdog is a 3.5+ point dog (same floor as Corey's board)
+SUPERDOG_MAX_SPREAD = 28.0  # the rating caps a game's evidence at 28: lines past it are outside what the machine can price
+SUPERDOG_MAX_EDGE = 15.0    # model-vs-market gaps this big went 46.8% ATS 2023-25: stale prior, not an edge
+SUPERDOG_TIE_PP = 0.02      # cover probs within 2 pp of the leader are a tie -> home dog first
+
+
+def _cover_curve():
+    """Margin curve at the in-season sd (ratings_current_2026.json), else as fitted."""
+    from margin_prob import load_curve
+    try:
+        import json as _j
+        sd = _j.load(open(os.path.join(HERE, "ratings_current_2026.json"),
+                          encoding="utf-8"))["params"].get("sigma")
+    except (FileNotFoundError, KeyError, ValueError):
+        sd = None
+    return load_curve("model", sd=sd)
+
+
+def home_dog_tiebreak(rows):
+    """rows sorted by cover prob; inside the leader's tie band a home dog goes
+    first (2026 through Wk 3: home dogs 30% outright, road dogs 14%)."""
+    if not rows:
+        return rows
+    band = [r for r in rows if rows[0]["p_cover"] - r["p_cover"] <= SUPERDOG_TIE_PP]
+    band.sort(key=lambda r: r["at"] != "vs")   # stable: home dogs first
+    return band + rows[len(band):]
+
+
 def superdog_boards():
-    """(any-game rows, vs-top-25 rows), each sorted by EV; played games
-    (before the lines_as_of date) are excluded."""
+    """(any-game rows, vs-top-25 rows), each sorted by the dog's P(COVER) -
+    the margin curve at the dog's model margin plus the points (Lucas 9/19:
+    favor the dog covering, not the best outright chance or p x spread) -
+    with the home-dog tiebreak. Played games (before the lines_as_of date)
+    are excluded."""
     import datetime as dt
     if not CARD:
         return [], []
+    curve = _cover_curve()
     asof = dt.datetime.fromisoformat(LINES_TS.replace("Z", "+00:00")).date()
     fbs = set()
     try:
@@ -992,7 +1024,7 @@ def superdog_boards():
             continue
         b = g["books"].get("DraftKings") or g["books"].get("Bovada") or {}
         sp = b.get("spread")
-        if sp is None or abs(sp) < 0.5:
+        if sp is None or not SUPERDOG_MIN_SPREAD <= abs(sp) <= SUPERDOG_MAX_SPREAD:
             continue
         ph = g["model_p_home"]
         if sp < 0:
@@ -1003,10 +1035,17 @@ def superdog_boards():
         mkt_ph = g.get("mkt_p_home")
         mkt = (1 - mkt_ph if sp < 0 else mkt_ph) if mkt_ph is not None else None
         ml = b.get("away_ml") if dog == g["away"] else b.get("home_ml")
+        mm = g.get("model_margin")
+        if mm is None:
+            continue
+        edge = abs(sp) + (-mm if dog == g["away"] else mm)   # dog's model margin + the points
+        if edge >= SUPERDOG_MAX_EDGE:
+            continue
         rows.append(dict(dog=dog, fav=fav, at=at, pts=abs(sp), p=p, mkt=mkt,
-                         ml=ml, ev=p * abs(sp), rank=ap_rank(fav)))
-    rows.sort(key=lambda r: -r["ev"])
-    return rows, [r for r in rows if r["rank"]]
+                         ml=ml, ev=p * abs(sp), edge=edge,
+                         p_cover=float(curve.win_prob(edge)), rank=ap_rank(fav)))
+    rows.sort(key=lambda r: -r["p_cover"])
+    return home_dog_tiebreak(rows), home_dog_tiebreak([r for r in rows if r["rank"]])
 
 
 SUPERDOG_ANY, SUPERDOG_T25 = superdog_boards()
@@ -1645,7 +1684,7 @@ for g in GAMES:
 # superdog band
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.08, 11.5, 1.02, ORANGE)
 for i, (label, board) in enumerate(
-        [("SUPERDOG", [r for r in SUPERDOG_ANY if not r["rank"]]),
+        [("SUPERDOG", home_dog_tiebreak([r for r in SUPERDOG_ANY if not r["rank"]])),
          ("GIANT KILLER", SUPERDOG_T25)]):
     if not board:
         continue
