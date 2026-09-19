@@ -536,7 +536,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": 2.5
+"close_spread": 3
 },
 "401858490": {
 "first_seen": "2026-09-07",
@@ -802,7 +802,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": 23.5
+"close_spread": 20.5
 },
 "401858454": {
 "first_seen": "2026-09-13",
@@ -816,7 +816,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -51.5
+"close_spread": -52.5
 },
 "401858456": {
 "first_seen": "2026-09-13",
@@ -830,7 +830,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -39.5
+"close_spread": -40.5
 },
 "401860889": {
 "first_seen": "2026-09-13",
@@ -858,7 +858,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -26.5
+"close_spread": -23.5
 },
 "401856792": {
 "first_seen": "2026-09-13",
@@ -872,7 +872,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -19.5
+"close_spread": -20.5
 },
 "401856801": {
 "first_seen": "2026-09-13",
@@ -928,7 +928,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -19.5
+"close_spread": -17.5
 },
 "401871047": {
 "first_seen": "2026-09-13",
@@ -942,7 +942,7 @@
 "dog": "Missouri State",
 "dog_ml": 150,
 "ml_guard": false,
-"close_spread": 4.5
+"close_spread": 4
 },
 "401869948": {
 "first_seen": "2026-09-13",
@@ -984,7 +984,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -23.5
+"close_spread": -21.5
 },
 "401856796": {
 "first_seen": "2026-09-13",
@@ -1012,7 +1012,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": 26.5
+"close_spread": 27.5
 },
 "401856793": {
 "first_seen": "2026-09-13",
@@ -1026,7 +1026,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -35.5
+"close_spread": -33.5
 },
 "401856712": {
 "first_seen": "2026-09-13",
@@ -1083,5 +1083,61 @@
 "dog_ml": 136,
 "ml_guard": false,
 "close_spread": -3
+},
+"401856783": {
+"first_seen": "2026-09-18",
+"wk": 2,
+"home": "Oregon State",
+"away": "Texas Tech",
+"spread": 25.5,
+"edge": 7.8,
+"tier": "YEL",
+"model_side": "Oregon State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 25.5
+},
+"401856695": {
+"first_seen": "2026-09-18",
+"wk": 3,
+"home": "Vanderbilt",
+"away": "NC State",
+"spread": -3,
+"edge": 6.9,
+"tier": "YEL",
+"model_side": "Vanderbilt",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -3
+},
+"401862710": {
+"first_seen": "2026-09-18",
+"wk": 3,
+"home": "Old Dominion",
+"away": "East Carolina",
+"spread": -3,
+"edge": -3.3,
+"tier": "RED",
+"model_side": "East Carolina",
+"dog": "East Carolina",
+"dog_ml": 124,
+"ml_guard": false,
+"close_spread": -3
+},
+"401856863": {
+"first_seen": "2026-09-18",
+"wk": 11,
+"home": "Oklahoma State",
+"away": "Texas Tech",
+"spread": 15.5,
+"edge": 6.2,
+"tier": "YEL",
+"model_side": "Oklahoma State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 15.5
 }
 }
