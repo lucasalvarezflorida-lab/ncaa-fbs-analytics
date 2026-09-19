@@ -4,21 +4,70 @@
   "min_spread": 3.5,
   "superdog": "any matchup",
   "giant_killer": "unranked dog vs an AP Top 25 team",
-  "points": {"cover": 5, "win": "5 + the spread", "push": 1}
+  "points": {
+   "cover": 5,
+   "win": "5 + the spread",
+   "push": 1
+  }
  },
  "standings": {
   "man": 23,
   "machine": 10,
   "as_of": "through Week 2 - Week 3 picks play Sat 2026-09-19",
-  "note": "Man 23 is from Lucas's message (it cut off before the machine's number). Machine 10 = the two Week 1 covers below regraded under the rulebook; it matches Corey's board - confirm."
+  "note": "Man 23 / Machine 10 confirmed by Lucas 2026-09-19. Machine 10 = the two Week 1 covers below."
  },
  "machine_picks": [
-  {"week": 1, "slot": "superdog", "pick": "Coastal Carolina +21.5 at West Virginia", "final": "West Virginia 31-24", "result": "cover", "points": 5},
-  {"week": 1, "slot": "giant_killer", "pick": "Washington State +23.5 at #17 Washington", "final": "Washington 24-10", "result": "cover", "points": 5},
-  {"week": 2, "slot": "superdog", "pick": "Buffalo +10.5 at FIU", "final": "FIU 33-20", "result": "loss", "points": 0},
-  {"week": 2, "slot": "giant_killer", "pick": "Arkansas +12.5 at #17 Utah", "final": "Utah 43-10", "result": "loss", "points": 0},
-  {"week": 3, "slot": "superdog", "pick": "Sacramento State +27.5 vs North Dakota State", "final": null, "result": "pending", "points": null},
-  {"week": 3, "slot": "giant_killer", "pick": "Utah State +28.5 at #17 Utah", "final": null, "result": "pending", "points": null}
+  {
+   "week": 1,
+   "slot": "superdog",
+   "pick": "Coastal Carolina +21.5 at West Virginia",
+   "final": "West Virginia 31-24",
+   "result": "cover",
+   "points": 5
+  },
+  {
+   "week": 1,
+   "slot": "giant_killer",
+   "pick": "Washington State +23.5 at #17 Washington",
+   "final": "Washington 24-10",
+   "result": "cover",
+   "points": 5
+  },
+  {
+   "week": 2,
+   "slot": "superdog",
+   "pick": "Buffalo +10.5 at FIU",
+   "final": "FIU 33-20",
+   "result": "loss",
+   "points": 0
+  },
+  {
+   "week": 2,
+   "slot": "giant_killer",
+   "pick": "Arkansas +12.5 at #17 Utah",
+   "final": "Utah 43-10",
+   "result": "loss",
+   "points": 0
+  },
+  {
+   "week": 3,
+   "slot": "superdog",
+   "pick": "Sacramento State +27.5 vs North Dakota State",
+   "final": null,
+   "result": "pending",
+   "points": null
+  },
+  {
+   "week": 3,
+   "slot": "giant_killer",
+   "pick": "Utah State +28.5 at #17 Utah",
+   "final": null,
+   "result": "pending",
+   "points": null
+  }
  ],
- "man_picks_week3": ["FIU +7 at FAU", "Colorado State +18 vs BYU"]
+ "man_picks_week3": [
+  "FIU +7 at FAU",
+  "Colorado State +18 vs BYU"
+ ]
 }
