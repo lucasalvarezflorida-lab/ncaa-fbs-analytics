@@ -19,7 +19,7 @@ def att_table(yr, refresh=False):
             out[r["team"]][str(r["playerId"])] = (r["player"], float(r["stat"]))
     return out
 
-a25, a26 = att_table(2025), att_table(2026)
+a25, a26 = att_table(2025), att_table(2026, refresh=True)   # QB1 = attempts leader to date
 where25 = {}  # playerId -> (team, att) of his biggest 2025 stop
 for team, ps in a25.items():
     for pid, (nm, att) in ps.items():
