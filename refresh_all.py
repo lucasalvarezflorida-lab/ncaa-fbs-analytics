@@ -238,7 +238,7 @@ def write_fpi_sheet(book: Path, refresh: bool):
     decomposition inputs as the 'why' block on the right."""
     import json
     from analysis import FEATURE_COLS, build_dataset, fit_ols
-    from inseason_ratings import espn_live_fpi, latest_rankings, machine_ratings
+    from inseason_ratings import espn_live_fpi, latest_rankings, machine_ratings, weekly_change
     from name_mapping import normalize_name
 
     fpi26 = load_fpi_2026()
@@ -265,6 +265,7 @@ def write_fpi_sheet(book: Path, refresh: bool):
                 conf.setdefault(k, r.get("conference", ""))
 
     machine = machine_ratings(fpi26, refresh=False, write=False) if fpi26 else {}
+    wk = weekly_change(fpi26) if fpi26 else dict(week=None, teams={})
     live = espn_live_fpi(refresh=True) if fpi26 else {}
     polls = latest_rankings(refresh=True)
     if machine:
@@ -288,7 +289,8 @@ def write_fpi_sheet(book: Path, refresh: bool):
     cfp_note = ("CFP = committee rankings" if polls["cfp"]
                 else "CFP = committee rankings, blank until the first release (~early Nov), then auto-fills")
     ws["A2"] = ("MACHINE = ESPN 2026 preseason FPI updated with every completed game (ridge posterior, lam 3, "
-                f"cap 28 — INSEASON_UPDATE.md; {n_games} rated games in). Rank/Δ are ours. ESPN FPI (live) = "
+                f"cap 28 — INSEASON_UPDATE.md; {n_games} rated games in). Rank/Δ are ours. Δ this week / Rank Δ = the move "
+                f"from week {wk['week']}'s games alone (current vs a re-solve without them, same rule; rank + = climbed). ESPN FPI (live) = "
                 f"ESPN's current number, reference only. {poll_note}; {cfp_note}. 2025 BLOCK = last year's "
                 "decomposition: ESPN 2025 Final vs Our Model (public inputs: prior SP+, returning PPA, 247 "
                 f"talent, 4-yr recruiting) — OLS on {int(model.nobs)} teams, R-sq {model.rsquared:.3f}; residual "
@@ -297,7 +299,7 @@ def write_fpi_sheet(book: Path, refresh: bool):
     ws["A2"].font = Font(name="Arial", italic=True, size=9)
 
     headers = ["Machine\nRank", "Team", "Conf", "Machine\n(in-season)", "Δ vs\npreseason",
-               "Games\nused", "ESPN FPI\n2026 Preseason", "ESPN FPI\n(live)", "AP\nRank", "CFP\nRank",
+               "Δ this\nweek", "Rank Δ\nthis week", "Games\nused", "ESPN FPI\n2026 Preseason", "ESPN FPI\n(live)", "AP\nRank", "CFP\nRank",
                "ESPN FPI\n2025 Final", "2025\nRank", "Our Model\n(public inputs)",
                "Residual\n(ESPN − Model)", "Resid\nRank", "Prior SP+", "Ret PPA",
                "Talent", "Recruiting 4yr"]
@@ -310,11 +312,12 @@ def write_fpi_sheet(book: Path, refresh: bool):
 
     POS = Font(name="Arial", color="006100")
     NEG = Font(name="Arial", color="9C0006")
-    ONE_DEC = {4, 7, 8, 11, 13, 14, 16, 17, 18, 19}
+    ONE_DEC = {4, 9, 10, 13, 15, 16, 18, 19, 20, 21}
     for r, k in enumerate(spine, start=5):
-        m, d = machine.get(k, {}), decomp.get(k)
+        m, d, w = machine.get(k, {}), decomp.get(k), wk["teams"].get(k, {})
         vals = [r - 4 if machine else "", display.get(k, k), conf.get(k, ""),
-                m.get("cur", ""), m.get("delta", ""), m.get("gp", ""),
+                m.get("cur", ""), m.get("delta", ""),
+                w.get("d_week", ""), w.get("d_rank", ""), m.get("gp", ""),
                 fpi26.get(k, ""), live.get(k, ""),
                 polls["ap"].get(k, ""), polls["cfp"].get(k, "")]
         if d is not None:
@@ -327,20 +330,26 @@ def write_fpi_sheet(book: Path, refresh: bool):
             c.font = ARIAL
             if ci in ONE_DEC:
                 c.number_format = "0.0"
-            if ci == 5:
+            if ci in (5, 6):
                 c.number_format = "+0.0;-0.0;0.0"
+            if ci == 7:
+                c.number_format = "+0;-0;0"
         if isinstance(m.get("delta"), float):
             ws.cell(row=r, column=5).font = POS if m["delta"] >= 0 else NEG
+        if w.get("d_week"):
+            ws.cell(row=r, column=6).font = POS if w["d_week"] > 0 else NEG
+        if w.get("d_rank"):
+            ws.cell(row=r, column=7).font = POS if w["d_rank"] > 0 else NEG
         if d is not None:
-            ws.cell(row=r, column=14).font = POS if d.residual >= 0 else NEG
+            ws.cell(row=r, column=16).font = POS if d.residual >= 0 else NEG
     if not fpi26:
         ws.cell(row=5, column=4, value="— pending ESPN preseason release —").font = Font(
             name="Arial", italic=True, size=9, color="5C6B7E")
 
-    for i, w in enumerate([8, 22, 16, 11, 10, 7, 12, 11, 7, 7, 11, 8, 13, 12, 8, 10, 9, 9, 13], 1):
-        ws.column_dimensions[get_column_letter(i)].width = w
+    for i, cw in enumerate([8, 22, 16, 11, 10, 9, 10, 7, 12, 11, 7, 7, 11, 8, 13, 12, 8, 10, 9, 9, 13], 1):
+        ws.column_dimensions[get_column_letter(i)].width = cw
     ws.freeze_panes = "C5"
-    ws.auto_filter.ref = f"A4:S{4 + len(spine)}"
+    ws.auto_filter.ref = f"A4:U{4 + len(spine)}"
 
     stats = [("Model", "std coef", "p-value")]
     for name in FEATURE_COLS:
@@ -358,7 +367,7 @@ def write_fpi_sheet(book: Path, refresh: bool):
         ("Adj R-sq + portal QW", round(model_q.rsquared_adj, 4), ""),
     ]
     for ri, tup in enumerate(stats, start=4):
-        for ci, v in enumerate(tup, start=21):  # U..W, clear of the rankings table
+        for ci, v in enumerate(tup, start=23):  # W..Y, clear of the rankings table
             c = ws.cell(row=ri, column=ci, value=v)
             c.font = WHITE_B if ri == 4 else ARIAL
             if ri == 4:

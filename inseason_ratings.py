@@ -176,6 +176,29 @@ def machine_ratings(prior: dict[str, float], refresh: bool = False,
     return out
 
 
+def weekly_change(prior: dict[str, float], refresh: bool = False,
+                  cap_mode: str | None = None) -> dict:
+    """Week-over-week move: the current rating minus a re-solve WITHOUT the
+    latest completed week's games, both under today's cap rule - so the column
+    shows what the week's results did, never a rule change. Returns
+    {"week": N, "teams": {team: {prev, d_week, prev_rank, rank, d_rank}}};
+    d_rank is positive when a team climbed."""
+    cap_mode = cap_mode or CAP_MODE
+    games = [g for g in completed_games_2026(refresh)
+             if g["home"] in prior and g["away"] in prior]
+    if not games:
+        return dict(week=None, teams={})
+    week = max(g["week"] or 0 for g in games)
+    cur = ridge_update(prior, games, cap_mode=cap_mode)
+    prev = ridge_update(prior, [g for g in games if (g["week"] or 0) < week], cap_mode=cap_mode)
+    rank = {t: i + 1 for i, t in enumerate(sorted(cur, key=lambda t: -cur[t]))}
+    prev_rank = {t: i + 1 for i, t in enumerate(sorted(prev, key=lambda t: -prev[t]))}
+    return dict(week=week, teams={
+        t: dict(prev=round(prev[t], 1), d_week=round(cur[t] - prev[t], 1),
+                prev_rank=prev_rank[t], rank=rank[t], d_rank=prev_rank[t] - rank[t])
+        for t in cur})
+
+
 def sigma_for(games_played: int) -> float:
     """Residual sd to run the margin curve at: frozen-prior sd until any
     rated game has been played, then the in-season backtest sd."""
