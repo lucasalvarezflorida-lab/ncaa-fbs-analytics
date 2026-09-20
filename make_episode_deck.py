@@ -34,9 +34,9 @@ INK = RGBColor(0x16, 0x27, 0x3D)
 MUTE = RGBColor(0x5C, 0x6B, 0x7E)
 LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
-EPISODE, WEEK = 4, 3
+EPISODE, WEEK = 5, 4
 RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
-EP_DATE = "SEP 18–19, 2026"
+EP_DATE = "SEP 26, 2026"
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
 from name_mapping import normalize_name  # noqa: E402
@@ -167,6 +167,10 @@ TEAMS = {
     "MSST": dict(code="MSST", color=(0x5D, 0x1A, 0x2A), logo="mississippistate.png"),
     "SCAR": dict(code="SCAR", color=(0x73, 0x00, 0x0A), logo="southcarolina.png"),
     "HOU": dict(code="HOU", color=(0xC8, 0x10, 0x2E), logo="houston.png"),
+    "TENN": dict(code="TENN", color=(0xFF, 0x82, 0x00), logo="tennessee.png"),
+    "ORE": dict(code="ORE", color=(0x15, 0x47, 0x33), logo="oregon.png"),
+    "USC": dict(code="USC", color=(0x99, 0x00, 0x00), logo="usc.png"),
+    "UGA": dict(code="UGA", color=(0xBA, 0x0C, 0x2F), logo="georgia.png"),
 }
 
 NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
@@ -181,7 +185,8 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
              "Texas A&M": "TAMU", "Arizona": "ARIZ", "BYU": "BYU",
              "Alabama": "BAMA", "Kentucky": "UK", "Florida": "FLA",
              "Texas Tech": "TTU", "Mississippi State": "MSST",
-             "South Carolina": "SCAR", "Houston": "HOU"}
+             "South Carolina": "SCAR", "Houston": "HOU", "Tennessee": "TENN",
+             "Oregon": "ORE", "USC": "USC", "Georgia": "UGA"}
 
 # ---- card_data contract (review item A): market + model numbers come from
 # edge_report.py --publish, never from hand-typed literals. Narrative fields
@@ -255,7 +260,10 @@ def apply_card(g):
     if total is not None:
         hp, ap = (float(total) + m) / 2, (float(total) - m) / 2
         order = [(ha, hp), (hb, ap)] if hp >= ap else [(hb, ap), (ha, hp)]
-        g["score"] = " – ".join(f"{disp.get(t, t)} {int(p + 0.5)}" for t, p in order)
+        pts = [int(x + 0.5) for _, x in order]
+        if pts[0] == pts[1] and m:      # never call a tie: the machine's side gets the extra point
+            pts[0] += 1
+        g["score"] = " – ".join(f"{disp.get(t, t)} {n}" for (t, _), n in zip(order, pts))
         g["score_note"] = f"projected score · machine margin on the {float(total):g} market total"
     else:
         g["score"], g["score_note"] = "total not posted yet", ""
@@ -726,7 +734,7 @@ _GAMES_EP3 = [  # Week 2 archive — the frozen Ep3 predictions (unrendered)
     ),
 ]
 
-GAMES = [  # Week 3 — order = kickoff order; the marquee game (Kiffin in Oxford) closes
+_GAMES_EP4 = [  # Week 3 archive — the frozen Ep4 predictions (unrendered)
     dict(
         a="HOU", b="TTU", vs="at", title="Houston at Texas Tech",
         cfbd=("Houston", "Texas Tech"),
@@ -831,6 +839,114 @@ GAMES = [  # Week 3 — order = kickoff order; the marquee game (Kiffin in Oxfor
         honesty="Machine LSU by 5.2, market by 3: 2.2 to LSU, inside the noise line, and the machine's LSU number still carries the 51–10 Clemson game. Five straight home wins in the series and a first-year coach on each sideline are the hedges. Quibble, not a position. The total is the play to talk about.",
         keys_a=["Leavitt's ball security", "Protect Leavitt in a hostile building", "Baker's front vs Chambliss's escapes", "Kiffin's tempo in his old house"],
         keys_b=["Let Chambliss escape", "Lacy runs it (87 vs Charlotte)", "The patched secondary vs LSU's receivers", "Special teams — No. 1 in SP+"],
+    ),
+]
+
+GAMES = [  # Week 4 — kickoff order (Lucas 9/20: Oklahoma–Georgia third); Texas A&M at LSU closes
+    dict(
+        a="TEX", b="TENN", vs="at", title="Texas at Tennessee",
+        cfbd=("Texas", "Tennessee"),
+        where="Knoxville · Neyland Stadium",
+        sub="Sat Sep 26 · 12:00 ET · No. 1 at No. 14 — Texas's first road game",
+        machine="Texas –9", market="–5.5", value="3.5 to Texas — quibble",
+        wp=("TEX", 71, "TENN", 29),
+        decides=["No. 1 leaves Austin for the first time: three home games, one of them a one-point win over Ohio State",
+                 "A five-star true freshman against the No. 1 team: Faizon Brandon won the job over MacIntyre and has not thrown a pick",
+                 "Heupel's July goal was to steal one marquee home game — Texas and LSU both come to Neyland",
+                 "Knowles' first Tennessee defense gets its first real quarterback; his year ones are historically glitchy"],
+        ctx_a=dict(coach="Sarkisian, year 6 · Muschamp's defense is carrying it",
+                   qb="Arch Manning, final season · 6.8 a throw through three home games",
+                   roster="72% back · 22 portal adds"),
+        ctx_b=dict(coach="Heupel, year 6 · new DC Jim Knowles, his fourth defensive rebuild",
+                   qb="NEW — Faizon Brandon, five-star true freshman · 6 TD, 0 INT",
+                   roster="35% back · 21 portal adds — 12 defensive transfers"),
+        honesty="Machine Texas −9, market −5.5: 3.5 points to Texas and five points of win probability (71% vs 66%) — under the flag line. The machine's Texas number is the Ohio State win plus the preseason prior; it has not seen this offense leave Austin, and the offense is the weak half (6.8 a throw, 6 explosive passes in 110 dropbacks). The market opened −6.5 and has come toward Tennessee. Quibble, not a position.",
+        keys_a=["Arch has to hit something downfield", "Stay out of third-and-long", "Stop the run — Texas State ran for 221", "Simmons vs the freshman"],
+        keys_b=["Run it at Texas — 7.1 a carry", "Brandon's first ranked opponent", "Knowles' rush on passing downs", "Win the red zone"],
+    ),
+    dict(
+        a="MISS", b="FLA", vs="at", title="Ole Miss at Florida",
+        cfbd=("Ole Miss", "Florida"),
+        where="Gainesville · Ben Hill Griffin Stadium",
+        sub="Sat Sep 26 · 3:30 ET · No. 4 at No. 21 — two first-year coaches, both 3–0",
+        machine="Florida –3", market="–2.5", value="machine = market · MONSTER UNDER 59.5",
+        wp=("FLA", 59, "MISS", 41),
+        decides=["Two first-year head coaches, both 3–0: Golding beat LSU, Sumrall won 44–39 at Auburn — the winner is the SEC's surprise contender",
+                 "The voters have Ole Miss No. 4 and Florida No. 21; the machine has them a point apart (Florida 18.5, Ole Miss 17.9)",
+                 "The home team has won the last two: Florida 24–17 in 2024 (the loss that kept Ole Miss out of the CFP), Ole Miss 34–24 last year",
+                 "Aaron Philo's first ranked opponent in the Swamp: 11.3 a throw, 19% of dropbacks go for 20+"],
+        ctx_a=dict(coach="NEW — Golding, promoted · 3–0 with the LSU win",
+                   qb="Chambliss returns · sacked 3 times in 122 dropbacks",
+                   roster="50% back · 28 portal adds"),
+        ctx_b=dict(coach="NEW — Sumrall (Tulane) · 3–0",
+                   qb="NEW — Aaron Philo, RS freshman · 11.3 a throw",
+                   roster="69% back · 27 portal adds"),
+        honesty="Machine Florida −3, market −2.5 — agreement, no side. The total is 59.5, a Monster Under number, but four of last week's five card games went over and both of these defenses have given up 38 or more once already. Say the 59% and move on.",
+        keys_a=["Chambliss vs the Florida rush", "Stop the explosives — 12 allowed in 90 dropbacks", "Get Lacy going", "Finish drives — 10 of 11 in the red zone"],
+        keys_b=["Feed Baugh — 458 yards, 8 TD", "Philo deep — 10 of 16", "Get Chambliss off schedule", "Tighten the red zone defense"],
+    ),
+    dict(
+        a="OU", b="UGA", vs="at", title="Oklahoma at Georgia",
+        cfbd=("Oklahoma", "Georgia"),
+        where="Athens · Sanford Stadium",
+        sub="Sat Sep 26 · 3:30 ET · unranked Oklahoma at No. 2 — the best pass rush on the card",
+        machine="Georgia –14", market="–14", value="machine = market — no play",
+        wp=("UGA", 81, "OU", 19),
+        decides=["Oklahoma has scored 24 points in its last two games — 10 at Michigan, 14 against New Mexico — and dropped out of the poll",
+                 "Georgia's old flaw looks fixed: Stockton is 38 of 45 with nine touchdowns and 17% of dropbacks have gone for 20+",
+                 "Venables' defense is the best unit Georgia has seen: 12 sacks in 66 dropbacks, one red-zone touchdown allowed in six trips",
+                 "Georgia's schedule avoids Texas, A&M and LSU — this and the trip to Oxford are the games that decide a first-round bye"],
+        ctx_a=dict(coach="Venables, year 5 · the defense is elite, the offense is not",
+                   qb="Mateer returns, senior · 3 picks",
+                   roster="63% back · 16 portal adds"),
+        ctx_b=dict(coach="Smart, year 11 · Bobo's offense",
+                   qb="Stockton returns · 38 of 45, 9 TD, 0 INT",
+                   roster="69% back · 9 portal adds — 169 returning starts"),
+        honesty="Machine Georgia −14, market −14 — dead agreement, no play. The market opened −10 and walked four points after Oklahoma's 14–6 win over New Mexico. The total, 45.5, is the lowest on the card; the machine has no totals model, so the score call is the margin laid over it.",
+        keys_a=["The pass rush is the path", "Mateer has to be the run game", "Reach the red zone", "Force a turnover — zero picks so far"],
+        keys_b=["Frazier downhill — 7.9 a carry", "Get the ball out on this rush", "Make Mateer one-dimensional", "Keep hitting explosives"],
+    ),
+    dict(
+        a="ORE", b="USC", vs="at", title="Oregon at USC",
+        cfbd=("Oregon", "USC"),
+        where="Los Angeles · Memorial Coliseum",
+        sub="Sat Sep 26 · 7:30 ET · No. 20 at No. 12 — Oregon's season on the line in Week 4",
+        machine="Oregon –0.5", market="–1.5", value="pick'em — no play · MONSTER UNDER 62.5",
+        wp=("ORE", 50, "USC", 50),
+        decides=["Oregon already lost as a 23.5-point favorite in Stillwater — a second loss before October makes the Big Ten title game the only road to the playoff",
+                 "Riley's year five, 'no more excuses': USC is 4–0 but gave up 35 at Rutgers and 30 to Louisiana",
+                 "The July prep called this trip and Ohio State the season's two proof points for Oregon; Oregon has won the last two, 36–27 and 42–27, both in Eugene",
+                 "Both coordinators are new at Oregon and Gary Patterson, 66, is the new defense at USC — two offenses ahead of two defenses"],
+        ctx_a=dict(coach="Lanning, year 5 · both coordinators new",
+                   qb="Dante Moore returns · 9 TD, 0 INT",
+                   roster="75% back · 13 portal adds — 200 returning starts"),
+        ctx_b=dict(coach="Riley, year 5 · new DC Gary Patterson",
+                   qb="Maiava returns · 12 TD, 10.2 a throw",
+                   roster="59% back · 9 portal adds — seven of the top eight receivers gone"),
+        honesty="Machine Oregon −0.5, market −1.5: a pick'em either way. The machine has taken eight points off Oregon since July, more than any team in the Top 25; the market opened Oregon −5.5 and has moved four points toward USC. No position. The total, 62.5, is the highest on the card and a Monster Under number — and neither defense has earned it.",
+        keys_a=["Protect Moore — 4 sacks in Stillwater", "Stay out of third-and-long", "Attack Patterson's secondary", "Stop the run this time"],
+        keys_b=["Keep Maiava clean", "Own third down — 62%", "Finish in the red zone", "Patterson's defense vs the explosives"],
+    ),
+    dict(
+        a="TAMU", b="LSU", vs="at", title="Texas A&M at LSU",
+        cfbd=("Texas A&M", "LSU"),
+        where="Baton Rouge · Tiger Stadium",
+        sub="Sat Sep 26 · 7:30 ET · No. 23 at No. 10 — the loser has two losses in September",
+        machine="LSU –5.5", market="–8.5", value="3 to A&M — the market ran past us",
+        wp=("LSU", 64, "TAMU", 36),
+        decides=["Both lost last week — A&M at home to Kentucky as a 16.5-point favorite, LSU in Kiffin's return to Oxford; the loser is 2–2",
+                 "A&M's schedule still has Alabama, Texas, Tennessee, Oklahoma and South Carolina — this is the first of five games it cannot give away",
+                 "Leavitt has five interceptions in three games; Reed has three and is throwing for 6.1 a pop",
+                 "A&M won 49–25 in this building last year; before that the home team had won four straight"],
+        ctx_a=dict(coach="Elko, year 3 · two new coordinators",
+                   qb="Reed returns · 6.1 a throw, 3 picks",
+                   roster="73% back · 19 portal adds — both lines rebuilt"),
+        ctx_b=dict(coach="NEW — Kiffin · lost his Oxford return",
+                   qb="NEW — Sam Leavitt · 5 picks in three games",
+                   roster="21% back · 44 portal adds"),
+        honesty="Machine LSU −5.5, market −8.5: three points to A&M on the number and twelve points of win probability (LSU 64% vs the market's 77%) — the biggest gap on the card, still under the 15-point flag. The market opened LSU −3 and moved 5.5 after Kentucky; the machine counts Kentucky as one game and moved A&M 5.3. Our backtest says a stale number loses to a market move like that. No position.",
+        keys_a=["Find an explosive play — 5 in 115 dropbacks", "Block Umanmielen", "Fix the back end — 14.0 a throw vs Kentucky", "Don't count on the run"],
+        keys_b=["Leavitt's ball security", "Throw deep on this secondary", "Umanmielen on passing downs", "Touchdowns, not field goals"],
     ),
 ]
 
@@ -1388,6 +1504,46 @@ txt(s, 0.9, 6.85, 11.5, 0.5,
 
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
 SHORT = {
+    "Texas at Tennessee": dict(
+        sub="Sat Sep 26 · 12:00 ET · Knoxville · No. 1 at No. 14",
+        ctx_a=dict(coach="Sarkisian, year 6", qb="Arch, final season", roster="72% back · 22 portal adds"),
+        ctx_b=dict(coach="Heupel, year 6 · new DC Knowles", qb="NEW — Faizon Brandon, true freshman", roster="35% back · 21 portal adds"),
+        decides=["No. 1 leaves Austin for the first time", "A true freshman vs No. 1", "Heupel's marquee home game", "Knowles' first real quarterback"],
+        honesty="3.5 to Texas — quibble, not a position",
+        keys_a=["Arch has to hit downfield", "Stay out of third-and-long", "Stop the run", "Simmons vs the freshman"],
+        keys_b=["Run it at Texas", "Brandon's first ranked opponent", "Knowles' rush on passing downs", "Win the red zone"]),
+    "Ole Miss at Florida": dict(
+        sub="Sat Sep 26 · 3:30 ET · Gainesville · No. 4 at No. 21",
+        ctx_a=dict(coach="NEW — Golding, promoted", qb="Chambliss returns", roster="50% back · 28 portal adds"),
+        ctx_b=dict(coach="NEW — Sumrall (Tulane)", qb="NEW — Aaron Philo, RS freshman", roster="69% back · 27 portal adds"),
+        decides=["Two first-year coaches, both 3–0", "No. 4 vs No. 21 — a point apart to the machine", "Home team has won two straight", "Philo's first ranked opponent"],
+        honesty="Machine = market — no play",
+        keys_a=["Chambliss vs the Florida rush", "Stop the explosives", "Get Lacy going", "Finish drives"],
+        keys_b=["Feed Baugh", "Philo deep", "Get Chambliss off schedule", "Tighten the red zone"]),
+    "Oregon at USC": dict(
+        sub="Sat Sep 26 · 7:30 ET · Los Angeles · No. 20 at No. 12",
+        ctx_a=dict(coach="Lanning, year 5 · both coordinators new", qb="Dante Moore returns", roster="75% back · 13 portal adds"),
+        ctx_b=dict(coach="Riley, year 5 · new DC Gary Patterson", qb="Maiava returns", roster="59% back · 9 portal adds"),
+        decides=["Oregon's season on the line in Week 4", "Riley's year five", "Oregon has won two straight in the series", "Two offenses ahead of two defenses"],
+        honesty="Pick'em — no position",
+        keys_a=["Protect Moore", "Stay out of third-and-long", "Attack Patterson's secondary", "Stop the run this time"],
+        keys_b=["Keep Maiava clean", "Own third down", "Finish in the red zone", "Stop the explosives"]),
+    "Texas A&M at LSU": dict(
+        sub="Sat Sep 26 · 7:30 ET · Baton Rouge · No. 23 at No. 10",
+        ctx_a=dict(coach="Elko, year 3", qb="Reed returns", roster="73% back · 19 portal adds"),
+        ctx_b=dict(coach="NEW — Kiffin", qb="NEW — Sam Leavitt", roster="21% back · 44 portal adds"),
+        decides=["The loser has two losses in September", "First of five A&M cannot give away", "Leavitt's five picks", "A&M won 49–25 here last year"],
+        honesty="3 to A&M — the market ran past us · no position",
+        keys_a=["Find an explosive play", "Block Umanmielen", "Fix the back end", "Don't count on the run"],
+        keys_b=["Leavitt's ball security", "Throw deep", "Umanmielen on passing downs", "Touchdowns, not field goals"]),
+    "Oklahoma at Georgia": dict(
+        sub="Sat Sep 26 · 3:30 ET · Athens · unranked at No. 2",
+        ctx_a=dict(coach="Venables, year 5", qb="Mateer returns, senior", roster="63% back · 16 portal adds"),
+        ctx_b=dict(coach="Smart, year 11", qb="Stockton returns", roster="69% back · 9 portal adds"),
+        decides=["24 points in Oklahoma's last two games", "Georgia's old flaw looks fixed", "The best defense Georgia has seen", "A first-round bye game"],
+        honesty="Machine = market — no play",
+        keys_a=["The pass rush is the path", "Mateer has to be the run game", "Reach the red zone", "Force a turnover"],
+        keys_b=["Frazier downhill", "Get the ball out", "Make Mateer one-dimensional", "Keep hitting explosives"]),
     "Houston at Texas Tech": dict(
         sub="Fri Sep 18 · 8:00 ET · Lubbock",
         ctx_a=dict(coach="Fritz, year 3 · the year-three pattern", qb="Weigman returns", roster="81% back · 18 portal adds"),
