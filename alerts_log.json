@@ -830,7 +830,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -40.5
+"close_spread": -39.5
 },
 "401860889": {
 "first_seen": "2026-09-13",
@@ -858,7 +858,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -23.5
+"close_spread": -22.5
 },
 "401856792": {
 "first_seen": "2026-09-13",
@@ -886,7 +886,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -27.5
+"close_spread": -26.5
 },
 "401858449": {
 "first_seen": "2026-09-13",
@@ -928,7 +928,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -17.5
+"close_spread": -15.5
 },
 "401871047": {
 "first_seen": "2026-09-13",
@@ -956,7 +956,7 @@
 "dog": "Georgia Southern",
 "dog_ml": 124,
 "ml_guard": false,
-"close_spread": -3
+"close_spread": -3.5
 },
 "401861963": {
 "first_seen": "2026-09-13",
@@ -970,7 +970,7 @@
 "dog": "Southern Miss",
 "dog_ml": 124,
 "ml_guard": false,
-"close_spread": 3
+"close_spread": 3.5
 },
 "401856690": {
 "first_seen": "2026-09-13",
@@ -1012,7 +1012,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": 27.5
+"close_spread": 26.5
 },
 "401856793": {
 "first_seen": "2026-09-13",
@@ -1026,7 +1026,7 @@
 "dog": null,
 "dog_ml": null,
 "ml_guard": false,
-"close_spread": -33.5
+"close_spread": -34.5
 },
 "401856712": {
 "first_seen": "2026-09-13",
@@ -1124,7 +1124,7 @@
 "dog": "East Carolina",
 "dog_ml": 124,
 "ml_guard": false,
-"close_spread": -3
+"close_spread": -2.5
 },
 "401856863": {
 "first_seen": "2026-09-18",
@@ -1139,5 +1139,355 @@
 "dog_ml": null,
 "ml_guard": false,
 "close_spread": 15.5
+},
+"401856665": {
+"first_seen": "2026-09-19",
+"wk": 1,
+"home": "South Carolina",
+"away": "Kent State",
+"spread": -35.5,
+"edge": -7.2,
+"tier": "YEL",
+"model_side": "Kent State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -35.5
+},
+"401858442": {
+"first_seen": "2026-09-19",
+"wk": 2,
+"home": "Temple",
+"away": "Penn State",
+"spread": 24.5,
+"edge": 6.3,
+"tier": "YEL",
+"model_side": "Temple",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 24.5
+},
+"401864508": {
+"first_seen": "2026-09-19",
+"wk": 3,
+"home": "Central Michigan",
+"away": "Wyoming",
+"spread": 1.5,
+"edge": 8.5,
+"tier": "YEL",
+"model_side": "Central Michigan",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 1.5
+},
+"401858231": {
+"first_seen": "2026-09-19",
+"wk": 3,
+"home": "Duke",
+"away": "Stanford",
+"spread": -9.5,
+"edge": 7.7,
+"tier": "YEL",
+"model_side": "Duke",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -9.5
+},
+"401858465": {
+"first_seen": "2026-09-19",
+"wk": 4,
+"home": "Ohio State",
+"away": "Illinois",
+"spread": -27.5,
+"edge": -7.6,
+"tier": "YEL",
+"model_side": "Illinois",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -27.5
+},
+"401856727": {
+"first_seen": "2026-09-19",
+"wk": 8,
+"home": "Alabama",
+"away": "Texas A&M",
+"spread": -2.5,
+"edge": 7.8,
+"tier": "YEL",
+"model_side": "Alabama",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -2.5
+},
+"401856888": {
+"first_seen": "2026-09-19",
+"wk": 11,
+"home": "Texas A&M",
+"away": "Tennessee",
+"spread": -8.5,
+"edge": -7.2,
+"tier": "YEL",
+"model_side": "Tennessee",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -8.5
+},
+"401856762": {
+"first_seen": "2026-09-19",
+"wk": 13,
+"home": "Ole Miss",
+"away": "Mississippi State",
+"spread": -14.5,
+"edge": -6.1,
+"tier": "YEL",
+"model_side": "Mississippi State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -14.5
+},
+"401858543": {
+"first_seen": "2026-09-19",
+"wk": 13,
+"home": "UCLA",
+"away": "USC",
+"spread": 10.5,
+"edge": 7.6,
+"tier": "YEL",
+"model_side": "UCLA",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 10.5
+},
+"401858207": {
+"first_seen": "2026-09-20",
+"wk": 1,
+"home": "Pittsburgh",
+"away": "Miami (OH)",
+"spread": -16.5,
+"edge": 7.0,
+"tier": "YEL",
+"model_side": "Pittsburgh",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -16.5
+},
+"401858434": {
+"first_seen": "2026-09-20",
+"wk": 1,
+"home": "Penn State",
+"away": "Marshall",
+"spread": -23.5,
+"edge": 9.4,
+"tier": "YEL",
+"model_side": "Penn State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -23.5
+},
+"401856667": {
+"first_seen": "2026-09-20",
+"wk": 1,
+"home": "Texas",
+"away": "Texas State",
+"spread": -29.5,
+"edge": 7.6,
+"tier": "YEL",
+"model_side": "Texas",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -29.5
+},
+"401856662": {
+"first_seen": "2026-09-20",
+"wk": 1,
+"home": "Mississippi State",
+"away": "UL Monroe",
+"spread": -28.5,
+"edge": 10.4,
+"tier": "YEL",
+"model_side": "Mississippi State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -28.5
+},
+"401856637": {
+"first_seen": "2026-09-20",
+"wk": 1,
+"home": "Florida",
+"away": "Florida Atlantic",
+"spread": -25.5,
+"edge": 6.2,
+"tier": "YEL",
+"model_side": "Florida",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -25.5
+},
+"401858440": {
+"first_seen": "2026-09-20",
+"wk": 2,
+"home": "Michigan State",
+"away": "Eastern Michigan",
+"spread": -17.5,
+"edge": 8.5,
+"tier": "YEL",
+"model_side": "Michigan State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -17.5
+},
+"401858441": {
+"first_seen": "2026-09-20",
+"wk": 2,
+"home": "Nebraska",
+"away": "Bowling Green",
+"spread": -30.5,
+"edge": 7.2,
+"tier": "YEL",
+"model_side": "Nebraska",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -30.5
+},
+"401856798": {
+"first_seen": "2026-09-20",
+"wk": 3,
+"home": "Iowa State",
+"away": "Bowling Green",
+"spread": -23.5,
+"edge": 6.4,
+"tier": "YEL",
+"model_side": "Iowa State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -23.5
+},
+"401856689": {
+"first_seen": "2026-09-20",
+"wk": 3,
+"home": "Missouri",
+"away": "Troy",
+"spread": -27.5,
+"edge": -7.2,
+"tier": "YEL",
+"model_side": "Troy",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -27.5
+},
+"401862779": {
+"first_seen": "2026-09-20",
+"wk": 4,
+"home": "Temple",
+"away": "Army",
+"spread": 3,
+"edge": 5.5,
+"tier": "RED",
+"model_side": "Temple",
+"dog": "Temple",
+"dog_ml": 130,
+"ml_guard": false,
+"close_spread": 3
+},
+"401862780": {
+"first_seen": "2026-09-20",
+"wk": 4,
+"home": "Charlotte",
+"away": "Louisiana",
+"spread": 14.5,
+"edge": 11.3,
+"tier": "YEL",
+"model_side": "Charlotte",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 14.5
+},
+"401858249": {
+"first_seen": "2026-09-20",
+"wk": 5,
+"home": "Clemson",
+"away": "Miami",
+"spread": 7,
+"edge": -7.1,
+"tier": "YEL",
+"model_side": "Miami",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 7
+},
+"401856717": {
+"first_seen": "2026-09-20",
+"wk": 6,
+"home": "Oklahoma",
+"away": "Texas",
+"spread": 6,
+"edge": -6.1,
+"tier": "YEL",
+"model_side": "Texas",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": 6
+},
+"401856740": {
+"first_seen": "2026-09-20",
+"wk": 10,
+"home": "LSU",
+"away": "Alabama",
+"spread": -3.5,
+"edge": -3.5,
+"tier": "RED",
+"model_side": "Alabama",
+"dog": "Alabama",
+"dog_ml": 154,
+"ml_guard": false,
+"close_spread": -3.5
+},
+"401858514": {
+"first_seen": "2026-09-20",
+"wk": 10,
+"home": "Ohio State",
+"away": "Oregon",
+"spread": -6,
+"edge": 8.3,
+"tier": "YEL",
+"model_side": "Ohio State",
+"dog": null,
+"dog_ml": null,
+"ml_guard": false,
+"close_spread": -6
+},
+"401858537": {
+"first_seen": "2026-09-20",
+"wk": 13,
+"home": "Northwestern",
+"away": "Illinois",
+"spread": 3.5,
+"edge": 8.8,
+"tier": "RED",
+"model_side": "Northwestern",
+"dog": "Northwestern",
+"dog_ml": 145,
+"ml_guard": false,
+"close_spread": 3.5
 }
 }
