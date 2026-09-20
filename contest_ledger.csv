@@ -24,3 +24,13 @@ week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
 3,2026-09-12,Charlotte +45.5,Ole Miss -45.5,80,0.79,0.502,W,80,1718
 3,2026-09-12,Prairie View +39.5,Baylor -39.5 (mkt -37.5),125,,0.54,L,-125,1593
 3,2026-09-12,Sacramento State +18.5,Fresno State -18.5,45,0.67,0.502,L,-45,1548
+4,2026-09-19,Buffalo +40.5,Penn State -40.5,75,0.76,0.502,L,-75,1473
+4,2026-09-19,Akron +23.5,Minnesota -23.5,60,0.71,0.502,L,-60,1413
+4,2026-09-19,Tulane +20.5,Kansas State -20.5,60,0.71,0.502,W,60,1473
+4,2026-09-19,Stonehill +33.5,Massachusetts -33.5 (mkt -31.5),115,,0.55,W,115,1588
+4,2026-09-19,Utah State +27.5,Utah -27.5,60,0.71,0.502,L,-60,1528
+4,2026-09-19,Western Kentucky +44.5,Indiana -44.5,60,0.71,0.502,W,60,1588
+4,2026-09-19,Northern Iowa +40.5,Iowa -40.5 (mkt -38.5),115,,0.55,L,-115,1473
+4,2026-09-19,Southern Miss +3,UConn -3,80,0.78,0.502,L,-80,1393
+4,2026-09-19,Boise State -23.5,Boise State -23.5 (mkt -25.5),230,,0.55,L,-230,1163
+4,2026-09-19,Northern Illinois +33.5,Arizona -33.5,65,0.72,0.502,W,65,1228
