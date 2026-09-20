@@ -11,10 +11,10 @@
   }
  },
  "standings": {
-  "man": 23,
-  "machine": 10,
-  "as_of": "through Week 2 - Week 3 picks play Sat 2026-09-19",
-  "note": "Man 23 / Machine 10 confirmed by Lucas 2026-09-19. Machine 10 = the two Week 1 covers below."
+  "man": 29,
+  "machine": 15,
+  "as_of": "through Week 3",
+  "note": "Through Week 2: Man 23 / Machine 10 (confirmed by Lucas 9/19). Week 3: Machine +5 (Sacramento State +27.5 covered, lost by 21; Utah State +28.5 lost 33-0). Man +6 AT OUR RECORDED LINES (FIU +7 lost 16-10 = cover 5; Colorado State +18 lost 41-23 = PUSH 1) - Corey grades his own at the line he took; confirm."
  },
  "machine_picks": [
   {
@@ -53,21 +53,31 @@
    "week": 3,
    "slot": "superdog",
    "pick": "Sacramento State +27.5 vs North Dakota State",
-   "final": null,
-   "result": "pending",
-   "points": null
+   "final": "North Dakota State 31-10",
+   "result": "cover",
+   "points": 5
   },
   {
    "week": 3,
    "slot": "giant_killer",
    "pick": "Utah State +28.5 at #17 Utah",
-   "final": null,
-   "result": "pending",
-   "points": null
+   "final": "Utah 33-0",
+   "result": "loss",
+   "points": 0
   }
  ],
  "man_picks_week3": [
-  "FIU +7 at FAU",
-  "Colorado State +18 vs BYU"
+  {
+   "pick": "FIU +7 at FAU",
+   "final": "FAU 16-10",
+   "result": "cover",
+   "points": 5
+  },
+  {
+   "pick": "Colorado State +18 vs BYU",
+   "final": "BYU 41-23",
+   "result": "push at +18",
+   "points": 1
+  }
  ]
 }

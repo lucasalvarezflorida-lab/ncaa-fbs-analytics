@@ -834,22 +834,29 @@ GAMES = [  # Week 3 — order = kickoff order; the marquee game (Kiffin in Oxfor
     ),
 ]
 
-# ---- Week 2 receipts (recap slide): frozen Ep3 predictions vs finals vs the
-# last pre-kick ledger pull (Fri Sep 4 5 PM ET; Mon Sep 7 9:25 AM ET for
-# SMU–FSU). Finals are read from the CFBD games cache; a game not yet
-# played renders as a pending row and grades itself after the next refresh.
-# Lines are home-perspective spreads (negative = home favored).
-RECAP_ROWS = [
-    # a, b, title, (away, home), our call, our line, closing line (home-perspective)
+# ---- Week 3 receipts (recap slide): frozen Ep4 predictions vs finals vs the
+# last pre-kick ledger pull (Fri Sep 18 5 PM MT publish pull,
+# card_data_week3.json). Finals are read from the CFBD games cache; a game
+# not yet played renders as a pending row and grades itself after the next
+# refresh. Lines are home-perspective spreads (negative = home favored).
+_RECAP_ROWS_WK2 = [
     ("OSU", "TEX", "Ohio State at Texas", ("Ohio State", "Texas"), "Texas 27–23", -3.5, -1.5),
     ("OU", "MICH", "Oklahoma at Michigan", ("Oklahoma", "Michigan"), "Oklahoma 23–21", 2.0, 5.5),
     ("ASU", "TAMU", "Arizona State at Texas A&M", ("Arizona State", "Texas A&M"), "Texas A&M 34–17", -16.5, -14.5),
     ("ARIZ", "BYU", "Arizona at BYU", ("Arizona", "BYU"), "BYU 28–20", -8.5, -7.5),
     ("BAMA", "UK", "Alabama at Kentucky", ("Alabama", "Kentucky"), "Alabama 31–18", 13.0, 10.0),
-]
-WEEK0_MISS = (120.5, 119.0)  # machine, market through Week 1 (10 games) — running total
-PRIOR_GAMES = 10
-LEANS_LINE = "stated leans 4–2 · Michigan +5.5 won outright"
+]   # Week 2: machine 40.5 vs market 48.0 (machine closer 4 of 5)
+RECAP_ROWS = [
+    # a, b, title, (away, home), our call, our line, closing line (home-perspective)
+    ("HOU", "TTU", "Houston at Texas Tech", ("Houston", "Texas Tech"), "Texas Tech 33–20", -13.0, -7.5),
+    ("SMU", "LOU", "SMU at Louisville", ("SMU", "Louisville"), "Louisville 30–29", -1.0, -1.5),
+    ("MSST", "SCAR", "Mississippi State at South Carolina", ("Mississippi State", "South Carolina"), "South Carolina 32–27", -5.0, -4.0),
+    ("FLA", "AUB", "Florida at Auburn", ("Florida", "Auburn"), "Auburn 27–26", -0.5, 2.5),
+    ("LSU", "MISS", "LSU at Ole Miss", ("LSU", "Ole Miss"), "LSU 32–27", 5.0, 3.0),
+]   # Week 3: machine 50.5 vs market 38.5 (market closer 5 of 5)
+WEEK0_MISS = (161.0, 167.0)  # machine, market through Week 2 (15 games) — running total
+PRIOR_GAMES = 15
+LEANS_LINE = "stated leans 4–3 · Auburn +2.5 lost by 5"
 
 
 def _finals():
