@@ -7,16 +7,21 @@ placeholders until his deck updates (his file is read-only for us).
 Lines marked (Internal: …) are notes-only, never slide talk.
 
 - **Receipts (Week 3)**
-  - Three-way total, lower is better: Machine 50.5 · Market 38.5 · Man — his to fill
-    - The market was closer than the machine in ALL FIVE — first time this season
-    - Closest we came: SMU–Louisville, half a point apart (9.0 vs 8.5)
-    - Worst: Houston–Tech, machine off 11, market off 5.5 — the market's six-point August-to-September move was right
+  - Three-way MARGIN miss, lower is better: Market 38.5 · Man 49.0 · Machine 50.5
+    - The market was closest in four games and tied Corey on the fifth (Mississippi State–South Carolina, both off 11) — neither of us beat the number once
+    - Corey beat the machine by a point and a half on the week: he was closer on Tech (9 vs 11), the machine on Auburn (5.5 vs 6) and LSU (13 vs 14); Louisville a tie at 9
+    - Worst for us: Houston–Tech, machine off 11, market off 5.5 — the market's six-point August-to-September move was right
+  - Points off the FINAL SCORE (both teams' points added up): Man 77 · Machine 83 · market-implied 76
+    - Corey closer on three (Tech 9 vs 11, Louisville 9 vs 13, Auburn 28 vs 30), the machine on two (South Carolina 16 vs 17, LSU 13 vs 14)
+    - Why he wins this one: the machine's totals are the market's — our score is our margin laid over their total — and four of five games went over; Corey's numbers ran higher (35–34, 34–28)
+    - Florida 44, Auburn 39 was 28+ points off for everybody: all three had it in the 50s
+  - Corey's calls, read off his score slides (each number sits under that team's logo, his winner in green): Tech 35–24 · Louisville 35–34 · South Carolina 31–27 · Auburn 28–27 · LSU 34–28
+    - CORRECTION to last week's notes: he had TEXAS TECH, not Houston — the "top number = home team" reading was wrong. We did not split on a winner all week
+  - Winners: machine 2–3, man 2–3 — the same five picks (Tech, Louisville right · South Carolina, Auburn, LSU wrong)
   - Season: Machine 211.5 vs Market 205.5 across 20 games
     - The machine led 161.0–167.0 coming in; one week flipped it
     - Say: "four weeks, twenty games, six points apart — that's a tie with the people who set the number"
-  - Winners: machine 2–3 (Tech, Louisville right · South Carolina, Auburn, LSU wrong)
-    - Corey, if top = home on his score slides: 1–4 (Louisville) — CONFIRM the convention with him
-    - We split on one winner, Houston–Tech; the machine got that one
+    - Man's season total needs his Weeks 0–2 calls re-read under the right convention — ask him for them
   - Game by game
     - Houston 26 at Texas Tech 28 — called Tech 33–20; ours −13 off 11, close −7.5 off 5.5
       - Deserved Houston +4.9: Houston ran 77 plays to 61 and went 9-of-15 on third down

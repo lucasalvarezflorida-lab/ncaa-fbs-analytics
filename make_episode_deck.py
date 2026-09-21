@@ -963,13 +963,16 @@ _RECAP_ROWS_WK2 = [
     ("BAMA", "UK", "Alabama at Kentucky", ("Alabama", "Kentucky"), "Alabama 31–18", 13.0, 10.0),
 ]   # Week 2: machine 40.5 vs market 48.0 (machine closer 4 of 5)
 RECAP_ROWS = [
-    # a, b, title, (away, home), our call, our line, closing line (home-perspective)
-    ("HOU", "TTU", "Houston at Texas Tech", ("Houston", "Texas Tech"), "Texas Tech 33–20", -13.0, -7.5),
-    ("SMU", "LOU", "SMU at Louisville", ("SMU", "Louisville"), "Louisville 30–29", -1.0, -1.5),
-    ("MSST", "SCAR", "Mississippi State at South Carolina", ("Mississippi State", "South Carolina"), "South Carolina 32–27", -5.0, -4.0),
-    ("FLA", "AUB", "Florida at Auburn", ("Florida", "Auburn"), "Auburn 27–26", -0.5, 2.5),
-    ("LSU", "MISS", "LSU at Ole Miss", ("LSU", "Ole Miss"), "LSU 32–27", 5.0, 3.0),
-]   # Week 3: machine 50.5 vs market 38.5 (market closer 5 of 5)
+    # a, b, title, (away, home), our call, our line, closing line (home-perspective),
+    # then optional: the MAN's call (Corey's score slide: each number sits under
+    # that team's logo, his winner in green - read 9/21 from the 9/15 read-only
+    # export) and the closing total (for the market-implied score).
+    ("HOU", "TTU", "Houston at Texas Tech", ("Houston", "Texas Tech"), "Texas Tech 33–20", -13.0, -7.5, "Texas Tech 35–24", 52.5),
+    ("SMU", "LOU", "SMU at Louisville", ("SMU", "Louisville"), "Louisville 30–29", -1.0, -1.5, "Louisville 35–34", 58.5),
+    ("MSST", "SCAR", "Mississippi State at South Carolina", ("Mississippi State", "South Carolina"), "South Carolina 32–27", -5.0, -4.0, "South Carolina 31–27", 58.5),
+    ("FLA", "AUB", "Florida at Auburn", ("Florida", "Auburn"), "Auburn 27–26", -0.5, 2.5, "Auburn 28–27", 53.5),
+    ("LSU", "MISS", "LSU at Ole Miss", ("LSU", "Ole Miss"), "LSU 32–27", 5.0, 3.0, "LSU 34–28", 58.5),
+]   # Week 3 margin miss: market 38.5 · man 49.0 · machine 50.5
 WEEK0_MISS = (161.0, 167.0)  # machine, market through Week 2 (15 games) — running total
 PRIOR_GAMES = 15
 LEANS_LINE = "stated leans 4–3 · Auburn +2.5 lost by 5"
@@ -1011,39 +1014,67 @@ def _deserved():
 DESERVED = _deserved()
 
 
+def _call_pts(call, key):
+    """'Texas Tech 33–20' -> (away_pts, home_pts) for key = (away, home)."""
+    name, sc = call.rsplit(" ", 1)
+    hi, lo = (int(x) for x in sc.replace("-", "–").split("–"))
+    return (lo, hi) if name == key[1] else (hi, lo)
+
+
 def build_recap():
+    """Rows + totals. Margin miss ('off by') for machine / market / man; SCORE
+    miss = points off the final for both teams added up, for the two score
+    calls (and the market's implied score, spread laid over the closing total)."""
     finals = _finals()
-    rows, tot_m, tot_k, tot_d, n_m, n_k, n_t = [], 0.0, 0.0, 0.0, 0, 0, 0
-    for a, b, title, key, call, ours, close in RECAP_ROWS:
+    rows = []
+    T = dict(m=0.0, k=0.0, c=0.0, d=0.0, sm=0.0, sc=0.0, sk=0.0, n=0, nm=0, nk=0, nc=0, nt=0, man=False)
+    for row in RECAP_ROWS:
+        a, b, title, key, call, ours, close = row[:7]
+        man = row[7] if len(row) > 7 else None
+        ou = row[8] if len(row) > 8 else None
         lines_ = f"our line {_line_txt(a, b, ours)} · closing {_line_txt(a, b, close)}"
         fin = finals.get(key)
+        calls = f"Machine {NAME2CODE[call.rsplit(' ', 1)[0]]} {call.rsplit(' ', 1)[1]}"
+        if man:
+            calls += f" · Man {NAME2CODE[man.rsplit(' ', 1)[0]]} {man.rsplit(' ', 1)[1]}"
         if fin is None:
-            rows.append((a, b, title, f"we called {call} · FINAL pending",
+            rows.append((a, b, title, calls + " · FINAL pending",
                          lines_, "graded before air — see the notes", "P"))
             continue
         ap_, hp_ = fin
-        win, lose = (CODE2NAME[b], CODE2NAME[a]) if hp_ >= ap_ else (CODE2NAME[a], CODE2NAME[b])
-        callfin = f"we called {call} · FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)}"
+        win = b if hp_ >= ap_ else a
+        callfin = f"{calls} · FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)}"
         margin = hp_ - ap_                       # actual home margin
         des = DESERVED.get((normalize_name(key[0]), normalize_name(key[1])))
         if des is not None:
             lines_ += f" · deserved {b if des >= 0 else a} +{abs(des):.1f}"
-            tot_d += abs(des + ours)
-        off_m, off_k = abs(margin + ours), abs(margin + close)
-        tot_m, tot_k = tot_m + off_m, tot_k + off_k
-        if off_m < off_k:
-            verdict, mark = "machine closer", "M"
-            n_m += 1
-        elif off_k < off_m:
-            verdict, mark = "market closer", "K"
-            n_k += 1
+            T["d"] += abs(des + ours)
+        off = {"M": abs(margin + ours), "K": abs(margin + close)}
+        ma, mh = _call_pts(call, key)
+        T["sm"] += abs(ma - ap_) + abs(mh - hp_)
+        if ou is not None:
+            T["sk"] += abs((ou + close) / 2 - ap_) + abs((ou - close) / 2 - hp_)
+        if man:
+            T["man"] = True
+            ca, ch = _call_pts(man, key)
+            off["C"] = abs(margin - (ch - ca))
+            T["c"] += off["C"]
+            T["sc"] += abs(ca - ap_) + abs(ch - hp_)
+        T["m"] += off["M"]; T["k"] += off["K"]; T["n"] += 1
+        best = min(off.values())
+        who = [k for k, v in off.items() if v == best]
+        label = {"M": "machine", "K": "market", "C": "man"}
+        if len(who) == 1:
+            mark, verdict = who[0], f"{label[who[0]]} closest" if man else f"{label[who[0]]} closer"
+            T[{"M": "nm", "K": "nk", "C": "nc"}[mark]] += 1
         else:
-            verdict, mark = "dead tie", "T"
-            n_t += 1
-        rows.append((a, b, title, callfin, lines_,
-                     f"machine off by {off_m:g} · market off by {off_k:g} — {verdict}", mark))
-    graded = n_m + n_k + n_t
-    return rows, dict(m=tot_m, k=tot_k, d=tot_d, n=graded, nm=n_m, nk=n_k, nt=n_t)
+            mark, verdict = "T", " / ".join(label[k] for k in who) + " tie"
+            T["nt"] += 1
+        miss = f"off by · machine {off['M']:g} · market {off['K']:g}"
+        if man:
+            miss += f" · man {off['C']:g}"
+        rows.append((a, b, title, callfin, lines_, f"{miss} — {verdict}", mark))
+    return rows, T
 
 
 RECAP, RECAP_SUM = build_recap()
@@ -1670,8 +1701,9 @@ txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold
 txt(s, 0.9, 1.08, 11.5, 0.3,
     "Calls frozen at recording · closing line = last pre-kick pull · "
     "off by = miss vs the final margin · deserved = the efficiency margin", 12, MUTE, bold=True)
+# codes, not names, on the calls line: three score lines have to fit one row
 y = 1.55
-VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "T": MUTE, "P": MUTE}
+VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "C": RGBColor(0x1F, 0x7A, 0x4D), "T": MUTE, "P": MUTE}
 for a, b, tit, callfin, lines_, miss, mark in RECAP:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.86, ICE)
     logo_badge(s, 1.1, y + 0.13, 0.6, a)
@@ -1684,14 +1716,21 @@ for a, b, tit, callfin, lines_, miss, mark in RECAP:
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
 _rs = RECAP_SUM
 _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
-txt(s, 1.15, y + 0.13, 11.0, 0.35,
-    f"Machine {_rs['m']:.1f} · market {_rs['k']:.1f} · machine closer in "
-    f"{_rs['nm']}, market {_rs['nk']}, {_rs['nt']} tie"
-    + (f" · vs the deserved margins: machine {_rs['d']:.1f}" if _rs.get("d") else ""),
-    15, WHITE, bold=True)
-txt(s, 1.15, y + 0.5, 11.0, 0.3,
-    f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} across "
-    f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}", 11.5, RGBColor(0xCA, 0xDC, 0xFC))
+if _rs["man"]:
+    _l1 = (f"Margin miss: market {_rs['k']:.1f} · man {_rs['c']:.1f} · machine {_rs['m']:.1f}"
+           f" — closest: market {_rs['nk']}, man {_rs['nc']}, machine {_rs['nm']}, {_rs['nt']} tie")
+    _l2 = (f"Points off the final score: man {_rs['sc']:g} · machine {_rs['sm']:g}"
+           + (f" · market-implied {_rs['sk']:g}" if _rs["sk"] else "")
+           + f"   |   Season margin: machine {_run_m:.1f} vs market {_run_k:.1f}, "
+             f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE.split(' · ')[0]}")   # one line: the lean detail lives in the notes
+else:
+    _l1 = (f"Machine {_rs['m']:.1f} · market {_rs['k']:.1f} · machine closer in "
+           f"{_rs['nm']}, market {_rs['nk']}, {_rs['nt']} tie"
+           + (f" · vs the deserved margins: machine {_rs['d']:.1f}" if _rs.get("d") else ""))
+    _l2 = (f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} across "
+           f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}")
+txt(s, 1.15, y + 0.13, 11.0, 0.35, _l1, 14.5, WHITE, bold=True)
+txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5, RGBColor(0xCA, 0xDC, 0xFC))
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
