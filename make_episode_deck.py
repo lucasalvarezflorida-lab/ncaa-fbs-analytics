@@ -1038,6 +1038,8 @@ CLOSER_SHOW_MARKET = True      # Lucas 9/21 (after the test run): the ONE except
                                # shows the market number next to ours so viewers can see whether we agree.
                                # The receipts stay man vs machine; every other slide stays market-free.
 CLOSER_AGREE_PTS = 1.5         # within this many points of the market = "agrees"
+CARD_SHOW_MACHINE_LINE = False  # Lucas 9/21 (his own edit in Slides): no spread on the card slide - it spoils the
+                                # prediction. The row shows the kickoff time instead.
 GAME_SLIDE_SHOW_MARKET = True  # Lucas 9/21: each game slide carries just the market's final number at
                                # recording - one line in THE NUMBER box. Line MOVEMENT stays internal.
 
@@ -1553,13 +1555,27 @@ for g in GAMES:
     txt(s, 2.7, y + 0.1, 6.5, 0.4, g["title"], 15, WHITE, bold=True)
     txt(s, 2.7, y + 0.46, 6.5, 0.3, g["where"], 10,
         RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 8.4, y + 0.1, 3.8, 0.4, g["machine"] + ("   ·   " + g["market"] if SLIDES_SHOW_MARKET else ""),
-        13.5 if SLIDES_SHOW_MARKET else 16, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, 8.4, y + 0.47, 3.8, 0.3, "machine · market" if SLIDES_SHOW_MARKET else "the machine's line", 9.5,
-        RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
+    if CARD_SHOW_MACHINE_LINE:
+        txt(s, 8.4, y + 0.1, 3.8, 0.4, g["machine"] + ("   ·   " + g["market"] if SLIDES_SHOW_MARKET else ""),
+            13.5 if SLIDES_SHOW_MARKET else 16, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+        txt(s, 8.4, y + 0.47, 3.8, 0.3, "machine · market" if SLIDES_SHOW_MARKET else "the machine's line", 9.5,
+            RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
+    else:   # kickoff time from card_data ("Sat Sep 26, 12:00 PM ET"), else from the authored sub line
+        _when = (CARD.get(g["cfbd"]) or {}).get("date") or ""
+        _day, _, _time = _when.partition(", ")
+        if not _time:
+            _parts = g["sub"].split(" · ")
+            _day, _time = _parts[0], (_parts[1] if len(_parts) > 1 else "")
+        _one_day = len({((CARD.get(x["cfbd"]) or {}).get("date") or x["sub"]).split(",")[0].split(" · ")[0] for x in GAMES}) == 1
+        if _one_day:    # every game the same day (it is in the slide header): the time alone, centred in the row
+            txt(s, 8.4, y + 0.2, 3.8, 0.4, _time, 18, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+        else:
+            txt(s, 8.4, y + 0.1, 3.8, 0.4, _time, 16, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+            txt(s, 8.4, y + 0.47, 3.8, 0.3, _day, 9.5, RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.88
 txt(s, 0.9, 6.85, 11.5, 0.5,
-    "Machine = our in-season rating + 2.5 home field" + (f" · lines as of {LINES_AS_OF}" if SLIDES_SHOW_MARKET else ""),
+    ("Machine = our in-season rating + 2.5 home field" + (f" · lines as of {LINES_AS_OF}" if SLIDES_SHOW_MARKET else ""))
+    if CARD_SHOW_MACHINE_LINE else "",   # Lucas removed the footer with the spread
     11.5, RGBColor(0xCA, 0xDC, 0xFC))
 
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----

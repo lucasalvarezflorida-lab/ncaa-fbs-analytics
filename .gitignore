@@ -50,3 +50,4 @@ internal/
 
 # every read-only export of Corey's deck stays local
 decks/corey_*.pptx
+decks/*_live_export.pptx
