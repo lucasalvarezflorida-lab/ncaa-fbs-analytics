@@ -9,18 +9,17 @@ Texas A&M at LSU closes.
 Stats are each team's 2026 games to date (CFBD play-by-play,
 stat_package_week4.json), never from a game against each other. "Dropbacks"
 = pass plays including sacks; "explosive pass" = 20+ yards; "stuffed" = a run
-for zero or less; "third-and-long" = third-and-6 or more. Lines marked
-(Internal: …) are notes-only.
+for zero or less; "third-and-long" = third-and-6 or more. Betting-line
+context is kept out of this file on purpose - it lives in the internal folder.
 
 - **Texas at Tennessee — Sat 12:00 ET, Knoxville · No. 1 at No. 14**
   - The read
     - Texas is No. 1 on defense and third-and-short; the passing game has not shown up — 6.8 a throw, all at home
     - Tennessee runs for 7.1 a carry and has a true freshman who has not thrown a pick — and has not seen a defense like this
     - The game is whether Tennessee's run game travels up a weight class, because Texas's offense is not built to win a shootout
-  - The number: Texas −9, 71% · Market Texas −5.5 · Call Texas 33–24
-    - Honesty: 3.5 to Texas, five points of win probability — a quibble, not a position
+  - The number: Texas −9, 71% · Call Texas 33–24
+    - Honesty: 71% — but Texas has not left Austin yet
     - The machine's Texas number is the Ohio State win plus July; it has never seen this offense leave Austin
-    - (Internal: opened Texas −6.5, now −5.5 — a point toward Tennessee; total 57.5)
   - Texas keys
     - Arch has to hit something downfield
       - Why it matters: Texas is winning without a passing game and that stops working on the road against a team that scores
@@ -64,10 +63,9 @@ for zero or less; "third-and-long" = third-and-6 or more. Lines marked
     - Two first-year head coaches, both 3–0, and the voters and the machine disagree about which is better: AP has them 17 spots apart, the machine has them a point apart
     - Florida is the most explosive offense on the card; Ole Miss's defense gives up explosives — that is the matchup
     - Chambliss has been sacked 3 times in 122 dropbacks; Florida just sacked Auburn 7 times
-  - The number: Florida −3, 59% · Market Florida −2.5 · Call Florida 31–28
-    - Honesty: machine = market, no play
+  - The number: Florida −3, 59% · Call Florida 32–29
+    - Honesty: 59% — a field-goal game between two 3–0 teams
     - Series: the home team has won the last two — Florida 24–17 in 2024 (the loss that kept Ole Miss out of the playoff), Ole Miss 34–24 last year
-    - (Internal: total 59.5 is a Monster Under number; four of five went over last week and both defenses have given up 38+ once. Opened Florida −1.5, now −2.5)
   - Ole Miss keys
     - Chambliss vs the Florida rush
       - Why it matters: his clean pocket is why Ole Miss beat LSU
@@ -106,10 +104,9 @@ for zero or less; "third-and-long" = third-and-6 or more. Lines marked
     - The best pass rush on the card against a quarterback who is 38-of-45
     - Oklahoma's offense has 24 points in two games and has not run a play in the red zone in either one
     - Georgia's two-year flaw — no explosives — looks fixed: 17% of dropbacks have gone for 20+
-  - The number: Georgia −14, 81% · Market Georgia −14 · Call Georgia 30–16
-    - Honesty: dead agreement, no play
+  - The number: Georgia −14, 81% · Call Georgia 29–15
+    - Honesty: 81% — the most confident call on the card
     - Georgia's schedule avoids Texas, A&M and LSU; this and the November trip to Oxford are the games that decide a first-round bye
-    - (Internal: opened Georgia −10, now −14 after Oklahoma's 14–6 over New Mexico; total 45.5 is the lowest on the card. Oklahoma +14 is fifth on our Giant Killer board. Playoff sim: Georgia 81%, Oklahoma 11%)
   - Oklahoma keys
     - The pass rush is the path
       - Why it matters: it is the one elite unit Oklahoma has and the one thing Georgia has not faced
@@ -146,10 +143,9 @@ for zero or less; "third-and-long" = third-and-6 or more. Lines marked
     - Two offenses well ahead of two defenses: each averages 9+ a throw with 15% of dropbacks going for 20+, and each defense gives up 8 a throw
     - Oregon's July flaw — the offensive line against a real front — already cost it a game: 4 sacks in Stillwater
     - USC is 4–0 and has not played anyone; it gave up 35 at Rutgers and 30 to Louisiana
-  - The number: Oregon −0.5, 50% · Market Oregon −1.5 · Call Oregon 32–31
-    - Honesty: a pick'em either way, no position. The machine has taken 8 points off Oregon since July, the most in the 25
+  - The number: Oregon −0.5, 50% · Call Oregon 32–31
+    - Honesty: a coin flip — the machine's honest answer. The machine has taken 8 points off Oregon since July, the most in the 25
     - Series: Oregon has won the last two, 36–27 (2023) and 42–27 (2025), both in Eugene
-    - (Internal: opened Oregon −5.5, now −1.5 — four points toward USC; the 62.5 total is the highest on the card and a Monster Under number)
   - Oregon keys
     - Protect Moore
       - Why it matters: the line was THE program flaw in July — physically overwhelmed in the last two playoff exits — and Oklahoma State just did it again
@@ -186,10 +182,9 @@ for zero or less; "third-and-long" = third-and-6 or more. Lines marked
     - Both lost last week; the loser is 2–2 with September not over
     - A&M's problem is on both sides of the ball: the offense has 5 explosive passes all year, the secondary gave up 14.0 a throw to Kentucky
     - LSU's problem is one thing — Leavitt's 5 interceptions — and A&M's defense has taken the ball away twice
-  - The number: LSU −5.5, 64% · Market LSU −8.5 · Call LSU 30–24
-    - Honesty: 3 to A&M on the number and twelve points of win probability — the biggest gap on the card, still under the flag. No position: the market moved 5.5 after Kentucky, the machine counts Kentucky as one game, and our own backtest says a stale number loses to a move like that
+  - The number: LSU −5.5, 64% · Call LSU 29–23
+    - Honesty: 64% — the machine counts Kentucky as one bad game; A&M fell 5.3 for it, the biggest drop in the Top 25
     - Series: A&M won 49–25 here last year; before that the home team had won four straight
-    - (Internal: opened LSU −3, now −8.5; total 53.5. Playoff sim: LSU 41%, A&M 18% — and the sim is generous to three-loss SEC teams)
   - Texas A&M keys
     - Find an explosive play
       - Why it matters: the offense cannot score from distance, so every drive has to be 10 plays

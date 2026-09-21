@@ -2,8 +2,8 @@
 
 Season: **man closer on 5 teams · machine on 4 · 1 tie** — points off, all teams: man 77 · machine 83 — games (both teams added up): man 3 · machine 2 · 0 tie
 
-The machine has no totals model: its score is its margin laid over the market total, so its
-team-score misses are mostly the market's total miss. Corey's totals are his own.
+The machine predicts the margin, not the points - it has no totals model - so its team-score
+misses are mostly a points-total miss. Corey's totals are his own.
 
 | Wk | Game | Team | Final | Machine | off | Man | off | Closer |
 |---|---|---|---|---|---|---|---|---|

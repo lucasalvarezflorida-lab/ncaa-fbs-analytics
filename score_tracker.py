@@ -53,8 +53,8 @@ def render(rows):
          f"Season: **man closer on {t['man']} teams · machine on {t['machine']} · {t['tie']} tie** — "
          f"points off, all teams: man {t['c_pts']} · machine {t['m_pts']} — "
          f"games (both teams added up): man {t['games_c']} · machine {t['games_m']} · {t['games_t']} tie", "",
-         "The machine has no totals model: its score is its margin laid over the market total, so its",
-         "team-score misses are mostly the market's total miss. Corey's totals are his own.", "",
+         "The machine predicts the margin, not the points - it has no totals model - so its team-score",
+         "misses are mostly a points-total miss. Corey's totals are his own.", "",
          "| Wk | Game | Team | Final | Machine | off | Man | off | Closer |", "|---|---|---|---|---|---|---|---|---|"]
     for o in out:
         L.append(f"| {o['week']} | {o['game']} | {o['team']} | {o['final']} | {o['machine']} | {o['m_off']} | {o['man']} | {o['c_off']} | {o['closer']} |")
