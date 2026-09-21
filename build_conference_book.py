@@ -1258,7 +1258,10 @@ def update_alerts_log(games: list[dict]) -> dict:
     today = f"{datetime.date.today():%Y-%m-%d}"
     for g in games:
         gid = str(g["id"])
-        if g["tier"] and gid not in log:
+        # never log a game that has already been played: by then the machine
+        # rating contains the result, so the "model side" is hindsight (found
+        # 9/21: post-kickoff entries had gone 36-4 and inflated the scorecard)
+        if g["tier"] and gid not in log and not g["completed"]:
             log[gid] = dict(first_seen=today, wk=g["wk"], home=g["home"],
                             away=g["away"], spread=g["spread"], edge=g["edge"],
                             tier=g["tier"], model_side=g["model_side"],
