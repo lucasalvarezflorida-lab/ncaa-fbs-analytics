@@ -193,13 +193,20 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
 # (decides / honesty / keys) stay authored here; lean + players are kept as
 # data but no longer rendered.
 CARD_DATA = os.path.join(HERE, f"card_data_week{WEEK}.json")
+# freeze_card.py --week N copies the pre-record pull here. Once it exists the deck
+# reads ONLY this file, so the Friday / Sunday scheduled pulls can never change a
+# number that was said on air ("the final number at the time of recording").
+CARD_FROZEN = os.path.join(HERE, f"card_data_week{WEEK}_frozen.json")
 
 
 def load_card_data():
-    if not os.path.exists(CARD_DATA):
+    src = CARD_FROZEN if os.path.exists(CARD_FROZEN) else CARD_DATA
+    if not os.path.exists(src):
         return {}, None
     import json
-    d = json.load(open(CARD_DATA, encoding="utf-8"))
+    d = json.load(open(src, encoding="utf-8"))
+    if src == CARD_FROZEN:
+        print("card_data: FROZEN at recording -", d.get("frozen_at"))
     return {(g["away"], g["home"]): g for g in d["games"]}, d.get("lines_as_of")
 
 
@@ -1031,6 +1038,8 @@ CLOSER_SHOW_MARKET = True      # Lucas 9/21 (after the test run): the ONE except
                                # shows the market number next to ours so viewers can see whether we agree.
                                # The receipts stay man vs machine; every other slide stays market-free.
 CLOSER_AGREE_PTS = 1.5         # within this many points of the market = "agrees"
+GAME_SLIDE_SHOW_MARKET = True  # Lucas 9/21: each game slide carries just the market's final number at
+                               # recording - one line in THE NUMBER box. Line MOVEMENT stays internal.
 
 
 def build_recap():
@@ -1792,7 +1801,8 @@ for g in GAMES:
 
     # right: navy score bug
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.75, 3.9, 4.6 if SLIDES_SHOW_MARKET else 3.95, NAVY)
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.75, 3.9,
+          4.6 if SLIDES_SHOW_MARKET else (4.5 if GAME_SLIDE_SHOW_MARKET else 3.95), NAVY)
     txt(s, 8.8, 1.98, 3.3, 0.3, "THE NUMBER", 12, ORANGE, bold=True)
     # machine line as a book would post it + fair odds from our win prob
     txt(s, 8.8, 2.3, 3.3, 0.55, g["machine"], 28 if len(g["machine"]) <= 16 else 21, WHITE, bold=True)
@@ -1801,7 +1811,15 @@ for g in GAMES:
         "machine line · fair odds, no vig · raw margin " + g.get("raw_margin", ""),
         8.5, PALE)
     # market (internal since 9/21: the block is skipped and the rest moves up)
-    _up = 0.0 if SLIDES_SHOW_MARKET else 0.75
+    _up = 0.0 if SLIDES_SHOW_MARKET else (0.2 if GAME_SLIDE_SHOW_MARKET else 0.75)
+    if GAME_SLIDE_SHOW_MARKET and not SLIDES_SHOW_MARKET:
+        _cg = CARD.get(g["cfbd"]) or {}
+        _bk = (_cg.get("books") or {}).get("DraftKings") or (_cg.get("books") or {}).get("Bovada") or {}
+        if _bk.get("spread") is not None:
+            _s = float(_bk["spread"])
+            _m = (f"{CODE2NAME[g['b']]} –{-_s:g}" if _s < 0 else f"{CODE2NAME[g['a']]} –{_s:g}" if _s > 0 else "pick'em")
+            txt(s, 8.8, 3.52, 3.3, 0.4, _m, 17, WHITE, bold=True)
+            txt(s, 8.8, 3.9, 3.3, 0.25, "the market's number", 8.5, PALE)
     if SLIDES_SHOW_MARKET:
         txt(s, 8.8, 3.55, 3.3, 0.45, g["market"], 20, WHITE, bold=True)
         txt(s, 8.8, 3.98, 3.3, 0.4, "market (DK / Bovada) · " + (g.get("market_ml") or "ML not posted"),

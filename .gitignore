@@ -47,3 +47,6 @@ decks/*_export.pptx
 
 # internal research (market deep dives) - the repo is public, the market is ours
 internal/
+
+# every read-only export of Corey's deck stays local
+decks/corey_*.pptx
