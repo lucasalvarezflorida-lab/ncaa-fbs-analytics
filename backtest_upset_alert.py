@@ -170,7 +170,7 @@ def main():
               "in-season the live system upgrades to current-year FPI as CFBD mirrors it.",
               "Slippage, line-shopping, and closing-line movement are not modeled.",
               "", f"Per-alert detail: `backtest_alerts.csv` ({len(all_alerts)} alerts)."]
-    (HERE / "BACKTEST_RESULTS.md").write_text("\n".join(lines), encoding="utf-8")
+    (HERE / "notes" / "BACKTEST_RESULTS.md").write_text("\n".join(lines), encoding="utf-8")
     print(f"\nwrote BACKTEST_RESULTS.md + backtest_alerts.csv ({len(all_alerts)} alerts)")
 
 

@@ -7,7 +7,7 @@ Ledger = score_tracker.json (append a week after grading):
 `final` can be null - it is filled from the CFBD games cache on the next run.
 Man's calls come off Corey's score slides (each number under that team's logo).
 
-  python score_tracker.py            -> prints the tracker, writes score_tracker.md"""
+  python score_tracker.py            -> prints the tracker, writes notes/score_tracker.md"""
 import json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 LEDGER = os.path.join(HERE, "score_tracker.json")
@@ -66,5 +66,5 @@ def render(rows):
 
 if __name__ == "__main__":
     md = render(load())
-    open(os.path.join(HERE, "score_tracker.md"), "w", encoding="utf-8").write(md)
+    open(os.path.join(HERE, "notes", "score_tracker.md"), "w", encoding="utf-8").write(md)
     print(md)

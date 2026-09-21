@@ -13,7 +13,7 @@ engine graded against the betting market, and a Monte Carlo season simulator.
 | `refresh_all.py` | The pipeline behind the button: re-pulls 138 official-site rosters, CFBD portal/schedules/betting lines, re-fits the model, rebuilds the workbook, recalculates via Excel. |
 | `build_conference_book.py` | Workbook builder: hidden data sheets, conference viewer tabs, upset flagging (first-seen-line ledger in `alerts_log.json` so alerts are graded honestly), 10,000-run season simulation. |
 | `rosters/` | Roster acquisition from every school's official athletics site (four site platforms handled), with archive fallback and per-team coverage reporting. |
-| [`METHODOLOGY.md`](METHODOLOGY.md) | The 0–10 unit-rating methodology behind the team ratings (SP+ rescaling, five sub-ratings, returning-production prior, QB modifiers). |
+| [`METHODOLOGY.md`](notes/METHODOLOGY.md) | The 0–10 unit-rating methodology behind the team ratings (SP+ rescaling, five sub-ratings, returning-production prior, QB modifiers). |
 | `NCAA_FBS_Analytics_System.pptx` | Nine-slide summary deck of the whole system. |
 
 ## The upset alert
@@ -34,7 +34,7 @@ model — exactly the information the live system has): **49.7% ATS, below the 5
 break-even**. Notably, the *biggest* disagreements with the market (15+ point edges)
 performed worst (46.8%) — when a stale prior and the market disagree loudly, the market
 is usually right, because it knows about roster and coaching changes the prior doesn't.
-Full slicing in [`BACKTEST_RESULTS.md`](BACKTEST_RESULTS.md).
+Full slicing in [`BACKTEST_RESULTS.md`](notes/BACKTEST_RESULTS.md).
 
 That's the point of the ledger: this system surfaces *where* a major public model and
 the betting market disagree — a research shortlist and narrative engine, not a picks
