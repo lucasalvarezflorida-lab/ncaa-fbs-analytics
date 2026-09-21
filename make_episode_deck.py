@@ -1027,6 +1027,10 @@ SLIDES_SHOW_MARKET = False     # Lucas 9/21: the market is INTERNAL everywhere o
                                # internal/MARKET_DEEP_DIVE. The superdog SPREAD stays: the rulebook
                                # is defined by it.
 RECEIPTS_SHOW_MARKET = SLIDES_SHOW_MARKET
+CLOSER_SHOW_MARKET = True      # Lucas 9/21 (after the test run): the ONE exception - the predictions slide
+                               # shows the market number next to ours so viewers can see whether we agree.
+                               # The receipts stay man vs machine; every other slide stays market-free.
+CLOSER_AGREE_PTS = 1.5         # within this many points of the market = "agrees"
 
 
 def build_recap():
@@ -1913,10 +1917,19 @@ for g in GAMES:
     logo_badge(s, 1.1, y + 0.1, 0.52, g["a"], plate=True)
     logo_badge(s, 1.75, y + 0.1, 0.52, g["b"], plate=True)
     txt(s, 2.5, y + 0.17, 5.4, 0.4, g["title"], 16, WHITE, bold=True)
-    txt(s, 7.0, y + (0.06 if SLIDES_SHOW_MARKET else 0.14), 5.2, 0.45, g.get("score", ""), 19, ORANGE,
+    txt(s, 7.0, y + (0.06 if (SLIDES_SHOW_MARKET or CLOSER_SHOW_MARKET) else 0.14), 5.2, 0.45, g.get("score", ""), 19, ORANGE,
         bold=True, align=PP_ALIGN.RIGHT)
-    if SLIDES_SHOW_MARKET:
-        txt(s, 7.0, y + 0.47, 5.2, 0.25, "market " + g["market"].split(" / ")[0], 9.5,
+    _c = CARD.get(g["cfbd"]) if (CLOSER_SHOW_MARKET or SLIDES_SHOW_MARKET) else None
+    _b = ((_c.get("books") or {}).get("DraftKings") or (_c.get("books") or {}).get("Bovada") or {}) if _c else {}
+    if _b.get("spread") is not None:
+        _sp = float(_b["spread"])                       # home-perspective market spread
+        _mk = (f"{CODE2NAME[g['b']]} –{-_sp:g}" if _sp < 0 else f"{CODE2NAME[g['a']]} –{_sp:g}" if _sp > 0 else "pick'em")
+        _diff = _book_line(_c["model_margin"]) + _sp   # + = the machine is higher on the home team
+        if abs(_diff) <= CLOSER_AGREE_PTS:
+            _tag = "machine agrees"
+        else:
+            _tag = f"machine {abs(_diff):g} higher on {CODE2NAME[g['b'] if _diff > 0 else g['a']]}"
+        txt(s, 4.6, y + 0.47, 7.6, 0.25, f"machine {g['machine']}  ·  market {_mk}  ·  {_tag}", 9.5,
             RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.8
 # superdog band
@@ -1936,7 +1949,8 @@ for i, (label, board) in enumerate(
         f"{r['dog']} +{r['pts']:g} {r['at']} {fav}{ml}", 16, WHITE,
         bold=True)
 txt(s, 0.9, 7.15, 11.5, 0.3,
-    "Superdogs: 5 for a cover · 5 + the spread for a win · 1 for a push · research, not picks", 11,
+    "Superdogs: 5 for a cover · 5 + the spread for a win · 1 for a push · research, not picks"
+    + (f" · market = DraftKings, {LINES_AS_OF}" if CLOSER_SHOW_MARKET else ""), 11,
     RGBColor(0xCA, 0xDC, 0xFC), italic=True)
 
 out = os.path.join(HERE, "decks", f"2026_Week{WEEK}_Episode{EPISODE}.pptx")
