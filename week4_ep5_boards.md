@@ -6,8 +6,10 @@ AP Week 4 poll). MACHINE-DRAFTED — review before air. Corey's sections are
 placeholders until his deck updates (his file is read-only for us).
 Lines marked (Internal: …) are notes-only, never slide talk.
 
-- **Receipts (Week 3)**
-  - Three-way MARGIN miss, lower is better: Market 38.5 · Man 49.0 · Machine 50.5
+- **Receipts (Week 3)** — THE SLIDE IS MAN vs MACHINE ONLY (Lucas 9/21: the market is internal; every market number below is notes-only)
+  - On the slide: margin miss Man 49.0 · Machine 50.5 — man closer on 2 (Tech, South Carolina), machine on 2 (Auburn, LSU), Louisville a dead tie at 9
+    - Points off the final score: Man 77 · Machine 83; per team he was closer on 5, the machine on 4, 1 tie (score_tracker.md)
+  - (Internal) Three-way MARGIN miss, lower is better: Market 38.5 · Man 49.0 · Machine 50.5
     - The market was closest in four games and tied Corey on the fifth (Mississippi State–South Carolina, both off 11) — neither of us beat the number once
     - Corey beat the machine by a point and a half on the week: he was closer on Tech (9 vs 11), the machine on Auburn (5.5 vs 6) and LSU (13 vs 14); Louisville a tie at 9
     - Worst for us: Houston–Tech, machine off 11, market off 5.5 — the market's six-point August-to-September move was right

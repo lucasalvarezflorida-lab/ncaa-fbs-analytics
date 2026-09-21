@@ -1021,6 +1021,10 @@ def _call_pts(call, key):
     return (lo, hi) if name == key[1] else (hi, lo)
 
 
+RECEIPTS_SHOW_MARKET = False   # Lucas 9/21: the market is INTERNAL - graded in the notes and
+                               # MARKET_DEEP_DIVE, never on the receipts slide (man vs machine only)
+
+
 def build_recap():
     """Rows + totals. Margin miss ('off by') for machine / market / man; SCORE
     miss = points off the final for both teams added up, for the two score
@@ -1032,7 +1036,9 @@ def build_recap():
         a, b, title, key, call, ours, close = row[:7]
         man = row[7] if len(row) > 7 else None
         ou = row[8] if len(row) > 8 else None
-        lines_ = f"our line {_line_txt(a, b, ours)} · closing {_line_txt(a, b, close)}"
+        lines_ = f"our line {_line_txt(a, b, ours)}"
+        if RECEIPTS_SHOW_MARKET:
+            lines_ += f" · closing {_line_txt(a, b, close)}"
         fin = finals.get(key)
         calls = f"Machine {NAME2CODE[call.rsplit(' ', 1)[0]]} {call.rsplit(' ', 1)[1]}"
         if man:
@@ -1061,19 +1067,24 @@ def build_recap():
             T["c"] += off["C"]
             T["sc"] += abs(ca - ap_) + abs(ch - hp_)
         T["m"] += off["M"]; T["k"] += off["K"]; T["n"] += 1
-        best = min(off.values())
-        who = [k for k, v in off.items() if v == best]
+        shown = {k: v for k, v in off.items() if k != "K" or RECEIPTS_SHOW_MARKET}
+        best = min(shown.values())
+        who = [k for k, v in shown.items() if v == best]
         label = {"M": "machine", "K": "market", "C": "man"}
         if len(who) == 1:
-            mark, verdict = who[0], f"{label[who[0]]} closest" if man else f"{label[who[0]]} closer"
+            mark, verdict = who[0], f"{label[who[0]]} closest" if len(shown) > 2 else f"{label[who[0]]} closer"
             T[{"M": "nm", "K": "nk", "C": "nc"}[mark]] += 1
         else:
-            mark, verdict = "T", " / ".join(label[k] for k in who) + " tie"
+            mark, verdict = "T", ("dead tie" if len(who) == len(shown) else " / ".join(label[k] for k in who) + " tie")
             T["nt"] += 1
-        miss = f"off by · machine {off['M']:g} · market {off['K']:g}"
+        miss = f"off by · machine {off['M']:g}"
+        if RECEIPTS_SHOW_MARKET:
+            miss += f" · market {off['K']:g}"
         if man:
             miss += f" · man {off['C']:g}"
-        rows.append((a, b, title, callfin, lines_, f"{miss} — {verdict}", mark))
+        if len(shown) == 1:
+            mark, verdict = "M", ""
+        rows.append((a, b, title, callfin, lines_, miss + (f" — {verdict}" if verdict else ""), mark))
     return rows, T
 
 
@@ -1699,8 +1710,9 @@ def one_fact(val, short):
 s = blank()
 txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
 txt(s, 0.9, 1.08, 11.5, 0.3,
-    "Calls frozen at recording · closing line = last pre-kick pull · "
-    "off by = miss vs the final margin · deserved = the efficiency margin", 12, MUTE, bold=True)
+    ("Calls frozen at recording · closing line = last pre-kick pull · " if RECEIPTS_SHOW_MARKET
+     else "Calls frozen at recording · ")
+    + "off by = miss vs the final margin · deserved = the efficiency margin", 12, MUTE, bold=True)
 # codes, not names, on the calls line: three score lines have to fit one row
 y = 1.55
 VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "C": RGBColor(0x1F, 0x7A, 0x4D), "T": MUTE, "P": MUTE}
@@ -1716,13 +1728,22 @@ for a, b, tit, callfin, lines_, miss, mark in RECAP:
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
 _rs = RECAP_SUM
 _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
-if _rs["man"]:
+if _rs["man"] and not RECEIPTS_SHOW_MARKET:
+    _l1 = (f"Margin miss: man {_rs['c']:.1f} · machine {_rs['m']:.1f}"
+           f" — closer: man {_rs['nc']}, machine {_rs['nm']}, {_rs['nt']} tie")
+    _l2 = (f"Points off the final score: man {_rs['sc']:g} · machine {_rs['sm']:g}"
+           f"   |   Machine's season: {_run_m:.1f} off across {PRIOR_GAMES + _rs['n']} games"
+           + (f" · vs the deserved margins this week: {_rs['d']:.1f}" if _rs.get("d") else ""))
+elif _rs["man"]:
     _l1 = (f"Margin miss: market {_rs['k']:.1f} · man {_rs['c']:.1f} · machine {_rs['m']:.1f}"
            f" — closest: market {_rs['nk']}, man {_rs['nc']}, machine {_rs['nm']}, {_rs['nt']} tie")
     _l2 = (f"Points off the final score: man {_rs['sc']:g} · machine {_rs['sm']:g}"
            + (f" · market-implied {_rs['sk']:g}" if _rs["sk"] else "")
            + f"   |   Season margin: machine {_run_m:.1f} vs market {_run_k:.1f}, "
              f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE.split(' · ')[0]}")   # one line: the lean detail lives in the notes
+elif not RECEIPTS_SHOW_MARKET:
+    _l1 = f"Machine off by {_rs['m']:.1f} across {_rs['n']} games" + (f" · vs the deserved margins: {_rs['d']:.1f}" if _rs.get("d") else "")
+    _l2 = f"Machine's season: {_run_m:.1f} off across {PRIOR_GAMES + _rs['n']} games"
 else:
     _l1 = (f"Machine {_rs['m']:.1f} · market {_rs['k']:.1f} · machine closer in "
            f"{_rs['nm']}, market {_rs['nk']}, {_rs['nt']} tie"

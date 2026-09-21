@@ -44,3 +44,6 @@ decks/corey_*_export.pptx
 decks/*_merged.pptx
 decks/*_merged_*.pptx
 decks/*_export.pptx
+
+# internal research (market deep dives) - the repo is public, the market is ours
+internal/
