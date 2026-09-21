@@ -1566,12 +1566,9 @@ for g in GAMES:
         if not _time:
             _parts = g["sub"].split(" · ")
             _day, _time = _parts[0], (_parts[1] if len(_parts) > 1 else "")
-        _one_day = len({((CARD.get(x["cfbd"]) or {}).get("date") or x["sub"]).split(",")[0].split(" · ")[0] for x in GAMES}) == 1
-        if _one_day:    # every game the same day (it is in the slide header): the time alone, centred in the row
-            txt(s, 8.4, y + 0.2, 3.8, 0.4, _time, 18, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
-        else:
-            txt(s, 8.4, y + 0.1, 3.8, 0.4, _time, 16, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
-            txt(s, 8.4, y + 0.47, 3.8, 0.3, _day, 9.5, RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
+        # Lucas 9/21: always show the DATE with the time, even when every game is the same day
+        txt(s, 8.4, y + 0.08, 3.8, 0.4, _time, 17, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+        txt(s, 8.4, y + 0.46, 3.8, 0.3, _day, 11, RGBColor(0xCA, 0xDC, 0xFC), bold=True, align=PP_ALIGN.RIGHT)
     y += 0.88
 txt(s, 0.9, 6.85, 11.5, 0.5,
     ("Machine = our in-season rating + 2.5 home field" + (f" · lines as of {LINES_AS_OF}" if SLIDES_SHOW_MARKET else ""))
