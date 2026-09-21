@@ -1021,8 +1021,12 @@ def _call_pts(call, key):
     return (lo, hi) if name == key[1] else (hi, lo)
 
 
-RECEIPTS_SHOW_MARKET = False   # Lucas 9/21: the market is INTERNAL - graded in the notes and
-                               # MARKET_DEEP_DIVE, never on the receipts slide (man vs machine only)
+SLIDES_SHOW_MARKET = False     # Lucas 9/21: the market is INTERNAL everywhere on the deck - no
+                               # closing lines, market spreads, moneylines or Heisman odds on a
+                               # slide. It lives in the notes as (Internal) lines and in
+                               # internal/MARKET_DEEP_DIVE. The superdog SPREAD stays: the rulebook
+                               # is defined by it.
+RECEIPTS_SHOW_MARKET = SLIDES_SHOW_MARKET
 
 
 def build_recap():
@@ -1443,38 +1447,38 @@ if BOARDS:
         f"EPISODE {EPISODE} · WEEK {WEEK} · OUR HEISMAN BOARD", 14, ORANGE, bold=True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "Our Heisman Favorite", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "Team factor × QB efficiency (PPA per play) · market = DraftKings", 13, PALE,
-        bold=True)
+        "Team factor × QB efficiency (PPA per play)" + (" · market = DraftKings" if SLIDES_SHOW_MARKET else ""),
+        13, PALE, bold=True)
     # Row subtitles = box-score lines (Lucas 9/15: stats, not model terms).
     # Season totals from the CFBD player box scores through Week 2.
-    HEISMAN_WHY = {
-        "Darian Mensah": "41-of-45, 653 yards, 8 TD, 0 INT through two",
-        "Josh Hoover": "19-of-27, 376 yards, 8 TD, 0 INT through two",
-        "C.J. Carr": "35-of-49, 492 yards, 6 TD, 0 INT · 253 and 4 TD vs Rice",
-        "Julian Sayin": "38-of-57, 598 yards, 4 TD, 1 INT · 278 in the loss at Texas",
-        "Jayden Maiava": "67-of-83, 896 yards, 10 TD, 1 INT through three",
-        "Arch Manning": "43-of-64, 500 yards, 5 TD, 2 INT · 195 and a pick vs Ohio State",
-        "Will Hammond": "46-of-60, 487 yards, 2 TD, 1 INT through two",
-        "Devon Dampier": "31-of-42, 437 yards, 5 TD · 81 rushing, 2 TD",
-        "Kevin Jennings": "40-of-52, 767 yards, 8 TD, 2 INT through two",
-        "Lincoln Kienholz": "34-of-50, 639 yards, 4 TD, 0 INT · 111 rushing, 3 TD",
-        "Kamario Taylor": "38-of-56, 581 yards, 7 TD, 0 INT · 145 rushing",
-        "Sam Leavitt": "41-of-66, 574 yards, 2 TD, 4 INT · 135 rushing, 5 TD",
+    HEISMAN_WHY = {   # CFBD season box-score lines through Week 3 (refresh each week)
+        "Darian Mensah": "71-of-79, 873 yards, 11 TD, 0 INT through three",
+        "Josh Hoover": "37-of-51, 649 yards, 10 TD, 0 INT through three",
+        "C.J. Carr": "53-of-73, 726 yards, 6 TD, 0 INT through three",
+        "Julian Sayin": "56-of-79, 839 yards, 6 TD, 1 INT through three",
+        "Devon Dampier": "53-of-74, 690 yards, 7 TD, 1 INT · 115 rushing, 2 TD",
+        "Jayden Maiava": "87-of-115, 1,173 yards, 12 TD, 1 INT through four",
+        "Will Hammond": "63-of-87, 744 yards, 3 TD, 2 INT through three",
+        "Lincoln Kienholz": "48-of-73, 816 yards, 6 TD, 0 INT · 153 rushing, 4 TD",
+        "Keelon Russell": "57-of-83, 764 yards, 4 TD, 2 INT · 133 rushing, 2 TD",
+        "Dante Moore": "61-of-89, 849 yards, 9 TD, 0 INT through three",
     }
     _mkt = {x["name"]: x["market"] for x in BOARDS["heisman"] + BOARDS["heisman_non_qb"]
             if x.get("market")}
     _order = sorted(_mkt, key=lambda n: _mkt[n])
     _mrank = {n: i + 1 for i, n in enumerate(_order)}
     TOP, RH = 2.08, 0.62
+    _dx = 0.0 if SLIDES_SHOW_MARKET else 3.0    # no market columns: slide the numbers to the right edge
     _hdr(s, 1.75, 2.7, TOP - 0.25, "QUARTERBACK · TEAM")
-    _hdr(s, 4.5, 1.2, TOP - 0.25, "2026 PPA (PLAYS)", R)
-    _hdr(s, 5.75, 0.8, TOP - 0.25, "2025 PRIOR", R)
-    _hdr(s, 6.6, 0.7, TOP - 0.25, "BLEND", R)
-    _hdr(s, 7.35, 0.9, TOP - 0.25, "TEAM P(10+)", R)
-    _hdr(s, 8.3, 0.7, TOP - 0.25, "INDEX", R)
-    _hdr(s, 9.05, 0.9, TOP - 0.25, "MARKET", R)
-    _hdr(s, 10.0, 0.9, TOP - 0.25, "MKT RANK", R)
-    _hdr(s, 10.95, 1.45, TOP - 0.25, "MAN VS MACHINE", R)
+    _hdr(s, 4.5 + _dx, 1.2, TOP - 0.25, "2026 PPA (PLAYS)", R)
+    _hdr(s, 5.75 + _dx, 0.8, TOP - 0.25, "2025 PRIOR", R)
+    _hdr(s, 6.6 + _dx, 0.7, TOP - 0.25, "BLEND", R)
+    _hdr(s, 7.35 + _dx, 0.9, TOP - 0.25, "TEAM P(10+)", R)
+    _hdr(s, 8.3 + _dx, 0.7, TOP - 0.25, "INDEX", R)
+    if SLIDES_SHOW_MARKET:
+        _hdr(s, 9.05, 0.9, TOP - 0.25, "MARKET", R)
+        _hdr(s, 10.0, 0.9, TOP - 0.25, "MKT RANK", R)
+        _hdr(s, 10.95, 1.45, TOP - 0.25, "MAN VS MACHINE", R)
     for i, r in enumerate(BOARDS["heisman"][:5]):
         y = TOP + i * RH
         if i % 2 == 0:
@@ -1486,37 +1490,38 @@ if BOARDS:
             f"(2026 {r['ppa26']:.3f} on {r['plays26']} plays, prior {r['ppa25']})")
         txt(s, 1.75, y + 0.31, 10.6, 0.3, why, 11.5, PALE)
         txt(s, 1.75, y + 0.04, 2.7, 0.3, f"{r['name']} · {r['team']}", 12, WHITE, bold=True)
-        txt(s, 4.5, y + 0.05, 1.2, 0.3, f"{r['ppa26']:.3f} ({r['plays26']})", 10.5, WHITE, align=R)
-        txt(s, 5.75, y + 0.05, 0.8, 0.3, f"{r['ppa25']:.3f}" if r["ppa25"] is not None else "new", 10.5, PALE, align=R)
-        txt(s, 6.6, y + 0.05, 0.7, 0.3, f"{r['blend']:.3f}", 10.5, WHITE, align=R)
-        txt(s, 7.35, y + 0.05, 0.9, 0.3, f"{round(100 * r['p10w'])}%", 10.5, WHITE, align=R)
-        txt(s, 8.3, y + 0.04, 0.7, 0.3, f"{r['index']:.1f}", 12.5, ORANGE, bold=True, align=R)
-        txt(s, 9.05, y + 0.05, 0.9, 0.3, f"+{r['market']}" if r["market"] else "off board",
-            10.5, WHITE if r["market"] else PALE, align=R)
-        mr = _mrank.get(r["name"])
-        txt(s, 10.0, y + 0.05, 0.9, 0.3, f"#{mr}" if mr else "—", 10.5, PALE, align=R)
-        gap = (mr - (i + 1)) if mr else None
-        lab = ("market too low" if gap and gap >= 3 else "market too high" if gap is not None and gap <= -3
-               else "agree" if gap is not None else "unpriced")
-        txt(s, 10.95, y + 0.05, 1.45, 0.3, lab, 9.5,
-            UP if lab == "market too low" else (DOWN if lab == "market too high" else PALE),
-            bold=lab != "agree", align=R)
+        txt(s, 4.5 + _dx, y + 0.05, 1.2, 0.3, f"{r['ppa26']:.3f} ({r['plays26']})", 10.5, WHITE, align=R)
+        txt(s, 5.75 + _dx, y + 0.05, 0.8, 0.3, f"{r['ppa25']:.3f}" if r["ppa25"] is not None else "new", 10.5, PALE, align=R)
+        txt(s, 6.6 + _dx, y + 0.05, 0.7, 0.3, f"{r['blend']:.3f}", 10.5, WHITE, align=R)
+        txt(s, 7.35 + _dx, y + 0.05, 0.9, 0.3, f"{round(100 * r['p10w'])}%", 10.5, WHITE, align=R)
+        txt(s, 8.3 + _dx, y + 0.04, 0.7, 0.3, f"{r['index']:.1f}", 12.5, ORANGE, bold=True, align=R)
+        if SLIDES_SHOW_MARKET:
+            txt(s, 9.05, y + 0.05, 0.9, 0.3, f"+{r['market']}" if r["market"] else "off board",
+                10.5, WHITE if r["market"] else PALE, align=R)
+            mr = _mrank.get(r["name"])
+            txt(s, 10.0, y + 0.05, 0.9, 0.3, f"#{mr}" if mr else "—", 10.5, PALE, align=R)
+            gap = (mr - (i + 1)) if mr else None
+            lab = ("market too low" if gap and gap >= 3 else "market too high" if gap is not None and gap <= -3
+                   else "agree" if gap is not None else "unpriced")
+            txt(s, 10.95, y + 0.05, 1.45, 0.3, lab, 9.5,
+                UP if lab == "market too low" else (DOWN if lab == "market too high" else PALE),
+                bold=lab != "agree", align=R)
     _nx = BOARDS["heisman"][5:9]
     txt(s, 0.9, TOP + 5 * RH + 0.04, 11.5, 0.28,
         "Next up: " + " · ".join(f"{x['name']} {x['index']:.1f}" +
-                                (f" (market #{_mrank[x['name']]})" if x['name'] in _mrank else "")
+                                (f" (market #{_mrank[x['name']]})" if SLIDES_SHOW_MARKET and x['name'] in _mrank else "")
                                 for x in _nx), 9.5, PALE, italic=True)
     fav = BOARDS["heisman"][0]
     _fy = TOP + 5 * RH + 0.4
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.72, ORANGE)
     txt(s, 1.2, _fy + 0.1, 3.0, 0.5, "★ OUR FAVORITE", 15, NAVY, bold=True)
     txt(s, 4.0, _fy + 0.08, 8.2, 0.55,
-        f"{fav['name']}, {fav['team']} · index {fav['index']:.1f} · market "
-        f"+{fav['market']}", 18, WHITE, bold=True)
+        f"{fav['name']}, {fav['team']} · index {fav['index']:.1f}"
+        + (f" · market +{fav['market']}" if SLIDES_SHOW_MARKET and fav.get("market") else ""), 18, WHITE, bold=True)
     _non = BOARDS["heisman_non_qb"]
     txt(s, 0.9, _fy + 0.85, 11.5, 0.3,
         "Non-QB watch: " +
-        " · ".join(f"{x['name']}" + (f" (+{x['market']})" if x.get("market") else "")
+        " · ".join(f"{x['name']}" + (f" (+{x['market']})" if SLIDES_SHOW_MARKET and x.get("market") else f" ({x['team']})")
                    for x in _non[:4]), 11, PALE)
     txt(s, 0.9, 7.13, 11.5, 0.3,
         "PPA = predicted points added per play · re-computes every rebuild", 10, PALE,
@@ -1535,13 +1540,13 @@ for g in GAMES:
     txt(s, 2.7, y + 0.1, 6.5, 0.4, g["title"], 15, WHITE, bold=True)
     txt(s, 2.7, y + 0.46, 6.5, 0.3, g["where"], 10,
         RGBColor(0xCA, 0xDC, 0xFC))
-    txt(s, 8.4, y + 0.1, 3.8, 0.4, g["machine"] + "   ·   " + g["market"],
-        13.5, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, 8.4, y + 0.47, 3.8, 0.3, "machine · market", 9.5,
+    txt(s, 8.4, y + 0.1, 3.8, 0.4, g["machine"] + ("   ·   " + g["market"] if SLIDES_SHOW_MARKET else ""),
+        13.5 if SLIDES_SHOW_MARKET else 16, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, 8.4, y + 0.47, 3.8, 0.3, "machine · market" if SLIDES_SHOW_MARKET else "the machine's line", 9.5,
         RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.88
 txt(s, 0.9, 6.85, 11.5, 0.5,
-    f"Machine = our in-season rating + 2.5 home field · lines as of {LINES_AS_OF}",
+    "Machine = our in-season rating + 2.5 home field" + (f" · lines as of {LINES_AS_OF}" if SLIDES_SHOW_MARKET else ""),
     11.5, RGBColor(0xCA, 0xDC, 0xFC))
 
 # ---- slide text: the headline only (Lucas 9/11). Keyed by game title. ----
@@ -1551,7 +1556,7 @@ SHORT = {
         ctx_a=dict(coach="Sarkisian, year 6", qb="Arch, final season", roster="72% back · 22 portal adds"),
         ctx_b=dict(coach="Heupel, year 6 · new DC Knowles", qb="NEW — Faizon Brandon, true freshman", roster="35% back · 21 portal adds"),
         decides=["No. 1 leaves Austin for the first time", "A true freshman vs No. 1", "Heupel's marquee home game", "Knowles' first real quarterback"],
-        honesty="3.5 to Texas — quibble, not a position",
+        honesty="71% — but Texas has not left Austin yet",
         keys_a=["Arch has to hit downfield", "Stay out of third-and-long", "Stop the run", "Simmons vs the freshman"],
         keys_b=["Run it at Texas", "Brandon's first ranked opponent", "Knowles' rush on passing downs", "Win the red zone"]),
     "Ole Miss at Florida": dict(
@@ -1559,7 +1564,7 @@ SHORT = {
         ctx_a=dict(coach="NEW — Golding, promoted", qb="Chambliss returns", roster="50% back · 28 portal adds"),
         ctx_b=dict(coach="NEW — Sumrall (Tulane)", qb="NEW — Aaron Philo, RS freshman", roster="69% back · 27 portal adds"),
         decides=["Two first-year coaches, both 3–0", "No. 4 vs No. 21 — a point apart to the machine", "Home team has won two straight", "Philo's first ranked opponent"],
-        honesty="Machine = market — no play",
+        honesty="59% — a field-goal game between two 3–0 teams",
         keys_a=["Chambliss vs the Florida rush", "Stop the explosives", "Get Lacy going", "Finish drives"],
         keys_b=["Feed Baugh", "Philo deep", "Get Chambliss off schedule", "Tighten the red zone"]),
     "Oregon at USC": dict(
@@ -1567,7 +1572,7 @@ SHORT = {
         ctx_a=dict(coach="Lanning, year 5 · both coordinators new", qb="Dante Moore returns", roster="75% back · 13 portal adds"),
         ctx_b=dict(coach="Riley, year 5 · new DC Gary Patterson", qb="Maiava returns", roster="59% back · 9 portal adds"),
         decides=["Oregon's season on the line in Week 4", "Riley's year five", "Oregon has won two straight in the series", "Two offenses ahead of two defenses"],
-        honesty="Pick'em — no position",
+        honesty="A coin flip — the machine's honest answer",
         keys_a=["Protect Moore", "Stay out of third-and-long", "Attack Patterson's secondary", "Stop the run this time"],
         keys_b=["Keep Maiava clean", "Own third down", "Finish in the red zone", "Stop the explosives"]),
     "Texas A&M at LSU": dict(
@@ -1575,7 +1580,7 @@ SHORT = {
         ctx_a=dict(coach="Elko, year 3", qb="Reed returns", roster="73% back · 19 portal adds"),
         ctx_b=dict(coach="NEW — Kiffin", qb="NEW — Sam Leavitt", roster="21% back · 44 portal adds"),
         decides=["The loser has two losses in September", "First of five A&M cannot give away", "Leavitt's five picks", "A&M won 49–25 here last year"],
-        honesty="3 to A&M — the market ran past us · no position",
+        honesty="64% — the machine counts Kentucky as one bad game",
         keys_a=["Find an explosive play", "Block Umanmielen", "Fix the back end", "Don't count on the run"],
         keys_b=["Leavitt's ball security", "Throw deep", "Umanmielen on passing downs", "Touchdowns, not field goals"]),
     "Oklahoma at Georgia": dict(
@@ -1583,7 +1588,7 @@ SHORT = {
         ctx_a=dict(coach="Venables, year 5", qb="Mateer returns, senior", roster="63% back · 16 portal adds"),
         ctx_b=dict(coach="Smart, year 11", qb="Stockton returns", roster="69% back · 9 portal adds"),
         decides=["24 points in Oklahoma's last two games", "Georgia's old flaw looks fixed", "The best defense Georgia has seen", "A first-round bye game"],
-        honesty="Machine = market — no play",
+        honesty="81% — the most confident call on the card",
         keys_a=["The pass rush is the path", "Mateer has to be the run game", "Reach the red zone", "Force a turnover"],
         keys_b=["Frazier downhill", "Get the ball out", "Make Mateer one-dimensional", "Keep hitting explosives"]),
     "Houston at Texas Tech": dict(
@@ -1783,7 +1788,7 @@ for g in GAMES:
 
     # right: navy score bug
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.75, 3.9, 4.6, NAVY)
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.5, 1.75, 3.9, 4.6 if SLIDES_SHOW_MARKET else 3.95, NAVY)
     txt(s, 8.8, 1.98, 3.3, 0.3, "THE NUMBER", 12, ORANGE, bold=True)
     # machine line as a book would post it + fair odds from our win prob
     txt(s, 8.8, 2.3, 3.3, 0.55, g["machine"], 28 if len(g["machine"]) <= 16 else 21, WHITE, bold=True)
@@ -1791,20 +1796,22 @@ for g in GAMES:
     txt(s, 8.8, 3.12, 3.3, 0.28,
         "machine line · fair odds, no vig · raw margin " + g.get("raw_margin", ""),
         8.5, PALE)
-    # market
-    txt(s, 8.8, 3.55, 3.3, 0.45, g["market"], 20, WHITE, bold=True)
-    txt(s, 8.8, 3.98, 3.3, 0.4, "market (DK / Bovada) · " + (g.get("market_ml") or "ML not posted"),
-        8.5, PALE)
+    # market (internal since 9/21: the block is skipped and the rest moves up)
+    _up = 0.0 if SLIDES_SHOW_MARKET else 0.75
+    if SLIDES_SHOW_MARKET:
+        txt(s, 8.8, 3.55, 3.3, 0.45, g["market"], 20, WHITE, bold=True)
+        txt(s, 8.8, 3.98, 3.3, 0.4, "market (DK / Bovada) · " + (g.get("market_ml") or "ML not posted"),
+            8.5, PALE)
     # score prediction (replaced "the gap" per Lucas's in-Slides edit 8/31;
     # the authored value/gap strings stay in GAMES as data)
     score = g.get("score", "")
-    txt(s, 8.8, 4.45, 3.3, 0.4, score, 15 if len(score) <= 22 else (13 if len(score) <= 30 else 10.5),
+    txt(s, 8.8, 4.45 - _up, 3.3, 0.4, score, (15 if SLIDES_SHOW_MARKET else 17) if len(score) <= 22 else (13 if len(score) <= 30 else 10.5),
         ORANGE if "not posted" not in score else PALE, bold=True)
-    txt(s, 8.8, 4.82, 3.3, 0.25, "score prediction", 8.5, PALE)
+    txt(s, 8.8, 4.82 - _up + (0 if SLIDES_SHOW_MARKET else 0.05), 3.3, 0.25, "score prediction", 8.5, PALE)
     wa, pa, wb, pb = g["wp"]
-    wp_bar(s, 8.8, 5.2, 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
+    wp_bar(s, 8.8, 5.2 - _up + (0 if SLIDES_SHOW_MARKET else 0.15), 3.3, 0.4, wa, pa, TEAMS[wa]["color"],
            wb, pb, TEAMS[wb]["color"])
-    txt(s, 8.8, 5.66, 3.3, 0.25, "win probability (machine)", 8.5, PALE)
+    txt(s, 8.8, 5.66 - _up + (0 if SLIDES_SHOW_MARKET else 0.15), 3.3, 0.25, "win probability (machine)", 8.5, PALE)
     # Line movement (g["move"], LEDGER[title]) is INTERNAL (Lucas 9/15): it stays
     # in the ledger and the notes, not on the slide.
 
@@ -1906,10 +1913,11 @@ for g in GAMES:
     logo_badge(s, 1.1, y + 0.1, 0.52, g["a"], plate=True)
     logo_badge(s, 1.75, y + 0.1, 0.52, g["b"], plate=True)
     txt(s, 2.5, y + 0.17, 5.4, 0.4, g["title"], 16, WHITE, bold=True)
-    txt(s, 7.0, y + 0.06, 5.2, 0.45, g.get("score", ""), 19, ORANGE,
+    txt(s, 7.0, y + (0.06 if SLIDES_SHOW_MARKET else 0.14), 5.2, 0.45, g.get("score", ""), 19, ORANGE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, 7.0, y + 0.47, 5.2, 0.25, "market " + g["market"].split(" / ")[0], 9.5,
-        RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
+    if SLIDES_SHOW_MARKET:
+        txt(s, 7.0, y + 0.47, 5.2, 0.25, "market " + g["market"].split(" / ")[0], 9.5,
+            RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
     y += 0.8
 # superdog band
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.08, 11.5, 1.02, ORANGE)
@@ -1921,7 +1929,7 @@ for i, (label, board) in enumerate(
         continue
     r = board[0]
     fav = (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
-    ml = f" · ML {int(r['ml']):+d}" if r.get("ml") is not None else ""
+    ml = f" · ML {int(r['ml']):+d}" if SLIDES_SHOW_MARKET and r.get("ml") is not None else ""
     txt(s, 1.2, y + 0.15 + i * 0.44, 3.0, 0.38, "★ " + label, 14, NAVY,
         bold=True)
     txt(s, 3.6, y + 0.15 + i * 0.44, 8.6, 0.38,
