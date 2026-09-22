@@ -14,6 +14,9 @@ engine graded against the betting market, and a Monte Carlo season simulator.
 | `build_conference_book.py` | Workbook builder: hidden data sheets, conference viewer tabs, upset flagging (first-seen-line ledger in `alerts_log.json` so alerts are graded honestly), 10,000-run season simulation. |
 | `rosters/` | Roster acquisition from every school's official athletics site (four site platforms handled), with archive fallback and per-team coverage reporting. |
 | [`METHODOLOGY.md`](notes/METHODOLOGY.md) | The 0–10 unit-rating methodology behind the team ratings (SP+ rescaling, five sub-ratings, returning-production prior, QB modifiers). |
+| `backtest.py` | The scoreboard. Walk-forward over 2022–2025 (and the current season): before each week the in-season rating is re-solved from earlier weeks only, then scored on margin error, win-probability Brier / log loss, calibration and cover rate, next to the frozen preseason prior and a coin flip. `--tune` grid-searches lambda, home field, the cap and the cap-rule switch week (fit 2022–24, test 2025). Every new rating is graded here before it goes anywhere. |
+| `premortems.py` / `grade_premortems.py` | The machine names how each pick could be wrong before kickoff ("wrong if Tennessee averages more than 5.0 yards a carry" — the matchup the two track records disagree on most, threshold at the midpoint), stored in `premortems.json`, then grades itself from the box score and play-by-play. Season table: [`notes/premortems.md`](notes/premortems.md). |
+| `stat_package.py` | Per-team stat package for the episode notes from CFBD play-by-play and box scores (explosives per dropback, completions-only yards per attempt, stuffs, sacks, third downs, red zone). |
 | `NCAA_FBS_Analytics_System.pptx` | Nine-slide summary deck of the whole system. |
 
 ## The upset alert

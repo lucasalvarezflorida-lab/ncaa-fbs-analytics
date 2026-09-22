@@ -22,6 +22,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - The game is whether Tennessee's run game travels up a weight class, because Texas's offense is not built to win a shootout
   - The number: Texas −9, 71% · Call Texas 33–24
     - Honesty: 71% — but Texas has not left Austin yet
+    - Pre-mortem — the pick is wrong if Tennessee averages more than 5.0 yards a carry
+      - Tennessee runs for 6.6 a carry against FBS teams and Texas allows 3.4. The pick leans on Texas's run defense holding; past 5.0 a carry, Tennessee has won the matchup the machine trusts.
     - The machine's Texas number is the Ohio State win plus July; it has never seen this offense leave Austin
   - Texas keys
     - Arch has to hit something downfield
@@ -69,6 +71,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Chambliss has been sacked 3 times in 122 dropbacks; Florida just sacked Auburn 7 times
   - The number: Florida −3, 59% · Call Florida 32–29
     - Honesty: 59% — a field-goal game between two 3–0 teams
+    - Pre-mortem — the pick is wrong if Florida averages under 9.9 yards an attempt
+      - Florida throws for 12.1 an attempt; Ole Miss's defense allows 7.7. Under 9.9 a throw and Florida's passing game has been held to what Ole Miss usually allows, not what Florida usually does.
     - Series: the home team has won the last two — Florida 24–17 in 2024 (the loss that kept Ole Miss out of the playoff), Ole Miss 34–24 last year
   - Ole Miss keys
     - Chambliss vs the Florida rush
@@ -111,6 +115,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Georgia's two-year flaw — no explosives — looks fixed: 17% of dropbacks have gone for 20+
   - The number: Georgia −14, 81% · Call Georgia 29–15
     - Honesty: 81% — the most confident call on the card
+    - Pre-mortem — the pick is wrong if Georgia averages under 4.5 yards a carry
+      - Georgia runs for 6.3 a carry; Oklahoma allows 2.8. Under 4.5 a carry and Oklahoma's front has taken the run game away from the pick.
     - Georgia's schedule avoids Texas, A&M and LSU; this and the November trip to Oxford are the games that decide a first-round bye
   - Oklahoma keys
     - The pass rush is the path
@@ -151,6 +157,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - USC is 4–0 and has not played anyone; it gave up 35 at Rutgers and 30 to Louisiana
   - The number: Oregon −0.5, 50% · Call Oregon 32–31
     - Honesty: a coin flip — the machine's honest answer. The machine has taken 8 points off Oregon since July, the most in the 25
+    - Pre-mortem — the pick is wrong if USC converts more than 46% on third down
+      - USC converts 62% of third downs; Oregon allows 30%. Over 46% and USC kept the drives alive that the machine expects to end.
     - Series: Oregon has won the last two, 36–27 (2023) and 42–27 (2025), both in Eugene
   - Oregon keys
     - Protect Moore
@@ -191,6 +199,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - LSU's problem is one thing — Leavitt's 5 interceptions — and A&M's defense has taken the ball away twice
   - The number: LSU −5.5, 64% · Call LSU 29–23
     - Honesty: 64% — the machine counts Kentucky as one bad game; A&M fell 5.3 for it, the biggest drop in the Top 25
+    - Pre-mortem — the pick is wrong if Texas A&M averages more than 2.8 yards a carry
+      - Texas A&M runs for 4.4 a carry against FBS teams and LSU allows 1.2. The pick leans on LSU's run defense holding; past 2.8 a carry, Texas A&M has won the matchup the machine trusts.
     - Series: A&M won 49–25 here last year; before that the home team had won four straight
   - Texas A&M keys
     - Find an explosive play

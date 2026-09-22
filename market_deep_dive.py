@@ -1,6 +1,8 @@
 """INTERNAL season deep dive: the machine vs the closing market, every rated
 FBS-vs-FBS game to date. Walk-forward: each week is predicted from a re-solve
-on the games BEFORE it (today's cap rule), so no game grades itself.
+on the games BEFORE it under the rule that was on air that week (backtest.py,
+model "current"), so no game grades itself and the deep dive agrees with
+internal/BACKTEST_2026.md by construction.
 
   python market_deep_dive.py            -> prints the tables, writes internal/market_deep_dive_data.json
 
@@ -10,38 +12,33 @@ import collections, contextlib, io, json, os, statistics as st, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
-from refresh_all import load_env_key, load_fpi_2026  # noqa: E402
+from refresh_all import load_env_key  # noqa: E402
 import build_conference_book as b  # noqa: E402
-import inseason_ratings as ir  # noqa: E402
 import line_ledger  # noqa: E402
 from name_mapping import normalize_name as norm  # noqa: E402
 
 load_env_key()
 with contextlib.redirect_stdout(io.StringIO()):
     games = b.fetch_games(False, {})
-f26 = load_fpi_2026()
-prior = {t: (v["fpi"] if isinstance(v, dict) else v) for t, v in f26.items()}
-cg = [g for g in ir.completed_games_2026(False) if g["home"] in prior and g["away"] in prior]
+# THE MACHINE'S NUMBERS COME FROM THE BACKTEST HARNESS (Phase 0, 9/22): the
+# same walk-forward, the same cap rule per week (margin cap through week 3,
+# residual from week 4 - exactly what was on air), the same closing line. The
+# deep dive and internal/BACKTEST_2026.md agree by construction.
+import backtest as bt  # noqa: E402
+bt_rows = bt.season_rows(2026, bt.MODELS["current"])
 by_id = {g["id"]: g for g in games}
-weeks = sorted({g["week"] for g in cg})
-rated = {}
-for w in weeks:
-    r = ir.ridge_update(prior, [g for g in cg if g["week"] < w], cap_mode="residual")
-    for g in cg:
-        if g["week"] == w:
-            rated[g["id"]] = r[g["home"]] - r[g["away"]] + (0 if g["neutral"] else 2.5)
+weeks = sorted({r["wk"] for r in bt_rows})
 
 rows = []
-for g in cg:
-    fg = by_id.get(g["id"])
-    if not fg or fg["spread"] is None:
+for r in bt_rows:
+    fg = by_id.get(r["id"])
+    if not fg or r["mkt"] is None:
         continue
-    series = line_ledger.series(g["id"]) if hasattr(line_ledger, "series") else []
+    series = line_ledger.series(r["id"]) if hasattr(line_ledger, "series") else []
     first = series[0]["spread"] if series else None
-    close = float(fg["spread"])
-    rows.append(dict(id=g["id"], wk=g["week"], home=fg["home"], away=fg["away"], neutral=g["neutral"],
-                     margin=g["margin"], model=rated[g["id"]], mkt=-close, first=(-float(first) if first is not None else None),
-                     pre=prior[g["home"]] - prior[g["away"]] + (0 if g["neutral"] else 2.5),
+    rows.append(dict(id=r["id"], wk=r["wk"], home=fg["home"], away=fg["away"], neutral=r["neutral"],
+                     margin=r["margin"], model=r["model"], mkt=r["mkt"], first=(-float(first) if first is not None else None),
+                     pre=r["pre"], p=r["p"], p_mkt=r["p_mkt"],
                      ou=fg["ou"], total=fg["home_pts"] + fg["away_pts"], ou_tail=fg.get("ou_tail"),
                      conf=(fg["home_conf"], fg["away_conf"])))
 N = len(rows)

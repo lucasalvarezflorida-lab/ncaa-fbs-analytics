@@ -17,6 +17,7 @@ param(
   [string[]]$Files = @(),
   [string]$GamesFile = "",
   [string[]]$PageXml = @(),
+  [string[]]$Skip = @(),          # page titles NOT to replace (e.g. a page Lucas hand-formatted)
   [string]$Notebook = "Podcast",
   [string]$Python = "python"
 )
@@ -52,7 +53,11 @@ foreach ($f in $Files) {
 if ($GamesFile) {
   $outdir = Join-Path $env:TEMP 'onenote_games'
   $lines = & $Python (Join-Path $here 'md_to_onenote.py') --games (Join-Path $here $GamesFile) $outdir
-  foreach ($ln in $lines) { $t, $p = $ln -split "`t", 2; Push-Page $t.Trim() $p.Trim() }
+  foreach ($ln in $lines) {
+    $t, $p = $ln -split "`t", 2
+    if ($Skip -contains $t.Trim()) { "skipped (kept as is): $($t.Trim())"; continue }
+    Push-Page $t.Trim() $p.Trim()
+  }
 }
 foreach ($p in $PageXml) {
   $page = Get-Content $p -Raw -Encoding UTF8

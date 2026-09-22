@@ -1042,6 +1042,33 @@ CARD_SHOW_MACHINE_LINE = False  # Lucas 9/21 (his own edit in Slides): no spread
                                 # prediction. The row shows the kickoff time instead.
 GAME_SLIDE_SHOW_MARKET = True  # Lucas 9/21: each game slide carries just the market's final number at
                                # recording - one line in THE NUMBER box. Line MOVEMENT stays internal.
+PREMORTEM_MODE = "join"        # Phase 3 (9/22): the machine's pre-mortem ("wrong if ...", premortems.json) in the
+                               # honesty box - "join" = under the confidence line, "replace" = instead of it,
+                               # "off". Lucas's call once he has seen it. Public material: no market in it.
+
+
+def _premortems():
+    import json
+    p = os.path.join(HERE, "premortems.json")
+    if not os.path.exists(p):
+        return {}, []
+    d = json.load(open(p, encoding="utf-8"))
+    graded = [x for wk in d.values() for x in wk.values() if x.get("result")]
+    return d.get(str(WEEK), {}), graded
+
+
+PREMORTEMS, PREMORTEMS_GRADED = _premortems()
+
+
+def premortem_line():
+    """Season line for the receipts slide; '' until a pre-mortem has been graded."""
+    G = PREMORTEMS_GRADED
+    if not G:
+        return ""
+    lost = sum(x["result"]["pick_lost"] for x in G)
+    named = sum(x["result"]["verdict"] == "named it" for x in G)
+    return (f"Pre-mortems: {len(G)} graded · {sum(x['result']['fired'] for x in G)} fired · "
+            f"{lost} picks lost · named the reason {named} of {lost}")
 
 
 def build_recap():
@@ -1782,7 +1809,9 @@ else:
     _l2 = (f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} across "
            f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}")
 txt(s, 1.15, y + 0.13, 11.0, 0.35, _l1, 14.5, WHITE, bold=True)
-txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5, RGBColor(0xCA, 0xDC, 0xFC))
+if premortem_line():
+    _l2 += "   |   " + premortem_line()
+txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5 if len(_l2) <= 150 else 9, RGBColor(0xCA, 0xDC, 0xFC))
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
@@ -1807,7 +1836,15 @@ for g in GAMES:
     # one point leaves room: drop the honesty box to the bottom of the bug's height
     box_y = max(yy + 0.15, 5.2) if _short else yy + 0.15
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, box_y, 7.2, 1.05, ICE)
-    if _short:
+    _pm = PREMORTEMS.get(g["title"]) if PREMORTEM_MODE != "off" else None
+    if _short and _pm and PREMORTEM_MODE == "replace":
+        txt(s, 1.15, box_y + 0.1, 6.7, 0.3, "THE PICK IS WRONG IF", 10.5, ORANGE, bold=True)
+        txt(s, 1.15, box_y + 0.4, 6.7, 0.55, _pm["text"], 18 if len(_pm["text"]) <= 52 else 15, NAVY, bold=True)
+    elif _short and _pm:
+        txt(s, 1.15, box_y + 0.1, 6.7, 0.45, _hon, 16, NAVY, bold=True)
+        txt(s, 1.15, box_y + 0.58, 6.7, 0.4, "Wrong if " + _pm["text"], 12.5 if len(_pm["text"]) <= 60 else 11,
+            ORANGE, bold=True)
+    elif _short:
         txt(s, 1.15, box_y + 0.25, 6.7, 0.55, _hon, 20, NAVY, bold=True)
     else:
         txt(s, 1.15, box_y + 0.17, 6.7, 0.75, _hon, 11.5, MUTE, italic=True)

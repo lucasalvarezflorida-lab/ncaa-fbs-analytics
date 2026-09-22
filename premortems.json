@@ -1,0 +1,279 @@
+{
+ "4": {
+  "Texas at Tennessee": {
+   "game_id": 401856704,
+   "away": "Texas",
+   "home": "Tennessee",
+   "pick": "Texas",
+   "machine_margin": -8.8,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.705,
+   "machine_call": [
+    33,
+    24
+   ],
+   "condition": {
+    "team": "Tennessee",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": ">",
+    "value": 5.0,
+    "source": "box"
+   },
+   "text": "Tennessee averages more than 5.0 yards a carry",
+   "why": "Tennessee runs for 6.6 a carry against FBS teams and Texas allows 3.4. The pick leans on Texas's run defense holding; past 5.0 a carry, Tennessee has won the matchup the machine trusts.",
+   "evidence": {
+    "does": 6.6,
+    "allows": 3.4,
+    "gap": 3.2
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Tennessee",
+      "unit": "offense",
+      "stat": "t3_pct",
+      "op": ">",
+      "value": 45,
+      "source": "box"
+     },
+     "text": "Tennessee converts more than 45% on third down",
+     "gap": 1.14
+    },
+    {
+     "condition": {
+      "team": "Texas",
+      "unit": "offense",
+      "stat": "sacks_taken",
+      "op": ">=",
+      "value": 2,
+      "source": "box"
+     },
+     "text": "Texas is sacked 2+ times",
+     "gap": 0.97
+    }
+   ],
+   "result": null
+  },
+  "Ole Miss at Florida": {
+   "game_id": 401856699,
+   "away": "Ole Miss",
+   "home": "Florida",
+   "pick": "Florida",
+   "machine_margin": 3.1,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.585,
+   "machine_call": [
+    28,
+    31
+   ],
+   "condition": {
+    "team": "Florida",
+    "unit": "offense",
+    "stat": "pass_ypa",
+    "op": "<",
+    "value": 9.9,
+    "source": "pbp"
+   },
+   "text": "Florida averages under 9.9 yards an attempt",
+   "why": "Florida throws for 12.1 an attempt; Ole Miss's defense allows 7.7. Under 9.9 a throw and Florida's passing game has been held to what Ole Miss usually allows, not what Florida usually does.",
+   "evidence": {
+    "does": 12.1,
+    "allows": 7.7,
+    "gap": 2.93
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Florida",
+      "unit": "offense",
+      "stat": "rush_ypc",
+      "op": "<",
+      "value": 4.8,
+      "source": "box"
+     },
+     "text": "Florida averages under 4.8 yards a carry",
+     "gap": 1.5
+    },
+    {
+     "condition": {
+      "team": "Florida",
+      "unit": "offense",
+      "stat": "stuff_rate",
+      "op": ">=",
+      "value": 19,
+      "source": "pbp"
+     },
+     "text": "Florida is stuffed on 19% or more of its runs",
+     "gap": 1.41
+    }
+   ],
+   "result": null
+  },
+  "Oklahoma at Georgia": {
+   "game_id": 401856700,
+   "away": "Oklahoma",
+   "home": "Georgia",
+   "pick": "Georgia",
+   "machine_margin": 13.8,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.805,
+   "machine_call": [
+    16,
+    30
+   ],
+   "condition": {
+    "team": "Georgia",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": "<",
+    "value": 4.5,
+    "source": "box"
+   },
+   "text": "Georgia averages under 4.5 yards a carry",
+   "why": "Georgia runs for 6.3 a carry; Oklahoma allows 2.8. Under 4.5 a carry and Oklahoma's front has taken the run game away from the pick.",
+   "evidence": {
+    "does": 6.3,
+    "allows": 2.8,
+    "gap": 3.5
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Georgia",
+      "unit": "offense",
+      "stat": "sacks_taken",
+      "op": ">=",
+      "value": 3,
+      "source": "box"
+     },
+     "text": "Georgia is sacked 3+ times",
+     "gap": 3.02
+    },
+    {
+     "condition": {
+      "team": "Georgia",
+      "unit": "offense",
+      "stat": "pass_ypa",
+      "op": "<",
+      "value": 8.0,
+      "source": "pbp"
+     },
+     "text": "Georgia averages under 8.0 yards an attempt",
+     "gap": 2.93
+    }
+   ],
+   "result": null
+  },
+  "Oregon at USC": {
+   "game_id": 401858469,
+   "away": "Oregon",
+   "home": "USC",
+   "pick": "Oregon",
+   "machine_margin": -0.3,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.501,
+   "machine_call": [
+    32,
+    31
+   ],
+   "condition": {
+    "team": "USC",
+    "unit": "offense",
+    "stat": "t3_pct",
+    "op": ">",
+    "value": 46,
+    "source": "box"
+   },
+   "text": "USC converts more than 46% on third down",
+   "why": "USC converts 62% of third downs; Oregon allows 30%. Over 46% and USC kept the drives alive that the machine expects to end.",
+   "evidence": {
+    "does": 62,
+    "allows": 30,
+    "gap": 2.66
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "USC",
+      "unit": "offense",
+      "stat": "pass_ypa",
+      "op": ">",
+      "value": 8.3,
+      "source": "pbp"
+     },
+     "text": "USC averages more than 8.3 yards an attempt",
+     "gap": 2.2
+    },
+    {
+     "condition": {
+      "team": "Oregon",
+      "unit": "offense",
+      "stat": "ints_thrown",
+      "op": ">=",
+      "value": 1,
+      "source": "box"
+     },
+     "text": "Oregon throws an interception",
+     "gap": 0.94
+    }
+   ],
+   "result": null
+  },
+  "Texas A&M at LSU": {
+   "game_id": 401856702,
+   "away": "Texas A&M",
+   "home": "LSU",
+   "pick": "LSU",
+   "machine_margin": 5.6,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.644,
+   "machine_call": [
+    24,
+    30
+   ],
+   "condition": {
+    "team": "Texas A&M",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": ">",
+    "value": 2.8,
+    "source": "box"
+   },
+   "text": "Texas A&M averages more than 2.8 yards a carry",
+   "why": "Texas A&M runs for 4.4 a carry against FBS teams and LSU allows 1.2. The pick leans on LSU's run defense holding; past 2.8 a carry, Texas A&M has won the matchup the machine trusts.",
+   "evidence": {
+    "does": 4.4,
+    "allows": 1.2,
+    "gap": 3.2
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Texas A&M",
+      "unit": "offense",
+      "stat": "p20",
+      "op": ">=",
+      "value": 3,
+      "source": "pbp"
+     },
+     "text": "Texas A&M has 3+ completions of 20 yards or more",
+     "gap": -1.55
+    },
+    {
+     "condition": {
+      "team": "LSU",
+      "unit": "offense",
+      "stat": "ints_thrown",
+      "op": ">=",
+      "value": 1,
+      "source": "box"
+     },
+     "text": "LSU throws an interception",
+     "gap": -1.25
+    }
+   ],
+   "result": null
+  }
+ }
+}
