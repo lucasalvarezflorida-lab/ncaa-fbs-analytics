@@ -1653,8 +1653,10 @@ SHORT = {
         ctx_a=dict(coach="NEW — Golding, promoted", qb="Chambliss returns", roster="50% back · 28 portal adds"),
         ctx_b=dict(coach="NEW — Sumrall (Tulane)", qb="NEW — Aaron Philo, RS freshman", roster="69% back · 27 portal adds"),
         decides=["Two first-year coaches, both 3–0", "No. 4 vs No. 21 — a point apart to the machine", "Home team has won two straight", "Philo's first ranked opponent"],
-        extra_bullet="The Machine’s Rankings", rank_rows=("florida", "ole miss"),   # Lucas's slide edit 9/22
-        honesty="The home team has won the last two.\nOle Miss 34–24 last year. Florida 24–17 in 2024 (the loss that kept Ole Miss out of the playoff).",
+        extra_bullets=[dict(text="The Machine’s Rankings", rows=("florida", "ole miss")),    # Lucas's slide edits 9/22
+                       dict(text="The home team has won the last two",
+                            sub="Ole Miss 34–24 last year · Florida 24–17 in 2024, which kept Ole Miss out of the playoff")],
+        honesty="59% — a field-goal game between two 3–0 teams",
         keys_a=["Chambliss vs the Florida rush", "Stop the explosives", "Get Lacy going", "Finish drives"],
         keys_b=["Feed Baugh", "Philo deep", "Get Chambliss off schedule", "Tighten the red zone"]),
     "Oregon at USC": dict(
@@ -1866,18 +1868,23 @@ for g in GAMES:
     # left: what decides it (headline form when SHORT is authored)
     txt(s, 0.9, 1.75, 7.2, 0.4, "WHY IT MATTERS", 13, NAVY, bold=True)
     yy = 2.25
+    _shx = SHORT.get(g["title"], {})
+    _step = 0.62 if len(_shx.get("extra_bullets", ())) > 1 else 0.78
     for d in _dec:
         shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09 + (0.1 if _short else 0), 0.14, 0.14, ORANGE)
         txt(s, 1.3, yy, 6.8, 0.9, d, (24 if len(_dec) == 1 else 21) if _short else 13.5, INK, bold=_short)
-        yy += 0.78
-    # Lucas 9/22 (his own edit, kept): an extra bullet with the two teams' Top 25 rows under it
-    _shx = SHORT.get(g["title"], {})
-    if _short and _shx.get("extra_bullet"):
+        yy += _step
+    # Lucas 9/22 (his own edits, kept): extra bullets - one with the two teams' Top 25 rows
+    # under it, one with a small detail line under it
+    for _xb in (_shx.get("extra_bullets", ()) if _short else ()):
         shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.19, 0.14, 0.14, ORANGE)
-        txt(s, 1.3, yy, 6.8, 0.9, _shx["extra_bullet"], 24, INK, bold=True)
-        yy += 0.78
-        _ry = yy - 0.02
-        for _tm in _shx.get("rank_rows", ()):
+        txt(s, 1.3, yy, 6.8, 0.9, _xb["text"], 24, INK, bold=True)
+        yy += _step
+        if _xb.get("sub"):
+            txt(s, 1.3, yy - 0.2, 6.9, 0.3, _xb["sub"], 11, MUTE)
+            yy += 0.22
+        _ry = yy - 0.05
+        for _tm in _xb.get("rows", ()):
             _row = next(((k + 1, t) for k, t in enumerate(_r["teams"]) if t["team"] == _tm), None)
             if not _row:
                 continue
@@ -1896,6 +1903,8 @@ for g in GAMES:
             _ap = AP_TOP25.get(_tm)
             txt(s, 6.85, _ry + 0.05, 1.15, 0.3, f"AP {_ap}" if _ap else "NR", 10, RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
             _ry += 0.37
+        if _xb.get("rows"):
+            yy = _ry + 0.1
     # one point leaves room: drop the honesty box to the bottom of the bug's height
     box_y = max(yy + 0.15, 5.2) if _short else yy + 0.15
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, box_y, 7.2, 1.05, ICE)
