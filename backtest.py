@@ -77,6 +77,24 @@ MODELS = {
     "nocap": dict(CURRENT, cap=None, desc="no cap"),
 }
 
+
+def _register_shadow_models():
+    """Shadow ratings (Phase 1+) register here so they are graded on the same tables."""
+    try:
+        from efficiency_ratings import EfficiencyModel
+    except Exception as e:  # play caches missing etc. - the ridge family still runs
+        print("efficiency model not registered:", e)
+        return
+    MODELS["efficiency"] = EfficiencyModel(desc="SHADOW play-level efficiency ridge (lam 3, st 8, HFA 2.5)")
+    MODELS["eff_blend"] = EfficiencyModel(blend=0.5, desc="SHADOW 50/50 blend of efficiency and the on-air machine")
+
+
+_register_shadow_models()
+
+
+def desc(model):
+    return model.get("desc", "") if isinstance(model, dict) else getattr(model, "desc", "")
+
 # ---- data -----------------------------------------------------------------
 
 
@@ -349,6 +367,21 @@ def tune(ctxs: dict[int, SeasonCtx], fit_seasons, test_seasons, grid=GRID, weeks
     return sorted(res, key=lambda r: r["fit_mae"])
 
 
+def compare(ctxs: dict[int, SeasonCtx], models: dict, fit_seasons, test_seasons, weeks=range(2, 16)):
+    """Score named models (any kind) on fit and test seasons, weeks 2+. Rows sorted by fit MAE."""
+    res = []
+    for name, model in models.items():
+        fit_rows, test_rows = [], []
+        for s, ctx in ctxs.items():
+            rows = season_rows(s, model, ctx, weeks)
+            (fit_rows if s in fit_seasons else test_rows).extend(rows)
+        f, t = score(fit_rows), score(test_rows)
+        res.append(dict(name=name, fit_mae=f.get("mae"), fit_brier=f.get("brier"), fit_mae_mkt=f.get("mae_mkt"),
+                        fit_ats=f.get("ats_pct"), test_mae=t.get("mae"), test_brier=t.get("brier"),
+                        test_mae_mkt=t.get("mae_mkt"), test_ats=t.get("ats_pct"), fit_n=f.get("n"), test_n=t.get("n")))
+    return sorted(res, key=lambda r: r["fit_mae"] if r["fit_mae"] is not None else 99)
+
+
 # ---- report ---------------------------------------------------------------
 
 
@@ -372,6 +405,7 @@ def main():
     ap.add_argument("--seasons", default="2022-2025")
     ap.add_argument("--model", default="current", help="comma list of MODELS keys")
     ap.add_argument("--tune", action="store_true")
+    ap.add_argument("--tune-eff", action="store_true", help="grid over the efficiency model's lam / st / HFA / blend")
     ap.add_argument("--rows", help="write per-game rows (first model) to this json")
     ap.add_argument("--json", help="write the scoreboard to this json")
     ap.add_argument("--weeks", default="1-15")
@@ -392,9 +426,9 @@ def main():
         rows = {s: season_rows(s, model, ctxs[s], weeks) for s in seasons}
         all_rows[name] = rows
         pooled = [r for s in seasons for r in rows[s]]
-        print(f"\n=== {name}: {model.get('desc', '') if isinstance(model, dict) else ''} ===")
+        print(f"\n=== {name}: {desc(model)} ===")
         print(HEAD)
-        rep = dict(desc=model.get("desc", "") if isinstance(model, dict) else "", seasons={}, pooled=None, baselines=None)
+        rep = dict(desc=desc(model), seasons={}, pooled=None, baselines=None)
         for s in seasons:
             sc = score(rows[s]); rep["seasons"][s] = sc
             print(fmt_score(str(s), sc))
@@ -468,6 +502,27 @@ def main():
         for k in ("cap", "switch"):
             print(f"  best TEST MAE by {k}: " + "  ".join(f"{v}:{min(r['test_mae'] for r in res if r[k] == v):.3f}" for v in GRID[k])
                   + f"   best TEST Brier by {k}: " + "  ".join(f"{v}:{min(r['test_brier'] for r in res if r[k] == v):.4f}" for v in GRID[k]))
+
+    if a.tune_eff:
+        from efficiency_ratings import EfficiencyModel
+        fit = [s for s in seasons if s <= 2024]; test = [s for s in seasons if s == 2025]
+        grid = {"current": MODELS["current"]}
+        for lam in (1, 2, 3, 4, 6, 8):
+            for hfa in (2.0, 2.5, 3.0):
+                grid[f"eff lam{lam} hfa{hfa}"] = EfficiencyModel(lam=lam, hfa=hfa)
+        for st in (4, 16, 1e9):
+            grid[f"eff lam3 st{st:g}"] = EfficiencyModel(lam_st=st)
+        for b in (0.25, 0.5, 0.75):
+            grid[f"blend {b:g} (lam3)"] = EfficiencyModel(blend=b)
+        for lam in (2, 4):
+            grid[f"blend 0.5 lam{lam}"] = EfficiencyModel(lam=lam, blend=0.5)
+        print(f"\n=== TUNE efficiency: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
+        res = compare(ctxs, grid, fit, test)
+        report["tune_eff"] = res
+        print(f"{'model':24s} | {'fit MAE':>8} {'Brier':>6} {'ATS':>6} | {'test MAE':>8} {'Brier':>6} {'ATS':>6}")
+        for r in res:
+            print(f"{r['name']:24s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% | "
+                  f"{r['test_mae']:8.3f} {r['test_brier']:.4f} {100 * (r['test_ats'] or 0):5.1f}%")
 
     if a.rows:
         Path(a.rows).write_text(json.dumps([r for s in seasons for r in all_rows[models[0]][s]], indent=0, default=float), encoding="utf-8")

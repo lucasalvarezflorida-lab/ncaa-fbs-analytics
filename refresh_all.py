@@ -481,6 +481,19 @@ def main() -> int:
     print("\n== FPI decomposition sheet ==")
     write_fpi_sheet(book, refresh=False)  # restructure already refreshed the cache
 
+    # SHADOW ratings (Phase 1, 2026-09-22): play-level efficiency, internal only -
+    # never the on-air number. Written to internal/shadow_ratings_weekN.json and
+    # a 'Shadow Ratings' sheet; any failure is reported and skipped.
+    print("\n== shadow ratings (internal) ==")
+    try:
+        from efficiency_ratings import shadow_week, write_shadow_sheet
+        from inseason_ratings import completed_games_2026
+        wk = max((g["week"] or 0) for g in completed_games_2026(False)) + 1
+        shadow_week(wk, refresh=not args.import_only)
+        write_shadow_sheet(book, wk)
+    except Exception as e:
+        print(f"shadow ratings skipped: {e}")
+
     print("\n== recalculating via Excel ==")
     recalc_com(book)
 
