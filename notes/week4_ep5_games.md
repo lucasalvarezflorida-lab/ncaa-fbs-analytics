@@ -6,8 +6,10 @@ WHY and the numbers under them, a reserve key, Corey's call. Drafted Sun Sep
 MACHINE-DRAFTED — review before air. Order is kickoff order (Oklahoma at Georgia third);
 Texas A&M at LSU closes.
 
-Stats are each team's 2026 games to date (CFBD play-by-play,
-stat_package_week4.json), never from a game against each other. "Dropbacks"
+Stats are each team's 2026 games to date (CFBD box scores and play-by-play,
+stat_package_week4.json), never from a game against each other. Rushing totals
+are the official box score (sacks and fumbled snaps count as rushes); stuff
+rates and 10+ rates come from the play-by-play, sacks excluded. "Dropbacks"
 = pass plays including sacks; "explosive pass" = 20+ yards; "stuffed" = a run
 for zero or less; "third-and-long" = third-and-6 or more. Betting-line
 context is kept out of this file on purpose - it lives in the internal folder.
@@ -16,7 +18,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
   
   - The read
     - Texas is No. 1 on defense and third-and-short; the passing game has not shown up — 6.8 a throw, all at home
-    - Tennessee runs for 7.1 a carry and has a true freshman who has not thrown a pick — and has not seen a defense like this
+    - Tennessee runs for 6.7 a carry and has a true freshman who has not thrown a pick — and has not seen a defense like this
     - The game is whether Tennessee's run game travels up a weight class, because Texas's offense is not built to win a shootout
   - The number: Texas −9, 71% · Call Texas 33–24
     - Honesty: 71% — but Texas has not left Austin yet
@@ -35,10 +37,10 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What Tennessee brings: 12 sacks in 107 dropbacks (11.2%) — Gilliam and Dye three each; opponents are 7-of-27 on third-and-long
     - Stop the run
       - Why: it is the one thing Tennessee does at an elite level and the one soft spot Texas has shown
-        - Texas State ran 41 times for 161 in the opener, with runs of 32 and 22; Texas allows 4.5 a carry, 10 runs of 10+ in 89 carries
-        - Since then: Ohio State 29 for 108, UTSA 22 for 68
-      - What Tennessee brings: 129 carries for 911 (7.1), 29 runs of 10+ (22.5% of carries), stuffed only 12% — Bishop 286 yards, Morris 234, Brandon 137 and three scores on the ground
-        - Against FBS teams only it is still 6.9 a carry; 300 at Georgia Tech
+        - Texas State ran 41 times for 161 in the opener, with runs of 32 and 22; Texas allows 3.4 a carry (96 for 327), 10 runs of 10+ against it
+        - Since then: Ohio State 31 for 94, UTSA 24 for 72
+      - What Tennessee brings: 133 carries for 896 (6.7), 29 runs of 10+ (22.5% of runs), stuffed only 12% — Bishop 286 yards, Morris 234, Brandon 137 and three scores on the ground
+        - Against FBS teams only it is still 6.6 a carry; 299 at Georgia Tech
     - Reserve: Simmons vs the freshman — Texas has only 4 sacks in 88 dropbacks (4.5%); Simmons has 2 of them and 3.5 tackles for loss. A five-star freshman in his first big game is the week to find a pass rush
   - Tennessee keys
     - Run it at Texas
@@ -55,7 +57,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Knowles' rush on passing downs
       - Why: Texas is 6-of-21 on third-and-long — get them there and the drive is over
         - Tennessee's 11.2% sack rate is third on the card behind Oklahoma and LSU; against FBS teams it is 7.6%
-      - The catch: Knowles' first years are glitchy (Penn State went from 4th to 23rd in his one season) and his run defense is the leak — FBS opponents average 5.0 a carry with 11 runs of 10+ in 55 carries. Texas's run game is average (4.6 a carry, 18% stuffed), so this is strength-on-weakness for nobody
+      - The catch: Knowles' first years are glitchy (Penn State went from 4th to 23rd in his one season) and his run defense is the leak — FBS opponents average 3.9 a carry (61 for 237) with 11 runs of 10+. Texas's run game is average (4.2 a carry, 18% stuffed), so this is strength-on-weakness for nobody
     - Reserve: win the red zone — Tennessee's defense has allowed 2 touchdowns in 7 red-zone trips; Texas is 11-of-16. Field goals keep a 9-point dog in it
   - Corey: — (fill from his deck)
 
@@ -80,16 +82,16 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - 8.1 a throw allowed; only Texas A&M (9.4) is worse on this card
       - What Florida brings: 16 explosive passes in 84 dropbacks (19%), 8 of 30+; Philo is 10-of-16 on deep throws; Vernell Brown 14 for 246, Dallas Wilson 12 for 225
     - Get Lacy going
-      - Why: Ole Miss has been a passing team by necessity — 85 carries at 4.8, stuffed on 17.6%; 22 for 99 against LSU
+      - Why: Ole Miss has been a passing team by necessity — 90 carries at 3.8, stuffed on 17.6%; 25 for 63 against LSU (two sacks and a fumbled snap in that number)
         - Lacy: 39 for 191 and 4 touchdowns
-      - What Florida brings: a run defense that allows 4.1 a carry but almost never makes the negative play — 8 stuffs in 82 carries (9.8%), lowest on the card. There are yards there
+      - What Florida brings: a run defense that allows 3.1 a carry (93 for 284) but almost never makes the negative play — stuffed on 9.8% of runs, lowest on the card. There are yards there
     - Reserve: finish drives — 10 touchdowns in 11 red-zone trips, 4-for-4 against LSU; Florida's defense has allowed touchdowns on 6 of 8 red-zone trips against FBS teams
   - Florida keys
     - Feed Baugh
       - Why: he is the best player on the field and the Ole Miss front has been run on
-        - 54 carries, 458 yards (8.5), 8 touchdowns; Florida ran 50 times for 246 at Auburn
-        - Florida as a team: 6.2 a carry, 19 runs of 10+
-      - What Ole Miss brings: 5.0 a carry allowed — Louisville 35 for 210, LSU 40 for 182 — but 24% of runs stuffed. Boom or bust: Baugh gets hit in the backfield or gets ten
+        - 54 carries, 458 yards (8.5), 8 touchdowns; Florida ran 53 times for 243 at Auburn
+        - Florida as a team: 6.0 a carry (124 for 738), 19 runs of 10+
+      - What Ole Miss brings: 4.1 a carry allowed (115 for 477) — Louisville 39 for 162, LSU 43 for 172 — but 24% of runs stuffed. Boom or bust: Baugh gets hit in the backfield or gets ten
     - Philo deep
       - Why: a redshirt freshman is averaging 11.3 a throw because the shots are open
         - 47-of-64, 721 yards, 6 TD, 2 INT; 15.0 per completion; one in five attempts is a deep throw
@@ -118,9 +120,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What Georgia brings: Stockton was not sacked in the first two games, then 3 times at Arkansas in 24 dropbacks — the first real rush he saw got home
     - Mateer has to be the run game
       - Why: the backs are not getting anything
-        - 95 carries at 3.8; 25 of them stuffed (26.3% — worst on the card); 31 for 66 against New Mexico
+        - 100 carries at 3.3; stuffed on 26.3% of runs (worst on the card); 32 for 61 against New Mexico
         - Mateer: 47-of-75, 652 yards, 6 TD, 3 INT; the passing game is fine when it has time — 12 explosive passes in 83 dropbacks (14.5%), Sategna 12 for 186
-      - What Georgia brings: 2.7 a carry allowed, 25% of runs stuffed, 4 runs of 10+ in 80 carries — the strength of their team against the weakness of Oklahoma's
+      - What Georgia brings: 1.5 a carry allowed (89 for 137), 25% of runs stuffed, 4 runs of 10+ against it all year — the strength of their team against the weakness of Oklahoma's
     - Reach the red zone
       - Why: 5 red-zone trips in three games, zero in the last two; 2 touchdowns
       - How it happens: short fields — which means the defense has to take the ball away, and it has zero interceptions
@@ -129,7 +131,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Frazier downhill
       - Why: it is the best run game on the card and it takes the pass rush out of the game
         - 99 carries for 779 (7.9), 23 runs of 10+ (23.2%); against FBS teams 7.0; Frazier 24 for 202 and 5 touchdowns; 9-of-9 on third-and-short
-      - What Oklahoma brings: a run defense that is good, not great — 4.0 a carry, 21% stuffed; Michigan ran 37 times for 160 and won
+      - What Oklahoma brings: a run defense that is good, not great — 2.8 a carry (117 for 333), 21% stuffed; Michigan ran 41 times for 152 and won
     - Get the ball out
       - Why: Bobo's quick game is the natural answer to an 18% sack rate
         - Stockton: 38-of-45, 583 yards, 9 TD, 0 INT, 13.0 a throw
@@ -159,13 +161,13 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What USC brings: not much — 4 sacks in 110 dropbacks (3.6%) under new coordinator Gary Patterson. This is the friendliest rush Oregon will see in a big game
     - Stay out of third-and-long
       - Why: against FBS teams Oregon is 3-of-18 on third-and-long; 1-of-10 at Oklahoma State
-        - The run game against FBS teams: 51 carries at 4.7 — Davison 33 for 194 on the year
+        - The run game against FBS teams: 55 carries at 3.8 — Davison 33 for 194 on the year
       - What USC brings: opponents are 7-of-22 on third-and-long and 6-of-6 on third-and-short — win first down and the chains move
     - Attack Patterson's secondary
       - Why: it is the unit Riley bet on and it has not held up
         - 13 explosive passes allowed in 110 dropbacks (11.8%); Rutgers threw for 11.0 a pop with 6 of 20+, Louisiana 9.6
       - What Oregon brings: 18 explosive passes in 119 dropbacks (15.1%), 11-of-20 on deep throws; Stewart 15 for 222, Dakorien Moore 11 for 192 and 3 scores
-    - Reserve: stop the run this time — Oklahoma State ran 41 times for 235; King Miller has 338 yards and USC gets a run of 10+ on 18% of carries
+    - Reserve: stop the run this time — Oklahoma State ran 40 times for 237; King Miller has 338 yards and USC gets a run of 10+ on 18% of carries
   - USC keys
     - Keep Maiava clean
       - Why: he is the best quarterback Oregon has faced and nobody has touched him
@@ -206,7 +208,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - 12 explosive passes allowed in 71 dropbacks (16.9%), 7 of 30+; Kentucky 14.0 a throw, Arizona State 10.7
         - 9.4 a throw allowed on the year — worst on the card
       - What LSU brings: 17 explosive passes in 110 dropbacks (15.5%), 15.4 per completion — Trey'Dez Green 14 for 222, Watkins 15 for 207
-    - Reserve: don't count on the run — LSU allows 2.8 a carry and stuffs 27% of runs (the highest stuff rate on the card); A&M runs for 4.9
+    - Reserve: don't count on the run — LSU allows 1.2 a carry (82 for 100) and stuffs 27% of runs (the highest stuff rate on the card); A&M runs for 4.4
   - LSU keys
     - Leavitt's ball security
       - Why it's the key: it is the only thing that has beaten LSU
@@ -219,7 +221,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - LSU: 9.6 a throw, 7 completions of 30+; 14-of-24 on third-and-long, best on the card
     - Umanmielen on passing downs
       - Why: A&M is 5-of-22 on third-and-long — win first down and the rush ends the drive
-        - LSU's run defense makes that possible: 67 carries for 190 against it
+        - LSU's run defense makes that possible: 82 carries for 100 against it
       - The catch: Ole Miss converted 6-of-11 on third-and-long and went 4-for-4 in the red zone — the rush got there twice in 50 dropbacks
     - Reserve: touchdowns, not field goals — 11 touchdowns in 18 red-zone trips, 5-of-10 against Louisiana Tech; the defense has allowed touchdowns on 5 of 6 trips
   - Corey: — (fill from his deck)
