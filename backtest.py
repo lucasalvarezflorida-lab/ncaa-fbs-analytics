@@ -87,6 +87,11 @@ def _register_shadow_models():
         return
     MODELS["efficiency"] = EfficiencyModel(desc="SHADOW play-level efficiency ridge (lam 3, st 8, HFA 2.5)")
     MODELS["eff_blend"] = EfficiencyModel(blend=0.5, desc="SHADOW 50/50 blend of efficiency and the on-air machine")
+    try:
+        from availability import AvailabilityModel
+        MODELS["availability"] = AvailabilityModel(desc="SHADOW: on-air machine minus the QB-out penalty on the flagged side")
+    except Exception as e:
+        print("availability model not registered:", e)
 
 
 _register_shadow_models()
