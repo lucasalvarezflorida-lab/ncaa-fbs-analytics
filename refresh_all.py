@@ -493,8 +493,7 @@ def main() -> int:
         write_shadow_sheet(book, wk)
     except Exception as e:
         print(f"shadow ratings skipped: {e}")
-    print("
-== playoff sim (internal) ==")
+    print("\n== playoff sim (internal) ==")
     try:
         from playoff_sim import simulate, write_playoff_sheet
         from inseason_ratings import completed_games_2026
@@ -505,6 +504,13 @@ def main() -> int:
         write_playoff_sheet(book, wk)
     except Exception as e:
         print(f"playoff sim skipped: {e}")
+
+    print("\n== deep-dive text boxes (Excel automation) ==")
+    try:
+        from deep_dive_boxes import add_boxes
+        add_boxes(book)
+    except Exception as e:
+        print(f"deep-dive text boxes skipped: {e}")
 
     print("\n== recalculating via Excel ==")
     recalc_com(book)

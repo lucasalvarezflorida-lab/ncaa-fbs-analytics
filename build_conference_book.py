@@ -728,17 +728,23 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
                  ("IDENTITY · STRENGTHS · WEAKNESSES · GOALS", "AO",
                   _fit_height("identity", 55)),
                  ("PREDICTION", "AP", _fit_height("prediction", 30))]
+    # Lucas 9/22: the section text is NOT typed into the merged cells any more -
+    # the wrapped rows stretched the schedule / roster rows on the left. The
+    # dropdown formula lives in hidden column AJ on the label row (box height
+    # in AK) and deep_dive_boxes.py draws a floating text box linked to it
+    # after every rebuild (openpyxl cannot draw shapes). Rows keep their
+    # normal height; the label rows are spaced so the boxes do not overlap.
+    ROW_PT = 15.0
     rr = r_deep + 1
     for label, col, height in deep_secs:
         c = ws.cell(row=rr, column=14, value=label)
         c.font = Font(name="Arial", bold=True, size=10, color="5C6B7E")
-        body = ws.cell(row=rr + 1, column=14,
-                       value=f'=IF($AG$1=0,"",INDEX(_Teams!${col}:${col},$AG$1)&"")')
-        body.font = Font(name="Arial", size=10)
-        body.alignment = _Al(wrap_text=True, vertical="top")
-        ws.merge_cells(start_row=rr + 1, start_column=14, end_row=rr + 1, end_column=18)
-        ws.row_dimensions[rr + 1].height = height
-        rr += 2
+        ws.cell(row=rr, column=36,
+                value=f'=IF($AG$1=0,"",INDEX(_Teams!${col}:${col},$AG$1)&"")').font = Font(name="Arial", size=8)
+        ws.cell(row=rr, column=37, value=round(height, 1)).font = Font(name="Arial", size=8)
+        rr += 2 + int(height // ROW_PT) + 1
+    ws.column_dimensions["AJ"].hidden = True
+    ws.column_dimensions["AK"].hidden = True
 
     widths = [22, 30, 26, 9, 8, 16, 30, 34, 28, 8, 8, 8, 2, 6, 24, 22, 20, 18]
     for i, w in enumerate(widths, 1):
