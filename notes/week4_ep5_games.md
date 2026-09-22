@@ -13,6 +13,7 @@ for zero or less; "third-and-long" = third-and-6 or more. Betting-line
 context is kept out of this file on purpose - it lives in the internal folder.
 
 - **Texas at Tennessee — Sat 12:00 ET, Knoxville · No. 1 at No. 14**
+  
   - The read
     - Texas is No. 1 on defense and third-and-short; the passing game has not shown up — 6.8 a throw, all at home
     - Tennessee runs for 7.1 a carry and has a true freshman who has not thrown a pick — and has not seen a defense like this
@@ -26,7 +27,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - 110 dropbacks: 6.8 an attempt, 11.2 per completion, 6 explosive passes (5.5%) — the second-least explosive passing game on this card; only 8 deep throws all year (4 completed)
         - Ohio State: 21-of-35 for 5.5 a throw. UTSA: 18-of-37 for 4.6
         - The weapons are there: Coleman 10 catches, 4 touchdowns; Wingo 13 for 165
-      - What Tennessee brings: Knowles' defense has allowed 3 explosive passes in 107 dropbacks (2.8%) and 5.3 a throw — the stingiest pass defense on the card, against a soft schedule
+      - (Forshadow) What Tennessee brings: Knowles' defense has allowed 3 explosive passes in 107 dropbacks (2.8%) and 5.3 a throw — the stingiest pass defense on the card, against a soft schedule
     - Stay out of third-and-long
       - Why: Texas's whole offense is staying on schedule
         - 14-of-15 on third-and-1-or-2
@@ -34,7 +35,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What Tennessee brings: 12 sacks in 107 dropbacks (11.2%) — Gilliam and Dye three each; opponents are 7-of-27 on third-and-long
     - Stop the run
       - Why: it is the one thing Tennessee does at an elite level and the one soft spot Texas has shown
-        - Texas State ran 38 times for 221 in the opener; Texas allows 4.5 a carry, 10 runs of 10+ in 89 carries
+        - Texas State ran 41 times for 161 in the opener, with runs of 32 and 22; Texas allows 4.5 a carry, 10 runs of 10+ in 89 carries
         - Since then: Ohio State 29 for 108, UTSA 22 for 68
       - What Tennessee brings: 129 carries for 911 (7.1), 29 runs of 10+ (22.5% of carries), stuffed only 12% — Bishop 286 yards, Morris 234, Brandon 137 and three scores on the ground
         - Against FBS teams only it is still 6.9 a carry; 300 at Georgia Tech
@@ -59,6 +60,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: — (fill from his deck)
 
 - **Ole Miss at Florida — Sat 3:30 ET, Gainesville · No. 4 at No. 21**
+  
   - The read
     - Two first-year head coaches, both 3–0, and the voters and the machine disagree about which is better: AP has them 17 spots apart, the machine has them a point apart
     - Florida is the most explosive offense on the card; Ole Miss's defense gives up explosives — that is the matchup
@@ -100,6 +102,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: — (fill from his deck)
 
 - **Oklahoma at Georgia — Sat 3:30 ET, Athens · unranked at No. 2**
+  
   - The read
     - The best pass rush on the card against a quarterback who is 38-of-45
     - Oklahoma's offense has 24 points in two games and has not run a play in the red zone in either one
@@ -139,6 +142,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: — (fill from his deck)
 
 - **Oregon at USC — Sat 7:30 ET, Los Angeles · No. 20 at No. 12**
+  
   - The read
     - Two offenses well ahead of two defenses: each averages 9+ a throw with 15% of dropbacks going for 20+, and each defense gives up 8 a throw
     - Oregon's July flaw — the offensive line against a real front — already cost it a game: 4 sacks in Stillwater
@@ -178,6 +182,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: — (fill from his deck)
 
 - **Texas A&M at LSU — Sat 7:30 ET, Baton Rouge · No. 23 at No. 10**
+  
   - The read
     - Both lost last week; the loser is 2–2 with September not over
     - A&M's problem is on both sides of the ball: the offense has 5 explosive passes all year, the secondary gave up 14.0 a throw to Kentucky
