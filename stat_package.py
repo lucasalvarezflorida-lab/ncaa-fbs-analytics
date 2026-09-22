@@ -50,7 +50,9 @@ def side_stats(plays):
     n = lambda x: len(x)
     return dict(
         plays=n(drop) + n(rush), dropbacks=n(drop), sacks=n(sacks), att=n(atts), comp=n(comps),
-        pass_yds=sum(yd(p) for p in atts), ypa=round(sum(yd(p) for p in atts) / max(n(atts), 1), 1),
+        # passing yards = COMPLETIONS only: CFBD books an interception's return
+        # yardage on the pass play, which inflated per-attempt (found 9/21)
+        pass_yds=sum(yd(p) for p in comps), ypa=round(sum(yd(p) for p in comps) / max(n(atts), 1), 1),
         ypc=round(sum(yd(p) for p in comps) / max(n(comps), 1), 1),
         p20=sum(1 for p in drop if yd(p) >= 20), p30=sum(1 for p in drop if yd(p) >= 30),
         deep_att=n(deep), deep_comp=n(deep_c), ints=n(ints),

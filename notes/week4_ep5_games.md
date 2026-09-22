@@ -17,7 +17,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
 - **Texas at Tennessee — Sat 12:00 ET, Knoxville · No. 1 at No. 14**
   
   - The read
-    - Texas is No. 1 on defense and third-and-short; the passing game has not shown up — 6.8 a throw, all at home
+    - Texas is No. 1 on defense and third-and-short; the passing game has not shown up — 6.9 a throw, all at home
     - Tennessee runs for 6.7 a carry and has a true freshman who has not thrown a pick — and has not seen a defense like this
     - The game is whether Tennessee's run game travels up a weight class, because Texas's offense is not built to win a shootout
   - The number: Texas −9, 71% · Call Texas 33–24
@@ -26,10 +26,10 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Texas keys
     - Arch has to hit something downfield
       - Why it matters: Texas is winning without a passing game and that stops working on the road against a team that scores
-        - 110 dropbacks: 6.8 an attempt, 11.2 per completion, 6 explosive passes (5.5%) — the second-least explosive passing game on this card; only 8 deep throws all year (4 completed)
-        - Ohio State: 21-of-35 for 5.5 a throw. UTSA: 18-of-37 for 4.6
+        - 108 dropbacks: 6.9 an attempt, 11.0 per completion, 6 explosive passes (5.6%) — the second-least explosive passing game on this card; only 8 deep throws all year (4 completed)
+        - Ohio State: 21-of-35 for 5.3 a throw. UTSA: 18-of-35 for 4.9
         - The weapons are there: Coleman 10 catches, 4 touchdowns; Wingo 13 for 165
-      - (Forshadow) What Tennessee brings: Knowles' defense has allowed 3 explosive passes in 107 dropbacks (2.8%) and 5.3 a throw — the stingiest pass defense on the card, against a soft schedule
+      - (Forshadow) What Tennessee brings: Knowles' defense has allowed 3 explosive passes in 107 dropbacks (2.8%) and 4.8 a throw — the stingiest pass defense on the card, against a soft schedule
     - Stay out of third-and-long
       - Why: Texas's whole offense is staying on schedule
         - 14-of-15 on third-and-1-or-2
@@ -53,7 +53,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - 41-of-64, 552 yards, 6 touchdowns, 0 interceptions; sacked twice in 76 dropbacks
         - But at Georgia Tech, the one road game: 10-of-21 for 7.0 a throw — the run game won that one
         - Heupel's offense: wide splits and vertical shots — 11 deep throws, 5 completed
-      - What he faces: a secondary with 3 picks that allows 6.5 a throw; Muschamp's first Texas defense has been the better half of the No. 1 team
+      - What he faces: a secondary with 3 picks that allows 6.4 a throw; Muschamp's first Texas defense has been the better half of the No. 1 team
     - Knowles' rush on passing downs
       - Why: Texas is 6-of-21 on third-and-long — get them there and the drive is over
         - Tennessee's 11.2% sack rate is third on the card behind Oklahoma and LSU; against FBS teams it is 7.6%
@@ -79,7 +79,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Stop the explosives
       - Why: it is the defense's flaw and Florida's whole identity
         - Ole Miss has allowed 12 passes of 20+ in 90 dropbacks (13.3%), five of them 30+ — Louisville had 7 and threw for 10.6 a pop
-        - 8.1 a throw allowed; only Texas A&M (9.4) is worse on this card
+        - 7.7 a throw allowed; only Texas A&M (7.9) and USC (7.7) are in the same range on this card
       - What Florida brings: 16 explosive passes in 84 dropbacks (19%), 8 of 30+; Philo is 10-of-16 on deep throws; Vernell Brown 14 for 246, Dallas Wilson 12 for 225
     - Get Lacy going
       - Why: Ole Miss has been a passing team by necessity — 90 carries at 3.8, stuffed on 17.6%; 25 for 63 against LSU (two sacks and a fumbled snap in that number)
@@ -138,7 +138,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - Only 2-of-9 on third-and-long — the one place a rush like this wins
     - Make Mateer one-dimensional
       - Why: Oklahoma cannot run, so the defense can play coverage and rush four
-        - Georgia's pass defense: 5.1 a throw, 5 explosive passes in 111 dropbacks (4.5%)
+        - Georgia's pass defense: 4.7 a throw, 5 explosive passes in 111 dropbacks (4.5%)
       - The catch: only 6 sacks (5.4%) and Western Kentucky went 6-of-13 on third-and-long — Mateer extends plays
     - Reserve: keep hitting explosives — 14 in 82 dropbacks; against FBS teams 8 in 49. If that holds against this defense, the July question about Georgia is answered
   - Corey: — (fill from his deck)
@@ -146,7 +146,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
 - **Oregon at USC — Sat 7:30 ET, Los Angeles · No. 20 at No. 12**
   
   - The read
-    - Two offenses well ahead of two defenses: each averages 9+ a throw with 15% of dropbacks going for 20+, and each defense gives up 8 a throw
+    - Two offenses well ahead of two defenses: each averages 9+ a throw with 15% of dropbacks going for 20+, and each defense gives up more than 6 a throw
     - Oregon's July flaw — the offensive line against a real front — already cost it a game: 4 sacks in Stillwater
     - USC is 4–0 and has not played anyone; it gave up 35 at Rutgers and 30 to Louisiana
   - The number: Oregon −0.5, 50% · Call Oregon 32–31
@@ -165,7 +165,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What USC brings: opponents are 7-of-22 on third-and-long and 6-of-6 on third-and-short — win first down and the chains move
     - Attack Patterson's secondary
       - Why: it is the unit Riley bet on and it has not held up
-        - 13 explosive passes allowed in 110 dropbacks (11.8%); Rutgers threw for 11.0 a pop with 6 of 20+, Louisiana 9.6
+        - 13 explosive passes allowed in 110 dropbacks (11.8%); Rutgers went 19-of-37 for 7.9 a pop with 5 completions of 20+ and two picks, Louisiana 9.6
       - What Oregon brings: 18 explosive passes in 119 dropbacks (15.1%), 11-of-20 on deep throws; Stewart 15 for 222, Dakorien Moore 11 for 192 and 3 scores
     - Reserve: stop the run this time — Oklahoma State ran 40 times for 237; King Miller has 338 yards and USC gets a run of 10+ on 18% of carries
   - USC keys
@@ -205,9 +205,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What A&M brings: both lines were rebuilt in the portal and the pass protection has held — 4 sacks in 115 dropbacks (3.5%), none against Kentucky. This is the first real test
     - Fix the back end
       - Why: it lost the Kentucky game
-        - 12 explosive passes allowed in 71 dropbacks (16.9%), 7 of 30+; Kentucky 14.0 a throw, Arizona State 10.7
-        - 9.4 a throw allowed on the year — worst on the card
-      - What LSU brings: 17 explosive passes in 110 dropbacks (15.5%), 15.4 per completion — Trey'Dez Green 14 for 222, Watkins 15 for 207
+        - 12 explosive passes allowed in 71 dropbacks (16.9%), 7 of 30+; Kentucky 14.0 a throw, Arizona State 7.7
+        - 7.9 a throw allowed on the year — worst on the card
+      - What LSU brings: 17 explosive passes in 110 dropbacks (15.5%), 13.5 per completion — Trey'Dez Green 14 for 222, Watkins 15 for 207
     - Reserve: don't count on the run — LSU allows 1.2 a carry (82 for 100) and stuffs 27% of runs (the highest stuff rate on the card); A&M runs for 4.4
   - LSU keys
     - Leavitt's ball security
@@ -218,7 +218,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What A&M brings: 2 interceptions and a 4.2% sack rate — the least disruptive defense he has faced
     - Throw deep on this secondary
       - Why: see A&M's back end — 7 completions of 30+ allowed in three games
-        - LSU: 9.6 a throw, 7 completions of 30+; 14-of-24 on third-and-long, best on the card
+        - LSU: 8.4 a throw, 7 completions of 30+; 14-of-24 on third-and-long, best on the card
     - Umanmielen on passing downs
       - Why: A&M is 5-of-22 on third-and-long — win first down and the rush ends the drive
         - LSU's run defense makes that possible: 82 carries for 100 against it
