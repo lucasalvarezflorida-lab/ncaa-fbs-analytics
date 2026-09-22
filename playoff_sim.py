@@ -444,3 +444,41 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def write_playoff_sheet(book: Path, week: int | None = None) -> None:
+    """'Playoff Sim' sheet in the workbook from the latest internal/playoff_sim_week*.json."""
+    from openpyxl import load_workbook
+    from openpyxl.styles import Font, PatternFill
+    files = sorted((HERE / "internal").glob("playoff_sim_week*.json"), key=lambda p: int(p.stem.rsplit("week", 1)[1]))
+    if week is not None:
+        files = [f for f in files if f.stem.endswith(f"week{week}")]
+    if not files:
+        print("playoff sheet: no playoff_sim_week*.json yet"); return
+    d = json.loads(files[-1].read_text(encoding="utf-8"))
+    wb = load_workbook(book, keep_vba=True)
+    if "Playoff Sim" in wb.sheetnames:
+        del wb["Playoff Sim"]
+    ws = wb.create_sheet("Playoff Sim")
+    ws["A1"] = f"PLAYOFF SIM - before week {d['week']} - {d['sims']:,} seasons from the on-air rating"
+    ws["A1"].font = Font(bold=True, size=13)
+    ws["A2"] = ("12-team field: 5 highest-ranked conference champions + 7 at-large, straight seeding, byes 1-4. Committee = "
+                "a model fit to the 2014-2025 selection-Sunday rankings (rating, losses, strength of record, quality wins, "
+                "champion, head-to-head). Internal until the show's playoff column is switched on.")
+    hdr = ["Team", "Conf", "Rating", "Playoff %", "Bye %", "Conf title %", "National title %", "Exp W", "Exp L", "Avg seed",
+           "Most likely path", "Path share"]
+    for j, h in enumerate(hdr, 1):
+        c = ws.cell(row=4, column=j, value=h); c.font = Font(bold=True, color="FFFFFF"); c.fill = PatternFill("solid", fgColor="1F3864")
+    for i, t in enumerate(d["teams"], 5):
+        p = t.get("path") or {}
+        vals = [t["team"].title(), t.get("conf"), t["rating"], round(100 * t["playoff"], 1), round(100 * t["bye"], 1),
+                round(100 * t["conf_title"], 1), round(100 * t["national_title"], 1), t["exp_wins"], t["exp_losses"], t.get("avg_seed"),
+                (f"{p.get('record')} {p.get('via')}" if p else ""), (round(100 * p["share"]) if p else None)]
+        for j, v in enumerate(vals, 1):
+            ws.cell(row=i, column=j, value=v)
+    ws.freeze_panes = "B5"
+    ws.auto_filter.ref = f"A4:L{4 + len(d['teams'])}"
+    for col, w in zip("ABCDEFGHIJKL", (22, 18, 9, 10, 8, 12, 15, 8, 8, 9, 34, 10)):
+        ws.column_dimensions[col].width = w
+    wb.save(book)
+    print(f"playoff sheet written: {len(d['teams'])} teams, before week {d['week']}")

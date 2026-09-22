@@ -493,6 +493,18 @@ def main() -> int:
         write_shadow_sheet(book, wk)
     except Exception as e:
         print(f"shadow ratings skipped: {e}")
+    print("
+== playoff sim (internal) ==")
+    try:
+        from playoff_sim import simulate, write_playoff_sheet
+        from inseason_ratings import completed_games_2026
+        wk = max((g["week"] or 0) for g in completed_games_2026(False)) + 1
+        res = simulate(wk, 10000)
+        (HERE / "internal").mkdir(exist_ok=True)
+        (HERE / "internal" / f"playoff_sim_week{wk}.json").write_text(__import__("json").dumps(res, indent=1), encoding="utf-8")
+        write_playoff_sheet(book, wk)
+    except Exception as e:
+        print(f"playoff sim skipped: {e}")
 
     print("\n== recalculating via Excel ==")
     recalc_com(book)
