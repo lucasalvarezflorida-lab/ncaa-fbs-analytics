@@ -465,13 +465,14 @@ def write_playoff_sheet(book: Path, week: int | None = None) -> None:
     ws["A2"] = ("12-team field: 5 highest-ranked conference champions + 7 at-large, straight seeding, byes 1-4. Committee = "
                 "a model fit to the 2014-2025 selection-Sunday rankings (rating, losses, strength of record, quality wins, "
                 "champion, head-to-head). Internal until the show's playoff column is switched on.")
-    hdr = ["Team", "Conf", "Rating", "Playoff %", "Bye %", "Conf title %", "National title %", "Exp W", "Exp L", "Avg seed",
+    rank = {t["team"]: i + 1 for i, t in enumerate(sorted(d["teams"], key=lambda t: -t["rating"]))}   # Our Rankings = the on-air rating order
+    hdr = ["Team", "Conf", "Our Ranking", "Playoff %", "Bye %", "Conf title %", "National title %", "Exp W", "Exp L", "Avg seed",
            "Most likely path", "Path share"]
     for j, h in enumerate(hdr, 1):
         c = ws.cell(row=4, column=j, value=h); c.font = Font(bold=True, color="FFFFFF"); c.fill = PatternFill("solid", fgColor="1F3864")
     for i, t in enumerate(d["teams"], 5):
         p = t.get("path") or {}
-        vals = [t["team"].title(), t.get("conf"), t["rating"], round(100 * t["playoff"], 1), round(100 * t["bye"], 1),
+        vals = [t["team"].title(), t.get("conf"), rank[t["team"]], round(100 * t["playoff"], 1), round(100 * t["bye"], 1),
                 round(100 * t["conf_title"], 1), round(100 * t["national_title"], 1), t["exp_wins"], t["exp_losses"], t.get("avg_seed"),
                 (f"{p.get('record')} {p.get('via')}" if p else ""), (round(100 * p["share"]) if p else None)]
         for j, v in enumerate(vals, 1):
