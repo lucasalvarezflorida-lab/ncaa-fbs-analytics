@@ -1320,6 +1320,23 @@ _r = _json.load(open(os.path.join(HERE, "ratings_current_2026.json"),
                      encoding="utf-8"))
 _top = _r["teams"][:25]
 _top_set = {t["team"] for t in _top}
+TOP25_DELTA = "week"   # Lucas 9/22 (Ep5): show each team's move THIS WEEK (rating + rank), not vs preseason ("pre")
+
+
+def _weekly():
+    """{team: {prev, d_week, prev_rank, rank, d_rank}} + the week graded, from
+    inseason_ratings.weekly_change (re-solve without the latest week, same cap rule)."""
+    try:
+        from inseason_ratings import weekly_change
+        from refresh_all import load_fpi_2026
+        wc = weekly_change(load_fpi_2026())
+        return wc["teams"], wc["week"]
+    except Exception as e:  # pragma: no cover
+        print("weekly change unavailable:", e)
+        return {}, None
+
+
+WEEKLY, WEEKLY_WEEK = _weekly() if TOP25_DELTA == "week" else ({}, None)
 
 
 def _luck():
@@ -1365,13 +1382,14 @@ txt(s, 0.9, 0.42, 11.5, 0.4,
     bold=True)
 txt(s, 0.9, 0.76, 11.5, 0.8, "Our Top 25", 40, WHITE, bold=True)
 txt(s, 0.9, 1.5, 11.5, 0.3,
-    f"Machine rating · Δ vs preseason · AP week {AP_WEEK} poll", 13, PALE,
+    (f"Machine rating · Δ this week · AP week {AP_WEEK} poll" if WEEKLY
+     else f"Machine rating · Δ vs preseason · AP week {AP_WEEK} poll"), 13, PALE,
     bold=True)
-TOP, RH, CW = 1.98, 0.36, 5.5
+TOP, RH, CW = 2.0, 0.35, 5.5
 for x0 in (0.9, 6.95):
     txt(s, x0 + 3.3, TOP - 0.24, 0.75, 0.22, "RATING", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, x0 + 4.05, TOP - 0.24, 0.75, 0.22, "Δ PRE", 8, PALE,
+    txt(s, x0 + 4.05, TOP - 0.24, 0.75, 0.22, "Δ WEEK" if WEEKLY else "Δ PRE", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
     txt(s, x0 + 4.8, TOP - 0.24, 0.65, 0.22, "VOTERS", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
@@ -1391,7 +1409,7 @@ for col, (x0, rows) in enumerate(((0.9, _top[:13]), (6.95, _top[13:]))):
             bold=True)
         txt(s, x0 + 3.3, y + 0.035, 0.75, 0.3, f"{t['cur']:.1f}", 12.5,
             WHITE, align=PP_ALIGN.RIGHT)
-        d = t["delta"]
+        d = WEEKLY[t["team"]]["d_week"] if WEEKLY and t["team"] in WEEKLY else t["delta"]
         txt(s, x0 + 4.05, y + 0.05, 0.75, 0.3, f"{d:+.1f}" if d else "0.0",
             11, UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d),
             align=PP_ALIGN.RIGHT)
@@ -1410,9 +1428,27 @@ _line1 = "Biggest splits: " + " · ".join(
 _line2 = ("Ours, not theirs: " + ", ".join(_ours_only[:4]) +
           "   ·   Theirs, not ours: " + ", ".join(n for _, n in _theirs_only[:4]))
 _fy = TOP + 13 * RH + 0.08
-shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.55, 0.62, NAVY2)
-txt(s, 1.1, _fy + 0.05, 11.2, 0.28, _line1, 11, WHITE, bold=True)
-txt(s, 1.1, _fy + 0.32, 11.2, 0.28, _line2, 10.5, PALE)
+if WEEKLY:
+    # the week's biggest moves among the 25 (rating points, with the rank move)
+    def _mv(t):
+        w = WEEKLY[t["team"]]
+        arrow = (f" #{w['prev_rank']}→#{w['rank']}" if w["d_rank"] else "")
+        return f"{school(t['team'])} {w['d_week']:+.1f}{arrow}"
+    _ups = sorted((t for t in _top if t["team"] in WEEKLY and WEEKLY[t["team"]]["d_week"] > 0),
+                  key=lambda t: -WEEKLY[t["team"]]["d_week"])[:3]
+    _dns = sorted((t for t in _top if t["team"] in WEEKLY and WEEKLY[t["team"]]["d_week"] < 0),
+                  key=lambda t: WEEKLY[t["team"]]["d_week"])[:3]
+    _up_line = f"Biggest moves this week — up: " + " · ".join(_mv(t) for t in _ups)
+    _dn_line = "Down: " + " · ".join(_mv(t) for t in _dns)
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.55, 0.82, NAVY2)
+    txt(s, 1.1, _fy + 0.03, 11.2, 0.24, _up_line, 10, UP, bold=True)
+    txt(s, 1.1, _fy + 0.22, 11.2, 0.24, _dn_line, 10, DOWN, bold=True)
+    txt(s, 1.1, _fy + 0.41, 11.2, 0.22, _line1, 9, PALE, bold=True)
+    txt(s, 1.1, _fy + 0.59, 11.2, 0.22, _line2, 9, PALE)
+else:
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.55, 0.62, NAVY2)
+    txt(s, 1.1, _fy + 0.05, 11.2, 0.28, _line1, 11, WHITE, bold=True)
+    txt(s, 1.1, _fy + 0.32, 11.2, 0.28, _line2, 10.5, PALE)
 
 # ---------------- slides 2-3: hot seat + Heisman boards ----------------
 # Data: boards_week{N}.json from hot_seat_heisman.py (CBS rating x season-sim
@@ -1617,7 +1653,8 @@ SHORT = {
         ctx_a=dict(coach="NEW — Golding, promoted", qb="Chambliss returns", roster="50% back · 28 portal adds"),
         ctx_b=dict(coach="NEW — Sumrall (Tulane)", qb="NEW — Aaron Philo, RS freshman", roster="69% back · 27 portal adds"),
         decides=["Two first-year coaches, both 3–0", "No. 4 vs No. 21 — a point apart to the machine", "Home team has won two straight", "Philo's first ranked opponent"],
-        honesty="59% — a field-goal game between two 3–0 teams",
+        extra_bullet="The Machine’s Rankings", rank_rows=("florida", "ole miss"),   # Lucas's slide edit 9/22
+        honesty="The home team has won the last two.\nOle Miss 34–24 last year. Florida 24–17 in 2024 (the loss that kept Ole Miss out of the playoff).",
         keys_a=["Chambliss vs the Florida rush", "Stop the explosives", "Get Lacy going", "Finish drives"],
         keys_b=["Feed Baugh", "Philo deep", "Get Chambliss off schedule", "Tighten the red zone"]),
     "Oregon at USC": dict(
@@ -1833,6 +1870,32 @@ for g in GAMES:
         shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.09 + (0.1 if _short else 0), 0.14, 0.14, ORANGE)
         txt(s, 1.3, yy, 6.8, 0.9, d, (24 if len(_dec) == 1 else 21) if _short else 13.5, INK, bold=_short)
         yy += 0.78
+    # Lucas 9/22 (his own edit, kept): an extra bullet with the two teams' Top 25 rows under it
+    _shx = SHORT.get(g["title"], {})
+    if _short and _shx.get("extra_bullet"):
+        shape(s, MSO_SHAPE.OVAL, 0.95, yy + 0.19, 0.14, 0.14, ORANGE)
+        txt(s, 1.3, yy, 6.8, 0.9, _shx["extra_bullet"], 24, INK, bold=True)
+        yy += 0.78
+        _ry = yy - 0.02
+        for _tm in _shx.get("rank_rows", ()):
+            _row = next(((k + 1, t) for k, t in enumerate(_r["teams"]) if t["team"] == _tm), None)
+            if not _row:
+                continue
+            _rk, _t = _row
+            shape(s, MSO_SHAPE.RECTANGLE, 1.15, _ry, 7.0, 0.36, NAVY2)
+            txt(s, 1.17, _ry + 0.035, 0.45, 0.3, str(_rk), 13, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+            _lp = logo_for(_tm)
+            if _lp:
+                shape(s, MSO_SHAPE.OVAL, 1.75, _ry + 0.04, 0.28, 0.28, WHITE)
+                s.shapes.add_picture(_lp, Inches(1.78), Inches(_ry + 0.07), Inches(0.22), Inches(0.22))
+            txt(s, 2.15, _ry + 0.035, 2.8, 0.3, school(_tm), 12.5, WHITE, bold=True)
+            txt(s, 4.9, _ry + 0.035, 0.9, 0.3, f"{_t['cur']:.1f}", 12.5, WHITE, align=PP_ALIGN.RIGHT)
+            _d = WEEKLY[_tm]["d_week"] if WEEKLY and _tm in WEEKLY else _t["delta"]
+            txt(s, 5.85, _ry + 0.05, 0.9, 0.3, f"{_d:+.1f}" if _d else "0.0", 11,
+                UP if _d > 0 else (DOWN if _d < 0 else RGBColor(0xCA, 0xDC, 0xFC)), bold=bool(_d), align=PP_ALIGN.RIGHT)
+            _ap = AP_TOP25.get(_tm)
+            txt(s, 6.85, _ry + 0.05, 1.15, 0.3, f"AP {_ap}" if _ap else "NR", 10, RGBColor(0xCA, 0xDC, 0xFC), align=PP_ALIGN.RIGHT)
+            _ry += 0.37
     # one point leaves room: drop the honesty box to the bottom of the bug's height
     box_y = max(yy + 0.15, 5.2) if _short else yy + 0.15
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, box_y, 7.2, 1.05, ICE)
@@ -1844,6 +1907,8 @@ for g in GAMES:
         txt(s, 1.15, box_y + 0.1, 6.7, 0.45, _hon, 16, NAVY, bold=True)
         txt(s, 1.15, box_y + 0.58, 6.7, 0.4, "Wrong if " + _pm["text"], 12.5 if len(_pm["text"]) <= 60 else 11,
             ORANGE, bold=True)
+    elif _short and "\n" in _hon:      # a hand-written multi-line honesty text (Lucas's own edit)
+        txt(s, 1.15, box_y + 0.06, 6.7, 0.95, _hon, 14, NAVY, bold=True)
     elif _short:
         txt(s, 1.15, box_y + 0.25, 6.7, 0.55, _hon, 20, NAVY, bold=True)
     else:
