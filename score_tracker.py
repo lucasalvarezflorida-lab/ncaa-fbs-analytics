@@ -31,7 +31,8 @@ def load():
 
 
 def grade(rows):
-    out, tally = [], dict(machine=0, man=0, tie=0, m_pts=0, c_pts=0, games_m=0, games_c=0, games_t=0)
+    out, tally = [], dict(machine=0, man=0, tie=0, m_pts=0, c_pts=0, games_m=0, games_c=0, games_t=0,
+                          shadow_pts=0, shadow_n=0, shadow_machine_pts=0)
     for r in rows:
         if not r.get("final") or not r.get("man"):
             continue
@@ -41,8 +42,13 @@ def grade(rows):
             who = "machine" if em < ec else "man" if ec < em else "tie"
             tally[who] += 1; tally["m_pts"] += em; tally["c_pts"] += ec
             gm += em; gc += ec
+            sh = r.get("machine_shadow")
+            es = abs(sh[i] - r["final"][i]) if sh else None
+            if es is not None:   # SHADOW call (Phase 2 modeled total) - graded beside the on-air call, never on air
+                tally["shadow_pts"] += es; tally["shadow_machine_pts"] += em; tally["shadow_n"] += 1
             out.append(dict(week=r["week"], game=r["game"], team=team, final=r["final"][i],
-                            machine=r["machine"][i], man=r["man"][i], m_off=em, c_off=ec, closer=who))
+                            machine=r["machine"][i], man=r["man"][i], m_off=em, c_off=ec, closer=who,
+                            shadow=(sh[i] if sh else None), s_off=es))
         tally["games_m" if gm < gc else "games_c" if gc < gm else "games_t"] += 1
     return out, tally
 
@@ -58,6 +64,13 @@ def render(rows):
          "| Wk | Game | Team | Final | Machine | off | Man | off | Closer |", "|---|---|---|---|---|---|---|---|---|"]
     for o in out:
         L.append(f"| {o['week']} | {o['game']} | {o['team']} | {o['final']} | {o['machine']} | {o['m_off']} | {o['man']} | {o['c_off']} | {o['closer']} |")
+    if t["shadow_n"]:
+        L += ["", f"Shadow score call (machine margin over the MODELED total, Phase 2 - not on air): "
+                  f"{t['shadow_pts']} points off across {t['shadow_n']} team scores vs {t['shadow_machine_pts']} for the on-air call.",
+              "", "| Wk | Game | Team | Final | On-air call | off | Shadow call | off |", "|---|---|---|---|---|---|---|---|"]
+        for o in out:
+            if o.get("shadow") is not None:
+                L.append(f"| {o['week']} | {o['game']} | {o['team']} | {o['final']} | {o['machine']} | {o['m_off']} | {o['shadow']} | {o['s_off']} |")
     pend = [r for r in rows if not r.get("final") or not r.get("man")]
     if pend:
         L += ["", "Pending (no final yet, or no man call recorded): " + " · ".join(f"Wk {r['week']} {r['game']}" for r in pend)]

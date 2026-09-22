@@ -1,12 +1,177 @@
 [
- {"week": 3, "game": "Houston at Texas Tech", "away": "Houston", "home": "Texas Tech", "machine": [20, 33], "man": [24, 35], "final": [26, 28]},
- {"week": 3, "game": "SMU at Louisville", "away": "SMU", "home": "Louisville", "machine": [29, 30], "man": [34, 35], "final": [31, 41]},
- {"week": 3, "game": "Mississippi State at South Carolina", "away": "Mississippi State", "home": "South Carolina", "machine": [27, 32], "man": [27, 31], "final": [41, 34]},
- {"week": 3, "game": "Florida at Auburn", "away": "Florida", "home": "Auburn", "machine": [26, 27], "man": [27, 28], "final": [44, 39]},
- {"week": 3, "game": "LSU at Ole Miss", "away": "LSU", "home": "Ole Miss", "machine": [32, 27], "man": [34, 28], "final": [24, 32]},
- {"week": 4, "game": "Texas at Tennessee", "away": "Texas", "home": "Tennessee", "machine": [33, 24], "man": null, "final": null},
- {"week": 4, "game": "Ole Miss at Florida", "away": "Ole Miss", "home": "Florida", "machine": [28, 31], "man": null, "final": null},
- {"week": 4, "game": "Oklahoma at Georgia", "away": "Oklahoma", "home": "Georgia", "machine": [16, 30], "man": null, "final": null},
- {"week": 4, "game": "Oregon at USC", "away": "Oregon", "home": "USC", "machine": [32, 31], "man": null, "final": null},
- {"week": 4, "game": "Texas A&M at LSU", "away": "Texas A&M", "home": "LSU", "machine": [24, 30], "man": null, "final": null}
+ {
+  "week": 3,
+  "game": "Houston at Texas Tech",
+  "away": "Houston",
+  "home": "Texas Tech",
+  "machine": [
+   20,
+   33
+  ],
+  "man": [
+   24,
+   35
+  ],
+  "final": [
+   26,
+   28
+  ]
+ },
+ {
+  "week": 3,
+  "game": "SMU at Louisville",
+  "away": "SMU",
+  "home": "Louisville",
+  "machine": [
+   29,
+   30
+  ],
+  "man": [
+   34,
+   35
+  ],
+  "final": [
+   31,
+   41
+  ]
+ },
+ {
+  "week": 3,
+  "game": "Mississippi State at South Carolina",
+  "away": "Mississippi State",
+  "home": "South Carolina",
+  "machine": [
+   27,
+   32
+  ],
+  "man": [
+   27,
+   31
+  ],
+  "final": [
+   41,
+   34
+  ]
+ },
+ {
+  "week": 3,
+  "game": "Florida at Auburn",
+  "away": "Florida",
+  "home": "Auburn",
+  "machine": [
+   26,
+   27
+  ],
+  "man": [
+   27,
+   28
+  ],
+  "final": [
+   44,
+   39
+  ]
+ },
+ {
+  "week": 3,
+  "game": "LSU at Ole Miss",
+  "away": "LSU",
+  "home": "Ole Miss",
+  "machine": [
+   32,
+   27
+  ],
+  "man": [
+   34,
+   28
+  ],
+  "final": [
+   24,
+   32
+  ]
+ },
+ {
+  "week": 4,
+  "game": "Texas at Tennessee",
+  "away": "Texas",
+  "home": "Tennessee",
+  "machine": [
+   33,
+   24
+  ],
+  "man": null,
+  "final": null,
+  "machine_shadow": [
+   31,
+   23
+  ],
+  "shadow_total": 53.8
+ },
+ {
+  "week": 4,
+  "game": "Ole Miss at Florida",
+  "away": "Ole Miss",
+  "home": "Florida",
+  "machine": [
+   28,
+   31
+  ],
+  "man": null,
+  "final": null,
+  "machine_shadow": [
+   31,
+   34
+  ],
+  "shadow_total": 64.5
+ },
+ {
+  "week": 4,
+  "game": "Oklahoma at Georgia",
+  "away": "Oklahoma",
+  "home": "Georgia",
+  "machine": [
+   16,
+   30
+  ],
+  "man": null,
+  "final": null,
+  "machine_shadow": [
+   18,
+   32
+  ],
+  "shadow_total": 49.5
+ },
+ {
+  "week": 4,
+  "game": "Oregon at USC",
+  "away": "Oregon",
+  "home": "USC",
+  "machine": [
+   32,
+   31
+  ],
+  "man": null,
+  "final": null,
+  "machine_shadow": [
+   28,
+   27
+  ],
+  "shadow_total": 54.7
+ },
+ {
+  "week": 4,
+  "game": "Texas A&M at LSU",
+  "away": "Texas A&M",
+  "home": "LSU",
+  "machine": [
+   24,
+   30
+  ],
+  "man": null,
+  "final": null,
+  "machine_shadow": [
+   19,
+   24
+  ],
+  "shadow_total": 43.2
+ }
 ]

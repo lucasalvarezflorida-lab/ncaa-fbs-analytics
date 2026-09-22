@@ -110,12 +110,14 @@ def build_obs(season: int, games: list[dict], refresh: bool = False) -> list[dic
             g = by_id.get(p.get("gameId"))
             if not g:
                 continue
-            slot = per_game.setdefault(g["id"], {g["home_raw"]: dict(ppa=[], sr=[], st=0.0), g["away_raw"]: dict(ppa=[], sr=[], st=0.0)})
+            slot = per_game.setdefault(g["id"], {g["home_raw"]: dict(ppa=[], sr=[], st=0.0, plays=0, pts=None),
+                                                 g["away_raw"]: dict(ppa=[], sr=[], st=0.0, plays=0, pts=None)})
             off, de = p.get("offense"), p.get("defense")
             if off not in slot or de not in slot:
                 continue
             t = p["playType"]
             if t in SCRIMMAGE:
+                slot[off]["plays"] += 1          # pace: every scrimmage play, garbage time included
                 if _garbage(p):
                     continue
                 if p.get("ppa") is not None:
@@ -134,9 +136,10 @@ def build_obs(season: int, games: list[dict], refresh: bool = False) -> list[dic
                 team = normalize_name(raw)
                 opp = g["away"] if team == g["home"] else g["home"]
                 mp, sr = float(np.mean(s["ppa"])), float(np.mean(s["sr"])) if s["sr"] else 0.4
+                pts = (g["margin"] + g["total"]) / 2 if team == g["home"] else (g["total"] - g["margin"]) / 2
                 rows.append(dict(game_id=gid, week=g["week"], off=team, def_=opp,
                                  home=(0 if g["neutral"] else (1 if team == g["home"] else 0)),
-                                 n=len(s["ppa"]), ppa=round(mp, 4), sr=round(sr, 4),
+                                 n=len(s["ppa"]), plays=s["plays"], pts=pts, ppa=round(mp, 4), sr=round(sr, 4),
                                  D=round(c_ppa * PLAYS_PG * mp + c_sr * sr, 3), st=round(s["st"], 3)))
     return rows
 
