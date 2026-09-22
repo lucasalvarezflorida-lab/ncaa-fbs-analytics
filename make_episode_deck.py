@@ -1042,7 +1042,7 @@ CARD_SHOW_MACHINE_LINE = False  # Lucas 9/21 (his own edit in Slides): no spread
                                 # prediction. The row shows the kickoff time instead.
 GAME_SLIDE_SHOW_MARKET = True  # Lucas 9/21: each game slide carries just the market's final number at
                                # recording - one line in THE NUMBER box. Line MOVEMENT stays internal.
-PREMORTEM_MODE = "off"         # Lucas 9/22: Ep5 goes out as practiced - flip to "join" for Ep6. Phase 3: the machine's pre-mortem ("wrong if ...", premortems.json) in the
+PREMORTEM_MODE = "join"        # Lucas 9/22 (Ep5 postponed a day): on air from Ep5. Phase 3: the machine's pre-mortem ("wrong if ...", premortems.json) in the
                                # honesty box - "join" = under the confidence line, "replace" = instead of it,
                                # "off". Lucas's call once he has seen it. Public material: no market in it.
 

@@ -67,6 +67,19 @@ it lives in the internal folder, which is not in the repo.
     - Ohio State 7 vs our 1 · Ole Miss 4 vs 12 · BYU 9 vs 23 · Florida 21 vs 11 · Texas A&M 23 vs 9 · Oregon 20 vs 14
     - Ours not theirs: Oklahoma, South Carolina, Nebraska, Auburn · Theirs not ours: Iowa, Missouri, SMU, Houston
     - Agree on the new face: Mississippi State, their 24 and our 18
+  - Corey's question: when does the record go into the number?
+    - It never does directly — the machine grades every game against the spread it set, not the scoreboard
+    - Each game: actual margin minus the expected margin, capped at 28; one week's surprise moves a team about a quarter of the way
+    - A&M is the example: expected to beat Kentucky by 16.5, lost by 5 → a 21.5-point miss → −5.3
+    - If A&M loses at LSU by about 6 (the machine's number), it goes 2–2 and the rating barely moves; lose by 20 and it drops another 3.5; win by 3 and it gains 2
+    - Say: "a loss you were supposed to take costs you nothing — a win you were supposed to get by 17 and got by 3 costs you"
+    - The record lives in two other places: the AP column, and the playoff sim's committee model (losses, strength of record, quality wins)
+  - Playoff picture (the machine's simulator, 10,000 seasons from these ratings)
+    - Texas 95% to make the field, Georgia 89%, Ohio State 87%, Notre Dame 86%, Alabama 82%
+    - Miami 76%, with a 66% shot at the ACC title — its most likely season is 12–1 as champion; at 11–2 without the title it is in 71% of the time, at 10–3 without it 3%
+    - Texas A&M 26%: the path is 9–3 with a top-25 win — Our Rankings say #9, the résumé says outside the twelve
+    - Florida 44%, Ole Miss 55%, LSU 55%; the G5 bid runs through Boise State (31%) and James Madison (15%)
+    - Say: "Our Rankings answer how good you are; the playoff column answers what you've done — both can be true about A&M"
 
 - **Top 25 (Corey's)** — fill from his deck when it updates
   - Biggest splits vs ours; where we agree; any factual errors to flag gently
