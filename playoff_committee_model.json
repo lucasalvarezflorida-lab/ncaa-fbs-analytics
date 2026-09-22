@@ -1,0 +1,876 @@
+{
+ "features": [
+  "rating",
+  "losses",
+  "sor",
+  "qwins",
+  "champ",
+  "h2h"
+ ],
+ "coef": [
+  0.17630596024821857,
+  0.18482019553190762,
+  2.118014568734965,
+  0.1844725624100785,
+  0.23543407673732755,
+  1.0298277301617558
+ ],
+ "seasons": [
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ],
+ "n_pairs": 5925,
+ "fit": "2026-09-22",
+ "validation": [
+  {
+   "season": 2014,
+   "top12_overlap": 9,
+   "top4_overlap": 3,
+   "mean_abs_rank_err_top12": 1.6666666666666667,
+   "two_loss": [
+    {
+     "team": "mississippi state",
+     "committee": 7,
+     "model": 8
+    },
+    {
+     "team": "michigan state",
+     "committee": 8,
+     "model": 13
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "ole miss",
+     "committee": 9,
+     "model": 7
+    },
+    {
+     "team": "arizona",
+     "committee": 10,
+     "model": 12
+    },
+    {
+     "team": "kansas state",
+     "committee": 11,
+     "model": 15
+    },
+    {
+     "team": "georgia tech",
+     "committee": 12,
+     "model": 14
+    }
+   ],
+   "model_top12": [
+    "alabama",
+    "oregon",
+    "florida state",
+    "baylor",
+    "tcu",
+    "ohio state",
+    "ole miss",
+    "mississippi state",
+    "auburn",
+    "ucla",
+    "georgia",
+    "arizona"
+   ],
+   "committee_top12": [
+    "alabama",
+    "oregon",
+    "florida state",
+    "ohio state",
+    "baylor",
+    "tcu",
+    "mississippi state",
+    "michigan state",
+    "ole miss",
+    "arizona",
+    "kansas state",
+    "georgia tech"
+   ]
+  },
+  {
+   "season": 2015,
+   "top12_overlap": 10,
+   "top4_overlap": 3,
+   "mean_abs_rank_err_top12": 2.9166666666666665,
+   "two_loss": [
+    {
+     "team": "stanford",
+     "committee": 6,
+     "model": 4
+    },
+    {
+     "team": "notre dame",
+     "committee": 8,
+     "model": 8
+    },
+    {
+     "team": "florida state",
+     "committee": 9,
+     "model": 15
+    },
+    {
+     "team": "north carolina",
+     "committee": 10,
+     "model": 17
+    },
+    {
+     "team": "tcu",
+     "committee": 11,
+     "model": 6
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "ole miss",
+     "committee": 12,
+     "model": 10
+    }
+   ],
+   "model_top12": [
+    "alabama",
+    "oklahoma",
+    "clemson",
+    "stanford",
+    "michigan state",
+    "tcu",
+    "ohio state",
+    "notre dame",
+    "oklahoma state",
+    "ole miss",
+    "iowa",
+    "oregon"
+   ],
+   "committee_top12": [
+    "clemson",
+    "alabama",
+    "michigan state",
+    "oklahoma",
+    "iowa",
+    "stanford",
+    "ohio state",
+    "notre dame",
+    "florida state",
+    "north carolina",
+    "tcu",
+    "ole miss"
+   ]
+  },
+  {
+   "season": 2016,
+   "top12_overlap": 11,
+   "top4_overlap": 4,
+   "mean_abs_rank_err_top12": 1.1666666666666667,
+   "two_loss": [
+    {
+     "team": "penn state",
+     "committee": 5,
+     "model": 6
+    },
+    {
+     "team": "michigan",
+     "committee": 6,
+     "model": 5
+    },
+    {
+     "team": "oklahoma",
+     "committee": 7,
+     "model": 7
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "wisconsin",
+     "committee": 8,
+     "model": 9
+    },
+    {
+     "team": "usc",
+     "committee": 9,
+     "model": 8
+    },
+    {
+     "team": "colorado",
+     "committee": 10,
+     "model": 10
+    },
+    {
+     "team": "florida state",
+     "committee": 11,
+     "model": 11
+    },
+    {
+     "team": "oklahoma state",
+     "committee": 12,
+     "model": 20
+    }
+   ],
+   "model_top12": [
+    "alabama",
+    "ohio state",
+    "clemson",
+    "washington",
+    "michigan",
+    "penn state",
+    "oklahoma",
+    "usc",
+    "wisconsin",
+    "colorado",
+    "florida state",
+    "stanford"
+   ],
+   "committee_top12": [
+    "alabama",
+    "clemson",
+    "ohio state",
+    "washington",
+    "penn state",
+    "michigan",
+    "oklahoma",
+    "wisconsin",
+    "usc",
+    "colorado",
+    "florida state",
+    "oklahoma state"
+   ]
+  },
+  {
+   "season": 2017,
+   "top12_overlap": 11,
+   "top4_overlap": 4,
+   "mean_abs_rank_err_top12": 0.6666666666666666,
+   "two_loss": [
+    {
+     "team": "ohio state",
+     "committee": 5,
+     "model": 5
+    },
+    {
+     "team": "usc",
+     "committee": 8,
+     "model": 9
+    },
+    {
+     "team": "penn state",
+     "committee": 9,
+     "model": 8
+    },
+    {
+     "team": "miami",
+     "committee": 10,
+     "model": 10
+    },
+    {
+     "team": "washington",
+     "committee": 11,
+     "model": 14
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "auburn",
+     "committee": 7,
+     "model": 6
+    }
+   ],
+   "model_top12": [
+    "clemson",
+    "oklahoma",
+    "georgia",
+    "alabama",
+    "ohio state",
+    "auburn",
+    "wisconsin",
+    "penn state",
+    "usc",
+    "miami",
+    "ucf",
+    "tcu"
+   ],
+   "committee_top12": [
+    "clemson",
+    "oklahoma",
+    "georgia",
+    "alabama",
+    "ohio state",
+    "wisconsin",
+    "auburn",
+    "usc",
+    "penn state",
+    "miami",
+    "washington",
+    "ucf"
+   ]
+  },
+  {
+   "season": 2018,
+   "top12_overlap": 12,
+   "top4_overlap": 3,
+   "mean_abs_rank_err_top12": 1.0,
+   "two_loss": [
+    {
+     "team": "georgia",
+     "committee": 5,
+     "model": 4
+    },
+    {
+     "team": "michigan",
+     "committee": 7,
+     "model": 7
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "washington",
+     "committee": 9,
+     "model": 11
+    },
+    {
+     "team": "florida",
+     "committee": 10,
+     "model": 12
+    },
+    {
+     "team": "lsu",
+     "committee": 11,
+     "model": 9
+    },
+    {
+     "team": "penn state",
+     "committee": 12,
+     "model": 10
+    }
+   ],
+   "model_top12": [
+    "alabama",
+    "clemson",
+    "notre dame",
+    "georgia",
+    "ohio state",
+    "oklahoma",
+    "michigan",
+    "ucf",
+    "lsu",
+    "penn state",
+    "washington",
+    "florida"
+   ],
+   "committee_top12": [
+    "alabama",
+    "clemson",
+    "notre dame",
+    "oklahoma",
+    "georgia",
+    "ohio state",
+    "michigan",
+    "ucf",
+    "washington",
+    "florida",
+    "lsu",
+    "penn state"
+   ]
+  },
+  {
+   "season": 2019,
+   "top12_overlap": 10,
+   "top4_overlap": 4,
+   "mean_abs_rank_err_top12": 2.0833333333333335,
+   "two_loss": [
+    {
+     "team": "georgia",
+     "committee": 5,
+     "model": 5
+    },
+    {
+     "team": "oregon",
+     "committee": 6,
+     "model": 11
+    },
+    {
+     "team": "baylor",
+     "committee": 7,
+     "model": 13
+    },
+    {
+     "team": "florida",
+     "committee": 9,
+     "model": 8
+    },
+    {
+     "team": "penn state",
+     "committee": 10,
+     "model": 9
+    },
+    {
+     "team": "utah",
+     "committee": 11,
+     "model": 15
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "wisconsin",
+     "committee": 8,
+     "model": 10
+    },
+    {
+     "team": "auburn",
+     "committee": 12,
+     "model": 6
+    }
+   ],
+   "model_top12": [
+    "lsu",
+    "ohio state",
+    "clemson",
+    "oklahoma",
+    "georgia",
+    "auburn",
+    "alabama",
+    "florida",
+    "penn state",
+    "wisconsin",
+    "oregon",
+    "michigan"
+   ],
+   "committee_top12": [
+    "lsu",
+    "ohio state",
+    "clemson",
+    "oklahoma",
+    "georgia",
+    "oregon",
+    "baylor",
+    "wisconsin",
+    "florida",
+    "penn state",
+    "utah",
+    "auburn"
+   ]
+  },
+  {
+   "season": 2020,
+   "top12_overlap": 10,
+   "top4_overlap": 3,
+   "mean_abs_rank_err_top12": 2.0,
+   "two_loss": [
+    {
+     "team": "georgia",
+     "committee": 8,
+     "model": 5
+    },
+    {
+     "team": "oklahoma",
+     "committee": 10,
+     "model": 9
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "iowa state",
+     "committee": 6,
+     "model": 14
+    },
+    {
+     "team": "florida",
+     "committee": 7,
+     "model": 7
+    }
+   ],
+   "model_top12": [
+    "alabama",
+    "ohio state",
+    "clemson",
+    "texas am",
+    "georgia",
+    "notre dame",
+    "florida",
+    "indiana",
+    "oklahoma",
+    "cincinnati",
+    "usc",
+    "iowa"
+   ],
+   "committee_top12": [
+    "alabama",
+    "notre dame",
+    "clemson",
+    "ohio state",
+    "texas am",
+    "iowa state",
+    "florida",
+    "georgia",
+    "cincinnati",
+    "oklahoma",
+    "indiana",
+    "coastal carolina"
+   ]
+  },
+  {
+   "season": 2021,
+   "top12_overlap": 10,
+   "top4_overlap": 4,
+   "mean_abs_rank_err_top12": 1.3333333333333333,
+   "two_loss": [
+    {
+     "team": "ohio state",
+     "committee": 6,
+     "model": 7
+    },
+    {
+     "team": "baylor",
+     "committee": 7,
+     "model": 8
+    },
+    {
+     "team": "ole miss",
+     "committee": 8,
+     "model": 10
+    },
+    {
+     "team": "oklahoma state",
+     "committee": 9,
+     "model": 6
+    },
+    {
+     "team": "michigan state",
+     "committee": 10,
+     "model": 11
+    },
+    {
+     "team": "pittsburgh",
+     "committee": 12,
+     "model": 15
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "utah",
+     "committee": 11,
+     "model": 14
+    }
+   ],
+   "model_top12": [
+    "alabama",
+    "georgia",
+    "michigan",
+    "cincinnati",
+    "notre dame",
+    "oklahoma state",
+    "ohio state",
+    "baylor",
+    "oklahoma",
+    "ole miss",
+    "michigan state",
+    "clemson"
+   ],
+   "committee_top12": [
+    "alabama",
+    "michigan",
+    "georgia",
+    "cincinnati",
+    "notre dame",
+    "ohio state",
+    "baylor",
+    "ole miss",
+    "oklahoma state",
+    "michigan state",
+    "utah",
+    "pittsburgh"
+   ]
+  },
+  {
+   "season": 2022,
+   "top12_overlap": 11,
+   "top4_overlap": 4,
+   "mean_abs_rank_err_top12": 1.3333333333333333,
+   "two_loss": [
+    {
+     "team": "alabama",
+     "committee": 5,
+     "model": 5
+    },
+    {
+     "team": "tennessee",
+     "committee": 6,
+     "model": 6
+    },
+    {
+     "team": "clemson",
+     "committee": 7,
+     "model": 9
+    },
+    {
+     "team": "usc",
+     "committee": 10,
+     "model": 10
+    },
+    {
+     "team": "penn state",
+     "committee": 11,
+     "model": 7
+    },
+    {
+     "team": "washington",
+     "committee": 12,
+     "model": 15
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "utah",
+     "committee": 8,
+     "model": 12
+    },
+    {
+     "team": "kansas state",
+     "committee": 9,
+     "model": 8
+    }
+   ],
+   "model_top12": [
+    "georgia",
+    "michigan",
+    "ohio state",
+    "tcu",
+    "alabama",
+    "tennessee",
+    "penn state",
+    "kansas state",
+    "clemson",
+    "usc",
+    "lsu",
+    "utah"
+   ],
+   "committee_top12": [
+    "georgia",
+    "michigan",
+    "tcu",
+    "ohio state",
+    "alabama",
+    "tennessee",
+    "clemson",
+    "utah",
+    "kansas state",
+    "usc",
+    "penn state",
+    "washington"
+   ]
+  },
+  {
+   "season": 2023,
+   "top12_overlap": 12,
+   "top4_overlap": 4,
+   "mean_abs_rank_err_top12": 1.25,
+   "two_loss": [
+    {
+     "team": "oregon",
+     "committee": 8,
+     "model": 8
+    },
+    {
+     "team": "missouri",
+     "committee": 9,
+     "model": 12
+    },
+    {
+     "team": "penn state",
+     "committee": 10,
+     "model": 9
+    },
+    {
+     "team": "ole miss",
+     "committee": 11,
+     "model": 11
+    },
+    {
+     "team": "oklahoma",
+     "committee": 12,
+     "model": 10
+    }
+   ],
+   "three_loss": [],
+   "model_top12": [
+    "alabama",
+    "michigan",
+    "washington",
+    "texas",
+    "florida state",
+    "ohio state",
+    "georgia",
+    "oregon",
+    "penn state",
+    "oklahoma",
+    "ole miss",
+    "missouri"
+   ],
+   "committee_top12": [
+    "michigan",
+    "washington",
+    "texas",
+    "alabama",
+    "georgia",
+    "florida state",
+    "ohio state",
+    "oregon",
+    "missouri",
+    "penn state",
+    "ole miss",
+    "oklahoma"
+   ]
+  },
+  {
+   "season": 2024,
+   "top12_overlap": 9,
+   "top4_overlap": 3,
+   "mean_abs_rank_err_top12": 2.0,
+   "two_loss": [
+    {
+     "team": "georgia",
+     "committee": 2,
+     "model": 2
+    },
+    {
+     "team": "texas",
+     "committee": 3,
+     "model": 3
+    },
+    {
+     "team": "penn state",
+     "committee": 4,
+     "model": 6
+    },
+    {
+     "team": "ohio state",
+     "committee": 6,
+     "model": 5
+    },
+    {
+     "team": "tennessee",
+     "committee": 7,
+     "model": 8
+    },
+    {
+     "team": "smu",
+     "committee": 10,
+     "model": 13
+    },
+    {
+     "team": "arizona state",
+     "committee": 12,
+     "model": 17
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "alabama",
+     "committee": 11,
+     "model": 7
+    }
+   ],
+   "model_top12": [
+    "oregon",
+    "georgia",
+    "texas",
+    "notre dame",
+    "ohio state",
+    "penn state",
+    "alabama",
+    "tennessee",
+    "south carolina",
+    "indiana",
+    "ole miss",
+    "miami"
+   ],
+   "committee_top12": [
+    "oregon",
+    "georgia",
+    "texas",
+    "penn state",
+    "notre dame",
+    "ohio state",
+    "tennessee",
+    "indiana",
+    "boise state",
+    "smu",
+    "alabama",
+    "arizona state"
+   ]
+  },
+  {
+   "season": 2025,
+   "top12_overlap": 11,
+   "top4_overlap": 3,
+   "mean_abs_rank_err_top12": 1.1666666666666667,
+   "two_loss": [
+    {
+     "team": "oklahoma",
+     "committee": 8,
+     "model": 9
+    },
+    {
+     "team": "miami",
+     "committee": 10,
+     "model": 12
+    },
+    {
+     "team": "notre dame",
+     "committee": 11,
+     "model": 10
+    },
+    {
+     "team": "byu",
+     "committee": 12,
+     "model": 13
+    }
+   ],
+   "three_loss": [
+    {
+     "team": "alabama",
+     "committee": 9,
+     "model": 7
+    }
+   ],
+   "model_top12": [
+    "indiana",
+    "ohio state",
+    "georgia",
+    "oregon",
+    "texas am",
+    "texas tech",
+    "alabama",
+    "ole miss",
+    "oklahoma",
+    "notre dame",
+    "vanderbilt",
+    "miami"
+   ],
+   "committee_top12": [
+    "indiana",
+    "ohio state",
+    "georgia",
+    "texas tech",
+    "oregon",
+    "ole miss",
+    "texas am",
+    "oklahoma",
+    "alabama",
+    "miami",
+    "notre dame",
+    "byu"
+   ]
+  }
+ ]
+}
