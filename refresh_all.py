@@ -515,6 +515,15 @@ def main() -> int:
     print("\n== recalculating via Excel ==")
     recalc_com(book)
 
+    # internal/ mirror (private repo) - Lucas 9/22: automatic after every refresh
+    # (a nightly Windows task "NCAA Internal Backup" runs the same script at 10 PM)
+    bat = HERE / "internal" / "backup.bat"
+    if bat.exists():
+        print("\n== internal backup ==")
+        r = subprocess.run(["cmd", "/c", str(bat)], cwd=str(bat.parent))
+        if r.returncode != 0:
+            print("WARN: internal backup returned", r.returncode)
+
     print("\nrefresh complete.")
     return 0
 
