@@ -95,10 +95,13 @@
   "away": "Texas",
   "home": "Tennessee",
   "machine": [
-   33,
+   32,
+   23
+  ],
+  "man": [
+   31,
    24
   ],
-  "man": null,
   "final": null,
   "machine_shadow": [
    31,
@@ -115,7 +118,10 @@
    28,
    31
   ],
-  "man": null,
+  "man": [
+   34,
+   35
+  ],
   "final": null,
   "machine_shadow": [
    31,
@@ -129,10 +135,13 @@
   "away": "Oklahoma",
   "home": "Georgia",
   "machine": [
-   16,
-   30
+   15,
+   29
   ],
-  "man": null,
+  "man": [
+   20,
+   34
+  ],
   "final": null,
   "machine_shadow": [
    18,
@@ -149,7 +158,10 @@
    32,
    31
   ],
-  "man": null,
+  "man": [
+   35,
+   34
+  ],
   "final": null,
   "machine_shadow": [
    28,
@@ -163,10 +175,13 @@
   "away": "Texas A&M",
   "home": "LSU",
   "machine": [
-   24,
-   30
+   23,
+   29
   ],
-  "man": null,
+  "man": [
+   27,
+   31
+  ],
   "final": null,
   "machine_shadow": [
    19,

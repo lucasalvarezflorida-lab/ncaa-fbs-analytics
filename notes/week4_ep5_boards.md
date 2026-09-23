@@ -81,8 +81,12 @@ it lives in the internal folder, which is not in the repo.
     - Florida 44%, Ole Miss 55%, LSU 55%; the G5 bid runs through Boise State (31%) and James Madison (15%)
     - Say: "Our Rankings answer how good you are; the playoff column answers what you've done — both can be true about A&M"
 
-- **Top 25 (Corey's)** — fill from his deck when it updates
-  - Biggest splits vs ours; where we agree; any factual errors to flag gently
+- **Top 25 (Corey's)** — from his Week 4 deck (read Wed 9/23)
+  - His top ten: Texas · Georgia · Notre Dame · Indiana · Miami · Alabama · Tennessee · Penn State · Ohio State · Ole Miss
+  - 11–25: Utah · Florida · Texas Tech · LSU · Oregon · USC · BYU · Michigan · Texas A&M · Nebraska · Oklahoma · Miss State · Pitt · Iowa · Virginia Tech
+  - Biggest splits vs ours: Ohio State his 9, our 1 · Tennessee his 7, our 14 · Texas A&M his 19, our 9 · Alabama his 6, our 5 (agree) · LSU his 14, our 8
+  - Where we agree: Texas and Georgia top two; Mississippi State in (his 22, our 18); Indiana and Miami top seven
+  - His moves: A&M 7 → 19 after Kentucky; LSU 8 → 14; Ole Miss 15 → 10; Oregon 22 → 15; Utah 17 → 11; four new: Virginia Tech, Iowa, Pitt, Miss State
 
 - **Heisman board (machine)**
   - How it works: index = team factor × blended efficiency
@@ -105,7 +109,7 @@ it lives in the internal folder, which is not in the repo.
   - Card quarterbacks not on the board: Stockton (38-of-45, 9 TD, 0 INT — the board is a candidate list, add him), Philo, Brandon
   - Non-QB watch: Jeremiah Smith, Malachi Toney (1.20 per play), Jadan Baugh (458 yards, 8 TD — on this card)
 
-- **Heisman (Corey's five)** — fill from his deck
+- **Heisman (Corey's five)** — from his deck: 1 Michael Hawkins Jr (WVU, new) · 2 Nate Sheppard (Duke) · 3 Kamario Taylor (Miss State) · 4 Jayden Maiava (USC, down from 1) · 5 Lincoln Kienholz (Louisville)
 
 - **Hot Seat (machine)**
   - How the score works (0–100): 60 × (CBS rating ÷ 5) + 40 × chance of MISSING the bar
@@ -124,7 +128,7 @@ it lives in the internal folder, which is not in the repo.
   - Norvell still #1 at 91: lost 50–36 at Alabama, 22% for eight wins
   - Caveat, say it: the bars are ours; the CBS ratings are three weeks old
 
-- **Hot Seat (Corey's ten)** — fill from his deck
+- **Hot Seat (Corey's ten)** — from his deck: Norvell (FSU) · Doeren (NC State) · Fran Brown (Syracuse) · Leipold (Kansas) · Sean Lewis (SDSU) · Kinne (Texas State) · Schiano (Rutgers) · Calhoun (Air Force) · Cumbie (La Tech) · Rahne (ODU)
 
 - **Superdog rules and standings**
   - ONE rulebook now (Corey's, settled Sat 9/19): 3.5-point dogs or more · Superdog = any game, Giant Killer = unranked dog vs a Top 25 team · 5 for a cover, 5 + the spread for a win, 1 for a push
@@ -141,5 +145,5 @@ it lives in the internal folder, which is not in the repo.
   - Machine Giant Killer: Georgia Southern +19.5 vs #25 Houston (home)
     - Next on the board: Iowa State +10.5 vs #15 Utah · Wake Forest +13.5 at #16 Louisville
   - Oklahoma +14 at #2 Georgia is fifth on the Giant Killer board — it's on our card, mention it
-  - Corey's picks — add them when he posts them
-  - Lines are Sunday's; re-read both picks off the pre-record pull
+  - Corey's picks (his deck): Superdog Air Force +5.5 at Nevada · Giant Killer Iowa State +8 vs #15 Utah
+  - Picks re-read off the recording-day pull (Wed 9/23, 17:09 UTC)

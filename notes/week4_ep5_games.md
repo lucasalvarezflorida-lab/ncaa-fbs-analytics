@@ -20,7 +20,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Texas is No. 1 on defense and third-and-short; the passing game has not shown up — 6.9 a throw, all at home
     - Tennessee runs for 6.7 a carry and has a true freshman who has not thrown a pick — and has not seen a defense like this
     - The game is whether Tennessee's run game travels up a weight class, because Texas's offense is not built to win a shootout
-  - The number: Texas −9, 71% · Call Texas 33–24
+  - The number: Texas −9, 71% · Call Texas 32–23
     - Honesty: 71% — but Texas has not left Austin yet
     - Pre-mortem — the pick is wrong if Tennessee averages more than 5.0 yards a carry
       - Tennessee runs for 6.6 a carry against FBS teams and Texas allows 3.4. The pick leans on Texas's run defense holding; past 5.0 a carry, Tennessee has won the matchup the machine trusts.
@@ -61,7 +61,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - Tennessee's 11.2% sack rate is third on the card behind Oklahoma and LSU; against FBS teams it is 7.6%
       - The catch: Knowles' first years are glitchy (Penn State went from 4th to 23rd in his one season) and his run defense is the leak — FBS opponents average 3.9 a carry (61 for 237) with 11 runs of 10+. Texas's run game is average (4.2 a carry, 18% stuffed), so this is strength-on-weakness for nobody
     - Reserve: win the red zone — Tennessee's defense has allowed 2 touchdowns in 7 red-zone trips; Texas is 11-of-16. Field goals keep a 9-point dog in it
-  - Corey: — (fill from his deck)
+  - Corey: Texas 31–24
 
 - **Ole Miss at Florida — Sat 3:30 ET, Gainesville · No. 4 at No. 21**
   
@@ -69,7 +69,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Two first-year head coaches, both 3–0, and the voters and the machine disagree about which is better: AP has them 17 spots apart, the machine has them a point apart
     - Florida is the most explosive offense on the card; Ole Miss's defense gives up explosives — that is the matchup
     - Chambliss has been sacked 3 times in 122 dropbacks; Florida just sacked Auburn 7 times
-  - The number: Florida −3, 59% · Call Florida 32–29
+  - The number: Florida −3, 59% · Call Florida 31–28
     - Honesty: 59% — a field-goal game between two 3–0 teams
     - Pre-mortem — the pick is wrong if Florida averages under 9.9 yards an attempt
       - Florida throws for 12.1 an attempt; Ole Miss's defense allows 7.7. Under 9.9 a throw and Florida's passing game has been held to what Ole Miss usually allows, not what Florida usually does.
@@ -105,7 +105,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - Why: Ole Miss is 7-of-20 on third-and-long for the season even with the LSU game in it — before LSU it was 1-of-9
       - How: win first down. Ole Miss runs for 4.8 and gets stuffed on 17.6% of carries
     - Reserve: tighten the red zone defense — Auburn scored touchdowns on 3 of 4 trips and put up 39; Ole Miss is 10-of-11
-  - Corey: — (fill from his deck)
+  - Corey: Florida 35–34
 
 - **Oklahoma at Georgia — Sat 3:30 ET, Athens · unranked at No. 2**
   
@@ -147,7 +147,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - Georgia's pass defense: 4.7 a throw, 5 explosive passes in 111 dropbacks (4.5%)
       - The catch: only 6 sacks (5.4%) and Western Kentucky went 6-of-13 on third-and-long — Mateer extends plays
     - Reserve: keep hitting explosives — 14 in 82 dropbacks; against FBS teams 8 in 49. If that holds against this defense, the July question about Georgia is answered
-  - Corey: — (fill from his deck)
+  - Corey: Georgia 34–20
 
 - **Oregon at USC — Sat 7:30 ET, Los Angeles · No. 20 at No. 12**
   
@@ -189,7 +189,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - Why: the one inefficiency in the offense — 17 touchdowns in 24 trips, and 3-of-7 at Rutgers is why that game was close
       - What Oregon brings: 4 touchdowns allowed in 11 red-zone trips — it gives up yards and then holds
     - Reserve: Patterson's defense vs the explosives — seven of last year's top eight receivers left, the defense was supposed to carry more of the load, and it has allowed 30+ points twice to teams Oregon is far better than
-  - Corey: — (fill from his deck)
+  - Corey: Oregon 35–34
 
 - **Texas A&M at LSU — Sat 7:30 ET, Baton Rouge · No. 23 at No. 10**
   
@@ -234,4 +234,4 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - LSU's run defense makes that possible: 82 carries for 100 against it
       - The catch: Ole Miss converted 6-of-11 on third-and-long and went 4-for-4 in the red zone — the rush got there twice in 50 dropbacks
     - Reserve: touchdowns, not field goals — 11 touchdowns in 18 red-zone trips, 5-of-10 against Louisiana Tech; the defense has allowed touchdowns on 5 of 6 trips
-  - Corey: — (fill from his deck)
+  - Corey: LSU 31–27
