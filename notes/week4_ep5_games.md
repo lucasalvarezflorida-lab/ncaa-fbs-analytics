@@ -28,7 +28,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Texas keys
     - Arch has to hit something downfield
       - Why it matters: Texas is winning without a passing game and that stops working on the road against a team that scores
-        - 108 dropbacks: 6.9 an attempt, 11.0 per completion, 6 explosive passes (5.6%) — the second-least explosive passing game on this card; only 8 deep throws all year (4 completed)
+        - Arch: 60-of-97 for 664 — 6.8 an attempt, 11.1 per completion; 7 touchdowns, 2 picks
+          - Texas as a team: 65-of-104 for 718 (6.9 an attempt, 11.0 per completion) — the difference is Karle Lacey Jr., 7-of-8 for 63 in mop-up time
+        - 108 dropbacks: 6 explosive passes (5.6%) — the second-least explosive passing game on this card; only 8 deep throws all year (4 completed)
         - Ohio State: 21-of-35 for 5.3 a throw. UTSA: 18-of-35 for 4.9
         - The weapons are there: Coleman 10 catches, 4 touchdowns; Wingo 13 for 165
       - (Forshadow) What Tennessee brings: Knowles' defense has allowed 3 explosive passes in 107 dropbacks (2.8%) and 4.8 a throw — the stingiest pass defense on the card, against a soft schedule
