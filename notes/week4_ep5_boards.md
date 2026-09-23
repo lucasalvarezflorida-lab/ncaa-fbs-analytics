@@ -140,10 +140,10 @@ it lives in the internal folder, which is not in the repo.
     - Why home dogs: they have won 27% outright this year, road dogs 13%
 
 - **Superdog picks**
-  - Machine Superdog: Charlotte +14 vs Louisiana (home)
+  - Machine Superdog: Charlotte +10 vs Louisiana (home) — the line came in four points since Sunday
     - Say the caveat: "the machine's number, not ours"
-  - Machine Giant Killer: Georgia Southern +19.5 vs #25 Houston (home)
-    - Next on the board: Iowa State +10.5 vs #15 Utah · Wake Forest +13.5 at #16 Louisville
+  - Machine Giant Killer: Georgia Southern +18.5 vs #25 Houston (home)
+    - Next on the board: Iowa State +8.5 vs #15 Utah · Wake Forest +12.5 at #16 Louisville
   - Oklahoma +14 at #2 Georgia is fifth on the Giant Killer board — it's on our card, mention it
   - Corey's picks (his deck): Superdog Air Force +5.5 at Nevada · Giant Killer Iowa State +8 vs #15 Utah
   - Picks re-read off the recording-day pull (Wed 9/23, 17:09 UTC)

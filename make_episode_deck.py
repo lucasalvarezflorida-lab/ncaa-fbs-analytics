@@ -2049,18 +2049,45 @@ if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):
         "ATS-only (longshot moneylines bled −22.9% ROI 2021–25)", 8.5, PALE)
 
 # ---------------- closing card: predictions + superdogs ----------------
+# Lucas 9/23: Corey's ("Man") score call sits next to the machine's on each row.
+# Source: score_tracker.json week rows (`man` = [away, home], read off his score slides).
+
+
+def _man_calls():
+    import json
+    try:
+        rows = json.load(open(os.path.join(HERE, "score_tracker.json"), encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+    out = {}
+    for r in rows:
+        if r.get("week") == WEEK and r.get("man"):
+            a, h = r["man"]
+            w, l = (r["home"], r["away"]) if h >= a else (r["away"], r["home"])
+            out[(r["away"], r["home"])] = f"{w} {max(a, h)}–{min(a, h)}"
+    return out
+
+
+MAN_CALLS = _man_calls()
+MAN_GREEN = RGBColor(0x5C, 0xD6, 0x8A)
 s = blank(NAVY)
 PALE = RGBColor(0xCA, 0xDC, 0xFC)
 txt(s, 0.9, 0.55, 11.5, 0.45, f"EPISODE {EPISODE} · THE CARD", 14, ORANGE, bold=True)
-txt(s, 0.9, 0.95, 11.5, 0.8, "Our predictions", 36, WHITE, bold=True)
+txt(s, 0.9, 0.95, 11.5, 0.8, "Our predictions" + (" — machine and man" if MAN_CALLS else ""), 36, WHITE, bold=True)
 y = 1.95
 for g in GAMES:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.72, NAVY2)
     logo_badge(s, 1.1, y + 0.1, 0.52, g["a"], plate=True)
     logo_badge(s, 1.75, y + 0.1, 0.52, g["b"], plate=True)
-    txt(s, 2.5, y + 0.17, 5.4, 0.4, g["title"], 16, WHITE, bold=True)
-    txt(s, 7.0, y + (0.06 if (SLIDES_SHOW_MARKET or CLOSER_SHOW_MARKET) else 0.14), 5.2, 0.45, g.get("score", ""), 19, ORANGE,
-        bold=True, align=PP_ALIGN.RIGHT)
+    _man = MAN_CALLS.get(g["cfbd"])
+    if _man:
+        txt(s, 2.5, y + 0.17, 2.5, 0.4, g["title"], 15, WHITE, bold=True)
+        txt(s, 4.9, y + 0.08, 4.3, 0.45, "Machine " + g.get("score", ""), 14, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
+        txt(s, 9.3, y + 0.08, 2.9, 0.45, "Man " + _man, 14, MAN_GREEN, bold=True, align=PP_ALIGN.RIGHT)
+    else:
+        txt(s, 2.5, y + 0.17, 5.4, 0.4, g["title"], 16, WHITE, bold=True)
+        txt(s, 7.0, y + (0.06 if (SLIDES_SHOW_MARKET or CLOSER_SHOW_MARKET) else 0.14), 5.2, 0.45, g.get("score", ""), 19, ORANGE,
+            bold=True, align=PP_ALIGN.RIGHT)
     _c = CARD.get(g["cfbd"]) if (CLOSER_SHOW_MARKET or SLIDES_SHOW_MARKET) else None
     _b = ((_c.get("books") or {}).get("DraftKings") or (_c.get("books") or {}).get("Bovada") or {}) if _c else {}
     if _b.get("spread") is not None:
