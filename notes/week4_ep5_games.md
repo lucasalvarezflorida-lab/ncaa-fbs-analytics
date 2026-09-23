@@ -54,7 +54,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What Texas brings: 20% of runs against it are stuffed, and it allowed 3 touchdowns in 9 red-zone trips — it bends between the 20s and wins inside them
     - Brandon's first ranked opponent
       - Why it's the key: the quarterback job was the July question — a redshirt freshman vs a five-star true freshman, nine career passes between them. Brandon won it
-        - 41-of-64, 552 yards, 6 touchdowns, 0 interceptions; sacked twice in 76 dropbacks
+        - Brandon: 41-of-64 for 552 — 8.6 per attempt, 13.5 per completion; 6 touchdowns, 0 interceptions; sacked twice in 76 dropbacks
+          - Tennessee as a team: 49-of-74 for 635 (8.6 per attempt, 13.0 per completion) — the difference is George MacIntyre, 5-of-7 for 56
         - But at Georgia Tech, the one road game: 10-of-21 for 7.0 a throw — the run game won that one
         - Heupel's offense: wide splits and vertical shots — 11 deep throws, 5 completed
       - What he faces: a secondary with 3 picks that allows 6.4 a throw; Muschamp's first Texas defense has been the better half of the No. 1 team
@@ -79,6 +80,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Ole Miss keys
     - Chambliss vs the Florida rush
       - Why it matters: his clean pocket is why Ole Miss beat LSU
+        - Chambliss: 77-of-110 for 924 — 8.4 per attempt, 12.0 per completion; 7 TD, 2 INT
+          - Ole Miss as a team: 81-of-119 for 992 (8.3 per attempt, 12.2 per completion) — the difference is Deuce Knight, 4-of-8 for 68
         - 77-of-110, 924 yards, 7 TD, 2 INT; 3 sacks in 122 dropbacks (2.5%)
         - Against LSU: 10-of-15 on third down, 6-of-11 on third-and-long, against the best pass rush in the league
       - What Florida brings: 10 sacks in 136 dropbacks — 7 of them at Auburn; Jayden Woods has 3. Opponents are 10-of-29 on third-and-long
@@ -100,7 +103,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What Ole Miss brings: 4.1 a carry allowed (115 for 477) — Louisville 39 for 162, LSU 43 for 172 — but 24% of runs stuffed. Boom or bust: Baugh gets hit in the backfield or gets ten
     - Philo deep
       - Why: a redshirt freshman is averaging 11.3 a throw because the shots are open
-        - 47-of-64, 721 yards, 6 TD, 2 INT; 15.0 per completion; one in five attempts is a deep throw
+        - Philo: 47-of-64 for 721 — 11.3 per attempt, 15.3 per completion; 6 TD, 2 INT; one in five attempts is a deep throw
+          - Florida as a team: 60-of-81 for 895 (11.0 per attempt, 14.9 per completion) — the difference is Tramell Jones Jr., 12-of-16 for 126
         - 5-of-7 on third-and-long at Auburn, in his first road start
       - The catch: 3 interceptions as a team and this is the first ranked defense he has seen — Ole Miss has only 2 picks, so the risk is more the rush (6 sacks, 6.7%) than the ball-hawking
     - Get Chambliss off schedule
@@ -129,7 +133,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Mateer has to be the run game
       - Why: the backs are not getting anything
         - 100 carries at 3.3; stuffed on 26.3% of runs (worst on the card); 32 for 61 against New Mexico
-        - Mateer: 47-of-75, 652 yards, 6 TD, 3 INT; the passing game is fine when it has time — 12 explosive passes in 83 dropbacks (14.5%), Sategna 12 for 186
+        - Mateer: 47-of-75 for 652 — 8.7 per attempt, 13.9 per completion; 6 TD, 3 INT
+          - Oklahoma as a team: 48-of-78 for 662 (8.5 per attempt, 13.8 per completion) — Mateer is the passing game; one other throw all year
+        - The passing game is fine when it has time — 12 explosive passes in 83 dropbacks (14.5%), Sategna 12 for 186
       - What Georgia brings: 1.5 a carry allowed (89 for 137), 25% of runs stuffed, 4 runs of 10+ against it all year — the strength of their team against the weakness of Oklahoma's
     - Reach the red zone
       - Why: 5 red-zone trips in three games, zero in the last two; 2 touchdowns
@@ -142,7 +148,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - What Oklahoma brings: a run defense that is good, not great — 2.8 a carry (117 for 333), 21% stuffed; Michigan ran 41 times for 152 and won
     - Get the ball out
       - Why: Bobo's quick game is the natural answer to an 18% sack rate
-        - Stockton: 38-of-45, 583 yards, 9 TD, 0 INT, 13.0 a throw
+        - Stockton: 38-of-45 for 583 — 13.0 per attempt, 15.3 per completion; 9 TD, 0 INT
+          - Georgia as a team: 58-of-79 for 857 (10.8 per attempt, 14.8 per completion) — the difference is Ryan Puglisi, 16-of-26 for 191 at 7.3 a throw
         - Only 2-of-9 on third-and-long — the one place a rush like this wins
     - Make Mateer one-dimensional
       - Why: Oklahoma cannot run, so the defense can play coverage and rush four
@@ -167,7 +174,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - Why it matters: the line was THE program flaw in July — physically overwhelmed in the last two playoff exits — and Oklahoma State just did it again
         - Stillwater: 4 sacks, 14-of-29 for 6.6 a throw, 5-of-15 on third down
         - Season vs FBS: 5 sacks in 73 dropbacks (6.8%)
-        - When he is clean: 61-of-89, 849 yards, 9 TD, 0 INT
+        - Moore: 61-of-89 for 849 — 9.5 per attempt, 13.9 per completion; 9 TD, 0 INT
+          - Oregon as a team: 79-of-112 for 1,031 (9.2 per attempt, 13.1 per completion) — the difference is Dylan Raiola, 11-of-11 for 124 in relief
       - What USC brings: not much — 4 sacks in 110 dropbacks (3.6%) under new coordinator Gary Patterson. This is the friendliest rush Oregon will see in a big game
     - Stay out of third-and-long
       - Why: against FBS teams Oregon is 3-of-18 on third-and-long; 1-of-10 at Oklahoma State
@@ -181,7 +189,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - USC keys
     - Keep Maiava clean
       - Why: he is the best quarterback Oregon has faced and nobody has touched him
-        - 87-of-115, 1,173 yards, 12 TD, 1 INT, 10.2 a throw; 3 sacks in 131 dropbacks (2.3%) — best protection on the card
+        - Maiava: 87-of-115 for 1,173 — 10.2 per attempt, 13.5 per completion; 12 TD, 1 INT; 3 sacks in 131 dropbacks (2.3%) — best protection on the card
+          - USC as a team: 97-of-128 for 1,286 (10.0 per attempt, 13.3 per completion) — the difference is Jonas Williams, 12-of-14 for 126
       - What Oregon brings: a veteran front that has not gotten home — 3 sacks in 77 dropbacks against FBS teams (3.9%), none in Stillwater
     - Own third down
       - Why: it is strength on strength and it decides who has the ball
@@ -207,8 +216,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Texas A&M keys
     - Find an explosive play
       - Why it matters: the offense cannot score from distance, so every drive has to be 10 plays
-        - 5 explosive passes in 115 dropbacks (4.3%) — last on this card by a mile; 5.9 a throw, 10.1 per completion
-        - Reed: 62-of-104, 6 TD, 3 INT; against Kentucky 26-of-49 for 5.0 a throw
+        - 5 explosive passes in 115 dropbacks (4.3%) — last on this card by a mile
+        - Reed: 62-of-104 for 632 — 6.1 per attempt, 10.2 per completion; 6 TD, 3 INT; against Kentucky 26-of-49 for 5.0 a throw
+          - Texas A&M as a team: 65-of-111 for 652 (5.9 per attempt, 10.0 per completion) — the difference is Brady Hart, 4-of-8 for 36
         - They try: 17 deep throws, 5 completed
       - What LSU brings: a defense that does give them up — 11 explosive passes in 105 dropbacks (10.5%); Ole Miss had 6
     - Block Umanmielen
@@ -224,7 +234,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - LSU keys
     - Leavitt's ball security
       - Why it's the key: it is the only thing that has beaten LSU
-        - 57-of-93, 3 TD, 5 INT in three games; 7 sacks taken (6.4%)
+        - Leavitt: 57-of-93 for 732 — 7.9 per attempt, 12.8 per completion; 3 TD, 5 INT in three games; 7 sacks taken (6.4%)
+          - LSU as a team: 64-of-103 for 862 (8.4 per attempt, 13.5 per completion) — the difference is Landen Clark, 7-of-10 for 109
         - At Ole Miss: 16-of-27 for 5.9 a throw, 2 explosive passes
         - He is also the goal-line back: 40 carries, 198 yards, 6 rushing touchdowns
       - What A&M brings: 2 interceptions and a 4.2% sack rate — the least disruptive defense he has faced
