@@ -746,6 +746,43 @@ def build_conference_tab(wb, conf: str, teams: list[str], max_roster: int,
     ws.column_dimensions["AJ"].hidden = True
     ws.column_dimensions["AK"].hidden = True
 
+    # ----- TEAM STATS 2026 (Lucas 9/23): offense + defense for the selected team, T:X -----
+    # Values come from the 'Team Stats' sheet (team_stats.py, rebuilt each refresh) by
+    # header MATCH, so a column added to that sheet never breaks these formulas.
+    try:
+        from team_stats import SHEET as _TS, block_spec as _block_spec
+        _spec = _block_spec()
+    except Exception:
+        _spec = []
+    if _spec:
+        ws.cell(row=1, column=20, value="TEAM STATS 2026 — season to date").font = Font(name="Arial", bold=True, size=11, color="FFFFFF")
+        for cc in range(20, 25):
+            ws.cell(row=1, column=cc).fill = TITLE_FILL
+        for j, h in enumerate(["Stat", "Offense", "rk", "Defense", "rk"], 20):
+            c = ws.cell(row=2, column=j, value=h)
+            c.font = WHITE_B
+            c.fill = HEAD_FILL
+        _row = f"MATCH($B$1,'{_TS}'!$A$5:$A$300,0)"
+        for i, (label, off_h, def_h, ranked) in enumerate(_spec):
+            r = 3 + i
+            ws.cell(row=r, column=20, value=label).font = ARIAL_B if i == 0 else ARIAL
+            for col, hdr in ((21, off_h), (23, def_h)):
+                if not hdr:
+                    continue
+                _col = f"MATCH(\"{hdr}\",'{_TS}'!$4:$4,0)"
+                ws.cell(row=r, column=col, value=f"=IFERROR(INDEX('{_TS}'!$A$5:$ZZ$300,{_row},{_col}),\"\")").font = ARIAL
+                if ranked:
+                    ws.cell(row=r, column=col + 1, value=f"=IFERROR(\"#\"&INDEX('{_TS}'!$A$5:$ZZ$300,{_row},{_col}+1),\"\")").font = Font(name="Arial", size=9, color="5C6B7E")
+        _note = ws.cell(row=3 + len(_spec), column=20,
+                        value="Pass yards per attempt = completions only; rushing = box score (sacks count); explosive / stuff / 10+ rates "
+                              "from play-by-play; rk = of 138 (defense = allowed, except sacks, stuffs, takeaways). Includes FCS games - "
+                              "the 'Team Stats' sheet has vs-FBS columns.")
+        _note.font = Font(name="Arial", italic=True, size=8.5, color="5C6B7E")
+        ws.merge_cells(start_row=3 + len(_spec), start_column=20, end_row=5 + len(_spec), end_column=24)
+        _note.alignment = _Al(wrap_text=True, vertical="top")
+        for col, w in (("T", 34), ("U", 12), ("V", 6), ("W", 12), ("X", 6)):
+            ws.column_dimensions[col].width = w
+
     widths = [22, 30, 26, 9, 8, 16, 30, 34, 28, 8, 8, 8, 2, 6, 24, 22, 20, 18]
     for i, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(i)].width = w

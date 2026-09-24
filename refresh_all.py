@@ -505,6 +505,15 @@ def main() -> int:
     except Exception as e:
         print(f"playoff sim skipped: {e}")
 
+    # TEAM STATS (Lucas 9/23): offense + defense for every FBS team, season to date -
+    # the 'Team Stats' sheet feeds the T:X block on every conference tab.
+    print("\n== team stats sheet ==")
+    try:
+        from team_stats import compute as _ts_compute, write_sheet as _ts_write
+        _ts_write(book, _ts_compute(refresh=not args.import_only))
+    except Exception as e:
+        print(f"team stats skipped: {e}")
+
     print("\n== deep-dive text boxes (Excel automation) ==")
     try:
         from deep_dive_boxes import add_boxes
