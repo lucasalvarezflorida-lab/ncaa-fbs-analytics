@@ -109,44 +109,7 @@ def choose(D):
                 p20_allowed=d["summary"]["p20_pct"], deep_faced=d["targets"]["deep_pct"])
 
 
-TEMPLATE = r"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>__TEAM__ — scheme page</title>
-<style>
-:root{--bg:#0f1418;--panel:#161d23;--ink:#e8edf1;--mute:#9aa7b2;--line:#2a3640;--off:#f2b544;--def:#5ab0ff;--ball:#c9743a;--ok:#7bd88f;--card:#e07a7a;--data:#7bd88f}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,Segoe UI,Roboto,sans-serif}
-header{padding:18px 20px 6px}h1{margin:0;font-size:22px}h2{font-size:16px;margin:0 0 8px;color:var(--ink)}
-.sub{color:var(--mute);font-size:13px}.wrap{display:grid;grid-template-columns:1fr;gap:14px;padding:12px 20px 30px;max-width:1200px}
-@media(min-width:980px){.wrap{grid-template-columns:1fr 1fr}}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
-canvas{width:100%;height:auto;background:#1d5a2b;border-radius:8px;display:block}
-.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;margin-right:6px;font-weight:600}
-.tag.data{background:#1e3a29;color:var(--data)}.tag.card{background:#3a1e1e;color:var(--card)}
-.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}button{background:#223040;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer;font-size:13px}
-button.on{background:#2f4f6f;border-color:#4b7fb3}ul{margin:6px 0 0 0;padding-left:18px}li{margin:3px 0}.why{color:var(--mute);font-size:13px}
-table{border-collapse:collapse;width:100%;font-size:13px}td,th{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left}th{color:var(--mute);font-weight:600}
-.watch li{font-size:13px}.num{font-variant-numeric:tabular-nums}
-</style></head><body>
-<header><h1>__TEAM__ — base looks and signature concepts, through Week __WK__</h1>
-<div class="sub">INTERNAL. Built from internal/dossiers/__SLUG___week__W__.json. <span class="tag data">DATA</span> = decided by the play-by-play numbers. <span class="tag card">CARD</span> = the July scouting card's words. CFBD has no alignment or coverage tags: the defensive pictures are the card's description, not film.</div></header>
-<div class="wrap">
- <div class="panel"><h2>Offense — base formation <span class="tag data">DATA</span></h2>
-  <canvas id="cOff" width="900" height="520"></canvas>
-  <div class="ctl"><button id="bOff">Replay</button></div>
-  <div id="offWhy" class="why"></div></div>
- <div class="panel"><h2>Signature concepts</h2>
-  <canvas id="cCon" width="900" height="520"></canvas>
-  <div class="ctl" id="conBtns"></div><div id="conWhy" class="why"></div></div>
- <div class="panel"><h2>Defense — base front <span class="tag data">depth chart</span> and coverage <span class="tag card">CARD</span></h2>
-  <canvas id="cDef" width="900" height="520"></canvas>
-  <div class="ctl"><button id="bDef">Replay</button><button id="bSim">Toggle sim pressure</button></div>
-  <div id="defWhy" class="why"></div></div>
- <div class="panel"><h2>The numbers behind the drawings</h2><div id="nums"></div>
-  <h2 style="margin-top:12px">What to watch for — five plays (game, quarter, clock)</h2><ul class="watch" id="watch"></ul></div>
-</div>
-<script>
-const CFG = __CONFIG__;
-// ---------- field ----------
+JS_CORE = r"""// ---------- field ----------
 const W=900,H=520, YPX=9.5, XPX=W/53.33;            // yards -> px; x across the field, y = depth (0 = the ball)
 function fx(x){return W/2 + x*XPX}  function fy(y){return 330 - y*YPX}    // y>0 is downfield
 function field(ctx,title,tag){ctx.clearRect(0,0,W,H);ctx.fillStyle='#1d5a2b';ctx.fillRect(0,0,W,H);
@@ -198,7 +161,46 @@ function coverageShell(cov,front){
  return {db:[[-20,7,'CB'],[20,7,'CB'],[-11,5,'N'],[0,13,'FS'],[9,8,'SS']].filter((p,i)=>nickel||i!==2),drop:{CB:[-2,6],N:[2,3],FS:[0,5],SS:[-4,0]},label:'three deep, four under'};}
 // ---------- animation ----------
 function animate(canvas,draw,dur=3200){let start=null;let raf;function frame(ts){if(!start)start=ts;const t=Math.min((ts-start)/dur,1);draw(t);if(t<1)raf=requestAnimationFrame(frame);}cancelAnimationFrame(raf);start=null;raf=requestAnimationFrame(frame);return()=>{cancelAnimationFrame(raf);start=null;raf=requestAnimationFrame(frame);};}
-const off=offense(CFG.base,CFG.personnel);
+"""
+
+TEMPLATE = r"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TEAM__ — scheme page</title>
+<style>
+:root{--bg:#0f1418;--panel:#161d23;--ink:#e8edf1;--mute:#9aa7b2;--line:#2a3640;--off:#f2b544;--def:#5ab0ff;--ball:#c9743a;--ok:#7bd88f;--card:#e07a7a;--data:#7bd88f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,Segoe UI,Roboto,sans-serif}
+header{padding:18px 20px 6px}h1{margin:0;font-size:22px}h2{font-size:16px;margin:0 0 8px;color:var(--ink)}
+.sub{color:var(--mute);font-size:13px}.wrap{display:grid;grid-template-columns:1fr;gap:14px;padding:12px 20px 30px;max-width:1200px}
+@media(min-width:980px){.wrap{grid-template-columns:1fr 1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
+canvas{width:100%;height:auto;background:#1d5a2b;border-radius:8px;display:block}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;margin-right:6px;font-weight:600}
+.tag.data{background:#1e3a29;color:var(--data)}.tag.card{background:#3a1e1e;color:var(--card)}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}button{background:#223040;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer;font-size:13px}
+button.on{background:#2f4f6f;border-color:#4b7fb3}ul{margin:6px 0 0 0;padding-left:18px}li{margin:3px 0}.why{color:var(--mute);font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left}th{color:var(--mute);font-weight:600}
+.watch li{font-size:13px}.num{font-variant-numeric:tabular-nums}
+</style></head><body>
+<header><h1>__TEAM__ — base looks and signature concepts, through Week __WK__</h1>
+<div class="sub">INTERNAL. Built from internal/dossiers/__SLUG___week__W__.json. <span class="tag data">DATA</span> = decided by the play-by-play numbers. <span class="tag card">CARD</span> = the July scouting card's words. CFBD has no alignment or coverage tags: the defensive pictures are the card's description, not film.</div></header>
+<div class="wrap">
+ <div class="panel"><h2>Offense — base formation <span class="tag data">DATA</span></h2>
+  <canvas id="cOff" width="900" height="520"></canvas>
+  <div class="ctl"><button id="bOff">Replay</button></div>
+  <div id="offWhy" class="why"></div></div>
+ <div class="panel"><h2>Signature concepts</h2>
+  <canvas id="cCon" width="900" height="520"></canvas>
+  <div class="ctl" id="conBtns"></div><div id="conWhy" class="why"></div></div>
+ <div class="panel"><h2>Defense — base front <span class="tag data">depth chart</span> and coverage <span class="tag card">CARD</span></h2>
+  <canvas id="cDef" width="900" height="520"></canvas>
+  <div class="ctl"><button id="bDef">Replay</button><button id="bSim">Toggle sim pressure</button></div>
+  <div id="defWhy" class="why"></div></div>
+ <div class="panel"><h2>The numbers behind the drawings</h2><div id="nums"></div>
+  <h2 style="margin-top:12px">What to watch for — five plays (game, quarter, clock)</h2><ul class="watch" id="watch"></ul></div>
+</div>
+<script>
+const CFG = __CONFIG__;
+__JSCORE__const off=offense(CFG.base,CFG.personnel);
 function drawOff(t){const ctx=document.getElementById('cOff').getContext('2d');field(ctx,`Base look: ${CFG.base}, ${CFG.personnel} personnel`,'DATA');
  // players jog in from a huddle spot
  const hud=[0,-9];const ease=t<1?1-Math.pow(1-t,3):1;
@@ -266,7 +268,7 @@ def build(path):
     C["watch"] = [dict(side=w["side"], game=w["game"], clock=w["clock"], yards=w["yards"], ppa=w["ppa"], text=html.escape(w["text"])) for w in D["watch"]]
     slug = re.sub(r"[^A-Za-z0-9]+", "_", D["team"]).strip("_")
     page = (TEMPLATE.replace("__TEAM__", html.escape(D["team"])).replace("__WK__", str(D["through_week"] - 1))
-            .replace("__SLUG__", slug).replace("__W__", str(D["through_week"])).replace("__CONFIG__", json.dumps(C)))
+            .replace("__SLUG__", slug).replace("__W__", str(D["through_week"])).replace("__CONFIG__", json.dumps(C)).replace("__JSCORE__", JS_CORE))
     os.makedirs(OUT, exist_ok=True)
     out = os.path.join(OUT, f"{slug}.html")
     with open(out, "w", encoding="utf-8") as f:
