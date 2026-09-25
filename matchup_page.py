@@ -238,7 +238,7 @@ def main():
     if plain:
         tpl = (tpl.replace("\u2014 now, and with __RET__ back", "\u2014 the sets the numbers say each lives in")
                   .replace('<h2>__DEF__ \u2014 with and without __RET__ <span class="tag data">DATA</span></h2>', '<h2>__DEF__ \u2014 what it does <span class="tag data">DATA</span></h2>')
-                  .replace("hypothetical. <span", "matchup. <span"))
+                  .replace("hypothetical. <span", "matchup. <span").replace("<title>__OFF__ offense vs __DEF__ defense — hypothetical</title>", "<title>__OFF__ offense vs __DEF__ defense</title>"))
     page = (tpl.replace("__OFF__", html.escape(a.offense)).replace("__DEF__", html.escape(a.defense)).replace("__RET__", html.escape(ret_short))
             .replace("__NOTE__", html.escape(a.note)).replace("__CONFIG__", json.dumps(cfg)).replace("__JSCORE__", dp.JS_CORE))
     os.makedirs(OUT, exist_ok=True)
