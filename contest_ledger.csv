@@ -34,3 +34,15 @@ week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
 4,2026-09-19,Southern Miss +3,UConn -3,80,0.78,0.502,L,-80,1393
 4,2026-09-19,Boise State -23.5,Boise State -23.5 (mkt -25.5),230,,0.55,L,-230,1163
 4,2026-09-19,Northern Illinois +33.5,Arizona -33.5,65,0.72,0.502,W,65,1228
+5,2026-09-24,Liberty -2.5,Liberty -2.5 @ Coastal Carolina,23,0.54,0.50,W,23,1251
+5,2026-09-25,Temple +3,Army -3,88,0.64,0.50,,,
+5,2026-09-25,Northwestern +21,Indiana -21,30,0.55,0.50,,,
+5,2026-09-25,Clemson -1.5,Clemson -1.5 @ California,74,0.62,0.50,,,
+5,2026-09-26,Colorado State +14,UTSA -14,61,0.61,0.50,,,
+5,2026-09-26,Hawai'i -2.5,Hawai'i -2.5 @ Wyoming,68,0.63,0.50,,,
+5,2026-09-26,Delaware +19.5,Virginia -19.5,57,0.61,0.50,,,
+5,2026-09-26,Charlotte +10,Louisiana -10,91,0.67,0.50,,,
+5,2026-09-26,Cincinnati +6.5,Kansas State -6.5,60,0.61,0.50,,,
+5,2026-09-26,Texas A&M +9.5,LSU -9.5 (mkt -8.5),70,0.60,0.53,,,
+5,2026-09-26,Missouri State +34.5,SMU -34.5,80,0.65,0.50,,,
+5,2026-09-26,Nevada +5.5,Air Force -5.5,90,0.67,0.50,,,
