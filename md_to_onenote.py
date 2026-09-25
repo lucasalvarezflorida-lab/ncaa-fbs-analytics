@@ -36,14 +36,27 @@ def parse(md):
         if tbl:
             body.append(("table", list(tbl))); tbl.clear()
 
+    ntbl = []                      # an INDENTED table sits under the current bullet (dossiers, 9/25)
+
+    def flush_ntbl():
+        if ntbl:
+            (stack[-1]["kids"] if stack else body).append(
+                dict(text="", bullet=False, kids=[], table=list(ntbl)) if stack else ("table", list(ntbl)))
+            ntbl.clear()
+
     for ln in md.splitlines():
         if ln.startswith("|"):
-            flush_para(); stack.clear()
+            flush_para(); flush_ntbl(); stack.clear()
             cells = [c.strip() for c in ln.strip().strip("|").split("|")]
             if not all(re.fullmatch(r":?-{3,}:?", c) for c in cells):
                 tbl.append(cells)
             continue
-        flush_tbl()
+        if ln.lstrip().startswith("|") and stack:
+            cells = [c.strip() for c in ln.strip().strip("|").split("|")]
+            if not all(re.fullmatch(r":?-{3,}:?", c) for c in cells):
+                ntbl.append(cells)
+            continue
+        flush_tbl(); flush_ntbl()
         m = re.match(r"^(\s*)- (.*)$", ln)
         if m:
             flush_para()
@@ -63,7 +76,7 @@ def parse(md):
         if stack and ln.startswith(" "):
             stack[-1]["text"] += " " + ln.strip(); continue
         stack.clear(); para.append(ln.strip())
-    flush_para(); flush_tbl()
+    flush_para(); flush_tbl(); flush_ntbl()
     return title, body
 
 
@@ -84,6 +97,8 @@ def T(t):
 def render(nodes):
     out = []
     for n in nodes:
+        if n.get("table"):
+            out.append(table(n["table"])); continue
         kids = f"<one:OEChildren>{render(n['kids'])}</one:OEChildren>" if n["kids"] else ""
         lst = '<one:List><one:Bullet bullet="2" fontSize="11.0"/></one:List>' if n["bullet"] else ""
         out.append(f"<one:OE>{lst}{T(n['text'])}{kids}</one:OE>")
