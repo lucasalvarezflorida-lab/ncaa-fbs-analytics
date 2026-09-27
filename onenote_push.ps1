@@ -1,8 +1,9 @@
-# Push notes into the PERSONAL OneNote notebook "Podcast" as reading copies.
+﻿# Push notes into the PERSONAL OneNote notebook "Podcast" as reading copies.
 #
 #   powershell -File onenote_push.ps1 -Section "Boards" -Files notes\week4_ep5_boards.md      # one page per file
 #   powershell -File onenote_push.ps1 -Section "Games"  -GamesFile notes\week4_ep5_games.md   # one page PER GAME (Lucas's layout)
 #   powershell -File onenote_push.ps1 -Section "Games"  -PageXml a.xml,b.xml                   # ready-made page XML (in-place edits)
+#   powershell -File onenote_push.ps1 -Section "Boards" -BoardsFile notes\week5_ep6_boards.md  # four pages: Recap / Top 25 / Heisman / Hot Seat
 #
 # SAFETY: the target must be a notebook named "Podcast" whose path is on
 # d.docs.live.net (personal OneDrive). Work notebooks (SharePoint / Carnival)
@@ -16,6 +17,7 @@ param(
   [Parameter(Mandatory = $true)][string]$Section,
   [string[]]$Files = @(),
   [string]$GamesFile = "",
+  [string]$BoardsFile = "",       # boards .md -> four pages (Recap / Top 25 / Heisman / Hot Seat)
   [string[]]$PageXml = @(),
   [string[]]$Skip = @(),          # page titles NOT to replace (e.g. a page Lucas hand-formatted)
   [string]$Notebook = "Podcast",
@@ -53,6 +55,15 @@ foreach ($f in $Files) {
 if ($GamesFile) {
   $outdir = Join-Path $env:TEMP 'onenote_games'
   $lines = & $Python (Join-Path $here 'md_to_onenote.py') --games (Join-Path $here $GamesFile) $outdir
+  foreach ($ln in $lines) {
+    $t, $p = $ln -split "`t", 2
+    if ($Skip -contains $t.Trim()) { "skipped (kept as is): $($t.Trim())"; continue }
+    Push-Page $t.Trim() $p.Trim()
+  }
+}
+if ($BoardsFile) {
+  $outdir = Join-Path $env:TEMP 'onenote_boards'
+  $lines = & $Python (Join-Path $here 'md_to_onenote.py') --boards (Join-Path $here $BoardsFile) $outdir
   foreach ($ln in $lines) {
     $t, $p = $ln -split "`t", 2
     if ($Skip -contains $t.Trim()) { "skipped (kept as is): $($t.Trim())"; continue }

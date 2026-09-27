@@ -196,8 +196,37 @@ def game_pages(md):
     return [game_layout(v) for kind, v in body if kind == "oe" and v["bullet"] and " — " in v["text"] and v["kids"]]
 
 
+BOARD_PAGES = [   # Lucas 9/23: boards as ONE PAGE PER TOPIC; superdogs sit on the Recap page (as he did in Week 4)
+    ("Recap", ("Receipts", "Superdog")),
+    ("Top 25", ("Top 25", "The rating rule")),
+    ("Heisman", ("Heisman",)),
+    ("Hot Seat", ("Hot Seat",)),
+]
+
+
+def board_pages(md):
+    """Split the boards file on its top-level topics into the four pages."""
+    title, body = parse(md)
+    pages = []
+    for name, keys in BOARD_PAGES:
+        parts = []
+        for kind, v in body:
+            if kind == "oe" and v["bullet"] and any(v["text"].lstrip("*").startswith(k) or ("**" + k) in v["text"][:len(k) + 3] for k in keys):
+                parts.append(render([v]))
+        if parts:
+            pages.append((name, page_xml(name, "".join(parts))))
+    return pages
+
+
 if __name__ == "__main__":
-    if sys.argv[1] == "--games":
+    if sys.argv[1] == "--boards":
+        src, outdir = sys.argv[2], sys.argv[3]
+        os.makedirs(outdir, exist_ok=True)
+        for title, xml in board_pages(open(src, encoding="utf-8").read()):
+            fn = os.path.join(outdir, re.sub(r"[^A-Za-z0-9]+", "_", title).strip("_") + ".xml")
+            open(fn, "w", encoding="utf-8").write(xml)
+            print(f"{title}	{fn}")
+    elif sys.argv[1] == "--games":
         src, outdir = sys.argv[2], sys.argv[3]
         os.makedirs(outdir, exist_ok=True)
         for title, xml in game_pages(open(src, encoding="utf-8").read()):
