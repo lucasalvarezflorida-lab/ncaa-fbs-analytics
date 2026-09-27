@@ -75,6 +75,16 @@ MODELS = {
     "residual": dict(CURRENT, switch=1, desc="residual cap from week 1"),
     "margin": dict(CURRENT, switch=99, desc="margin cap all season"),
     "nocap": dict(CURRENT, cap=None, desc="no cap"),
+    # item 1 (9/27): alternative OBSERVATIONS for the same ridge - turnover-adjusted / deserved-blend margins
+    "to3": dict(CURRENT, obs=dict(to=3.0), desc="observation = margin - 3 x turnover margin"),
+    "to4": dict(CURRENT, obs=dict(to=4.0), desc="observation = margin - 4 x turnover margin"),
+    "to4st": dict(CURRENT, obs=dict(to=4.0, st=1.0), desc="margin - 4 x TO margin - turnover-return TDs / safeties"),
+    "des_blowout": dict(CURRENT, obs=dict(des_w=0.5, des_T=14.0), desc="50/50 with the deserved margin only when they differ by 14+"),
+    "des_half": dict(CURRENT, obs=dict(des_w=0.5), desc="50/50 actual / deserved (plays-based) every game"),
+    "to3nocap": dict(CURRENT, cap=None, obs=dict(to=3.0), desc="margin - 3 x turnover margin, NO cap"),
+    "to3cap42": dict(CURRENT, cap=42.0, obs=dict(to=3.0), desc="margin - 3 x turnover margin, residual cap 42"),
+    "to4nocap": dict(CURRENT, cap=None, obs=dict(to=4.0), desc="margin - 4 x turnover margin, NO cap"),
+    "to3mc42lam2": dict(CURRENT, lam=2.0, cap=42.0, switch=99, obs=dict(to=3.0), desc="grid best: margin - 3 x TO, margin cap 42 all season, lam 2"),
 }
 
 
@@ -190,6 +200,21 @@ class SeasonCtx:
     def before(self, week: int) -> np.ndarray:
         return np.flatnonzero(self.week < week)
 
+    def obs(self, spec: dict | None) -> np.ndarray:
+        """Observation vector under an obs spec (obs_features.adjust); the actual margin when spec is None/empty."""
+        if not spec:
+            return self.y
+        key = json.dumps(spec, sort_keys=True)
+        if not hasattr(self, "_obs"):
+            self._obs = {}
+        if key not in self._obs:
+            import obs_features as of
+            from efficiency import load_model
+            feats = of.build(self.season, self.games)
+            model = load_model()
+            self._obs[key] = np.array([of.adjust(g["margin"], feats.get(g["id"]), spec, model) for g in self.games])
+        return self._obs[key]
+
     def gram(self, week: int) -> np.ndarray:
         if week not in self._gram:
             rows = self.before(week)
@@ -197,12 +222,12 @@ class SeasonCtx:
             self._gram[week] = Xw.T @ Xw
         return self._gram[week]
 
-    def ridge(self, week: int, lam: float, hfa: float, cap: float | None, mode: str) -> np.ndarray:
+    def ridge(self, week: int, lam: float, hfa: float, cap: float | None, mode: str, obs: dict | None = None) -> np.ndarray:
         """Ratings vector before `week` (weeks < week only)."""
         rows = self.before(week)
         if not len(rows) or not np.isfinite(lam):
             return self.p.copy()
-        Xw, y, h = self.X[rows], self.y[rows], self.home[rows] * hfa
+        Xw, y, h = self.X[rows], self.obs(obs)[rows], self.home[rows] * hfa
         if cap is not None and mode == "margin":
             y = np.clip(y, -cap, cap)
         resid = y - (Xw @ self.p + h)
@@ -217,7 +242,7 @@ class SeasonCtx:
 
 def ridge_predict(ctx: SeasonCtx, week: int, cfg: dict) -> dict[int, tuple[float, float]]:
     mode = "residual" if week >= cfg["switch"] else "margin"
-    r = ctx.ridge(week, cfg["lam"], cfg["hfa"], cfg["cap"], mode)
+    r = ctx.ridge(week, cfg["lam"], cfg["hfa"], cfg["cap"], mode, cfg.get("obs"))
     rows = np.flatnonzero(ctx.week == week)
     if not len(rows):
         return {}
@@ -411,6 +436,10 @@ def main():
     ap.add_argument("--model", default="current", help="comma list of MODELS keys")
     ap.add_argument("--tune", action="store_true")
     ap.add_argument("--tune-eff", action="store_true", help="grid over the efficiency model's lam / st / HFA / blend")
+    ap.add_argument("--tune-obs", action="store_true", help="grid over turnover / non-offensive / deserved-blend observations")
+    ap.add_argument("--tune-qb", action="store_true", help="grid over the QB-gap availability layer")
+    ap.add_argument("--tune-to", action="store_true", help="finer grid: turnover coefficient x cap x switch x lam")
+    ap.add_argument("--tune-sit", action="store_true", help="fit + score the situational layer (rest, travel, tz, elevation, per-team HFA)")
     ap.add_argument("--rows", help="write per-game rows (first model) to this json")
     ap.add_argument("--json", help="write the scoreboard to this json")
     ap.add_argument("--weeks", default="1-15")
@@ -528,6 +557,101 @@ def main():
         for r in res:
             print(f"{r['name']:24s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% | "
                   f"{r['test_mae']:8.3f} {r['test_brier']:.4f} {100 * (r['test_ats'] or 0):5.1f}%")
+
+    if a.tune_obs:
+        fit = [s for s in seasons if s <= 2024]; test = [s for s in seasons if s == 2025]
+        grid = {"current": MODELS["current"]}
+        for b in (1.0, 2.0, 3.0, 4.0, 5.0, 6.0):
+            grid[f"to{b:g}"] = dict(CURRENT, obs=dict(to=b))
+        for b in (3.0, 4.0):
+            grid[f"to{b:g}+st"] = dict(CURRENT, obs=dict(to=b, st=1.0))
+            grid[f"to{b:g}+st+kick"] = dict(CURRENT, obs=dict(to=b, st=1.0, kick=1.0))
+        grid["st only"] = dict(CURRENT, obs=dict(st=1.0))
+        for w in (0.75, 0.5, 0.25):
+            grid[f"des w{w:g} all"] = dict(CURRENT, obs=dict(des_w=w))
+            grid[f"des w{w:g} T14"] = dict(CURRENT, obs=dict(des_w=w, des_T=14.0))
+            grid[f"des w{w:g} T21"] = dict(CURRENT, obs=dict(des_w=w, des_T=21.0))
+        grid["des w0.5 all ng"] = dict(CURRENT, obs=dict(des_w=0.5, des_ng=True))
+        grid["des w0.5 T14 ng"] = dict(CURRENT, obs=dict(des_w=0.5, des_T=14.0, des_ng=True))
+        grid["to4 + des w0.5 T14"] = dict(CURRENT, obs=dict(to=4.0, des_w=0.5, des_T=14.0))
+        grid["to3 + des w0.75 all"] = dict(CURRENT, obs=dict(to=3.0, des_w=0.75))
+        for b in (3.0, 4.0):
+            grid[f"to{b:g} nocap"] = dict(CURRENT, cap=None, obs=dict(to=b))
+            grid[f"to{b:g} margin-cap"] = dict(CURRENT, switch=99, obs=dict(to=b))
+        print(f"\n=== TUNE observations: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
+        res = compare(ctxs, grid, fit, test)
+        report["tune_obs"] = res
+        print(f"{'model':24s} | {'fit MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6} | {'test MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6}")
+        for r in res:
+            print(f"{r['name']:24s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% {r['fit_mae_mkt'] or 0:6.2f} | "
+                  f"{r['test_mae']:8.3f} {r['test_brier']:.4f} {100 * (r['test_ats'] or 0):5.1f}% {r['test_mae_mkt'] or 0:6.2f}")
+
+    if a.tune_qb:
+        from availability import QBGapModel, AvailabilityModel
+        fit = [s for s in seasons if s <= 2024]; test = [s for s in seasons if s == 2025]
+        grid = {"current": MODELS["current"], "availability (flat rule)": AvailabilityModel()}
+        for c in (0.5, 1.0, 1.5, 2.0, 3.0):
+            for K in (30, 60, 120):
+                grid[f"qbgap c{c:g} K{K}"] = QBGapModel(c=c, K=K)
+        for c in (1.0, 2.0):
+            grid[f"qbgap c{c:g} K60 signed"] = QBGapModel(c=c, K=60, signed=True)
+            grid[f"qbgap c{c:g} K60 fav7"] = QBGapModel(c=c, K=60, min_fav=7.0)
+            grid[f"qbgap c{c:g} K60 cap10"] = QBGapModel(c=c, K=60, cap=10.0)
+        print(f"\n=== TUNE QB gap: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
+        res = compare(ctxs, grid, fit, test)
+        report["tune_qb"] = res
+        print(f"{'model':26s} | {'fit MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6} | {'test MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6}")
+        for r in res:
+            print(f"{r['name']:26s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% {r['fit_mae_mkt'] or 0:6.2f} | "
+                  f"{r['test_mae']:8.3f} {r['test_brier']:.4f} {100 * (r['test_ats'] or 0):5.1f}% {r['test_mae_mkt'] or 0:6.2f}")
+
+    if a.tune_to:
+        fit = [x for x in seasons if x <= 2024]; test = [x for x in seasons if x == 2025]
+        grid = {"current": MODELS["current"]}
+        for to in (2.5, 3.0, 3.5, 4.0):
+            for cap in (None, 28.0, 42.0):
+                for sw in (4, 99):
+                    for lam in (2.0, 3.0, 4.0):
+                        if cap is None and sw == 99:
+                            continue
+                        grid[f"to{to:g} cap{cap} sw{sw} lam{lam:g}"] = dict(CURRENT, lam=lam, cap=cap, switch=sw, obs=dict(to=to))
+        for hfa in (2.0, 3.0):
+            grid[f"to3 nocap lam3 hfa{hfa:g}"] = dict(CURRENT, cap=None, hfa=hfa, obs=dict(to=3.0))
+        print(f"\n=== TUNE turnover coefficient: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
+        res = compare(ctxs, grid, fit, test)
+        report["tune_to"] = res
+        print(f"{'model':30s} | {'fit MAE':>8} {'Brier':>6} {'ATS':>6} | {'test MAE':>8} {'Brier':>6} {'ATS':>6}")
+        for r in res:
+            print(f"{r['name']:30s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% | "
+                  f"{r['test_mae']:8.3f} {r['test_brier']:.4f} {100 * (r['test_ats'] or 0):5.1f}%")
+
+    if a.tune_sit:
+        import situational as si
+        fit = [x for x in seasons if x <= 2024]; test = [x for x in seasons if x == 2025]
+        coef_all = si.fit(ctxs, fit)
+        report["tune_sit"] = dict(fit=coef_all)
+        print(f"\n=== SITUATIONAL: residual regression on {fit}, weeks 2-15, n={coef_all['n']} ===")
+        print(f"{'feature':12s} {'coef':>8} {'se':>7} {'t':>6} {'mean|x|':>8}")
+        for nm, c, se, t, mx in zip(coef_all["names"], coef_all["coef"], coef_all["se"], coef_all["t"], coef_all["mean_abs"]):
+            print(f"{nm:12s} {c:8.3f} {se:7.3f} {t:6.2f} {mx:8.3f}")
+        C = dict(zip(coef_all["names"], coef_all["coef"]))
+        grid = {"current": MODELS["current"], "situ all": si.SituationalModel({k: C[k] for k in si.FEATS})}
+        for sub, lab in ((["rest_diff", "bye_diff"], "rest+bye"), (["dist_diff", "tz_diff", "elev_diff"], "travel"), (["fri", "wkn"], "weekday")):
+            cs = si.fit(ctxs, fit, names=sub)
+            grid[f"situ {lab}"] = si.SituationalModel(dict(zip(cs["names"], cs["coef"])), names=sub)
+        sig = [k for k, t in zip(coef_all["names"], coef_all["t"]) if k != "intercept" and abs(t) >= 2.0]
+        if sig:
+            cs = si.fit(ctxs, fit, names=sig)
+            grid[f"situ |t|>=2 ({','.join(sig)})"] = si.SituationalModel(dict(zip(cs["names"], cs["coef"])), names=sig)
+        for K in (10, 20, 40, 80):
+            grid[f"team HFA K{K}"] = si.TeamHFAModel(ctxs, fit, K=K)
+        print(f"\n=== TUNE situational: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
+        res = compare(ctxs, grid, fit, test)
+        report["tune_sit"]["models"] = res
+        print(f"{'model':40s} | {'fit MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6} | {'test MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6}")
+        for r in res:
+            print(f"{r['name']:40s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% {r['fit_mae_mkt'] or 0:6.2f} | "
+                  f"{r['test_mae']:8.3f} {r['test_brier']:.4f} {100 * (r['test_ats'] or 0):5.1f}% {r['test_mae_mkt'] or 0:6.2f}")
 
     if a.rows:
         Path(a.rows).write_text(json.dumps([r for s in seasons for r in all_rows[models[0]][s]], indent=0, default=float), encoding="utf-8")

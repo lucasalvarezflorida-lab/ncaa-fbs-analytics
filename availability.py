@@ -205,6 +205,77 @@ class AvailabilityModel:
         return {ctx.games[i]["id"]: (float(mm), float(pp)) for i, mm, pp in zip(rows, m, p)}
 
 
+def qb_gap_status(rows: list[dict], week: int, K: float = 60.0, league: float | None = None) -> dict | None:
+    """Item 2 (9/27): before `week`, the season primary passer vs the man who
+    threw the LAST game (the presumed starter now), each as PPA per dropback
+    shrunk to the league mean with K dropbacks of prior weight:
+        gap = ppa(primary) - ppa(last-game primary)   (+ = the starter is the better passer)
+    flagged = the last-game primary is not the season primary (he did not
+    play, or threw under SHARE_LT). A backup with no dropbacks sits at the
+    league mean. Needs one earlier game."""
+    prev = [r for r in rows if r["week"] < week]
+    if not prev:
+        return None
+    L = LEAGUE_PPA if league is None else league
+    tot = defaultdict(lambda: [0, 0.0, 0])
+    for r in prev:
+        for n, v in r["passers"].items():
+            tot[n][0] += v[0]; tot[n][1] += v[1]; tot[n][2] += v[2]
+    primary = max(tot, key=lambda n: tot[n][0])
+    last = prev[-1]
+    share_last = last["passers"].get(primary, [0])[0] / max(last["dropbacks"], 1)
+    now = primary if share_last >= SHARE_LT else last["primary"]
+    shrink = lambda n: (tot[n][1] + K * L) / (tot[n][2] + K) if n in tot else L
+    gap = shrink(primary) - shrink(now)
+    return dict(primary=primary, now=now, flagged=(now != primary), gap=float(gap),
+                db_primary=tot[primary][0], db_now=tot.get(now, [0])[0], share_last=round(share_last, 3))
+
+
+class QBGapModel:
+    """backtest.py plug-in: the on-air machine minus c x 100 x (PPA gap per
+    dropback) on a side whose season primary passer did not throw the last
+    game. signed=True also credits a better backup; min_fav applies it to
+    favorites of that size only; cap in points."""
+
+    def __init__(self, c=1.0, K=60.0, cap=8.0, signed=False, min_fav=None, desc=""):
+        self.c, self.K, self.cap, self.signed, self.min_fav = c, K, cap, signed, min_fav
+        self.desc = desc or f"SHADOW QB gap: c{c} K{K} cap{cap}{' signed' if signed else ''}{f' fav{min_fav}' if min_fav else ''}"
+        self._qb = {}
+
+    def qb(self, ctx):
+        if ctx.season not in self._qb:
+            self._qb[ctx.season] = qb_table(ctx.season, ctx.games)
+        return self._qb[ctx.season]
+
+    def penalty(self, st, pred):
+        if not st or not st["flagged"]:
+            return 0.0
+        if self.min_fav is not None and pred < self.min_fav:
+            return 0.0
+        pts = self.c * 100.0 * st["gap"]
+        if not self.signed:
+            pts = max(pts, 0.0)
+        return float(max(-self.cap, min(pts, self.cap)))
+
+    def __call__(self, ctx, week):
+        import backtest as bt
+        cur = bt.ridge_predict(ctx, week, bt.MODELS["current"])
+        if not cur:
+            return {}
+        qb = self.qb(ctx)
+        rows = np.flatnonzero(ctx.week == week)
+        m = []
+        for i in rows:
+            g = ctx.games[i]
+            base = cur[g["id"]][0]
+            adj = (self.penalty(qb_gap_status(qb.get(g["home"], []), week, self.K), base)
+                   - self.penalty(qb_gap_status(qb.get(g["away"], []), week, self.K), -base))
+            m.append(base - adj)
+        m = np.array(m)
+        p = ctx.curve(week).win_prob(m)
+        return {ctx.games[i]["id"]: (float(mm), float(pp)) for i, mm, pp in zip(rows, m, p)}
+
+
 def fit_penalty(seasons=(2022, 2023, 2024)) -> dict:
     """Residual of the on-air machine (actual - predicted, from the flagged
     team's side) in games where a starter is flagged out. Returns the flat
