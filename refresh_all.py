@@ -457,6 +457,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--import-only", action="store_true",
                     help="skip re-fetching rosters/FPI; just rebuild the sheets from current data")
+    ap.add_argument("--no-rosters", action="store_true",
+                    help="Sunday rebuild: refresh CFBD data and every sheet, but skip the 138-site roster re-pull")
     ap.add_argument("--wait-for-unlock", action="store_true",
                     help="wait for Excel to release the workbook before starting")
     args = ap.parse_args()
@@ -469,7 +471,7 @@ def main() -> int:
         print("waiting for the workbook to be closed in Excel...")
         wait_for_unlock(book)
 
-    if not args.import_only:
+    if not args.import_only and not args.no_rosters:
         run_roster_refresh()
         snapshot_preseason_fpi()
         maybe_run_2026_decomposition()

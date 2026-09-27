@@ -53,7 +53,17 @@
      "gap": 0.97
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     20,
+     17
+    ],
+    "observed": 1.59,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": -5.8,
+    "verdict": "clean"
+   }
   },
   "Ole Miss at Florida": {
    "game_id": 401856699,
@@ -108,7 +118,17 @@
      "gap": 1.41
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     28,
+     52
+    ],
+    "observed": 8.5,
+    "fired": true,
+    "pick_lost": false,
+    "own_line": 20.9,
+    "verdict": "survived it"
+   }
   },
   "Oklahoma at Georgia": {
    "game_id": 401856700,
@@ -163,7 +183,17 @@
      "gap": 2.93
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     13,
+     41
+    ],
+    "observed": 4.96,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": 14.2,
+    "verdict": "clean"
+   }
   },
   "Oregon at USC": {
    "game_id": 401858469,
@@ -218,7 +248,17 @@
      "gap": 0.94
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     41,
+     27
+    ],
+    "observed": 18.2,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": 13.7,
+    "verdict": "clean"
+   }
   },
   "Texas A&M at LSU": {
    "game_id": 401856702,
@@ -273,7 +313,17 @@
      "gap": -1.25
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     6,
+     35
+    ],
+    "observed": 2.76,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": 23.4,
+    "verdict": "clean"
+   }
   }
  }
 }

@@ -92,12 +92,11 @@ TENURE = {
 }
 
 # Heisman market (DraftKings via Covers, Sun Sep 13 2026) — refresh weekly
-MARKET_DATE = "2026-09-13"
-MARKET = {
-    "Darian Mensah": 550, "Jeremiah Smith": 650, "Arch Manning": 1000,
-    "C.J. Carr": 1050, "Trinidad Chambliss": 1300, "Malachi Toney": 1300,
-    "Julian Sayin": 1500, "Josh Hoover": 1700, "Jayden Maiava": 1900,
-    "Sam Leavitt": 2500,
+MARKET_DATE = "2026-09-27"
+MARKET = {   # DraftKings via Covers, Sun 9/27 AM (post-Week 4); players not on that list carry no market number this week
+    "Jeremiah Smith": 245, "Darian Mensah": 400, "Kamario Taylor": 480,
+    "Trinidad Chambliss": 1150, "Jadan Baugh": 1200, "C.J. Carr": 1300,
+    "Keelon Russell": 1600, "Malachi Toney": 1750, "Arch Manning": 3000,
 }
 QB_POOL = ["Julian Sayin", "Darian Mensah", "C.J. Carr", "Josh Hoover",
            "Arch Manning", "Dante Moore", "Jayden Maiava", "Will Hammond",

@@ -969,7 +969,7 @@ _RECAP_ROWS_WK2 = [
     ("ARIZ", "BYU", "Arizona at BYU", ("Arizona", "BYU"), "BYU 28–20", -8.5, -7.5),
     ("BAMA", "UK", "Alabama at Kentucky", ("Alabama", "Kentucky"), "Alabama 31–18", 13.0, 10.0),
 ]   # Week 2: machine 40.5 vs market 48.0 (machine closer 4 of 5)
-RECAP_ROWS = [
+_RECAP_ROWS_WK3 = [
     # a, b, title, (away, home), our call, our line, closing line (home-perspective),
     # then optional: the MAN's call (Corey's score slide: each number sits under
     # that team's logo, his winner in green - read 9/21 from the 9/15 read-only
@@ -980,9 +980,18 @@ RECAP_ROWS = [
     ("FLA", "AUB", "Florida at Auburn", ("Florida", "Auburn"), "Auburn 27–26", -0.5, 2.5, "Auburn 28–27", 53.5),
     ("LSU", "MISS", "LSU at Ole Miss", ("LSU", "Ole Miss"), "LSU 32–27", 5.0, 3.0, "LSU 34–28", 58.5),
 ]   # Week 3 margin miss: market 38.5 · man 49.0 · machine 50.5
-WEEK0_MISS = (161.0, 167.0)  # machine, market through Week 2 (15 games) — running total
-PRIOR_GAMES = 15
-LEANS_LINE = "stated leans 4–3 · Auburn +2.5 lost by 5"
+RECAP_ROWS = [
+    # Week 4 (graded Sun 9/27): on-air machine line, frozen close (card_data_week4_frozen.json,
+    # 2026-09-23 17:09Z), Corey's call off his score slides (read 9/23), closing total.
+    ("TEX", "TENN", "Texas at Tennessee", ("Texas", "Tennessee"), "Texas 32–23", 9.0, 4.5, "Texas 31–24", 55.5),
+    ("MISS", "FLA", "Ole Miss at Florida", ("Ole Miss", "Florida"), "Florida 31–28", -3.0, -3.0, "Florida 35–34", 58.5),
+    ("OU", "UGA", "Oklahoma at Georgia", ("Oklahoma", "Georgia"), "Georgia 29–15", -14.0, -14.0, "Georgia 34–20", 44.5),
+    ("ORE", "USC", "Oregon at USC", ("Oregon", "USC"), "Oregon 32–31", 0.5, 3.0, "Oregon 35–34", 62.5),
+    ("TAMU", "LSU", "Texas A&M at LSU", ("Texas A&M", "LSU"), "LSU 29–23", -5.5, -8.5, "LSU 31–27", 51.5),
+]   # Week 4 margin miss: market 68.0 · machine 78.0 · man 79.0 — winners: machine 5–0, man 5–0
+WEEK0_MISS = (211.5, 205.5)  # machine, market through Week 3 (20 games) — running total
+PRIOR_GAMES = 20
+LEANS_LINE = "stated leans 4–3 · no position taken in Week 4"
 
 
 def _finals():
