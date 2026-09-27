@@ -226,7 +226,7 @@ if __name__ == "__main__":
         for title, xml in board_pages(open(src, encoding="utf-8").read()):
             fn = os.path.join(outdir, re.sub(r"[^A-Za-z0-9]+", "_", title).strip("_") + ".xml")
             open(fn, "w", encoding="utf-8").write(xml)
-            print(f"{title}	{fn}")
+            print(os.environ.get("ONENOTE_TITLE_PREFIX", "") + f"{title}	{fn}")
     elif sys.argv[1] == "--games":
         src, outdir = sys.argv[2], sys.argv[3]
         os.makedirs(outdir, exist_ok=True)

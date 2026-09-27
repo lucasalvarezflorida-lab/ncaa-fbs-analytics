@@ -54,7 +54,7 @@ it lives in the internal folder, which is not in the repo.
     - South Carolina −2.5, #20 → #24: lost 49–18 at Alabama
     - Penn State −2.3, #11 → #14: LOST 24–20 at home to Wisconsin as a 13.8-point favorite
     - Oklahoma −2.1, #15 → #18; Indiana −1.9, #6 → #8 (29–23 over Northwestern as a 19-point favorite)
-  - Into the 25: Iowa #23 (won 20–19 at Michigan), Pittsburgh #25 · Out: Louisville (#25 → #34, lost 30–27 at home to Wake Forest), Michigan (#23 → #26)
+  - Into the 25: Iowa #23 (won 20–19 at Michigan) · Out: Louisville (#25 → #34, lost 30–27 at home to Wake Forest) · Michigan (#23 → #25) holds the last spot over Pittsburgh by a hair — both 11.4
   - The Texas question — expect it: No. 1 in the AP again, No. 4 here
     - Four games, three of them decided by 8 or fewer (Ohio State by 1, Texas at Tennessee by 3); the machine has Texas 2.6 points behind Georgia and rates the Ohio State win as the whole résumé
     - The efficiency side says Tennessee out-played them (deserved Tennessee +4.4) — Texas won on 8 sacks and the turnover
