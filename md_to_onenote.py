@@ -118,6 +118,7 @@ def table(rows):
 
 
 def page_xml(title, body_xml):
+    title = os.environ.get("ONENOTE_TITLE_PREFIX", "") + title   # e.g. "Week 5 - " so pages accumulate week by week (Lucas 9/27)
     return (f'<?xml version="1.0"?><one:Page xmlns:one="{NS}" ID="{{PAGE_ID}}">'
             f"<one:Title><one:OE>{T(title)}</one:OE></one:Title>"
             f'<one:Outline><one:Size width="900" height="400"/><one:OEChildren>{body_xml}</one:OEChildren></one:Outline></one:Page>')
@@ -232,9 +233,9 @@ if __name__ == "__main__":
         for title, xml in game_pages(open(src, encoding="utf-8").read()):
             fn = os.path.join(outdir, re.sub(r"[^A-Za-z0-9]+", "_", title).strip("_") + ".xml")
             open(fn, "w", encoding="utf-8").write(xml)
-            print(f"{title}\t{fn}")
+            print(os.environ.get("ONENOTE_TITLE_PREFIX", "") + f"{title}\t{fn}")
     else:
         src, dst = sys.argv[1], sys.argv[2]
         title, xml = convert(open(src, encoding="utf-8").read())
         open(dst, "w", encoding="utf-8").write(xml)
-        print(title)
+        print(os.environ.get("ONENOTE_TITLE_PREFIX", "") + title)

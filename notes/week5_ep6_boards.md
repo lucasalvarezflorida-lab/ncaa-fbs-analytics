@@ -1,9 +1,8 @@
 # Ep6 · Week 5 — BOARDS
 
 Outline notes: topic → the points → the facts under each point. Read the
-level you need. Drafted Sun Sep 27 from the Sunday rebuild (215 rated games;
-AP Week 5 poll not out yet — the AP lines below are the Week 4 poll, update
-Sunday night). MACHINE-DRAFTED — review before air. Corey's sections are
+level you need. Drafted Sun Sep 27 from the Sunday rebuild (215 rated games; AP Week 5
+poll of Sun Sep 27 evening). MACHINE-DRAFTED — review before air. Corey's sections are
 placeholders until his deck updates (his file is read-only for us).
 Betting-line context for this episode is kept out of this file on purpose -
 it lives in the internal folder, which is not in the repo.
@@ -56,13 +55,14 @@ it lives in the internal folder, which is not in the repo.
     - Penn State −2.3, #11 → #14: LOST 24–20 at home to Wisconsin as a 13.8-point favorite
     - Oklahoma −2.1, #15 → #18; Indiana −1.9, #6 → #8 (29–23 over Northwestern as a 19-point favorite)
   - Into the 25: Iowa #23 (won 20–19 at Michigan), Pittsburgh #25 · Out: Louisville (#25 → #34, lost 30–27 at home to Wake Forest), Michigan (#23 → #26)
-  - The Texas question — expect it: No. 1 in the AP, No. 4 here
+  - The Texas question — expect it: No. 1 in the AP again, No. 4 here
     - Four games, three of them decided by 8 or fewer (Ohio State by 1, Texas at Tennessee by 3); the machine has Texas 2.6 points behind Georgia and rates the Ohio State win as the whole résumé
     - The efficiency side says Tennessee out-played them (deserved Tennessee +4.4) — Texas won on 8 sacks and the turnover
     - Say: "voters rank wins, the machine rates margins — Texas is 4–0 with two one-score wins over top-ten teams; both can be right"
-  - Voters vs us (AP Week 4 — swap for Week 5 when it posts)
-    - Texas 1 vs our 4 · Ole Miss 4 vs 17 · Indiana 5 vs 8 · BYU 9 vs 21 · Iowa 17 vs 23 · Florida 21 vs 9 · Oregon 20 vs 10
-    - Ours not theirs: Nebraska, Oklahoma, Auburn, South Carolina, Pittsburgh · Theirs not ours: Louisville, Michigan, Missouri, SMU, Houston
+  - Voters vs us (AP Week 5, Sun 9/27)
+    - Oklahoma State 19 vs our 43 · SMU 21 vs our 41 · Houston 20 vs our 35 · BYU 10 vs our 21 · Iowa 14 vs our 24 · Kentucky 24 vs our 33 · Ole Miss 9 vs our 17
+    - Ours not theirs: Texas A&M, Penn State, Nebraska, Oklahoma, Auburn, South Carolina, Michigan · Theirs not ours: Oklahoma State, Houston, SMU, Boise State, UCLA, Kentucky, Missouri
+    - Agree on the top three (Texas/Georgia/Notre Dame in some order); the voters have Miami 4th, we have it 6th; Penn State and Michigan fell out of their poll, Penn State is still our #14
   - Playoff picture (the machine's simulator, 10,000 seasons from these ratings — internal column, not on the slide unless Lucas says)
     - Texas 97% to make the field, Georgia 97%, Notre Dame 93%, Alabama 92%, Ohio State 86%, Miami 83% (ACC title 73%), LSU 77%, Florida 75%
     - Indiana 58%, Boise State 51% (the G5 bid), Utah 45%, Oregon 38%, Texas Tech 34%, Mississippi State 29%, Tennessee 26%, Ole Miss 25%
@@ -124,8 +124,8 @@ it lives in the internal folder, which is not in the repo.
     - Guard rails: spreads 3.5 to 28, and the machine skips the games where its own number is furthest from the posted spread
 
 - **Superdog picks (Sunday's lines — re-read off the recording-day pull)**
-  - Machine Giant Killer: Boston College +21 at #22 SMU — the machine has it a 13-point game, so the cover chance is the best on the board
-    - Say the caveat: "the machine's number, not ours"; SMU's ranking is the Week 4 poll — if SMU drops out Sunday night this becomes the Superdog and UCF moves up
-  - Machine Superdog: UCF +11.5 at #25 Houston — machine has it Houston by 6.5
+  - Machine Giant Killer: Boston College +21 at #21 SMU — the machine has it a 13-point game, so the cover chance is the best on the board
+    - Say the caveat: "the machine's number, not ours"
+  - Machine Superdog: UCF +11.5 at #20 Houston — machine has it Houston by 6.5
     - Next on the board: Cincinnati +8.5 at Arizona · Clemson +17.5 vs Miami (home dog) · Pittsburgh +5.5 at Virginia Tech — ON OUR CARD Friday, and the machine has Pitt as the favorite by a hair; Auburn +7.5 at Tennessee is sixth on the Giant Killer board
   - Corey's picks: PLACEHOLDER until his deck posts

@@ -59,7 +59,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: the rush — 9 sacks against FBS teams (9.5%); Pitt's line has given up 4 all year
   - Corey: PLACEHOLDER
 
-- **Penn State at Northwestern — Fri 8:00 ET, Evanston · No. 13 at Northwestern, the new Ryan Field's first big one**
+- **Penn State at Northwestern — Fri 8:00 ET, Evanston · Penn State (out of the AP poll after Wisconsin) at Northwestern, the new Ryan Field's first big one**
   
   - The read
     - Penn State lost 24–20 at home to Wisconsin as a two-touchdown favorite: 12-of-29 for 3.9 a throw, Becht's worst day, and the machine took 2.3 off it
@@ -100,7 +100,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: the red zone — Northwestern is 7 touchdowns in 9 trips against FBS teams; Penn State's defense has allowed 3 in 8
   - Corey: PLACEHOLDER
 
-- **Alabama at Mississippi State — Sat 12:00 ET, Starkville · No. 8 at No. 24**
+- **Alabama at Mississippi State — Sat 12:00 ET, Starkville · No. 7 at No. 16**
   
   - The read
     - Two of the SEC's most explosive passing games at 9.8 and 9.9 a throw; the difference is the defenses — Alabama allows 2.9 a carry and has 6 picks, State allows 6.4 a throw
@@ -147,7 +147,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: Starkville at noon — State has not lost at home; Alabama's one wobble was a home game
   - Corey: PLACEHOLDER
 
-- **Auburn at Tennessee — Sat 3:30 ET, Knoxville · Auburn at No. 14**
+- **Auburn at Tennessee — Sat 3:30 ET, Knoxville · Auburn at No. 17**
   
   - The read
     - Tennessee just lost 20–17 to Texas and out-played them by the efficiency (deserved Tennessee +4.4); Brandon was sacked 8 times
@@ -190,7 +190,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: third-and-long — Tennessee's defense allows 8-of-36; Auburn's offense converts 11-of-33
   - Corey: PLACEHOLDER
 
-- **Ohio State at Iowa — Sat 3:30 ET, Iowa City · No. 7 at No. 17**
+- **Ohio State at Iowa — Sat 3:30 ET, Iowa City · No. 5 at No. 14**
   
   - The read
     - Ohio State's passing game is the best on the card (11.0 a throw, Smith 33 for 617) against a defense that allows 2.7 a carry and has allowed four runs of 10+ all year — this is a pass-vs-secondary game

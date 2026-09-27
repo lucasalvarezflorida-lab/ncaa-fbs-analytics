@@ -20,10 +20,12 @@ param(
   [string]$BoardsFile = "",       # boards .md -> four pages (Recap / Top 25 / Heisman / Hot Seat)
   [string[]]$PageXml = @(),
   [string[]]$Skip = @(),          # page titles NOT to replace (e.g. a page Lucas hand-formatted)
+  [string]$Prefix = "",           # page-title prefix, e.g. "Week 5 - " - pages accumulate week by week instead of replacing
   [string]$Notebook = "Podcast",
   [string]$Python = "python"
 )
 $ErrorActionPreference = 'Stop'
+$env:ONENOTE_TITLE_PREFIX = $Prefix
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $on = New-Object -ComObject OneNote.Application
 $x = ''; $on.GetHierarchy('', 2, [ref]$x)
