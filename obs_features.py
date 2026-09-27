@@ -64,7 +64,9 @@ def build(season: int, games: list[dict], rebuild: bool = False) -> dict[int, di
     OUT.mkdir(exist_ok=True)
     path = OUT / f"obs_features_{season}.json"
     if path.exists() and not rebuild:
-        return {int(k): v for k, v in json.loads(path.read_text(encoding="utf-8")).items()}
+        cached = {int(k): v for k, v in json.loads(path.read_text(encoding="utf-8")).items()}
+        if all(g["id"] in cached for g in games):
+            return cached                                    # a new week's games force a rebuild
     import cfbd_client as cfbd
     by_id = {g["id"]: g for g in games}
     acc: dict[int, dict] = {}

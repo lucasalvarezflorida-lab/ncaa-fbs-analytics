@@ -68,23 +68,26 @@ WEEKS = range(1, 16)
 # ---- model registry -------------------------------------------------------
 # ridge family: lam, hfa, cap, switch (first week that uses the residual cap;
 # 1 = residual always, 99 = margin cap always)
-CURRENT = dict(lam=ir.LAM, hfa=ir.HFA, cap=ir.CAP, switch=4)   # the on-air machine
+# the on-air machine from 9/27: de-lucked observations, lam 2, margin cap 42 all season (TURNOVER_2026.md)
+CURRENT = dict(lam=3.0, hfa=ir.HFA, cap=42.0, switch=4, obs=dict(to=3.0))
+ONAIR_PRE927 = dict(lam=3.0, hfa=ir.HFA, cap=28.0, switch=4)   # the 9/20 rule (Weeks 1-4 of 2026 were graded on this)
 MODELS = {
-    "current": dict(CURRENT, desc="on-air: lam 3, HFA 2.5, cap 28, margin cap wks 1-3 then residual"),
+    "current": dict(CURRENT, desc="on-air from 9/27: margin - 3 x TO margin, lam 3, HFA 2.5, residual cap 42"),
+    "onair_pre927": dict(ONAIR_PRE927, desc="on-air Weeks 1-4: lam 3, HFA 2.5, cap 28, margin cap wks 1-3 then residual"),
     "frozen": dict(lam=float("inf"), hfa=ir.HFA, cap=None, switch=99, desc="preseason FPI held constant"),
-    "residual": dict(CURRENT, switch=1, desc="residual cap from week 1"),
-    "margin": dict(CURRENT, switch=99, desc="margin cap all season"),
-    "nocap": dict(CURRENT, cap=None, desc="no cap"),
+    "residual": dict(ONAIR_PRE927, switch=1, desc="9/20 family: residual cap from week 1"),
+    "margin": dict(ONAIR_PRE927, switch=99, desc="9/20 family: margin cap all season"),
+    "nocap": dict(ONAIR_PRE927, cap=None, desc="9/20 family: no cap"),
     # item 1 (9/27): alternative OBSERVATIONS for the same ridge - turnover-adjusted / deserved-blend margins
-    "to3": dict(CURRENT, obs=dict(to=3.0), desc="observation = margin - 3 x turnover margin"),
-    "to4": dict(CURRENT, obs=dict(to=4.0), desc="observation = margin - 4 x turnover margin"),
-    "to4st": dict(CURRENT, obs=dict(to=4.0, st=1.0), desc="margin - 4 x TO margin - turnover-return TDs / safeties"),
-    "des_blowout": dict(CURRENT, obs=dict(des_w=0.5, des_T=14.0), desc="50/50 with the deserved margin only when they differ by 14+"),
-    "des_half": dict(CURRENT, obs=dict(des_w=0.5), desc="50/50 actual / deserved (plays-based) every game"),
-    "to3nocap": dict(CURRENT, cap=None, obs=dict(to=3.0), desc="margin - 3 x turnover margin, NO cap"),
-    "to3cap42": dict(CURRENT, cap=42.0, obs=dict(to=3.0), desc="margin - 3 x turnover margin, residual cap 42"),
-    "to4nocap": dict(CURRENT, cap=None, obs=dict(to=4.0), desc="margin - 4 x turnover margin, NO cap"),
-    "to3mc42lam2": dict(CURRENT, lam=2.0, cap=42.0, switch=99, obs=dict(to=3.0), desc="grid best: margin - 3 x TO, margin cap 42 all season, lam 2"),
+    "to3": dict(ONAIR_PRE927, obs=dict(to=3.0), desc="9/20 rule on margin - 3 x turnover margin"),
+    "to4": dict(ONAIR_PRE927, obs=dict(to=4.0), desc="9/20 rule on margin - 4 x turnover margin"),
+    "to4st": dict(ONAIR_PRE927, obs=dict(to=4.0, st=1.0), desc="margin - 4 x TO margin - turnover-return TDs / safeties"),
+    "des_blowout": dict(ONAIR_PRE927, obs=dict(des_w=0.5, des_T=14.0), desc="50/50 with the deserved margin only when they differ by 14+"),
+    "des_half": dict(ONAIR_PRE927, obs=dict(des_w=0.5), desc="50/50 actual / deserved (plays-based) every game"),
+    "to3nocap": dict(ONAIR_PRE927, cap=None, obs=dict(to=3.0), desc="margin - 3 x turnover margin, NO cap, lam 3"),
+    "to3cap42": dict(ONAIR_PRE927, cap=42.0, obs=dict(to=3.0), desc="margin - 3 x turnover margin, residual cap 42, lam 3"),
+    "to4nocap": dict(ONAIR_PRE927, cap=None, obs=dict(to=4.0), desc="margin - 4 x turnover margin, NO cap, lam 3"),
+    "to3mc42lam2": dict(lam=2.0, hfa=ir.HFA, cap=42.0, switch=99, obs=dict(to=3.0), desc="grid best (not taken): margin - 3 x TO, margin cap 42 all season, lam 2"),
 }
 
 
@@ -562,22 +565,22 @@ def main():
         fit = [s for s in seasons if s <= 2024]; test = [s for s in seasons if s == 2025]
         grid = {"current": MODELS["current"]}
         for b in (1.0, 2.0, 3.0, 4.0, 5.0, 6.0):
-            grid[f"to{b:g}"] = dict(CURRENT, obs=dict(to=b))
+            grid[f"to{b:g}"] = dict(ONAIR_PRE927, obs=dict(to=b))
         for b in (3.0, 4.0):
-            grid[f"to{b:g}+st"] = dict(CURRENT, obs=dict(to=b, st=1.0))
-            grid[f"to{b:g}+st+kick"] = dict(CURRENT, obs=dict(to=b, st=1.0, kick=1.0))
-        grid["st only"] = dict(CURRENT, obs=dict(st=1.0))
+            grid[f"to{b:g}+st"] = dict(ONAIR_PRE927, obs=dict(to=b, st=1.0))
+            grid[f"to{b:g}+st+kick"] = dict(ONAIR_PRE927, obs=dict(to=b, st=1.0, kick=1.0))
+        grid["st only"] = dict(ONAIR_PRE927, obs=dict(st=1.0))
         for w in (0.75, 0.5, 0.25):
-            grid[f"des w{w:g} all"] = dict(CURRENT, obs=dict(des_w=w))
-            grid[f"des w{w:g} T14"] = dict(CURRENT, obs=dict(des_w=w, des_T=14.0))
-            grid[f"des w{w:g} T21"] = dict(CURRENT, obs=dict(des_w=w, des_T=21.0))
-        grid["des w0.5 all ng"] = dict(CURRENT, obs=dict(des_w=0.5, des_ng=True))
-        grid["des w0.5 T14 ng"] = dict(CURRENT, obs=dict(des_w=0.5, des_T=14.0, des_ng=True))
-        grid["to4 + des w0.5 T14"] = dict(CURRENT, obs=dict(to=4.0, des_w=0.5, des_T=14.0))
-        grid["to3 + des w0.75 all"] = dict(CURRENT, obs=dict(to=3.0, des_w=0.75))
+            grid[f"des w{w:g} all"] = dict(ONAIR_PRE927, obs=dict(des_w=w))
+            grid[f"des w{w:g} T14"] = dict(ONAIR_PRE927, obs=dict(des_w=w, des_T=14.0))
+            grid[f"des w{w:g} T21"] = dict(ONAIR_PRE927, obs=dict(des_w=w, des_T=21.0))
+        grid["des w0.5 all ng"] = dict(ONAIR_PRE927, obs=dict(des_w=0.5, des_ng=True))
+        grid["des w0.5 T14 ng"] = dict(ONAIR_PRE927, obs=dict(des_w=0.5, des_T=14.0, des_ng=True))
+        grid["to4 + des w0.5 T14"] = dict(ONAIR_PRE927, obs=dict(to=4.0, des_w=0.5, des_T=14.0))
+        grid["to3 + des w0.75 all"] = dict(ONAIR_PRE927, obs=dict(to=3.0, des_w=0.75))
         for b in (3.0, 4.0):
-            grid[f"to{b:g} nocap"] = dict(CURRENT, cap=None, obs=dict(to=b))
-            grid[f"to{b:g} margin-cap"] = dict(CURRENT, switch=99, obs=dict(to=b))
+            grid[f"to{b:g} nocap"] = dict(ONAIR_PRE927, cap=None, obs=dict(to=b))
+            grid[f"to{b:g} margin-cap"] = dict(ONAIR_PRE927, switch=99, obs=dict(to=b))
         print(f"\n=== TUNE observations: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
         res = compare(ctxs, grid, fit, test)
         report["tune_obs"] = res
@@ -614,9 +617,9 @@ def main():
                     for lam in (2.0, 3.0, 4.0):
                         if cap is None and sw == 99:
                             continue
-                        grid[f"to{to:g} cap{cap} sw{sw} lam{lam:g}"] = dict(CURRENT, lam=lam, cap=cap, switch=sw, obs=dict(to=to))
+                        grid[f"to{to:g} cap{cap} sw{sw} lam{lam:g}"] = dict(ONAIR_PRE927, lam=lam, cap=cap, switch=sw, obs=dict(to=to))
         for hfa in (2.0, 3.0):
-            grid[f"to3 nocap lam3 hfa{hfa:g}"] = dict(CURRENT, cap=None, hfa=hfa, obs=dict(to=3.0))
+            grid[f"to3 nocap lam3 hfa{hfa:g}"] = dict(ONAIR_PRE927, cap=None, hfa=hfa, obs=dict(to=3.0))
         print(f"\n=== TUNE turnover coefficient: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
         res = compare(ctxs, grid, fit, test)
         report["tune_to"] = res

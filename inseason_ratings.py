@@ -30,6 +30,19 @@ never better than the actual margin out of sample (2025 MAE 12.43 at EFF_W
 deserved margins are still produced (deserved_margins) for the receipts and
 the luck column in the notes. Override with --eff-w for experiments.
 
+De-lucked observations (built and measured 2026-09-27, internal/TURNOVER_2026.md;
+Lucas switched it on the same day): from TO_SWITCH_DATE the ridge learns from
+    margin - TO_PTS x (home takeaways - home giveaways)
+instead of the raw margin (turnovers counted from the play-by-play,
+obs_features.py), with the residual cap widened to 42; LAM 3 and HFA 2.5
+unchanged. Backtest 2022-25: better than the 9/20 rule in every season and
+on the held-out 2025 (pooled MAE 12.52 vs 12.70), gap to the market in the
+under-14 buckets cut by a third. The grid optimum (lam 2, MARGIN cap 42)
+scores 0.05 better still but brings back a mild cupcake-blowout penalty
+(the artifact the 9/20 change removed) and drops Ohio State four places on
+the day of the switch - not taken; one constant to flip if Lucas wants it. Week 4 and earlier were
+graded on the rule of their day; nothing is regraded.
+
 Consumers: build_conference_book (workbook prior), edge_report (card_data
 -> deck), Season Sim. The preseason snapshot itself is never modified —
 preseason artifacts stay frozen for grading.
@@ -62,13 +75,56 @@ def cap_mode_today(today: dt.date | None = None) -> str:
 CAP_MODE = cap_mode_today()
 EFF_W = 1.0   # weight on the actual margin; 1.0 = efficiency layer off (backtest: neutral)
 SIGMA_FROZEN = 17.94    # curve residual sd, frozen prior (fit_margin_curve)
-SIGMA_INSEASON = 15.9   # pooled residual sd wks 2-14, chosen config (backtest)
+SIGMA_INSEASON = 15.9   # pooled residual sd wks 2-14, the 9/20 rule (backtest)
+SIGMA_DELUCKED = 15.8   # same, the de-lucked rule (backtest 2022-25, to3 / residual cap 42 / lam 3) - set below from the harness
 OUT_JSON = HERE / "ratings_current_2026.json"
+
+# De-lucked rule (TURNOVER_2026.md), on air from TO_SWITCH_DATE (Lucas 9/27).
+TO_SWITCH_DATE = dt.date(2026, 9, 27)
+RULE_DELUCKED = dict(lam=3.0, cap=42.0, cap_mode="residual", to_pts=3.0)   # the 9/20 residual-cap story stays true; only the observation changes (and the cap widens)
+RULE_920 = dict(lam=3.0, cap=28.0, cap_mode="residual", to_pts=0.0)
+RULE_PRESEASON = dict(lam=3.0, cap=28.0, cap_mode="margin", to_pts=0.0)
+
+
+def rule_today(today: dt.date | None = None) -> dict:
+    """The on-air rule by date: pre-registered margin cap -> residual cap
+    (9/20) -> de-lucked observations (9/27). Every consumer solves through
+    solve_2026 so a rule change lands everywhere at once."""
+    today = today or dt.date.today()
+    if TO_SWITCH_DATE and today >= TO_SWITCH_DATE:
+        return dict(RULE_DELUCKED)
+    if CAP_SWITCH_DATE and today >= CAP_SWITCH_DATE:
+        return dict(RULE_920)
+    return dict(RULE_PRESEASON)
+
+
+RULE = rule_today()
+
+
+def turnover_margins(games: list[dict]) -> dict[int, float]:
+    """{game_id: home takeaways - home giveaways} for 2026 games from the
+    cached play-by-play (obs_features.py); empty if the plays are missing."""
+    try:
+        import obs_features as of
+        f = of.build(2026, [dict(id=g["id"], week=g.get("week") or 0, home=g["home"], away=g["away"]) for g in games])
+        return {gid: v["to_home"] for gid, v in f.items()}
+    except Exception as e:  # noqa: BLE001
+        print("turnover margins unavailable:", e)
+        return {}
+
+
+def solve_2026(prior: dict[str, float], games: list[dict], rule: dict | None = None) -> dict[str, float]:
+    """The on-air solve for a set of 2026 games under today's rule (or `rule`)."""
+    r = rule or RULE
+    tm = turnover_margins(games) if r.get("to_pts") else {}
+    return ridge_update(prior, games, lam=r["lam"], cap=r["cap"], cap_mode=r["cap_mode"],
+                        to_pts=r.get("to_pts", 0.0), to_margin=tm)
 
 
 def ridge_update(prior: dict[str, float], games: list[dict], lam: float = LAM,
                  cap: float | None = CAP, hfa: float = HFA,
-                 cap_mode: str = "margin") -> dict[str, float]:
+                 cap_mode: str = "margin", to_pts: float = 0.0,
+                 to_margin: dict | None = None) -> dict[str, float]:
     """games: dicts with home/away (normalized names in `prior`), neutral,
     margin (home minus away). Returns {team: rating} for every prior team.
     cap_mode: 'margin' clips the observed margin at ±cap (original rule);
@@ -87,6 +143,8 @@ def ridge_update(prior: dict[str, float], games: list[dict], lam: float = LAM,
     X[np.arange(n), [idx[g["away"]] for g in games]] = -1.0
     h = np.array([0.0 if g["neutral"] else hfa for g in games])
     y = np.array([float(g["margin"]) for g in games])
+    if to_pts and to_margin:
+        y = y - to_pts * np.array([float(to_margin.get(g["id"], 0.0)) for g in games])
     if cap is not None and cap_mode == "margin":
         y = np.clip(y, -cap, cap)
     resid = y - (X @ p + h)
@@ -157,7 +215,8 @@ def machine_ratings(prior: dict[str, float], refresh: bool = False,
                                           dict(net_tppa=dm[g["id"]]["net_tppa"],
                                                net_sr=dm[g["id"]]["net_sr"]),
                                           model, eff_w)) for g in games]
-    cur = ridge_update(prior, fit_games, cap_mode=cap_mode)
+    rule = dict(RULE, cap_mode=cap_mode) if cap_mode != CAP_MODE else RULE
+    cur = solve_2026(prior, fit_games, rule)
     gp = {t: 0 for t in prior}
     for g in games:
         gp[g["home"]] += 1
@@ -168,8 +227,8 @@ def machine_ratings(prior: dict[str, float], refresh: bool = False,
         ranked = sorted(out.items(), key=lambda kv: -kv[1]["cur"])
         OUT_JSON.write_text(json.dumps(dict(
             as_of=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-            params=dict(lam=LAM, cap=CAP, cap_mode=cap_mode, eff_w=eff_w, hfa=HFA,
-                        sigma=sigma_for(len(games))),
+            params=dict(lam=rule["lam"], cap=rule["cap"], cap_mode=rule["cap_mode"], to_pts=rule.get("to_pts", 0.0),
+                        eff_w=eff_w, hfa=HFA, sigma=sigma_for(len(games)), rule_date=str(dt.date.today())),
             games_used=len(games),
             teams=[dict(team=t, **v) for t, v in ranked]), indent=1),
             encoding="utf-8")
@@ -189,8 +248,9 @@ def weekly_change(prior: dict[str, float], refresh: bool = False,
     if not games:
         return dict(week=None, teams={})
     week = max(g["week"] or 0 for g in games)
-    cur = ridge_update(prior, games, cap_mode=cap_mode)
-    prev = ridge_update(prior, [g for g in games if (g["week"] or 0) < week], cap_mode=cap_mode)
+    rule = dict(RULE, cap_mode=cap_mode) if cap_mode != CAP_MODE else RULE
+    cur = solve_2026(prior, games, rule)
+    prev = solve_2026(prior, [g for g in games if (g["week"] or 0) < week], rule)
     rank = {t: i + 1 for i, t in enumerate(sorted(cur, key=lambda t: -cur[t]))}
     prev_rank = {t: i + 1 for i, t in enumerate(sorted(prev, key=lambda t: -prev[t]))}
     return dict(week=week, teams={
@@ -202,7 +262,9 @@ def weekly_change(prior: dict[str, float], refresh: bool = False,
 def sigma_for(games_played: int) -> float:
     """Residual sd to run the margin curve at: frozen-prior sd until any
     rated game has been played, then the in-season backtest sd."""
-    return SIGMA_INSEASON if games_played > 0 else SIGMA_FROZEN
+    if games_played <= 0:
+        return SIGMA_FROZEN
+    return SIGMA_DELUCKED if RULE.get("to_pts") else SIGMA_INSEASON
 
 
 def espn_live_fpi(refresh: bool = True) -> dict[str, float]:

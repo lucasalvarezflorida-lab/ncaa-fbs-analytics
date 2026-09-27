@@ -118,7 +118,7 @@ def machine_rating(prior, games, through_week=None, cap_mode="residual"):
     rows = [dict(home=g["home"], away=g["away"], neutral=g["neutral"], margin=g["margin"])
             for g in games if g["completed"] and g["home"] in prior and g["away"] in prior
             and (through_week is None or g["week"] <= through_week)]
-    return ir.ridge_update(prior, rows, cap_mode=cap_mode)
+    return ir.solve_2026(prior, rows)      # today's on-air rule (de-lucked from 9/27)
 
 
 def phi(x):
