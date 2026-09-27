@@ -89,8 +89,8 @@ it lives in the internal folder, which is not in the repo.
     - Marcel Reed −4.1, #20 → #22: 6 points at LSU, two weeks after the Kentucky game
     - Arch Manning −1.6, #16: won at Tennessee but the passing game did not show — the machine's index and the market agree he is off the board for now
     - Kamario Taylor −1.6, #11: won 31–24 over Missouri, 27-of-38; Mississippi State's ten-win odds are 3% and that is what holds him down — the market disagrees loudly
-  - Card quarterbacks: Russell (#5) and Taylor (#11) meet in Starkville; Sayin (#3) plays at Iowa; Philo (Florida, not on the board — 47-of-64, 11.3 a throw, add him); Mensah (#1) at Clemson
-  - Non-QB watch: Jeremiah Smith (33 catches, 617 yards, 7 TD — 1.04 per play, the market's favorite), Malachi Toney (34 for 564, 6 TD), Jadan Baugh (54 carries, 458, 8 TD — plays at Missouri)
+  - Card quarterbacks: Russell (#5) and Taylor (#11) meet in Starkville; Sayin (#3) plays at Iowa; Byrum Brown (#18) at Tennessee; Becht (Penn State), Chiles (Northwestern), Heintschel (Pitt) and Grunkemeyer (Virginia Tech) are not on the board — check the starters against the stat package
+  - Non-QB watch: Jeremiah Smith (33 catches, 617 yards, 7 TD — 1.04 per play, the market's favorite; plays at Iowa), Malachi Toney (34 for 564, 6 TD), Jadan Baugh (54 carries, 458, 8 TD)
 
 - **Heisman (Corey's five)** — PLACEHOLDER until his deck posts. Last week: Hawkins Jr (WVU) · Sheppard (Duke) · Kamario Taylor · Maiava · Kienholz
 
@@ -110,7 +110,7 @@ it lives in the internal folder, which is not in the repo.
     - Aranda #4 (−1.0): beat Colorado 23–13, third straight win; seven wins is the bar, 65%
   - Knocking: Venables #11 (13–41 at Georgia; eight wins is the bar, 20%) · Belichick #12 · Deion Sanders #13 (13–23 at Baylor) · Mason #14 · Doeren #15
   - Norvell still #1 at 92.6: beat Central Arkansas 34–7 (an FCS game, no rating move); eight wins is the bar, 18%
-  - Card coaches: Swinney (#7) hosts Miami; Riley (#10) hosts Washington next week; DeBoer (#19, off the board — 49–18 over South Carolina) at Mississippi State
+  - Card coaches: DeBoer (#19, off the board — 49–18 over South Carolina) at Mississippi State; Campbell (Penn State, year 1) is not on the list despite the Wisconsin loss; Franklin (Virginia Tech, year 1, 3–1) and Narduzzi (Pitt, 4–0) off the board
 
 - **Hot Seat (Corey's ten)** — PLACEHOLDER until his deck posts. Last week: Norvell · Doeren · Fran Brown · Leipold · Sean Lewis · Kinne · Schiano · Calhoun · Cumbie · Rahne
 
@@ -127,5 +127,5 @@ it lives in the internal folder, which is not in the repo.
   - Machine Giant Killer: Boston College +21 at #22 SMU — the machine has it a 13-point game, so the cover chance is the best on the board
     - Say the caveat: "the machine's number, not ours"; SMU's ranking is the Week 4 poll — if SMU drops out Sunday night this becomes the Superdog and UCF moves up
   - Machine Superdog: UCF +11.5 at #25 Houston — machine has it Houston by 6.5
-    - Next on the board: Cincinnati +8.5 at Arizona · Clemson +17.5 vs Miami (home dog, on our card — mention it) · Pittsburgh +5.5 at Virginia Tech (Friday; the machine has Pitt as the favorite)
+    - Next on the board: Cincinnati +8.5 at Arizona · Clemson +17.5 vs Miami (home dog) · Pittsburgh +5.5 at Virginia Tech — ON OUR CARD Friday, and the machine has Pitt as the favorite by a hair; Auburn +7.5 at Tennessee is sixth on the Giant Killer board
   - Corey's picks: PLACEHOLDER until his deck posts
