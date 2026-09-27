@@ -41,7 +41,11 @@ SMALL = 25          # plays: below this a rate is labelled small-sample
 SPLIT_MIN = 40      # dropbacks/plays per half before the split will call a change
 POS_GROUP = {"Defensive Back": "DB", "Linebacker": "LB", "Defensive Line": "DL", "Wide Receiver": "WR",
              "Tight End": "TE", "Running Back": "RB", "Quarterback": "QB", "Offensive Line": "OL",
-             "Kicker": "K", "Punter": "P", "Longsnapper": "LS"}
+             "Kicker": "K", "Punter": "P", "Longsnapper": "LS",
+             # rosters that use abbreviations (Clemson etc.)
+             "CB": "DB", "S": "DB", "SAF": "DB", "DB": "DB", "NB": "DB", "DE": "DL", "DT": "DL", "DL": "DL", "EDGE": "DL",
+             "LB": "LB", "ILB": "LB", "OLB": "LB", "OL": "OL", "OT": "OL", "OG": "OL", "C": "OL", "WR": "WR", "TE": "TE", "RB": "RB", "QB": "QB",
+             "PK": "K", "K": "K", "P": "P", "LS": "LS"}
 
 
 # ----------------------------------------------------------------- helpers
