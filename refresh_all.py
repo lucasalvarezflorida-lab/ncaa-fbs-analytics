@@ -288,8 +288,11 @@ def write_fpi_sheet(book: Path, refresh: bool):
                  else "AP = latest AP Top 25 (not yet posted)")
     cfp_note = ("CFP = committee rankings" if polls["cfp"]
                 else "CFP = committee rankings, blank until the first release (~early Nov), then auto-fills")
-    ws["A2"] = ("MACHINE = ESPN 2026 preseason FPI updated with every completed game (ridge posterior, lam 3, "
-                f"cap 28 — INSEASON_UPDATE.md; {n_games} rated games in). Rank/Δ are ours. Δ this week / Rank Δ = the move "
+    import inseason_ratings as _ir
+    _rule = (f"lam {_ir.RULE['lam']:g}, {_ir.RULE['cap_mode']} cap {_ir.RULE['cap']:g}"
+             + (f", de-lucked margins (minus {_ir.RULE['to_pts']:g} a turnover, from 9/27)" if _ir.RULE.get("to_pts") else ""))
+    ws["A2"] = ("MACHINE = ESPN 2026 preseason FPI updated with every completed game (ridge posterior, "
+                f"{_rule} — INSEASON_UPDATE.md; {n_games} rated games in). Rank/Δ are ours. Δ this week / Rank Δ = the move "
                 f"from week {wk['week']}'s games alone (current vs a re-solve without them, same rule; rank + = climbed). ESPN FPI (live) = "
                 f"ESPN's current number, reference only. {poll_note}; {cfp_note}. 2025 BLOCK = last year's "
                 "decomposition: ESPN 2025 Final vs Our Model (public inputs: prior SP+, returning PPA, 247 "

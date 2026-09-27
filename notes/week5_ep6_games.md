@@ -21,7 +21,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Pitt is 4–0 and the machine's No. 25; Heintschel is 9.2 a throw with 13 touchdowns and one pick, and the defense has stuffed 30% of runs — 2.1 a carry allowed
     - Virginia Tech is 3–1 in Franklin's first year with three straight wins, all by one score or less against FBS teams except Old Dominion; the offense is 6.7 a throw against FBS teams and has completed one deep ball all year
     - The game is Pitt's passing game against Virginia Tech's pass rush (13 sacks, 11.7%) — and whether Virginia Tech can run on a front that does not allow it
-  - The number: Pitt −0.5, 51% · Call Pitt 27–26
+  - The number: Pitt −0.5, 51% · Call Pitt 27–26 (under the new de-lucked rule; the old rule said the same)
     - Honesty: a coin flip on the machine's board; Pitt's number is three home wins over Miami (OH), UCF and Syracuse plus 59–0 over an FCS team — it has not played on the road
     - Virginia Tech's rating has barely moved since July (+0.9); three one-score wins are what the machine expected
   - Pitt keys
@@ -65,8 +65,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Penn State lost 24–20 at home to Wisconsin as a two-touchdown favorite: 12-of-29 for 3.9 a throw, Becht's worst day, and the machine took 2.3 off it
     - Northwestern has played twice against FBS teams: 41–7 over Colorado and 23–29 at Indiana — it ran 27 times for 32 in Bloomington and still had the ball late
     - The game is Becht bouncing back against a defense that allowed 6.2 a carry to FBS teams, and Chiles (10.8 a throw, no picks) against a defense with 5 interceptions
-  - The number: Penn State −4, 60% · Call Penn State 26–22
-    - Honesty: 60% is a small favorite; the machine still has Penn State #14 and Northwestern #31 after the two results, and the Wisconsin loss cost 2.3, not the season
+  - The number: Penn State −2, 54% · Call Penn State 25–23
+    - Honesty: 54% is a coin flip with a lean; the machine has Penn State #20 and Northwestern #33 — the de-lucked rule took 2.8 off Penn State (it had been winning the turnover battle) and the Wisconsin loss cost another 2.9
     - Northwestern is +8.2 since July, the biggest rise on the card — two FBS games, one of them 41–7
   - Penn State keys
     - Becht after the worst game
@@ -106,9 +106,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Two of the SEC's most explosive passing games at 9.8 and 9.9 a throw; the difference is the defenses — Alabama allows 2.9 a carry and has 6 picks, State allows 6.4 a throw
     - State is 4–0 with wins at Minnesota and South Carolina, but the machine has only moved it up 0.5 in two weeks: the Missouri win was 31–24 as a favorite
     - The game is whether State's run game (5.5 a carry, Bothwell 402 yards) can stay on schedule against a front that stuffs 23% of runs
-  - The number: Alabama −10, 74% · Call Alabama 35–25
-    - Honesty: 74% for a road favorite that gave up 36 to Florida State; the machine's Alabama number is three straight blowouts of SEC teams and it has not priced Starkville at noon
-    - Alabama is +7.0 since July, the biggest rise in the top ten; State +10.2, the biggest in the SEC
+  - The number: Alabama −8.5, 70% · Call Alabama 34–26
+    - Honesty: 70% for a road favorite that gave up 36 to Florida State; the de-lucked rule took 2.2 off Alabama (six interceptions is the most on the card, and the rule says do not bank on them) — it has not priced Starkville at noon
+    - Alabama is +4.8 since July; State +10.0, the biggest rise in the SEC
   - Alabama keys
     - Russell keeps throwing it over the top
       - Why: the passing game is what separates this offense — 9.9 a throw, 19 explosive passes in 119 dropbacks (16%), 9-of-12 on deep throws
@@ -153,7 +153,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Tennessee just lost 20–17 to Texas and out-played them by the efficiency (deserved Tennessee +4.4); Brandon was sacked 8 times
     - Auburn is 3–1 with a 21–15 win over Vanderbilt and a 44–39 loss to Florida; Byrum Brown has been sacked 14 times in 144 dropbacks
     - The game is the two pass rushes against two quarterbacks who get sacked: Tennessee 18 sacks (13.6%), Auburn 10 (6.5%)
-  - The number: Tennessee −7.5, 69% · Call Tennessee 32–24
+  - The number: Tennessee −7, 67% · Call Tennessee 31–24
     - Honesty: the machine has Tennessee 18.0, up 0.7 after the Texas loss because it out-played the number
     - Tennessee's offense against FBS teams is 6.0 a throw; the number is the run game and the defense
   - Auburn keys
