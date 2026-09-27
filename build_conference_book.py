@@ -394,8 +394,9 @@ def build_data_sheets(wb, refresh: bool) -> dict[str, list[str]]:
             for k, r in polls[key].items():
                 fpi.setdefault(k, {})[key] = r
         n_games = sum(v["gp"] for v in mr.values()) // 2
+        import inseason_ratings as _ir
         print(f"machine: in-season update over {n_games} rated games "
-              f"(lam 3, cap 28, curve sd {sigma_for(n_games)}); ESPN live FPI "
+              f"(lam {_ir.RULE['lam']:g}, {_ir.RULE['cap_mode']} cap {_ir.RULE['cap']:g}, de-lucked {_ir.RULE.get('to_pts', 0):g}/turnover, curve sd {sigma_for(n_games)}); ESPN live FPI "
               f"{len(live)} teams as reference")
 
     games = fetch_games(refresh, fpi)
