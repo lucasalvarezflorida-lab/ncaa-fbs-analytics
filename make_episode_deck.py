@@ -144,6 +144,11 @@ TEAMS = {
     "UNLV": dict(code="UNLV", color=(0xB1, 0x02, 0x02), logo="unlv.png"),
     "BAY": dict(code="BAY", color=(0x15, 0x45, 0x35), logo="baylor.png"),
     "AUB": dict(code="AUB", color=(0x0C, 0x24, 0x40), logo="auburn.png"),
+    "PITT": dict(code="PITT", color=(0x00, 0x35, 0x94), logo="pittsburgh.png"),
+    "VT": dict(code="VT", color=(0x63, 0x00, 0x31), logo="virginiatech.png"),
+    "PSU": dict(code="PSU", color=(0x04, 0x1E, 0x42), logo="pennstate.png"),
+    "NW": dict(code="NW", color=(0x4E, 0x2A, 0x84), logo="northwestern.png"),
+    "IOWA": dict(code="IOWA", color=(0x00, 0x00, 0x00), logo="iowa.png"),
     "CLEM": dict(code="CLEM", color=(0xF6, 0x67, 0x33), logo="clemson.png"),
     "LSU": dict(code="LSU", color=(0x46, 0x1D, 0x7C), logo="lsu.png"),
     "LOU": dict(code="LOU", color=(0xAD, 0x00, 0x00), logo="louisville.png"),
@@ -186,7 +191,9 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
              "Alabama": "BAMA", "Kentucky": "UK", "Florida": "FLA",
              "Texas Tech": "TTU", "Mississippi State": "MSST",
              "South Carolina": "SCAR", "Houston": "HOU", "Tennessee": "TENN",
-             "Oregon": "ORE", "USC": "USC", "Georgia": "UGA"}
+             "Oregon": "ORE", "USC": "USC", "Georgia": "UGA",
+             "Pittsburgh": "PITT", "Virginia Tech": "VT", "Penn State": "PSU",
+             "Northwestern": "NW", "Iowa": "IOWA"}
 
 # ---- card_data contract (review item A): market + model numbers come from
 # edge_report.py --publish, never from hand-typed literals. Narrative fields
@@ -1001,12 +1008,12 @@ GAMES = [  # Week 5 — Lucas's card (Sun 9/27), kickoff order: two Friday games
         keys_b=["Chiles keeps the zero", "Find a run game — 2.7 a carry", "Win third-and-long", "The red zone"],
     ),
     dict(
-        a="ALA", b="MSST", vs="at", title="Alabama at Mississippi State",
+        a="BAMA", b="MSST", vs="at", title="Alabama at Mississippi State",
         cfbd=("Alabama", "Mississippi State"),
         where="Starkville · Davis Wade Stadium",
         sub="Sat Oct 3 · 12:00 ET · No. 7 at No. 16 — State is 4–0 for the first time since 2014",
         machine="Alabama –8.5", market="–6", value="2.5 to Alabama — quibble",
-        wp=("ALA", 70, "MSST", 30),
+        wp=("BAMA", 70, "MSST", 30),
         decides=["Two of the SEC's most explosive passing games: Russell 9.9 a throw, Taylor 9.8 with 14 touchdowns",
                  "Alabama's run defense allows 2.9 a carry and has six picks; State's defense allows 6.4 a throw",
                  "State is +10.0 since July, the biggest rise in the SEC; Alabama +4.8",
