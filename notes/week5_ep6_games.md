@@ -58,7 +58,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Third down is the whole game
       - Why: 24-of-50 on third down against FBS teams (48%) — Virginia Tech converts; Pitt's defense allows 13-of-41 (32%)
         - 9-of-24 on third-and-long; Pitt's defense allows 8-of-29
-      - The catch: Pitt has allowed 6 sacks-worth of pressure to get home on its own quarterback only 4 times — this rush has to win on third down or the game is long
+      - The catch: Pitt has allowed 4 sacks all season in 153 dropbacks (2.6%), never more than 2 in a game; Virginia Tech's rush is 13 sacks in 111 (11.7%), 9 in 95 against FBS teams — the best pass rush on the card meets the cleanest pocket, and if it does not get home on third down the game is long
     - Reserve: the rush — 9 sacks against FBS teams (9.5%); Pitt's line has given up 4 all year
   - Corey: PLACEHOLDER
 
