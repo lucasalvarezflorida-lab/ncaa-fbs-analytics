@@ -49,8 +49,9 @@ WEEKLY ROUTINE (do without asking, report after; each writes a summary in intern
   (availability news in first), refresh the notes' numbers, OneNote in place.
 * Recording day, on my word: `python recording.py --week N+1` (publish ->
   freeze -> stat packages -> pre-mortems -> totals shadow -> availability ->
-  deck -> lint -> review-before-air candidates), then push_deck -> merge_flow
-  on Corey's CURRENT export -> push the merged file -> share_deck only if new.
+  deck -> lint -> review-before-air candidates), then push_deck to the
+  episode's Slides file. No merged file: I import our slides into Corey's deck
+  myself; export his deck read-only only to read his calls, boards and superdogs.
   Give me the "review before air" list (5-10 least-certain numbers).
 * After the shoot, when I say the shoot is done: Corey's picks into the
   ledger and tracker, then `python handoff_prompt.py --shoot-done` and hand me
@@ -58,7 +59,7 @@ WEEKLY ROUTINE (do without asking, report after; each writes a summary in intern
 
 STILL ON MY WORD, EVERY TIME
 git push (public repo), anything that reaches the show or Corey (push_deck,
-merge, share), switching what the on-air machine says, sharing files,
+share), switching what the on-air machine says, sharing files,
 anything outside the folder. Corey's Google files are read-only unless his
 email says exactly "Claude, I approve you to make changes".
 
@@ -83,8 +84,8 @@ SHOOT_DONE = """POST-SHOOT CHECKLIST (the shoot is done)
   number under that team's logo, his winner in green); his superdogs at the
   lines we recorded -> superdog_ledger.json; his Top 25 / Heisman five / Hot
   Seat ten into the boards notes; his off-by column is his to fill.
-* Export the merged deck as recorded (decks/ + the Slides file id) so the
-  receipts grade what was said, not what was regenerated.
+* Export Corey's deck as recorded (read-only, decks/corey_<id>_export_wkN.pptx)
+  so the receipts grade what was said, not what was regenerated.
 * Confirm the frozen card (card_data_week{week}_frozen.json) is the one on
   air; nothing regenerates until the Ep switch.
 * Sunday is `python sunday.py --week {week}`.

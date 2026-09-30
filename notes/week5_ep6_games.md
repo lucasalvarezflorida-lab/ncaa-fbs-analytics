@@ -2,8 +2,8 @@
 
 Outline notes: game → the read, the number, each team's three keys with the
 WHY and the numbers under them, a reserve key, Corey's call. Card picked by
-Lucas Sun Sep 27; kickoff order (two Friday games first), Ohio State at Iowa
-closes — swap with Auburn–Tennessee if you want the SEC game last. Lines were
+Lucas Sun Sep 27; in Corey's deck order (9/30): two Friday games, Alabama–Mississippi
+State, Ohio State at Iowa, Auburn at Tennessee closes. Lines were
 re-read Tue 9/29 night and go final off the pre-record pull; pre-mortems are written on
 recording day from the frozen card. MACHINE-DRAFTED — review before air.
 
@@ -158,52 +158,6 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: Starkville at noon — State has not lost at home; Alabama's one wobble was a home game
   - Corey: Alabama 38–28 (Alabama) · keys: Alabama — score in the red zone, make stops in the red zone; Mississippi State — let Kamario Taylor rip it, stay disciplined
 
-- **Auburn at Tennessee — Sat 3:30 ET, Knoxville · Auburn at No. 17**
-  
-  - The read
-    - Tennessee just lost 20–17 to Texas and out-played them by the efficiency (deserved Tennessee +4.4); Brandon was sacked 8 times
-    - Auburn is 3–1 with a 21–15 win over Vanderbilt and a 44–39 loss to Florida; Byrum Brown has been sacked 14 times in 144 dropbacks
-    - The game is the two pass rushes against two quarterbacks who get sacked: Tennessee 18 sacks (13.6%), Auburn 10 (6.5%)
-  - The number: Tennessee −7, 67% · Call Tennessee 31–24
-    - Honesty: the machine has Tennessee 18.0, up 0.7 after the Texas loss because it out-played the number
-    - Tennessee's offense against FBS teams is 6.0 a throw; the number is the run game and the defense
-  - Availability (Tue 9/29 sweep)
-    - Tennessee: S Dylan Lewis out for the season (foot) — the secondary's depth keeps thinning; RB J. Baker (hand) and RB J. Gordon (leg) questionable; QB Faizon Brandon carried an upper-body tag before the Texas game and started it — VERIFY Wednesday
-    - Auburn: came out of Vanderbilt clean; WR E. Smith and RB N. Davenport have been out since Sept 20, TE H. Herring questionable; Byrum Brown active
-  - Auburn keys
-    - Keep Byrum Brown upright
-      - Why: 14 sacks allowed (9.7%), 7 of them against Florida; 5 interceptions
-        - Brown: 81-of-125 for 893 — 7.1 per attempt; 6 TD, 5 INT; 62 carries for 237 and 3 rushing TD
-          - Auburn as a team: 84-of-130 for 922 (7.1 an attempt, 11.0 per completion) — the difference is Tristan Ti'a, 2-of-4 for 39
-        - Singleton 22 for 268; Nimrod 22 for 240
-      - What Tennessee brings: 18 sacks in 132 dropbacks (13.6%), 12 against FBS teams (11.5%) — Gilliam 3, Dye 3; opponents 8-of-36 on third-and-long
-    - Run it — 4.6 a carry, 17% of runs go 10+
-      - Why: it is the half of the offense that works; Cobb 41 for 228, Brown 237 on the ground
-        - 154 for 714 (4.6), 24 runs of 10+, 15% stuffed
-        - 7-of-8 on third-and-short
-      - What Tennessee brings: 3.6 a carry allowed but 21 runs of 10+ against it (18%) — the run defense is the leak Texas State and Georgia Tech found
-    - Get Brandon on the ground
-      - Why: Texas sacked him 8 times and held Tennessee to 4.7 a throw; Auburn's rush has 10 sacks — Atkins 3 and 7 TFL, Melendez 6 TFL
-        - Opponents 6.6 a throw, 11-of-24 on deep throws against Auburn — the deep ball is the risk
-      - What he faces: Brandon has 0 interceptions in 116 dropbacks
-    - Reserve: red zone — Auburn's defense has allowed 7 touchdowns in 12 trips; Tennessee is 10-of-12
-  - Tennessee keys
-    - Run it — the offense is the run game
-      - Why: 5.5 a carry (177 for 966), 33 runs of 10+ (20%), 12% stuffed; against Texas it was 44 for 70
-        - Bishop 43 for 286, Morris 29 for 234, Brandon 26 for 137
-      - What Auburn brings: 3.1 a carry allowed (164 for 508), 18% stuffed, 12 runs of 10+ — Florida ran for 243 on it
-    - Brandon's second real test
-      - Why: at Georgia Tech he was 10-of-21; against Texas 18-of-32 for 4.7 a throw — against FBS teams the passing game is 6.0 a throw and 5 explosive passes in 88 dropbacks
-        - Brandon: 41-of-64 for 552 — 8.6 per attempt; 6 TD, 0 INT (season, FCS included)
-          - Tennessee as a team: 67-of-106 for 786 (7.4 an attempt, 11.7 per completion) — the difference is George MacIntyre, 5-of-7 for 56
-        - Matthews 10 for 189
-      - What he faces: Auburn allows 6.6 a throw, 15 explosive passes (9.7%), 5 picks — and 11-of-24 completed on deep throws
-    - Protect him
-      - Why: 10 sacks allowed on the season (8.6%), 8 of them last week; 4-of-16 on third down against Texas
-      - What Auburn brings: 10 sacks (6.5%), Atkins 3
-    - Reserve: third-and-long — Tennessee's defense allows 8-of-36; Auburn's offense converts 11-of-33
-  - Corey: Tennessee 31–21 (Tennessee) · keys: Auburn — slow the game down, convert on 3rd down, protect the QB; Tennessee — score in the red zone, protect Faizon Brandon
-
 - **Ohio State at Iowa — Sat 3:30 ET, Iowa City · No. 5 at No. 14**
   
   - The read
@@ -252,3 +206,49 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - The catch: Ohio State has scored 42 or more in every game but Texas — Iowa's offense has not scored 21 against an FBS team
     - Reserve: third-and-short — Iowa is 9-of-12; Ohio State's defense allows 10-of-13
   - Corey: Ohio State 31–20 (Ohio State) · keys: Ohio State — air it out, convert on 3rd down, defend the pass; Iowa — stay strong on 3rd down, convert on 3rd down
+
+- **Auburn at Tennessee — Sat 3:30 ET, Knoxville · Auburn at No. 17**
+  
+  - The read
+    - Tennessee just lost 20–17 to Texas and out-played them by the efficiency (deserved Tennessee +4.4); Brandon was sacked 8 times
+    - Auburn is 3–1 with a 21–15 win over Vanderbilt and a 44–39 loss to Florida; Byrum Brown has been sacked 14 times in 144 dropbacks
+    - The game is the two pass rushes against two quarterbacks who get sacked: Tennessee 18 sacks (13.6%), Auburn 10 (6.5%)
+  - The number: Tennessee −7, 67% · Call Tennessee 31–24
+    - Honesty: the machine has Tennessee 18.0, up 0.7 after the Texas loss because it out-played the number
+    - Tennessee's offense against FBS teams is 6.0 a throw; the number is the run game and the defense
+  - Availability (Tue 9/29 sweep)
+    - Tennessee: S Dylan Lewis out for the season (foot) — the secondary's depth keeps thinning; RB J. Baker (hand) and RB J. Gordon (leg) questionable; QB Faizon Brandon carried an upper-body tag before the Texas game and started it — VERIFY Wednesday
+    - Auburn: came out of Vanderbilt clean; WR E. Smith and RB N. Davenport have been out since Sept 20, TE H. Herring questionable; Byrum Brown active
+  - Auburn keys
+    - Keep Byrum Brown upright
+      - Why: 14 sacks allowed (9.7%), 7 of them against Florida; 5 interceptions
+        - Brown: 81-of-125 for 893 — 7.1 per attempt; 6 TD, 5 INT; 62 carries for 237 and 3 rushing TD
+          - Auburn as a team: 84-of-130 for 922 (7.1 an attempt, 11.0 per completion) — the difference is Tristan Ti'a, 2-of-4 for 39
+        - Singleton 22 for 268; Nimrod 22 for 240
+      - What Tennessee brings: 18 sacks in 132 dropbacks (13.6%), 12 against FBS teams (11.5%) — Gilliam 3, Dye 3; opponents 8-of-36 on third-and-long
+    - Run it — 4.6 a carry, 17% of runs go 10+
+      - Why: it is the half of the offense that works; Cobb 41 for 228, Brown 237 on the ground
+        - 154 for 714 (4.6), 24 runs of 10+, 15% stuffed
+        - 7-of-8 on third-and-short
+      - What Tennessee brings: 3.6 a carry allowed but 21 runs of 10+ against it (18%) — the run defense is the leak Texas State and Georgia Tech found
+    - Get Brandon on the ground
+      - Why: Texas sacked him 8 times and held Tennessee to 4.7 a throw; Auburn's rush has 10 sacks — Atkins 3 and 7 TFL, Melendez 6 TFL
+        - Opponents 6.6 a throw, 11-of-24 on deep throws against Auburn — the deep ball is the risk
+      - What he faces: Brandon has 0 interceptions in 116 dropbacks
+    - Reserve: red zone — Auburn's defense has allowed 7 touchdowns in 12 trips; Tennessee is 10-of-12
+  - Tennessee keys
+    - Run it — the offense is the run game
+      - Why: 5.5 a carry (177 for 966), 33 runs of 10+ (20%), 12% stuffed; against Texas it was 44 for 70
+        - Bishop 43 for 286, Morris 29 for 234, Brandon 26 for 137
+      - What Auburn brings: 3.1 a carry allowed (164 for 508), 18% stuffed, 12 runs of 10+ — Florida ran for 243 on it
+    - Brandon's second real test
+      - Why: at Georgia Tech he was 10-of-21; against Texas 18-of-32 for 4.7 a throw — against FBS teams the passing game is 6.0 a throw and 5 explosive passes in 88 dropbacks
+        - Brandon: 41-of-64 for 552 — 8.6 per attempt; 6 TD, 0 INT (season, FCS included)
+          - Tennessee as a team: 67-of-106 for 786 (7.4 an attempt, 11.7 per completion) — the difference is George MacIntyre, 5-of-7 for 56
+        - Matthews 10 for 189
+      - What he faces: Auburn allows 6.6 a throw, 15 explosive passes (9.7%), 5 picks — and 11-of-24 completed on deep throws
+    - Protect him
+      - Why: 10 sacks allowed on the season (8.6%), 8 of them last week; 4-of-16 on third down against Texas
+      - What Auburn brings: 10 sacks (6.5%), Atkins 3
+    - Reserve: third-and-long — Tennessee's defense allows 8-of-36; Auburn's offense converts 11-of-33
+  - Corey: Tennessee 31–21 (Tennessee) · keys: Auburn — slow the game down, convert on 3rd down, protect the QB; Tennessee — score in the red zone, protect Faizon Brandon

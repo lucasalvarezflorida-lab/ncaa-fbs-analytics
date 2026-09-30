@@ -8,8 +8,9 @@ shadow score call, (6) availability shadow, (7) make_episode_deck,
 (8) deck_lint, (9) review-before-air candidates (the extreme per-attempt /
 stuff / sack numbers in the stat package), (10) the machine numbers that
 must match the notes. Summary in internal/recording_week{N}.md.
-Then, on Lucas's word only: push_deck.py -> merge_flow.py on Corey's CURRENT
-export -> push to the merged file -> share_deck.py if new.
+Then, on Lucas's word only: push_deck.py to the episode's Slides file. NO merged
+file since 9/30: Lucas imports our slides into Corey's deck himself; Corey's deck
+is exported READ-ONLY only to read his calls / boards / superdogs.
 """
 from __future__ import annotations
 
@@ -78,7 +79,7 @@ def main():
             if (g["away"], g["home"]) in want:
                 out.append(f"{g['away']} at {g['home']}: machine {g['model_spread']} (P home {g['model_p_home']:.2f}) · total {g.get('ou')} · market {g.get('mkt_spread')}")
         R.note(f"## 10 frozen numbers (lines_as_of {card.get('lines_as_of')}) — these must match the notes' 'The number' lines\n```\n" + "\n".join(out) + "\n```")
-    R.note("\n## On Lucas's word only\n- `python push_deck.py --pptx decks\\<file>.pptx --file-id <EpN file>` (or --new)\n- export Corey's CURRENT deck (read-only) -> `python merge_flow.py --his <export> --ours decks\\<file>.pptx` -> push the merged file\n- `python share_deck.py --file-id <id>` only if the merged file is new\n- notes 'The number' lines + OneNote game pages in place if any number moved at the freeze")
+    R.note("\n## On Lucas's word only\n- `python push_deck.py --pptx decks\\<file>.pptx --file-id <EpN file>` (or --new)\n- NO merged file (Lucas 9/30): he imports our slides into Corey's deck himself; export Corey's deck READ-ONLY only to read his calls / boards / superdogs\n- notes 'The number' lines + OneNote game pages in place if any number moved at the freeze")
     R.finish()
 
 

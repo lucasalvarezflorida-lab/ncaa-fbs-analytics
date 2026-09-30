@@ -964,7 +964,7 @@ _GAMES_WK4 = [  # Week 4 — kickoff order (Lucas 9/20: Oklahoma–Georgia third
     ),
 ]
 
-GAMES = [  # Week 5 — Lucas's card (Sun 9/27), kickoff order: two Friday games first; Ohio State at Iowa closes (swap with Auburn–Tennessee if the SEC game should close)
+GAMES = [  # Week 5 — Lucas's card (Sun 9/27) in COREY'S deck order (9/30): two Friday games, Alabama–Mississippi State, Ohio State at Iowa, Auburn at Tennessee closes
     dict(
         a="PITT", b="VT", vs="at", title="Pitt at Virginia Tech",
         cfbd=("Pittsburgh", "Virginia Tech"),
@@ -1029,27 +1029,6 @@ GAMES = [  # Week 5 — Lucas's card (Sun 9/27), kickoff order: two Friday games
         keys_b=["Taylor's deep ball vs a secondary that gets beaten deep", "Bothwell and the run game", "Stay out of third-and-long", "Starkville at noon"],
     ),
     dict(
-        a="AUB", b="TENN", vs="at", title="Auburn at Tennessee",
-        cfbd=("Auburn", "Tennessee"),
-        where="Knoxville · Neyland Stadium",
-        sub="Sat Oct 3 · 3:30 ET · Auburn at No. 17 — Tennessee off the 20–17 loss to Texas",
-        machine="Tennessee –7", market="–7.5", value="machine = market · no play",
-        wp=("TENN", 67, "AUB", 33),
-        decides=["Tennessee out-played Texas by the efficiency and lost 20–17 — Brandon was sacked eight times",
-                 "Auburn is 3–1 with a 44–39 loss to Florida; Byrum Brown has been sacked 14 times in 144 dropbacks",
-                 "Two pass rushes against two quarterbacks who get sacked: Tennessee 18 sacks (13.6%), Auburn 10",
-                 "Tennessee's run game is the offense — 5.5 a carry, 33 runs of 10+; Auburn allows 3.1"],
-        ctx_a=dict(coach="NEW — Alex Golesh, year 1 · brought 11 from USF",
-                   qb="NEW — Byrum Brown (from USF) · 7.1 a throw, 6 TD, 5 INT",
-                   roster="top five linemen gone · nine transfers on the line"),
-        ctx_b=dict(coach="Heupel, year 6 · new DC Jim Knowles",
-                   qb="Faizon Brandon, true freshman · 8.6 a throw, 6 TD, 0 INT",
-                   roster="35% back · 21 portal adds — 12 defensive transfers"),
-        honesty="Machine Tennessee −7, market −7.5 — agreement, no play. The machine has Tennessee 16.7, up 0.9 after the Texas loss because it out-played the number; Auburn's rating has moved 0.4 since July. 67% for a touchdown home favorite.",
-        keys_a=["Keep Byrum Brown upright — 14 sacks", "Run it — 4.6 a carry", "Get Brandon on the ground", "The red zone"],
-        keys_b=["Run it — the offense is the run game", "Brandon's second real test", "Protect him — 8 sacks last week", "Third-and-long"],
-    ),
-    dict(
         a="OSU", b="IOWA", vs="at", title="Ohio State at Iowa",
         cfbd=("Ohio State", "Iowa"),
         where="Iowa City · Kinnick Stadium",
@@ -1069,6 +1048,27 @@ GAMES = [  # Week 5 — Lucas's card (Sun 9/27), kickoff order: two Friday games
         honesty="Machine Ohio State −14, market −13.5 — agreement, no play. Ohio State's rating slipped 0.6 after 42–19 over Illinois (the machine wanted 27); Iowa's number is a one-point win at Michigan and a three-point win over Iowa State. 81% for a two-touchdown road favorite; the total is the lowest on the card and the machine has no totals model, so the score call is the margin laid over it.",
         keys_a=["Sayin to Smith, and everybody else", "Run it at all — 4.6 a carry", "Third down and the red zone", "Sacks"],
         keys_b=["Run the ball, run the clock", "Brown has to hit something", "Win the field-position game", "Third-and-short"],
+    ),
+    dict(
+        a="AUB", b="TENN", vs="at", title="Auburn at Tennessee",
+        cfbd=("Auburn", "Tennessee"),
+        where="Knoxville · Neyland Stadium",
+        sub="Sat Oct 3 · 3:30 ET · Auburn at No. 17 — Tennessee off the 20–17 loss to Texas",
+        machine="Tennessee –7", market="–7.5", value="machine = market · no play",
+        wp=("TENN", 67, "AUB", 33),
+        decides=["Tennessee out-played Texas by the efficiency and lost 20–17 — Brandon was sacked eight times",
+                 "Auburn is 3–1 with a 44–39 loss to Florida; Byrum Brown has been sacked 14 times in 144 dropbacks",
+                 "Two pass rushes against two quarterbacks who get sacked: Tennessee 18 sacks (13.6%), Auburn 10",
+                 "Tennessee's run game is the offense — 5.5 a carry, 33 runs of 10+; Auburn allows 3.1"],
+        ctx_a=dict(coach="NEW — Alex Golesh, year 1 · brought 11 from USF",
+                   qb="NEW — Byrum Brown (from USF) · 7.1 a throw, 6 TD, 5 INT",
+                   roster="top five linemen gone · nine transfers on the line"),
+        ctx_b=dict(coach="Heupel, year 6 · new DC Jim Knowles",
+                   qb="Faizon Brandon, true freshman · 8.6 a throw, 6 TD, 0 INT",
+                   roster="35% back · 21 portal adds — 12 defensive transfers"),
+        honesty="Machine Tennessee −7, market −7.5 — agreement, no play. The machine has Tennessee 16.7, up 0.9 after the Texas loss because it out-played the number; Auburn's rating has moved 0.4 since July. 67% for a touchdown home favorite.",
+        keys_a=["Keep Byrum Brown upright — 14 sacks", "Run it — 4.6 a carry", "Get Brandon on the ground", "The red zone"],
+        keys_b=["Run it — the offense is the run game", "Brandon's second real test", "Protect him — 8 sacks last week", "Third-and-long"],
     ),
 ]
 
