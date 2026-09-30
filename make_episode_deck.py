@@ -1705,10 +1705,12 @@ if BOARDS:
     # -- Heisman --
     s = blank(NAVY)
     txt(s, 0.9, 0.42, 11.5, 0.4,
-        f"EPISODE {EPISODE} · WEEK {WEEK} · OUR HEISMAN BOARD", 14, ORANGE, bold=True)
-    txt(s, 0.9, 0.76, 11.5, 0.8, "Our Heisman Favorite", 40, WHITE, bold=True)
+        f"EPISODE {EPISODE} · WEEK {WEEK} · HEISMAN · BEST SO FAR, NOT A PREDICTION", 14, ORANGE, bold=True)
+    # Lucas 9/29: the board ranks who is playing the best football to date; it has never been
+    # tested against the December vote, so the slide says so (predictor study queued).
+    txt(s, 0.9, 0.76, 11.5, 0.8, "The Machine's Best-Player Board", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "Any position · points added per game (PPA, shrunk toward 2025) × team factor" + (" · market = DraftKings" if SLIDES_SHOW_MARKET else ""),
+        "Any position · points added per game (PPA, shrunk toward 2025) × team factor · who is playing best, not who wins in December" + (" · market = DraftKings" if SLIDES_SHOW_MARKET else ""),
         13, PALE, bold=True)
     # Row subtitles = box-score lines (Lucas 9/15: stats, not model terms).
     # Since 9/29 they are COMPUTED from the cached player box scores (_box_lines);
@@ -1781,7 +1783,7 @@ if BOARDS:
     fav = _HALL[0]
     _fy = TOP + 5 * RH + 0.4
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.72, ORANGE)
-    txt(s, 1.2, _fy + 0.1, 3.0, 0.5, "★ OUR FAVORITE", 15, NAVY, bold=True)
+    txt(s, 1.2, _fy + 0.1, 3.0, 0.5, "★ BEST SO FAR", 15, NAVY, bold=True)
     txt(s, 4.0, _fy + 0.08, 8.2, 0.55,
         f"{fav['name']}, {fav.get('pos', 'QB')}, {fav['team']} · index {fav['index']:.1f}"
         + (f" · market +{fav['market']}" if SLIDES_SHOW_MARKET and fav.get("market") else ""), 18, WHITE, bold=True)

@@ -89,6 +89,7 @@ it lives in the internal folder, which is not in the repo.
     - Sayin over Mensah is volume: 19.1 points a game on 131 plays against 16.2 on 112 — Mensah is the more efficient passer (0.86 a play to 0.63) and Miami has thrown less
     - Next: Leavitt 11.0 · Maiava 10.0 · Jeremiah Smith 9.5 (WR, 8th — 11.7 points a game on 47 touches, the market's favorite) · Hoover 9.3 · Hammond 9.3 · Kamario Taylor 9.2 · Chambliss 9.0
     - Say: "regardless of position the machine still lands on quarterbacks — the best receiver in the country touches it 12 times a game, his quarterback 33"
+    - Frame it (the slide says it too): this is the machine's best-player board — who is playing the best football so far — not a prediction of the December vote; the index has never been tested against who wins, and a study to do that is queued
   - The QB efficiency board (per play, the index we used through Week 4): Mensah 51.4 · Carr 47.6 · Sayin 47.3 · Hoover 41.3 · Dampier 33.4
     - Mensah +4.6 and back to a clear No. 1: 27-of-34 for 10.9 a throw against Central Michigan; per-play 0.86 on 112 plays; 94-of-106 on the season, 11 TD, 0 INT, sacked three times all year
     - Carr +1.4, #3 → #2: 49–10 at Purdue; Notre Dame 91% for ten wins — the team factor is the highest on the board
