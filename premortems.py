@@ -219,8 +219,10 @@ if __name__ == "__main__":
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--show", action="store_true")
     a = ap.parse_args()
-    if a.show:
-        show(a.week)
-    else:
+    # 9/30: --show used to skip the build, so recording.py's "--force --show" wrote nothing.
+    # Now: build unless it is a plain --show; --show prints afterwards.
+    if a.force or not a.show:
         build(a.week, a.force)
         print(f"\nwrote {os.path.basename(PM_FILE)} (week {a.week})")
+    if a.show:
+        show(a.week)

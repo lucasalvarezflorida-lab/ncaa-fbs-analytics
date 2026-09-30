@@ -325,5 +325,282 @@
     "verdict": "clean"
    }
   }
+ },
+ "5": {
+  "Pitt at Virginia Tech": {
+   "game_id": 401858245,
+   "away": "Pittsburgh",
+   "home": "Virginia Tech",
+   "pick": "Pittsburgh",
+   "machine_margin": -0.7,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.511,
+   "machine_call": [
+    28,
+    27
+   ],
+   "condition": {
+    "team": "Virginia Tech",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": ">",
+    "value": 3.0,
+    "source": "box"
+   },
+   "text": "Virginia Tech averages more than 3.0 yards a carry",
+   "why": "Virginia Tech runs for 3.7 a carry against FBS teams and Pittsburgh allows 2.3. The pick leans on Pittsburgh's run defense holding; past 3.0 a carry, Virginia Tech has won the matchup the machine trusts.",
+   "evidence": {
+    "does": 3.7,
+    "allows": 2.3,
+    "gap": 1.4
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Pittsburgh",
+      "unit": "offense",
+      "stat": "sacks_taken",
+      "op": ">=",
+      "value": 3,
+      "source": "box"
+     },
+     "text": "Pittsburgh is sacked 3+ times",
+     "gap": 1.38
+    },
+    {
+     "condition": {
+      "team": "Virginia Tech",
+      "unit": "offense",
+      "stat": "t3_pct",
+      "op": ">",
+      "value": 40,
+      "source": "box"
+     },
+     "text": "Virginia Tech converts more than 40% on third down",
+     "gap": 1.36
+    }
+   ],
+   "result": null
+  },
+  "Penn State at Northwestern": {
+   "game_id": 401858476,
+   "away": "Penn State",
+   "home": "Northwestern",
+   "pick": "Penn State",
+   "machine_margin": -1.9,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.542,
+   "machine_call": [
+    24,
+    22
+   ],
+   "condition": {
+    "team": "Northwestern",
+    "unit": "offense",
+    "stat": "pass_ypa",
+    "op": ">",
+    "value": 7.4,
+    "source": "pbp"
+   },
+   "text": "Northwestern averages more than 7.4 yards an attempt",
+   "why": "Northwestern throws for 10.3 an attempt and Penn State's defense allows 4.5. If Northwestern gets past 7.4 a throw, the passing matchup the machine counts on has flipped.",
+   "evidence": {
+    "does": 10.3,
+    "allows": 4.5,
+    "gap": 3.87
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Northwestern",
+      "unit": "offense",
+      "stat": "p20",
+      "op": ">=",
+      "value": 4,
+      "source": "pbp"
+     },
+     "text": "Northwestern has 4+ completions of 20 yards or more",
+     "gap": 2.97
+    },
+    {
+     "condition": {
+      "team": "Penn State",
+      "unit": "offense",
+      "stat": "pass_ypa",
+      "op": "<",
+      "value": 7.6,
+      "source": "pbp"
+     },
+     "text": "Penn State averages under 7.6 yards an attempt",
+     "gap": 1.6
+    }
+   ],
+   "result": null
+  },
+  "Alabama at Mississippi State": {
+   "game_id": 401856707,
+   "away": "Alabama",
+   "home": "Mississippi State",
+   "pick": "Alabama",
+   "machine_margin": -8.3,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.696,
+   "machine_call": [
+    34,
+    26
+   ],
+   "condition": {
+    "team": "Mississippi State",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": ">",
+    "value": 4.2,
+    "source": "box"
+   },
+   "text": "Mississippi State averages more than 4.2 yards a carry",
+   "why": "Mississippi State runs for 5.5 a carry against FBS teams and Alabama allows 2.9. The pick leans on Alabama's run defense holding; past 4.2 a carry, Mississippi State has won the matchup the machine trusts.",
+   "evidence": {
+    "does": 5.5,
+    "allows": 2.9,
+    "gap": 2.6
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Alabama",
+      "unit": "offense",
+      "stat": "pass_ypa",
+      "op": "<",
+      "value": 8.2,
+      "source": "pbp"
+     },
+     "text": "Alabama averages under 8.2 yards an attempt",
+     "gap": 2.33
+    },
+    {
+     "condition": {
+      "team": "Mississippi State",
+      "unit": "offense",
+      "stat": "t3_pct",
+      "op": ">",
+      "value": 37,
+      "source": "box"
+     },
+     "text": "Mississippi State converts more than 37% on third down",
+     "gap": 1.91
+    }
+   ],
+   "result": null
+  },
+  "Auburn at Tennessee": {
+   "game_id": 401856710,
+   "away": "Auburn",
+   "home": "Tennessee",
+   "pick": "Tennessee",
+   "machine_margin": 6.8,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.672,
+   "machine_call": [
+    24,
+    31
+   ],
+   "condition": {
+    "team": "Tennessee",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": "<",
+    "value": 4.0,
+    "source": "box"
+   },
+   "text": "Tennessee averages under 4.0 yards a carry",
+   "why": "Tennessee runs for 4.9 a carry; Auburn allows 3.1. Under 4.0 a carry and Auburn's front has taken the run game away from the pick.",
+   "evidence": {
+    "does": 4.9,
+    "allows": 3.1,
+    "gap": 1.8
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Tennessee",
+      "unit": "offense",
+      "stat": "ints_thrown",
+      "op": ">=",
+      "value": 1,
+      "source": "box"
+     },
+     "text": "Tennessee throws an interception",
+     "gap": 1.56
+    },
+    {
+     "condition": {
+      "team": "Auburn",
+      "unit": "offense",
+      "stat": "rush_ypc",
+      "op": ">",
+      "value": 3.8,
+      "source": "box"
+     },
+     "text": "Auburn averages more than 3.8 yards a carry",
+     "gap": 1.5
+    }
+   ],
+   "result": null
+  },
+  "Ohio State at Iowa": {
+   "game_id": 401858473,
+   "away": "Ohio State",
+   "home": "Iowa",
+   "pick": "Ohio State",
+   "machine_margin": -14.1,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.809,
+   "machine_call": [
+    30,
+    16
+   ],
+   "condition": {
+    "team": "Ohio State",
+    "unit": "offense",
+    "stat": "pass_ypa",
+    "op": "<",
+    "value": 9.1,
+    "source": "pbp"
+   },
+   "text": "Ohio State averages under 9.1 yards an attempt",
+   "why": "Ohio State throws for 11.0 an attempt; Iowa's defense allows 7.1. Under 9.1 a throw and Ohio State's passing game has been held to what Iowa usually allows, not what Ohio State usually does.",
+   "evidence": {
+    "does": 11.0,
+    "allows": 7.1,
+    "gap": 2.6
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Ohio State",
+      "unit": "offense",
+      "stat": "rush_ypc",
+      "op": "<",
+      "value": 3.7,
+      "source": "box"
+     },
+     "text": "Ohio State averages under 3.7 yards a carry",
+     "gap": 1.8
+    },
+    {
+     "condition": {
+      "team": "Ohio State",
+      "unit": "offense",
+      "stat": "sacks_taken",
+      "op": ">=",
+      "value": 2,
+      "source": "box"
+     },
+     "text": "Ohio State is sacked 2+ times",
+     "gap": 1.35
+    }
+   ],
+   "result": null
+  }
  }
 }

@@ -4,8 +4,7 @@ Outline notes: game → the read, the number, each team's three keys with the
 WHY and the numbers under them, a reserve key, Corey's call. Card picked by
 Lucas Sun Sep 27; in Corey's deck order (9/30): two Friday games, Alabama–Mississippi
 State, Ohio State at Iowa, Auburn at Tennessee closes. Lines were
-re-read Tue 9/29 night and go final off the pre-record pull; pre-mortems are written on
-recording day from the frozen card. MACHINE-DRAFTED — review before air.
+re-read Tue 9/29 night and go final off the pre-record pull; pre-mortems were written Wed 9/30 from the frozen card (lines as of 6:18 pm CT). MACHINE-DRAFTED — review before air.
 
 Stats are each team's 2026 games to date (CFBD box scores and play-by-play,
 stat_package_week5.json), never from a game against each other. Rushing totals
@@ -24,6 +23,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Pitt −0.5, 51% · Call Pitt 28–27 (under the new de-lucked rule; the old rule said the same)
     - Honesty: a coin flip on the machine's board; Pitt's number is three home wins over Miami (OH), UCF and Syracuse plus 59–0 over an FCS team — it has not played on the road
     - Virginia Tech's rating has barely moved since July (+0.9); three one-score wins are what the machine expected
+  - Pre-mortem (frozen Wed 9/30): the pick is wrong if Virginia Tech averages more than 3.0 yards a carry
+    - Virginia Tech runs for 3.7 a carry against FBS teams and Pittsburgh allows 2.3. The pick leans on Pittsburgh's run defense holding; past 3.0 a carry, Virginia Tech has won the matchup the machine trusts.
   - Availability (Tue 9/29 sweep — re-check Friday afternoon, the ACC posts no league report)
     - Both quarterbacks are fine. Pitt: WR M. Knight out; RB J. Turner, TE M. Hunt, WR R. Dunbar, LB B. Lovelace questionable, all undisclosed. Virginia Tech: RB B. Davis questionable; WR A. Greene expected to play
     - Nothing here moves the number
@@ -71,6 +72,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Penn State −2, 54% · Call Penn State 24–22
     - Honesty: 54% is a coin flip with a lean; the machine has Penn State #20 and Northwestern #34 — the de-lucked rule took 2.8 off Penn State (it had been winning the turnover battle) and the Wisconsin loss cost another 2.9
     - Northwestern is +8.2 since July, the biggest rise on the card — two FBS games, one of them 41–7
+  - Pre-mortem (frozen Wed 9/30): the pick is wrong if Northwestern averages more than 7.4 yards an attempt
+    - Northwestern throws for 10.3 an attempt and Penn State's defense allows 4.5. If Northwestern gets past 7.4 a throw, the passing matchup the machine counts on has flipped.
   - Availability (Tue 9/29 sweep — check the Big Ten availability report before air)
     - Both quarterbacks are fine. Penn State: K C. Rosa questionable — a kicker in a two-point game is the one to watch; RB D. Sheffey and TE B. Kortovich questionable; WR K. Howard out (since 9/23)
     - Northwestern: TE T. McGlinchey out, WR J. McDuffie doubtful, WR H. Eligon II questionable (lower body); CB B. Turner out
@@ -116,6 +119,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Alabama −8.5, 70% · Call Alabama 34–26
     - Honesty: 70% for a road favorite that gave up 36 to Florida State; the de-lucked rule took 2.2 off Alabama (six interceptions is the most on the card, and the rule says do not bank on them) — it has not priced Starkville at noon
     - Alabama is +4.8 since July; State +10.0, the biggest rise in the SEC
+  - Pre-mortem (frozen Wed 9/30): the pick is wrong if Mississippi State averages more than 4.2 yards a carry
+    - Mississippi State runs for 5.5 a carry against FBS teams and Alabama allows 2.9. The pick leans on Alabama's run defense holding; past 4.2 a carry, Mississippi State has won the matchup the machine trusts.
   - Availability (Tue 9/29 sweep, DeBoer's Monday update)
     - Alabama: RT Jayvin James "very much questionable" (lower body) — a backup right tackle against State's front is the one that could matter; LG Will Sanders expected to play; edges Desmond Umeozulu and Justin Hill out; DB Zay Mincey expected back
     - Mississippi State: DL Trevion Williams and WR Ayden Williams done for the season; DL Diesel Moye out; S Isaac Smith and OG J. Freeman questionable
@@ -167,6 +172,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Ohio State −14, 81% · Call Ohio State 30–16
     - Honesty: Iowa's number is a 20–19 win at Michigan and a 16–13 win over Iowa State — it has not played a top-ten offense
     - Ohio State's rating slipped 0.6 after a 42–19 win over Illinois: the machine wanted 27 and it got 23
+  - Pre-mortem (frozen Wed 9/30): the pick is wrong if Ohio State averages under 9.1 yards an attempt
+    - Ohio State throws for 11.0 an attempt; Iowa's defense allows 7.1. Under 9.1 a throw and Ohio State's passing game has been held to what Iowa usually allows, not what Ohio State usually does.
   - Availability (Tue 9/29 sweep — Big Ten report is due Wednesday 8 pm ET)
     - Ohio State: RB Bo Jackson questionable (shoulder); WR K. Parker, RB L. Bey, DL Z. Grady, WR A. Valerio-Hudson questionable, undisclosed. Sayin and Jeremiah Smith fine
     - Iowa: a clean bill of health on the Week 5 depth chart; T. Brown was hurting during the Michigan game and is being monitored. Hank Brown starts
@@ -216,6 +223,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Tennessee −7, 67% · Call Tennessee 31–24
     - Honesty: the machine has Tennessee 18.0, up 0.7 after the Texas loss because it out-played the number
     - Tennessee's offense against FBS teams is 6.0 a throw; the number is the run game and the defense
+  - Pre-mortem (frozen Wed 9/30): the pick is wrong if Tennessee averages under 4.0 yards a carry
+    - Tennessee runs for 4.9 a carry; Auburn allows 3.1. Under 4.0 a carry and Auburn's front has taken the run game away from the pick.
   - Availability (Tue 9/29 sweep)
     - Tennessee: S Dylan Lewis out for the season (foot) — the secondary's depth keeps thinning; RB J. Baker (hand) and RB J. Gordon (leg) questionable; QB Faizon Brandon carried an upper-body tag before the Texas game and started it — VERIFY Wednesday
     - Auburn: came out of Vanderbilt clean; WR E. Smith and RB N. Davenport have been out since Sept 20, TE H. Herring questionable; Byrum Brown active
