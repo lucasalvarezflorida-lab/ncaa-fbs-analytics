@@ -80,6 +80,24 @@
    "final": "Houston 42-28",
    "result": "cover",
    "points": 5
+  },
+  {
+   "week": 5,
+   "slot": "giant_killer",
+   "pick": "Boston College +21 at SMU",
+   "final": null,
+   "result": "pending",
+   "points": null,
+   "note": "board of Tue 9/29 night (the deck Lucas imported into Corey's file); confirm at the freeze"
+  },
+  {
+   "week": 5,
+   "slot": "superdog",
+   "pick": "Charlotte +20.5 vs Memphis",
+   "final": null,
+   "result": "pending",
+   "points": null,
+   "note": "board of Tue 9/29 night; confirm at the freeze"
   }
  ],
  "man_picks_week3": [
@@ -108,6 +126,22 @@
    "final": "Utah 31-17",
    "result": "loss",
    "points": 0
+  }
+ ],
+ "man_picks_week5": [
+  {
+   "pick": "Baylor +4 at Arizona State",
+   "line_note": "his line; market Tue night ASU -4",
+   "final": null,
+   "result": "pending",
+   "points": null
+  },
+  {
+   "pick": "Colorado +13 vs Texas Tech",
+   "line_note": "his line; market Tue night Texas Tech -12.5; Giant Killer (Texas Tech AP #12)",
+   "final": null,
+   "result": "pending",
+   "points": null
   }
  ]
 }

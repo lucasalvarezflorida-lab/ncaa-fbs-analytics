@@ -36,7 +36,7 @@ LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
 EPISODE, WEEK = 6, 5
 RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
-EP_DATE = "SEP 26, 2026"
+EP_DATE = "OCT 2–3, 2026"   # the card's game dates (two Friday games + Saturday)
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
 from name_mapping import normalize_name  # noqa: E402

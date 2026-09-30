@@ -203,5 +203,85 @@
    24
   ],
   "shadow_total": 43.2
+ },
+ {
+  "week": 5,
+  "game": "Pitt at Virginia Tech",
+  "away": "Pittsburgh",
+  "home": "Virginia Tech",
+  "machine": [
+   28,
+   27
+  ],
+  "man": [
+   28,
+   27
+  ],
+  "final": null,
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+ },
+ {
+  "week": 5,
+  "game": "Penn State at Northwestern",
+  "away": "Penn State",
+  "home": "Northwestern",
+  "machine": [
+   24,
+   22
+  ],
+  "man": [
+   27,
+   24
+  ],
+  "final": null,
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+ },
+ {
+  "week": 5,
+  "game": "Alabama at Mississippi State",
+  "away": "Alabama",
+  "home": "Mississippi State",
+  "machine": [
+   34,
+   26
+  ],
+  "man": [
+   38,
+   28
+  ],
+  "final": null,
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+ },
+ {
+  "week": 5,
+  "game": "Auburn at Tennessee",
+  "away": "Auburn",
+  "home": "Tennessee",
+  "machine": [
+   24,
+   31
+  ],
+  "man": [
+   21,
+   31
+  ],
+  "final": null,
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+ },
+ {
+  "week": 5,
+  "game": "Ohio State at Iowa",
+  "away": "Ohio State",
+  "home": "Iowa",
+  "machine": [
+   30,
+   16
+  ],
+  "man": [
+   31,
+   20
+  ],
+  "final": null,
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
  }
 ]

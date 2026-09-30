@@ -36,7 +36,8 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STALE = ("the receipts", "What it takes to win", "THE NUMBER", "Five Games, One Card", "Our predictions",
-         "THE MACHINE'S TOP 25", "OUR HEISMAN BOARD", "THE SEAT BOARD")
+         "THE MACHINE'S TOP 25", "OUR HEISMAN BOARD", "THE SEAT BOARD",
+         "Best-Player Board", "HEISMAN · BEST SO FAR")   # the Heisman slide's 9/29 title
 
 
 def texts(slide):
@@ -59,7 +60,7 @@ def classify_ours(slide):
         return ("top25", None)
     if "SEAT BOARD" in joined:
         return ("hotseat", None)
-    if "HEISMAN BOARD" in joined:
+    if "HEISMAN BOARD" in joined or "Best-Player Board" in joined:
         return ("heisman", None)
     if "Five Games, One Card" in joined:
         return ("card", None)
@@ -67,7 +68,11 @@ def classify_ours(slide):
         return ("closer", None)
     if "What it takes to win" in joined:
         name = next((x for x in t if "What it takes to win" not in x and len(x) < 30), t[0])
-        return ("team", name.strip().split("\n")[0])   # the team-name shape
+        # the subtitle ("What it takes to win · Pitt at Virginia Tech") carries the short name
+        # Corey uses on his "<Team> Keys to the Game" slide (Pitt, not Pittsburgh) - 9/30
+        sub = next((x for x in t if "What it takes to win" in x), "")
+        game = sub.split("\u00b7", 1)[1].strip() if "\u00b7" in sub else ""
+        return ("team", name.strip().split("\n")[0] + ("|" + game if game else ""))
     if "THE NUMBER" in joined:
         game = next((x for x in t if " at " in x and "\n" not in x and len(x) < 60), "")
         return ("number", game)
@@ -133,11 +138,21 @@ def merge(his_pptx, ours_pptx, out_pptx):
         insert_after(k, by["card"], "after his Hot Seat")
     # 3. games: team slides after his "<Team> Keys to the Game"; number slide after that game's score slide
     for o in [o for o in ours if o["kind"] == "team"]:
-        k = his(lambda txt, s, t=o["key"]: txt.startswith(f"{t} Keys to the Game"))
-        if k:
-            insert_after(k, o, f"'{o['key']} Keys to the Game'")
-        else:
-            log.append(f"NO ANCHOR for our team slide {o['key']} - left out")
+        name, _, game = o["key"].partition("|")
+        cands = [name]
+        for side in (game.split(" at ") if game else []):
+            side = side.strip()
+            if side and side != name and (name.startswith(side) or side.startswith(name)
+                                          or name.split()[0] == side.split()[0]):
+                cands.append(side)
+        k = None
+        for c in cands:
+            k = his(lambda txt, s, t=c: txt.startswith(f"{t} Keys to the Game"))
+            if k:
+                insert_after(k, o, f"'{c} Keys to the Game'")
+                break
+        if not k:
+            log.append(f"NO ANCHOR for our team slide {name} (tried {cands}) - left out")
     for o in [o for o in ours if o["kind"] == "number"]:
         a, _, b = o["key"].partition(" at ")
         kb = his(lambda txt, s, t=b: txt.startswith(f"{t} Keys to the Game"))

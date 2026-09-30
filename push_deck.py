@@ -52,6 +52,7 @@ EP4_MERGED_FILE_ID = "1N18Y9nDQGPEuzADcLtD6JFz2rmDLmQU5fFU_xHWmCAs"  # Tue 9/15:
 EP5_FILE_ID = "1zlEga3HkqMZXoNG2EmUUjICVddu-QIRucQAlk0byIcE"  # created Sun 9/20 via --new; PRIVATE (not shared yet - share_deck.py only on Lucas's word)
 EP5_MERGED_FILE_ID = "1w3Mq8lnXskaTuwmPa9UOHFwaGrKRCPs645Qepxfr1tw"  # Wed 9/23: Corey's Week 4 deck + our Ep5 slides (merge_flow.py); unshared until Lucas says
 EP6_FILE_ID = "19q79SlN1qLop7EUpkexvZ7ZFIhpQO3XOuqBIo5-3I6E"  # created Tue 9/29 night via --new on Tuesday lines; PRIVATE; recording-day freeze re-pushes over it with --file-id
+EP6_MERGED_FILE_ID = "1t9d6GU_ySGG5CJx7bAyS7oszfhHruEQl4-g8tt49ARM"  # Wed 9/30: merge_flow on Corey's Week 5 export (his own deck 1UpeONbb) + our Ep6; PRIVATE until Lucas says
 DEFAULT_PPTX = os.path.join(HERE, "decks", "2026_Week0_Episode1.pptx")
 
 PPTX_MIME = ("application/vnd.openxmlformats-officedocument"

@@ -77,7 +77,14 @@ it lives in the internal folder, which is not in the repo.
     - National title: Georgia 20%, Texas 14%, Notre Dame 14%, Ohio State 14%, LSU 10%, Alabama 9%, Miami 7%
     - Say: "Ole Miss went from 55% to 33% in one Saturday — that is what a 24-point loss to a division rival does to a résumé"
 
-- **Top 25 (Corey's)** — PLACEHOLDER until his Week 5 deck posts (read-only export)
+- **Top 25 (Corey's)** — off his Week 5 deck (Wed 9/30, read-only export)
+  - 1 Georgia (up from 2) · 2 Notre Dame (up from 3) · 3 Texas (down from 1) · 4 Miami (up from 5) · 5 Alabama (up from 6)
+  - 6 Indiana (down from 4) · 7 Florida (up from 12) · 8 Utah (up from 11) · 9 Texas Tech (up from 13) · 10 Ohio State (down from 9)
+  - 11 Nebraska (up from 20) · 12 BYU (up from 17) · 13 LSU (up from 14) · 14 Oregon (up from 15) · 15 Tennessee (down from 7)
+  - 16 Mississippi State (up from 22) · 17 Pitt (up from 23) · 18 Penn State (down from 8) · 19 Iowa (up from 24) · 20 USC (down from 16)
+  - 21 Ole Miss (down from 10) · 22 Duke (new) · 23 Michigan (down from 18) · 24 Auburn (new) · 25 UCLA (new)
+  - Where we differ most: Ohio State (his 10, our 3) · Texas Tech (his 9, our 16) · Utah (his 8, our 12) · Pitt (his 17, our 26) · Duke and UCLA on his, not ours · Texas A&M and Oklahoma on ours, not his
+  - Winners and losers (his): Man — winner UCLA, loser SMU; Machine — winner Florida ("yes again, 2nd week in a row"), loser Ole Miss
   - Last week's top ten for reference: Texas · Georgia · Notre Dame · Indiana · Miami · Alabama · Tennessee · Penn State · Ohio State · Ole Miss
   - Expect: Tennessee and Penn State down after home losses; Ole Miss down; Florida and LSU up
 
@@ -107,7 +114,9 @@ it lives in the internal folder, which is not in the repo.
   - Card quarterbacks: Russell (#6) and Taylor (#11) meet in Starkville; Sayin (#3) plays at Iowa; Byrum Brown (Auburn) at Tennessee; Becht (Penn State), Chiles (Northwestern), Heintschel (Pitt) and Grunkemeyer (Virginia Tech) are not on the board — check the starters against the stat package
   - Non-QB watch: Jeremiah Smith (33 catches, 617 yards, 7 TD — 1.04 per play, the market's favorite at +245; plays at Iowa), Malachi Toney (34 for 564, 6 TD), Jadan Baugh (54 carries, 458, 8 TD)
 
-- **Heisman (Corey's five)** — PLACEHOLDER until his deck posts. Last week: Hawkins Jr (WVU) · Sheppard (Duke) · Kamario Taylor · Maiava · Kienholz
+- **Heisman (Corey's five)** — off his Week 5 deck
+  - 1 Michael Hawkins Jr, QB West Virginia (unchanged) · 2 Jadan Baugh, RB Florida (up from unranked) · 3 Nate Sheppard, RB Duke (down from 2) · 4 Kamario Taylor, QB Mississippi State (down from 3) · 5 Jayden Maiava, QB USC (unchanged)
+  - Kienholz out. Overlap with the machine's all-positions board: Taylor (our 11th), Maiava (our 7th), Baugh (our non-QB watch); Hawkins and Sheppard are not on ours
 
 - **Hot Seat (machine)**
   - How the score works (0–100): 60 × (CBS rating ÷ 5) + 40 × chance of MISSING the bar
@@ -127,7 +136,9 @@ it lives in the internal folder, which is not in the repo.
   - Norvell still #1 at 91.2: beat Central Arkansas 34–7 (an FCS game, no rating move); eight wins is the bar, 22%
   - Card coaches: DeBoer (off the board — 49–18 over South Carolina) at Mississippi State; Campbell (Penn State, year 1) is not on the list despite the Wisconsin loss; Franklin (Virginia Tech, year 1, 3–1) and Narduzzi (Pitt, 4–0) off the board
 
-- **Hot Seat (Corey's ten)** — PLACEHOLDER until his deck posts. Last week: Norvell · Doeren · Fran Brown · Leipold · Sean Lewis · Kinne · Schiano · Calhoun · Cumbie · Rahne
+- **Hot Seat (Corey's ten)** — off his Week 5 deck
+  - Beamer (South Carolina) · Norvell (Florida State) · Dykes (TCU) · Doeren (NC State) · Fran Brown (Syracuse) · Key (Georgia Tech) · Leipold (Kansas) · Deion Sanders (Colorado) · Locksley (Maryland) · Schiano (Rutgers)
+  - Shared with the machine's ten: Norvell, Locksley, Beamer, Schiano. His new names: Dykes, Key, Sanders; out from last week: Sean Lewis, Kinne, Calhoun, Cumbie, Rahne
 
 - **Superdog rules and standings**
   - ONE rulebook (Corey's): 3.5-point dogs or more · Superdog = any game, Giant Killer = unranked dog vs a Top 25 team · 5 for a cover, 5 + the spread for a win, 1 for a push
@@ -145,4 +156,5 @@ it lives in the internal folder, which is not in the repo.
   - Machine Superdog: Charlotte +20.5 vs Memphis (home dog) — machine has it Memphis by 12
     - Sunday's pick, Buffalo, went from +15.5 to +13.5 and is second (machine has Western Michigan by 7.5); next: Wyoming +18.5 at North Dakota State · UCF +12.5 at Houston
   - Pitt +3.5 at Virginia Tech is ON OUR CARD Friday, and the machine has Pitt as the favorite by a hair; Auburn +7 at Tennessee is also on the card
-  - Corey's picks: PLACEHOLDER until his deck posts
+  - Corey's picks (his deck, Wed 9/30): Superdog Baylor +4 at Arizona State · Giant Killer Colorado +13 vs #12 Texas Tech — graded at those lines
+    - Machine has Arizona State by 5.4 (Baylor is a RED alert on the upset board, machine side Baylor) and Texas Tech by 13.3

@@ -21,7 +21,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Pitt is 4–0 and the machine's No. 26, first team outside the 25; Heintschel is 9.2 a throw with 13 touchdowns and one pick, and the defense has stuffed 30% of runs — 2.1 a carry allowed
     - Virginia Tech is 3–1 in Franklin's first year with three straight wins, all by one score or less against FBS teams except Old Dominion; the offense is 6.7 a throw against FBS teams and has completed one deep ball all year
     - The game is Pitt's passing game against Virginia Tech's pass rush (13 sacks, 11.7%) — and whether Virginia Tech can run on a front that does not allow it
-  - The number: Pitt −0.5, 51% · Call Pitt 27–26 (under the new de-lucked rule; the old rule said the same)
+  - The number: Pitt −0.5, 51% · Call Pitt 28–27 (under the new de-lucked rule; the old rule said the same)
     - Honesty: a coin flip on the machine's board; Pitt's number is three home wins over Miami (OH), UCF and Syracuse plus 59–0 over an FCS team — it has not played on the road
     - Virginia Tech's rating has barely moved since July (+0.9); three one-score wins are what the machine expected
   - Availability (Tue 9/29 sweep — re-check Friday afternoon, the ACC posts no league report)
@@ -60,7 +60,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - 9-of-24 on third-and-long; Pitt's defense allows 8-of-29
       - The catch: Pitt has allowed 4 sacks all season in 153 dropbacks (2.6%), never more than 2 in a game; Virginia Tech's rush is 13 sacks in 111 (11.7%), 9 in 95 against FBS teams — the best pass rush on the card meets the cleanest pocket, and if it does not get home on third down the game is long
     - Reserve: the rush — 9 sacks against FBS teams (9.5%); Pitt's line has given up 4 all year
-  - Corey: PLACEHOLDER
+  - Corey: Pitt 28–27 (Pitt) · keys: Pitt — stop the run, score in the red zone, air it out; Virginia Tech — score in the red zone, make red zone stops, stop the run
 
 - **Penn State at Northwestern — Fri 8:00 ET, Evanston · Penn State (out of the AP poll after Wisconsin) at Northwestern, the new Ryan Field's first big one**
   
@@ -68,7 +68,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Penn State lost 24–20 at home to Wisconsin as a two-touchdown favorite: 12-of-29 for 3.9 a throw, Becht's worst day, and the machine took 2.3 off it
     - Northwestern has played twice against FBS teams: 41–7 over Colorado and 23–29 at Indiana — it ran 27 times for 32 in Bloomington and still had the ball late
     - The game is Becht bouncing back against a defense that allowed 6.2 a carry to FBS teams, and Chiles (10.8 a throw, no picks) against a defense with 5 interceptions
-  - The number: Penn State −2, 54% · Call Penn State 25–23
+  - The number: Penn State −2, 54% · Call Penn State 24–22
     - Honesty: 54% is a coin flip with a lean; the machine has Penn State #20 and Northwestern #34 — the de-lucked rule took 2.8 off Penn State (it had been winning the turnover battle) and the Wisconsin loss cost another 2.9
     - Northwestern is +8.2 since July, the biggest rise on the card — two FBS games, one of them 41–7
   - Availability (Tue 9/29 sweep — check the Big Ten availability report before air)
@@ -105,7 +105,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - Why: 7-of-14 on third-and-long against FBS teams, the best rate on the card; the offense lives on Chiles converting
       - What Penn State brings: opponents 8-of-32 on third-and-long; Wisconsin was 5-of-11
     - Reserve: the red zone — Northwestern is 7 touchdowns in 9 trips against FBS teams; Penn State's defense has allowed 3 in 8
-  - Corey: PLACEHOLDER
+  - Corey: Penn State 27–24 (Penn State) · keys: Penn State — stay strong on 3rd down, make stops in the red zone; Northwestern — score in the red zone, stop the run, win the turnover battle
 
 - **Alabama at Mississippi State — Sat 12:00 ET, Starkville · No. 7 at No. 16**
   
@@ -156,7 +156,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - 7 sacks allowed in 136 dropbacks (5%)
       - What Alabama brings: opponents 7-of-33 on third-and-long; 8.3% sack rate
     - Reserve: Starkville at noon — State has not lost at home; Alabama's one wobble was a home game
-  - Corey: PLACEHOLDER
+  - Corey: Alabama 38–28 (Alabama) · keys: Alabama — score in the red zone, make stops in the red zone; Mississippi State — let Kamario Taylor rip it, stay disciplined
 
 - **Auburn at Tennessee — Sat 3:30 ET, Knoxville · Auburn at No. 17**
   
@@ -202,7 +202,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
       - Why: 10 sacks allowed on the season (8.6%), 8 of them last week; 4-of-16 on third down against Texas
       - What Auburn brings: 10 sacks (6.5%), Atkins 3
     - Reserve: third-and-long — Tennessee's defense allows 8-of-36; Auburn's offense converts 11-of-33
-  - Corey: PLACEHOLDER
+  - Corey: Tennessee 31–21 (Tennessee) · keys: Auburn — slow the game down, convert on 3rd down, protect the QB; Tennessee — score in the red zone, protect Faizon Brandon
 
 - **Ohio State at Iowa — Sat 3:30 ET, Iowa City · No. 5 at No. 14**
   
@@ -210,7 +210,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Ohio State's passing game is the best on the card (11.0 a throw, Smith 33 for 617) against a defense that allows 2.7 a carry and has allowed four runs of 10+ all year — this is a pass-vs-secondary game
     - Iowa's offense is what it always is: 6.6 a throw, 6 explosive passes all year, 862 rushing yards against three FBS teams and an FCS
     - The game is whether Iowa can keep it under 45 and get Ohio State into third-and-long; Ohio State's only loss was a 24–23 game where it ran for 94
-  - The number: Ohio State −14, 81% · Call Ohio State 29–15
+  - The number: Ohio State −14, 81% · Call Ohio State 30–16
     - Honesty: Iowa's number is a 20–19 win at Michigan and a 16–13 win over Iowa State — it has not played a top-ten offense
     - Ohio State's rating slipped 0.6 after a 42–19 win over Illinois: the machine wanted 27 and it got 23
   - Availability (Tue 9/29 sweep — Big Ten report is due Wednesday 8 pm ET)
@@ -251,4 +251,4 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - Iowa's defense: 4 picks, 9 sacks; Ohio State's offense has thrown 4 picks (two by the backup)
       - The catch: Ohio State has scored 42 or more in every game but Texas — Iowa's offense has not scored 21 against an FBS team
     - Reserve: third-and-short — Iowa is 9-of-12; Ohio State's defense allows 10-of-13
-  - Corey: PLACEHOLDER
+  - Corey: Ohio State 31–20 (Ohio State) · keys: Ohio State — air it out, convert on 3rd down, defend the pass; Iowa — stay strong on 3rd down, convert on 3rd down
