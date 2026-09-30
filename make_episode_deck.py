@@ -2018,8 +2018,9 @@ txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5 if len(_l2) <= 150 else 9, RGBColor(0
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
-    # -- numbers slide --
+    # -- numbers slide (built first, MOVED after the two team slides below - Lucas 9/29) --
     s = blank()
+    _num_slide = s
     logo_badge(s, 0.9, 0.42, 0.8, g["a"])
     txt(s, 1.82, 0.52, 0.5, 0.5, g["vs"], 14, MUTE, align=PP_ALIGN.CENTER)
     logo_badge(s, 2.35, 0.42, 0.8, g["b"])
@@ -2125,8 +2126,8 @@ for g in GAMES:
     # Line movement (g["move"], LEDGER[title]) is INTERNAL (Lucas 9/15): it stays
     # in the ledger and the notes, not on the slide.
 
-    # -- team slides (Corey's format: one full slide per team; the score
-    #    predictions live only on the closing card, truly LAST). Context band
+    # -- team slides (Corey's format: one full slide per team; since 9/29 they
+    #    come BEFORE the game's numbers slide - see the reorder below). Context band
     #    = the significance frame: coach status, QB situation, roster
     #    continuity (CFBD returning offensive PPA + portal-add counts). --
     _sh = SHORT.get(g["title"], {})
@@ -2153,6 +2154,14 @@ for g in GAMES:
                 bold=_short)
             yy += step
         txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · " + g["title"], 9, MUTE)
+
+    # Lucas 9/29: talk about each team first, THEN the number and the prediction -
+    # per game the order is team A, team B, numbers slide. The numbers slide was
+    # built first (its text feeds the team slides), so move its entry to the end.
+    _lst = prs.slides._sldIdLst
+    _el = list(_lst)[prs.slides.index(_num_slide)]
+    _lst.remove(_el)
+    _lst.append(_el)
 
 # ---------------- upset board (this week's alerts + the scorecard) ----------------
 if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):
