@@ -97,6 +97,7 @@ MARKET = {   # DraftKings via Covers, Sun 9/27 AM (post-Week 4); players not on 
     "Jeremiah Smith": 245, "Darian Mensah": 400, "Kamario Taylor": 480,
     "Trinidad Chambliss": 1150, "Jadan Baugh": 1200, "C.J. Carr": 1300,
     "Keelon Russell": 1600, "Malachi Toney": 1750, "Arch Manning": 3000,
+    "Julian Sayin": 3000,   # added Tue 9/29 from SI's DK tracker (same 9/27 board; it also lists Russell at +1700)
 }
 QB_POOL = ["Julian Sayin", "Darian Mensah", "C.J. Carr", "Josh Hoover",
            "Arch Manning", "Dante Moore", "Jayden Maiava", "Will Hammond",

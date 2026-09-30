@@ -3,8 +3,8 @@
 Outline notes: game → the read, the number, each team's three keys with the
 WHY and the numbers under them, a reserve key, Corey's call. Card picked by
 Lucas Sun Sep 27; kickoff order (two Friday games first), Ohio State at Iowa
-closes — swap with Auburn–Tennessee if you want the SEC game last. Lines are
-Sunday's — re-read them off the pre-record pull; pre-mortems are written on
+closes — swap with Auburn–Tennessee if you want the SEC game last. Lines were
+re-read Tue 9/29 night and go final off the pre-record pull; pre-mortems are written on
 recording day from the frozen card. MACHINE-DRAFTED — review before air.
 
 Stats are each team's 2026 games to date (CFBD box scores and play-by-play,
@@ -18,12 +18,15 @@ context is kept out of this file on purpose - it lives in the internal folder.
 - **Pitt at Virginia Tech — Fri 7:00 ET, Blacksburg · Pitt at Virginia Tech, both unbeaten in the ACC**
   
   - The read
-    - Pitt is 4–0 and the machine's No. 25; Heintschel is 9.2 a throw with 13 touchdowns and one pick, and the defense has stuffed 30% of runs — 2.1 a carry allowed
+    - Pitt is 4–0 and the machine's No. 26, first team outside the 25; Heintschel is 9.2 a throw with 13 touchdowns and one pick, and the defense has stuffed 30% of runs — 2.1 a carry allowed
     - Virginia Tech is 3–1 in Franklin's first year with three straight wins, all by one score or less against FBS teams except Old Dominion; the offense is 6.7 a throw against FBS teams and has completed one deep ball all year
     - The game is Pitt's passing game against Virginia Tech's pass rush (13 sacks, 11.7%) — and whether Virginia Tech can run on a front that does not allow it
   - The number: Pitt −0.5, 51% · Call Pitt 27–26 (under the new de-lucked rule; the old rule said the same)
     - Honesty: a coin flip on the machine's board; Pitt's number is three home wins over Miami (OH), UCF and Syracuse plus 59–0 over an FCS team — it has not played on the road
     - Virginia Tech's rating has barely moved since July (+0.9); three one-score wins are what the machine expected
+  - Availability (Tue 9/29 sweep — re-check Friday afternoon, the ACC posts no league report)
+    - Both quarterbacks are fine. Pitt: WR M. Knight out; RB J. Turner, TE M. Hunt, WR R. Dunbar, LB B. Lovelace questionable, all undisclosed. Virginia Tech: RB B. Davis questionable; WR A. Greene expected to play
+    - Nothing here moves the number
   - Pitt keys
     - Heintschel against the rush
       - Why: 13 sacks in 111 dropbacks against Virginia Tech (11.7%) — Harris 5, Stevens 4.5; Pitt has allowed 4 sacks in 153 (2.6%), the cleanest pocket on the card
@@ -66,8 +69,12 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Northwestern has played twice against FBS teams: 41–7 over Colorado and 23–29 at Indiana — it ran 27 times for 32 in Bloomington and still had the ball late
     - The game is Becht bouncing back against a defense that allowed 6.2 a carry to FBS teams, and Chiles (10.8 a throw, no picks) against a defense with 5 interceptions
   - The number: Penn State −2, 54% · Call Penn State 25–23
-    - Honesty: 54% is a coin flip with a lean; the machine has Penn State #20 and Northwestern #33 — the de-lucked rule took 2.8 off Penn State (it had been winning the turnover battle) and the Wisconsin loss cost another 2.9
+    - Honesty: 54% is a coin flip with a lean; the machine has Penn State #20 and Northwestern #34 — the de-lucked rule took 2.8 off Penn State (it had been winning the turnover battle) and the Wisconsin loss cost another 2.9
     - Northwestern is +8.2 since July, the biggest rise on the card — two FBS games, one of them 41–7
+  - Availability (Tue 9/29 sweep — check the Big Ten availability report before air)
+    - Both quarterbacks are fine. Penn State: K C. Rosa questionable — a kicker in a two-point game is the one to watch; RB D. Sheffey and TE B. Kortovich questionable; WR K. Howard out (since 9/23)
+    - Northwestern: TE T. McGlinchey out, WR J. McDuffie doubtful, WR H. Eligon II questionable (lower body); CB B. Turner out
+    - Nothing here moves the number
   - Penn State keys
     - Becht after the worst game
       - Why: 8.8 a throw on the season, 3.9 against Wisconsin; 18 explosive passes in 113 dropbacks (16%), 9-of-22 on deep throws
@@ -109,6 +116,10 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Alabama −8.5, 70% · Call Alabama 34–26
     - Honesty: 70% for a road favorite that gave up 36 to Florida State; the de-lucked rule took 2.2 off Alabama (six interceptions is the most on the card, and the rule says do not bank on them) — it has not priced Starkville at noon
     - Alabama is +4.8 since July; State +10.0, the biggest rise in the SEC
+  - Availability (Tue 9/29 sweep, DeBoer's Monday update)
+    - Alabama: RT Jayvin James "very much questionable" (lower body) — a backup right tackle against State's front is the one that could matter; LG Will Sanders expected to play; edges Desmond Umeozulu and Justin Hill out; DB Zay Mincey expected back
+    - Mississippi State: DL Trevion Williams and WR Ayden Williams done for the season; DL Diesel Moye out; S Isaac Smith and OG J. Freeman questionable
+    - Both quarterbacks are fine. The internal availability layer nets State's losses against Alabama's and lands within a point of the machine
   - Alabama keys
     - Russell keeps throwing it over the top
       - Why: the passing game is what separates this offense — 9.9 a throw, 19 explosive passes in 119 dropbacks (16%), 9-of-12 on deep throws
@@ -156,6 +167,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Tennessee −7, 67% · Call Tennessee 31–24
     - Honesty: the machine has Tennessee 18.0, up 0.7 after the Texas loss because it out-played the number
     - Tennessee's offense against FBS teams is 6.0 a throw; the number is the run game and the defense
+  - Availability (Tue 9/29 sweep)
+    - Tennessee: S Dylan Lewis out for the season (foot) — the secondary's depth keeps thinning; RB J. Baker (hand) and RB J. Gordon (leg) questionable; QB Faizon Brandon carried an upper-body tag before the Texas game and started it — VERIFY Wednesday
+    - Auburn: came out of Vanderbilt clean; WR E. Smith and RB N. Davenport have been out since Sept 20, TE H. Herring questionable; Byrum Brown active
   - Auburn keys
     - Keep Byrum Brown upright
       - Why: 14 sacks allowed (9.7%), 7 of them against Florida; 5 interceptions
@@ -199,6 +213,10 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - The number: Ohio State −14, 81% · Call Ohio State 29–15
     - Honesty: Iowa's number is a 20–19 win at Michigan and a 16–13 win over Iowa State — it has not played a top-ten offense
     - Ohio State's rating slipped 0.6 after a 42–19 win over Illinois: the machine wanted 27 and it got 23
+  - Availability (Tue 9/29 sweep — Big Ten report is due Wednesday 8 pm ET)
+    - Ohio State: RB Bo Jackson questionable (shoulder); WR K. Parker, RB L. Bey, DL Z. Grady, WR A. Valerio-Hudson questionable, undisclosed. Sayin and Jeremiah Smith fine
+    - Iowa: a clean bill of health on the Week 5 depth chart; T. Brown was hurting during the Michigan game and is being monitored. Hank Brown starts
+    - Nothing here moves the number
   - Ohio State keys
     - Sayin to Smith, and everybody else
       - Why: the offense is 11.0 a throw, 22 explosive passes in 138 dropbacks (16%), 11-of-20 on deep throws

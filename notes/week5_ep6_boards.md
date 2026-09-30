@@ -1,7 +1,7 @@
 # Ep6 · Week 5 — BOARDS
 
 Outline notes: topic → the points → the facts under each point. Read the
-level you need. Drafted Sun Sep 27 from the Sunday rebuild (215 rated games; AP Week 5
+level you need. Drafted Sun Sep 27 from the Sunday rebuild, numbers re-checked Tue Sep 29 night (215 rated games; AP Week 5
 poll of Sun Sep 27 evening). MACHINE-DRAFTED — review before air. Corey's sections are
 placeholders until his deck updates (his file is read-only for us).
 Betting-line context for this episode is kept out of this file on purpose -
@@ -62,13 +62,13 @@ it lives in the internal folder, which is not in the repo.
     - Penn State −2.9, #15 → #20: LOST 24–20 at home to Wisconsin as a two-touchdown favorite
     - Texas A&M −2.1, #9 → #11: lost 35–6 at LSU — that is −7.4 in two weeks
     - Indiana −1.9 (stays #8): 29–23 over Northwestern as a 19-point favorite; South Carolina −1.8, #19 → #22; Oklahoma −1.7, #11 → #14
-  - Into the 25: Iowa #25 (won 20–19 at Michigan) · Out: SMU (#23 → #31, only 34–24 over Missouri State) · Louisville (#28 → #42 after the home loss to Wake Forest) and Pittsburgh (#27) sit just outside
+  - Into the 25: Iowa #25 (won 20–19 at Michigan) · Out: SMU (#23 → #30, only 34–24 over Missouri State) · Louisville (#28 → #41 after the home loss to Wake Forest) and Pittsburgh (#26) sit just outside
   - The Texas question — expect it: No. 1 in the AP again, No. 4 here
     - Four games, three of them decided by 8 or fewer (Ohio State by 1, Texas at Tennessee by 3); the machine has Texas 1.9 points behind Georgia and rates the Ohio State win as the whole résumé
     - The efficiency side says Tennessee out-played them (deserved Tennessee +4.4) — Texas won on 8 sacks and the turnover, and the new rule takes the turnover out
     - Say: "voters rank wins, the machine rates margins — Texas is 4–0 with two one-score wins over top-ten teams; both can be right"
   - Voters vs us (AP Week 5, Sun 9/27)
-    - Oklahoma State 19 vs our 38 · Houston 20 vs our 35 · Kentucky 24 vs our 39 · BYU 10 vs our 21 · Iowa 14 vs our 25 · SMU 21 vs our 31 · Boise State 22 vs our 29
+    - Oklahoma State 19 vs our 38 · Houston 20 vs our 35 · Kentucky 24 vs our 39 · BYU 10 vs our 21 · Iowa 14 vs our 25 · SMU 21 vs our 30 · Boise State 22 vs our 29
     - Ours not theirs: Texas A&M, Oklahoma, Nebraska, Penn State, South Carolina, Auburn, Michigan · Theirs not ours: Oklahoma State, Houston, SMU, Boise State, UCLA, Kentucky, Missouri
     - Agree on the top four in some order (Texas / Georgia / Notre Dame / Ohio State); the voters have Miami 4th, we have it 7th; Penn State and Michigan fell out of their poll, Penn State is still our #20
   - Playoff picture (the machine's simulator, 10,000 seasons from these ratings — internal column, not on the slide unless Lucas says)
@@ -132,10 +132,11 @@ it lives in the internal folder, which is not in the repo.
   - How the machine picks: expected points under the rulebook (5 × chance to cover + spread × chance to win), home dog breaks ties
     - Guard rails: spreads 3.5 to 28, and the machine skips the games where its own number is furthest from the posted spread
 
-- **Superdog picks (Sunday evening's lines — re-read off the recording-day pull)**
-  - Machine Giant Killer: Clemson +17.5 vs #4 Miami (home dog) — the machine has it Miami by 13
-    - Say the caveat: "the machine's number, not ours"; next on the Giant Killer board: Boston College +20.5 at #21 SMU, UCF +11.5 at #20 Houston
-  - Machine Superdog: Buffalo +15.5 vs Western Michigan (home dog) — machine has it Western Michigan by 7.5
-    - Next on the board: Charlotte +21 vs Memphis · Wyoming +20.5 at North Dakota State
-  - Pitt +4.5 at Virginia Tech is ON OUR CARD Friday, and the machine has Pitt as the favorite by a hair; Auburn +7.5 at Tennessee is also on the card
+- **Superdog picks (Tuesday night's lines — the recording-day pull decides; both Sunday picks moved off the top)**
+  - Machine Giant Killer: Boston College +21 at #21 SMU (road dog) — the machine has it SMU by 15
+    - Sunday's pick, Clemson, went from +17.5 to +16.5 and is third on the board (machine has Miami by 13); next: UCF +12.5 at #20 Houston · Clemson +16.5 vs #4 Miami · Utah State +20.5 at #22 Boise State
+    - Say the caveat: "the machine's number, not ours"
+  - Machine Superdog: Charlotte +20.5 vs Memphis (home dog) — machine has it Memphis by 12
+    - Sunday's pick, Buffalo, went from +15.5 to +13.5 and is second (machine has Western Michigan by 7.5); next: Wyoming +18.5 at North Dakota State · UCF +12.5 at Houston
+  - Pitt +3.5 at Virginia Tech is ON OUR CARD Friday, and the machine has Pitt as the favorite by a hair; Auburn +7 at Tennessee is also on the card
   - Corey's picks: PLACEHOLDER until his deck posts
