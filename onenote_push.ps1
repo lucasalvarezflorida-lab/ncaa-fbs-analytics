@@ -11,8 +11,9 @@
 # notebook is not found. The section is looked up by name ANYWHERE in the
 # notebook (section groups included) and created at the root if missing. A
 # page with the same title in that section is REPLACED (old one -> notebook
-# recycle bin); page XML that already carries a real page ID is updated in
-# place instead. The .md files are the master copy.
+# recycle bin) UNLESS it was hand-edited in OneNote after the push (then it is
+# skipped; -Force overrides); page XML that already carries a real page ID is
+# updated in place instead. The .md files are the master copy.
 param(
   [Parameter(Mandatory = $true)][string]$Section,
   [string[]]$Files = @(),
@@ -20,6 +21,7 @@ param(
   [string]$BoardsFile = "",       # boards .md -> four pages (Recap / Top 25 / Heisman / Hot Seat)
   [string[]]$PageXml = @(),
   [string[]]$Skip = @(),          # page titles NOT to replace (e.g. a page Lucas hand-formatted)
+  [switch]$Force,                 # replace pages even if they were hand-edited in OneNote after the push
   [string]$Prefix = "",           # page-title prefix, e.g. "Week 5 - " - pages accumulate week by week instead of replacing
   [string]$Notebook = "Podcast",
   [string]$Python = "python"
@@ -40,8 +42,15 @@ $sec = $sd.SelectNodes("//one:Section[@name='$Section']", $ns) | Where-Object { 
 if ($sec) { $secId = $sec.ID } else { $secId = ''; $on.OpenHierarchy("$Section.one", $nb.ID, [ref]$secId, 3); "created section '$Section'" }
 
 function Push-Page([string]$title, [string]$xmlPath) {
+  if ($Skip -contains $title) { "skipped (in -Skip): $title"; return }
   $sx2 = ''; $on.GetHierarchy($secId, 4, [ref]$sx2)
-  ([xml]$sx2).SelectNodes('//one:Page', $ns) | Where-Object { $_.name -eq $title } | ForEach-Object { $on.DeleteHierarchy($_.ID) }
+  $existing = @(([xml]$sx2).SelectNodes('//one:Page', $ns) | Where-Object { $_.name -eq $title })
+  # HAND-EDIT GUARD (added 9/29 after a re-push wiped Lucas's formatting): a page whose
+  # lastModifiedTime is later than its creation time was edited in OneNote after the push.
+  # Never replace it without -Force; fix its text in place instead (page XML via -PageXml).
+  $edited = @($existing | Where-Object { $_.lastModifiedTime -and $_.dateTime -and ([DateTime]$_.lastModifiedTime) -gt ([DateTime]$_.dateTime).AddSeconds(5) })
+  if ($edited.Count -gt 0 -and -not $Force) { "SKIPPED (hand-edited in OneNote at $($edited[0].lastModifiedTime); use -Force to replace): $title"; return }
+  $existing | ForEach-Object { $on.DeleteHierarchy($_.ID) }
   $pageId = ''; $on.CreateNewPage($secId, [ref]$pageId, 0)
   $page = (Get-Content $xmlPath -Raw -Encoding UTF8).Replace('{PAGE_ID}', $pageId)
   $on.UpdatePageContent($page)
