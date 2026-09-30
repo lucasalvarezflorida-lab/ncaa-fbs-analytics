@@ -1574,6 +1574,65 @@ else:
     txt(s, 1.1, _fy + 0.05, 11.2, 0.28, _line1, 11, WHITE, bold=True)
     txt(s, 1.1, _fy + 0.32, 11.2, 0.28, _line2, 10.5, PALE)
 
+
+def _box_lines(names):
+    """Season box-score lines for the Heisman slide from the cached CFBD player box
+    scores (fpi-decomposition/data/games_players_week-*_year-2026.json) - replaces
+    the hand-typed HEISMAN_WHY lines that went stale between weeks (found 9/29)."""
+    import glob as _glob, json as _json, os as _os
+    def _i(v):
+        try:
+            return int(str(v).replace(",", ""))
+        except Exception:
+            return 0
+    tot = {n: dict(games=set(), pc=0, pa=0, py=0, ptd=0, pint=0, rec=0, ry=0, rtd=0, car=0, ruy=0, rutd=0) for n in names}
+    base = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "fpi-decomposition", "data")
+    for f in _glob.glob(_os.path.join(base, "games_players_week-*_year-2026.json")):
+        for g in _json.load(open(f, encoding="utf-8")):
+            for t in g.get("teams", []):
+                for cat in t.get("categories", []):
+                    if cat.get("name") not in ("passing", "receiving", "rushing"):
+                        continue
+                    for ty in cat.get("types", []):
+                        for a in ty.get("athletes", []):
+                            n = a.get("name")
+                            if n not in tot:
+                                continue
+                            d = tot[n]; d["games"].add(g.get("id")); v = a.get("stat")
+                            k = (cat["name"], ty.get("name"))
+                            if k == ("passing", "C/ATT") and "/" in str(v):
+                                c, at = str(v).split("/"); d["pc"] += _i(c); d["pa"] += _i(at)
+                            elif k == ("passing", "YDS"): d["py"] += _i(v)
+                            elif k == ("passing", "TD"): d["ptd"] += _i(v)
+                            elif k == ("passing", "INT"): d["pint"] += _i(v)
+                            elif k == ("receiving", "REC"): d["rec"] += _i(v)
+                            elif k == ("receiving", "YDS"): d["ry"] += _i(v)
+                            elif k == ("receiving", "TD"): d["rtd"] += _i(v)
+                            elif k == ("rushing", "CAR"): d["car"] += _i(v)
+                            elif k == ("rushing", "YDS"): d["ruy"] += _i(v)
+                            elif k == ("rushing", "TD"): d["rutd"] += _i(v)
+    words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight",
+             9: "nine", 10: "ten", 11: "eleven", 12: "twelve", 13: "thirteen"}
+    out = {}
+    for n, d in tot.items():
+        if not d["games"]:
+            continue
+        thr = f" through {words.get(len(d['games']), len(d['games']))}"
+        if d["pa"] >= 20:
+            line = f"{d['pc']}-of-{d['pa']}, {d['py']:,} yards, {d['ptd']} TD, {d['pint']} INT"
+            if d["ruy"] >= 100:
+                line += f" · {d['ruy']} rushing, {d['rutd']} TD"
+        elif d["rec"] >= d["car"]:
+            line = f"{d['rec']} catches, {d['ry']:,} yards, {d['rtd']} TD"
+            if d["car"] >= 5:
+                line += f" · {d['car']} carries, {d['ruy']}"
+        else:
+            line = f"{d['car']} carries, {d['ruy']:,} yards, {d['rutd']} TD"
+            if d["rec"] >= 5:
+                line += f" · {d['rec']} catches, {d['ry']}"
+        out[n] = line + thr
+    return out
+
 # ---------------- slides 2-3: hot seat + Heisman boards ----------------
 # Data: boards_week{N}.json from hot_seat_heisman.py (CBS rating x season-sim
 # odds of hitting the job-saving win total; QB PPA blend x team P(10+)).
@@ -1649,11 +1708,12 @@ if BOARDS:
         f"EPISODE {EPISODE} · WEEK {WEEK} · OUR HEISMAN BOARD", 14, ORANGE, bold=True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "Our Heisman Favorite", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "Team factor × QB efficiency (PPA per play)" + (" · market = DraftKings" if SLIDES_SHOW_MARKET else ""),
+        "Any position · points added per game (PPA, shrunk toward 2025) × team factor" + (" · market = DraftKings" if SLIDES_SHOW_MARKET else ""),
         13, PALE, bold=True)
     # Row subtitles = box-score lines (Lucas 9/15: stats, not model terms).
-    # Season totals from the CFBD player box scores through Week 2.
-    HEISMAN_WHY = {   # CFBD season box-score lines through Week 3 (refresh each week)
+    # Since 9/29 they are COMPUTED from the cached player box scores (_box_lines);
+    # the hand-typed lines below are only the fallback for a name the cache lacks.
+    _HEISMAN_WHY_HAND = {
         "Darian Mensah": "71-of-79, 873 yards, 11 TD, 0 INT through three",
         "Josh Hoover": "37-of-51, 649 yards, 10 TD, 0 INT through three",
         "C.J. Carr": "53-of-73, 726 yards, 6 TD, 0 INT through three",
@@ -1665,36 +1725,41 @@ if BOARDS:
         "Keelon Russell": "57-of-83, 764 yards, 4 TD, 2 INT · 133 rushing, 2 TD",
         "Dante Moore": "61-of-89, 849 yards, 9 TD, 0 INT through three",
     }
+    # Lucas 9/29: the slide ranks EVERY position on points added per game x team factor
+    # (boards heisman_all); the QB-only efficiency index stays in the JSON and on the last line.
+    _HALL = BOARDS.get("heisman_all") or BOARDS["heisman"]
+    HEISMAN_WHY = dict(_HEISMAN_WHY_HAND)
+    HEISMAN_WHY.update(_box_lines(sorted({x["name"] for x in _HALL[:9]} | {x["name"] for x in BOARDS["heisman"][:9]})))
     _mkt = {x["name"]: x["market"] for x in BOARDS["heisman"] + BOARDS["heisman_non_qb"]
             if x.get("market")}
     _order = sorted(_mkt, key=lambda n: _mkt[n])
     _mrank = {n: i + 1 for i, n in enumerate(_order)}
     TOP, RH = 2.08, 0.62
     _dx = 0.0 if SLIDES_SHOW_MARKET else 3.0    # no market columns: slide the numbers to the right edge
-    _hdr(s, 1.75, 2.7, TOP - 0.25, "QUARTERBACK · TEAM")
+    _hdr(s, 1.75, 2.7, TOP - 0.25, "PLAYER · POS · TEAM")
     _hdr(s, 4.5 + _dx, 1.2, TOP - 0.25, "2026 PPA (PLAYS)", R)
     _hdr(s, 5.75 + _dx, 0.8, TOP - 0.25, "2025 PRIOR", R)
-    _hdr(s, 6.6 + _dx, 0.7, TOP - 0.25, "BLEND", R)
+    _hdr(s, 6.6 + _dx, 0.7, TOP - 0.25, "PTS / GAME", R)
     _hdr(s, 7.35 + _dx, 0.9, TOP - 0.25, "TEAM P(10+)", R)
     _hdr(s, 8.3 + _dx, 0.7, TOP - 0.25, "INDEX", R)
     if SLIDES_SHOW_MARKET:
         _hdr(s, 9.05, 0.9, TOP - 0.25, "MARKET", R)
         _hdr(s, 10.0, 0.9, TOP - 0.25, "MKT RANK", R)
         _hdr(s, 10.95, 1.45, TOP - 0.25, "MAN VS MACHINE", R)
-    for i, r in enumerate(BOARDS["heisman"][:5]):
+    for i, r in enumerate(_HALL[:5]):
         y = TOP + i * RH
         if i % 2 == 0:
             shape(s, MSO_SHAPE.RECTANGLE, 0.9, y, 11.5, RH, NAVY2)
         txt(s, 0.9, y + 0.04, 0.4, 0.3, str(i + 1), 13, ORANGE, bold=True, align=R)
         _row_logo(s, 1.35, y - 0.02, r["team"])
         why = HEISMAN_WHY.get(r["name"]) or (
-            f"team factor {r['team_factor']:.2f} × blended efficiency {r['blend']:.3f} "
-            f"(2026 {r['ppa26']:.3f} on {r['plays26']} plays, prior {r['ppa25']})")
+            f"{r.get('ppg', 0):.1f} points added a game ({r['ppa26']:.2f} a play on {r['plays26']} plays, "
+            f"prior {r['ppa25'] if r['ppa25'] is not None else 'none'}) × team factor {r['team_factor']:.2f}")
         txt(s, 1.75, y + 0.31, 10.6, 0.3, why, 11.5, PALE)
-        txt(s, 1.75, y + 0.04, 2.7, 0.3, f"{r['name']} · {r['team']}", 12, WHITE, bold=True)
-        txt(s, 4.5 + _dx, y + 0.05, 1.2, 0.3, f"{r['ppa26']:.3f} ({r['plays26']})", 10.5, WHITE, align=R)
-        txt(s, 5.75 + _dx, y + 0.05, 0.8, 0.3, f"{r['ppa25']:.3f}" if r["ppa25"] is not None else "new", 10.5, PALE, align=R)
-        txt(s, 6.6 + _dx, y + 0.05, 0.7, 0.3, f"{r['blend']:.3f}", 10.5, WHITE, align=R)
+        txt(s, 1.75, y + 0.04, 2.7, 0.3, f"{r['name']} · {r.get('pos', 'QB')} · {r['team']}", 12, WHITE, bold=True)
+        txt(s, 4.5 + _dx, y + 0.05, 1.2, 0.3, f"{r['ppa26']:.2f} ({r['plays26']})", 10.5, WHITE, align=R)
+        txt(s, 5.75 + _dx, y + 0.05, 0.8, 0.3, f"{r['ppa25']:.2f}" if r["ppa25"] is not None else "new", 10.5, PALE, align=R)
+        txt(s, 6.6 + _dx, y + 0.05, 0.7, 0.3, f"{r.get('ppg', 0):.1f}", 10.5, WHITE, align=R)
         txt(s, 7.35 + _dx, y + 0.05, 0.9, 0.3, f"{round(100 * r['p10w'])}%", 10.5, WHITE, align=R)
         txt(s, 8.3 + _dx, y + 0.04, 0.7, 0.3, f"{r['index']:.1f}", 12.5, ORANGE, bold=True, align=R)
         if SLIDES_SHOW_MARKET:
@@ -1708,25 +1773,23 @@ if BOARDS:
             txt(s, 10.95, y + 0.05, 1.45, 0.3, lab, 9.5,
                 UP if lab == "market too low" else (DOWN if lab == "market too high" else PALE),
                 bold=lab != "agree", align=R)
-    _nx = BOARDS["heisman"][5:9]
+    _nx = _HALL[5:9]
     txt(s, 0.9, TOP + 5 * RH + 0.04, 11.5, 0.28,
         "Next up: " + " · ".join(f"{x['name']} {x['index']:.1f}" +
                                 (f" (market #{_mrank[x['name']]})" if SLIDES_SHOW_MARKET and x['name'] in _mrank else "")
                                 for x in _nx), 9.5, PALE, italic=True)
-    fav = BOARDS["heisman"][0]
+    fav = _HALL[0]
     _fy = TOP + 5 * RH + 0.4
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.72, ORANGE)
     txt(s, 1.2, _fy + 0.1, 3.0, 0.5, "★ OUR FAVORITE", 15, NAVY, bold=True)
     txt(s, 4.0, _fy + 0.08, 8.2, 0.55,
-        f"{fav['name']}, {fav['team']} · index {fav['index']:.1f}"
+        f"{fav['name']}, {fav.get('pos', 'QB')}, {fav['team']} · index {fav['index']:.1f}"
         + (f" · market +{fav['market']}" if SLIDES_SHOW_MARKET and fav.get("market") else ""), 18, WHITE, bold=True)
-    _non = BOARDS["heisman_non_qb"]
     txt(s, 0.9, _fy + 0.85, 11.5, 0.3,
-        "Non-QB watch: " +
-        " · ".join(f"{x['name']}" + (f" (+{x['market']})" if SLIDES_SHOW_MARKET and x.get("market") else f" ({x['team']})")
-                   for x in _non[:4]), 11, PALE)
+        "QB efficiency board (per play): " +
+        " · ".join(f"{x['name']} {x['index']:.1f}" for x in BOARDS["heisman"][:5]), 11, PALE)
     txt(s, 0.9, 7.13, 11.5, 0.3,
-        "PPA = predicted points added per play · re-computes every rebuild", 10, PALE,
+        "PPA = predicted points added (CFBD) · points a game = shrunk per-play PPA × plays ÷ games · team factor = 0.5 + half the team's odds of 10 wins", 10, PALE,
         italic=True)
 
 # ---------------- title slide ----------------

@@ -81,10 +81,15 @@ it lives in the internal folder, which is not in the repo.
   - Last week's top ten for reference: Texas · Georgia · Notre Dame · Indiana · Miami · Alabama · Tennessee · Penn State · Ohio State · Ole Miss
   - Expect: Tennessee and Penn State down after home losses; Ole Miss down; Florida and LSU up
 
-- **Heisman board (machine)**
-  - How it works: index = team factor × blended efficiency
-    - Team factor = 0.5 + half the team's odds of 10+ wins; efficiency = 2026 PPA per play with 150 plays of 2025 as a prior
-  - The five: Mensah 51.4 · Carr 47.6 · Sayin 47.3 · Hoover 41.3 · Dampier 33.4
+- **Heisman board (machine) — ALL POSITIONS from this week (Lucas, Tue 9/29)**
+  - How it works: index = points added per game × team factor, any position
+    - Points added = CFBD PPA per play, shrunk toward the player's 2025 rate (150 plays of prior for a QB, 40 for a receiver or back), × plays ÷ games; team factor = 0.5 + half the team's odds of 10+ wins
+    - Why per game and not per play: a receiver adds about 1.0 a touch and a passer about 0.5 a throw — per play is not comparable across positions; per game is what the voters see
+  - The five: Sayin 15.5 · Mensah 14.4 · Carr 12.3 · Dampier 11.1 · Russell 11.1
+    - Sayin over Mensah is volume: 19.1 points a game on 131 plays against 16.2 on 112 — Mensah is the more efficient passer (0.86 a play to 0.63) and Miami has thrown less
+    - Next: Leavitt 11.0 · Maiava 10.0 · Jeremiah Smith 9.5 (WR, 8th — 11.7 points a game on 47 touches, the market's favorite) · Hoover 9.3 · Hammond 9.3 · Kamario Taylor 9.2 · Chambliss 9.0
+    - Say: "regardless of position the machine still lands on quarterbacks — the best receiver in the country touches it 12 times a game, his quarterback 33"
+  - The QB efficiency board (per play, the index we used through Week 4): Mensah 51.4 · Carr 47.6 · Sayin 47.3 · Hoover 41.3 · Dampier 33.4
     - Mensah +4.6 and back to a clear No. 1: 27-of-34 for 10.9 a throw against Central Michigan; per-play 0.86 on 112 plays; 94-of-106 on the season, 11 TD, 0 INT, sacked three times all year
     - Carr +1.4, #3 → #2: 49–10 at Purdue; Notre Dame 91% for ten wins — the team factor is the highest on the board
     - Sayin +1.9, #4 → #3: 27-of-36 for 10.2 against Illinois; 0.63 per play — and Jeremiah Smith is the market's favorite off his back (12 catches, 217, 4 TD)

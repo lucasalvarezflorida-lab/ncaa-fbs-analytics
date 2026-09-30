@@ -109,6 +109,14 @@ NON_QB = ["Jeremiah Smith", "Malachi Toney", "Ryan Wingo", "Trent Mosley",
           "Jadan Baugh", "Koby Howard"]
 K_PRIOR = 150.0
 PRIOR_DEFAULT = 0.35
+# ALL-POSITIONS board (Lucas 9/29: "who are our favorites regardless of position"):
+# the common unit is POINTS ADDED PER GAME = shrunk per-play PPA x plays / games,
+# times the same team factor. A receiver's per-touch PPA runs ~1.0 vs a passer's
+# ~0.5, so per play is not comparable across positions; per game is what the
+# voters see. Non-QB prior weight is smaller (a receiver sees ~12 plays a game).
+K_PRIOR_NONQB = 40.0
+PRIOR_DEFAULT_NONQB = 0.50
+NONQB_AUTO = 12          # plus the top-N WR and RB by 2026 total PPA, so nobody is missed
 
 
 def season_sim():
@@ -184,10 +192,30 @@ def _ppa(year, position, threshold, refresh):
                     refresh)
 
 
-def heisman(sim, refresh):
+def heisman(sim, refresh, games=None):
+    games = games or {}
     cur = {x["name"]: x for x in _ppa(2026, "QB", 15, refresh)}
     prior = {x["name"]: x for x in _ppa(2025, "QB", 100, False)}
     rows = []
+    all_rows = []
+
+    def _all_row(name, c, pos, avg25, k_prior, prior_default):
+        avg26, tot26 = c["averagePPA"]["all"], c["totalPPA"]["all"]
+        n26 = tot26 / avg26 if avg26 else 0
+        blend = (n26 * avg26 + k_prior * (avg25 if avg25 is not None else prior_default)) / (n26 + k_prior)
+        s = sim.get(c["team"], {})
+        p10w = s.get("p10w", 0.0) or 0.0
+        tf = 0.5 + 0.5 * p10w
+        g = max(games.get(c["team"], 0), 1)
+        ppg = blend * n26 / g
+        ml = MARKET.get(name)
+        return dict(name=name, team=c["team"], pos=pos, plays26=round(n26), games=g,
+                    ppa26=round(avg26, 3), tot26=round(tot26, 1),
+                    ppa25=round(avg25, 3) if avg25 is not None else None,
+                    blend=round(blend, 3), ppg=round(ppg, 1), p10w=round(p10w, 2),
+                    team_factor=round(tf, 3), index=round(tf * ppg, 1),
+                    market=ml, market_p=round(100 / (100 + ml) * 100, 1) if ml else None)
+
     for name in QB_POOL:
         c = cur.get(name)
         if not c:
@@ -207,24 +235,42 @@ def heisman(sim, refresh):
                          blend=round(blend, 3), p10w=round(p10w, 2),
                          team_factor=round(tf, 3), index=round(100 * tf * blend, 1),
                          market=ml, market_p=round(100 / (100 + ml) * 100, 1) if ml else None))
+        ar = _all_row(name, c, "QB", avg25, K_PRIOR, PRIOR_DEFAULT)
+        ar["qb_index"] = rows[-1]["index"]
+        all_rows.append(ar)
     rows.sort(key=lambda x: -x["index"])
     # non-QB watch (own scale): 2026 PPA per play + 2025 prior where it exists
     wr = {x["name"]: x for x in _ppa(2026, "WR", 5, refresh)}
     rb = {x["name"]: x for x in _ppa(2026, "RB", 5, refresh)}
     wr25 = {x["name"]: x for x in _ppa(2025, "WR", 40, False)}
+    rb25 = {x["name"]: x for x in _ppa(2025, "RB", 40, False)}
     non = []
     for name in NON_QB:
         c = wr.get(name) or rb.get(name)
         if not c:
             continue
-        p = wr25.get(name)
+        p = wr25.get(name) or rb25.get(name)
         non.append(dict(name=name, team=c["team"], pos=c["position"],
                         ppa26=round(c["averagePPA"]["all"], 2),
                         tot26=round(c["totalPPA"]["all"], 1),
                         ppa25=round(p["averagePPA"]["all"], 2) if p else None,
                         p10w=round(sim.get(c["team"], {}).get("p10w", 0) or 0, 2),
                         market=MARKET.get(name)))
-    return rows, non
+    # all-positions board: the hand list plus the top-N WR / RB by 2026 total PPA
+    pool = list(NON_QB)
+    for grp in (wr, rb):
+        for x in sorted(grp.values(), key=lambda v: -(v["totalPPA"]["all"] or 0))[:NONQB_AUTO]:
+            if x["name"] not in pool:
+                pool.append(x["name"])
+    for name in pool:
+        c = wr.get(name) or rb.get(name)
+        if not c or not c["team"]:
+            continue
+        p = wr25.get(name) or rb25.get(name)
+        all_rows.append(_all_row(name, c, c["position"], p["averagePPA"]["all"] if p else None,
+                                 K_PRIOR_NONQB, PRIOR_DEFAULT_NONQB))
+    all_rows.sort(key=lambda x: -x["index"])
+    return rows, non, all_rows
 
 
 def main():
@@ -247,12 +293,13 @@ def main():
                                     (g["awayTeam"], g["homeTeam"], g["awayPoints"], g["homePoints"], "at")):
             results.setdefault(me, []).append(f"{'W' if mp > op else 'L'} {mp}-{op} {ha} {opp}")
     hs = hot_seat(sim, ratings, results)
-    hb, non = heisman(sim, a.refresh)
+    games = {t: len(v) for t, v in results.items()}
+    hb, non, hall = heisman(sim, a.refresh, games)
     ub = upset_board(a.week)
     out = dict(week=a.week, generated=dt.datetime.now().isoformat(timespec="seconds"),
                ratings_as_of=rt.get("as_of"), games_used=rt.get("games_used"),
                cbs_date=CBS_DATE, market_date=MARKET_DATE,
-               hot_seat=hs, heisman=hb, heisman_non_qb=non, upset_board=ub)
+               hot_seat=hs, heisman=hb, heisman_non_qb=non, heisman_all=hall, upset_board=ub)
     path = HERE / f"boards_week{a.week}.json"
     json.dump(out, open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"HOT SEAT (CBS {CBS_DATE} x machine, {rt.get('games_used')} rated games)")
@@ -261,6 +308,11 @@ def main():
         print(f"{i:>2} {r['coach']:<18}{r['team']:<18} CBS {r['cbs']}{est}  bar {r['bar']}  "
               f"P(bar) {r['p_bar']:.2f}  proj {r['proj']} ({r['p10']}-{r['p90']})  "
               f"rating {r['rating']} ({r['delta']:+})  score {r['score']}  | {'; '.join(r['results'])}")
+    print(f"\nHEISMAN — ALL POSITIONS (points added per game x team factor; market DK {MARKET_DATE})")
+    for i, r in enumerate(hall[:12], 1):
+        print(f"{i:2d} {r['name']:<20} {r['pos']:<3}{r['team']:<18} {r['ppa26']:.3f} on {r['plays26']} plays in {r['games']} g"
+              f"  blend {r['blend']:.3f}  pts/g {r['ppg']:5.1f}  tf {r['team_factor']:.2f}  index {r['index']:5.1f}"
+              f"  market {('+' + str(r['market'])) if r['market'] else '—'}")
     print(f"\nHEISMAN BOARD (market DK {MARKET_DATE})")
     for i, r in enumerate(hb[:12], 1):
         print(f"{i:>2} {r['name']:<20}{r['team']:<14} 2026 {r['ppa26']:.3f} on {r['plays26']} plays  "

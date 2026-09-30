@@ -267,6 +267,10 @@ def boards_skeleton(week, ep):
     L.append("- **Heisman board (machine)** — index = team factor × blended efficiency (market " + str(b.get("market_date")) + ")")
     L += ["  - " + x for x in deltas(b["heisman"][:8], b0.get("heisman", []), "name", "index")]
     L.append("  - Non-QB watch: " + ", ".join(f"{r['name']} ({r.get('team', '')})" for r in b.get("heisman_non_qb", [])[:4]))
+    if b.get("heisman_all"):     # Lucas 9/29: the slide board is ALL positions (points added per game x team factor)
+        L.append("  - All positions (the slide board): " + " · ".join(
+            f"{r['name']} ({r['pos']}) {r['index']:.1f}" for r in b["heisman_all"][:8]))
+        L += ["  - " + x for x in deltas(b["heisman_all"][:8], b0.get("heisman_all", []), "name", "index")]
     L.append("")
     L.append("- **Hot Seat (machine)** — 60 × (CBS ÷ 5) + 40 × P(miss the bar); CBS frozen " + str(b.get("cbs_date")))
     L += ["  - " + x for x in deltas(b["hot_seat"][:12], b0.get("hot_seat", []), "coach", "score")]
