@@ -12,7 +12,12 @@ GAME LAYOUT (how Lucas formats a game page in OneNote, 2026-09-21):
     least explosive ...") or a breakdown ("...; 0-for-6 against Ohio State")
     is split: the second clause becomes its own sub-bullet, capitalised
   * the read moves to the END as "Recap": first read line, the other read
-    lines nested under it, then "The number" with its children
+    lines nested under it, then "The number" with its children, then the
+    "Availability" block when the notes carry one
+  * (Lucas 9/29, copied from his hand-formatted Pitt page) a "Why:" / "What X
+    brings:" line with several ';' clauses = headline + one sub-bullet per
+    clause; an evidence line splits at ", <number>" too; the "Reserve" key and
+    the "X as a team:" line are struck through
   * "Corey: ..." last, no bullet
 Each XML has a {PAGE_ID} placeholder; onenote_push.ps1 fills it in. The .md
 files stay the master copy - OneNote is a reading copy."""
@@ -85,6 +90,7 @@ def parse(md):
 def inline(t):
     t = html.escape(t, quote=False)
     t = re.sub(r"\*\*(.+?)\*\*", r"<span style='font-weight:bold'>\1</span>", t)
+    t = re.sub(r"~~(.+?)~~", r"<span style='text-decoration:line-through'>\1</span>", t)
     t = re.sub(r"`(.+?)`", r"<span style='font-family:Consolas'>\1</span>", t)
     t = re.sub(r"\[(.+?)\]\((https?://[^)]+)\)", r"<a href='\2'>\1</a>", t)
     return t.replace("]]>", "]]&gt;")
@@ -150,6 +156,8 @@ def split_evidence(node):
     if LABEL.match(t) or node["kids"]:
         return
     m = re.search(r" — (?=[a-z0-9])", t) or re.search(r"; (?=\d)", t)
+    if not m and ":" not in t.split(",")[0] and len(t.split(",")[0].split()) >= 4:
+        m = re.search(r", (?=\d)", t)
     if not m:
         return
     head, tail = t[:m.start()].rstrip(), t[m.end():].strip()
@@ -159,11 +167,35 @@ def split_evidence(node):
     node["kids"] = [dict(text=tail[0].upper() + tail[1:], bullet=True, kids=[])]
 
 
+def split_label(node):
+    """Lucas 9/29: a 'Why:' or 'What X brings:' line with several clauses is a headline
+    plus one sub-bullet per further clause (split on '; '), ahead of the evidence."""
+    t = node["text"]
+    if not re.match(r"^(Why|What .+? brings)", t, re.I) or "; " not in t:
+        return
+    parts = [x.strip() for x in t.split("; ") if x.strip()]
+    if len(parts) < 2 or any(len(x) < 12 for x in parts[1:]):
+        return
+    node["text"] = parts[0]
+    node["kids"] = [dict(text=x[0].upper() + x[1:], bullet=True, kids=[]) for x in parts[1:]] + node["kids"]
+
+
+STRIKE = re.compile(r"^(Reserve\b|[A-Z][\w.'()& -]+ as a team: )")
+
+
+def strike_deemphasised(node):
+    """Lucas 9/29: the 'Reserve' key and the 'X as a team:' line under a passer are struck through."""
+    if STRIKE.match(node["text"]) and not node["text"].startswith("~~"):
+        node["text"] = "~~" + node["text"] + "~~"
+    for k in node["kids"]:
+        strike_deemphasised(k)
+
+
 def game_layout(game):
     """game = the top-level md node for one game -> (title, xml) in Lucas's layout."""
     header = game["text"].strip("*")
     title = header.split(" — ")[0].strip()
-    read = number = corey = None
+    read = number = corey = avail = None
     keys = []
     for k in game["kids"]:
         t = k["text"]
@@ -171,6 +203,8 @@ def game_layout(game):
             read = k
         elif t.startswith("The number"):
             number = k
+        elif t.startswith("Availability"):
+            avail = k
         elif t.startswith("Corey"):
             corey = k
         elif t.endswith(" keys"):
@@ -180,12 +214,16 @@ def game_layout(game):
             for why in key["kids"]:
                 for ev in why["kids"]:
                     split_evidence(ev)
+                split_label(why)
+        strike_deemphasised(kb)
     recap = dict(text="Recap", bullet=True, kids=[])
     if read and read["kids"]:
         first = dict(read["kids"][0], kids=[dict(x, kids=[]) for x in read["kids"][1:]])
         recap["kids"].append(first)
     if number:
         recap["kids"].append(number)
+    if avail:
+        recap["kids"].append(avail)
     top = dict(text="**" + header + "**", bullet=True, kids=keys + [recap])
     if corey:
         top["kids"].append(dict(text=corey["text"], bullet=False, kids=[]))
