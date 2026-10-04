@@ -11,10 +11,10 @@
   }
  },
  "standings": {
-  "man": 39.5,
-  "machine": 20,
-  "as_of": "through Week 4",
-  "note": "Through Week 3: Man 29 / Machine 15. Week 4: Machine +5 (Georgia Southern +18.5 covered, lost by 14; Charlotte +10 lost 34-7). Man +10.5 AT OUR RECORDED LINES (Air Force +5.5 WON outright 36-33 = 5 + 5.5; Iowa State +8 lost by 14) - Corey grades his own at the line he took; confirm."
+  "man": 48.5,
+  "machine": 25.0,
+  "as_of": "through Week 5 (both); Corey's week 5 graded 10/4 at the lines we recorded - he confirms his own",
+  "note": "Through Week 3: Man 29 / Machine 15. Week 4: Machine +5 (Georgia Southern +18.5 covered, lost by 14; Charlotte +10 lost 34-7). Man +10.5 AT OUR RECORDED LINES (Air Force +5.5 WON outright 36-33 = 5 + 5.5; Iowa State +8 lost by 14) - Corey grades his own at the line he took; confirm. Week 5: Machine +5 (Boston College +21 covered, lost 25-16; Charlotte +20.5 lost 59-8). Man +9 AT OUR RECORDED LINES (Baylor +4 WON outright 55-19 = 5 + 4; Colorado +13 lost 29-7)."
  },
  "machine_picks": [
   {
@@ -85,18 +85,18 @@
    "week": 5,
    "slot": "giant_killer",
    "pick": "Boston College +21 at SMU",
-   "final": null,
-   "result": "pending",
-   "points": null,
+   "final": "SMU 25-16",
+   "result": "cover",
+   "points": 5,
    "note": "board of Tue 9/29 night (the deck Lucas imported into Corey's file); confirm at the freeze"
   },
   {
    "week": 5,
    "slot": "superdog",
    "pick": "Charlotte +20.5 vs Memphis",
-   "final": null,
-   "result": "pending",
-   "points": null,
+   "final": "Memphis 59-8",
+   "result": "loss",
+   "points": 0,
    "note": "board of Tue 9/29 night; confirm at the freeze"
   }
  ],
@@ -132,16 +132,16 @@
   {
    "pick": "Baylor +4 at Arizona State",
    "line_note": "his line; market Tue night ASU -4",
-   "final": null,
-   "result": "pending",
-   "points": null
+   "final": "Baylor 55-19",
+   "result": "win",
+   "points": 9.0
   },
   {
    "pick": "Colorado +13 vs Texas Tech",
    "line_note": "his line; market Tue night Texas Tech -12.5; Giant Killer (Texas Tech AP #12)",
-   "final": null,
-   "result": "pending",
-   "points": null
+   "final": "Texas Tech 29-7",
+   "result": "loss",
+   "points": 0
   }
  ]
 }

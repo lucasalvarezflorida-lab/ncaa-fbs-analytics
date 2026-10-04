@@ -34,9 +34,9 @@ INK = RGBColor(0x16, 0x27, 0x3D)
 MUTE = RGBColor(0x5C, 0x6B, 0x7E)
 LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
-EPISODE, WEEK = 6, 5
+EPISODE, WEEK = 7, 6
 RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
-EP_DATE = "OCT 2–3, 2026"   # the card's game dates (two Friday games + Saturday)
+EP_DATE = "OCT 10, 2026"   # the card's game dates (all five on Saturday)
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
 from name_mapping import normalize_name  # noqa: E402
@@ -176,6 +176,10 @@ TEAMS = {
     "ORE": dict(code="ORE", color=(0x15, 0x47, 0x33), logo="oregon.png"),
     "USC": dict(code="USC", color=(0x99, 0x00, 0x00), logo="usc.png"),
     "UGA": dict(code="UGA", color=(0xBA, 0x0C, 0x2F), logo="georgia.png"),
+    "IND": dict(code="IND", color=(0x99, 0x00, 0x00), logo="indiana.png"),
+    "NEB": dict(code="NEB", color=(0xD0, 0x00, 0x00), logo="nebraska.png"),
+    "MIZ": dict(code="MIZ", color=(0xF1, 0xB8, 0x2D), logo="missouri.png"),
+    "UCLA": dict(code="UCLA", color=(0x27, 0x74, 0xAE), logo="ucla.png"),
 }
 
 NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
@@ -193,7 +197,8 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
              "South Carolina": "SCAR", "Houston": "HOU", "Tennessee": "TENN",
              "Oregon": "ORE", "USC": "USC", "Georgia": "UGA",
              "Pittsburgh": "PITT", "Virginia Tech": "VT", "Penn State": "PSU",
-             "Northwestern": "NW", "Iowa": "IOWA"}
+             "Northwestern": "NW", "Iowa": "IOWA", "Indiana": "IND",
+             "Nebraska": "NEB", "Missouri": "MIZ", "UCLA": "UCLA"}
 
 # ---- card_data contract (review item A): market + model numbers come from
 # edge_report.py --publish, never from hand-typed literals. Narrative fields
@@ -964,7 +969,7 @@ _GAMES_WK4 = [  # Week 4 — kickoff order (Lucas 9/20: Oklahoma–Georgia third
     ),
 ]
 
-GAMES = [  # Week 5 — Lucas's card (Sun 9/27) in COREY'S deck order (9/30): two Friday games, Alabama–Mississippi State, Ohio State at Iowa, Auburn at Tennessee closes
+_GAMES_WK5 = [  # Week 5 — Lucas's card (Sun 9/27) in COREY'S deck order (9/30): two Friday games, Alabama–Mississippi State, Ohio State at Iowa, Auburn at Tennessee closes
     dict(
         a="PITT", b="VT", vs="at", title="Pitt at Virginia Tech",
         cfbd=("Pittsburgh", "Virginia Tech"),
@@ -1072,6 +1077,114 @@ GAMES = [  # Week 5 — Lucas's card (Sun 9/27) in COREY'S deck order (9/30): tw
     ),
 ]
 
+GAMES = [  # Week 6 — Lucas's card (Sun 10/4), his order until Corey's deck posts; numbers are the Sunday publish pull (card_data overrides machine/market at build)
+    dict(
+        a="UGA", b="BAMA", vs="at", title="Georgia at Alabama",
+        cfbd=("Georgia", "Alabama"),
+        where="Tuscaloosa · Bryant-Denny Stadium",
+        sub="Sat Oct 10 · 7:30 ET · Georgia 5–0 at Alabama 5–0 — the machine's No. 2 at its No. 1",
+        machine="Alabama –2.5", market="Georgia –2.5", value="5 to Alabama — the machine has the home dog as the favorite",
+        wp=("BAMA", 57, "UGA", 43),
+        decides=["A tenth of a point separates the two ratings — the whole number is home field",
+                 "Russell is 14-of-20 on deep throws; Georgia has allowed 4-of-15 and one explosive pass every 17 dropbacks",
+                 "Georgia runs for 6.5 a carry; Alabama allows 2.5 — but South Carolina ran for 216 on it",
+                 "Alabama gave Florida State 13.0 a throw, then held Mississippi State to 18 rushing yards"],
+        ctx_a=dict(coach="Smart, year 11 · Bobo's offense",
+                   qb="Stockton returns · 10.3 a throw, 13 TD, 1 INT",
+                   roster="69% back · 9 portal adds · 169 returning starts"),
+        ctx_b=dict(coach="DeBoer, year 3 · Wommack's swarm defense",
+                   qb="NEW — Keelon Russell, RS freshman · 10.7 a throw, 11 TD, 2 INT",
+                   roster="48% back, 90th nationally · 35% on offense"),
+        honesty="Machine Alabama −2.6, market Georgia −2.5: five points, and the machine is on the home dog. Alabama has climbed 7.8 points since July, the biggest move in the top ten; Georgia's five wins are by 24 or more but only one was on the road. No position until the freeze.",
+        keys_a=["Run it on a front nobody has run on", "Take away the deep ball", "First real road test", "Third down — 58%"],
+        keys_b=["Russell against the best secondary yet", "Keep Stockton off schedule", "Which defense shows up", "Protect him — 11 sacks"],
+    ),
+    dict(
+        a="IND", b="NEB", vs="at", title="Indiana at Nebraska",
+        cfbd=("Indiana", "Nebraska"),
+        where="Lincoln · Memorial Stadium",
+        sub="Sat Oct 10 · 12:00 ET · Indiana 5–0 at Nebraska 5–0 — somebody's first loss",
+        machine="Indiana –6", market="Indiana –8.5", value="2.5 to Nebraska — same side as the market, smaller number",
+        wp=("IND", 65, "NEB", 35),
+        decides=["Hoover has 15 touchdowns and no interceptions; Nebraska's defense has 6 picks and allows 5.9 a throw",
+                 "Indiana runs for 6.4 a carry with a 10+ run on one carry in five",
+                 "Nebraska's five wins: Ohio, Bowling Green, North Dakota, Michigan State, Maryland",
+                 "Colandrea: 13 touchdown passes and 249 rushing yards — Indiana's rush has 13 sacks"],
+        ctx_a=dict(coach="Cignetti, year 3",
+                   qb="NEW — Josh Hoover (from TCU) · 10.3 a throw, 15 TD, 0 INT",
+                   roster="17% of last year's production back — least on the card"),
+        ctx_b=dict(coach="Rhule, year 4",
+                   qb="NEW — Anthony Colandrea (from UNLV) · 8.0 a throw, 13 TD, 249 rushing",
+                   roster="46% of production back · 74% of the receiving"),
+        honesty="Machine Indiana −6.2, market −8.5. Indiana's rating is exactly where it was in July; Nebraska is up 5.5 on a schedule with nobody from the machine's top 50, so the machine is still guessing at how good those opponents were.",
+        keys_a=["Run it until they stop it — 6.4 a carry", "Rush Colandrea, keep him in", "Pass defense slipped two weeks running", "The red zone — 78%"],
+        keys_b=["Colandrea's legs", "Make Hoover throw into coverage", "The schedule finally turns", "Third down — 25% allowed"],
+    ),
+    dict(
+        a="TAMU", b="MIZ", vs="at", title="Texas A&M at Missouri",
+        cfbd=("Texas A&M", "Missouri"),
+        where="Columbia · Memorial Stadium",
+        sub="Sat Oct 10 · 12:00 ET · Texas A&M 3–2 at Missouri 4–1 — the week's biggest riser at home",
+        machine="Texas A&M –1", market="Missouri –1.5", value="2.5 to Texas A&M — and the machine's side is the July prior talking",
+        wp=("TAMU", 52, "MIZ", 48),
+        decides=["Missouri beat Florida 45–17 and jumped from No. 31 to No. 17",
+                 "Simmons: 13 touchdowns, no interceptions, 25 explosive passes in 156 dropbacks",
+                 "A&M's defense gave up 14.0 a throw to Kentucky and 11.1 to LSU, and has 4 sacks all season",
+                 "A&M's offense is the run: 49 for 231 against Arkansas; 8 explosive passes all year"],
+        ctx_a=dict(coach="Elko, year 3 · two new coordinators",
+                   qb="Reed returns · 6.1 a throw, 6 TD, 4 INT",
+                   roster="73% back · 19 portal adds · both lines rebuilt"),
+        ctx_b=dict(coach="Drinkwitz, year 7",
+                   qb="NEW — Austin Simmons (from Ole Miss) · 9.3 a throw, 13 TD, 0 INT",
+                   roster="42% of production back · 78% of the rushing"),
+        honesty="Machine Texas A&M −1.0, market Missouri −1.5. A&M started at 20.0 in July and has come down only 2.0 with two losses; Missouri started at 12.2. On what both have done since September, Missouri has the better case — the machine's side here is the prior.",
+        keys_a=["Run it like the Arkansas game", "Cover Lee and Olugbode", "Which A&M is this", "Third-and-long — 10-of-41"],
+        keys_b=["Simmons to Lee and Olugbode, early", "Stop the run, make Reed throw", "Finish drives — 50% in the red zone", "Protect him — 4 sacks allowed"],
+    ),
+    dict(
+        a="UCLA", b="ORE", vs="at", title="UCLA at Oregon",
+        cfbd=("UCLA", "Oregon"),
+        where="Eugene · Autzen Stadium",
+        sub="Sat Oct 10 · 3:30 ET · UCLA 4–0 at Oregon 3–1 — both off a bye",
+        machine="Oregon –11.5", market="Oregon –12.5", value="1 to UCLA — agreement",
+        wp=("ORE", 77, "UCLA", 23),
+        decides=["UCLA: 0.5 in July, 9.9 now — the biggest climb in the country on the machine's board",
+                 "UCLA runs for 7.0 a carry; Oklahoma State ran 40 times for 237 on Oregon",
+                 "Moore: 9 touchdowns, no interceptions, 14-of-25 on deep throws; Purdue threw for 13.9 a pop on UCLA",
+                 "Oregon's defense allows 23% on third down — the best on the card"],
+        ctx_a=dict(coach="NEW — Bob Chesney, year 1 (from James Madison)",
+                   qb="Nico Iamaleava, year 2 · 8.3 a throw, 4 TD, 2 INT",
+                   roster="57% of production back · 86% of the rushing"),
+        ctx_b=dict(coach="Lanning, year 5 · both coordinators new",
+                   qb="Dante Moore returns · 9.4 a throw, 9 TD, 0 INT",
+                   roster="75% back · 13 portal adds · 200 returning starts"),
+        honesty="Machine Oregon −11.6, market −12.5: agreement. Both ratings are moving fast in opposite directions and the July prior is still about half of each; if UCLA is what September says, the number is too big. UCLA has not played a team in the machine's top 60.",
+        keys_a=["Knight and the run game — 7.0 a carry", "Hold up against Moore", "First ranked opponent", "Third down — 50%"],
+        keys_b=["Moore over the top", "Fix the run defense", "Run it better than 3.9", "The red zone — 85%"],
+    ),
+    dict(
+        a="USC", b="PSU", vs="at", title="USC at Penn State",
+        cfbd=("USC", "Penn State"),
+        where="State College · Beaver Stadium",
+        sub="Sat Oct 10 · 7:30 ET · USC 5–1 at Penn State 3–2 — two teams trending down",
+        machine="Penn State –1", market="Penn State –1.5", value="0.5 — agreement, no play",
+        wp=("PSU", 53, "USC", 47),
+        decides=["Northwestern ran 55 times for 413 on Penn State last week",
+                 "Penn State allows 4.7 a throw; Maiava is 9.1 with 29 explosive passes",
+                 "Becht: 12-of-29 against Wisconsin, 5.8 a throw at Northwestern — one explosive pass in each",
+                 "USC has allowed 30 or more in three of six games"],
+        ctx_a=dict(coach="Riley, year 5 · new DC Gary Patterson",
+                   qb="Maiava returns · 9.1 a throw, 15 TD, 3 INT",
+                   roster="59% back · 9 portal adds · seven of the top eight receivers gone"),
+        ctx_b=dict(coach="NEW — Matt Campbell, year 1 · Iowa State East",
+                   qb="NEW — Rocco Becht (from Iowa State) · 8.3 a throw, 10 TD, 3 INT",
+                   roster="7 of 35 rotation players back · ~24 Cyclones followed Campbell"),
+        honesty="Machine Penn State −0.9, market −1.5: agreement, a coin flip with home field deciding it. Penn State's run defense collapsed last week and the machine cannot tell yet whether that was one game; USC's only road game is a 42–35 win at Rutgers.",
+        keys_a=["Maiava against a secondary nobody has thrown on", "Run it the way Northwestern did", "Get a stop — 8.2 a throw allowed", "The red zone — 66%"],
+        keys_b=["Becht has to find the offense", "Run defense, one week later", "Third down — 39%", "The red zone"],
+    ),
+]
+
 # ---- Week 3 receipts (recap slide): frozen Ep4 predictions vs finals vs the
 # last pre-kick ledger pull (Fri Sep 18 5 PM MT publish pull,
 # card_data_week3.json). Finals are read from the CFBD games cache; a game
@@ -1095,7 +1208,7 @@ _RECAP_ROWS_WK3 = [
     ("FLA", "AUB", "Florida at Auburn", ("Florida", "Auburn"), "Auburn 27–26", -0.5, 2.5, "Auburn 28–27", 53.5),
     ("LSU", "MISS", "LSU at Ole Miss", ("LSU", "Ole Miss"), "LSU 32–27", 5.0, 3.0, "LSU 34–28", 58.5),
 ]   # Week 3 margin miss: market 38.5 · man 49.0 · machine 50.5
-RECAP_ROWS = [
+_RECAP_ROWS_WK4 = [
     # Week 4 (graded Sun 9/27): on-air machine line, frozen close (card_data_week4_frozen.json,
     # 2026-09-23 17:09Z), Corey's call off his score slides (read 9/23), closing total.
     ("TEX", "TENN", "Texas at Tennessee", ("Texas", "Tennessee"), "Texas 32–23", 9.0, 4.5, "Texas 31–24", 55.5),
@@ -1104,9 +1217,18 @@ RECAP_ROWS = [
     ("ORE", "USC", "Oregon at USC", ("Oregon", "USC"), "Oregon 32–31", 0.5, 3.0, "Oregon 35–34", 62.5),
     ("TAMU", "LSU", "Texas A&M at LSU", ("Texas A&M", "LSU"), "LSU 29–23", -5.5, -8.5, "LSU 31–27", 51.5),
 ]   # Week 4 margin miss: market 68.0 · machine 78.0 · man 79.0 — winners: machine 5–0, man 5–0
-WEEK0_MISS = (211.5, 205.5)  # machine, market through Week 3 (20 games) — running total
-PRIOR_GAMES = 20
-LEANS_LINE = "stated leans 4–3 · no position taken in Week 4"
+RECAP_ROWS = [
+    # Week 5 (graded Sun 10/4): on-air machine line, frozen close (card_data_week5_frozen.json, 6:18 pm CT 9/30),
+    # Corey's call off his score slides, closing total.
+    ("PITT", "VT", "Pitt at Virginia Tech", ("Pittsburgh", "Virginia Tech"), "Pittsburgh 28–27", 0.5, -3.0, "Pittsburgh 28–27", 54.5),
+    ("PSU", "NW", "Penn State at Northwestern", ("Penn State", "Northwestern"), "Penn State 24–22", 2.0, 2.5, "Penn State 27–24", 45.5),
+    ("BAMA", "MSST", "Alabama at Mississippi State", ("Alabama", "Mississippi State"), "Alabama 34–26", 8.5, 6.0, "Alabama 38–28", 59.5),
+    ("AUB", "TENN", "Auburn at Tennessee", ("Auburn", "Tennessee"), "Tennessee 31–24", -7.0, -7.0, "Tennessee 31–21", 54.5),
+    ("OSU", "IOWA", "Ohio State at Iowa", ("Ohio State", "Iowa"), "Ohio State 30–16", 14.0, 14.5, "Ohio State 31–20", 45.5),
+]   # Week 5 margin miss: man 54.0 · machine 55.0 · market 61.0 — winners: machine 4–1, man 4–1
+WEEK0_MISS = (289.5, 273.5)  # machine, market through Week 4 (25 games) — running total
+PRIOR_GAMES = 25
+LEANS_LINE = "stated leans 4–3 · no position taken in Weeks 4–5"
 
 
 def _finals():

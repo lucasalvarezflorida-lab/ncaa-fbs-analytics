@@ -1,0 +1,388 @@
+# Ep7 · Week 6 — GAMES (SKELETON: numbers filled, reads and keys to write)
+
+Outline notes: game → the read, the number, each team's three keys with the
+WHY and the numbers under them, a reserve key, Corey's call. Lines are the
+publish pull's; re-read them off the freeze. MACHINE-DRAFTED — review before air.
+
+Stats are each team's 2026 games to date (CFBD box scores and play-by-play,
+stat_package_week6.json), never from a game against each other. Rushing totals
+are the official box score (sacks and fumbled snaps count as rushes); stuff
+rates and 10+ rates come from the play-by-play, sacks excluded. "Dropbacks"
+= pass plays including sacks; "explosive pass" = 20+ yards; "stuffed" = a run
+for zero or less; "third-and-long" = third-and-6 or more. Betting-line
+context is kept out of this file on purpose - it lives in the internal folder.
+
+- **Georgia at Alabama — Sat Oct 10, 7:30 PM ET, Bryant-Denny Stadium · Georgia · Alabama (machine #2 at #1)**
+  
+  - The read
+    - (write it)
+    - (write it)
+    - (write it)
+  - The number: Alabama −2.6, 57% · Call Alabama 30–27
+    - Honesty: (write it — the number's source, what the machine has not seen)
+    - Pre-mortem — written on recording day from the frozen card
+  - Georgia keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Gunner Stockton: 77-of-102 for 1,049 — 10.3 per attempt; 13 TD, 1 INT
+          - Georgia as a team: 97-of-137 for 1,327 (9.7 an attempt, 13.7 per completion) — the difference is Ryan Puglisi, 17-of-28 for 197
+        - 21 explosive passes in 142 dropbacks (14.8%), 8-of-23 on deep throws; sacked 5 times (3.5%); 1 INT (vs FBS: 9.0 a throw, 5.8 a carry)
+        - Receivers: Craig Dandridge 9 for 177 and 1 TD; Talyn Taylor 12 for 176 and 3 TD; Sacovie White 10 for 135 and 1 TD
+        - Rushing (box): 164 for 1,065 (6.5); 28 runs of 10+ (17.8%), 12.1% stuffed — Nate Frazier 26 for 211 and 5 TD; Dwight Phillips Jr. 20 for 160 and 1 TD; Bo Walker 20 for 134
+        - Third down 29-of-50 (58%); third-and-long 5-of-18; third-and-short 12-of-13; red zone 22 TD in 27 trips (81%)
+      - What Alabama brings:
+        - Passing allowed: 85-of-150 for 1,121 — 7.5 a throw, 13.2 per completion; 21 explosive passes in 164 dropbacks (12.8%), 6-of-16 on deep throws; 8 picks
+        - Sacks 14 in 164 dropbacks (8.5%) — Devan Thompkins 3; Terrance Green 2.5; Caleb Woodson 2
+        - Rushing allowed (box): 159 for 393 (2.5); 12 runs of 10+ against it (8.5%), 24.8% stuffed
+        - Opponents 21-of-67 on third down (31%); 10-of-43 on third-and-long; 7-of-12 on third-and-short; 10 TD allowed in 13 red-zone trips (77%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 99-of-162 for 928 — 5.7 a throw, 9.4 per completion; 10 explosive passes in 172 dropbacks (5.8%), 4-of-15 on deep throws; 4 picks (vs FBS: 6.1 a throw allowed, 2.3 a carry)
+        - Sacks 10 in 172 dropbacks (5.8%) — Raylen Wilson 3; Gabe Harris 2; Justin Williams 2
+        - Rushing allowed (box): 150 for 287 (1.9); 6 runs of 10+ against it (4.5%), 20.1% stuffed
+        - Opponents 27-of-72 on third down (38%); 16-of-49 on third-and-long; 3-of-5 on third-and-short; 8 TD allowed in 11 red-zone trips (73%)
+      - What Alabama brings:
+        - Keelon Russell: 94-of-132 for 1,414 — 10.7 per attempt; 11 TD, 2 INT
+          - Alabama as a team: 96-of-136 for 1,411 (10.4 an attempt, 14.7 per completion) — the difference is Austin Mack, 3-of-4 for 23
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs Tennessee State (FCS) W 63-3: 25-of-33 for 11.8 a throw, 6 of 20+, sacked 0; ran 27 for 272; allowed 3.8 a throw and 32 for 10
+        - wk2 vs Western Kentucky (FBS) W 70-20: 16-of-25 for 10.4 a throw, 5 of 20+, sacked 0; ran 35 for 234; allowed 3.1 a throw and 37 for 110
+        - wk3 at Arkansas (FBS) W 45-17: 17-of-21 for 10.0 a throw, 3 of 20+, sacked 3; ran 42 for 254; allowed 6.7 a throw and 20 for 17
+        - wk4 vs Oklahoma (FBS) W 41-13: 14-of-26 for 6.7 a throw, 4 of 20+, sacked 1; ran 26 for 129; allowed 7.0 a throw and 35 for 65
+        - wk5 vs Vanderbilt (FBS) W 38-14: 25-of-32 for 9.2 a throw, 3 of 20+, sacked 1; ran 34 for 176; allowed 8.3 a throw and 26 for 85
+    - Reserve: (write it)
+  - Alabama keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Keelon Russell: 94-of-132 for 1,414 — 10.7 per attempt; 11 TD, 2 INT
+          - Alabama as a team: 96-of-136 for 1,411 (10.4 an attempt, 14.7 per completion) — the difference is Austin Mack, 3-of-4 for 23
+        - 25 explosive passes in 147 dropbacks (17.0%), 14-of-20 on deep throws; sacked 11 times (7.5%); 2 INT
+        - Receivers: Ryan Williams 20 for 376 and 4 TD; Lotzeir Brooks 21 for 352 and 1 TD; Rico Scott 16 for 196 and 3 TD
+        - Rushing (box): 192 for 932 (4.9); 31 runs of 10+ (17.3%), 17.9% stuffed — Daniel Hill 51 for 247 and 4 TD; Trae'shawn Brown 42 for 211 and 5 TD; EJ Crowell 26 for 204 and 3 TD
+        - Third down 29-of-57 (51%); third-and-long 15-of-28; third-and-short 5-of-9; red zone 21 TD in 26 trips (81%)
+      - What Georgia brings:
+        - Passing allowed: 99-of-162 for 928 — 5.7 a throw, 9.4 per completion; 10 explosive passes in 172 dropbacks (5.8%), 4-of-15 on deep throws; 4 picks (vs FBS: 6.1 a throw allowed, 2.3 a carry)
+        - Sacks 10 in 172 dropbacks (5.8%) — Raylen Wilson 3; Gabe Harris 2; Justin Williams 2
+        - Rushing allowed (box): 150 for 287 (1.9); 6 runs of 10+ against it (4.5%), 20.1% stuffed
+        - Opponents 27-of-72 on third down (38%); 16-of-49 on third-and-long; 3-of-5 on third-and-short; 8 TD allowed in 11 red-zone trips (73%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 85-of-150 for 1,121 — 7.5 a throw, 13.2 per completion; 21 explosive passes in 164 dropbacks (12.8%), 6-of-16 on deep throws; 8 picks
+        - Sacks 14 in 164 dropbacks (8.5%) — Devan Thompkins 3; Terrance Green 2.5; Caleb Woodson 2
+        - Rushing allowed (box): 159 for 393 (2.5); 12 runs of 10+ against it (8.5%), 24.8% stuffed
+        - Opponents 21-of-67 on third down (31%); 10-of-43 on third-and-long; 7-of-12 on third-and-short; 10 TD allowed in 13 red-zone trips (77%)
+      - What Georgia brings:
+        - Gunner Stockton: 77-of-102 for 1,049 — 10.3 per attempt; 13 TD, 1 INT
+          - Georgia as a team: 97-of-137 for 1,327 (9.7 an attempt, 13.7 per completion) — the difference is Ryan Puglisi, 17-of-28 for 197
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs East Carolina (FBS) W 48-10: 18-of-31 for 8.2 a throw, 4 of 20+, sacked 1; ran 49 for 227; allowed 8.4 a throw and 22 for 2
+        - wk2 at Kentucky (FBS) W 45-17: 16-of-23 for 8.2 a throw, 4 of 20+, sacked 3; ran 40 for 155; allowed 4.7 a throw and 32 for 63
+        - wk3 vs Florida State (FBS) W 50-36: 23-of-31 for 9.7 a throw, 4 of 20+, sacked 1; ran 36 for 247; allowed 13.0 a throw and 35 for 94
+        - wk4 vs South Carolina (FBS) W 49-18: 21-of-27 for 13.5 a throw, 7 of 20+, sacked 2; ran 30 for 124; allowed 5.7 a throw and 40 for 216
+        - wk5 at Mississippi State (FBS) W 56-23: 18-of-24 for 12.7 a throw, 6 of 20+, sacked 4; ran 37 for 179; allowed 6.6 a throw and 30 for 18
+    - Reserve: (write it)
+  - Corey: PLACEHOLDER
+
+- **Indiana at Nebraska — Sat Oct 10, 12:00 PM ET, Memorial Stadium (Lincoln, NE) · Indiana · Nebraska (machine #8 at #18)**
+  
+  - The read
+    - (write it)
+    - (write it)
+    - (write it)
+  - The number: Indiana −6.2, 65% · Call Indiana 28–22
+    - Honesty: (write it — the number's source, what the machine has not seen)
+    - Pre-mortem — written on recording day from the frozen card
+  - Indiana keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Josh Hoover: 76-of-107 for 1,101 — 10.3 per attempt; 15 TD, 0 INT
+          - Indiana as a team: 80-of-114 for 1,173 (10.3 an attempt, 14.7 per completion) — the difference is Grant Wilson, 4-of-5 for 74
+        - 20 explosive passes in 120 dropbacks (16.7%), 9-of-19 on deep throws; sacked 6 times (5.0%); 0 INT (vs FBS: 9.8 a throw, 6.4 a carry)
+        - Receivers: Charlie Becker 27 for 477 and 8 TD; Nick Marsh 23 for 341 and 4 TD; Shazz Preston 9 for 123 and 1 TD
+        - Rushing (box): 196 for 1,263 (6.4); 39 runs of 10+ (20.7%), 11.7% stuffed — Turbo Richard 63 for 587 and 5 TD; Lee Beebe 89 for 520 and 4 TD; Jayreon Campbell 8 for 50
+        - Third down 28-of-54 (52%); third-and-long 11-of-30; third-and-short 9-of-12; red zone 18 TD in 23 trips (78%)
+      - What Nebraska brings:
+        - Passing allowed: 75-of-140 for 826 — 5.9 a throw, 11.0 per completion; 13 explosive passes in 152 dropbacks (8.6%), 3-of-14 on deep throws; 6 picks (vs FBS: 6.0 a throw allowed, 3.3 a carry)
+        - Sacks 12 in 152 dropbacks (7.9%) — Jahsear Whittington 2.5; Riley Van Poppel 2; Williams Nwaneri 2
+        - Rushing allowed (box): 158 for 503 (3.2); 17 runs of 10+ against it (12.1%), 16.4% stuffed
+        - Opponents 15-of-59 on third down (25%); 8-of-38 on third-and-long; 4-of-8 on third-and-short; 4 TD allowed in 11 red-zone trips (36%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 81-of-129 for 858 — 6.7 a throw, 10.6 per completion; 14 explosive passes in 142 dropbacks (9.9%), 8-of-14 on deep throws; 3 picks (vs FBS: 7.5 a throw allowed, 2.4 a carry)
+        - Sacks 13 in 142 dropbacks (9.2%) — Tobi Osunsanmi 4; Stephen Daley 3; Mario Landino 2
+        - Rushing allowed (box): 156 for 322 (2.1); 8 runs of 10+ against it (5.8%), 24.6% stuffed
+        - Opponents 20-of-67 on third down (30%); 10-of-43 on third-and-long; 6-of-12 on third-and-short; 5 TD allowed in 7 red-zone trips (71%)
+      - What Nebraska brings:
+        - Anthony Colandrea: 94-of-143 for 1,142 — 8.0 per attempt; 13 TD, 2 INT
+          - Nebraska as a team: 102-of-155 for 1,211 (7.8 an attempt, 11.9 per completion) — the difference is TJ Lateef, 8-of-11 for 82
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs North Texas (FBS) W 52-16: 13-of-16 for 14.4 a throw, 5 of 20+, sacked 0; ran 30 for 134; allowed 7.4 a throw and 38 for 152
+        - wk2 vs Howard (FCS) W 55-0: 9-of-16 for 13.1 a throw, 5 of 20+, sacked 1; ran 46 for 296; allowed 2.2 a throw and 27 for 13
+        - wk3 vs Western Kentucky (FBS) W 38-0: 18-of-24 for 11.2 a throw, 3 of 20+, sacked 2; ran 41 for 233; allowed 3.7 a throw and 29 for 66
+        - wk4 vs Northwestern (FBS) W 29-23: 19-of-29 for 6.9 a throw, 3 of 20+, sacked 2; ran 40 for 271; allowed 9.8 a throw and 27 for 32
+        - wk5 at Rutgers (FBS) W 47-15: 21-of-29 for 9.1 a throw, 4 of 20+, sacked 1; ran 39 for 329; allowed 9.8 a throw and 35 for 59
+    - Reserve: (write it)
+  - Nebraska keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Anthony Colandrea: 94-of-143 for 1,142 — 8.0 per attempt; 13 TD, 2 INT
+          - Nebraska as a team: 102-of-155 for 1,211 (7.8 an attempt, 11.9 per completion) — the difference is TJ Lateef, 8-of-11 for 82
+        - 19 explosive passes in 160 dropbacks (11.9%), 10-of-22 on deep throws; sacked 5 times (3.1%); 2 INT (vs FBS: 7.7 a throw, 5.7 a carry)
+        - Receivers: Kwazi Gilmer 29 for 387 and 6 TD; Jacory Barney Jr. 18 for 233 and 2 TD; Mekhi Nelson 8 for 120 and 1 TD
+        - Rushing (box): 198 for 1,155 (5.8); 36 runs of 10+ (18.9%), 14.2% stuffed — Jamal Rule 42 for 333 and 5 TD; Mekhi Nelson 56 for 266 and 4 TD; Anthony Colandrea 38 for 249 and 2 TD
+        - Third down 33-of-64 (52%); third-and-long 13-of-33; third-and-short 11-of-15; red zone 19 TD in 22 trips (86%)
+      - What Indiana brings:
+        - Passing allowed: 81-of-129 for 858 — 6.7 a throw, 10.6 per completion; 14 explosive passes in 142 dropbacks (9.9%), 8-of-14 on deep throws; 3 picks (vs FBS: 7.5 a throw allowed, 2.4 a carry)
+        - Sacks 13 in 142 dropbacks (9.2%) — Tobi Osunsanmi 4; Stephen Daley 3; Mario Landino 2
+        - Rushing allowed (box): 156 for 322 (2.1); 8 runs of 10+ against it (5.8%), 24.6% stuffed
+        - Opponents 20-of-67 on third down (30%); 10-of-43 on third-and-long; 6-of-12 on third-and-short; 5 TD allowed in 7 red-zone trips (71%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 75-of-140 for 826 — 5.9 a throw, 11.0 per completion; 13 explosive passes in 152 dropbacks (8.6%), 3-of-14 on deep throws; 6 picks (vs FBS: 6.0 a throw allowed, 3.3 a carry)
+        - Sacks 12 in 152 dropbacks (7.9%) — Jahsear Whittington 2.5; Riley Van Poppel 2; Williams Nwaneri 2
+        - Rushing allowed (box): 158 for 503 (3.2); 17 runs of 10+ against it (12.1%), 16.4% stuffed
+        - Opponents 15-of-59 on third down (25%); 8-of-38 on third-and-long; 4-of-8 on third-and-short; 4 TD allowed in 11 red-zone trips (36%)
+      - What Indiana brings:
+        - Josh Hoover: 76-of-107 for 1,101 — 10.3 per attempt; 15 TD, 0 INT
+          - Indiana as a team: 80-of-114 for 1,173 (10.3 an attempt, 14.7 per completion) — the difference is Grant Wilson, 4-of-5 for 74
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs Ohio (FBS) W 49-21: 18-of-32 for 8.6 a throw, 5 of 20+, sacked 2; ran 42 for 248; allowed 5.1 a throw and 33 for 139
+        - wk2 vs Bowling Green (FBS) W 56-7: 26-of-32 for 8.8 a throw, 3 of 20+, sacked 1; ran 34 for 264; allowed 4.9 a throw and 32 for 85
+        - wk3 vs North Dakota (FCS) W 34-7: 18-of-26 for 8.3 a throw, 5 of 20+, sacked 0; ran 45 for 277; allowed 5.6 a throw and 36 for 99
+        - wk4 at Michigan State (FBS) W 31-13: 14-of-26 for 7.7 a throw, 3 of 20+, sacked 0; ran 41 for 157; allowed 7.8 a throw and 32 for 39
+        - wk5 vs Maryland (FBS) W 48-23: 26-of-39 for 6.1 a throw, 3 of 20+, sacked 2; ran 36 for 209; allowed 5.8 a throw and 25 for 141
+    - Reserve: (write it)
+  - Corey: PLACEHOLDER
+
+- **Texas A&M at Missouri — Sat Oct 10, 12:00 PM ET, Memorial Stadium · Texas A&M · Missouri (machine #10 at #17)**
+  
+  - The read
+    - (write it)
+    - (write it)
+    - (write it)
+  - The number: Texas A&M −1.0, 52% · Call Texas A&M 26–25
+    - Honesty: (write it — the number's source, what the machine has not seen)
+    - Pre-mortem — written on recording day from the frozen card
+  - Texas A&M keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Marcel Reed: 85-of-149 for 908 — 6.1 per attempt; 6 TD, 4 INT
+          - Texas A&M as a team: 88-of-156 for 928 (5.9 an attempt, 10.5 per completion) — the difference is Brady Hart, 4-of-9 for 36
+        - 8 explosive passes in 164 dropbacks (4.9%), 6-of-19 on deep throws; sacked 8 times (4.9%); 5 INT
+        - Receivers: Isaiah Horton 17 for 248 and 3 TD; Mario Craver 23 for 235 and 2 TD; Terry Bussey 7 for 92
+        - Rushing (box): 199 for 837 (4.2); 29 runs of 10+ (15.3%), 15.8% stuffed — Rueben Owens 70 for 291 and 1 TD; KJ Edwards 28 for 181 and 2 TD; Marcel Reed 43 for 170 and 2 TD
+        - Third down 32-of-73 (44%); third-and-long 10-of-41; third-and-short 15-of-17; red zone 16 TD in 23 trips (70%)
+      - What Missouri brings:
+        - Passing allowed: 95-of-164 for 1,141 — 7.0 a throw, 12.0 per completion; 17 explosive passes in 176 dropbacks (9.7%), 9-of-25 on deep throws; 5 picks (vs FBS: 7.5 a throw allowed, 2.5 a carry)
+        - Sacks 12 in 176 dropbacks (6.8%) — Daeden Hopkins 6.5; Donta Simpson 2.5; Jason Dowell 2
+        - Rushing allowed (box): 170 for 444 (2.6); 21 runs of 10+ against it (13.8%), 25.0% stuffed
+        - Opponents 25-of-76 on third down (33%); 8-of-47 on third-and-long; 6-of-10 on third-and-short; 5 TD allowed in 10 red-zone trips (50%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 72-of-121 for 959 — 7.9 a throw, 13.3 per completion; 19 explosive passes in 125 dropbacks (15.2%), 8-of-17 on deep throws; 4 picks
+        - Sacks 4 in 125 dropbacks (3.2%) — Marco Jones 2; T.J. Searcy 1; Ryan Henderson 1
+        - Rushing allowed (box): 148 for 605 (4.1); 18 runs of 10+ against it (12.7%), 18.3% stuffed
+        - Opponents 15-of-53 on third down (28%); 4-of-30 on third-and-long; 5-of-7 on third-and-short; 7 TD allowed in 12 red-zone trips (58%)
+      - What Missouri brings:
+        - Austin Simmons: 92-of-136 for 1,270 — 9.3 per attempt; 13 TD, 0 INT
+          - Missouri as a team: 101-of-152 for 1,366 (9.0 an attempt, 13.5 per completion) — the difference is Matt Zollers, 8-of-13 for 87
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs Missouri State (FBS) W 50-0: 24-of-37 for 6.8 a throw, 1 of 20+, sacked 2; ran 47 for 236; allowed 1.8 a throw and 23 for 37
+        - wk2 vs Arizona State (FBS) W 48-20: 15-of-25 for 6.5 a throw, 2 of 20+, sacked 2; ran 35 for 92; allowed 7.7 a throw and 29 for 115
+        - wk3 vs Kentucky (FBS) L 21-31: 26-of-49 for 4.8 a throw, 2 of 20+, sacked 0; ran 35 for 187; allowed 14.0 a throw and 36 for 156
+        - wk4 at LSU (FBS) L 6-35: 10-of-26 for 4.1 a throw, 1 of 20+, sacked 4; ran 33 for 91; allowed 11.1 a throw and 38 for 194
+        - wk5 vs Arkansas (FBS) W 34-7: 13-of-19 for 8.9 a throw, 2 of 20+, sacked 0; ran 49 for 231; allowed 4.4 a throw and 22 for 103
+    - Reserve: (write it)
+  - Missouri keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Austin Simmons: 92-of-136 for 1,270 — 9.3 per attempt; 13 TD, 0 INT
+          - Missouri as a team: 101-of-152 for 1,366 (9.0 an attempt, 13.5 per completion) — the difference is Matt Zollers, 8-of-13 for 87
+        - 25 explosive passes in 156 dropbacks (16.0%), 9-of-22 on deep throws; sacked 4 times (2.6%); 0 INT (vs FBS: 8.5 a throw, 4.7 a carry)
+        - Receivers: Cayden Lee 33 for 496 and 4 TD; Donovan Olugbode 27 for 416 and 6 TD; Shaun Terry II 9 for 96 and 1 TD
+        - Rushing (box): 185 for 860 (4.6); 21 runs of 10+ (11.9%), 18.1% stuffed — Jamal Roberts 113 for 606 and 6 TD; Xai'Shaun Edwards 33 for 133 and 1 TD; Preston Hatfield 4 for 34 and 1 TD
+        - Third down 30-of-66 (45%); third-and-long 15-of-42; third-and-short 6-of-7; red zone 12 TD in 24 trips (50%)
+      - What Texas A&M brings:
+        - Passing allowed: 72-of-121 for 959 — 7.9 a throw, 13.3 per completion; 19 explosive passes in 125 dropbacks (15.2%), 8-of-17 on deep throws; 4 picks
+        - Sacks 4 in 125 dropbacks (3.2%) — Marco Jones 2; T.J. Searcy 1; Ryan Henderson 1
+        - Rushing allowed (box): 148 for 605 (4.1); 18 runs of 10+ against it (12.7%), 18.3% stuffed
+        - Opponents 15-of-53 on third down (28%); 4-of-30 on third-and-long; 5-of-7 on third-and-short; 7 TD allowed in 12 red-zone trips (58%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 95-of-164 for 1,141 — 7.0 a throw, 12.0 per completion; 17 explosive passes in 176 dropbacks (9.7%), 9-of-25 on deep throws; 5 picks (vs FBS: 7.5 a throw allowed, 2.5 a carry)
+        - Sacks 12 in 176 dropbacks (6.8%) — Daeden Hopkins 6.5; Donta Simpson 2.5; Jason Dowell 2
+        - Rushing allowed (box): 170 for 444 (2.6); 21 runs of 10+ against it (13.8%), 25.0% stuffed
+        - Opponents 25-of-76 on third down (33%); 8-of-47 on third-and-long; 6-of-10 on third-and-short; 5 TD allowed in 10 red-zone trips (50%)
+      - What Texas A&M brings:
+        - Marcel Reed: 85-of-149 for 908 — 6.1 per attempt; 6 TD, 4 INT
+          - Texas A&M as a team: 88-of-156 for 928 (5.9 an attempt, 10.5 per completion) — the difference is Brady Hart, 4-of-9 for 36
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs Arkansas-Pine Bluff (FCS) W 54-14: 25-of-32 for 10.9 a throw, 6 of 20+, sacked 1; ran 45 for 205; allowed 3.9 a throw and 29 for 89
+        - wk2 at Kansas (FBS) W 38-21: 19-of-30 for 9.7 a throw, 6 of 20+, sacked 0; ran 41 for 177; allowed 5.6 a throw and 36 for 81
+        - wk3 vs Troy (FBS) W 27-17: 11-of-20 for 4.5 a throw, 1 of 20+, sacked 0; ran 28 for 139; allowed 7.2 a throw and 40 for 93
+        - wk4 at Mississippi State (FBS) L 24-31: 23-of-40 for 7.4 a throw, 6 of 20+, sacked 2; ran 35 for 119; allowed 9.5 a throw and 40 for 139
+        - wk5 vs Florida (FBS) W 45-17: 23-of-30 for 11.3 a throw, 6 of 20+, sacked 1; ran 36 for 220; allowed 7.3 a throw and 25 for 42
+    - Reserve: (write it)
+  - Corey: PLACEHOLDER
+
+- **UCLA at Oregon — Sat Oct 10, 3:30 PM ET, Autzen Stadium · UCLA · Oregon (machine #32 at #9)**
+  
+  - The read
+    - (write it)
+    - (write it)
+    - (write it)
+  - The number: Oregon −11.6, 77% · Call Oregon 36–24
+    - Honesty: (write it — the number's source, what the machine has not seen)
+    - Pre-mortem — written on recording day from the frozen card
+  - UCLA keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Nico Iamaleava: 62-of-99 for 820 — 8.3 per attempt; 4 TD, 2 INT
+          - UCLA as a team: 61-of-100 for 811 (8.1 an attempt, 13.3 per completion) — the difference is Madden Iamaleava, 0-of-1 for 0
+        - 16 explosive passes in 106 dropbacks (15.1%), 8-of-17 on deep throws; sacked 6 times (5.7%); 2 INT
+        - Receivers: Semaj Morgan 14 for 174 and 2 TD; Brian Rowe Jr. 11 for 163; Wayne Knight 8 for 88
+        - Rushing (box): 162 for 1,126 (7.0); 29 runs of 10+ (19.0%), 9.2% stuffed — Wayne Knight 49 for 445 and 9 TD; Anthony Woods 36 for 269 and 4 TD; Jaivian Thomas 28 for 155 and 3 TD
+        - Third down 23-of-46 (50%); third-and-long 8-of-24; third-and-short 8-of-10; red zone 14 TD in 19 trips (74%)
+      - What Oregon brings:
+        - Passing allowed: 72-of-136 for 925 — 6.8 a throw, 12.8 per completion; 17 explosive passes in 143 dropbacks (11.9%), 5-of-12 on deep throws; 6 picks (vs FBS: 7.1 a throw allowed, 4.1 a carry)
+        - Sacks 7 in 143 dropbacks (4.9%) — Bear Alexander 2; Matayo Uiagalelei 2; Teitum Tuioti 1
+        - Rushing allowed (box): 126 for 452 (3.6); 9 runs of 10+ against it (7.4%), 19.0% stuffed
+        - Opponents 12-of-53 on third down (23%); 3-of-28 on third-and-long; 5-of-12 on third-and-short; 6 TD allowed in 15 red-zone trips (40%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 70-of-133 for 896 — 6.7 a throw, 12.8 per completion; 17 explosive passes in 139 dropbacks (12.2%), 7-of-23 on deep throws; 8 picks
+        - Sacks 6 in 139 dropbacks (4.3%) — Samuel Omosigho 3; Scott Taylor 1.5; Jalen Woods 1
+        - Rushing allowed (box): 136 for 365 (2.7); 14 runs of 10+ against it (10.9%), 24.0% stuffed
+        - Opponents 20-of-56 on third down (36%); 13-of-41 on third-and-long; 5-of-6 on third-and-short; 7 TD allowed in 11 red-zone trips (64%)
+      - What Oregon brings:
+        - Dante Moore: 69-of-99 for 926 — 9.4 per attempt; 9 TD, 0 INT
+          - Oregon as a team: 106-of-147 for 1,397 (9.5 an attempt, 13.2 per completion) — the difference is Dylan Raiola, 30-of-36 for 413
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 at California (FBS) W 45-24: 14-of-22 for 8.4 a throw, 4 of 20+, sacked 2; ran 32 for 277; allowed 6.3 a throw and 40 for 119
+        - wk2 vs San Diego State (FBS) W 28-10: 14-of-23 for 6.6 a throw, 3 of 20+, sacked 2; ran 43 for 214; allowed 2.5 a throw and 38 for 144
+        - wk3 vs Purdue (FBS) W 52-38: 19-of-32 for 8.6 a throw, 6 of 20+, sacked 1; ran 48 for 369; allowed 13.9 a throw and 28 for 63
+        - wk4 at Maryland (FBS) W 54-3: 14-of-23 for 8.7 a throw, 3 of 20+, sacked 1; ran 39 for 266; allowed 3.6 a throw and 30 for 39
+    - Reserve: (write it)
+  - Oregon keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Dante Moore: 69-of-99 for 926 — 9.4 per attempt; 9 TD, 0 INT
+          - Oregon as a team: 106-of-147 for 1,397 (9.5 an attempt, 13.2 per completion) — the difference is Dylan Raiola, 30-of-36 for 413
+        - 24 explosive passes in 154 dropbacks (15.6%), 14-of-25 on deep throws; sacked 7 times (4.5%); 0 INT (vs FBS: 9.2 a throw, 3.9 a carry)
+        - Receivers: Evan Stewart 22 for 278 and 3 TD; Dakorien Moore 14 for 234 and 4 TD; Jamari Johnson 11 for 176 and 1 TD
+        - Rushing (box): 139 for 620 (4.5); 18 runs of 10+ (13.7%), 12.2% stuffed — Jordon Davison 49 for 260 and 5 TD; Dierre Hill Jr. 42 for 184 and 3 TD; Brandon Smith 16 for 71 and 1 TD
+        - Third down 26-of-53 (49%); third-and-long 10-of-31; third-and-short 8-of-12; red zone 17 TD in 20 trips (85%)
+      - What UCLA brings:
+        - Passing allowed: 70-of-133 for 896 — 6.7 a throw, 12.8 per completion; 17 explosive passes in 139 dropbacks (12.2%), 7-of-23 on deep throws; 8 picks
+        - Sacks 6 in 139 dropbacks (4.3%) — Samuel Omosigho 3; Scott Taylor 1.5; Jalen Woods 1
+        - Rushing allowed (box): 136 for 365 (2.7); 14 runs of 10+ against it (10.9%), 24.0% stuffed
+        - Opponents 20-of-56 on third down (36%); 13-of-41 on third-and-long; 5-of-6 on third-and-short; 7 TD allowed in 11 red-zone trips (64%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 72-of-136 for 925 — 6.8 a throw, 12.8 per completion; 17 explosive passes in 143 dropbacks (11.9%), 5-of-12 on deep throws; 6 picks (vs FBS: 7.1 a throw allowed, 4.1 a carry)
+        - Sacks 7 in 143 dropbacks (4.9%) — Bear Alexander 2; Matayo Uiagalelei 2; Teitum Tuioti 1
+        - Rushing allowed (box): 126 for 452 (3.6); 9 runs of 10+ against it (7.4%), 19.0% stuffed
+        - Opponents 12-of-53 on third down (23%); 3-of-28 on third-and-long; 5-of-12 on third-and-short; 6 TD allowed in 15 red-zone trips (40%)
+      - What UCLA brings:
+        - Nico Iamaleava: 62-of-99 for 820 — 8.3 per attempt; 4 TD, 2 INT
+          - UCLA as a team: 61-of-100 for 811 (8.1 an attempt, 13.3 per completion) — the difference is Madden Iamaleava, 0-of-1 for 0
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs Boise State (FBS) W 34-27: 29-of-39 for 9.9 a throw, 7 of 20+, sacked 1; ran 25 for 119; allowed 6.2 a throw and 36 for 93
+        - wk2 at Oklahoma State (FBS) L 31-39: 14-of-29 for 6.6 a throw, 4 of 20+, sacked 4; ran 30 for 90; allowed 7.0 a throw and 40 for 237
+        - wk3 vs Portland State (FCS) W 84-0: 36-of-44 for 10.3 a throw, 7 of 20+, sacked 2; ran 51 for 273; allowed 5.0 a throw and 17 for 2
+        - wk4 at USC (FBS) W 41-27: 27-of-35 for 10.5 a throw, 6 of 20+, sacked 0; ran 33 for 138; allowed 7.8 a throw and 33 for 120
+    - Reserve: (write it)
+  - Corey: PLACEHOLDER
+
+- **USC at Penn State — Sat Oct 10, 7:30 PM ET, Beaver Stadium · USC · Penn State (machine #19 at #27)**
+  
+  - The read
+    - (write it)
+    - (write it)
+    - (write it)
+  - The number: Penn State −0.9, 53% · Call Penn State 30–29
+    - Honesty: (write it — the number's source, what the machine has not seen)
+    - Pre-mortem — written on recording day from the frozen card
+  - USC keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Jayden Maiava: 131-of-191 for 1,744 — 9.1 per attempt; 15 TD, 3 INT
+          - USC as a team: 141-of-204 for 1,857 (9.1 an attempt, 13.2 per completion) — the difference is Jonas Williams, 12-of-14 for 126
+        - 29 explosive passes in 210 dropbacks (13.8%), 12-of-20 on deep throws; sacked 6 times (2.9%); 4 INT
+        - Receivers: Kayden Dixon-Wyatt 25 for 372 and 3 TD; Zach Williams 14 for 258 and 1 TD; Trent Mosley 13 for 255 and 4 TD
+        - Rushing (box): 216 for 937 (4.3); 31 runs of 10+ (14.8%), 18.1% stuffed — King Miller 95 for 493 and 3 TD; Waymond Jordan 57 for 265 and 2 TD; Shahn Alston 17 for 92 and 1 TD
+        - Third down 35-of-70 (50%); third-and-long 12-of-35; third-and-short 15-of-20; red zone 21 TD in 32 trips (66%)
+      - What Penn State brings:
+        - Passing allowed: 69-of-126 for 597 — 4.7 a throw, 8.7 per completion; 8 explosive passes in 132 dropbacks (6.1%), 3-of-8 on deep throws; 5 picks
+        - Sacks 6 in 132 dropbacks (4.5%) — Tony Rojas 3; Kooper Ebel 1; Caleb Bacon 1
+        - Rushing allowed (box): 180 for 866 (4.8); 24 runs of 10+ against it (14.2%), 21.3% stuffed
+        - Opponents 18-of-64 on third down (28%); 10-of-39 on third-and-long; 4-of-8 on third-and-short; 6 TD allowed in 12 red-zone trips (50%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 105-of-167 for 1,377 — 8.2 a throw, 13.1 per completion; 21 explosive passes in 175 dropbacks (12.0%), 8-of-19 on deep throws; 3 picks
+        - Sacks 8 in 175 dropbacks (4.6%) — Kennedy Urlacher 2; Alex Graham 2; Jadyn Ramos 2
+        - Rushing allowed (box): 181 for 709 (3.9); 18 runs of 10+ against it (10.8%), 15.7% stuffed
+        - Opponents 23-of-62 on third down (37%); 11-of-35 on third-and-long; 7-of-10 on third-and-short; 13 TD allowed in 22 red-zone trips (59%)
+      - What Penn State brings:
+        - Rocco Becht: 83-of-134 for 1,108 — 8.3 per attempt; 10 TD, 3 INT
+          - Penn State as a team: 93-of-150 for 1,198 (8.0 an attempt, 12.9 per completion) — the difference is Alex Manske, 9-of-14 for 102
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs San José State (FBS) W 42-26: 30-of-36 for 9.5 a throw, 4 of 20+, sacked 2; ran 40 for 164; allowed 7.3 a throw and 24 for 102
+        - wk1 vs Fresno State (FBS) W 39-0: 27-of-29 for 13.8 a throw, 8 of 20+, sacked 0; ran 37 for 140; allowed 5.1 a throw and 29 for 39
+        - wk2 vs Louisiana (FBS) W 49-30: 20-of-31 for 8.7 a throw, 3 of 20+, sacked 0; ran 40 for 214; allowed 9.6 a throw and 30 for 146
+        - wk3 at Rutgers (FBS) W 42-35: 20-of-32 for 8.7 a throw, 5 of 20+, sacked 1; ran 31 for 184; allowed 7.9 a throw and 32 for 168
+        - wk4 vs Oregon (FBS) L 27-41: 23-of-42 for 7.8 a throw, 6 of 20+, sacked 2; ran 33 for 120; allowed 10.5 a throw and 33 for 138
+        - wk5 vs Washington (FBS) W 25-21: 21-of-34 for 7.2 a throw, 3 of 20+, sacked 1; ran 35 for 115; allowed 7.5 a throw and 33 for 116
+    - Reserve: (write it)
+  - Penn State keys
+    - KEY ONE (write it)
+      - Why: (write it)
+        - Rocco Becht: 83-of-134 for 1,108 — 8.3 per attempt; 10 TD, 3 INT
+          - Penn State as a team: 93-of-150 for 1,198 (8.0 an attempt, 12.9 per completion) — the difference is Alex Manske, 9-of-14 for 102
+        - 19 explosive passes in 156 dropbacks (12.2%), 10-of-27 on deep throws; sacked 6 times (3.8%); 3 INT
+        - Receivers: Koby Howard 12 for 344 and 2 TD; Chase Sowell 19 for 264 and 2 TD; Benjamin Brahmer 16 for 178 and 3 TD
+        - Rushing (box): 178 for 782 (4.4); 16 runs of 10+ (9.2%), 14.9% stuffed — James Peoples 45 for 212 and 2 TD; Carson Hansen 43 for 199 and 2 TD; Quinton Martin Jr. 29 for 158 and 1 TD
+        - Third down 28-of-71 (39%); third-and-long 11-of-36; third-and-short 9-of-12; red zone 12 TD in 19 trips (63%)
+      - What USC brings:
+        - Passing allowed: 105-of-167 for 1,377 — 8.2 a throw, 13.1 per completion; 21 explosive passes in 175 dropbacks (12.0%), 8-of-19 on deep throws; 3 picks
+        - Sacks 8 in 175 dropbacks (4.6%) — Kennedy Urlacher 2; Alex Graham 2; Jadyn Ramos 2
+        - Rushing allowed (box): 181 for 709 (3.9); 18 runs of 10+ against it (10.8%), 15.7% stuffed
+        - Opponents 23-of-62 on third down (37%); 11-of-35 on third-and-long; 7-of-10 on third-and-short; 13 TD allowed in 22 red-zone trips (59%)
+    - KEY TWO (write it)
+      - Why: (write it)
+        - Passing allowed: 69-of-126 for 597 — 4.7 a throw, 8.7 per completion; 8 explosive passes in 132 dropbacks (6.1%), 3-of-8 on deep throws; 5 picks
+        - Sacks 6 in 132 dropbacks (4.5%) — Tony Rojas 3; Kooper Ebel 1; Caleb Bacon 1
+        - Rushing allowed (box): 180 for 866 (4.8); 24 runs of 10+ against it (14.2%), 21.3% stuffed
+        - Opponents 18-of-64 on third down (28%); 10-of-39 on third-and-long; 4-of-8 on third-and-short; 6 TD allowed in 12 red-zone trips (50%)
+      - What USC brings:
+        - Jayden Maiava: 131-of-191 for 1,744 — 9.1 per attempt; 15 TD, 3 INT
+          - USC as a team: 141-of-204 for 1,857 (9.1 an attempt, 13.2 per completion) — the difference is Jonas Williams, 12-of-14 for 126
+    - KEY THREE (write it)
+      - Why: (write it)
+      - Game by game:
+        - wk1 vs Marshall (FBS) W 45-0: 20-of-27 for 12.0 a throw, 8 of 20+, sacked 1; ran 45 for 163; allowed 3.7 a throw and 26 for 44
+        - wk2 at Temple (FBS) W 27-9: 20-of-26 for 9.5 a throw, 4 of 20+, sacked 1; ran 34 for 148; allowed 4.9 a throw and 33 for 176
+        - wk3 vs Buffalo (FBS) W 55-13: 15-of-26 for 10.3 a throw, 5 of 20+, sacked 1; ran 41 for 304; allowed 2.5 a throw and 38 for 113
+        - wk4 vs Wisconsin (FBS) L 20-24: 12-of-29 for 3.9 a throw, 1 of 20+, sacked 2; ran 36 for 119; allowed 6.2 a throw and 28 for 120
+        - wk5 at Northwestern (FBS) L 13-34: 26-of-42 for 5.8 a throw, 1 of 20+, sacked 1; ran 22 for 48; allowed 6.6 a throw and 55 for 413
+    - Reserve: (write it)
+  - Corey: PLACEHOLDER
+

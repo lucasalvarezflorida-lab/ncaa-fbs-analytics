@@ -1,6 +1,6 @@
 # Score tracker — who was closer to each team's final score (INTERNAL)
 
-Season: **man closer on 10 teams · machine on 9 · 1 tie** — points off, all teams: man 170 · machine 172 — games (both teams added up): man 3 · machine 4 · 3 tie
+Season: **man closer on 14 teams · machine on 12 · 4 tie** — points off, all teams: man 250 · machine 253 — games (both teams added up): man 5 · machine 6 · 4 tie
 
 The machine predicts the margin, not the points - it has no totals model - so its team-score
 misses are mostly a points-total miss. Corey's totals are his own.
@@ -27,8 +27,18 @@ misses are mostly a points-total miss. Corey's totals are his own.
 | 4 | Oregon at USC | USC | 27 | 31 | 4 | 34 | 7 | machine |
 | 4 | Texas A&M at LSU | Texas A&M | 6 | 23 | 17 | 27 | 21 | machine |
 | 4 | Texas A&M at LSU | LSU | 35 | 29 | 6 | 31 | 4 | man |
+| 5 | Pitt at Virginia Tech | Pittsburgh | 35 | 28 | 7 | 28 | 7 | tie |
+| 5 | Pitt at Virginia Tech | Virginia Tech | 33 | 27 | 6 | 27 | 6 | tie |
+| 5 | Penn State at Northwestern | Penn State | 13 | 24 | 11 | 27 | 14 | machine |
+| 5 | Penn State at Northwestern | Northwestern | 34 | 22 | 12 | 24 | 10 | man |
+| 5 | Alabama at Mississippi State | Alabama | 56 | 34 | 22 | 38 | 18 | man |
+| 5 | Alabama at Mississippi State | Mississippi State | 23 | 26 | 3 | 28 | 5 | machine |
+| 5 | Auburn at Tennessee | Auburn | 14 | 24 | 10 | 21 | 7 | man |
+| 5 | Auburn at Tennessee | Tennessee | 24 | 31 | 7 | 31 | 7 | tie |
+| 5 | Ohio State at Iowa | Ohio State | 31 | 30 | 1 | 31 | 0 | man |
+| 5 | Ohio State at Iowa | Iowa | 14 | 16 | 2 | 20 | 6 | machine |
 
-Shadow score call (machine margin over the MODELED total, Phase 2 - not on air): 89 points off across 10 team scores vs 89 for the on-air call.
+Shadow score call (machine margin over the MODELED total, Phase 2 - not on air): 169 points off across 20 team scores vs 170 for the on-air call.
 
 | Wk | Game | Team | Final | On-air call | off | Shadow call | off |
 |---|---|---|---|---|---|---|---|
@@ -42,3 +52,13 @@ Shadow score call (machine margin over the MODELED total, Phase 2 - not on air):
 | 4 | Oregon at USC | USC | 27 | 31 | 4 | 27 | 0 |
 | 4 | Texas A&M at LSU | Texas A&M | 6 | 23 | 17 | 19 | 13 |
 | 4 | Texas A&M at LSU | LSU | 35 | 29 | 6 | 24 | 11 |
+| 5 | Pitt at Virginia Tech | Pittsburgh | 35 | 28 | 7 | 28 | 7 |
+| 5 | Pitt at Virginia Tech | Virginia Tech | 33 | 27 | 6 | 27 | 6 |
+| 5 | Penn State at Northwestern | Penn State | 13 | 24 | 11 | 27 | 14 |
+| 5 | Penn State at Northwestern | Northwestern | 34 | 22 | 12 | 25 | 9 |
+| 5 | Alabama at Mississippi State | Alabama | 56 | 34 | 22 | 33 | 23 |
+| 5 | Alabama at Mississippi State | Mississippi State | 23 | 26 | 3 | 25 | 2 |
+| 5 | Auburn at Tennessee | Auburn | 14 | 24 | 10 | 23 | 9 |
+| 5 | Auburn at Tennessee | Tennessee | 24 | 31 | 7 | 30 | 6 |
+| 5 | Ohio State at Iowa | Ohio State | 31 | 30 | 1 | 32 | 1 |
+| 5 | Ohio State at Iowa | Iowa | 14 | 16 | 2 | 17 | 3 |
