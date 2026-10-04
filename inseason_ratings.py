@@ -100,6 +100,37 @@ def rule_today(today: dt.date | None = None) -> dict:
 
 RULE = rule_today()
 
+# QB-out layer, on air from QB_SWITCH_DATE (Lucas 10/4: "the project is to find the most accurate model;
+# the podcast shows the work"). ONLY manual QB entries with status "out" count (a confirmed absence, e.g. a
+# season-ending injury, which the automatic flag cannot tell from a benching). The points come from the
+# entry (--points, else QB_PEN) and come straight off that team's rating, so the Top 25, the card, the
+# sim and the workbook all see them. Non-QB entries, "questionable" and the automatic flag stay in
+# shadow (availability.py). QB_2026.md records the evidence and the grading plan.
+QB_SWITCH_DATE = dt.date(2026, 10, 4)
+
+
+def qb_out_adjust(week: int | None = None, today: dt.date | None = None) -> dict[str, float]:
+    """{team: points taken off the rating} for QBs marked out in internal/availability.json that have not
+    returned by `week` (default: the week after the last completed one). {} before QB_SWITCH_DATE."""
+    today = today or dt.date.today()
+    if not QB_SWITCH_DATE or today < QB_SWITCH_DATE:
+        return {}
+    f = HERE / "internal" / "availability.json"
+    if not f.exists():
+        return {}
+    if week is None:
+        week = max((g["week"] or 0 for g in completed_games_2026()), default=0) + 1
+    out: dict[str, float] = {}
+    for e in json.loads(f.read_text(encoding="utf-8")):
+        if str(e.get("pos", "")).upper() != "QB" or e.get("status") != "out":
+            continue
+        if e.get("return") is not None and week >= int(e["return"]):
+            continue
+        pts = float(e["points"]) if e.get("points") is not None else 3.0
+        t = normalize_name(e["team"])
+        out[t] = out.get(t, 0.0) + pts
+    return out
+
 
 def turnover_margins(games: list[dict]) -> dict[int, float]:
     """{game_id: home takeaways - home giveaways} for 2026 games from the
@@ -217,12 +248,17 @@ def machine_ratings(prior: dict[str, float], refresh: bool = False,
                                           model, eff_w)) for g in games]
     rule = dict(RULE, cap_mode=cap_mode) if cap_mode != CAP_MODE else RULE
     cur = solve_2026(prior, fit_games, rule)
+    qb = qb_out_adjust(max((g["week"] or 0 for g in games), default=0) + 1)
+    for t, pts in qb.items():
+        if t in cur:
+            cur[t] -= pts
     gp = {t: 0 for t in prior}
     for g in games:
         gp[g["home"]] += 1
         gp[g["away"]] += 1
     out = {t: dict(pre=round(prior[t], 1), cur=round(cur[t], 1),
-                   delta=round(cur[t] - prior[t], 1), gp=gp[t]) for t in prior}
+                   delta=round(cur[t] - prior[t], 1), gp=gp[t],
+                   **({"qb_out": round(qb[t], 1)} if qb.get(t) else {})) for t in prior}
     if write:
         ranked = sorted(out.items(), key=lambda kv: -kv[1]["cur"])
         OUT_JSON.write_text(json.dumps(dict(
@@ -251,6 +287,10 @@ def weekly_change(prior: dict[str, float], refresh: bool = False,
     rule = dict(RULE, cap_mode=cap_mode) if cap_mode != CAP_MODE else RULE
     cur = solve_2026(prior, games, rule)
     prev = solve_2026(prior, [g for g in games if (g["week"] or 0) < week], rule)
+    for t, pts in qb_out_adjust(week + 1).items():     # same QB-out points on both sides: the column shows results, not the news
+        if t in cur:
+            cur[t] -= pts
+            prev[t] -= pts
     rank = {t: i + 1 for i, t in enumerate(sorted(cur, key=lambda t: -cur[t]))}
     prev_rank = {t: i + 1 for i, t in enumerate(sorted(prev, key=lambda t: -prev[t]))}
     return dict(week=week, teams={
