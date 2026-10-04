@@ -217,8 +217,16 @@
    28,
    27
   ],
-  "final": null,
-  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+  "final": [
+   35,
+   33
+  ],
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them",
+  "machine_shadow": [
+   28,
+   27
+  ],
+  "shadow_total": 54.4
  },
  {
   "week": 5,
@@ -233,8 +241,16 @@
    27,
    24
   ],
-  "final": null,
-  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+  "final": [
+   13,
+   34
+  ],
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them",
+  "machine_shadow": [
+   27,
+   25
+  ],
+  "shadow_total": 51.6
  },
  {
   "week": 5,
@@ -249,8 +265,16 @@
    38,
    28
   ],
-  "final": null,
-  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+  "final": [
+   56,
+   23
+  ],
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them",
+  "machine_shadow": [
+   33,
+   25
+  ],
+  "shadow_total": 58.2
  },
  {
   "week": 5,
@@ -265,8 +289,16 @@
    21,
    31
   ],
-  "final": null,
-  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+  "final": [
+   14,
+   24
+  ],
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them",
+  "machine_shadow": [
+   23,
+   30
+  ],
+  "shadow_total": 52.6
  },
  {
   "week": 5,
@@ -281,7 +313,15 @@
    31,
    20
   ],
-  "final": null,
-  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them"
+  "final": [
+   31,
+   14
+  ],
+  "note": "man = Corey's Week 5 score slides (left = away, green = his winner), read Wed 9/30 off a read-only export; machine = the closer slide's scores (machine margin over the market total, Tue 9/29 night lines) - overwrite from the frozen card if the freeze moves them",
+  "machine_shadow": [
+   32,
+   17
+  ],
+  "shadow_total": 49.0
  }
 ]

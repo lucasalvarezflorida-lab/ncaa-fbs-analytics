@@ -380,7 +380,17 @@
      "gap": 1.36
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     35,
+     33
+    ],
+    "observed": 2.03,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": 1.3,
+    "verdict": "clean"
+   }
   },
   "Penn State at Northwestern": {
    "game_id": 401858476,
@@ -435,7 +445,17 @@
      "gap": 1.6
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     13,
+     34
+    ],
+    "observed": 6.6,
+    "fired": false,
+    "pick_lost": true,
+    "own_line": -22.9,
+    "verdict": "missed it"
+   }
   },
   "Alabama at Mississippi State": {
    "game_id": 401856707,
@@ -490,7 +510,17 @@
      "gap": 1.91
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     56,
+     23
+    ],
+    "observed": 0.6,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": 24.7,
+    "verdict": "clean"
+   }
   },
   "Auburn at Tennessee": {
    "game_id": 401856710,
@@ -545,7 +575,17 @@
      "gap": 1.5
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     14,
+     24
+    ],
+    "observed": 4.84,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": 3.2,
+    "verdict": "clean"
+   }
   },
   "Ohio State at Iowa": {
    "game_id": 401858473,
@@ -600,7 +640,17 @@
      "gap": 1.35
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     31,
+     14
+    ],
+    "observed": 12.0,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": 2.9,
+    "verdict": "clean"
+   }
   }
  }
 }
