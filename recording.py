@@ -63,7 +63,7 @@ def main():
     else:
         R.note("## 2 freeze — skipped (--no-freeze)")
     teams = ",".join(t for p in pairs for t in p)
-    R.step(f"3 stat packages ({len(pairs)} games)", [PY, "stat_package.py", "--week", str(n), "--teams", teams], tail=6, timeout=2400)
+    R.step(f"3 stat packages ({len(pairs)} games)", [PY, "stat_package.py", "--week", str(n), "--teams", teams, "--refresh"], tail=6, timeout=2400)
     R.step(f"4 pre-mortems week {n}", [PY, "premortems.py", "--week", str(n), "--force", "--show"], tail=12)
     R.step(f"5 totals-model shadow call", [PY, "totals_model.py", "--week", str(n), "--calib", TOTALS_CALIB], tail=12)
     R.step(f"6 availability shadow", [PY, "availability.py", "--week", str(n)], tail=16)

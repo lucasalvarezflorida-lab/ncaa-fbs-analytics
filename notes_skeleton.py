@@ -62,7 +62,7 @@ def load_stat_package(week, teams):
     missing = [t for t in teams if t not in have]
     if missing:
         print("building stat packages for", missing)
-        subprocess.run([sys.executable, str(HERE / "stat_package.py"), "--week", str(week), "--teams", ",".join(teams)], check=True, cwd=HERE)
+        subprocess.run([sys.executable, str(HERE / "stat_package.py"), "--week", str(week), "--teams", ",".join(teams), "--refresh"], check=True, cwd=HERE)
         have = {pk["team"]: pk for pk in json.loads(p.read_text(encoding="utf-8"))}
     return have
 

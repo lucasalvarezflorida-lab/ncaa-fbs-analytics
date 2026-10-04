@@ -51,7 +51,7 @@ def main():
     pairs, ep, wk = card_teams_from_deck()
     if pairs and wk == n:
         teams = ",".join(t for p in pairs for t in p)
-        R.step(f"7 stat packages ({len(pairs)} games)", [PY, "stat_package.py", "--week", str(n), "--teams", teams], tail=6)
+        R.step(f"7 stat packages ({len(pairs)} games)", [PY, "stat_package.py", "--week", str(n), "--teams", teams, "--refresh"], tail=6)
     else:
         R.note(f"## 7 stat packages — skipped: make_episode_deck.py GAMES is week {wk}, not {n} (set the card first)")
     R.py("8 playoff sim summary", f"""
