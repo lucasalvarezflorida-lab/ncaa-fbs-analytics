@@ -1780,14 +1780,14 @@ if BOARDS:
         f"EPISODE {EPISODE} · WEEK {WEEK} · THE SEAT BOARD", 14, ORANGE, bold=True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "Hot Seat Top 10", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "60% CBS rating + 40% machine odds of missing the bar", 13, PALE, bold=True)
+        "40% CBS rating + 60% the machine's odds he is gone by next season", 13, PALE, bold=True)
     TOP, RH = 2.08, 0.4
     R = PP_ALIGN.RIGHT
     _hdr(s, 1.75, 2.8, TOP - 0.25, "COACH · SCHOOL")
     _hdr(s, 4.6, 1.5, TOP - 0.25, "TENURE")
     _hdr(s, 6.15, 0.55, TOP - 0.25, "CBS", R)
-    _hdr(s, 6.75, 0.55, TOP - 0.25, "NEEDS", R)
-    _hdr(s, 7.35, 0.7, TOP - 0.25, "P(GETS IT)", R)
+    _hdr(s, 6.75, 0.55, TOP - 0.25, "RECORD", R)
+    _hdr(s, 7.35, 0.7, TOP - 0.25, "P(GONE)", R)
     _hdr(s, 8.1, 0.95, TOP - 0.25, "MACHINE WINS", R)
     _hdr(s, 9.1, 0.5, TOP - 0.25, "Δ", R)
     _hdr(s, 9.65, 0.55, TOP - 0.25, "SCORE", R)
@@ -1802,9 +1802,9 @@ if BOARDS:
         txt(s, 4.6, y + 0.09, 1.5, 0.3, r["tenure"], 8.5, PALE)
         txt(s, 6.15, y + 0.07, 0.55, 0.3, f"{r['cbs']:.1f}{'*' if r['cbs_est'] else ''}",
             11, WHITE, bold=True, align=R)
-        txt(s, 6.75, y + 0.07, 0.55, 0.3, f"{r['bar']} W", 11, WHITE, align=R)
-        txt(s, 7.35, y + 0.07, 0.7, 0.3, f"{round(100 * r['p_bar'])}%", 11,
-            DOWN if r["p_bar"] < 0.4 else (UP if r["p_bar"] > 0.6 else WHITE),
+        txt(s, 6.75, y + 0.07, 0.55, 0.3, r["record"], 11, WHITE, align=R)
+        txt(s, 7.35, y + 0.07, 0.7, 0.3, f"{round(100 * r['p_gone'])}%", 11,
+            DOWN if r["p_gone"] >= 0.3 else (UP if r["p_gone"] < 0.15 else WHITE),
             bold=True, align=R)
         txt(s, 8.1, y + 0.07, 0.95, 0.3, f"{r['proj']:.1f} ({r['p10']:g}–{r['p90']:g})",
             10.5, WHITE, align=R)
@@ -1821,7 +1821,7 @@ if BOARDS:
         "Next three: " + " · ".join(f"{x['coach']} {x['score']:.0f}" for x in _nxt),
         11, WHITE, bold=True)
     txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
-        "NEEDS = wins that keep the job · P(GETS IT) = the machine's odds · "
+        "P(GONE) = odds he is not the coach next season, from 2014–25 departures · CBS* = not on CBS's August list · "
         "MACHINE WINS = projected (10th–90th)", 10.5, PALE)
 
     # -- Heisman --

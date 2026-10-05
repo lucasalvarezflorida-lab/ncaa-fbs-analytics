@@ -2,7 +2,12 @@
 Heisman board ("our own favorite"). Writes boards_week{N}.json for
 make_episode_deck.py; the notes (.md) carry the reasoning.
 
-HOT SEAT — seat score = 0.6 * (CBS rating / 5) + 0.4 * (1 - P(hit the bar))
+HOT SEAT — since 10/4/2026 (Lucas): seat score = 0.4 * (CBS rating / 5) + 0.6 * min(P(gone) / 0.5, 1)
+  * P(gone) = hot_seat_study.p_gone_2026: logistic model of "not the coach next season" fit on 2014-25,
+    from tenure, last season vs the program's ten-year bar, and this season's record and margin so far.
+    Every FBS coach is scored; a coach CBS did not list in August carries CBS_DEFAULT (starred).
+    internal/HOT_SEAT_STUDY_2026.md has the backtest. The old rule, kept for the record:
+    0.6 * (CBS rating / 5) + 0.4 * (1 - P(hit the bar))
   * CBS rating  = the "man": CBS Sports' 2026 hot-seat rating (0-5, Aug 29).
   * P(hit bar)  = the machine: probability the team reaches the win total
     the coach needs, from the Season Sim's projected wins (our in-season
@@ -165,19 +170,26 @@ def p_at_least(bar, proj, p10, p90):
     return 0.5 * math.erfc(z / math.sqrt(2))
 
 
-def hot_seat(sim, ratings, results):
+CBS_W, P_FULL, CBS_DEFAULT = 0.4, 0.5, 1.5     # CBS weight; P(gone) that maxes the machine half; rating for a coach CBS did not list
+
+
+def hot_seat(sim, ratings, results, week):
+    from hot_seat_study import p_gone_2026
+    model = p_gone_2026(week - 1)
     rows = []
-    for team, (coach, cbs) in CBS.items():
+    for team, m in model.items():
         s = sim.get(team)
         if not s:
             continue
-        rating = cbs if cbs is not None else EST[team]
-        bar = BARS[team]
-        p_bar = p_at_least(bar, s["proj"], s["p10"], s["p90"])
-        score = 0.6 * rating / 5 + 0.4 * (1 - p_bar)
+        coach, cbs = CBS.get(team, (m["coach"], None))
+        rating = cbs if cbs is not None else EST.get(team, CBS_DEFAULT)
+        bar = BARS.get(team)
+        p_bar = p_at_least(bar, s["proj"], s["p10"], s["p90"]) if bar else None
+        score = CBS_W * rating / 5 + (1 - CBS_W) * min(m["p_gone"] / P_FULL, 1.0)
         r = ratings.get(normalize_name(team), {})
         rows.append(dict(team=team, coach=coach, cbs=rating, cbs_est=cbs is None,
-                         tenure=TENURE.get(team, ""), bar=bar, p_bar=round(p_bar, 3),
+                         tenure=TENURE.get(team, f"yr {m['tenure']}"), bar=bar, p_bar=round(p_bar, 3) if p_bar is not None else None,
+                         p_gone=round(m["p_gone"], 3), record=m["rec"].replace("-", "–"),
                          proj=s["proj"], p10=s["p10"], p90=s["p90"],
                          pbowl=round(s["pbowl"], 3), machine_rank=s["rank"],
                          rating=r.get("cur"), delta=r.get("delta"), gp=r.get("gp"),
@@ -292,7 +304,7 @@ def main():
         for me, opp, mp, op, ha in ((g["homeTeam"], g["awayTeam"], g["homePoints"], g["awayPoints"], "vs"),
                                     (g["awayTeam"], g["homeTeam"], g["awayPoints"], g["homePoints"], "at")):
             results.setdefault(me, []).append(f"{'W' if mp > op else 'L'} {mp}-{op} {ha} {opp}")
-    hs = hot_seat(sim, ratings, results)
+    hs = hot_seat(sim, ratings, results, a.week)
     games = {t: len(v) for t, v in results.items()}
     hb, non, hall = heisman(sim, a.refresh, games)
     ub = upset_board(a.week)
@@ -302,11 +314,11 @@ def main():
                hot_seat=hs, heisman=hb, heisman_non_qb=non, heisman_all=hall, upset_board=ub)
     path = HERE / f"boards_week{a.week}.json"
     json.dump(out, open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-    print(f"HOT SEAT (CBS {CBS_DATE} x machine, {rt.get('games_used')} rated games)")
+    print(f"HOT SEAT (40% CBS {CBS_DATE} + 60% P(gone) model, {len(hs)} coaches)")
     for i, r in enumerate(hs[:14], 1):
         est = "*" if r["cbs_est"] else ""
-        print(f"{i:>2} {r['coach']:<18}{r['team']:<18} CBS {r['cbs']}{est}  bar {r['bar']}  "
-              f"P(bar) {r['p_bar']:.2f}  proj {r['proj']} ({r['p10']}-{r['p90']})  "
+        print(f"{i:>2} {r['coach']:<18}{r['team']:<18} CBS {r['cbs']}{est}  {r['record']}  "
+              f"P(gone) {r['p_gone']:.2f}  proj {r['proj']} ({r['p10']}-{r['p90']})  "
               f"rating {r['rating']} ({r['delta']:+})  score {r['score']}  | {'; '.join(r['results'])}")
     print(f"\nHEISMAN — ALL POSITIONS (points added per game x team factor; market DK {MARKET_DATE})")
     for i, r in enumerate(hall[:12], 1):

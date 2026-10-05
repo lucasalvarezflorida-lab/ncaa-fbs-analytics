@@ -51,11 +51,11 @@ def coach_table():
     return out
 
 
-def early_records(year):
-    """{school: (wins, losses, avg margin)} through week THROUGH, FBS teams."""
+def early_records(year, through=THROUGH):
+    """{school: (wins, losses, avg margin)} through week `through`, FBS teams."""
     rec = defaultdict(lambda: [0, 0, 0.0])
     for g in cfbd.get("/games", {"year": year, "seasonType": "regular"}, year == NOW):
-        if (g.get("week") or 99) > THROUGH or g.get("homePoints") is None or g.get("awayPoints") is None:
+        if (g.get("week") or 99) > through or g.get("homePoints") is None or g.get("awayPoints") is None:
             continue
         m = g["homePoints"] - g["awayPoints"]
         for t, mm in ((g["homeTeam"], m), (g["awayTeam"], -m)):
@@ -63,11 +63,11 @@ def early_records(year):
     return {t: (w, l, s / max(w + l, 1)) for t, (w, l, s) in rec.items()}
 
 
-def build():
+def build(through=THROUGH):
     T = coach_table()
     rows = []
     for year in list(FIT) + list(TEST) + [NOW]:
-        early = early_records(year)
+        early = early_records(year, through)
         hc_next = {v["coach"] for (s, y), v in T.items() if y == year + 1}
         for (school, y), v in T.items():
             if y != year or school not in early:
@@ -114,6 +114,19 @@ def auc(p, y):
     order = np.argsort(p); r = np.empty(len(p)); r[order] = np.arange(1, len(p) + 1)
     n1 = y.sum(); n0 = len(y) - n1
     return float((r[y == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0))
+
+
+def p_gone_2026(through):
+    """ON AIR (Lucas 10/4/2026): {school: dict(coach, tenure, rec, p_gone)} for every 2026 coach, from the 'both' model
+    refit on every completed season (2014-2025) with the same number of weeks known."""
+    rows = build(through)
+    tr = [r for r in rows if r["year"] < NOW]; now = [r for r in rows if r["year"] == NOW]
+    cols = PRE + INS
+    X = np.array([[r[c] for c in cols] for r in tr]); mu, sd = X.mean(0), X.std(0) + 1e-9
+    w = fit_logit((X - mu) / sd, np.array([r["gone"] for r in tr], float))
+    Xn = (np.array([[r[c] for c in cols] for r in now]) - mu) / sd
+    p = 1 / (1 + np.exp(-(np.column_stack([np.ones(len(now)), Xn]) @ w)))
+    return {r["school"]: dict(coach=r["coach"], tenure=r["tenure"], rec=r["rec"], p_gone=float(pp)) for r, pp in zip(now, p)}
 
 
 def main():

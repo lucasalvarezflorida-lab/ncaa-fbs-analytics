@@ -68,19 +68,28 @@ placeholders until his deck updates. Betting-line context stays in the internal 
   - Jeremiah Smith (Ohio State) 10.0 (+0.5, #8 → #7)
   - Sam Leavitt (LSU) 9.9 (-1.1, #6 → #8)
 
-- **Hot Seat (machine)** — 60 × (CBS ÷ 5) + 40 × P(miss the bar); CBS frozen 2026-08-29
-  - Mike Locksley (Maryland) 90.7 (+0.0, #2 → #1)
-  - Mike Norvell (Florida State) 78.6 (-12.6, #1 → #2)
-  - Derek Mason (Middle Tennessee) 76.5 (+7.3, #7 → #3)
-  - Dabo Swinney (Clemson) 72.2 (+1.7, #6 → #4)
-  - Shane Beamer (South Carolina) 71.6 (-2.0, #4 → #5)
-  - Greg Schiano (Rutgers) 69.9 (+2.0, #9 → #6)
-  - Bryant Vincent (UL Monroe) 69.3 (-3.3, #5 → #7)
-  - Dave Aranda (Baylor) 68.8 (-7.2, #3 → #8)
-  - Scott Satterfield (Cincinnati) 67.0 (+9.0, #19 → #9)
-  - Lincoln Riley (USC) 66.9 (+5.2, #14 → #10)
-  - Bill O'Brien (Boston College) 66.0 (-2.0, #8 → #11)
-  - Deion Sanders (Colorado) 62.2 (-3.7, #11 → #12)
+- **Hot Seat (machine)** — NEW RULE (Sun Oct 4): 40 × (CBS ÷ 5) + 60 × the machine's odds the coach is gone by next season (50% or more = full marks); CBS frozen 2026-08-29
+  - What changed and why — say it once
+    - The old board was 60% a CBS rating from August and only covered the 32 coaches CBS or our prep listed. Six weeks in, the season has to count for more
+    - The machine half is now a model of who was actually gone the next year, 2014–25 (fired, retired or stepped down; coaches who left for another job are not counted): tenure, last season against the program's ten-year standard, and this season's record and scoring margin
+    - Backtest, after five weeks of a season: the preseason picture alone scored 0.62, the five weeks alone 0.68, both together 0.70 (0.50 is a coin flip). Both together put 20 of the 89 departures of 2022–25 in the season's top ten — it is a modest predictor, and it knows nothing about buyouts or boosters
+    - Every FBS coach is scored now; a coach CBS did not list carries a 1.5 (starred)
+  - What it did to the board: Swinney up, Norvell off it
+    - Dabo Swinney: 34% to be gone — No. 9, and the only coach in the top ten with a winning record this season; Clemson is 3–2 with losses of 41 and 28 points. The model cannot tell a firing from stepping down
+    - Mike Norvell: No. 2 under the old rule, No. 16 under the new one (15% to be gone) — Florida State is 3–2, up 3.8 points on the machine and won 38–7 last week; the CBS 5.0 is the only thing keeping him near the list
+  - 1. Bryant Vincent (UL Monroe) 84.0 — 0–5, 58% gone, CBS 3.0*
+  - 2. Bill O'Brien (Boston College) 80.2 — 2–3, 44% gone, CBS 3.5
+  - 3. Deion Sanders (Colorado) 76.1 — 2–3, 43% gone, CBS 3.1
+  - 4. Mike Locksley (Maryland) 75.3 — 2–3, 30% gone, CBS 4.9
+  - 5. Scotty Walden (UTEP) 72.0 — 1–4, 52% gone, CBS 1.5*
+  - 6. Shane Beamer (South Carolina) 70.1 — 2–3, 30% gone, CBS 4.3
+  - 7. Derek Mason (Middle Tennessee) 70.0 — 2–3, 34% gone, CBS 3.6
+  - 8. Jay Sawvel (Wyoming) 68.2 — 2–3, 37% gone, CBS 3.0*
+  - 9. Dabo Swinney (Clemson) 65.8 — 3–2, 34% gone, CBS 3.1
+  - 10. Greg Schiano (Rutgers) 65.5 — 1–4, 35% gone, CBS 3.0*
+  - 11. Joe Moorhead (Akron) 63.7 — 1–4, 38% gone, CBS 2.2
+  - 12. Tyson Helton (Western Kentucky) 63.3 — 1–4, 43% gone, CBS 1.5*
+  - Coming: "who replaces him" — the next version of this segment
 
 - **Superdog picks** (lines as of 2026-10-04T15:03:58+00:00 — re-read at the freeze)
   - Machine Giant Killer: South Carolina +14.5 at Florida (#8) — exp 8.82, machine -5.4
