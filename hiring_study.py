@@ -152,9 +152,9 @@ def main():
       f"Correlation of the full profile with the real lift on the test hires: {np.corrcoef(pred, yte)[0, 1]:+.2f}.\n")
     # ---- 2026 candidate board: sitting HCs outside the power conferences ----
     P("## 2026 candidate board - sitting head coaches outside the power conferences\n")
-    P("Ranked by the coach's own part of the fitted profile above (how good his last two teams are, what he built, last season's win pct, years there); "
-      "the terms that belong to the new program are left out, so this is 'who travels best', not a fit to any one job. "
-      "Built = his program's SRS now minus the two years before he arrived.\n")
+    P("Ranked by RECENT TEAM STRENGTH only: the average of his program's SRS in 2025 and 2026 to date (points per game against an average team, "
+      "schedule-adjusted). It is the one coach-side term in the fitted profile above that carries weight (+0.48 per point, se 0.26); "
+      "what he built and last season's record are shown as context, not scored. First-year coaches are left out.\n")
     ratings = {t["team"]: t for t in json.loads((HERE / "ratings_current_2026.json").read_text(encoding="utf-8"))["teams"]}
     from name_mapping import normalize_name
     cands = []
@@ -170,15 +170,16 @@ def main():
         if now_srs is None or before is None:
             continue
         last = T.get((school, NOW - 1)); r = ratings.get(normalize_name(school), {})
-        lwp = last["wins"] / max(last["wins"] + last["losses"], 1) if last else 0.5
-        travel = b[1] * (now_srs - before) + b[2] * now_srs + b[3] * lwp + b[4] * (NOW - t0 + 1)
-        cands.append(dict(travel=round(float(travel), 1), coach=c, school=school, conf=v["conf"], years=NOW - t0 + 1, built=round(now_srs - before, 1), srs=round(now_srs, 1),
+        prev_srs = T.get((school, NOW - 1), {}).get("srs")
+        recent = float(np.mean([x for x in (T[(school, NOW)]["srs"], prev_srs) if x is not None]))
+        cands.append(dict(recent=round(recent, 1), srs26=T[(school, NOW)]["srs"], srs25=prev_srs, coach=c, school=school, conf=v["conf"], years=NOW - t0 + 1, built=round(now_srs - before, 1), srs=round(now_srs, 1),
                           last=f"{last['wins']}-{last['losses']}" if last else "", rating=r.get("cur"), delta=r.get("delta")))
-    cands.sort(key=lambda x: -x["travel"])
-    P("| # | coach | school | yr | travel score | built (SRS lift) | SRS now | 2025 | machine rating (vs July) |\n|--:|---|---|--:|--:|--:|--:|---|--:|")
-    for k, c in enumerate(cands[:20], 1):
-        P(f"| {k} | {c['coach']} | {c['school']} | {c['years']} | {c['travel']:+.1f} | {c['built']:+.1f} | {c['srs']:+.1f} | {c['last']} | {c['rating']} ({c['delta']:+}) |" if c["rating"] is not None
-          else f"| {k} | {c['coach']} | {c['school']} | {c['years']} | {c['travel']:+.1f} | {c['built']:+.1f} | {c['srs']:+.1f} | {c['last']} | - |")
+    cands.sort(key=lambda x: -x["recent"])
+    P("| # | coach | school | yr | recent SRS (2025-26) | 2026 SRS | 2025 SRS | 2025 record | built | machine rating (vs July) |\n|--:|---|---|--:|--:|--:|--:|---|--:|--:|")
+    for k, c in enumerate(cands[:25], 1):
+        r26 = f"{c['srs26']:+.1f}" if c["srs26"] is not None else "-"; r25 = f"{c['srs25']:+.1f}" if c["srs25"] is not None else "-"
+        mr = f"{c['rating']} ({c['delta']:+})" if c["rating"] is not None else "-"
+        P(f"| {k} | {c['coach']} | {c['school']} | {c['years']} | {c['recent']:+.1f} | {r26} | {r25} | {c['last']} | {c['built']:+.1f} | {mr} |")
     P("\nLimits: coordinators, FCS and NFL coaches are not in the data (they are most first-time hires); no contracts, buyouts, age, ties to a school or who wants the job. "
       "SRS for 2026 is the season to date. 'Built' flatters a coach who inherited a crater and punishes one who inherited a good team.")
     text = "\n".join(out)
