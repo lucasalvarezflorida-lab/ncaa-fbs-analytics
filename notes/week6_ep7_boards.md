@@ -32,6 +32,53 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - First game without him: 4.1 points. After the machine has seen one game of the backup: 1.7
     - A flat penalty cut the miss on the 141 games of 2025 from 13.26 to 12.95
     - What did NOT predict the size: the backup's recruiting rating (top third 3.6, middle 1.0, bottom 4.4) or how good the starter was. Say: "we can tell you losing the quarterback costs about four points the first week; we cannot tell you which backups beat that"
+  - What it did to the board: Pitt 8.9 → 4.9, No. 38 → No. 51. Nobody else has an entry
+    - Pitt's backup is Holden Geriner, a fifth-year senior making his first career start against North Carolina; Heintschel was the lowest-rated recruit of Pitt's three quarterbacks
+    - It is graded in the open: every game with a flagged team is scored with and without the quarterback points, and the layer comes off the air if it does not win
+
+- **Top 25 (machine)**
+  - Rule: residual cap 42, lam 3, de-lucked 3 a turnover; 271 rated games
+  - Alabama No. 1 at 27.9 — 56–23 at Mississippi State as an 8.5-point favorite; four teams are inside eight tenths of a point at the top
+    - Say: "one through four is a coin toss — Alabama 27.9, Georgia 27.8, Ohio State 27.6, Texas 27.1 — and two of them play Saturday"
+  - The ten: Alabama 27.9 · Georgia 27.8 · Ohio State 27.6 · Texas 27.1 · Notre Dame 26.7 · Miami 26.2 · LSU 25.9 · Indiana 23.0 · Oregon 19.0 · Texas A&M 18.0
+  - Risers (this week's games alone): Missouri +5.3 (#31 → #17); Florida State +5.0 (#36 → #19); Wake Forest +4.3 (#50 → #35); Baylor +3.8 (#43 → #28); Northwestern +3.5 (#33 → #25); Alabama +2.9 (#6 → #1)
+    - Missouri: 45–17 over Florida; Florida State: 38–7 over Virginia; Northwestern: 34–13 over Penn State with 413 rushing yards
+  - Fallers: Florida -4.8 (#9 → #15); Virginia -4.2 (#29 → #49); Michigan -2.1 (#24 → #32); Penn State -1.8 (#20 → #27); Ole Miss -1.4 (#15 → #16); USC -1.2 (#17 → #20)
+  - Into the 25: Florida State #19, Missouri #17, Northwestern #25, Wisconsin #22 · Out: Auburn (#23 → #26), Iowa (#25 → #30), Michigan (#24 → #32), Penn State (#20 → #27)
+    - Florida is the week's biggest loser: playoff odds 68% → 25%
+  - AP Week 6 (out Mon): Texas 1 · Georgia 2 · Notre Dame 3 · Miami 4 · Ohio State 5 · Alabama 6 · Indiana 7 · BYU 8 · Ole Miss 9 · LSU 10
+    - Biggest gaps: Alabama is the machine's No. 1 and the AP's No. 6; Texas is AP No. 1 and the machine's No. 4; BYU AP No. 8, machine No. 23; Ole Miss AP No. 9, machine No. 16
+    - Pittsburgh is AP No. 25 and the machine's No. 51 — the poll has not taken the quarterback into account
+  - Playoff picture (internal): Alabama 98% · Texas 97% · Georgia 94% · Notre Dame 93% · Miami 91% · Ohio State 87% · LSU 82% · Indiana 72% · Boise State 46% · Texas Tech 39% · Utah 38% · Oregon 35%
+
+- **Heisman board (machine)** — index = team factor × blended efficiency (market: DraftKings 2026-10-04)
+  - Darian Mensah (Miami) 50.7 (-0.7, #1 → #1)
+  - Julian Sayin (Ohio State) 46.7 (-0.6, #3 → #2)
+  - C.J. Carr (Notre Dame) 46.4 (-1.2, #2 → #3)
+  - Josh Hoover (Indiana) 43.6 (+2.3, #4 → #4)
+  - Keelon Russell (Alabama) 38.4 (+6.4, #6 → #5)
+  - Devon Dampier (Utah) 32.5 (-0.9, #5 → #6)
+  - Dante Moore (Oregon) 27.4 (+0.1, #10 → #7)
+  - Sam Leavitt (LSU) 27.2 (-0.7, #9 → #8)
+  - Non-QB watch: Jeremiah Smith (Ohio State), Malachi Toney (Miami), Ryan Wingo (Texas), Trent Mosley (USC)
+  - All positions (the slide board): Julian Sayin (QB) 15.5 · Darian Mensah (QB) 14.4 · Keelon Russell (QB) 12.8 · C.J. Carr (QB) 12.6 · Devon Dampier (QB) 10.8 · Josh Hoover (QB) 10.5 · Jeremiah Smith (WR) 10.0 · Sam Leavitt (QB) 9.9
+  - Market check (DraftKings Sun 10/4): Jeremiah Smith +115 (was +245) · Darian Mensah +460 · Keelon Russell +750 (was +1700) · C.J. Carr +800 · Trinidad Chambliss +1600 · Gunner Stockton +2900 · Julian Sayin +3100
+    - Gaps worth saying out loud: Sayin is the machine's No. 1 and the market's seventh; Smith is the market's favorite and the machine's seventh (a wide receiver's points per game against a quarterback's); Russell's price went from +1700 to +750 in a week
+  - Julian Sayin (Ohio State) 15.5 (+0.0, #1 → #1)
+  - Darian Mensah (Miami) 14.4 (+0.0, #2 → #2)
+  - Keelon Russell (Alabama) 12.8 (+1.7, #5 → #3)
+  - C.J. Carr (Notre Dame) 12.6 (+0.3, #3 → #4)
+  - Devon Dampier (Utah) 10.8 (-0.3, #4 → #5)
+  - Josh Hoover (Indiana) 10.5 (+1.2, #9 → #6)
+  - Jeremiah Smith (Ohio State) 10.0 (+0.5, #8 → #7)
+  - Sam Leavitt (LSU) 9.9 (-1.1, #6 → #8)
+
+- **Hot Seat (machine)** — NEW RULE (Sun Oct 4): 40 × (CBS ÷ 5) + 60 × the machine's odds the coach is gone by next season (50% or more = full marks); CBS frozen 2026-08-29
+  - What changed and why — say it once
+    - The old board was 60% a CBS rating from August and only covered the 32 coaches CBS or our prep listed. Six weeks in, the season has to count for more
+    - The machine half is now a model of who was actually gone the next year, 2014–25 (fired, retired or stepped down; coaches who left for another job are not counted): tenure, last season against the program's ten-year standard, and this season's record and scoring margin
+    - Backtest, after five weeks of a season: the preseason picture alone scored 0.62, the five weeks alone 0.68, both together 0.70 (0.50 is a coin flip). Both together put 20 of the 89 departures of 2022–25 in the season's top ten — it is a modest predictor, and it knows nothing about buyouts or boosters
+    - Every FBS coach is scored now; a coach CBS did not list carries a 1.5 (starred)
   - What it did to the board: Swinney up, Norvell off it, and four coaches CBS never rated are in the top ten (starred)
     - The model is 40% CBS from August + 60% a record pattern: losses and scoring margin so far, tenure, and last season against the program's own ten-year standard. It measures 'gone by next season', and it cannot tell fired from stepped down
 
