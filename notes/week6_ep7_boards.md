@@ -51,28 +51,38 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - Pittsburgh is AP No. 25 and the machine's No. 51 — the poll has not taken the quarterback into account
   - Playoff picture (internal): Alabama 98% · Texas 97% · Georgia 94% · Notre Dame 93% · Miami 91% · Ohio State 87% · LSU 82% · Indiana 72% · Boise State 46% · Texas Tech 39% · Utah 38% · Oregon 35%
 
-- **Heisman board (machine)** — index = team factor × blended efficiency (market: DraftKings 2026-10-04)
-  - Darian Mensah (Miami) 50.7 (-0.7, #1 → #1)
-  - Julian Sayin (Ohio State) 46.7 (-0.6, #3 → #2)
-  - C.J. Carr (Notre Dame) 46.4 (-1.2, #2 → #3)
-  - Josh Hoover (Indiana) 43.6 (+2.3, #4 → #4)
-  - Keelon Russell (Alabama) 38.4 (+6.4, #6 → #5)
-  - Devon Dampier (Utah) 32.5 (-0.9, #5 → #6)
-  - Dante Moore (Oregon) 27.4 (+0.1, #10 → #7)
-  - Sam Leavitt (LSU) 27.2 (-0.7, #9 → #8)
-  - Non-QB watch: Jeremiah Smith (Ohio State), Malachi Toney (Miami), Ryan Wingo (Texas), Trent Mosley (USC)
-  - All positions (the slide board): Julian Sayin (QB) 15.5 · Darian Mensah (QB) 14.4 · Keelon Russell (QB) 12.8 · C.J. Carr (QB) 12.6 · Devon Dampier (QB) 10.8 · Josh Hoover (QB) 10.5 · Jeremiah Smith (WR) 10.0 · Sam Leavitt (QB) 9.9
-  - Market check (DraftKings Sun 10/4): Jeremiah Smith +115 (was +245) · Darian Mensah +460 · Keelon Russell +750 (was +1700) · C.J. Carr +800 · Trinidad Chambliss +1600 · Gunner Stockton +2900 · Julian Sayin +3100
-    - Gaps worth saying out loud: Sayin is the machine's No. 1 and the market's seventh; Smith is the market's favorite and the machine's seventh (a wide receiver's points per game against a quarterback's); Russell's price went from +1700 to +750 in a week
-  - Julian Sayin (Ohio State) 15.5 (+0.0, #1 → #1)
-  - Darian Mensah (Miami) 14.4 (+0.0, #2 → #2)
-  - Keelon Russell (Alabama) 12.8 (+1.7, #5 → #3)
-  - C.J. Carr (Notre Dame) 12.6 (+0.3, #3 → #4)
-  - Devon Dampier (Utah) 10.8 (-0.3, #4 → #5)
-  - Josh Hoover (Indiana) 10.5 (+1.2, #9 → #6)
-  - Jeremiah Smith (Ohio State) 10.0 (+0.5, #8 → #7)
-  - Sam Leavitt (LSU) 9.9 (-1.1, #6 → #8)
+- **Heisman board (machine)** — the Best-Player Board: points added per game × team factor (market: DraftKings 2026-10-04)
+  - What the board is, say it once
+    - 'Best so far, not a prediction.' CFBD's predicted points added (PPA) credits every play to the players who made it: a passer on every dropback, a receiver on every target, a runner on every carry. We take each player's PPA per play, shrink it toward his 2025 number (150 plays of prior weight for a quarterback, 40 for everyone else — a new starter gets the FBS average), multiply by his plays per game, and multiply by a team factor: 0.5 + half the team's odds of ten wins, because the trophy goes to players on ten-win teams
+    - The market column is DraftKings' price to WIN the trophy — a vote in December — not who has played best. The two questions have different answers, and the gap between them is the segment
 
+  - **Why Sayin is above Smith — the on-air answer**
+    - Per touch, Smith is the best player in the country and the board says so: 1.03 points every time the ball goes his way, against 0.61 for Sayin every time he drops back. On the per-play board Smith is No. 1 and it is not close
+    - The difference is volume. Smith has been targeted 62 times in five games — 12 a game; Sayin has 166 dropbacks — 33 a game. 1.03 × 12 is 12.3 points a game; 0.58 (Sayin's shrunk number) × 33 is 19.2. Same team, same team factor (0.81), so the whole gap is plays
+    - And Sayin's number already contains Smith. When Sayin hits Smith for 50 yards, PPA credits the throw to the passer and the catch to the receiver. A quarterback's points a game is the sum of what every receiver did with his throws, plus his own decisions; a receiver's is his share of one quarterback's throws. The board is measuring total impact, and a quarterback touches the ball on every pass play
+    - The market disagrees — Smith +115 (46%), Sayin +3100 (3%) — because the market is pricing a vote. A pure receiver has won it twice since 1991 (Desmond Howard, DeVonta Smith), plus Travis Hunter as a two-way player in 2024, and Smith is the kind of player who breaks that: 44 catches, 823 yards and 9 touchdowns through five, 12 catches for 217 and 4 touchdowns in Week 4, then 11 for 206 and 2 at Iowa, Ohio State's all-time receiving leader as a junior. The market is saying 'a receiver this good wins the vote'; the board is saying 'the quarterback throwing to him is producing more points'
+    - Say it plainly: our board is not wrong and neither is the market. One measures production per game, the other predicts a ballot. If Lucas's view is that Smith should be No. 1, the honest version is 'the board under-rates receivers by design, because it counts touches, and we chose points per game on purpose so a quarterback and a receiver could sit on one list'
+    - The one place the board would move: the shrink. Smith's 2025 prior (0.94) is nearly as high as his 2026 number, so the prior does not hold him back; Sayin's 2025 prior (0.55) is below his 2026 (0.61), so the shrink costs him a little. Neither one changes the order
+
+  - **The five on the slide, and why**
+  - **Julian Sayin (QB, Ohio State) index 15.5** — 0.61 points a play on 166 plays in 5 games; 2025 prior 0.545; blended 0.58 a play × 33 plays a game = 19.2 points a game; team factor 0.81 (P(10 wins) 62%), market +3100 (3%)
+    - 103-of-142, 1,530 yards, 13 TD, 1 INT through five. The most dropbacks of anyone in the top five and the highest points a game on the board; the per-play number (0.61) is third among the five, so this is volume on a good team, not the best per-play season. The market has him seventh (+3100) because the vote will go to his receiver before it goes to him
+  - **Darian Mensah (QB, Miami) index 14.5** — 0.77 points a play on 142 plays in 5 games; 2025 prior 0.371; blended 0.56 a play × 28 plays a game = 16.0 points a game; team factor 0.91 (P(10 wins) 81%), market +460 (18%)
+    - 112-of-133, 1,438 yards, 15 TD, 0 INT through five. The best per-play number of any quarterback (0.77) and the QB efficiency board's No. 1 (51.0); fewer dropbacks than Sayin (28 a game) is the only reason he is second on points a game. The 2025 prior (0.37) is low, so the shrink costs him more than anyone — on raw 2026 numbers he would be No. 1. Miami's 81% to ten wins is the second-best team factor on the board. Market No. 2 at +460
+  - **Keelon Russell (QB, Alabama) index 12.8** — 0.62 points a play on 166 plays in 5 games; 2025 prior none (new starter); blended 0.49 a play × 33 plays a game = 16.3 points a game; team factor 0.78 (P(10 wins) 56%), market +750 (12%)
+    - 94-of-132, 1,414 yards, 11 TD, 2 INT, plus 184 rushing yards and 4 touchdowns through five. A redshirt freshman with no 2025 line, so he carries the FBS-average prior (0.35), which drags his blended number down to 0.49 from a raw 0.62 — the prior is the only thing between him and No. 2. The market moved from +1700 to +750 in a week after 56–23 at Mississippi State; it is pricing the Alabama name and the schedule ahead (Georgia Saturday)
+  - **C.J. Carr (QB, Notre Dame) index 12.6** — 0.57 points a play on 136 plays in 5 games; 2025 prior 0.433; blended 0.50 a play × 27 plays a game = 13.5 points a game; team factor 0.93 (P(10 wins) 87%), market +800 (11%)
+    - 88-of-124, 1,197 yards, 13 TD, 1 INT through five; 27 dropbacks a game, fewer than the three above him, so points a game is 13.5. The team factor (0.93, Notre Dame 87% to ten wins) is the best on the board and is what keeps him fourth. Market +800
+  - **Devon Dampier (QB, Utah) index 10.8** — 0.43 points a play on 133 plays in 4 games; 2025 prior 0.413; blended 0.42 a play × 33 plays a game = 14.1 points a game; team factor 0.77 (P(10 wins) 53%), no market price
+    - 71-of-101, 896 yards, 9 TD, 1 INT, plus 136 rushing yards and 2 touchdowns through FOUR games — Utah has a bye in the count. 0.43 a play is the lowest in the five; he is here on plays a game (33) and Utah's 53% to ten wins. No market price. The first to fall out if Hoover or Smith adds a big week
+  - Next up: Josh Hoover 10.5 · Jeremiah Smith 10.0 · Sam Leavitt 9.9 · Gunner Stockton 9.9
+    - Josh Hoover (Indiana): 76-of-107, 1,101 yards, 15 TD, 0 INT — 0.71 a play, second only to Mensah per play, but 24 dropbacks a game on a run-first team (Indiana runs it 39 times a game). The shrink hurts him too (2025 prior 0.35)
+    - Gunner Stockton (Georgia): 77-of-102, 1,049 yards, 13 TD, 1 INT — 0.61 a play, 24 dropbacks a game; Georgia's 71% to ten wins. The market gave him a price this week (+2900) after 38–14 over Vanderbilt
+    - Sam Leavitt (LSU): 92-of-139, 1,220 yards, 8 TD, 7 INT, 220 rushing — the seven picks are why 0.41 a play is the lowest of anyone near the board; he is here on 36 dropbacks a game
+  - The market check (DraftKings Sun 10/4): Jeremiah Smith +115 (was +245) · Darian Mensah +460 · Keelon Russell +750 (was +1700) · C.J. Carr +800 · Trinidad Chambliss +1600 · Gunner Stockton +2900 · Julian Sayin +3100 · Arch Manning +3200 · Kamario Taylor +3200 (was +480) · Malachi Toney +3500
+    - Where the two lists disagree most: Sayin (board 1, market 7), Smith (market 1, board 7), Chambliss (market 5, not on the board — Ole Miss is 3% to ten wins in our sim and his 0.40 a play is ordinary), Taylor (market +480 two weeks ago to +3200 after Alabama 56–23)
+  - Non-QB watch (per touch, own scale): Jeremiah Smith 1.03 · Malachi Toney (Miami) 0.89 — 39 catches, 604 yards, 6 TD · Ryan Wingo (Texas) 0.74 · Trent Mosley (USC) 1.24 on few touches · Jadan Baugh (Florida) 0.37 — 95 carries, 613 yards, 11 TD, the market's +1200 running back whose team is 4% to ten wins
+  - Caveats: PPA is a model, not a stat sheet; garbage time is in these numbers; the team factor is our sim's number and moves every week; 'plays a game' punishes anyone whose team sat on a lead
 - **Hot Seat (machine)** — NEW RULE (Sun Oct 4): 40 × (CBS ÷ 5) + 60 × the machine's odds the coach is gone by next season (50% or more = full marks); CBS frozen 2026-08-29
   - What changed and why — say it once
     - The old board was 60% a CBS rating from August and only covered the 32 coaches CBS or our prep listed. Six weeks in, the season has to count for more
