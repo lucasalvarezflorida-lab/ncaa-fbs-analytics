@@ -37,22 +37,79 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - It is graded in the open: every game with a flagged team is scored with and without the quarterback points, and the layer comes off the air if it does not win
 
 - **Top 25 (machine)**
-  - Rule: residual cap 42, lam 3, de-lucked 3 a turnover; 271 rated games
+  - What the number means (say it once if there is a new listener)
+    - Points better than an average FBS team on a neutral field; a line = the difference + 2.5 for home
+    - July prior is worth three games; FCS games count nothing; every game goes in de-lucked (margin minus 3 a turnover), one game moves a team by at most 42 points of evidence; a confirmed-out quarterback comes off his team's number (Pitt, −4.0)
   - Alabama No. 1 at 27.9 — 56–23 at Mississippi State as an 8.5-point favorite; four teams are inside eight tenths of a point at the top
     - Say: "one through four is a coin toss — Alabama 27.9, Georgia 27.8, Ohio State 27.6, Texas 27.1 — and two of them play Saturday"
-  - The ten: Alabama 27.9 · Georgia 27.8 · Ohio State 27.6 · Texas 27.1 · Notre Dame 26.7 · Miami 26.2 · LSU 25.9 · Indiana 23.0 · Oregon 19.0 · Texas A&M 18.0
-  - Risers (this week's games alone): Missouri +5.3 (#31 → #17); Florida State +5.0 (#36 → #19); Wake Forest +4.3 (#50 → #35); Baylor +3.8 (#43 → #28); Northwestern +3.5 (#33 → #25); Alabama +2.9 (#6 → #1)
-    - Missouri: 45–17 over Florida; Florida State: 38–7 over Virginia; Northwestern: 34–13 over Penn State with 413 rushing yards
-  - Fallers: Florida -4.8 (#9 → #15); Virginia -4.2 (#29 → #49); Michigan -2.1 (#24 → #32); Penn State -1.8 (#20 → #27); Ole Miss -1.4 (#15 → #16); USC -1.2 (#17 → #20)
-  - Into the 25: Florida State #19, Missouri #17, Northwestern #25, Wisconsin #22 · Out: Auburn (#23 → #26), Iowa (#25 → #30), Michigan (#24 → #32), Penn State (#20 → #27)
-    - Florida is the week's biggest loser: playoff odds 68% → 25%
-  - AP Week 6 (out Mon): Texas 1 · Georgia 2 · Notre Dame 3 · Miami 4 · Ohio State 5 · Alabama 6 · Indiana 7 · BYU 8 · Ole Miss 9 · LSU 10
-    - Biggest gaps: Alabama is the machine's No. 1 and the AP's No. 6; Texas is AP No. 1 and the machine's No. 4; BYU AP No. 8, machine No. 23; Ole Miss AP No. 9, machine No. 16
-    - Pittsburgh is AP No. 25 and the machine's No. 51 — the poll has not taken the quarterback into account
-  - Playoff picture (internal): Alabama 98% · Texas 97% · Georgia 94% · Notre Dame 93% · Miami 91% · Ohio State 87% · LSU 82% · Indiana 72% · Boise State 46% · Texas Tech 39% · Utah 38% · Oregon 35%
+  - The 25 (rating · move this week · AP)
+    - 1. Alabama 27.9 · +2.9, #6 → #1 · AP 6
+    - 2. Georgia 27.8 · -1.2, #1 → #2 · AP 2
+    - 3. Ohio State 27.6 · +0.1 · AP 5
+    - 4. Texas 27.1 · +0.1 · AP 1
+    - 5. Notre Dame 26.7 · -1.0, #2 → #5 · AP 3
+    - 6. Miami 26.2 · +1.5, #7 → #6 · AP 4
+    - 7. LSU 25.9 · -0.2, #5 → #7 · AP 10
+    - 8. Indiana 23.0 · +1.6 · AP 7
+    - 9. Oregon 19.0 · -0.1, #10 → #9 · AP 13
+    - 10. Texas A&M 18.0 · +0.2, #11 → #10 · AP NR
+    - 11. Utah 17.1 · -0.3, #12 → #11 · AP 12
+    - 12. Tennessee 16.8 · +0.1, #13 → #12 · AP 15
+    - 13. Texas Tech 16.1 · +0.2, #16 → #13 · AP 11
+    - 14. Oklahoma 15.9 · -0.3 · AP NR
+    - 15. Florida 15.6 · -4.8, #9 → #15 · AP 16
+    - 16. Ole Miss 14.6 · -1.4, #15 → #16 · AP 9
+    - 17. Missouri 14.5 · +5.3, #31 → #17 · AP 14
+    - 18. Nebraska 14.3 · +0.2 · AP NR
+    - 19. USC 13.1 · -1.2, #17 → #19 · AP 19
+    - 20. Florida State 13.1 · +5.0, #36 → #20 · AP NR
+    - 21. Wisconsin 13.0 · +2.6, #26 → #21 · AP NR
+    - 22. Mississippi State 13.0 · -1.0, #19 → #22 · AP 17
+    - 23. BYU 12.9 · -0.1, #21 → #23 · AP 8
+    - 24. South Carolina 12.7 · +0.2, #22 → #24 · AP NR
+    - 25. Northwestern 12.5 · +3.5, #33 → #25 · AP NR
+  - Risers (this week's games alone, rule held constant)
+    - Missouri +5.3, #31 → #17: 45–17 over Florida
+    - Florida State +5.0, #36 → #19: 38–7 over Virginia
+    - Wake Forest +4.3, #50 → #35
+    - Baylor +3.8, #43 → #28: 55–19 at Arizona State
+    - Northwestern +3.5, #33 → #25: 34–13 over Penn State with 413 rushing yards
+    - Alabama +2.9, #6 → #1: 56–23 at Mississippi State as an 8.5-point favorite
+  - Fallers
+    - Florida −4.8, #9 → #15: 45–17 at Missouri; the week's biggest loser — playoff odds 68% → 25%
+    - Virginia −4.2, #29 → #49: 38–7 at Florida State
+    - Michigan −2.1, #24 → #32
+    - Penn State −1.8, #20 → #27: 34–13 at Northwestern
+    - Ole Miss −1.4, #15 → #16
+    - USC −1.2, #17 → #20: 25–21 over Washington as a favorite
+  - Into the 25: Florida State #19 · Missouri #17 · Northwestern #25 · Wisconsin #22
+  - Out of the 25: Auburn #26 · Iowa #30 · Michigan #32 · Penn State #27
+  - Voters vs us (AP Week 6, out Monday)
+    - Their top ten: Texas 1 · Georgia 2 · Notre Dame 3 · Miami 4 · Ohio State 5 · Alabama 6 · Indiana 7 · BYU 8 · Ole Miss 9 · LSU 10
+    - Alabama: the machine's No. 1, the AP's No. 6
+    - Texas: AP No. 1, the machine's No. 4
+    - BYU: AP No. 8, the machine's No. 23
+    - Ole Miss: AP No. 9, the machine's No. 16
+    - Pittsburgh: AP No. 25, the machine's No. 51 — the poll has not taken the quarterback into account
+    - Say: "voters rank wins, the machine rates how well you've played"
+  - Playoff picture (the machine's simulator, 10,000 seasons from these ratings — internal column)
+    - Alabama 98% to make the field · 30% to win the conference · 16.2% title
+    - Texas 97% to make the field · 25% to win the conference · 14.2% title
+    - Georgia 94% to make the field · 33% to win the conference · 15.5% title
+    - Notre Dame 93% to make the field · 0% to win the conference · 11.3% title
+    - Miami 91% to make the field · 80% to win the conference · 9.9% title
+    - Ohio State 87% to make the field · 47% to win the conference · 13.2% title
+    - LSU 82% to make the field · 10% to win the conference · 9.3% title
+    - Indiana 72% to make the field · 29% to win the conference · 4.9% title
+    - Boise State 46% to make the field · 70% to win the conference · 0.1% title
+    - Texas Tech 39% to make the field · 34% to win the conference · 0.5% title
+    - Utah 38% to make the field · 32% to win the conference · 0.7% title
+    - Oregon 35% to make the field · 11% to win the conference · 1.1% title
+    - Say: "Our Rankings answer how good you are; the playoff column answers what you've done"
 
 - **Heisman board (machine)** — the Best-Player Board: points added per game × team factor (market: DraftKings 2026-10-04)
   - What the board is, say it once
+    - Plain English: "Points per game is how many points a player's own plays added to his team's score each week. Twenty a game means that without his plays, the offense scores about twenty fewer points"
     - 'Best so far, not a prediction.' CFBD's predicted points added (PPA) credits every play to the players who made it: a passer on every dropback, a receiver on every target, a runner on every carry. We take each player's PPA per play, shrink it toward his 2025 number (150 plays of prior weight for a quarterback, 40 for everyone else — a new starter gets the FBS average), multiply by his plays per game, and multiply by a team factor: 0.5 + half the team's odds of ten wins, because the trophy goes to players on ten-win teams
     - The market column is DraftKings' price to WIN the trophy — a vote in December — not who has played best. The two questions have different answers, and the gap between them is the segment
 
