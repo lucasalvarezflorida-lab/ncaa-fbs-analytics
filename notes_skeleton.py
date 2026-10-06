@@ -205,13 +205,13 @@ def boards_skeleton(week, ep):
         for g in json.loads(frozen.read_text(encoding="utf-8"))["games"]:
             cardf[(g["away"], g["home"])] = g
     L.append(f"- **Receipts (Week {prev})** — man vs machine")
-    mm = cm = 0; mw = cw = 0; gm = []
+    mm = cm = 0; mw = cw = 0; gm = []; line_rows = []
     for r in rows:
         a, h = r["final"]; ma, mh = r["machine"]; actual = h - a; mach = mh - ma
         g = cardf.get((r["away"], r["home"]))
-        if g and g.get("model_margin") is not None:
-            mach = round(g["model_margin"] * 2) / 2          # the on-air LINE (rounded to a half), as the receipts slide grades it
-        mm += abs(actual - mach); mw += (actual > 0) == (mach > 0)
+        if g and g.get("model_margin") is not None:          # the on-air LINE's miss stays INTERNAL (Lucas 10/6): internal/receipts_week{N}.md
+            lm = round(g["model_margin"] * 2) / 2; line_rows.append(f"| {r['away']} at {r['home']} | {h - a:+d} | {lm:+g} | {abs(actual - lm):g} | {mach:+d} | {abs(actual - mach):g} |")
+        mm += abs(actual - mach); mw += (actual > 0) == (mach > 0)        # the machine is graded on its SCORE CALL, same as Corey
         line = f"  - {r['away']} {a} at {r['home']} {h} — called {r['home'] if mach > 0 else r['away']} {max(ma, mh)}–{min(ma, mh)}; off by {abs(actual - mach):g}"
         if r.get("man"):
             ca, ch = r["man"]; man = ch - ca; cm += abs(actual - man); cw += (actual > 0) == (man > 0)
@@ -219,6 +219,16 @@ def boards_skeleton(week, ep):
         gm.append(line)
     L.append(f"  - Winners: machine {mw}–{len(rows) - mw}, man {cw}–{len(rows) - cw}")
     L.append(f"  - Margin miss, lower is better: Machine {mm:g} · Man {cm:g}")
+    if line_rows:
+        (HERE / "internal" / f"receipts_week{prev}.md").write_text(
+            f"# Week {prev} receipts — INTERNAL: how our SPREAD was off (the on-air line vs the final margin; the show grades the score call)
+
+"
+            "| game | final margin (home) | our line | line off by | score-call margin | call off by |
+|---|--:|--:|--:|--:|--:|
+" + "
+".join(line_rows) + "
+", encoding="utf-8")
     L.append("  - Points off the FINAL SCORE: see notes/score_tracker.md (both teams' points, per team)")
     L += ["  - Game by game"] + ["  " + g for g in gm]
     L.append("  - Pre-mortems: see notes/premortems.md (fired / lost / named the reason)")

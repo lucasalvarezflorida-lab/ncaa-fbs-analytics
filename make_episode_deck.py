@@ -1225,8 +1225,9 @@ RECAP_ROWS = [
     ("BAMA", "MSST", "Alabama at Mississippi State", ("Alabama", "Mississippi State"), "Alabama 34–26", 8.5, 6.0, "Alabama 38–28", 59.5),
     ("AUB", "TENN", "Auburn at Tennessee", ("Auburn", "Tennessee"), "Tennessee 31–24", -7.0, -7.0, "Tennessee 31–21", 54.5),
     ("OSU", "IOWA", "Ohio State at Iowa", ("Ohio State", "Iowa"), "Ohio State 30–16", 14.0, 14.5, "Ohio State 31–20", 45.5),
-]   # Week 5 margin miss: man 54.0 · machine 55.0 · market 61.0 — winners: machine 4–1, man 4–1
-WEEK0_MISS = (289.5, 273.5)  # machine, market through Week 4 (25 games) — running total
+]   # Week 5 margin miss (score calls): man 54.0 · machine 55.0 · market (line) 61.0 — winners: machine 4–1, man 4–1; machine on its line 55.0
+WEEK0_MISS = (289.0, 273.5)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 4 (25 games) — running total
+WEEK0_LINE_MISS = 289.5      # INTERNAL: the machine graded on its LINE through Week 4 (the old convention) — how our spread was off
 PRIOR_GAMES = 25
 LEANS_LINE = "stated leans 4–3 · no position taken in Weeks 4–5"
 
@@ -1323,7 +1324,7 @@ def build_recap():
     calls (and the market's implied score, spread laid over the closing total)."""
     finals = _finals()
     rows = []
-    T = dict(m=0.0, k=0.0, c=0.0, d=0.0, sm=0.0, sc=0.0, sk=0.0, n=0, nm=0, nk=0, nc=0, nt=0, man=False)
+    T = dict(m=0.0, k=0.0, c=0.0, d=0.0, l=0.0, sm=0.0, sc=0.0, sk=0.0, n=0, nm=0, nk=0, nc=0, nt=0, man=False)
     for row in RECAP_ROWS:
         a, b, title, key, call, ours, close = row[:7]
         man = row[7] if len(row) > 7 else None
@@ -1347,8 +1348,9 @@ def build_recap():
         if des is not None:
             lines_ += f" · deserved {b if des >= 0 else a} +{abs(des):.1f}"
             T["d"] += abs(des + ours)
-        off = {"M": abs(margin + ours), "K": abs(margin + close)}
         ma, mh = _call_pts(call, key)
+        off = {"M": abs(margin - (mh - ma)), "K": abs(margin + close)}   # machine graded on its SCORE CALL, same as the man (Lucas 10/6)
+        T["l"] = T.get("l", 0.0) + abs(margin + ours)                     # internal: the LINE's miss (how our spread was off)
         T["sm"] += abs(ma - ap_) + abs(mh - hp_)
         if ou is not None:
             T["sk"] += abs((ou + close) / 2 - ap_) + abs((ou - close) / 2 - hp_)

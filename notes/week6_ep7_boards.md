@@ -6,15 +6,15 @@ placeholders until his deck updates. Betting-line context stays in the internal 
 
 - **Receipts (Week 5)** — man vs machine
   - Winners: machine 4–1, man 4–1 — the same miss: both had Penn State, Northwestern won by 21
-  - Margin miss, lower is better: Man 54 · Machine 55 — a dead heat for the second week running
+  - Margin miss, lower is better: Man 54 · Machine 55 — a dead heat for the second week running (both graded on the score call from this week on; our line was also 55 off)
     - Two games were most of it for both: Northwestern by 21 (called Penn State by 2 and 3) and Alabama by 33 (called by 8.5 and 10)
-    - The other three were inside a field goal for the machine: Pitt 1.5, Tennessee 3, Ohio State 3
+    - The other three were inside a field goal for the machine: Pitt 1, Tennessee 3, Ohio State 3
   - Points off the FINAL SCORE (both teams' points added up): Man 80 · Machine 81
     - Per team (score_tracker.md): Corey closer on 4, the machine on 3, three ties — Corey had Ohio State's 31 on the nose and the identical Pitt 28–27 call
   - Game by game
-    - Pittsburgh 35 at Virginia Tech 33 — called Pittsburgh 28–27; off by 1.5 · Corey Pittsburgh 28–27, off by 1
+    - Pittsburgh 35 at Virginia Tech 33 — called Pittsburgh 28–27; off by 1 · Corey Pittsburgh 28–27, off by 1
     - Penn State 13 at Northwestern 34 — called Penn State 24–22; off by 23 · Corey Penn State 27–24, off by 24
-    - Alabama 56 at Mississippi State 23 — called Alabama 34–26; off by 24.5 · Corey Alabama 38–28, off by 23
+    - Alabama 56 at Mississippi State 23 — called Alabama 34–26; off by 25 · Corey Alabama 38–28, off by 23
     - Auburn 14 at Tennessee 24 — called Tennessee 31–24; off by 3 · Corey Tennessee 31–21, off by 0
     - Ohio State 31 at Iowa 14 — called Ohio State 30–16; off by 3 · Corey Ohio State 31–20, off by 6
   - Pre-mortems: 10 graded on the season, 1 fired, 1 pick lost — and the loss was not the one the pre-mortem named
