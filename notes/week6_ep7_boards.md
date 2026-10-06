@@ -107,6 +107,21 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - Oregon 35% to make the field · 11% to win the conference · 1.1% title
     - Say: "Our Rankings answer how good you are; the playoff column answers what you've done"
 
+- **Top 25 (Corey's)** — from his deck, read Tue 10/6 (his slide titles still say Week 4/5; the results on them are through Week 5)
+  - His top ten: Georgia · Notre Dame · Texas · Miami · Alabama · Indiana · Texas Tech · Ohio State · Utah · Nebraska
+  - 11–25: BYU · LSU · Oregon · Tennessee · Florida · Pitt · Northwestern · Missouri · USC · Ole Miss · Texas A&M · Houston · Iowa · Mississippi State · Boise State
+  - Biggest splits vs ours
+    - Alabama: his 5, our 1
+    - Ohio State: his 8, our 3
+    - Texas Tech: his 7, our 13
+    - Nebraska: his 10, our 18
+    - LSU: his 12, our 7
+    - Pitt: his 16, our 51 — the quarterback
+    - BYU: his 11, our 23
+  - Where we agree: Georgia top two; Indiana 6 and 8; Missouri and Northwestern new to both lists; Florida down (his 7 → 15, our 9 → 15)
+  - His moves: Florida 7 → 15; Mississippi State 16 → 24; Texas A&M, Missouri, Northwestern, Houston, Boise State in; Ohio State 10 → 8; Texas Tech 9 → 7
+  - Ours not his: Oregon 9 (his 13), Texas A&M 10 (his 21), Oklahoma 14, Wisconsin 22, Florida State 20, South Carolina 24 · His not ours: Houston, Iowa (our 30), Boise State, Mississippi State (our 22 — agree)
+
 - **Heisman board (machine)** — the Best-Player Board: points added per game × team factor (market: DraftKings 2026-10-04)
   - What the board is, say it once
     - Plain English: "Points per game is how many points a player's own plays added to his team's score each week. Twenty a game means that without his plays, the offense scores about twenty fewer points"
@@ -140,6 +155,10 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - Where the two lists disagree most: Sayin (board 1, market 7), Smith (market 1, board 7), Chambliss (market 5, not on the board — Ole Miss is 3% to ten wins in our sim and his 0.40 a play is ordinary), Taylor (market +480 two weeks ago to +3200 after Alabama 56–23)
   - Non-QB watch (per touch, own scale): Jeremiah Smith 1.03 · Malachi Toney (Miami) 0.89 — 39 catches, 604 yards, 6 TD · Ryan Wingo (Texas) 0.74 · Trent Mosley (USC) 1.24 on few touches · Jadan Baugh (Florida) 0.37 — 95 carries, 613 yards, 11 TD, the market's +1200 running back whose team is 4% to ten wins
   - Caveats: PPA is a model, not a stat sheet; garbage time is in these numbers; the team factor is our sim's number and moves every week; 'plays a game' punishes anyone whose team sat on a lead
+- **Heisman (Corey's)** — his five, read off the deck Tue 10/6 (slide still titled Week 4)
+  - Michael Hawkins Jr, QB, West Virginia (unchanged) · Gio Lopez, QB, Wake Forest (up from unranked) · Lincoln Kienholz, QB, Louisville (up from unranked) · Connor Weigman, QB, Houston (up from unranked) · Kamario Taylor, QB, Mississippi State (unchanged)
+  - None of his five is in the machine's top eight; Lopez is 11th on the vote-model board (19.0 points a game, Wake Forest 8.0 projected wins), Taylor fell from +480 to +3200 at DraftKings after Alabama
+
 - **Hot Seat (machine)** — NEW RULE (Sun Oct 4): 40 × (CBS ÷ 5) + 60 × the machine's odds the coach is gone by next season (50% or more = full marks); CBS frozen 2026-08-29
   - What changed and why — say it once
     - The old board was 60% a CBS rating from August and only covered the 32 coaches CBS or our prep listed. Six weeks in, the season has to count for more
@@ -220,8 +239,14 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - The caveat: Florida State's schedule so far is New Mexico State, SMU, Alabama, Central Arkansas, Virginia. The model counts wins and margins, not who they came against beyond the machine's rating. Miami and Clemson are still ahead
   - Buyout legend: what the school owes to fire him now; * = estimated from reported contract terms, — = undisclosed; figures researched Tue 10/6, sources in the internal folder
 
+- **Hot Seat (Corey's)** — his ten, read Tue 10/6
+  - Shane Beamer (South Carolina) · Sonny Dykes (TCU) · Lance Leipold (Kansas) · Fran Brown (Syracuse) · Brent Key (Georgia Tech) · Deion Sanders (Colorado) · G.J. Kinne (Texas State) · Mike Locksley (Maryland) · Jeff Monken (Army) · Bill O'Brien (Boston College)
+  - On both lists: Beamer, Sanders, Locksley, O'Brien
+  - His not ours: Dykes, Leipold, Brown (our 17th), Key, Kinne, Monken — Kinne and Monken are on our candidate board, not our hot seat
+  - Ours not his: Vincent (our 1), Walden, Mason, Sawvel, Swinney, Schiano
+
 - **Superdog picks** (lines as of 2026-10-04T15:03:58+00:00 — re-read at the freeze)
   - Machine Giant Killer: South Carolina +14.5 at Florida (#8) — exp 8.82, machine -5.4
   - Machine Superdog: Iowa State +14.5 at BYU (#10) — exp 6.77, machine -10.3
     - Next: Nebraska +8.5 vs Indiana (#6) — exp 5.82, machine -6.2 · Southern Miss +9.5 at Troy — exp 5.57, machine -8.1 · UCLA +12.5 at Oregon (#15) — exp 5.54, machine -11.6
-  - Corey's picks: PLACEHOLDER (Week 6)
+  - Corey's picks: not in his deck yet (Tue 10/6 export still shows Week 5: Baylor +4, Colorado +13)
