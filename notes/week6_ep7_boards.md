@@ -23,6 +23,9 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - Loser: Florida — 45–17 at Missouri; −4.8 to 15.6, No. 9 → No. 15, playoff odds 68% → 25% (the largest drop in the field)
     - Runner-up: Virginia −4.2, No. 29 → No. 49 after 38–7 at Florida State
     - Say: "Machine — winner Alabama, two weeks after Florida got it twice; loser Florida"
+  - The man's week (Corey's slide, read off the Tue 10/6 export)
+    - Winner: Wake Forest · Loser: SMU ("again")
+    - CONFIRM with him: his slide is still titled "Week 4 Winners and Losers" and its machine half (Florida / Ole Miss) is LAST week's; Wake Forest did rise +4.3 this week (No. 50 → No. 35), SMU beat Boston College 25–16, so it may be his Week 5 call with a stale title — or a Week 4 slide he has not redone
   - Pre-mortems: 10 graded on the season, 1 fired, 1 pick lost — and the loss was not the one the pre-mortem named
     - Penn State: "wrong if Northwestern throws for more than 7.4 an attempt" — Northwestern threw for 6.6 and ran 55 times for 413. The machine watched the wrong door
     - The other four held: Virginia Tech 2.03 a carry (line 3.0), Mississippi State 0.6 a carry (line 4.2), Tennessee 4.84 a carry (floor 4.0), Ohio State 12.0 a throw (floor 9.1)
