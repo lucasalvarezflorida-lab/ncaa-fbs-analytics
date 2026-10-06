@@ -195,6 +195,8 @@ def game_layout(game):
     """game = the top-level md node for one game -> (title, xml) in Lucas's layout."""
     header = game["text"].strip("*")
     title = header.split(" — ")[0].strip()
+    for k in game["kids"]:
+        dash_split(k)
     read = number = corey = avail = None
     keys = []
     for k in game["kids"]:
@@ -243,9 +245,26 @@ BOARD_PAGES = [   # Lucas 9/23: boards as ONE PAGE PER TOPIC; superdogs sit on t
 ]
 
 
+def dash_split(node):
+    """Lucas 10/6: any bullet with ' — ' breaks at the FIRST dash - the part before stays on the line, the part
+    after becomes its first sub-bullet (so 'Pittsburgh 35 at Virginia Tech 33 — called ...' reads as two lines)."""
+    t = node["text"]
+    if " — " in t and not t.startswith("~~"):
+        head, tail = t.split(" — ", 1)
+        head, tail = head.rstrip(), tail.strip()
+        if head and tail:
+            node["text"] = head
+            node["kids"] = [dict(text=tail[0].upper() + tail[1:] if tail[0].islower() else tail, bullet=True, kids=[])] + node["kids"]
+    for k in node["kids"]:
+        dash_split(k)
+
+
 def board_pages(md):
     """Split the boards file on its top-level topics into the four pages."""
     title, body = parse(md)
+    for kind, v in body:
+        if kind == "oe":
+            dash_split(v)
     pages = []
     for name, keys in BOARD_PAGES:
         parts = []
