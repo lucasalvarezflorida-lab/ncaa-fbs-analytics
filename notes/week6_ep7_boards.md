@@ -242,7 +242,7 @@ placeholders until his deck updates. Betting-line context stays in the internal 
 - **Hot Seat (Corey's)** — his ten, read Tue 10/6
   - Shane Beamer (South Carolina) · Sonny Dykes (TCU) · Lance Leipold (Kansas) · Fran Brown (Syracuse) · Brent Key (Georgia Tech) · Deion Sanders (Colorado) · G.J. Kinne (Texas State) · Mike Locksley (Maryland) · Jeff Monken (Army) · Bill O'Brien (Boston College)
   - On both lists: Beamer, Sanders, Locksley, O'Brien
-  - His not ours: Dykes, Leipold, Brown (our 17th), Key, Kinne, Monken — Kinne and Monken are on our candidate board, not our hot seat
+  - His not ours: Dykes, Leipold, Brown, Key, Kinne, Monken — Kinne and Monken are on our candidate board, not our hot seat
   - Ours not his: Vincent (our 1), Walden, Mason, Sawvel, Swinney, Schiano
 
 - **Superdog picks** (lines as of 2026-10-04T15:03:58+00:00 — re-read at the freeze)
