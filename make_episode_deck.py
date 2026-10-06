@@ -1788,7 +1788,7 @@ if BOARDS:
     _hdr(s, 6.15, 0.55, TOP - 0.25, "CBS", R)
     _hdr(s, 6.75, 0.55, TOP - 0.25, "RECORD", R)
     _hdr(s, 7.35, 0.7, TOP - 0.25, "P(GONE)", R)
-    _hdr(s, 8.1, 0.95, TOP - 0.25, "MACHINE WINS", R)
+    _hdr(s, 8.1, 0.95, TOP - 0.25, "BUYOUT", R)
     _hdr(s, 9.1, 0.5, TOP - 0.25, "Δ", R)
     _hdr(s, 9.65, 0.55, TOP - 0.25, "SCORE", R)
     _hdr(s, 10.3, 2.1, TOP - 0.25, "LAST RESULT")
@@ -1806,8 +1806,8 @@ if BOARDS:
         txt(s, 7.35, y + 0.07, 0.7, 0.3, f"{round(100 * r['p_gone'])}%", 11,
             DOWN if r["p_gone"] >= 0.3 else (UP if r["p_gone"] < 0.15 else WHITE),
             bold=True, align=R)
-        txt(s, 8.1, y + 0.07, 0.95, 0.3, f"{r['proj']:.1f} ({r['p10']:g}–{r['p90']:g})",
-            10.5, WHITE, align=R)
+        txt(s, 8.1, y + 0.07, 0.95, 0.3, f"{r.get('buyout', '—')}{'*' if r.get('buyout_est') else ''}",
+            10.5, WHITE, bold=True, align=R)
         d = r["delta"] or 0.0
         txt(s, 9.1, y + 0.09, 0.5, 0.3, f"{d:+.1f}" if d else "0.0", 10,
             UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d), align=R)
@@ -1821,8 +1821,8 @@ if BOARDS:
         "Next three: " + " · ".join(f"{x['coach']} {x['score']:.0f}" for x in _nxt),
         11, WHITE, bold=True)
     txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
-        "P(GONE) = odds he is not the coach next season, from 2014–25 departures · CBS* = not on CBS's August list · "
-        "MACHINE WINS = projected (10th–90th)", 10.5, PALE)
+        "P(GONE) = odds he is not the coach next season, from 2014–25 departures · BUYOUT = what the school owes to fire him now; "
+        "* = estimated from reported terms, — = undisclosed · CBS* = not on CBS's August list", 10.5, PALE)
 
     # -- Heisman --
     s = blank(NAVY)

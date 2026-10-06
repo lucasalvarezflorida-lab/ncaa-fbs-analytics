@@ -79,22 +79,31 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - The machine half is now a model of who was actually gone the next year, 2014–25 (fired, retired or stepped down; coaches who left for another job are not counted): tenure, last season against the program's ten-year standard, and this season's record and scoring margin
     - Backtest, after five weeks of a season: the preseason picture alone scored 0.62, the five weeks alone 0.68, both together 0.70 (0.50 is a coin flip). Both together put 20 of the 89 departures of 2022–25 in the season's top ten — it is a modest predictor, and it knows nothing about buyouts or boosters
     - Every FBS coach is scored now; a coach CBS did not list carries a 1.5 (starred)
-  - What it did to the board: Swinney up, Norvell off it
-    - Dabo Swinney: 34% to be gone — No. 9, and the only coach in the top ten with a winning record this season; Clemson is 3–2 with losses of 41 and 28 points. The model cannot tell a firing from stepping down
-    - Mike Norvell: No. 2 under the old rule, No. 16 under the new one (15% to be gone) — Florida State is 3–2, up 3.8 points on the machine and won 38–7 last week; the CBS 5.0 is the only thing keeping him near the list
-  - 1. Bryant Vincent (UL Monroe) 84.0 — 0–5, 58% gone, CBS 3.0*
-  - 2. Bill O'Brien (Boston College) 80.2 — 2–3, 44% gone, CBS 3.5
-  - 3. Deion Sanders (Colorado) 76.1 — 2–3, 43% gone, CBS 3.1
-  - 4. Mike Locksley (Maryland) 75.3 — 2–3, 30% gone, CBS 4.9
-  - 5. Scotty Walden (UTEP) 72.0 — 1–4, 52% gone, CBS 1.5*
-  - 6. Shane Beamer (South Carolina) 70.1 — 2–3, 30% gone, CBS 4.3
-  - 7. Derek Mason (Middle Tennessee) 70.0 — 2–3, 34% gone, CBS 3.6
-  - 8. Jay Sawvel (Wyoming) 68.2 — 2–3, 37% gone, CBS 3.0*
-  - 9. Dabo Swinney (Clemson) 65.8 — 3–2, 34% gone, CBS 3.1
-  - 10. Greg Schiano (Rutgers) 65.5 — 1–4, 35% gone, CBS 3.0*
-  - 11. Joe Moorhead (Akron) 63.7 — 1–4, 38% gone, CBS 2.2
-  - 12. Tyson Helton (Western Kentucky) 63.3 — 1–4, 43% gone, CBS 1.5*
-  - Coming: "who replaces him" — the next version of this segment
+  - What it did to the board: Swinney up, Norvell off it, and four coaches CBS never rated are in the top ten (starred)
+    - Why each coach moved (the model is 40% CBS from August + 60% record pattern: losses, scoring margin, tenure, last year against the program's ten-year standard)
+  - 1. Bryant Vincent (UL Monroe) 84.0 — 0–5, 58% gone, CBS 3.0*, buyout —
+    - UP (No. 5 → 1): 0–5 with three losses by 25 or more is the worst record pattern in FBS; the model has him better than even money to be gone. Buyout undisclosed — the cheapest fire on the board by salary scale (~$0.75M a year reported, unverified), at a department that cut $6–9M last year
+  - 2. Bill O'Brien (Boston College) 80.2 — 2–3, 44% gone, CBS 3.5, buyout $8–25M*
+    - UP (No. 8 → 2): 2–3 after a 2–10 year; three losses by 9+ and the loss at SMU. BC is private, so the buyout is a guess — estimates run from $8M to $25M. Say 'undisclosed'
+  - 3. Deion Sanders (Colorado) 76.1 — 2–3, 43% gone, CBS 3.1, buyout ~$25M*
+    - UP (No. 11 → 3): three straight losses (41, 10 and 22 points) and the 16–21 tenure. The model is a record pattern; it does not know that firing him costs ~$25M (estimate) while his own exit costs him $10M — that asymmetry says 'steps aside' before 'fired'
+  - 4. Mike Locksley (Maryland) 75.3 — 2–3, 30% gone, CBS 4.9, buyout $9.2M
+    - DOWN (No. 2 → 4): the old rule gave him 60 points for a 4.9 CBS rating alone; the new one scores the season, and 2–3 with two blowouts is a 30% number, not a 50% one. $9.2M to fire in 2026 — the lowest in the Big Ten (USA TODAY via Fox, 9/26)
+  - 5. Scotty Walden (UTEP) 72.0 — 1–4, 52% gone, CBS 1.5*, buyout —
+    - NEW (not on the old list): 1–4, 5–19 in his tenure, and the 61–7 loss at New Mexico; the model has him at 52%. CBS never rated him, so he carries the 1.5 default (starred). Buyout undisclosed; salary $801K
+  - 6. Shane Beamer (South Carolina) 70.1 — 2–3, 30% gone, CBS 4.3, buyout ~$21M*
+    - DOWN (No. 4 → 6): 2–3 but the losses are by 7, 31 and 1 — the one-point loss to Kentucky keeps the margin number from collapsing. The January extension raised his buyout by nearly $20M (CBS); ~$21M is our estimate at 65% of the remaining $8.15M a year through 2030
+  - 7. Derek Mason (Middle Tennessee) 70.0 — 2–3, 34% gone, CBS 3.6, buyout ~$1M*
+    - FLAT (No. 7 → 7): 6–18 at MTSU; 55–0 at Kansas is the worst loss on the board. ~$1M to fire — 50% of $925K a year through 2028 — so money is not what keeps him
+  - 8. Jay Sawvel (Wyoming) 68.2 — 2–3, 37% gone, CBS 3.0*, buyout ~$2M*
+    - UP (No. 27 → 8): 2–3, shut out 28–0 at North Dakota State; CBS never rated him (3.0 is our prep estimate). ~$2M to fire — 70–80% of the $1.1–1.25M a year left through 2028
+  - 9. Dabo Swinney (Clemson) 65.8 — 3–2, 34% gone, CBS 3.1, buyout $57M
+    - DOWN three spots (No. 6 → 9) on the number — but he is the only coach in the top ten with a winning record: 3–2 with losses by 41 and 28; 34% to be gone. $57M to fire in 2026, no offset if he takes another job (CBS) — which is why the realistic path is him choosing to go, not Clemson paying
+  - 10. Greg Schiano (Rutgers) 65.5 — 1–4, 35% gone, CBS 3.0*, buyout $18.5M
+    - FLAT (No. 9 → 10): 1–4 including Massachusetts; the UMass loss is the one that moves the record pattern. $18.5M to fire — 76.85% of what is left through 2029 (ClutchPoints, 9/4)
+  - Next three: Joe Moorhead (Akron) 63.7, buyout — · Tyson Helton (Western Kentucky) 63.3, buyout — · Chris Creighton (Eastern Michigan) 61.2, buyout —
+  - Off the list: Mike Norvell (Florida State) No. 2 under the old rule → No. 16 (15% gone): 3–2, up 3.8 on the machine, 38–7 last week — the CBS 5.0 was all that held him up
+  - Buyout legend: what the school owes to fire him now; * = estimated from reported contract terms, — = undisclosed; figures researched Tue 10/6, sources in the internal folder
 
 - **Superdog picks** (lines as of 2026-10-04T15:03:58+00:00 — re-read at the freeze)
   - Machine Giant Killer: South Carolina +14.5 at Florida (#8) — exp 8.82, machine -5.4

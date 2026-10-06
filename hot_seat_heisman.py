@@ -96,6 +96,27 @@ TENURE = {
     "Wyoming": "7-17, yr 3", "UL Monroe": "8-16, yr 3",
 }
 
+
+# What the SCHOOL owes if it fires him now (2026). Hand-maintained, dated; est=True = computed from reported terms or an
+# outlet's estimate, not a reported figure. "—" = undisclosed. Researched Tue Oct 6 2026 (sources in
+# internal/dossiers/Replacement_candidates_top3_seats_week6.md and the notes).
+BUYOUT_DATE = "2026-10-06"
+BUYOUT = {   # team: (slide text, est, note)
+    "Clemson": ("$57M", False, "flat 2026 figure; full remaining salary through 2031 from 2027; no offset (CBS 9/20/25)"),
+    "Colorado": ("~$25M", True, "75% of remaining salary -> ~$25.5M for 2026 per one outlet (10/5/26); the 75% term is from his 2022 deal, not confirmed in the 2025 extension"),
+    "Boston College": ("$8–25M", True, "private school, undisclosed; estimates range $8–10M (EssentiallySports) to ~$25M (PFN, $5M x 5 yrs assumed)"),
+    "South Carolina": ("~$21M", True, "65% of remaining (2020 terms) on the 2025 extension, $8.15M/yr through 2030; CBS: the extension raised it by nearly $20M"),
+    "Rutgers": ("$18.5M", False, "76.85% of remaining salary through 2029 (ClutchPoints 9/4/26)"),
+    "Maryland": ("$9.2M", False, "if fired in 2026, USA TODAY via Fox (9/26/26); $6.4M 2026 / $6.7M 2027 / $7M 2028"),
+    "Wyoming": ("~$2M", True, "70–80% of remaining; $1.1M 2026 (less a $125K rev-share cut), $1.25M 2027–28 (FootballScoop)"),
+    "Middle Tennessee": ("~$1M", True, "50% of remaining; $925K base through Dec 2028"),
+    "UL Monroe": ("—", False, "undisclosed; base reported ~$725–750K, deal through 2029 (unverified)"),
+    "UTEP": ("—", False, "undisclosed; 2025 salary $801K"),
+    "Akron": ("—", False, "undisclosed; extended through 2027"),
+    "Western Kentucky": ("—", False, "undisclosed; extended through 2028"),
+    "Eastern Michigan": ("—", False, "undisclosed"),
+}
+
 # Heisman market (DraftKings via Covers, Sun Sep 13 2026) — refresh weekly
 MARKET_DATE = "2026-10-04"
 MARKET = {   # DraftKings via SI's Week 6 tracker, Sun 10/4 (post-Week 5); players not on that list carry no market number this week
@@ -189,6 +210,8 @@ def hot_seat(sim, ratings, results, week):
         rows.append(dict(team=team, coach=coach, cbs=rating, cbs_est=cbs is None,
                          tenure=TENURE.get(team, f"yr {m['tenure']}"), bar=bar, p_bar=round(p_bar, 3) if p_bar is not None else None,
                          p_gone=round(m["p_gone"], 3), record=m["rec"].replace("-", "–"),
+                         buyout=BUYOUT.get(team, ("—", False, ""))[0], buyout_est=BUYOUT.get(team, ("—", False, ""))[1],
+                         buyout_note=BUYOUT.get(team, ("—", False, ""))[2],
                          proj=s["proj"], p10=s["p10"], p90=s["p90"],
                          pbowl=round(s["pbowl"], 3), machine_rank=s["rank"],
                          rating=r.get("cur"), delta=r.get("delta"), gp=r.get("gp"),
@@ -317,7 +340,7 @@ def main():
     for i, r in enumerate(hs[:14], 1):
         est = "*" if r["cbs_est"] else ""
         print(f"{i:>2} {r['coach']:<18}{r['team']:<18} CBS {r['cbs']}{est}  {r['record']}  "
-              f"P(gone) {r['p_gone']:.2f}  proj {r['proj']} ({r['p10']}-{r['p90']})  "
+              f"P(gone) {r['p_gone']:.2f}  buyout {r['buyout']}{'*' if r['buyout_est'] else ''}  proj {r['proj']} ({r['p10']}-{r['p90']})  "
               f"rating {r['rating']} ({r['delta']:+})  score {r['score']}  | {'; '.join(r['results'])}")
     print(f"\nHEISMAN — ALL POSITIONS (points added per game x team factor; market DK {MARKET_DATE})")
     for i, r in enumerate(hall[:12], 1):
