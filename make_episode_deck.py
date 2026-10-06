@@ -1226,8 +1226,7 @@ RECAP_ROWS = [
     ("AUB", "TENN", "Auburn at Tennessee", ("Auburn", "Tennessee"), "Tennessee 31–24", -7.0, -7.0, "Tennessee 31–21", 54.5),
     ("OSU", "IOWA", "Ohio State at Iowa", ("Ohio State", "Iowa"), "Ohio State 30–16", 14.0, 14.5, "Ohio State 31–20", 45.5),
 ]   # Week 5 margin miss (score calls): man 54.0 · machine 55.0 · market (line) 61.0 — winners: machine 4–1, man 4–1; machine on its line 55.0
-WINNER_LOSER = ("Alabama — 56–23 at Mississippi State as an 8.5-point favorite: +2.9 to 27.9, No. 6 → No. 1, playoff odds 88% → 98%",
-                "Florida — 45–17 at Missouri: −4.8 to 15.6, No. 9 → No. 15, playoff odds 68% → 25%")   # the machine's winner / loser of the week (Lucas 10/6)
+WINNER_LOSER = None   # Lucas 10/6: the machine's winner / loser of the week lives on the OneNote Recap page, not the slide
 WEEK0_MISS = (289.0, 273.5)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 4 (25 games) — running total
 WEEK0_LINE_MISS = 289.5      # INTERNAL: the machine graded on its LINE through Week 4 (the old convention) — how our spread was off
 PRIOR_GAMES = 25

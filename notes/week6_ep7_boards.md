@@ -17,6 +17,12 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - Alabama 56 at Mississippi State 23 — called Alabama 34–26; off by 25 · Corey Alabama 38–28, off by 23
     - Auburn 14 at Tennessee 24 — called Tennessee 31–24; off by 3 · Corey Tennessee 31–21, off by 0
     - Ohio State 31 at Iowa 14 — called Ohio State 30–16; off by 3 · Corey Ohio State 31–20, off by 6
+  - The machine's week
+    - Winner: Alabama — 56–23 at Mississippi State as an 8.5-point favorite; +2.9 to 27.9, No. 6 → No. 1, playoff odds 88% → 98%, title odds up 6.8 points (the biggest gain of anyone)
+    - Runner-up on the rating alone: Missouri +5.3, No. 31 → No. 17 after 45–17 over Florida
+    - Loser: Florida — 45–17 at Missouri; −4.8 to 15.6, No. 9 → No. 15, playoff odds 68% → 25% (the largest drop in the field)
+    - Runner-up: Virginia −4.2, No. 29 → No. 49 after 38–7 at Florida State
+    - Say: "Machine — winner Alabama, two weeks after Florida got it twice; loser Florida"
   - Pre-mortems: 10 graded on the season, 1 fired, 1 pick lost — and the loss was not the one the pre-mortem named
     - Penn State: "wrong if Northwestern throws for more than 7.4 an attempt" — Northwestern threw for 6.6 and ran 55 times for 413. The machine watched the wrong door
     - The other four held: Virginia Tech 2.03 a carry (line 3.0), Mississippi State 0.6 a carry (line 4.2), Tennessee 4.84 a carry (floor 4.0), Ohio State 12.0 a throw (floor 9.1)
