@@ -1226,6 +1226,8 @@ RECAP_ROWS = [
     ("AUB", "TENN", "Auburn at Tennessee", ("Auburn", "Tennessee"), "Tennessee 31–24", -7.0, -7.0, "Tennessee 31–21", 54.5),
     ("OSU", "IOWA", "Ohio State at Iowa", ("Ohio State", "Iowa"), "Ohio State 30–16", 14.0, 14.5, "Ohio State 31–20", 45.5),
 ]   # Week 5 margin miss (score calls): man 54.0 · machine 55.0 · market (line) 61.0 — winners: machine 4–1, man 4–1; machine on its line 55.0
+WINNER_LOSER = ("Alabama — 56–23 at Mississippi State as an 8.5-point favorite: +2.9 to 27.9, No. 6 → No. 1, playoff odds 88% → 98%",
+                "Florida — 45–17 at Missouri: −4.8 to 15.6, No. 9 → No. 15, playoff odds 68% → 25%")   # the machine's winner / loser of the week (Lucas 10/6)
 WEEK0_MISS = (289.0, 273.5)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 4 (25 games) — running total
 WEEK0_LINE_MISS = 289.5      # INTERNAL: the machine graded on its LINE through Week 4 (the old convention) — how our spread was off
 PRIOR_GAMES = 25
@@ -2175,7 +2177,7 @@ for a, b, tit, callfin, lines_, miss, mark in RECAP:
     txt(s, 7.35, y + 0.11, 4.8, 0.3, lines_, 9.5, MUTE)
     txt(s, 7.35, y + 0.44, 4.8, 0.3, miss, 10, VERD[mark], bold=True)
     y += 0.94
-shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85, NAVY)
+shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85 + (0.3 if WINNER_LOSER else 0), NAVY)
 _rs = RECAP_SUM
 _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
 if _rs["man"] and not RECEIPTS_SHOW_MARKET:
@@ -2204,6 +2206,8 @@ txt(s, 1.15, y + 0.13, 11.0, 0.35, _l1, 14.5, WHITE, bold=True)
 if premortem_line():
     _l2 += "   |   " + premortem_line()
 txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5 if len(_l2) <= 150 else 9, RGBColor(0xCA, 0xDC, 0xFC))
+if WINNER_LOSER:
+    txt(s, 1.15, y + 0.8, 11.0, 0.3, f"Machine's week — WINNER: {WINNER_LOSER[0]}   ·   LOSER: {WINNER_LOSER[1]}", 10, ORANGE, bold=True)
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
