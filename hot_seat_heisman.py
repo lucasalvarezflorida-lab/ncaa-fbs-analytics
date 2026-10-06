@@ -97,19 +97,18 @@ TENURE = {
 }
 
 # Heisman market (DraftKings via Covers, Sun Sep 13 2026) — refresh weekly
-MARKET_DATE = "2026-09-27"
-MARKET = {   # DraftKings via Covers, Sun 9/27 AM (post-Week 4); players not on that list carry no market number this week
-    "Jeremiah Smith": 245, "Darian Mensah": 400, "Kamario Taylor": 480,
-    "Trinidad Chambliss": 1150, "Jadan Baugh": 1200, "C.J. Carr": 1300,
-    "Keelon Russell": 1600, "Malachi Toney": 1750, "Arch Manning": 3000,
-    "Julian Sayin": 3000,   # added Tue 9/29 from SI's DK tracker (same 9/27 board; it also lists Russell at +1700)
-}
+MARKET_DATE = "2026-10-04"
+MARKET = {   # DraftKings via SI's Week 6 tracker, Sun 10/4 (post-Week 5); players not on that list carry no market number this week
+    "Jeremiah Smith": 115, "Darian Mensah": 460, "Keelon Russell": 750, "C.J. Carr": 800,
+    "Trinidad Chambliss": 1600, "Gunner Stockton": 2900, "Julian Sayin": 3100,
+    "Arch Manning": 3200, "Kamario Taylor": 3200, "Malachi Toney": 3500,
+}   # Bettors Insider had Smith +110 on 10/5 (+260 the week before) - the 10/4 table is used for one consistent snapshot
 QB_POOL = ["Julian Sayin", "Darian Mensah", "C.J. Carr", "Josh Hoover",
            "Arch Manning", "Dante Moore", "Jayden Maiava", "Will Hammond",
            "Sam Leavitt", "Trinidad Chambliss", "Marcel Reed", "John Mateer",
            "Bear Bachmeier", "Devon Dampier", "Avery Johnson", "Keelon Russell",
            "Kevin Jennings", "Bryce Underwood", "Byrum Brown", "Kamario Taylor",
-           "LaNorris Sellers", "Lanorris Sellers", "Lincoln Kienholz"]
+           "LaNorris Sellers", "Lanorris Sellers", "Lincoln Kienholz", "Gunner Stockton"]
 NON_QB = ["Jeremiah Smith", "Malachi Toney", "Ryan Wingo", "Trent Mosley",
           "Jadan Baugh", "Koby Howard"]
 K_PRIOR = 150.0

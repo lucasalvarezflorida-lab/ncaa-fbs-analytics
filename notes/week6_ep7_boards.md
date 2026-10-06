@@ -46,9 +46,12 @@ placeholders until his deck updates. Betting-line context stays in the internal 
   - Fallers: Florida -4.8 (#9 → #15); Virginia -4.2 (#29 → #49); Michigan -2.1 (#24 → #32); Penn State -1.8 (#20 → #27); Ole Miss -1.4 (#15 → #16); USC -1.2 (#17 → #20)
   - Into the 25: Florida State #19, Missouri #17, Northwestern #25, Wisconsin #22 · Out: Auburn (#23 → #26), Iowa (#25 → #30), Michigan (#24 → #32), Penn State (#20 → #27)
     - Florida is the week's biggest loser: playoff odds 68% → 25%
+  - AP Week 6 (out Mon): Texas 1 · Georgia 2 · Notre Dame 3 · Miami 4 · Ohio State 5 · Alabama 6 · Indiana 7 · BYU 8 · Ole Miss 9 · LSU 10
+    - Biggest gaps: Alabama is the machine's No. 1 and the AP's No. 6; Texas is AP No. 1 and the machine's No. 4; BYU AP No. 8, machine No. 23; Ole Miss AP No. 9, machine No. 16
+    - Pittsburgh is AP No. 25 and the machine's No. 51 — the poll has not taken the quarterback into account
   - Playoff picture (internal): Alabama 98% · Texas 97% · Georgia 94% · Notre Dame 93% · Miami 91% · Ohio State 87% · LSU 82% · Indiana 72% · Boise State 46% · Texas Tech 39% · Utah 38% · Oregon 35%
 
-- **Heisman board (machine)** — index = team factor × blended efficiency (market 2026-09-27)
+- **Heisman board (machine)** — index = team factor × blended efficiency (market: DraftKings 2026-10-04)
   - Darian Mensah (Miami) 50.7 (-0.7, #1 → #1)
   - Julian Sayin (Ohio State) 46.7 (-0.6, #3 → #2)
   - C.J. Carr (Notre Dame) 46.4 (-1.2, #2 → #3)
@@ -59,6 +62,8 @@ placeholders until his deck updates. Betting-line context stays in the internal 
   - Sam Leavitt (LSU) 27.2 (-0.7, #9 → #8)
   - Non-QB watch: Jeremiah Smith (Ohio State), Malachi Toney (Miami), Ryan Wingo (Texas), Trent Mosley (USC)
   - All positions (the slide board): Julian Sayin (QB) 15.5 · Darian Mensah (QB) 14.4 · Keelon Russell (QB) 12.8 · C.J. Carr (QB) 12.6 · Devon Dampier (QB) 10.8 · Josh Hoover (QB) 10.5 · Jeremiah Smith (WR) 10.0 · Sam Leavitt (QB) 9.9
+  - Market check (DraftKings Sun 10/4): Jeremiah Smith +115 (was +245) · Darian Mensah +460 · Keelon Russell +750 (was +1700) · C.J. Carr +800 · Trinidad Chambliss +1600 · Gunner Stockton +2900 · Julian Sayin +3100
+    - Gaps worth saying out loud: Sayin is the machine's No. 1 and the market's seventh; Smith is the market's favorite and the machine's seventh (a wide receiver's points per game against a quarterback's); Russell's price went from +1700 to +750 in a week
   - Julian Sayin (Ohio State) 15.5 (+0.0, #1 → #1)
   - Darian Mensah (Miami) 14.4 (+0.0, #2 → #2)
   - Keelon Russell (Alabama) 12.8 (+1.7, #5 → #3)
