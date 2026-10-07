@@ -2297,7 +2297,7 @@ for g in GAMES:
             _ry = _sy + 0.45
             for _k, _v in [r for r in _rows if r[0] != "REC"]:
                 txt(s, _x, _ry, 0.42, 0.26, _k, 9.5, MUTE, bold=True)
-                txt(s, _x + 0.42, _ry, 2.95, 0.26, _v, 9.5, NAVY, bold=(_k == "QB"))
+                txt(s, _x + 0.42, _ry, 2.95, 0.26, _v, 9.5, NAVY, bold=True)
                 _ry += 0.31
         _dec = []; _short = True
         yy = _sy + 1.9 + 0.2
