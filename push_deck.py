@@ -39,7 +39,8 @@ import certifi
 HERE = os.path.dirname(os.path.abspath(__file__))
 CLIENT_FILE = os.path.join(HERE, "drive_oauth_client.json")
 TOKEN_FILE = os.path.join(HERE, "drive_token.json")
-SCOPES = ["https://www.googleapis.com/auth/drive"]
+SCOPES = ["https://www.googleapis.com/auth/drive",
+          "https://www.googleapis.com/auth/presentations"]   # Slides API (Lucas 10/6): write slides directly, no pptx conversion
 
 # The stable Ep deck Slides file (shared with Corey as commenter).
 STABLE_FILE_ID = "14G1HYYFIyKVG3JDPdtflzUU-3FGYulhbPsr7iThMJNg"
