@@ -1,48 +1,28 @@
-"""Sunday social pack (Lucas 10/6/2026): the week's numbers as post-ready cards + captions, for the social session.
+"""Sunday social pack (Lucas 10/6/2026) - DATA ONLY. The podcast owns the numbers; the social session (mvm-social) owns
+how they look and reads this folder.
 
     python social_pack.py --week 5          # 5 = the week just graded -> social/week5/
 
-Writes social/week{N}/: receipts.png, standings.png, top25.png, hotseat.png, heisman.png (1080x1080), captions.md and
-pack.json (every number on the cards). Nothing here is posted; the social session reads this folder. Sources: score_tracker.json,
-superdog_ledger.json, ratings_current_2026.json + weekly change, boards_week{N+1}.json. NO market numbers on any card
-(the show's rule) - the Heisman card carries the machine's index only. Logos from decks/logos (fetched on first use).
+Writes social/week{N}/pack.json (schema below), captions.md (draft captions) and logos/<slug>.png for every team on the
+pack. No cards are drawn here any more (10/6 split): mvm-social\\render_cards.py draws them from pack.json.
+SCHEMA PROMISE: keys are added, never renamed or removed; a metric that changes on the show keeps its old key for a week
+and says so in "notes". schema_version bumps only when that promise is broken. NO market numbers in the pack.
 """
 from __future__ import annotations
 
 import argparse
 import datetime as dt
 import json
+import re
+import shutil
 import sys
 from pathlib import Path
-
-from PIL import Image, ImageDraw, ImageFont
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE / "fpi-decomposition"))
 from name_mapping import normalize_name  # noqa: E402
 
-NAVY, NAVY2, ORANGE, ICE, WHITE, INK, MUTE, PALE = "#0A2851", "#123568", "#F47321", "#EAF0F8", "#FFFFFF", "#16273D", "#5C6B7E", "#CADCFC"
-UP, DOWN = "#5CD68A", "#FF7A7A"
-W = H = 1080
-FONTS = Path("C:/Windows/Fonts")
-
-
-def font(size, bold=False):
-    try:
-        return ImageFont.truetype(str(FONTS / ("segoeuib.ttf" if bold else "segoeui.ttf")), size)
-    except OSError:
-        return ImageFont.load_default()
-
-
-def card(title, kicker):
-    im = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(im)
-    d.text((60, 48), kicker.upper(), font=font(26, True), fill=ORANGE)
-    d.text((60, 86), title, font=font(60, True), fill=WHITE)
-    d.rectangle([60, 168, W - 60, 171], fill=ORANGE)
-    d.text((60, H - 70), "Man vs Machine · College Football Podcast", font=font(26, True), fill=PALE)
-    return im, d
-
-
+SCHEMA = 1
 _TEAMS = {}
 try:
     for _t in json.loads((HERE / "rosters" / "data" / "teams_fbs_2026.json").read_text(encoding="utf-8")):
@@ -51,118 +31,28 @@ except FileNotFoundError:
     pass
 
 
-def logo(d_im, norm, x, y, size):
-    """decks/logos/<slug>.png (the deck's cache); fetched from the cached ESPN URL on first use, like the deck does."""
-    import re, urllib.request
-    p = HERE / "decks" / "logos" / (re.sub(r"[^a-z0-9]", "", norm) + ".png")
-    if not p.exists():
-        t = _TEAMS.get(norm)
-        if not t or not t.get("logos"):
-            return
-        try:
-            req = urllib.request.Request(t["logos"][0].replace("http://", "https://"), headers={"User-Agent": "Mozilla/5.0"})
-            p.write_bytes(urllib.request.urlopen(req, timeout=20).read())
-        except Exception:
-            return
-    try:
-        lg = Image.open(p).convert("RGBA").resize((size, size)); d_im.paste(lg, (x, y), lg)
-    except Exception:
-        pass
+def slug(norm):
+    return re.sub(r"[^a-z0-9]", "", norm)
 
 
 def tname(norm):
     return _TEAMS.get(norm, {}).get("school", norm.title())
 
 
-def receipts_card(week, rows, out):
-    im, d = card(f"Week {week} receipts", "the machine vs the man")
-    y = 200
-    mm = cm = 0; mw = cw = 0
-    for r in rows:
-        a, h = r["final"]; ma, mh = r["machine"]; act = h - a; mach = mh - ma
-        mm += abs(act - mach); mw += (act > 0) == (mach > 0)
-        man = r.get("man"); line2 = f"Machine {r['home'] if mach > 0 else r['away']} {max(ma, mh)}–{min(ma, mh)} · off by {abs(act - mach):g}"
-        if man:
-            ca, ch = man; mn = ch - ca; cm += abs(act - mn); cw += (act > 0) == (mn > 0)
-            line2 += f"     Man {r['home'] if mn > 0 else r['away']} {max(ca, ch)}–{min(ca, ch)} · off by {abs(act - mn):g}"
-        d.rounded_rectangle([60, y, W - 60, y + 118], radius=14, fill=NAVY2)
-        logo(im, normalize_name(r["away"]), 76, y + 14, 56); logo(im, normalize_name(r["home"]), 140, y + 14, 56)
-        d.text((212, y + 14), f"{r['away']} {a} at {r['home']} {h}", font=font(34, True), fill=WHITE)
-        d.text((212, y + 66), line2, font=font(26), fill=PALE)
-        y += 132
-    d.rounded_rectangle([60, y + 10, W - 60, y + 130], radius=14, fill=ORANGE)
-    d.text((84, y + 24), f"Winners: machine {mw}–{len(rows) - mw} · man {cw}–{len(rows) - cw}", font=font(34, True), fill=WHITE)
-    d.text((84, y + 72), f"Margin miss (lower is better): machine {mm:g} · man {cm:g}", font=font(30), fill=WHITE)
-    im.save(out / "receipts.png")
-    return dict(machine_wins=mw, man_wins=cw, machine_miss=mm, man_miss=cm)
-
-
-def standings_card(week, led, out):
-    im, d = card("Superdog standings", f"through week {week}")
-    st = led["standings"]
-    for i, (lab, v) in enumerate((("MAN", st["man"]), ("MACHINE", st["machine"]))):
-        x = 60 + i * 490
-        d.rounded_rectangle([x, 220, x + 470, 470], radius=18, fill=NAVY2)
-        d.text((x + 30, 240), lab, font=font(34, True), fill=ORANGE)
-        d.text((x + 30, 300), f"{v:g}", font=font(120, True), fill=WHITE)
-    y = 510
-    for key, lab in ((f"man_picks_week{week}", "Man"), ("machine_picks", "Machine")):
-        picks = [p for p in led.get(key, []) if p.get("week", week) == week]
-        d.text((60, y), f"{lab}'s picks this week", font=font(30, True), fill=ORANGE); y += 44
-        for p in picks:
-            res = p.get("result") or "pending"; col = UP if res in ("win", "cover") else (DOWN if res == "loss" else PALE)
-            d.text((60, y), f"{p['pick']}  ·  {res}{(' +' + format(p['points'], 'g')) if p.get('points') else ''}", font=font(28), fill=col); y += 40
-        y += 16
-    d.text((60, y + 10), "Rules: 3.5+ point dogs · 5 for a cover · 5 + the spread for the win · 1 for a push", font=font(24), fill=PALE)
-    im.save(out / "standings.png")
-    return dict(man=st["man"], machine=st["machine"])
-
-
-def top25_card(rows, wc, ap, out):
-    im, d = card("The machine's Top 25", "rating · move this week · AP")
-    for i, t in enumerate(rows[:25]):
-        col = i // 13; rr = i % 13
-        x = 60 + col * 500; y = 200 + rr * 60
-        w = wc.get(t["team"], {}); dw = w.get("d_week", 0.0)
-        logo(im, t["team"], x, y + 6, 40)
-        name = f"{i + 1}. {tname(t['team'])}"
-        f = font(27, True) if d.textlength(name, font=font(27, True)) <= 240 else font(22, True)
-        d.text((x + 50, y + 10), name, font=f, fill=WHITE)
-        d.text((x + 300, y + 8), f"{t['cur']:.1f}", font=font(27, True), fill=ORANGE)
-        d.text((x + 368, y + 12), f"{dw:+.1f}", font=font(22), fill=UP if dw > 0 else (DOWN if dw < 0 else PALE))
-        a = ap.get(t["team"]); d.text((x + 432, y + 14), f"AP {a}" if a else "NR", font=font(19), fill=PALE)
-    im.save(out / "top25.png")
-    return [dict(rank=i + 1, team=tname(t["team"]), rating=t["cur"], d_week=wc.get(t["team"], {}).get("d_week"), ap=ap.get(t["team"])) for i, t in enumerate(rows[:25])]
-
-
-def hotseat_card(rows, out):
-    im, d = card("Hot seat top five", "40% what six lists say · 60% the machine's odds he's gone")
-    y = 210
-    for i, r in enumerate(rows[:5]):
-        d.rounded_rectangle([60, y, W - 60, y + 128], radius=14, fill=NAVY2)
-        logo(im, normalize_name(r["team"]), 80, y + 24, 80)
-        d.text((180, y + 18), f"{i + 1}. {r['coach']} · {r['team']}", font=font(36, True), fill=WHITE)
-        d.text((180, y + 70), f"{r['record']} · {round(100 * r['p_gone'])}% to be gone · buyout {r.get('buyout') or '—'}{'*' if r.get('buyout_est') else ''}", font=font(27), fill=PALE)
-        d.text((W - 200, y + 34), f"{r['score']:.0f}", font=font(60, True), fill=ORANGE)
-        y += 142
-    d.text((60, y + 6), "P(gone) = odds he is not the coach next season, fit on 2014–25 · * buyout estimated", font=font(22), fill=PALE)
-    im.save(out / "hotseat.png")
-    return [dict(rank=i + 1, coach=r["coach"], team=r["team"], record=r["record"], p_gone=r["p_gone"], buyout=r.get("buyout"), score=r["score"]) for i, r in enumerate(rows[:5])]
-
-
-def heisman_card(rows, out):
-    im, d = card("The machine's best-player board", "best so far, not a prediction")
-    y = 210
-    for i, r in enumerate(rows[:5]):
-        d.rounded_rectangle([60, y, W - 60, y + 128], radius=14, fill=NAVY2)
-        logo(im, normalize_name(r["team"]), 80, y + 24, 80)
-        d.text((180, y + 18), f"{i + 1}. {r['name']} · {r['pos']} · {r['team']}", font=font(36, True), fill=WHITE)
-        d.text((180, y + 70), f"{r['ppg']} points added a game · team {round(100 * r['p10w'])}% to ten wins", font=font(27), fill=PALE)
-        d.text((W - 200, y + 34), f"{r['index']:.1f}", font=font(60, True), fill=ORANGE)
-        y += 142
-    d.text((60, y + 6), "Points added per game (CFBD PPA, shrunk toward 2025) × team factor", font=font(22), fill=PALE)
-    im.save(out / "heisman.png")
-    return [dict(rank=i + 1, name=r["name"], pos=r["pos"], team=r["team"], ppg=r["ppg"], index=r["index"]) for i, r in enumerate(rows[:5])]
+def logo_file(norm):
+    """decks/logos/<slug>.png - fetched from the cached ESPN URL on first use (same cache the deck uses)."""
+    import urllib.request
+    p = HERE / "decks" / "logos" / (slug(norm) + ".png")
+    if not p.exists():
+        t = _TEAMS.get(norm)
+        if not t or not t.get("logos"):
+            return None
+        try:
+            req = urllib.request.Request(t["logos"][0].replace("http://", "https://"), headers={"User-Agent": "Mozilla/5.0"})
+            p.write_bytes(urllib.request.urlopen(req, timeout=20).read())
+        except Exception:
+            return None
+    return p
 
 
 def main():
@@ -172,33 +62,79 @@ def main():
     from refresh_all import load_env_key, load_fpi_2026
     load_env_key()
     import inseason_ratings as ir
-    out = HERE / "social" / f"week{n}"; out.mkdir(parents=True, exist_ok=True)
+    out = HERE / "social" / f"week{n}"; (out / "logos").mkdir(parents=True, exist_ok=True)
+    teams_used = set()
+
+    def team(name_or_norm):
+        norm = normalize_name(name_or_norm); teams_used.add(norm)
+        return dict(name=tname(norm), norm=norm, logo=f"logos/{slug(norm)}.png")
+
+    # receipts: the week's card, graded on the score calls (the show's convention since 10/6)
     st = [r for r in json.loads((HERE / "score_tracker.json").read_text(encoding="utf-8")) if r["week"] == n and r.get("final")]
+    games = []; mm = cm = 0.0; mw = cw = 0
+    for r in st:
+        a_, h = r["final"]; ma, mh = r["machine"]; act = h - a_; mach = mh - ma
+        mm += abs(act - mach); mw += (act > 0) == (mach > 0)
+        g = dict(away=team(r["away"]), home=team(r["home"]), final=dict(away=a_, home=h),
+                 machine=dict(call=f"{r['home'] if mach > 0 else r['away']} {max(ma, mh)}–{min(ma, mh)}", away=ma, home=mh, off_by=abs(act - mach), winner_right=(act > 0) == (mach > 0)))
+        if r.get("man"):
+            ca, ch = r["man"]; mn = ch - ca; cm += abs(act - mn); cw += (act > 0) == (mn > 0)
+            g["man"] = dict(call=f"{r['home'] if mn > 0 else r['away']} {max(ca, ch)}–{min(ca, ch)}", away=ca, home=ch, off_by=abs(act - mn), winner_right=(act > 0) == (mn > 0))
+        games.append(g)
+    receipts = dict(games=games, machine=dict(wins=mw, losses=len(st) - mw, margin_miss=mm), man=dict(wins=cw, losses=len(st) - cw, margin_miss=cm),
+                    off_by_means="the score call's margin vs the final margin, both sides")
+
+    # superdogs
     led = json.loads((HERE / "superdog_ledger.json").read_text(encoding="utf-8"))
-    rt = json.loads((HERE / "ratings_current_2026.json").read_text(encoding="utf-8"))["teams"]
+
+    def picks(key):
+        return [dict(pick=p["pick"], result=p.get("result") or "pending", points=p.get("points"), final=p.get("final")) for p in led.get(key, []) if p.get("week", n) == n]
+    standings = dict(man=led["standings"]["man"], machine=led["standings"]["machine"], through_week=n,
+                     man_picks=picks(f"man_picks_week{n}"), machine_picks=picks("machine_picks"),
+                     rules="3.5+ point dogs · 5 for a cover · 5 + the spread for an outright win · 1 for a push")
+
+    # top 25 + movers
+    rt = json.loads((HERE / "ratings_current_2026.json").read_text(encoding="utf-8"))
     wc = ir.weekly_change(load_fpi_2026())["teams"]; apr = ir.latest_rankings(False)["ap"]
-    bf = HERE / f"boards_week{n + 1}.json"
-    boards = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else {}
-    pack = dict(week=n, generated=dt.datetime.now().isoformat(timespec="minutes"))
-    pack["receipts"] = receipts_card(n, st, out)
-    pack["standings"] = standings_card(n, led, out)
-    pack["top25"] = top25_card(rt, wc, apr, out)
-    if boards:
-        pack["hotseat"] = hotseat_card(boards["hot_seat"], out)
-        pack["heisman"] = heisman_card(boards["heisman_all"], out)
-    r = pack["receipts"]; s = pack["standings"]
-    cap = [f"# Captions — Week {n} (drafts; the social session rewrites for each platform)\n",
-           f"## receipts.png\nWeek {n} receipts. Winners: machine {r['machine_wins']}–{len(st) - r['machine_wins']}, man {r['man_wins']}–{len(st) - r['man_wins']}. "
-           f"Margin miss: machine {r['machine_miss']:g}, man {r['man_miss']:g}. Every call was frozen at recording. #ManVsMachine #CFB\n",
-           f"## standings.png\nSuperdog standings through Week {n}: Man {s['man']:g}, Machine {s['machine']:g}. 3.5+ point dogs only, 5 for a cover, 5 plus the spread for the win.\n",
-           "## top25.png\nThe machine's Top 25: points better than an average FBS team, built from every game played, de-lucked. The move column is this week's games alone.\n"]
-    if boards:
-        h = pack["hotseat"][0]; k = pack["heisman"][0]
-        cap += [f"## hotseat.png\nHot seat top five. No. 1 is {h['coach']} ({h['team']}, {h['record']}): {round(100 * h['p_gone'])}% to be gone by next season on the machine's model. Six hot-seat lists plus a model of every departure since 2014.\n",
-                f"## heisman.png\nThe machine's best-player board, best so far and not a prediction: {k['name']} ({k['team']}) on top at {k['ppg']} points added a game.\n"]
+    top25 = [dict(rank=i + 1, team=team(t["team"]), rating=t["cur"], d_week=wc.get(t["team"], {}).get("d_week"),
+                  prev_rank=wc.get(t["team"], {}).get("prev_rank"), ap=apr.get(t["team"]), games=t["gp"]) for i, t in enumerate(rt["teams"][:25])]
+    movers = sorted(wc.items(), key=lambda kv: -kv[1]["d_week"])
+    risers = [dict(team=team(t), d_week=v["d_week"], prev_rank=v["prev_rank"], rank=v["rank"]) for t, v in movers[:5]]
+    fallers = [dict(team=team(t), d_week=v["d_week"], prev_rank=v["prev_rank"], rank=v["rank"]) for t, v in movers[-5:][::-1]]
+
+    # boards (next week's file, built on Sunday)
+    bf = HERE / f"boards_week{n + 1}.json"; boards = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else {}
+    hot = [dict(rank=i + 1, coach=r["coach"], team=team(r["team"]), record=r.get("record"), p_gone=r["p_gone"], lists=r.get("lists"),
+                human_prior=r["cbs"], buyout=(r.get("buyout") or "").replace("—", "") or None, buyout_estimated=bool(r.get("buyout_est")),
+                score=r["score"], last_result=(r.get("results") or [None])[-1], tenure=r.get("tenure")) for i, r in enumerate(boards.get("hot_seat", [])[:10])]
+    heis = [dict(rank=i + 1, name=r["name"], pos=r["pos"], team=team(r["team"]), points_per_game=r["ppg"], index=r["index"],
+                 team_p10w=r["p10w"], plays=r["plays26"], games=r["games"]) for i, r in enumerate(boards.get("heisman_all", [])[:8])]
+
+    for norm in teams_used:
+        p = logo_file(norm)
+        if p:
+            shutil.copyfile(p, out / "logos" / p.name)
+
+    pack = dict(schema_version=SCHEMA, week=n, generated=dt.datetime.now().isoformat(timespec="minutes"),
+                notes=["Receipts: 'off by' is the score call's margin vs the final, both sides (since 10/6; before that the machine was graded on its line).",
+                       "Hot seat: score = 40% six-list human prior + 60% model P(gone); the human half changed from CBS-only on 10/6.",
+                       "Heisman: 'best so far, not a prediction' - index = points added per game x team factor; keep that phrase on anything public.",
+                       "No market numbers anywhere in this pack, by the show's rule."],
+                receipts=receipts, standings=standings, top25=top25, risers=risers, fallers=fallers, hot_seat=hot, heisman=heis,
+                rating_rule=rt.get("params"))
+    (out / "pack.json").write_text(json.dumps(pack, indent=1, ensure_ascii=False), encoding="utf-8")
+    cap = [f"# Captions — Week {n} (drafts; the social session rewrites per platform)\n",
+           f"## receipts\nWeek {n} receipts. Winners: machine {mw}–{len(st) - mw}, man {cw}–{len(st) - cw}. Margin miss: machine {mm:g}, man {cm:g}. Every call was frozen at recording. #ManVsMachine #CFB\n",
+           f"## standings\nSuperdog standings through Week {n}: Man {standings['man']:g}, Machine {standings['machine']:g}. 3.5+ point dogs only, 5 for a cover, 5 plus the spread for the win.\n",
+           "## top25\nThe machine's Top 25: points better than an average FBS team, built from every game played, de-lucked. The move column is this week's games alone.\n"]
+    if hot:
+        cap.append(f"## hot_seat\nHot seat top five. No. 1 is {hot[0]['coach']} ({hot[0]['team']['name']}, {hot[0]['record']}): {round(100 * hot[0]['p_gone'])}% to be gone by next season on the machine's model. Six hot-seat lists plus a model of every departure since 2014.\n")
+    if heis:
+        cap.append(f"## heisman\nThe machine's best-player board, best so far and not a prediction: {heis[0]['name']} ({heis[0]['team']['name']}) on top at {heis[0]['points_per_game']} points added a game.\n")
     (out / "captions.md").write_text("\n".join(cap), encoding="utf-8")
-    (out / "pack.json").write_text(json.dumps(pack, indent=1), encoding="utf-8")
-    print(f"social pack -> {out.relative_to(HERE)}: " + ", ".join(p.name for p in sorted(out.iterdir())))
+    for old in ("receipts.png", "standings.png", "top25.png", "hotseat.png", "heisman.png"):   # the drawn cards are not ours any more
+        (out / old).unlink(missing_ok=True)
+    print(f"social pack -> {out.relative_to(HERE)}: pack.json, captions.md, {len(list((out / 'logos').iterdir()))} logos")
 
 
 if __name__ == "__main__":
