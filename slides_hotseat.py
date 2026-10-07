@@ -80,8 +80,8 @@ def hot_seat_requests(slide_id, rows, episode, week):
     b.text(0.9, 0.76, 11.5, 0.8, "Hot Seat Top 10", 40, WHITE, True)
     b.text(0.9, 1.5, 11.5, 0.3, "40% what six hot-seat lists say + 60% the machine's odds he is gone by next season", 13, PALE, True)
     TOP, RH = 2.08, 0.4
-    hdr = [(1.75, 2.8, "COACH · SCHOOL", "START"), (4.6, 1.5, "TENURE", "START"), (6.15, 0.55, "LISTS", "END"), (6.75, 0.55, "RECORD", "END"),
-           (7.35, 0.7, "P(GONE)", "END"), (8.1, 0.95, "BUYOUT", "END"), (9.1, 0.5, "Δ", "END"), (9.65, 0.55, "SCORE", "END"), (10.3, 2.1, "LAST RESULT", "START")]
+    hdr = [(1.75, 2.85, "COACH · SCHOOL", "START"), (4.6, 1.4, "TENURE", "START"), (5.95, 0.75, "LISTS", "END"), (6.65, 0.75, "RECORD", "END"),
+           (7.3, 0.8, "P(GONE)", "END"), (8.05, 1.0, "BUYOUT", "END"), (9.0, 0.65, "Δ", "END"), (9.55, 0.75, "SCORE", "END"), (10.3, 2.1, "LAST RESULT", "START")]
     for x, w, lab, al in hdr:
         b.text(x, TOP - 0.25, w, 0.22, lab, 8, PALE, True, al)
     for i, r in enumerate(rows[:10]):
@@ -90,16 +90,17 @@ def hot_seat_requests(slide_id, rows, episode, week):
             b.box(0.9, y, 11.5, RH, NAVY2)
         b.text(0.9, y + 0.06, 0.4, 0.3, str(i + 1), 13, ORANGE, True, "END")
         b.logo(1.35, y, r["team"])
-        b.text(1.75, y + 0.06, 2.8, 0.3, f"{r['coach']} · {r['team']}", 12, WHITE, True)
-        b.text(4.6, y + 0.09, 1.5, 0.3, r.get("tenure", ""), 8.5, PALE)
-        b.text(6.15, y + 0.07, 0.55, 0.3, f"{r['cbs']:.1f}{'*' if r.get('cbs_est') else ''}", 11, WHITE, True, "END")
-        b.text(6.75, y + 0.07, 0.55, 0.3, r.get("record", ""), 11, WHITE, False, "END")
+        nm = f"{r['coach']} · {r['team']}"
+        b.text(1.75, y + 0.06, 2.85, 0.3, nm, 12 if len(nm) <= 26 else 10.5, WHITE, True)
+        b.text(4.6, y + 0.09, 1.4, 0.3, r.get("tenure", ""), 8.5, PALE)
+        b.text(5.95, y + 0.07, 0.75, 0.3, f"{r['cbs']:.1f}{'*' if r.get('cbs_est') else ''}", 11, WHITE, True, "END")
+        b.text(6.65, y + 0.07, 0.75, 0.3, r.get("record", ""), 11, WHITE, False, "END")
         p = r["p_gone"]
-        b.text(7.35, y + 0.07, 0.7, 0.3, f"{round(100 * p)}%", 11, DOWN if p >= 0.3 else (UP if p < 0.15 else WHITE), True, "END")
-        b.text(8.1, y + 0.07, 0.95, 0.3, f"{r.get('buyout', '—')}{'*' if r.get('buyout_est') else ''}", 10.5, WHITE, True, "END")
+        b.text(7.3, y + 0.07, 0.8, 0.3, f"{round(100 * p)}%", 11, DOWN if p >= 0.3 else (UP if p < 0.15 else WHITE), True, "END")
+        b.text(8.05, y + 0.07, 1.0, 0.3, f"{r.get('buyout', '—')}{'*' if r.get('buyout_est') else ''}", 10.5, WHITE, True, "END")
         d = r.get("delta") or 0.0
-        b.text(9.1, y + 0.09, 0.5, 0.3, f"{d:+.1f}" if d else "0.0", 10, UP if d > 0 else (DOWN if d < 0 else PALE), bool(d), "END")
-        b.text(9.65, y + 0.06, 0.55, 0.3, f"{r['score']:.0f}", 12.5, ORANGE, True, "END")
+        b.text(9.0, y + 0.09, 0.65, 0.3, f"{d:+.1f}" if d else "0.0", 10, UP if d > 0 else (DOWN if d < 0 else PALE), bool(d), "END")
+        b.text(9.55, y + 0.06, 0.75, 0.3, f"{r['score']:.0f}", 12.5, ORANGE, True, "END")
         b.text(10.3, y + 0.09, 2.1, 0.3, (r.get("results") or ["—"])[-1], 8.5, PALE)
     fy = TOP + 10 * RH + 0.12
     b.box(0.9, fy, 11.5, 0.62, NAVY2, "ROUND_RECTANGLE")
