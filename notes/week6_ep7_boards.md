@@ -60,10 +60,11 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - 6. Miami 26.2 · +1.5, #7 → #6 · AP 4
     - 7. LSU 25.9 · -0.2, #5 → #7 · AP 10
     - 8. Indiana 23.0 · +1.6 · AP 7
-    - 9. Oregon 19.0 · -0.1, #10 → #9 · AP 13
-    - 10. Texas A&M 18.0 · +0.2, #11 → #10 · AP NR
-    - 11. Utah 17.1 · -0.3, #12 → #11 · AP 12
-    - 12. Tennessee 16.8 · +0.1, #13 → #12 · AP 15
+    - 9. Texas A&M 18.0 · +0.2, #10 → #9 · AP NR
+    - 10. Utah 17.1 · -0.3, #11 → #10 · AP 12
+    - 11. Oregon 17.0 · -0.1, #12 → #11 · AP 13
+    - 19.0 on results; the machine takes 2.0 off for Dante Moore (out, concussion - Raiola starts vs UCLA). The move column shows results only, so the quarterback is in both weeks' numbers
+    - 12. Tennessee 16.7 · +0.1, #13 → #12 · AP 15
     - 13. Texas Tech 16.1 · +0.2, #16 → #13 · AP 11
     - 14. Oklahoma 15.9 · -0.3 · AP NR
     - 15. Florida 15.6 · -4.8, #9 → #15 · AP 16
@@ -129,7 +130,7 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - BYU: his 11, our 23
   - Where we agree: Georgia top two; Indiana 6 and 8; Missouri and Northwestern new to both lists; Florida down (his 7 → 15, our 9 → 15)
   - His moves: Florida 7 → 15; Mississippi State 16 → 24; Texas A&M, Missouri, Northwestern, Houston, Boise State in; Ohio State 10 → 8; Texas Tech 9 → 7
-  - Ours not his: Oregon 9 (his 13), Texas A&M 10 (his 21), Oklahoma 14, Wisconsin 22, Florida State 20, South Carolina 24 · His not ours: Houston, Iowa (our 30), Boise State, Mississippi State (our 22 — agree)
+  - Ours not his: Oregon 11 (his 13), Texas A&M 10 (his 21), Oklahoma 14, Wisconsin 22, Florida State 20, South Carolina 24 · His not ours: Houston, Iowa (our 30), Boise State, Mississippi State (our 22 — agree)
 
 - **Heisman board (machine)** — the Best-Player Board: points added per game × team factor (market: DraftKings 2026-10-04)
   - What the board is, say it once

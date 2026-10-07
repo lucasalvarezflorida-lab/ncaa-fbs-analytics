@@ -119,7 +119,7 @@ def qb_out_adjust(week: int | None = None, today: dt.date | None = None) -> dict
     if not f.exists():
         return {}
     if week is None:
-        week = max((g["week"] or 0 for g in completed_games_2026()), default=0) + 1
+        week = latest_full_week(completed_games_2026()) + 1
     out: dict[str, float] = {}
     for e in json.loads(f.read_text(encoding="utf-8")):
         if str(e.get("pos", "")).upper() != "QB" or e.get("status") != "out":
@@ -131,6 +131,16 @@ def qb_out_adjust(week: int | None = None, today: dt.date | None = None) -> dict
         out[t] = out.get(t, 0.0) + pts
     return out
 
+
+
+def latest_full_week(games: list[dict], min_games: int = 20) -> int:
+    """The last week with at least `min_games` completed games. A midweek game from the NEXT week
+    (e.g. a Wednesday MAC/Sun Belt game) must not roll 'this week' forward: on 10/7 one Week-6 final
+    made max(week) = 6, which dropped the QB-out penalty (return 7) and zeroed the Top 25 delta column."""
+    from collections import Counter
+    c = Counter((g["week"] or 0) for g in games)
+    full = [w for w, n in c.items() if n >= min_games]
+    return max(full) if full else max(c, default=0)
 
 def turnover_margins(games: list[dict]) -> dict[int, float]:
     """{game_id: home takeaways - home giveaways} for 2026 games from the
@@ -248,7 +258,7 @@ def machine_ratings(prior: dict[str, float], refresh: bool = False,
                                           model, eff_w)) for g in games]
     rule = dict(RULE, cap_mode=cap_mode) if cap_mode != CAP_MODE else RULE
     cur = solve_2026(prior, fit_games, rule)
-    qb = qb_out_adjust(max((g["week"] or 0 for g in games), default=0) + 1)
+    qb = qb_out_adjust(latest_full_week(games) + 1)
     for t, pts in qb.items():
         if t in cur:
             cur[t] -= pts
@@ -283,7 +293,8 @@ def weekly_change(prior: dict[str, float], refresh: bool = False,
              if g["home"] in prior and g["away"] in prior]
     if not games:
         return dict(week=None, teams={})
-    week = max(g["week"] or 0 for g in games)
+    week = latest_full_week(games)                     # not max(): a midweek game from next week must not move the column
+    games = [g for g in games if (g["week"] or 0) <= week]
     rule = dict(RULE, cap_mode=cap_mode) if cap_mode != CAP_MODE else RULE
     cur = solve_2026(prior, games, rule)
     prev = solve_2026(prior, [g for g in games if (g["week"] or 0) < week], rule)

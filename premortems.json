@@ -652,5 +652,282 @@
     "verdict": "clean"
    }
   }
+ },
+ "6": {
+  "Indiana at Nebraska": {
+   "game_id": 401858481,
+   "away": "Indiana",
+   "home": "Nebraska",
+   "pick": "Indiana",
+   "machine_margin": -6.2,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.648,
+   "machine_call": [
+    27,
+    21
+   ],
+   "condition": {
+    "team": "Nebraska",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": ">",
+    "value": 4.0,
+    "source": "box"
+   },
+   "text": "Nebraska averages more than 4.0 yards a carry",
+   "why": "Nebraska runs for 5.7 a carry against FBS teams and Indiana allows 2.4. The pick leans on Indiana's run defense holding; past 4.0 a carry, Nebraska has won the matchup the machine trusts.",
+   "evidence": {
+    "does": 5.7,
+    "allows": 2.4,
+    "gap": 3.3
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Indiana",
+      "unit": "offense",
+      "stat": "rush_ypc",
+      "op": "<",
+      "value": 4.8,
+      "source": "box"
+     },
+     "text": "Indiana averages under 4.8 yards a carry",
+     "gap": 3.1
+    },
+    {
+     "condition": {
+      "team": "Indiana",
+      "unit": "offense",
+      "stat": "pass_ypa",
+      "op": "<",
+      "value": 7.9,
+      "source": "pbp"
+     },
+     "text": "Indiana averages under 7.9 yards an attempt",
+     "gap": 2.53
+    }
+   ],
+   "result": null
+  },
+  "Texas A&M at Missouri": {
+   "game_id": 401856716,
+   "away": "Texas A&M",
+   "home": "Missouri",
+   "pick": "Texas A&M",
+   "machine_margin": -0.9,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.516,
+   "machine_call": [
+    25,
+    24
+   ],
+   "condition": {
+    "team": "Texas A&M",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": "<",
+    "value": 3.4,
+    "source": "box"
+   },
+   "text": "Texas A&M averages under 3.4 yards a carry",
+   "why": "Texas A&M runs for 4.2 a carry; Missouri allows 2.5. Under 3.4 a carry and Missouri's front has taken the run game away from the pick.",
+   "evidence": {
+    "does": 4.2,
+    "allows": 2.5,
+    "gap": 1.7
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Texas A&M",
+      "unit": "offense",
+      "stat": "stuff_rate",
+      "op": ">=",
+      "value": 20,
+      "source": "pbp"
+     },
+     "text": "Texas A&M is stuffed on 20% or more of its runs",
+     "gap": 1.29
+    },
+    {
+     "condition": {
+      "team": "Missouri",
+      "unit": "offense",
+      "stat": "t3_pct",
+      "op": ">",
+      "value": 36,
+      "source": "box"
+     },
+     "text": "Missouri converts more than 36% on third down",
+     "gap": 1.21
+    }
+   ],
+   "result": null
+  },
+  "UCLA at Oregon": {
+   "game_id": 401858484,
+   "away": "UCLA",
+   "home": "Oregon",
+   "pick": "Oregon",
+   "machine_margin": 9.6,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.73,
+   "machine_call": [
+    24,
+    34
+   ],
+   "condition": {
+    "team": "UCLA",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": ">",
+    "value": 5.5,
+    "source": "box"
+   },
+   "text": "UCLA averages more than 5.5 yards a carry",
+   "why": "UCLA runs for 7.0 a carry against FBS teams and Oregon allows 4.1. The pick leans on Oregon's run defense holding; past 5.5 a carry, UCLA has won the matchup the machine trusts.",
+   "evidence": {
+    "does": 7.0,
+    "allows": 4.1,
+    "gap": 2.9
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Oregon",
+      "unit": "offense",
+      "stat": "ints_thrown",
+      "op": ">=",
+      "value": 1,
+      "source": "box"
+     },
+     "text": "Oregon throws an interception",
+     "gap": 2.5
+    },
+    {
+     "condition": {
+      "team": "UCLA",
+      "unit": "offense",
+      "stat": "t3_pct",
+      "op": ">",
+      "value": 39,
+      "source": "box"
+     },
+     "text": "UCLA converts more than 39% on third down",
+     "gap": 1.89
+    }
+   ],
+   "result": null
+  },
+  "Georgia at Alabama": {
+   "game_id": 401856712,
+   "away": "Georgia",
+   "home": "Alabama",
+   "pick": "Alabama",
+   "machine_margin": 2.6,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.573,
+   "machine_call": [
+    24,
+    27
+   ],
+   "condition": {
+    "team": "Georgia",
+    "unit": "offense",
+    "stat": "rush_ypc",
+    "op": ">",
+    "value": 4.2,
+    "source": "box"
+   },
+   "text": "Georgia averages more than 4.2 yards a carry",
+   "why": "Georgia runs for 5.8 a carry against FBS teams and Alabama allows 2.5. The pick leans on Alabama's run defense holding; past 4.2 a carry, Georgia has won the matchup the machine trusts.",
+   "evidence": {
+    "does": 5.8,
+    "allows": 2.5,
+    "gap": 3.3
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "Alabama",
+      "unit": "offense",
+      "stat": "pass_ypa",
+      "op": "<",
+      "value": 8.2,
+      "source": "pbp"
+     },
+     "text": "Alabama averages under 8.2 yards an attempt",
+     "gap": 2.87
+    },
+    {
+     "condition": {
+      "team": "Alabama",
+      "unit": "offense",
+      "stat": "rush_ypc",
+      "op": "<",
+      "value": 3.6,
+      "source": "box"
+     },
+     "text": "Alabama averages under 3.6 yards a carry",
+     "gap": 2.6
+    }
+   ],
+   "result": null
+  },
+  "USC at Penn State": {
+   "game_id": 401858485,
+   "away": "USC",
+   "home": "Penn State",
+   "pick": "Penn State",
+   "machine_margin": 0.9,
+   "basis": "vs FBS opponents",
+   "p_pick": 0.53,
+   "machine_call": [
+    27,
+    28
+   ],
+   "condition": {
+    "team": "USC",
+    "unit": "offense",
+    "stat": "pass_ypa",
+    "op": ">",
+    "value": 6.9,
+    "source": "pbp"
+   },
+   "text": "USC averages more than 6.9 yards an attempt",
+   "why": "USC throws for 9.1 an attempt and Penn State's defense allows 4.7. If USC gets past 6.9 a throw, the passing matchup the machine counts on has flipped.",
+   "evidence": {
+    "does": 9.1,
+    "allows": 4.7,
+    "gap": 2.93
+   },
+   "alternatives": [
+    {
+     "condition": {
+      "team": "USC",
+      "unit": "offense",
+      "stat": "p20",
+      "op": ">=",
+      "value": 4,
+      "source": "pbp"
+     },
+     "text": "USC has 4+ completions of 20 yards or more",
+     "gap": 1.93
+    },
+    {
+     "condition": {
+      "team": "USC",
+      "unit": "offense",
+      "stat": "t3_pct",
+      "op": ">",
+      "value": 39,
+      "source": "box"
+     },
+     "text": "USC converts more than 39% on third down",
+     "gap": 1.82
+    }
+   ],
+   "result": null
+  }
  }
 }

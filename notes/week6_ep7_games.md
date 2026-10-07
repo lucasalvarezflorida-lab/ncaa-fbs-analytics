@@ -167,16 +167,16 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: protection — Simmons sacked 4 times in 156 dropbacks (2.6%); A&M has 4 sacks all year, so the pocket should hold
   - Corey: PLACEHOLDER
 
-- **UCLA at Oregon — Sat Oct 10, 3:30 PM ET, Autzen Stadium · UCLA · Oregon (machine #32 at #9)**
-  - Why it matters: The biggest climber on the board (0.5 in July, 9.9 now) at a top-ten team that has fallen 6.3 since July
-  - Why the number: Both ratings are still half July prior — Oregon by 11.6 is the gap between what July said and what September says
+- **UCLA at Oregon — Sat Oct 10, 3:30 PM ET, Autzen Stadium · UCLA · Oregon (machine #32 at #11)**
+  - Why it matters: The biggest climber on the board (0.5 in July, 9.9 now) at an Oregon team 8.3 below July — 2 of it the quarterback
+  - Why the number: Both ratings are still half July prior, and the machine takes 2 off Oregon with Moore out — Oregon by 9.6 is the gap between July and September, minus the quarterback
   
   - The read
     - UCLA is 4–0 and the machine's biggest climber of the season: 0.5 in July, 9.9 now (No. 32). It runs for 7.0 a carry — Knight 49 for 445 and 9 touchdowns — and won 54–3 at Maryland
     - Oregon is 3–1 and has fallen 6.3 points since July to No. 9 at 19.0; it lost at Oklahoma State 39–31 allowing 40 carries for 237, then won 41–27 at USC
-    - The game is UCLA's run game against the Oregon front that Oklahoma State ran through — and whether UCLA's secondary, which gave up 13.9 a throw to Purdue, can live with Moore
-  - The number: Oregon −11.6, 77% · Call Oregon 35–23
-    - Moore watch (say this on air): Moore practiced Monday in pads but is not cleared as of Tuesday; the Big Ten's first injury report is due 8 PM ET Wednesday, after we record. This number is with Moore. If he is out and Raiola starts, the machine takes 2 points off Oregon: Oregon −9.6, 73%, call Oregon 33–23. Still Oregon either way; the pick does not flip, the cushion does
+    - The game is UCLA's run game against the Oregon front that Oklahoma State ran through — and whether UCLA's secondary, which gave up 13.9 a throw to Purdue, can live with Raiola, who threw for 289 and 2 touchdowns in relief at USC
+  - The number: Oregon −9.6, 73% · Call Oregon 34–24
+    - Moore is OUT on our card (say this on air): concussion on the USC hit, back at practice Monday, not cleared; CBS reported at 4:12 PM ET Wednesday that he is unlikely to play and Raiola starts. We marked him out before recording: the machine takes 2 points off Oregon for the quarterback (Raiola already has 24 dropbacks in this offense, closer to a continuing sub than a cold first start), Oregon 19.0 to 17.0, the line from 11.6 to 9.6, 77% to 73%. Still Oregon. If he is cleared after all, the frozen call stands and we say so Sunday
     - Honesty: both teams are coming off a bye and both ratings are still moving fast in opposite directions. The machine has seen three rated games for Oregon and four for UCLA; the July prior (Oregon 25.3, UCLA 0.5) is still about half of each number. If UCLA is what September says, this line is too big
     - Pre-mortem — written on recording day from the frozen card
   - UCLA keys
@@ -193,14 +193,14 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - Sacks 7 in 143 dropbacks (4.9%) — Bear Alexander 2; Matayo Uiagalelei 2; Teitum Tuioti 1
         - Rushing allowed (box): 126 for 452 (3.6); 9 runs of 10+ against it (7.4%), 19.0% stuffed
         - Opponents 12-of-53 on third down (23%); 3-of-28 on third-and-long; 5-of-12 on third-and-short; 6 TD allowed in 15 red-zone trips (40%)
-    - Hold up against Moore
+    - Hold up against Raiola
       - Why: UCLA allows 6.7 a throw with 8 picks, but Purdue threw for 13.9 an attempt on it; Oregon is 9.5 a throw as a team with 24 explosive passes and 14-of-25 on deep throws. UCLA has 6 sacks in 139 dropbacks — the rush will not save the coverage
         - Passing allowed: 70-of-133 for 896 — 6.7 a throw, 12.8 per completion; 17 explosive passes in 139 dropbacks (12.2%), 7-of-23 on deep throws; 8 picks
         - Sacks 6 in 139 dropbacks (4.3%) — Samuel Omosigho 3; Scott Taylor 1.5; Jalen Woods 1
         - Rushing allowed (box): 136 for 365 (2.7); 14 runs of 10+ against it (10.9%), 24.0% stuffed
         - Opponents 20-of-56 on third down (36%); 13-of-41 on third-and-long; 5-of-6 on third-and-short; 7 TD allowed in 11 red-zone trips (64%)
       - What Oregon brings:
-        - Dante Moore: 69-of-99 for 926 — 9.4 per attempt; 9 TD, 0 INT
+        - Dylan Raiola: 30-of-36 for 413 — 11.5 per attempt; 5 TD, 0 INT (starts for Moore, out with a concussion)
           - Oregon as a team: 106-of-147 for 1,397 (9.5 an attempt, 13.2 per completion) — the difference is Dylan Raiola, 30-of-36 for 413
     - First ranked opponent, first hostile building
       - Why: California, San Diego State, Purdue, Maryland — the machine has none of them in its top 60. Iamaleava is 8.3 a throw with 4 touchdowns; the offense has not needed him to win a game yet
@@ -211,9 +211,9 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk4 at Maryland (FBS) W 54-3: 14-of-23 for 8.7 a throw, 3 of 20+, sacked 1; ran 39 for 266; allowed 3.6 a throw and 30 for 39
     - Reserve: third down — UCLA converts 50% and 8-of-10 on third-and-short; Oregon's defense allows 23% (12-of-53) and 3-of-28 on third-and-long, the best on the card
   - Oregon keys
-    - Moore over the top
-      - Why: 69-of-99 for 9.4 a throw, 9 touchdowns, no interceptions; Oregon is 14-of-25 on deep throws with 24 explosive passes in 154 dropbacks. Stewart 22 for 278, Dakorien Moore 14 for 234 and 4 touchdowns. Raiola is 30-of-36 behind him
-        - Dante Moore: 69-of-99 for 926 — 9.4 per attempt; 9 TD, 0 INT
+    - Raiola over the top
+      - Why: Raiola, not Moore: 30-of-36 for 413 this season, 289 of it and 2 touchdowns in relief at USC, in an offense that is Oregon is 14-of-25 on deep throws with 24 explosive passes in 154 dropbacks. Stewart 22 for 278, Dakorien Moore 14 for 234 and 4 touchdowns. Raiola is 30-of-36 behind him
+        - Dylan Raiola: 30-of-36 for 413 — 11.5 per attempt; 5 TD, 0 INT (starts for Moore, out with a concussion)
           - Oregon as a team: 106-of-147 for 1,397 (9.5 an attempt, 13.2 per completion) — the difference is Dylan Raiola, 30-of-36 for 413
         - 24 explosive passes in 154 dropbacks (15.6%), 14-of-25 on deep throws; sacked 7 times (4.5%); 0 INT (vs FBS: 9.2 a throw, 3.9 a carry)
         - Receivers: Evan Stewart 22 for 278 and 3 TD; Dakorien Moore 14 for 234 and 4 TD; Jamari Johnson 11 for 176 and 1 TD
