@@ -149,6 +149,7 @@ print(' · '.join(f"{{v['team']}} {{v['playoff']*100:.0f}}% (conf {{v['conf_titl
 """, tail=4)
     R.note("## 12 RECAP_ROWS snippet (paste into make_episode_deck.py, archive the old rows as _RECAP_ROWS_WK" + str(n - 1) + ")\n```\n" + recap_rows(n) + "\n```")
     R.note("## 13 AP poll\n" + ap_check(nxt))
+    R.step(f"14 social pack week {n}", [PY, "social_pack.py", "--week", str(n)], tail=3)
     R.note(f"\n## Next\n- Update WEEK0_MISS / PRIOR_GAMES / LEANS_LINE in make_episode_deck.py from the receipts (running totals).\n- Card: ask Lucas; then `python notes_skeleton.py --week {nxt} --ep <E> --games \"A at B,...\"` and `--boards`, write the reads/keys, push OneNote with -Prefix \"Week {nxt} - \".\n- Corey's calls into score_tracker.json (man) and the ledger when his slides post.")
     R.finish()
 
