@@ -2207,7 +2207,7 @@ def slide_text(g):
     if sh:
         return (sh.get("decides", g["decides"])[:SLIDE_POINTS], sh.get("honesty", g["honesty"]),
                 sh.get("keys_a", g["keys_a"])[:SLIDE_KEYS], sh.get("keys_b", g["keys_b"])[:SLIDE_KEYS], True)
-    return (g["decides"], g["honesty"], g["keys_a"], g["keys_b"], False)
+    return (g["decides"], g["honesty"], g["keys_a"][:SLIDE_KEYS], g["keys_b"][:SLIDE_KEYS], False)   # three keys a side (Lucas 10/6)
 
 
 def one_fact(val, short):
