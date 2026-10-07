@@ -509,6 +509,11 @@ def main() -> int:
         write_playoff_sheet(book, wk)
     except Exception as e:
         print(f"playoff sim skipped: {e}")
+    try:   # Lucas 10/6: the full hot-seat report (every FBS coach) lives in the workbook
+        from hot_seat_heisman import write_hot_seat_sheet
+        write_hot_seat_sheet(book, wk)
+    except Exception as e:
+        print("hot seat sheet skipped:", e)
 
     # TEAM STATS (Lucas 9/23): offense + defense for every FBS team, season to date -
     # the 'Team Stats' sheet feeds the T:X block on every conference tab.
