@@ -2,7 +2,10 @@
 Heisman board ("our own favorite"). Writes boards_week{N}.json for
 make_episode_deck.py; the notes (.md) carry the reasoning.
 
-HOT SEAT — since 10/4/2026 (Lucas): seat score = 0.4 * (CBS rating / 5) + 0.6 * min(P(gone) / 0.5, 1)
+HOT SEAT — since 10/6/2026 (Lucas): seat score = 0.4 * (HUMAN prior / 5) + 0.6 * min(P(gone) / 0.5, 1)
+  * HUMAN prior = hot_seat_sources.human_prior: the mean of six published hot-seat lists (five preseason + one
+    October read, each mapped to CBS's 0-5 scale), a list that does not name him counting a quarter-vote at 1.0.
+    Replaced CBS alone (10/4-10/6); the CBS dict below is kept as one of the six and for the tenure strings.
   * P(gone) = hot_seat_study.p_gone_2026: logistic model of "not the coach next season" fit on 2014-25,
     from tenure, last season vs the program's ten-year bar, and this season's record and margin so far.
     Every FBS coach is scored; a coach CBS did not list in August carries CBS_DEFAULT (starred).
@@ -195,19 +198,22 @@ CBS_W, P_FULL, CBS_DEFAULT = 0.4, 0.5, 1.5     # CBS weight; P(gone) that maxes 
 
 def hot_seat(sim, ratings, results, week):
     from hot_seat_study import p_gone_2026
+    from hot_seat_sources import human_prior
     model = p_gone_2026(week - 1)
+    prior = human_prior({t: m["coach"] for t, m in model.items()})
     rows = []
     for team, m in model.items():
         s = sim.get(team)
         if not s:
             continue
-        coach, cbs = CBS.get(team, (m["coach"], None))
-        rating = cbs if cbs is not None else EST.get(team, CBS_DEFAULT)
+        coach = CBS.get(team, (m["coach"], None))[0]
+        rating, k_lists, n_lists = prior[team]; rating = round(rating, 1)
+        cbs = k_lists > 0          # for the "est." flag: True = at least one list names him
         bar = BARS.get(team)
         p_bar = p_at_least(bar, s["proj"], s["p10"], s["p90"]) if bar else None
         score = CBS_W * rating / 5 + (1 - CBS_W) * min(m["p_gone"] / P_FULL, 1.0)
         r = ratings.get(normalize_name(team), {})
-        rows.append(dict(team=team, coach=coach, cbs=rating, cbs_est=cbs is None,
+        rows.append(dict(team=team, coach=coach, cbs=rating, cbs_est=not cbs, lists=f"{k_lists}/{n_lists}",
                          tenure=TENURE.get(team, f"yr {m['tenure']}"), bar=bar, p_bar=round(p_bar, 3) if p_bar is not None else None,
                          p_gone=round(m["p_gone"], 3), record=m["rec"].replace("-", "–"),
                          buyout=BUYOUT.get(team, ("—", False, ""))[0], buyout_est=BUYOUT.get(team, ("—", False, ""))[1],
@@ -342,10 +348,10 @@ def main():
         write_hot_seat_sheet(HERE / "NCAA_FBS_Teams.xlsm", a.week, hs)
     except Exception as e:       # the workbook may be open in Excel; the board json is already written
         print("Hot Seat sheet not written:", e)
-    print(f"HOT SEAT (40% CBS {CBS_DATE} + 60% P(gone) model, {len(hs)} coaches)")
+    print(f"HOT SEAT (40% six-list human prior + 60% P(gone) model, {len(hs)} coaches)")
     for i, r in enumerate(hs[:14], 1):
         est = "*" if r["cbs_est"] else ""
-        print(f"{i:>2} {r['coach']:<18}{r['team']:<18} CBS {r['cbs']}{est}  {r['record']}  "
+        print(f"{i:>2} {r['coach']:<18}{r['team']:<18} human {r['cbs']}{est} ({r['lists']})  {r['record']}  "
               f"P(gone) {r['p_gone']:.2f}  buyout {r['buyout']}{'*' if r['buyout_est'] else ''}  proj {r['proj']} ({r['p10']}-{r['p90']})  "
               f"rating {r['rating']} ({r['delta']:+})  score {r['score']}  | {'; '.join(r['results'])}")
     print(f"\nHEISMAN — ALL POSITIONS (points added per game x team factor; market DK {MARKET_DATE})")
@@ -380,18 +386,18 @@ def write_hot_seat_sheet(book, week, rows=None):
     if "Hot Seat" in wb.sheetnames:
         del wb["Hot Seat"]
     ws = wb.create_sheet("Hot Seat")
-    ws["A1"] = f"HOT SEAT - every FBS coach - before week {week} - score = {CBS_W:.0%} CBS ({CBS_DATE}) + {1 - CBS_W:.0%} P(gone) (full marks at {P_FULL:.0%})"
+    ws["A1"] = f"HOT SEAT - every FBS coach - before week {week} - score = {CBS_W:.0%} human prior (six hot-seat lists) + {1 - CBS_W:.0%} P(gone) (full marks at {P_FULL:.0%})"
     ws["A1"].font = Font(bold=True, size=13)
     ws["A2"] = ("P(gone) = the model's odds he is not the school's coach next season (fired, retired or stepped down), fit on 2014-25: "
-                "losses and scoring margin so far, tenure, last season vs the program's ten-year standard, preseason rank. CBS* = not on CBS's August list "
-                f"(carries {CBS_DEFAULT}). Buyout = what the school owes to fire him now; * = estimated from reported terms, blank = undisclosed "
+                "losses and scoring margin so far, tenure, last season vs the program's ten-year standard, preseason rank. Human prior = mean of the lists that name him "
+                "(CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat weekly), a list that does not counting a quarter-vote at 1.0; * = no list names him. Buyout = what the school owes to fire him now; * = estimated from reported terms, blank = undisclosed "
                 f"(researched {BUYOUT_DATE}). Backtest: internal/HOT_SEAT_STUDY_2026.md.")
-    hdr = ["Rank", "Coach", "School", "Tenure", "Record", "CBS", "CBS est.", "P(gone)", "Buyout", "Buyout est.", "Buyout note",
+    hdr = ["Rank", "Coach", "School", "Tenure", "Record", "Human prior", "Lists", "P(gone)", "Buyout", "Buyout est.", "Buyout note",
            "Machine rating", "Rating vs July", "Machine rank", "Proj. wins", "Proj. 10th-90th", "P(bowl)", "Score", "Last result", "Season results"]
     for j, h in enumerate(hdr, 1):
         c = ws.cell(row=4, column=j, value=h); c.font = Font(bold=True, color="FFFFFF"); c.fill = PatternFill("solid", fgColor="1F3864")
     for i, r in enumerate(rows, 5):
-        vals = [i - 4, r["coach"], r["team"], r.get("tenure", ""), r.get("record", ""), r["cbs"], "*" if r.get("cbs_est") else "",
+        vals = [i - 4, r["coach"], r["team"], r.get("tenure", ""), r.get("record", ""), r["cbs"], r.get("lists", ""),
                 r.get("p_gone"), (r.get("buyout") or "").replace("—", ""), "*" if r.get("buyout_est") else "", r.get("buyout_note", ""),
                 r.get("rating"), r.get("delta"), r.get("machine_rank"), r.get("proj"), f"{r.get('p10')}-{r.get('p90')}", r.get("pbowl"),
                 r["score"], (r.get("results") or [""])[-1], "; ".join(r.get("results") or [])]

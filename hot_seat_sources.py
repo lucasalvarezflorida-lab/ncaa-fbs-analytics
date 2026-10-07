@@ -103,6 +103,20 @@ def composite(coaches, include_midseason=False):
     return out
 
 
+W_MISSING = 0.25   # a list that does not name him counts as a quarter-vote at the floor
+
+
+def human_prior(coaches, include_midseason=True):
+    """ON AIR (Lucas 10/6, variant C): {school: (prior on the 0-5 scale, lists naming him, lists)} - the mean of the
+    lists that name him, each list that does not counting W_MISSING of a vote at the floor."""
+    lists = validate(dict(PRESEASON, **(MIDSEASON if include_midseason else {})), coaches)
+    n = len(lists); out = {}
+    for school in coaches:
+        v = [d[school] for d in lists.values() if school in d]; k = len(v)
+        out[school] = ((sum(v) + FLOOR * (n - k) * W_MISSING) / (k + (n - k) * W_MISSING) if k else FLOOR, k, n)
+    return out
+
+
 if __name__ == "__main__":
     from refresh_all import load_env_key
     load_env_key()

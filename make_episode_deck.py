@@ -1783,12 +1783,12 @@ if BOARDS:
         f"EPISODE {EPISODE} · WEEK {WEEK} · THE SEAT BOARD", 14, ORANGE, bold=True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "Hot Seat Top 10", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "40% CBS rating + 60% the machine's odds he is gone by next season", 13, PALE, bold=True)
+        "40% what six hot-seat lists say + 60% the machine's odds he is gone by next season", 13, PALE, bold=True)
     TOP, RH = 2.08, 0.4
     R = PP_ALIGN.RIGHT
     _hdr(s, 1.75, 2.8, TOP - 0.25, "COACH · SCHOOL")
     _hdr(s, 4.6, 1.5, TOP - 0.25, "TENURE")
-    _hdr(s, 6.15, 0.55, TOP - 0.25, "CBS", R)
+    _hdr(s, 6.15, 0.55, TOP - 0.25, "LISTS", R)
     _hdr(s, 6.75, 0.55, TOP - 0.25, "RECORD", R)
     _hdr(s, 7.35, 0.7, TOP - 0.25, "P(GONE)", R)
     _hdr(s, 8.1, 0.95, TOP - 0.25, "BUYOUT", R)
@@ -1824,8 +1824,8 @@ if BOARDS:
         "Next three: " + " · ".join(f"{x['coach']} {x['score']:.0f}" for x in _nxt),
         11, WHITE, bold=True)
     txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
-        "P(GONE) = odds he is not the coach next season, from 2014–25 departures · BUYOUT = what the school owes to fire him now; "
-        "* = estimated from reported terms, — = undisclosed · CBS* = not on CBS's August list", 10.5, PALE)
+        "LISTS = six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat), 0–5; * = none names him · P(GONE) = odds he is gone next season, from 2014–25 · "
+        "BUYOUT = what the school owes to fire him now; * = estimated, — = undisclosed", 10.5, PALE)
 
     # -- Heisman --
     s = blank(NAVY)

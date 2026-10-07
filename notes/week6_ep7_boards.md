@@ -168,75 +168,76 @@ placeholders until his deck updates. Betting-line context stays in the internal 
   - Michael Hawkins Jr, QB, West Virginia (unchanged) · Gio Lopez, QB, Wake Forest (up from unranked) · Lincoln Kienholz, QB, Louisville (up from unranked) · Connor Weigman, QB, Houston (up from unranked) · Kamario Taylor, QB, Mississippi State (unchanged)
   - None of his five is in the machine's top eight; Lopez is 11th on the vote-model board (19.0 points a game, Wake Forest 8.0 projected wins), Taylor fell from +480 to +3200 at DraftKings after Alabama
 
-- **Hot Seat (machine)** — NEW RULE (Sun Oct 4): 40 × (CBS ÷ 5) + 60 × the machine's odds the coach is gone by next season (50% or more = full marks); CBS frozen 2026-08-29
+- **Hot Seat (machine)** — NEW RULE (Oct 4–6): 40 × (what six hot-seat lists say, 0–5) + 60 × the machine's odds the coach is gone by next season (50% or more = full marks)
   - What changed and why — say it once
-    - The old board was 60% a CBS rating from August and only covered the 32 coaches CBS or our prep listed. Six weeks in, the season has to count for more
+    - The old board was 60% one CBS writer's rating from August and only covered the 32 coaches CBS or our prep listed. Six weeks in, the season has to count for more — and one writer is one writer
+    - The human half is now six lists, not one: CBS (Aug 29), ESPN's tiers, SportsGrid's top 20, 2 Stripes, The Eh Gap, and Coaches Hot Seat's weekly ranking (the October read, re-pulled every week). Each is put on CBS's 0–5 scale and averaged; a list that does not name a coach counts a quarter-vote at 1.0. Nobody can backtest a hot-seat list — this is six readers instead of one, not a measured gain
     - The machine half is now a model of who was actually gone the next year, 2014–25 (fired, retired or stepped down; coaches who left for another job are not counted): tenure, last season against the program's ten-year standard, and this season's record and scoring margin
     - Backtest, after five weeks of a season: the preseason picture alone scored 0.62, the five weeks alone 0.68, both together 0.70 (0.50 is a coin flip). Both together put 20 of the 89 departures of 2022–25 in the season's top ten — it is a modest predictor, and it knows nothing about buyouts or boosters
-    - Every FBS coach is scored now; a coach CBS did not list carries a 1.5 (starred)
-  - What it did to the board: Swinney up, Norvell off it, and four coaches CBS never rated are in the top ten (starred)
-    - The model is 40% CBS from August + 60% a record pattern: losses and scoring margin so far, tenure, and last season against the program's own ten-year standard. It measures 'gone by next season', and it cannot tell fired from stepped down
+    - Every FBS coach is scored now; a coach no list names carries a 1.0 (starred) — Vincent and Helton are the cases: 0–5 and 1–4, and not one of the six lists has written about them
+  - What it did to the board: O'Brien and Walden to the top, Vincent down to sixth (no list has written about him), Norvell off it
+    - The model is 40% six hot-seat lists + 60% a record pattern: losses and scoring margin so far, tenure, and last season against the program's own ten-year standard. It measures 'gone by next season', and it cannot tell fired from stepped down
 
   - **The ten, and why each is on the seat**
-  - **1. Bryant Vincent (UL Monroe) 84.0** — 0–5, 58% gone, CBS 3.0*, buyout —
-    - This season: L 13-62 at Mississippi State; L 20-26 at UAB; L 35-38 vs SE Louisiana; L 17-45 vs Florida Atlantic; L 35-52 at South Alabama
-    - The record: 0–5, 8–21 in his tenure (5–7, then 3–9, then this). Losing by 18 a game — the three worst beatings are 62–13 at Mississippi State, 45–17 to Florida Atlantic and 52–35 at South Alabama
-    - What the model sees: the worst record pattern in FBS this year, at a program whose ten-year standard is 31% wins — it is not asking for much, and he is under it. 58% to be gone, the only coach past even money
-    - What is unusual: he was also the interim athletic director last year, at a department whose president cut $6–9M from a budget that was already the lowest in FBS. The money to fire him is small (salary reported around $750K, buyout undisclosed) — the question is whether anyone there is in a position to do it
-    - What saves him: the budget. ULM may not be able to afford a search, and a 0–5 team with no money sometimes keeps the coach by default
-  - **2. Bill O'Brien (Boston College) 80.2** — 2–3, 44% gone, CBS 3.5, buyout $8–25M*
+  - **1. Bill O'Brien (Boston College) 81.0** — 2–3, 44% gone, lists 3.6 (6/6), buyout $8–25M* · was No. 8 under the old rule
     - This season: L 15-34 at Cincinnati; W 28-21 vs Rutgers; W 22-16 vs Maine; L 14-21 vs Virginia Tech; L 16-25 at SMU
     - The record: 7–6 and a bowl in year one, then 2–10 with a ten-game losing streak — BC's worst season since 2012 — and now 2–3 with losses to Cincinnati by 19, Virginia Tech and SMU
     - What the model sees: last year's 17% is the lowest of anyone on the board against a program that wins 47% over ten years; this year's margin is −4 a game. 43% to be gone
     - The December letter: the athletic director told fans in writing that O'Brien is 'the right man' and put more money behind the program, including a $50M donor challenge. That is the strongest public backing anyone on this board has — and it was written before a 2–3 start
     - The money: BC is private and publishes nothing. The buyout guesses run from $8M to $25M, so say 'undisclosed'. The Jason Candle (UConn) name has already been floated by ESPN for this job
-  - **3. Deion Sanders (Colorado) 76.1** — 2–3, 43% gone, CBS 3.1, buyout ~$25M*
-    - This season: W 14-13 at Georgia Tech; W 52-21 vs Weber State; L 7-41 at Northwestern; L 13-23 at Baylor; L 7-29 vs Texas Tech
-    - The record: 16–21 in four seasons — 4–8, 9–4, 3–9, and now 2–3 with three straight losses by 41 (Northwestern), 10 (Baylor) and 22 (Texas Tech). The 9–4 was the year with Travis Hunter and Shedeur Sanders; everything since has been under .500
-    - What the model sees: 25% last year against a 44% program, −7 a game this year. 43% to be gone — a record pattern, nothing more
-    - Why this one is different: he rebuilt the staff this offseason (new coordinators on both sides) and brought in 42 transfers, and the offense is still 122nd of 138 in points added per play. And the money runs the other way: firing him costs the school something like $25M (an estimate — the 75% term is from his first contract), while leaving costs him $10M, and nothing if he simply retires
-    - What that means: this is the seat where 'steps aside' is more likely than 'fired'. He was linked to NFL jobs before he came back for year three; the exit door is his, not the school's
-  - **4. Mike Locksley (Maryland) 75.3** — 2–3, 30% gone, CBS 4.9, buyout $9.2M
-    - This season: W 62-0 vs Hampton; W 38-14 at UConn; L 26-35 vs Virginia Tech; L 3-54 vs UCLA; L 23-48 at Nebraska
-    - The record: 37–49 in eight years, 4–8 the last two, now 2–3 with 54–3 to UCLA and 48–23 at Nebraska. The 8–5 seasons in 2022 and 2023 triggered the automatic extensions that keep him under contract through 2028
-    - What the model sees: 33% last year, a 43% program — he is only a little under his own program's standard, and this year's margin is −2 a game because of 62–0 over Hampton. 30% to be gone
-    - Why CBS had him at 4.9 in August and the model has him lower: CBS was grading the last two seasons; the model grades this one, and 2–3 with a soft schedule is a 30% number, not a 50% one. That is why he fell from No. 2 to No. 4 when the rule changed
-    - The money: $9.2M to fire him this year — the lowest buyout in the Big Ten. Maryland kept him last December and gave him more money for players; the AD said so publicly. Cheap to fire, publicly backed — those two facts pull in opposite directions
-  - **5. Scotty Walden (UTEP) 72.0** — 1–4, 52% gone, CBS 1.5*, buyout —
+  - **2. Scotty Walden (UTEP) 80.8** — 1–4, 52% gone, lists 2.6 (3/6), buyout — · not on the old board
     - This season: L 0-51 at Oklahoma; W 51-10 vs Texas Southern; L 17-52 at Michigan; L 7-33 vs Oregon State; L 7-61 at New Mexico
     - The record: 5–19 at UTEP coming into the year (3–9, 2–10), 6–23 now after a 1–4 start, losing by 19 a game; 61–7 at New Mexico and 51–0 at Oklahoma this year
     - What the model sees: 17% last year at a program that wins 25% over ten years — the lowest bar on the board, and he is under it. 52% to be gone
     - Why he was not on the old board: CBS never rated him in August, so he carries our 1.5 default (starred). The old rule needed a CBS number to exist; the new one scores everybody
     - The money: salary $801K; buyout undisclosed. He offered to take less money this offseason to fund players and the talks did not get done — a coach negotiating down is not a coach the school is desperate to keep, or one it is desperate to pay off
-  - **6. Shane Beamer (South Carolina) 70.1** — 2–3, 30% gone, CBS 4.3, buyout ~$21M*
+  - **3. Deion Sanders (Colorado) 74.5** — 2–3, 43% gone, lists 2.9 (6/6), buyout ~$25M* · was No. 11 under the old rule
+    - This season: W 14-13 at Georgia Tech; W 52-21 vs Weber State; L 7-41 at Northwestern; L 13-23 at Baylor; L 7-29 vs Texas Tech
+    - The record: 16–21 in four seasons — 4–8, 9–4, 3–9, and now 2–3 with three straight losses by 41 (Northwestern), 10 (Baylor) and 22 (Texas Tech). The 9–4 was the year with Travis Hunter and Shedeur Sanders; everything since has been under .500
+    - What the model sees: 25% last year against a 44% program, −7 a game this year. 43% to be gone — a record pattern, nothing more
+    - Why this one is different: he rebuilt the staff this offseason (new coordinators on both sides) and brought in 42 transfers, and the offense is still 122nd of 138 in points added per play. And the money runs the other way: firing him costs the school something like $25M (an estimate — the 75% term is from his first contract), while leaving costs him $10M, and nothing if he simply retires
+    - What that means: this is the seat where 'steps aside' is more likely than 'fired'. He was linked to NFL jobs before he came back for year three; the exit door is his, not the school's
+  - **4. Mike Locksley (Maryland) 72.9** — 2–3, 30% gone, lists 4.6 (6/6), buyout $9.2M · was No. 2 under the old rule
+    - This season: W 62-0 vs Hampton; W 38-14 at UConn; L 26-35 vs Virginia Tech; L 3-54 vs UCLA; L 23-48 at Nebraska
+    - The record: 37–49 in eight years, 4–8 the last two, now 2–3 with 54–3 to UCLA and 48–23 at Nebraska. The 8–5 seasons in 2022 and 2023 triggered the automatic extensions that keep him under contract through 2028
+    - What the model sees: 33% last year, a 43% program — he is only a little under his own program's standard, and this year's margin is −2 a game because of 62–0 over Hampton. 30% to be gone
+    - Why CBS had him at 4.9 in August and the model has him lower: CBS was grading the last two seasons; the model grades this one, and 2–3 with a soft schedule is a 30% number, not a 50% one. That is why he fell from No. 2 to No. 4 when the rule changed
+    - The money: $9.2M to fire him this year — the lowest buyout in the Big Ten. Maryland kept him last December and gave him more money for players; the AD said so publicly. Cheap to fire, publicly backed — those two facts pull in opposite directions
+  - **5. Derek Mason (Middle Tennessee) 70.8** — 2–3, 34% gone, lists 3.7 (5/6), buyout ~$1M* · was No. 7 under the old rule
+    - This season: W 38-14 vs Murray State; L 26-28 at Marshall; W 27-20 vs Nevada; L 13-23 at Jacksonville State; L 0-55 at Kansas
+    - The record: 6–18 at Middle Tennessee coming in (3–9, 3–9), 8–21 now at 2–3, with 55–0 at Kansas the worst loss anyone on the board has taken this year
+    - What the model sees: 25% last year, a 44% program, −3 a game this year. 34% to be gone
+    - The money is not the obstacle: $925K a year through December 2028, and the school owes half of what is left — about $1M. This is one of the few seats on the list where the decision costs almost nothing
+  - **6. Bryant Vincent (UL Monroe) 68.0** — 0–5, 58% gone, lists 1.0* (0/6), buyout — · was No. 5 under the old rule
+    - This season: L 13-62 at Mississippi State; L 20-26 at UAB; L 35-38 vs SE Louisiana; L 17-45 vs Florida Atlantic; L 35-52 at South Alabama
+    - The record: 0–5, 8–21 in his tenure (5–7, then 3–9, then this). Losing by 18 a game — the three worst beatings are 62–13 at Mississippi State, 45–17 to Florida Atlantic and 52–35 at South Alabama
+    - What the model sees: the worst record pattern in FBS this year, at a program whose ten-year standard is 31% wins — it is not asking for much, and he is under it. 58% to be gone, the only coach past even money
+    - What is unusual: he was also the interim athletic director last year, at a department whose president cut $6–9M from a budget that was already the lowest in FBS. The money to fire him is small (salary reported around $750K, buyout undisclosed) — the question is whether anyone there is in a position to do it
+    - What saves him: the budget. ULM may not be able to afford a search, and a 0–5 team with no money sometimes keeps the coach by default
+  - **7. Shane Beamer (South Carolina) 67.7** — 2–3, 30% gone, lists 4.0 (6/6), buyout ~$21M* · was No. 4 under the old rule
     - This season: W 57-0 vs Kent State; W 45-9 vs Towson; L 34-41 vs Mississippi State; L 18-49 at Alabama; L 34-35 vs Kentucky
     - The record: 33–30 in six seasons — 9–4 in 2024, then 4–8, now 2–3 with a 49–18 loss at Alabama and a 35–34 home loss to Kentucky
     - What the model sees: 33% last year against a 49% program — the biggest fall from a program's own standard on this board — but the margin this year is +6 a game because of 57–0 and 45–9 openers. 30% to be gone
     - What protects him: the January 2025 extension through 2030 at $8.15M a year. Our estimate is ~$21M to fire him (65% of what is left); CBS reported the extension raised his buyout by nearly $20M, which is why he survived 4–8 last year
     - The AD said last winter he returns in 2026; the Kentucky loss by one is the kind of result that keeps the number from collapsing, and the kind that turns a fan base
-  - **7. Derek Mason (Middle Tennessee) 70.0** — 2–3, 34% gone, CBS 3.6, buyout ~$1M*
-    - This season: W 38-14 vs Murray State; L 26-28 at Marshall; W 27-20 vs Nevada; L 13-23 at Jacksonville State; L 0-55 at Kansas
-    - The record: 6–18 at Middle Tennessee coming in (3–9, 3–9), 8–21 now at 2–3, with 55–0 at Kansas the worst loss anyone on the board has taken this year
-    - What the model sees: 25% last year, a 44% program, −3 a game this year. 34% to be gone
-    - The money is not the obstacle: $925K a year through December 2028, and the school owes half of what is left — about $1M. This is one of the few seats on the list where the decision costs almost nothing
-  - **8. Jay Sawvel (Wyoming) 68.2** — 2–3, 37% gone, CBS 3.0*, buyout ~$2M*
-    - This season: L 13-35 at Colorado State; W 21-13 vs Northern Colorado; L 10-24 at Central Michigan; W 27-10 vs Hawai'i; L 0-28 at North Dakota State
-    - The record: 7–17 in three seasons after inheriting a 9–4 team from Craig Bohl (3–9, 4–8, now 2–3), shut out 28–0 at North Dakota State and beaten 35–13 at Colorado State
-    - What the model sees: 33% last year at a program that wins 50% over ten years — that gap is the second-biggest on the board, and the margin is −8 a game. 37% to be gone
-    - Why he jumped from No. 27 to No. 8: CBS never rated him, so the old rule had him on our prep estimate only; the new rule scores the season. He also took a $125K pay cut last December so the money could go to revenue sharing
-    - The money: $1.1M this year, $1.25M in 2027 and 2028; the school owes 70–80% of what is left — around $2M. The AD said after last season that he returns for year three, and set no public win total
-  - **9. Dabo Swinney (Clemson) 65.8** — 3–2, 34% gone, CBS 3.1, buyout $57M
+  - **8. Greg Schiano (Rutgers) 63.9** — 1–4, 35% gone, lists 2.8 (1/6), buyout $18.5M · was No. 9 under the old rule
+    - This season: L 21-37 vs Massachusetts; L 21-28 at Boston College; L 35-42 vs USC; W 58-7 vs Howard; L 15-47 vs Indiana
+    - The record: 31–41 in the second stint, 7–6, 7–6, 5–7, and now 1–4 — with the 37–21 home loss to Massachusetts, the kind of result that moves this model more than a loss to Indiana does
+    - What the model sees: 42% last year at a program that wins 33% over ten years — he is above Rutgers' own standard, which is why he is only 35% to be gone despite 1–4
+    - The money: the 2023 extension runs through 2029 and Rutgers owes 76.85% of what is left — about $18.5M — plus a $500K raise due after this season. That is a lot for a 1–4 team
+  - **9. Dabo Swinney (Clemson) 62.6** — 3–2, 34% gone, lists 2.7 (4/6), buyout $57M · was No. 6 under the old rule
     - This season: L 10-51 at LSU; W 22-7 vs Georgia Southern; W 28-20 vs North Carolina; W 24-10 at California; L 13-41 vs Miami
     - The record: 186–53 and two national titles, but 7–6 last year and now 3–2 with the two losses by 41 (at LSU) and 28 (Miami)
     - What the model sees: Clemson's ten-year standard is 81% wins, the highest on the board by a mile; 54% last year is 27 points under it, and the margin is −5 a game. 34% to be gone — the only coach in the top ten with a winning record
     - The money: $57M to fire him in 2026 (it drops to the remaining salary from 2027, through 2031) and no offset if he takes another job. Nobody writes that check for a 7–6 coach with two rings
     - What the number is really measuring: not 'fired' but 'not here next year'. The model cannot tell a dismissal from a resignation, and for Swinney the second is the realistic path — the contract makes him un-fireable, and he is the only person who can decide this one
-  - **10. Greg Schiano (Rutgers) 65.5** — 1–4, 35% gone, CBS 3.0*, buyout $18.5M
-    - This season: L 21-37 vs Massachusetts; L 21-28 at Boston College; L 35-42 vs USC; W 58-7 vs Howard; L 15-47 vs Indiana
-    - The record: 31–41 in the second stint, 7–6, 7–6, 5–7, and now 1–4 — with the 37–21 home loss to Massachusetts, the kind of result that moves this model more than a loss to Indiana does
-    - What the model sees: 42% last year at a program that wins 33% over ten years — he is above Rutgers' own standard, which is why he is only 35% to be gone despite 1–4
-    - The money: the 2023 extension runs through 2029 and Rutgers owes 76.85% of what is left — about $18.5M — plus a $500K raise due after this season. That is a lot for a 1–4 team
-  - Next three: Joe Moorhead (Akron) 63.7, 1–4, buyout — · Tyson Helton (Western Kentucky) 63.3, 1–4, buyout — · Chris Creighton (Eastern Michigan) 61.2, 3–3, buyout —
+  - **10. Jay Sawvel (Wyoming) 61.8** — 2–3, 37% gone, lists 2.2 (2/6), buyout ~$2M* · was No. 27 under the old rule
+    - This season: L 13-35 at Colorado State; W 21-13 vs Northern Colorado; L 10-24 at Central Michigan; W 27-10 vs Hawai'i; L 0-28 at North Dakota State
+    - The record: 7–17 in three seasons after inheriting a 9–4 team from Craig Bohl (3–9, 4–8, now 2–3), shut out 28–0 at North Dakota State and beaten 35–13 at Colorado State
+    - What the model sees: 33% last year at a program that wins 50% over ten years — that gap is the second-biggest on the board, and the margin is −8 a game. 37% to be gone
+    - Why he jumped from No. 27 to No. 8: CBS never rated him, so the old rule had him on our prep estimate only; the new rule scores the season. He also took a $125K pay cut last December so the money could go to revenue sharing
+    - The money: $1.1M this year, $1.25M in 2027 and 2028; the school owes 70–80% of what is left — around $2M. The AD said after last season that he returns for year three, and set no public win total
+  - Next three: Chris Creighton (Eastern Michigan) 60.4, 3–3, buyout — · Tyson Helton (Western Kentucky) 59.3, 1–4, buyout — · Mike Norvell (Florida State) 58.3, 3–2, buyout —
     - Tyson Helton (Western Kentucky) is the surprise of the three: 8–5, 8–6, 9–4 the last three years and 1–4 now, losing by 18 a game. Three straight winning seasons protect him on the tenure terms; one more month like this and they stop
 
   - Why Norvell is off the list — the on-air version
@@ -244,15 +245,10 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - Our old board was 60% that August rating. So he sat at No. 1 or No. 2 for five weeks whatever Florida State did on Saturdays
     - Since then: 3–2, and the two losses are to SMU by 3 and at Alabama by 14 — the team is scoring 35 a game in its wins and just beat Virginia 38–7. The machine has Florida State at No. 20, up 3.8 points since July, one of the bigger climbs on the old hot seat list
     - The new board asks a different question: not 'how hot was the seat in August' but 'how likely is he gone by next season, given what has happened'. On that question, a coach winning at a 50-50 program after two bad years is a 15% number, not a 50% one. That drops him from No. 2 to No. 16
+    - The six lists still have him at 5.0 — every one of them names him first or second. The human half is doing all it can for him; it is the machine half that moved
     - Say it plainly: nothing about Norvell changed except the results, and the results are what the board scores now. If Florida State loses three straight, he comes back
     - The caveat: Florida State's schedule so far is New Mexico State, SMU, Alabama, Central Arkansas, Virginia. The model counts wins and margins, not who they came against beyond the machine's rating. Miami and Clemson are still ahead
-  - Buyout legend: what the school owes to fire him now; * = estimated from reported contract terms, — = undisclosed; figures researched Tue 10/6, sources in the internal folder
-
-- **Hot Seat (Corey's)** — his ten, read Tue 10/6
-  - Shane Beamer (South Carolina) · Sonny Dykes (TCU) · Lance Leipold (Kansas) · Fran Brown (Syracuse) · Brent Key (Georgia Tech) · Deion Sanders (Colorado) · G.J. Kinne (Texas State) · Mike Locksley (Maryland) · Jeff Monken (Army) · Bill O'Brien (Boston College)
-  - On both lists: Beamer, Sanders, Locksley, O'Brien
-  - His not ours: Dykes, Leipold, Brown, Key, Kinne, Monken — Kinne and Monken are on our candidate board, not our hot seat
-  - Ours not his: Vincent (our 1), Walden, Mason, Sawvel, Swinney, Schiano
+  - Legend: lists = the six-list human prior, 0–5, with how many of the six name him (* = none); buyout = what the school owes to fire him now, * = estimated from reported contract terms, — = undisclosed (researched Tue 10/6)
 
 - **Superdog picks** (lines as of 2026-10-04T15:03:58+00:00 — re-read at the freeze)
   - Machine Giant Killer: South Carolina +14.5 at Florida (#8) — exp 8.82, machine -5.4
