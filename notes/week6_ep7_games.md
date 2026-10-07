@@ -170,6 +170,10 @@ context is kept out of this file on purpose - it lives in the internal folder.
 - **UCLA at Oregon — Sat Oct 10, 3:30 PM ET, Autzen Stadium · UCLA · Oregon (machine #32 at #11)**
   - Why it matters: The biggest climber on the board (0.5 in July, 9.9 now) at an Oregon team 8.3 below July — 2 of it the quarterback
   - Why the number: Both ratings are still half July prior, and the machine takes 2 off Oregon with Moore out — Oregon by 9.6 is the gap between July and September, minus the quarterback
+    - What 'half July prior' means: the machine starts every team at ESPN's July rating and treats it as worth about three games of evidence; each game played pulls the number toward what happened. Oregon has three rated games, so its number is half July and half results; UCLA has four, so roughly 43% July and 57% results
+    - July said Oregon 25.3, UCLA 0.5 — Oregon by 25. The games alone say Oregon about 12.7 and UCLA about 17.0 — UCLA by 4. The machine's 9.6 is the blend of those two stories, plus 2.5 for Autzen, minus 2 for the quarterback
+    - Say it: 'Oregon's number is half what ESPN thought in July and half what we've seen since. On what we've seen since, UCLA is the better team. The machine still has Oregon because July hasn't worn off yet, and because Autzen is worth 2.5'
+    - The honest part: this is the one game on the card where the pick depends on the prior. If UCLA is what September says, the machine is on the wrong side and slides toward UCLA every week until July washes out, around game six or seven
   
   - The read
     - UCLA is 4–0 and the machine's biggest climber of the season: 0.5 in July, 9.9 now (No. 32). It runs for 7.0 a carry — Knight 49 for 445 and 9 touchdowns — and won 54–3 at Maryland
