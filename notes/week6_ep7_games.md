@@ -253,6 +253,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Oregon is 3–1 and has fallen 6.3 points since July to No. 9 at 19.0; it lost at Oklahoma State 39–31 allowing 40 carries for 237, then won 41–27 at USC
     - The game is UCLA's run game against the Oregon front that Oklahoma State ran through — and whether UCLA's secondary, which gave up 13.9 a throw to Purdue, can live with Moore
   - The number: Oregon −11.6, 77% · Call Oregon 36–24
+    - Moore watch (say this on air): Moore practiced Monday in pads but is not cleared as of Tuesday; the Big Ten's first injury report is due 8 PM ET Wednesday, after we record. This number is with Moore. If he is out and Raiola starts, the machine takes 2 points off Oregon: Oregon −9.6, 73%, call Oregon 34–24. Still Oregon either way; the pick does not flip, the cushion does
     - Honesty: both teams are coming off a bye and both ratings are still moving fast in opposite directions. The machine has seen three rated games for Oregon and four for UCLA; the July prior (Oregon 25.3, UCLA 0.5) is still about half of each number. If UCLA is what September says, this line is too big
     - Pre-mortem — written on recording day from the frozen card
   - UCLA keys
