@@ -323,5 +323,85 @@
    17
   ],
   "shadow_total": 49.0
+ },
+ {
+  "week": 6,
+  "game": "Indiana at Nebraska",
+  "away": "Indiana",
+  "home": "Nebraska",
+  "machine": [
+   28,
+   22
+  ],
+  "man": [
+   31,
+   24
+  ],
+  "final": null,
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+ },
+ {
+  "week": 6,
+  "game": "Texas A&M at Missouri",
+  "away": "Texas A&M",
+  "home": "Missouri",
+  "machine": [
+   26,
+   25
+  ],
+  "man": [
+   27,
+   28
+  ],
+  "final": null,
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+ },
+ {
+  "week": 6,
+  "game": "UCLA at Oregon",
+  "away": "UCLA",
+  "home": "Oregon",
+  "machine": [
+   24,
+   36
+  ],
+  "man": [
+   27,
+   41
+  ],
+  "final": null,
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+ },
+ {
+  "week": 6,
+  "game": "Georgia at Alabama",
+  "away": "Georgia",
+  "home": "Alabama",
+  "machine": [
+   27,
+   30
+  ],
+  "man": [
+   34,
+   35
+  ],
+  "final": null,
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+ },
+ {
+  "week": 6,
+  "game": "USC at Penn State",
+  "away": "USC",
+  "home": "Penn State",
+  "machine": [
+   29,
+   30
+  ],
+  "man": [
+   27,
+   31
+  ],
+  "final": null,
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
  }
 ]

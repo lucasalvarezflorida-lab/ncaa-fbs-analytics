@@ -13,83 +13,6 @@ rates and 10+ rates come from the play-by-play, sacks excluded. "Dropbacks"
 for zero or less; "third-and-long" = third-and-6 or more. Betting-line
 context is kept out of this file on purpose - it lives in the internal folder.
 
-- **Georgia at Alabama — Sat Oct 10, 7:30 PM ET, Bryant-Denny Stadium · Georgia · Alabama (machine #2 at #1)**
-  - Why it matters: The machine's No. 1 and No. 2 play each other — one through four is a coin toss, and two of them are here
-  - Why the number: A tenth of a point separates the ratings, so the whole number is home field — Alabama by 2.6
-  
-  - The read
-    - Georgia is 5–0 and the machine's No. 2 at 27.8; the defense allows 1.9 a carry and 5.7 a throw, and Stockton is 77-of-102 for 10.3 a throw with 13 touchdowns and one pick
-    - Alabama is 5–0 and the machine's new No. 1 at 27.9 after 56–23 at Mississippi State; Russell is 10.7 a throw, 25 explosive passes in 147 dropbacks, and the defense has 8 picks and 14 sacks
-    - The game is Alabama's deep passing game (14-of-20 on deep throws) against the best pass defense it has seen (4-of-15 on deep throws allowed) — and whether Georgia's 6.5 a carry travels against a front allowing 2.5
-  - The number: Alabama −2.6, 57% · Call Alabama 30–27
-    - Honesty: a tenth of a point separates the two ratings; the whole number is home field. Alabama has climbed 7.8 points since July, the biggest move in the top ten, and Florida State threw for 13.0 an attempt on it. Georgia's five wins are by 24 or more but only one was on the road
-    - Pre-mortem — written on recording day from the frozen card
-  - Georgia keys
-    - Run it on a front that has not been run on
-      - Why: Georgia is 164 for 1,065 (6.5 a carry) with 28 runs of 10+; Alabama allows 2.5 a carry and stuffs a quarter of runs — but South Carolina ran 40 times for 216 on it. Something gives
-        - Gunner Stockton: 77-of-102 for 1,049 — 10.3 per attempt; 13 TD, 1 INT
-          - Georgia as a team: 97-of-137 for 1,327 (9.7 an attempt, 13.7 per completion) — the difference is Ryan Puglisi, 17-of-28 for 197
-        - 21 explosive passes in 142 dropbacks (14.8%), 8-of-23 on deep throws; sacked 5 times (3.5%); 1 INT (vs FBS: 9.0 a throw, 5.8 a carry)
-        - Receivers: Craig Dandridge 9 for 177 and 1 TD; Talyn Taylor 12 for 176 and 3 TD; Sacovie White 10 for 135 and 1 TD
-        - Rushing (box): 164 for 1,065 (6.5); 28 runs of 10+ (17.8%), 12.1% stuffed — Nate Frazier 26 for 211 and 5 TD; Dwight Phillips Jr. 20 for 160 and 1 TD; Bo Walker 20 for 134
-        - Third down 29-of-50 (58%); third-and-long 5-of-18; third-and-short 12-of-13; red zone 22 TD in 27 trips (81%)
-      - What Alabama brings:
-        - Passing allowed: 85-of-150 for 1,121 — 7.5 a throw, 13.2 per completion; 21 explosive passes in 164 dropbacks (12.8%), 6-of-16 on deep throws; 8 picks
-        - Sacks 14 in 164 dropbacks (8.5%) — Devan Thompkins 3; Terrance Green 2.5; Caleb Woodson 2
-        - Rushing allowed (box): 159 for 393 (2.5); 12 runs of 10+ against it (8.5%), 24.8% stuffed
-        - Opponents 21-of-67 on third down (31%); 10-of-43 on third-and-long; 7-of-12 on third-and-short; 10 TD allowed in 13 red-zone trips (77%)
-    - Take away the deep ball
-      - Why: Alabama completes 14 of 20 deep throws and 17% of its dropbacks go for 20+; Georgia has allowed 10 explosive passes in 172 dropbacks (5.8%) and 4-of-15 deep. Russell has been sacked 11 times (7.5%) — the rush has a way in
-        - Passing allowed: 99-of-162 for 928 — 5.7 a throw, 9.4 per completion; 10 explosive passes in 172 dropbacks (5.8%), 4-of-15 on deep throws; 4 picks (vs FBS: 6.1 a throw allowed, 2.3 a carry)
-        - Sacks 10 in 172 dropbacks (5.8%) — Raylen Wilson 3; Gabe Harris 2; Justin Williams 2
-        - Rushing allowed (box): 150 for 287 (1.9); 6 runs of 10+ against it (4.5%), 20.1% stuffed
-        - Opponents 27-of-72 on third down (38%); 16-of-49 on third-and-long; 3-of-5 on third-and-short; 8 TD allowed in 11 red-zone trips (73%)
-      - What Alabama brings:
-        - Keelon Russell: 94-of-132 for 1,414 — 10.7 per attempt; 11 TD, 2 INT
-          - Alabama as a team: 96-of-136 for 1,411 (10.4 an attempt, 14.7 per completion) — the difference is Austin Mack, 3-of-4 for 23
-    - First real road test since Week 3
-      - Why: four of five at home; the one trip was 45–17 at Arkansas, where Georgia was sacked three times. The closest game is 24 points, so nothing here has been played in the fourth quarter
-      - Game by game:
-        - wk1 vs Tennessee State (FCS) W 63-3: 25-of-33 for 11.8 a throw, 6 of 20+, sacked 0; ran 27 for 272; allowed 3.8 a throw and 32 for 10
-        - wk2 vs Western Kentucky (FBS) W 70-20: 16-of-25 for 10.4 a throw, 5 of 20+, sacked 0; ran 35 for 234; allowed 3.1 a throw and 37 for 110
-        - wk3 at Arkansas (FBS) W 45-17: 17-of-21 for 10.0 a throw, 3 of 20+, sacked 3; ran 42 for 254; allowed 6.7 a throw and 20 for 17
-        - wk4 vs Oklahoma (FBS) W 41-13: 14-of-26 for 6.7 a throw, 4 of 20+, sacked 1; ran 26 for 129; allowed 7.0 a throw and 35 for 65
-        - wk5 vs Vanderbilt (FBS) W 38-14: 25-of-32 for 9.2 a throw, 3 of 20+, sacked 1; ran 34 for 176; allowed 8.3 a throw and 26 for 85
-    - Reserve: third down — Georgia converts 29 of 50 (58%) and 12 of 13 on third-and-short; Alabama's defense allows 31%
-  - Alabama keys
-    - Russell against the best secondary he has seen
-      - Why: 10.7 a throw, 11 touchdowns, 25 explosive passes; Williams 20 for 376, Brooks 21 for 352. Georgia allows 5.7 a throw and has given up one explosive pass in every 17 dropbacks
-        - Keelon Russell: 94-of-132 for 1,414 — 10.7 per attempt; 11 TD, 2 INT
-          - Alabama as a team: 96-of-136 for 1,411 (10.4 an attempt, 14.7 per completion) — the difference is Austin Mack, 3-of-4 for 23
-        - 25 explosive passes in 147 dropbacks (17.0%), 14-of-20 on deep throws; sacked 11 times (7.5%); 2 INT
-        - Receivers: Ryan Williams 20 for 376 and 4 TD; Lotzeir Brooks 21 for 352 and 1 TD; Rico Scott 16 for 196 and 3 TD
-        - Rushing (box): 192 for 932 (4.9); 31 runs of 10+ (17.3%), 17.9% stuffed — Daniel Hill 51 for 247 and 4 TD; Trae'shawn Brown 42 for 211 and 5 TD; EJ Crowell 26 for 204 and 3 TD
-        - Third down 29-of-57 (51%); third-and-long 15-of-28; third-and-short 5-of-9; red zone 21 TD in 26 trips (81%)
-      - What Georgia brings:
-        - Passing allowed: 99-of-162 for 928 — 5.7 a throw, 9.4 per completion; 10 explosive passes in 172 dropbacks (5.8%), 4-of-15 on deep throws; 4 picks (vs FBS: 6.1 a throw allowed, 2.3 a carry)
-        - Sacks 10 in 172 dropbacks (5.8%) — Raylen Wilson 3; Gabe Harris 2; Justin Williams 2
-        - Rushing allowed (box): 150 for 287 (1.9); 6 runs of 10+ against it (4.5%), 20.1% stuffed
-        - Opponents 27-of-72 on third down (38%); 16-of-49 on third-and-long; 3-of-5 on third-and-short; 8 TD allowed in 11 red-zone trips (73%)
-    - Keep Stockton from playing on schedule
-      - Why: Georgia is 12-of-13 on third-and-short and 58% on third down because it is never behind the sticks; Alabama has 14 sacks (8.5%) and 8 picks, and allows 31% on third down — the defense has to create the long yardage itself
-        - Passing allowed: 85-of-150 for 1,121 — 7.5 a throw, 13.2 per completion; 21 explosive passes in 164 dropbacks (12.8%), 6-of-16 on deep throws; 8 picks
-        - Sacks 14 in 164 dropbacks (8.5%) — Devan Thompkins 3; Terrance Green 2.5; Caleb Woodson 2
-        - Rushing allowed (box): 159 for 393 (2.5); 12 runs of 10+ against it (8.5%), 24.8% stuffed
-        - Opponents 21-of-67 on third down (31%); 10-of-43 on third-and-long; 7-of-12 on third-and-short; 10 TD allowed in 13 red-zone trips (77%)
-      - What Georgia brings:
-        - Gunner Stockton: 77-of-102 for 1,049 — 10.3 per attempt; 13 TD, 1 INT
-          - Georgia as a team: 97-of-137 for 1,327 (9.7 an attempt, 13.7 per completion) — the difference is Ryan Puglisi, 17-of-28 for 197
-    - The defense that showed up in Starkville
-      - Why: Alabama allowed 13.0 a throw to Florida State and 216 rushing yards to South Carolina, then held Mississippi State to 30 carries for 18. Which defense plays decides whether this is a 30–27 game
-      - Game by game:
-        - wk1 vs East Carolina (FBS) W 48-10: 18-of-31 for 8.2 a throw, 4 of 20+, sacked 1; ran 49 for 227; allowed 8.4 a throw and 22 for 2
-        - wk2 at Kentucky (FBS) W 45-17: 16-of-23 for 8.2 a throw, 4 of 20+, sacked 3; ran 40 for 155; allowed 4.7 a throw and 32 for 63
-        - wk3 vs Florida State (FBS) W 50-36: 23-of-31 for 9.7 a throw, 4 of 20+, sacked 1; ran 36 for 247; allowed 13.0 a throw and 35 for 94
-        - wk4 vs South Carolina (FBS) W 49-18: 21-of-27 for 13.5 a throw, 7 of 20+, sacked 2; ran 30 for 124; allowed 5.7 a throw and 40 for 216
-        - wk5 at Mississippi State (FBS) W 56-23: 18-of-24 for 12.7 a throw, 6 of 20+, sacked 4; ran 37 for 179; allowed 6.6 a throw and 30 for 18
-    - Reserve: protection — Russell sacked 11 times in 147 dropbacks (7.5%), four of them at Mississippi State; Georgia's rush is 10 sacks in 172
-  - Corey: PLACEHOLDER
-
 - **Indiana at Nebraska — Sat Oct 10, 12:00 PM ET, Memorial Stadium (Lincoln, NE) · Indiana · Nebraska (machine #8 at #18)**
   - Why it matters: Two unbeatens — Nebraska's five wins came against nobody in the machine's top 50, and Indiana is the first
   - Why the number: Indiana's rating is exactly where July put it; Nebraska's +5.5 is built on a soft schedule — Indiana by 6
@@ -318,6 +241,83 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk3 vs Portland State (FCS) W 84-0: 36-of-44 for 10.3 a throw, 7 of 20+, sacked 2; ran 51 for 273; allowed 5.0 a throw and 17 for 2
         - wk4 at USC (FBS) W 41-27: 27-of-35 for 10.5 a throw, 6 of 20+, sacked 0; ran 33 for 138; allowed 7.8 a throw and 33 for 120
     - Reserve: the red zone — Oregon scores touchdowns on 17 of 20 trips (85%) and allows 6 in 15 (40%)
+  - Corey: PLACEHOLDER
+
+- **Georgia at Alabama — Sat Oct 10, 7:30 PM ET, Bryant-Denny Stadium · Georgia · Alabama (machine #2 at #1)**
+  - Why it matters: The machine's No. 1 and No. 2 play each other — one through four is a coin toss, and two of them are here
+  - Why the number: A tenth of a point separates the ratings, so the whole number is home field — Alabama by 2.6
+  
+  - The read
+    - Georgia is 5–0 and the machine's No. 2 at 27.8; the defense allows 1.9 a carry and 5.7 a throw, and Stockton is 77-of-102 for 10.3 a throw with 13 touchdowns and one pick
+    - Alabama is 5–0 and the machine's new No. 1 at 27.9 after 56–23 at Mississippi State; Russell is 10.7 a throw, 25 explosive passes in 147 dropbacks, and the defense has 8 picks and 14 sacks
+    - The game is Alabama's deep passing game (14-of-20 on deep throws) against the best pass defense it has seen (4-of-15 on deep throws allowed) — and whether Georgia's 6.5 a carry travels against a front allowing 2.5
+  - The number: Alabama −2.6, 57% · Call Alabama 30–27
+    - Honesty: a tenth of a point separates the two ratings; the whole number is home field. Alabama has climbed 7.8 points since July, the biggest move in the top ten, and Florida State threw for 13.0 an attempt on it. Georgia's five wins are by 24 or more but only one was on the road
+    - Pre-mortem — written on recording day from the frozen card
+  - Georgia keys
+    - Run it on a front that has not been run on
+      - Why: Georgia is 164 for 1,065 (6.5 a carry) with 28 runs of 10+; Alabama allows 2.5 a carry and stuffs a quarter of runs — but South Carolina ran 40 times for 216 on it. Something gives
+        - Gunner Stockton: 77-of-102 for 1,049 — 10.3 per attempt; 13 TD, 1 INT
+          - Georgia as a team: 97-of-137 for 1,327 (9.7 an attempt, 13.7 per completion) — the difference is Ryan Puglisi, 17-of-28 for 197
+        - 21 explosive passes in 142 dropbacks (14.8%), 8-of-23 on deep throws; sacked 5 times (3.5%); 1 INT (vs FBS: 9.0 a throw, 5.8 a carry)
+        - Receivers: Craig Dandridge 9 for 177 and 1 TD; Talyn Taylor 12 for 176 and 3 TD; Sacovie White 10 for 135 and 1 TD
+        - Rushing (box): 164 for 1,065 (6.5); 28 runs of 10+ (17.8%), 12.1% stuffed — Nate Frazier 26 for 211 and 5 TD; Dwight Phillips Jr. 20 for 160 and 1 TD; Bo Walker 20 for 134
+        - Third down 29-of-50 (58%); third-and-long 5-of-18; third-and-short 12-of-13; red zone 22 TD in 27 trips (81%)
+      - What Alabama brings:
+        - Passing allowed: 85-of-150 for 1,121 — 7.5 a throw, 13.2 per completion; 21 explosive passes in 164 dropbacks (12.8%), 6-of-16 on deep throws; 8 picks
+        - Sacks 14 in 164 dropbacks (8.5%) — Devan Thompkins 3; Terrance Green 2.5; Caleb Woodson 2
+        - Rushing allowed (box): 159 for 393 (2.5); 12 runs of 10+ against it (8.5%), 24.8% stuffed
+        - Opponents 21-of-67 on third down (31%); 10-of-43 on third-and-long; 7-of-12 on third-and-short; 10 TD allowed in 13 red-zone trips (77%)
+    - Take away the deep ball
+      - Why: Alabama completes 14 of 20 deep throws and 17% of its dropbacks go for 20+; Georgia has allowed 10 explosive passes in 172 dropbacks (5.8%) and 4-of-15 deep. Russell has been sacked 11 times (7.5%) — the rush has a way in
+        - Passing allowed: 99-of-162 for 928 — 5.7 a throw, 9.4 per completion; 10 explosive passes in 172 dropbacks (5.8%), 4-of-15 on deep throws; 4 picks (vs FBS: 6.1 a throw allowed, 2.3 a carry)
+        - Sacks 10 in 172 dropbacks (5.8%) — Raylen Wilson 3; Gabe Harris 2; Justin Williams 2
+        - Rushing allowed (box): 150 for 287 (1.9); 6 runs of 10+ against it (4.5%), 20.1% stuffed
+        - Opponents 27-of-72 on third down (38%); 16-of-49 on third-and-long; 3-of-5 on third-and-short; 8 TD allowed in 11 red-zone trips (73%)
+      - What Alabama brings:
+        - Keelon Russell: 94-of-132 for 1,414 — 10.7 per attempt; 11 TD, 2 INT
+          - Alabama as a team: 96-of-136 for 1,411 (10.4 an attempt, 14.7 per completion) — the difference is Austin Mack, 3-of-4 for 23
+    - First real road test since Week 3
+      - Why: four of five at home; the one trip was 45–17 at Arkansas, where Georgia was sacked three times. The closest game is 24 points, so nothing here has been played in the fourth quarter
+      - Game by game:
+        - wk1 vs Tennessee State (FCS) W 63-3: 25-of-33 for 11.8 a throw, 6 of 20+, sacked 0; ran 27 for 272; allowed 3.8 a throw and 32 for 10
+        - wk2 vs Western Kentucky (FBS) W 70-20: 16-of-25 for 10.4 a throw, 5 of 20+, sacked 0; ran 35 for 234; allowed 3.1 a throw and 37 for 110
+        - wk3 at Arkansas (FBS) W 45-17: 17-of-21 for 10.0 a throw, 3 of 20+, sacked 3; ran 42 for 254; allowed 6.7 a throw and 20 for 17
+        - wk4 vs Oklahoma (FBS) W 41-13: 14-of-26 for 6.7 a throw, 4 of 20+, sacked 1; ran 26 for 129; allowed 7.0 a throw and 35 for 65
+        - wk5 vs Vanderbilt (FBS) W 38-14: 25-of-32 for 9.2 a throw, 3 of 20+, sacked 1; ran 34 for 176; allowed 8.3 a throw and 26 for 85
+    - Reserve: third down — Georgia converts 29 of 50 (58%) and 12 of 13 on third-and-short; Alabama's defense allows 31%
+  - Alabama keys
+    - Russell against the best secondary he has seen
+      - Why: 10.7 a throw, 11 touchdowns, 25 explosive passes; Williams 20 for 376, Brooks 21 for 352. Georgia allows 5.7 a throw and has given up one explosive pass in every 17 dropbacks
+        - Keelon Russell: 94-of-132 for 1,414 — 10.7 per attempt; 11 TD, 2 INT
+          - Alabama as a team: 96-of-136 for 1,411 (10.4 an attempt, 14.7 per completion) — the difference is Austin Mack, 3-of-4 for 23
+        - 25 explosive passes in 147 dropbacks (17.0%), 14-of-20 on deep throws; sacked 11 times (7.5%); 2 INT
+        - Receivers: Ryan Williams 20 for 376 and 4 TD; Lotzeir Brooks 21 for 352 and 1 TD; Rico Scott 16 for 196 and 3 TD
+        - Rushing (box): 192 for 932 (4.9); 31 runs of 10+ (17.3%), 17.9% stuffed — Daniel Hill 51 for 247 and 4 TD; Trae'shawn Brown 42 for 211 and 5 TD; EJ Crowell 26 for 204 and 3 TD
+        - Third down 29-of-57 (51%); third-and-long 15-of-28; third-and-short 5-of-9; red zone 21 TD in 26 trips (81%)
+      - What Georgia brings:
+        - Passing allowed: 99-of-162 for 928 — 5.7 a throw, 9.4 per completion; 10 explosive passes in 172 dropbacks (5.8%), 4-of-15 on deep throws; 4 picks (vs FBS: 6.1 a throw allowed, 2.3 a carry)
+        - Sacks 10 in 172 dropbacks (5.8%) — Raylen Wilson 3; Gabe Harris 2; Justin Williams 2
+        - Rushing allowed (box): 150 for 287 (1.9); 6 runs of 10+ against it (4.5%), 20.1% stuffed
+        - Opponents 27-of-72 on third down (38%); 16-of-49 on third-and-long; 3-of-5 on third-and-short; 8 TD allowed in 11 red-zone trips (73%)
+    - Keep Stockton from playing on schedule
+      - Why: Georgia is 12-of-13 on third-and-short and 58% on third down because it is never behind the sticks; Alabama has 14 sacks (8.5%) and 8 picks, and allows 31% on third down — the defense has to create the long yardage itself
+        - Passing allowed: 85-of-150 for 1,121 — 7.5 a throw, 13.2 per completion; 21 explosive passes in 164 dropbacks (12.8%), 6-of-16 on deep throws; 8 picks
+        - Sacks 14 in 164 dropbacks (8.5%) — Devan Thompkins 3; Terrance Green 2.5; Caleb Woodson 2
+        - Rushing allowed (box): 159 for 393 (2.5); 12 runs of 10+ against it (8.5%), 24.8% stuffed
+        - Opponents 21-of-67 on third down (31%); 10-of-43 on third-and-long; 7-of-12 on third-and-short; 10 TD allowed in 13 red-zone trips (77%)
+      - What Georgia brings:
+        - Gunner Stockton: 77-of-102 for 1,049 — 10.3 per attempt; 13 TD, 1 INT
+          - Georgia as a team: 97-of-137 for 1,327 (9.7 an attempt, 13.7 per completion) — the difference is Ryan Puglisi, 17-of-28 for 197
+    - The defense that showed up in Starkville
+      - Why: Alabama allowed 13.0 a throw to Florida State and 216 rushing yards to South Carolina, then held Mississippi State to 30 carries for 18. Which defense plays decides whether this is a 30–27 game
+      - Game by game:
+        - wk1 vs East Carolina (FBS) W 48-10: 18-of-31 for 8.2 a throw, 4 of 20+, sacked 1; ran 49 for 227; allowed 8.4 a throw and 22 for 2
+        - wk2 at Kentucky (FBS) W 45-17: 16-of-23 for 8.2 a throw, 4 of 20+, sacked 3; ran 40 for 155; allowed 4.7 a throw and 32 for 63
+        - wk3 vs Florida State (FBS) W 50-36: 23-of-31 for 9.7 a throw, 4 of 20+, sacked 1; ran 36 for 247; allowed 13.0 a throw and 35 for 94
+        - wk4 vs South Carolina (FBS) W 49-18: 21-of-27 for 13.5 a throw, 7 of 20+, sacked 2; ran 30 for 124; allowed 5.7 a throw and 40 for 216
+        - wk5 at Mississippi State (FBS) W 56-23: 18-of-24 for 12.7 a throw, 6 of 20+, sacked 4; ran 37 for 179; allowed 6.6 a throw and 30 for 18
+    - Reserve: protection — Russell sacked 11 times in 147 dropbacks (7.5%), four of them at Mississippi State; Georgia's rush is 10 sacks in 172
   - Corey: PLACEHOLDER
 
 - **USC at Penn State — Sat Oct 10, 7:30 PM ET, Beaver Stadium · USC · Penn State (machine #19 at #27)**
