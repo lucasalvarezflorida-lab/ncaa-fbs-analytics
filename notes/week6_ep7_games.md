@@ -351,15 +351,17 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - Opponents 18-of-64 on third down (28%); 10-of-39 on third-and-long; 4-of-8 on third-and-short; 6 TD allowed in 12 red-zone trips (50%)
     - Run it the way Northwestern did
       - Why: Penn State allows 4.8 a carry and 24 runs of 10+ after Northwestern's 55 for 413; USC is 4.3 a carry with Miller at 95 for 493. USC ran for 120 and 115 the last two weeks — this is the opening, if the line can take it
+        - USC rushing (box): 216 for 937 (4.3); 31 runs of 10+ (14.8%), 18.1% stuffed — King Miller 95 for 493 and 3 TD; Waymond Jordan 57 for 265 and 2 TD
+        - Penn State rushing allowed (box): 180 for 866 (4.8); 24 runs of 10+ against it (14.2%), 21.3% stuffed — 125 for 453 (3.6) before Northwestern's 55 for 413
+    - The defense has to get a stop
+      - Why: 8.2 a throw allowed, 13 touchdowns allowed in 22 red-zone trips, 30 or more points allowed in three of six games — Louisiana scored 30 and Rutgers 35. Oregon threw for 10.5 an attempt
         - Passing allowed: 105-of-167 for 1,377 — 8.2 a throw, 13.1 per completion; 21 explosive passes in 175 dropbacks (12.0%), 8-of-19 on deep throws; 3 picks
         - Sacks 8 in 175 dropbacks (4.6%) — Kennedy Urlacher 2; Alex Graham 2; Jadyn Ramos 2
         - Rushing allowed (box): 181 for 709 (3.9); 18 runs of 10+ against it (10.8%), 15.7% stuffed
         - Opponents 23-of-62 on third down (37%); 11-of-35 on third-and-long; 7-of-10 on third-and-short; 13 TD allowed in 22 red-zone trips (59%)
-      - What Penn State brings:
+      - What Penn State brings (their offense):
         - Rocco Becht: 83-of-134 for 1,108 — 8.3 per attempt; 10 TD, 3 INT
           - Penn State as a team: 93-of-150 for 1,198 (8.0 an attempt, 12.9 per completion) — the difference is Alex Manske, 9-of-14 for 102
-    - The defense has to get a stop
-      - Why: 8.2 a throw allowed, 13 touchdowns allowed in 22 red-zone trips, 30 or more points allowed in three of six games — Louisiana scored 30 and Rutgers 35. Oregon threw for 10.5 an attempt
       - Game by game:
         - wk1 vs San José State (FBS) W 42-26: 30-of-36 for 9.5 a throw, 4 of 20+, sacked 2; ran 40 for 164; allowed 7.3 a throw and 24 for 102
         - wk1 vs Fresno State (FBS) W 39-0: 27-of-29 for 13.8 a throw, 8 of 20+, sacked 0; ran 37 for 140; allowed 5.1 a throw and 29 for 39
