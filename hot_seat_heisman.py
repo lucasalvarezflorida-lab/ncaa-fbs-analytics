@@ -336,6 +336,12 @@ def main():
                hot_seat=hs, heisman=hb, heisman_non_qb=non, heisman_all=hall, upset_board=ub)
     path = HERE / f"boards_week{a.week}.json"
     json.dump(out, open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    try:
+        from refresh_all import wait_for_unlock
+        wait_for_unlock(HERE / "NCAA_FBS_Teams.xlsm", timeout=60)
+        write_hot_seat_sheet(HERE / "NCAA_FBS_Teams.xlsm", a.week, hs)
+    except Exception as e:       # the workbook may be open in Excel; the board json is already written
+        print("Hot Seat sheet not written:", e)
     print(f"HOT SEAT (40% CBS {CBS_DATE} + 60% P(gone) model, {len(hs)} coaches)")
     for i, r in enumerate(hs[:14], 1):
         est = "*" if r["cbs_est"] else ""
@@ -359,6 +365,45 @@ def main():
               f"CLV {r['clv']}  edge {r['edge']}  side {r['side']}  ML {r['dog_ml']}  O/U {r['ou']}")
     print("  scorecard:", ub["scorecard"])
     print("wrote", path.name)
+
+
+def write_hot_seat_sheet(book, week, rows=None):
+    """'Hot Seat' sheet in the workbook: every FBS coach on the on-air rule (Lucas 10/6: the full report lives in Excel,
+    not on a slide or in OneNote). Same columns as the board plus the buyout note and the season's results."""
+    from pathlib import Path
+    from openpyxl import load_workbook
+    from openpyxl.styles import Font, PatternFill
+    book = Path(book)
+    if rows is None:
+        rows = json.loads((HERE / f"boards_week{week}.json").read_text(encoding="utf-8"))["hot_seat"]
+    wb = load_workbook(book, keep_vba=True)
+    if "Hot Seat" in wb.sheetnames:
+        del wb["Hot Seat"]
+    ws = wb.create_sheet("Hot Seat")
+    ws["A1"] = f"HOT SEAT - every FBS coach - before week {week} - score = {CBS_W:.0%} CBS ({CBS_DATE}) + {1 - CBS_W:.0%} P(gone) (full marks at {P_FULL:.0%})"
+    ws["A1"].font = Font(bold=True, size=13)
+    ws["A2"] = ("P(gone) = the model's odds he is not the school's coach next season (fired, retired or stepped down), fit on 2014-25: "
+                "losses and scoring margin so far, tenure, last season vs the program's ten-year standard, preseason rank. CBS* = not on CBS's August list "
+                f"(carries {CBS_DEFAULT}). Buyout = what the school owes to fire him now; * = estimated from reported terms, blank = undisclosed "
+                f"(researched {BUYOUT_DATE}). Backtest: internal/HOT_SEAT_STUDY_2026.md.")
+    hdr = ["Rank", "Coach", "School", "Tenure", "Record", "CBS", "CBS est.", "P(gone)", "Buyout", "Buyout est.", "Buyout note",
+           "Machine rating", "Rating vs July", "Machine rank", "Proj. wins", "Proj. 10th-90th", "P(bowl)", "Score", "Last result", "Season results"]
+    for j, h in enumerate(hdr, 1):
+        c = ws.cell(row=4, column=j, value=h); c.font = Font(bold=True, color="FFFFFF"); c.fill = PatternFill("solid", fgColor="1F3864")
+    for i, r in enumerate(rows, 5):
+        vals = [i - 4, r["coach"], r["team"], r.get("tenure", ""), r.get("record", ""), r["cbs"], "*" if r.get("cbs_est") else "",
+                r.get("p_gone"), (r.get("buyout") or "").replace("—", ""), "*" if r.get("buyout_est") else "", r.get("buyout_note", ""),
+                r.get("rating"), r.get("delta"), r.get("machine_rank"), r.get("proj"), f"{r.get('p10')}-{r.get('p90')}", r.get("pbowl"),
+                r["score"], (r.get("results") or [""])[-1], "; ".join(r.get("results") or [])]
+        for j, v in enumerate(vals, 1):
+            ws.cell(row=i, column=j, value=v)
+        ws.cell(row=i, column=8).number_format = "0%"; ws.cell(row=i, column=17).number_format = "0%"
+    ws.freeze_panes = "D5"
+    ws.auto_filter.ref = f"A4:T{4 + len(rows)}"
+    for col, w in zip("ABCDEFGHIJKLMNOPQRST", (6, 20, 20, 18, 8, 6, 7, 8, 10, 9, 60, 10, 10, 9, 9, 12, 8, 7, 30, 90)):
+        ws.column_dimensions[col].width = w
+    wb.save(book)
+    print(f"Hot Seat sheet written: {len(rows)} coaches, before week {week}")
 
 
 if __name__ == "__main__":
