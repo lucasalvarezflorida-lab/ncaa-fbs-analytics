@@ -330,15 +330,20 @@
   "away": "Indiana",
   "home": "Nebraska",
   "machine": [
-   28,
-   22
+   27,
+   21
   ],
   "man": [
    31,
    24
   ],
   "final": null,
-  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
+  "machine_shadow": [
+   29,
+   23
+  ],
+  "shadow_total": 52.7
  },
  {
   "week": 6,
@@ -346,15 +351,20 @@
   "away": "Texas A&M",
   "home": "Missouri",
   "machine": [
-   26,
-   25
+   25,
+   24
   ],
   "man": [
    27,
    28
   ],
   "final": null,
-  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
+  "machine_shadow": [
+   25,
+   24
+  ],
+  "shadow_total": 48.9
  },
  {
   "week": 6,
@@ -362,15 +372,20 @@
   "away": "UCLA",
   "home": "Oregon",
   "machine": [
-   24,
-   36
+   23,
+   35
   ],
   "man": [
    27,
    41
   ],
   "final": null,
-  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
+  "machine_shadow": [
+   21,
+   33
+  ],
+  "shadow_total": 53.5
  },
  {
   "week": 6,
@@ -378,15 +393,20 @@
   "away": "Georgia",
   "home": "Alabama",
   "machine": [
-   27,
-   30
+   24,
+   27
   ],
   "man": [
    34,
    35
   ],
   "final": null,
-  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
+  "machine_shadow": [
+   25,
+   28
+  ],
+  "shadow_total": 52.7
  },
  {
   "week": 6,
@@ -394,14 +414,19 @@
   "away": "USC",
   "home": "Penn State",
   "machine": [
-   29,
-   30
+   27,
+   28
   ],
   "man": [
    27,
    31
   ],
   "final": null,
-  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording"
+  "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
+  "machine_shadow": [
+   27,
+   28
+  ],
+  "shadow_total": 55.6
  }
 ]

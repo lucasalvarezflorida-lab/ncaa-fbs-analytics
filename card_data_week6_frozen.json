@@ -2767,13 +2767,13 @@
   {
    "game_id": 401864519,
    "wk": 6,
-   "home": "San José State",
+   "home": "San Jos\u00e9 State",
    "away": "Wyoming",
    "neutral": false,
    "date": "Fri Oct 09, 9:00 PM ET",
    "venue": "CEFCU Stadium",
    "model_margin": 7.1,
-   "model_spread": "San José State -7.1",
+   "model_spread": "San Jos\u00e9 State -7.1",
    "model_p_home": 0.6783,
    "mkt_p_home": 0.675,
    "mkt_src": "ml",
@@ -2795,10 +2795,10 @@
      "away_ml": 205
     }
    },
-   "mkt_spread": "San José State -6",
+   "mkt_spread": "San Jos\u00e9 State -6",
    "ou": 43.5,
    "ou_tail": false,
-   "side": "San José State",
+   "side": "San Jos\u00e9 State",
    "model_p": 0.6782755408718416,
    "mkt_p": 0.6750312469954812,
    "edge_pp": 0.32442938763603824,
@@ -2914,5 +2914,6 @@
    "tier": null,
    "flags": ""
   }
- ]
+ ],
+ "frozen_at": "2026-10-07T23:02:56+00:00"
 }

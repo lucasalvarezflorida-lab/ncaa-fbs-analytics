@@ -21,7 +21,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Indiana is 5–0 and the machine's No. 8 at 23.0; Hoover has 15 touchdowns and no interceptions at 10.3 a throw, and the run game is 6.4 a carry with a 10+ run on one carry in five
     - Nebraska is 5–0 and up 5.5 points since July to No. 18; Colandrea has 13 touchdown passes and 249 rushing yards, and the defense allows 25% on third down and 4 touchdowns in 11 red-zone trips
     - The game is whether Nebraska's defense is real: its five wins are over Ohio, Bowling Green, North Dakota, Michigan State and Maryland, and Indiana is the first team from the machine's top 50 it sees
-  - The number: Indiana −6.2, 65% · Call Indiana 28–22
+  - The number: Indiana −6.2, 65% · Call Indiana 27–21
     - Honesty: Indiana's rating is exactly where it was in July (23.1 to 23.0) — it has done what was expected and no more; Northwestern played it to 29–23. Nebraska's +5.5 is built on a schedule with no ranked team, so the machine is still leaning on the July number for how good Nebraska's opponents were
     - Pre-mortem — written on recording day from the frozen card
   - Indiana keys
@@ -98,7 +98,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Texas A&M is 3–2 and still the machine's No. 10 at 18.0: it lost to Kentucky by 10 and at LSU 35–6, then beat Arkansas 34–7 running 49 times for 231
     - Missouri is 4–1 and the week's biggest riser (No. 31 to No. 17) after 45–17 over Florida; Simmons has 13 touchdowns and no interceptions at 9.3 a throw
     - The game is Missouri's passing game (25 explosive passes in 156 dropbacks) against an A&M defense that gave up 14.0 a throw to Kentucky and 11.1 to LSU
-  - The number: Texas A&M −1.0, 52% · Call Texas A&M 26–25
+  - The number: Texas A&M −1.0, 52% · Call Texas A&M 25–24
     - Honesty: this is the July prior talking. A&M started at 20.0 and has only come down 2.0 despite two losses, because the prior is still worth three games and the Arkansas win held it up; Missouri started at 12.2. On what both have done since September, Missouri has the better case — say that on air
     - Pre-mortem — written on recording day from the frozen card
   - Texas A&M keys
@@ -175,8 +175,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - UCLA is 4–0 and the machine's biggest climber of the season: 0.5 in July, 9.9 now (No. 32). It runs for 7.0 a carry — Knight 49 for 445 and 9 touchdowns — and won 54–3 at Maryland
     - Oregon is 3–1 and has fallen 6.3 points since July to No. 9 at 19.0; it lost at Oklahoma State 39–31 allowing 40 carries for 237, then won 41–27 at USC
     - The game is UCLA's run game against the Oregon front that Oklahoma State ran through — and whether UCLA's secondary, which gave up 13.9 a throw to Purdue, can live with Moore
-  - The number: Oregon −11.6, 77% · Call Oregon 36–24
-    - Moore watch (say this on air): Moore practiced Monday in pads but is not cleared as of Tuesday; the Big Ten's first injury report is due 8 PM ET Wednesday, after we record. This number is with Moore. If he is out and Raiola starts, the machine takes 2 points off Oregon: Oregon −9.6, 73%, call Oregon 34–24. Still Oregon either way; the pick does not flip, the cushion does
+  - The number: Oregon −11.6, 77% · Call Oregon 35–23
+    - Moore watch (say this on air): Moore practiced Monday in pads but is not cleared as of Tuesday; the Big Ten's first injury report is due 8 PM ET Wednesday, after we record. This number is with Moore. If he is out and Raiola starts, the machine takes 2 points off Oregon: Oregon −9.6, 73%, call Oregon 33–23. Still Oregon either way; the pick does not flip, the cushion does
     - Honesty: both teams are coming off a bye and both ratings are still moving fast in opposite directions. The machine has seen three rated games for Oregon and four for UCLA; the July prior (Oregon 25.3, UCLA 0.5) is still about half of each number. If UCLA is what September says, this line is too big
     - Pre-mortem — written on recording day from the frozen card
   - UCLA keys
@@ -251,7 +251,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Georgia is 5–0 and the machine's No. 2 at 27.8; the defense allows 1.9 a carry and 5.7 a throw, and Stockton is 77-of-102 for 10.3 a throw with 13 touchdowns and one pick
     - Alabama is 5–0 and the machine's new No. 1 at 27.9 after 56–23 at Mississippi State; Russell is 10.7 a throw, 25 explosive passes in 147 dropbacks, and the defense has 8 picks and 14 sacks
     - The game is Alabama's deep passing game (14-of-20 on deep throws) against the best pass defense it has seen (4-of-15 on deep throws allowed) — and whether Georgia's 6.5 a carry travels against a front allowing 2.5
-  - The number: Alabama −2.6, 57% · Call Alabama 30–27
+  - The number: Alabama −2.6, 57% · Call Alabama 27–24
     - Honesty: a tenth of a point separates the two ratings; the whole number is home field. Alabama has climbed 7.8 points since July, the biggest move in the top ten, and Florida State threw for 13.0 an attempt on it. Georgia's five wins are by 24 or more but only one was on the road
     - Pre-mortem — written on recording day from the frozen card
   - Georgia keys
@@ -328,7 +328,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - USC is 5–1 and No. 19 at 13.1, down 3.9 since July; Maiava is 131-of-191 for 1,744 and 15 touchdowns, but the defense allows 8.2 a throw and the last two games were a 14-point loss to Oregon and a 25–21 escape against Washington
     - Penn State is 3–2 and out of the machine's Top 25 (No. 27) after losing to Wisconsin and 34–13 at Northwestern, which ran 55 times for 413; the offense was 3.9 and 5.8 a throw in those two games
     - The game is two teams trending down: USC's passing game against the best pass defense by the numbers on the card (4.7 a throw allowed) — and whether USC can run on the front Northwestern just ran over
-  - The number: Penn State −0.9, 53% · Call Penn State 30–29
+  - The number: Penn State −0.9, 53% · Call Penn State 28–27
     - Honesty: a coin flip with home field deciding it. Penn State's pass-defense number was built against Marshall, Temple and Buffalo; its run defense collapsed last week and the machine cannot tell yet whether that was one game. USC's only road game is a 42–35 win at Rutgers
     - Pre-mortem — written on recording day from the frozen card
   - USC keys
