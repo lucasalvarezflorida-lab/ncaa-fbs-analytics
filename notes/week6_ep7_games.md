@@ -14,6 +14,8 @@ for zero or less; "third-and-long" = third-and-6 or more. Betting-line
 context is kept out of this file on purpose - it lives in the internal folder.
 
 - **Georgia at Alabama — Sat Oct 10, 7:30 PM ET, Bryant-Denny Stadium · Georgia · Alabama (machine #2 at #1)**
+  - Why it matters: The machine's No. 1 and No. 2 play each other — one through four is a coin toss, and two of them are here
+  - Why the number: A tenth of a point separates the ratings, so the whole number is home field — Alabama by 2.6
   
   - The read
     - Georgia is 5–0 and the machine's No. 2 at 27.8; the defense allows 1.9 a carry and 5.7 a throw, and Stockton is 77-of-102 for 10.3 a throw with 13 touchdowns and one pick
@@ -89,6 +91,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: PLACEHOLDER
 
 - **Indiana at Nebraska — Sat Oct 10, 12:00 PM ET, Memorial Stadium (Lincoln, NE) · Indiana · Nebraska (machine #8 at #18)**
+  - Why it matters: Two unbeatens — Nebraska's five wins came against nobody in the machine's top 50, and Indiana is the first
+  - Why the number: Indiana's rating is exactly where July put it; Nebraska's +5.5 is built on a soft schedule — Indiana by 6
   
   - The read
     - Indiana is 5–0 and the machine's No. 8 at 23.0; Hoover has 15 touchdowns and no interceptions at 10.3 a throw, and the run game is 6.4 a carry with a 10+ run on one carry in five
@@ -164,6 +168,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: PLACEHOLDER
 
 - **Texas A&M at Missouri — Sat Oct 10, 12:00 PM ET, Memorial Stadium · Texas A&M · Missouri (machine #10 at #17)**
+  - Why it matters: The week's biggest riser hosts the team the machine still has 10th after two losses
+  - Why the number: The July prior is still carrying A&M (20.0 to 18.0 through two losses); on September form Missouri has the better case — A&M by 1, the weakest lean on the card
   
   - The read
     - Texas A&M is 3–2 and still the machine's No. 10 at 18.0: it lost to Kentucky by 10 and at LSU 35–6, then beat Arkansas 34–7 running 49 times for 231
@@ -239,6 +245,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: PLACEHOLDER
 
 - **UCLA at Oregon — Sat Oct 10, 3:30 PM ET, Autzen Stadium · UCLA · Oregon (machine #32 at #9)**
+  - Why it matters: The biggest climber on the board (0.5 in July, 9.9 now) at a top-ten team that has fallen 6.3 since July
+  - Why the number: Both ratings are still half July prior — Oregon by 11.6 is the gap between what July said and what September says
   
   - The read
     - UCLA is 4–0 and the machine's biggest climber of the season: 0.5 in July, 9.9 now (No. 32). It runs for 7.0 a carry — Knight 49 for 445 and 9 touchdowns — and won 54–3 at Maryland
@@ -312,6 +320,8 @@ context is kept out of this file on purpose - it lives in the internal folder.
   - Corey: PLACEHOLDER
 
 - **USC at Penn State — Sat Oct 10, 7:30 PM ET, Beaver Stadium · USC · Penn State (machine #19 at #27)**
+  - Why it matters: Two teams trending down — USC off a 14-point loss, Penn State off a 21-point loss
+  - Why the number: A coin flip where home field is the whole number — Penn State by 0.9, with a run defense that just gave up 413
   
   - The read
     - USC is 5–1 and No. 19 at 13.1, down 3.9 since July; Maiava is 131-of-191 for 1,744 and 15 touchdowns, but the defense allows 8.2 a throw and the last two games were a 14-point loss to Oregon and a 25–21 escape against Washington
