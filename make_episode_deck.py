@@ -1095,6 +1095,8 @@ GAMES = [  # Week 6 — Lucas's card (Sun 10/4), his order until Corey's deck po
         ctx_b=dict(coach="DeBoer, year 3 · Wommack's swarm defense",
                    qb="NEW — Keelon Russell, RS freshman · 10.7 a throw, 11 TD, 2 INT",
                    roster="48% back, 90th nationally · 35% on offense"),
+        matters="The machine's No. 1 and No. 2 play each other — one through four is a coin toss, and two of them are here",
+        because="A tenth of a point separates the ratings, so the whole number is home field — Alabama by 2.6",
         honesty="Machine Alabama −2.6, market Georgia −2.5: five points, and the machine is on the home dog. Alabama has climbed 7.8 points since July, the biggest move in the top ten; Georgia's five wins are by 24 or more but only one was on the road. No position until the freeze.",
         keys_a=["Run it on a front nobody has run on", "Take away the deep ball", "First real road test", "Third down — 58%"],
         keys_b=["Russell against the best secondary yet", "Keep Stockton off schedule", "Which defense shows up", "Protect him — 11 sacks"],
@@ -1116,6 +1118,8 @@ GAMES = [  # Week 6 — Lucas's card (Sun 10/4), his order until Corey's deck po
         ctx_b=dict(coach="Rhule, year 4",
                    qb="NEW — Anthony Colandrea (from UNLV) · 8.0 a throw, 13 TD, 249 rushing",
                    roster="46% of production back · 74% of the receiving"),
+        matters="Two unbeatens — Nebraska's five wins came against nobody in the machine's top 50, and Indiana is the first",
+        because="Indiana's rating is exactly where July put it; Nebraska's +5.5 is built on a soft schedule — Indiana by 6",
         honesty="Machine Indiana −6.2, market −8.5. Indiana's rating is exactly where it was in July; Nebraska is up 5.5 on a schedule with nobody from the machine's top 50, so the machine is still guessing at how good those opponents were.",
         keys_a=["Run it until they stop it — 6.4 a carry", "Rush Colandrea, keep him in", "Pass defense slipped two weeks running", "The red zone — 78%"],
         keys_b=["Colandrea's legs", "Make Hoover throw into coverage", "The schedule finally turns", "Third down — 25% allowed"],
@@ -1137,6 +1141,8 @@ GAMES = [  # Week 6 — Lucas's card (Sun 10/4), his order until Corey's deck po
         ctx_b=dict(coach="Drinkwitz, year 7",
                    qb="NEW — Austin Simmons (from Ole Miss) · 9.3 a throw, 13 TD, 0 INT",
                    roster="42% of production back · 78% of the rushing"),
+        matters="The week's biggest riser hosts the team the machine still has 10th after two losses",
+        because="The July prior is still carrying A&M (20.0 to 18.0 through two losses); on September form Missouri has the better case — A&M by 1, the weakest lean on the card",
         honesty="Machine Texas A&M −1.0, market Missouri −1.5. A&M started at 20.0 in July and has come down only 2.0 with two losses; Missouri started at 12.2. On what both have done since September, Missouri has the better case — the machine's side here is the prior.",
         keys_a=["Run it like the Arkansas game", "Cover Lee and Olugbode", "Which A&M is this", "Third-and-long — 10-of-41"],
         keys_b=["Simmons to Lee and Olugbode, early", "Stop the run, make Reed throw", "Finish drives — 50% in the red zone", "Protect him — 4 sacks allowed"],
@@ -1158,6 +1164,8 @@ GAMES = [  # Week 6 — Lucas's card (Sun 10/4), his order until Corey's deck po
         ctx_b=dict(coach="Lanning, year 5 · both coordinators new",
                    qb="Dante Moore returns · 9.4 a throw, 9 TD, 0 INT",
                    roster="75% back · 13 portal adds · 200 returning starts"),
+        matters="The biggest climber on the board (0.5 in July, 9.9 now) at a top-ten team that has fallen 6.3 since July",
+        because="Both ratings are still half July prior — Oregon by 11.6 is the gap between what July said and what September says",
         honesty="Machine Oregon −11.6, market −12.5: agreement. Both ratings are moving fast in opposite directions and the July prior is still about half of each; if UCLA is what September says, the number is too big. UCLA has not played a team in the machine's top 60.",
         keys_a=["Knight and the run game — 7.0 a carry", "Hold up against Moore", "First ranked opponent", "Third down — 50%"],
         keys_b=["Moore over the top", "Fix the run defense", "Run it better than 3.9", "The red zone — 85%"],
@@ -1179,6 +1187,8 @@ GAMES = [  # Week 6 — Lucas's card (Sun 10/4), his order until Corey's deck po
         ctx_b=dict(coach="NEW — Matt Campbell, year 1 · Iowa State East",
                    qb="NEW — Rocco Becht (from Iowa State) · 8.3 a throw, 10 TD, 3 INT",
                    roster="7 of 35 rotation players back · ~24 Cyclones followed Campbell"),
+        matters="Two teams trending down — USC off a 14-point loss, Penn State off a 21-point loss",
+        because="A coin flip where home field is the whole number — Penn State by 0.9, with a run defense that just gave up 413",
         honesty="Machine Penn State −0.9, market −1.5: agreement, a coin flip with home field deciding it. Penn State's run defense collapsed last week and the machine cannot tell yet whether that was one game; USC's only road game is a 42–35 win at Rutgers.",
         keys_a=["Maiava against a secondary nobody has thrown on", "Run it the way Northwestern did", "Get a stop — 8.2 a throw allowed", "The red zone — 66%"],
         keys_b=["Becht has to find the offense", "Run defense, one week later", "Third down — 39%", "The red zone"],
@@ -2142,6 +2152,54 @@ SLIDE_POINTS = 1
 SLIDE_KEYS = 3
 
 
+# ---- simple stat strip for the numbers slide (Lucas 10/6): record, CURRENT QB / RB / WR box lines, defense per game ----
+def _strip_lines(team):
+    """Plain box-score lines from stat_package_week{WEEK}.json, FCS games included. 'Current' = the season leader
+    unless internal/availability.json marks him out (then the next man on the leaders list) - the injury focus."""
+    import json as _j, re as _re
+    try:
+        pk = {t["team"]: t for t in _j.load(open(os.path.join(HERE, f"stat_package_week{WEEK}.json"), encoding="utf-8"))}
+    except FileNotFoundError:
+        return None
+    t = pk.get(team)
+    if not t:
+        return None
+    out_names = set()
+    try:
+        for e in _j.load(open(os.path.join(HERE, "internal", "availability.json"), encoding="utf-8")):
+            if normalize_name(e["team"]) == normalize_name(team) and e.get("status") == "out":
+                _pp = e["player"].split()
+                out_names.add((_pp[0][0].lower(), _pp[-1].lower()))      # (first initial, last name): "M. Knight" and "Mason Knight" both match
+    except FileNotFoundError:
+        pass
+
+    def pick(cat):
+        for name, st in t["leaders"].get(cat, []):
+            if (name[0].lower(), name.split()[-1].lower()) not in out_names:
+                return name, st
+        return None, None
+
+    def ln(n):
+        parts = n.split()
+        return parts[-2] if parts[-1].rstrip(".") in ("Jr", "Sr", "II", "III", "IV") else parts[-1]
+    w = sum(g["result"].startswith("W") for g in t["games"]); l = len(t["games"]) - w; n = max(len(t["games"]), 1)
+    pa = pyd = ryd = 0
+    for g in t["games"]:
+        m = _re.match(r"[WL] (\d+)-(\d+)", g["result"]); a_, b_ = int(m.group(1)), int(m.group(2))
+        pa += min(a_, b_) if g["result"].startswith("W") else max(a_, b_)
+        pyd += g["defense"]["pass_yds"]; ryd += g["defense"]["rush_yds"]
+    qb, rb, wr = pick("passing"), pick("rushing"), pick("receiving")
+    rows = [("REC", f"{w}–{l}")]
+    if qb[0]:
+        rows.append(("QB", f"{ln(qb[0])}: {int(qb[1]['COMPLETIONS'])}/{int(qb[1]['ATT'])}, {int(qb[1]['YDS']):,} yds, {int(qb[1]['TD'])} TD / {int(qb[1]['INT'])} INT"))
+    if rb[0]:
+        rows.append(("RB", f"{ln(rb[0])}: {int(rb[1]['CAR'])} car, {int(rb[1]['YDS'])} yds, {int(rb[1]['TD'])} TD, {rb[1]['YPC']:.1f} a carry"))
+    if wr[0]:
+        rows.append(("WR", f"{ln(wr[0])}: {int(wr[1]['REC'])} rec, {int(wr[1]['YDS'])} yds, {int(wr[1]['TD'])} TD"))
+    rows.append(("DEF", f"{pa / n:.1f} pts, {pyd / n:.0f} pass, {ryd / n:.0f} rush allowed a game"))
+    return rows
+
+
 def slide_text(g):
     """(decides, honesty, keys_a, keys_b, is_short) — SHORT if authored,
     else the long GAMES strings."""
@@ -2225,6 +2283,24 @@ for g in GAMES:
     # left: what decides it (headline form when SHORT is authored)
     txt(s, 0.9, 1.75, 7.2, 0.4, "WHY IT MATTERS", 13, NAVY, bold=True)
     yy = 2.25
+    if g.get("matters"):      # Lucas 10/6: one line why it matters, one line why the number, then the simple stat strip
+        txt(s, 0.9, 2.15, 7.2, 0.9, g["matters"], 18, INK, bold=True)
+        txt(s, 0.9, 3.15, 7.2, 0.4, "WHY THE NUMBER", 13, NAVY, bold=True)
+        txt(s, 0.9, 3.55, 7.2, 0.8, g["because"], 15, INK, bold=True)
+        _sy = 4.55
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _sy, 7.2, 1.9, ICE)
+        shape(s, MSO_SHAPE.RECTANGLE, 4.49, _sy + 0.15, 0.02, 1.6, RGBColor(0xCA, 0xDC, 0xFC))
+        for _tm, _x in ((g["cfbd"][0], 1.1), (g["cfbd"][1], 4.65)):
+            _rows = _strip_lines(_tm) or []
+            _rec = next((v for k, v in _rows if k == "REC"), "")
+            txt(s, _x, _sy + 0.1, 3.3, 0.3, f"{_tm.upper()}  {_rec}", 12, ORANGE, bold=True)
+            _ry = _sy + 0.45
+            for _k, _v in [r for r in _rows if r[0] != "REC"]:
+                txt(s, _x, _ry, 0.42, 0.26, _k, 9.5, MUTE, bold=True)
+                txt(s, _x + 0.42, _ry, 2.95, 0.26, _v, 9.5, NAVY, bold=(_k == "QB"))
+                _ry += 0.31
+        _dec = []; _short = True
+        yy = _sy + 1.9 + 0.2
     _shx = SHORT.get(g["title"], {})
     _step = 0.62 if len(_shx.get("extra_bullets", ())) > 1 else 0.78
     for d in _dec:
@@ -2263,22 +2339,23 @@ for g in GAMES:
         if _xb.get("rows"):
             yy = _ry + 0.1
     # one point leaves room: drop the honesty box to the bottom of the bug's height
-    box_y = max(yy + 0.15, 5.2) if _short else yy + 0.15
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, box_y, 7.2, 1.05, ICE)
-    _pm = PREMORTEMS.get(g["title"]) if PREMORTEM_MODE != "off" else None
-    if _short and _pm and PREMORTEM_MODE == "replace":
-        txt(s, 1.15, box_y + 0.1, 6.7, 0.3, "THE PICK IS WRONG IF", 10.5, ORANGE, bold=True)
-        txt(s, 1.15, box_y + 0.4, 6.7, 0.55, _pm["text"], 18 if len(_pm["text"]) <= 52 else 15, NAVY, bold=True)
-    elif _short and _pm:
-        txt(s, 1.15, box_y + 0.1, 6.7, 0.45, _hon, 16, NAVY, bold=True)
-        txt(s, 1.15, box_y + 0.58, 6.7, 0.4, "Wrong if " + _pm["text"], 12.5 if len(_pm["text"]) <= 60 else 11,
-            ORANGE, bold=True)
-    elif _short and "\n" in _hon:      # a hand-written multi-line honesty text (Lucas's own edit)
-        txt(s, 1.15, box_y + 0.06, 6.7, 0.95, _hon, 14, NAVY, bold=True)
-    elif _short:
-        txt(s, 1.15, box_y + 0.25, 6.7, 0.55, _hon, 20, NAVY, bold=True)
-    else:
-        txt(s, 1.15, box_y + 0.17, 6.7, 0.75, _hon, 11.5, MUTE, italic=True)
+    if not g.get("matters"):      # the honesty box / pre-mortem stay off the new layout (Lucas 10/6)
+        box_y = max(yy + 0.15, 5.2) if _short else yy + 0.15
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, box_y, 7.2, 1.05, ICE)
+        _pm = PREMORTEMS.get(g["title"]) if PREMORTEM_MODE != "off" else None
+        if _short and _pm and PREMORTEM_MODE == "replace":
+            txt(s, 1.15, box_y + 0.1, 6.7, 0.3, "THE PICK IS WRONG IF", 10.5, ORANGE, bold=True)
+            txt(s, 1.15, box_y + 0.4, 6.7, 0.55, _pm["text"], 18 if len(_pm["text"]) <= 52 else 15, NAVY, bold=True)
+        elif _short and _pm:
+            txt(s, 1.15, box_y + 0.1, 6.7, 0.45, _hon, 16, NAVY, bold=True)
+            txt(s, 1.15, box_y + 0.58, 6.7, 0.4, "Wrong if " + _pm["text"], 12.5 if len(_pm["text"]) <= 60 else 11,
+                ORANGE, bold=True)
+        elif _short and "\n" in _hon:      # a hand-written multi-line honesty text (Lucas's own edit)
+            txt(s, 1.15, box_y + 0.06, 6.7, 0.95, _hon, 14, NAVY, bold=True)
+        elif _short:
+            txt(s, 1.15, box_y + 0.25, 6.7, 0.55, _hon, 20, NAVY, bold=True)
+        else:
+            txt(s, 1.15, box_y + 0.17, 6.7, 0.75, _hon, 11.5, MUTE, italic=True)
 
     # right: navy score bug
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
