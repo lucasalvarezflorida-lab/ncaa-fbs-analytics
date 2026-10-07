@@ -122,13 +122,15 @@ def top25_card(rows, wc, ap, out):
     im, d = card("The machine's Top 25", "rating · move this week · AP")
     for i, t in enumerate(rows[:25]):
         col = i // 13; rr = i % 13
-        x = 60 + col * 490; y = 200 + rr * 60
+        x = 60 + col * 500; y = 200 + rr * 60
         w = wc.get(t["team"], {}); dw = w.get("d_week", 0.0)
-        logo(im, t["team"], x, y + 4, 44)
-        d.text((x + 56, y + 6), f"{i + 1}. {tname(t['team'])}", font=font(30, True), fill=WHITE)
-        d.text((x + 330, y + 8), f"{t['cur']:.1f}", font=font(28, True), fill=ORANGE)
-        d.text((x + 400, y + 10), f"{dw:+.1f}", font=font(24), fill=UP if dw > 0 else (DOWN if dw < 0 else PALE))
-        a = ap.get(t["team"]); d.text((x + 452, y + 12), f"AP {a}" if a else "NR", font=font(20), fill=PALE)
+        logo(im, t["team"], x, y + 6, 40)
+        name = f"{i + 1}. {tname(t['team'])}"
+        f = font(27, True) if d.textlength(name, font=font(27, True)) <= 240 else font(22, True)
+        d.text((x + 50, y + 10), name, font=f, fill=WHITE)
+        d.text((x + 300, y + 8), f"{t['cur']:.1f}", font=font(27, True), fill=ORANGE)
+        d.text((x + 368, y + 12), f"{dw:+.1f}", font=font(22), fill=UP if dw > 0 else (DOWN if dw < 0 else PALE))
+        a = ap.get(t["team"]); d.text((x + 432, y + 14), f"AP {a}" if a else "NR", font=font(19), fill=PALE)
     im.save(out / "top25.png")
     return [dict(rank=i + 1, team=tname(t["team"]), rating=t["cur"], d_week=wc.get(t["team"], {}).get("d_week"), ap=ap.get(t["team"])) for i, t in enumerate(rows[:25])]
 
