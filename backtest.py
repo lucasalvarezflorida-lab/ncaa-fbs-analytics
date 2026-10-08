@@ -443,6 +443,7 @@ def main():
     ap.add_argument("--tune-qb", action="store_true", help="grid over the QB-gap availability layer")
     ap.add_argument("--tune-to", action="store_true", help="finer grid: turnover coefficient x cap x switch x lam")
     ap.add_argument("--tune-sit", action="store_true", help="fit + score the situational layer (rest, travel, tz, elevation, per-team HFA)")
+    ap.add_argument("--tune-prior", action="store_true", help="grid over the prior's weight: decay by week, recency weights, prior shrink (prior_weight.py)")
     ap.add_argument("--rows", help="write per-game rows (first model) to this json")
     ap.add_argument("--json", help="write the scoreboard to this json")
     ap.add_argument("--weeks", default="1-15")
@@ -655,6 +656,31 @@ def main():
         for r in res:
             print(f"{r['name']:40s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% {r['fit_mae_mkt'] or 0:6.2f} | "
                   f"{r['test_mae']:8.3f} {r['test_brier']:.4f} {100 * (r['test_ats'] or 0):5.1f}% {r['test_mae_mkt'] or 0:6.2f}")
+
+    if a.tune_prior:
+        import prior_weight as pw
+        fit = [x for x in seasons if x <= 2024]; test = [x for x in seasons if x == 2025]
+        grid = {"current": MODELS["current"]}
+        grid.update(pw.grid())
+        print(f"\n=== TUNE prior weight: fit {fit} / test {test}, weeks 2-15, {len(grid)} models ===")
+        res = compare(ctxs, grid, fit, test)
+        report["tune_prior"] = res
+        print(f"{'model':30s} | {'fit MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6} | {'test MAE':>8} {'Brier':>6} {'ATS':>6} {'mkt':>6}")
+        for r in res:
+            print(f"{r['name']:30s} | {r['fit_mae']:8.3f} {r['fit_brier']:.4f} {100 * (r['fit_ats'] or 0):5.1f}% {r['fit_mae_mkt'] or 0:6.2f} | "
+                  f"{(r['test_mae'] or float('nan')):8.3f} {(r['test_brier'] or float('nan')):.4f} {100 * (r['test_ats'] or 0):5.1f}% {r['test_mae_mkt'] or 0:6.2f}")
+        # by-week view for the top few + current: where does a fading prior help or hurt?
+        picks = ["current"] + [r["name"] for r in res if r["name"] != "current"][:5]
+        print("\nby week, pooled fit+test MAE (current vs the top five by fit MAE):")
+        bw = {}
+        for name in picks:
+            rows = [r for s in seasons for r in season_rows(s, grid[name], ctxs[s], weeks)]
+            bw[name] = {w: float(np.mean([abs(r["margin"] - r["model"]) for r in rows if r["wk"] == w])) for w in weeks if any(r["wk"] == w for r in rows)}
+        report["tune_prior_by_week"] = bw
+        print(f"{'wk':>3} " + " ".join(f"{n[:16]:>16s}" for n in picks))
+        for w in weeks:
+            if w in bw[picks[0]]:
+                print(f"{w:3d} " + " ".join(f"{bw[n][w]:16.2f}" for n in picks))
 
     if a.rows:
         Path(a.rows).write_text(json.dumps([r for s in seasons for r in all_rows[models[0]][s]], indent=0, default=float), encoding="utf-8")
