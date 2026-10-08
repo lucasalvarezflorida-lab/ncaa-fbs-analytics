@@ -14,7 +14,8 @@
   "man": 48.5,
   "machine": 25.0,
   "as_of": "through Week 5 (both); Corey's week 5 graded 10/4 at the lines we recorded - he confirms his own",
-  "note": "Through Week 3: Man 29 / Machine 15. Week 4: Machine +5 (Georgia Southern +18.5 covered, lost by 14; Charlotte +10 lost 34-7). Man +10.5 AT OUR RECORDED LINES (Air Force +5.5 WON outright 36-33 = 5 + 5.5; Iowa State +8 lost by 14) - Corey grades his own at the line he took; confirm. Week 5: Machine +5 (Boston College +21 covered, lost 25-16; Charlotte +20.5 lost 59-8). Man +9 AT OUR RECORDED LINES (Baylor +4 WON outright 55-19 = 5 + 4; Colorado +13 lost 29-7)."
+  "note": "Through Week 3: Man 29 / Machine 15. Week 4: Machine +5 (Georgia Southern +18.5 covered, lost by 14; Charlotte +10 lost 34-7). Man +10.5 AT OUR RECORDED LINES (Air Force +5.5 WON outright 36-33 = 5 + 5.5; Iowa State +8 lost by 14) - Corey grades his own at the line he took; confirm. Week 5: Machine +5 (Boston College +21 covered, lost 25-16; Charlotte +20.5 lost 59-8). Man +9 AT OUR RECORDED LINES (Baylor +4 WON outright 55-19 = 5 + 4; Colorado +13 lost 29-7).",
+  "corey_shows": "his slide 10/7: Man 41 (Baylor won) / Machine 25 (Boston College covered) - he grades at the lines he took; ours at recorded lines Man 48.5 / Machine 25"
  },
  "machine_picks": [
   {
@@ -98,6 +99,26 @@
    "result": "loss",
    "points": 0,
    "note": "board of Tue 9/29 night; confirm at the freeze"
+  },
+  {
+   "week": 6,
+   "slot": "giant_killer",
+   "pick": "San Diego State +14.5 at Oregon State",
+   "final": null,
+   "result": null,
+   "points": null,
+   "note": "board of Tue 9/29 night (the deck Lucas imported into Corey's file); confirm at the freeze",
+   "line_note": "frozen card 10/7 6:25 PM ET; Superdog"
+  },
+  {
+   "week": 6,
+   "slot": "giant_killer",
+   "pick": "South Carolina +14.5 at Florida",
+   "final": null,
+   "result": null,
+   "points": null,
+   "note": "board of Tue 9/29 night (the deck Lucas imported into Corey's file); confirm at the freeze",
+   "line_note": "frozen card 10/7 6:25 PM ET; Giant Killer (Florida AP #16)"
   }
  ],
  "man_picks_week3": [
@@ -142,6 +163,24 @@
    "final": "Texas Tech 29-7",
    "result": "loss",
    "points": 0
+  }
+ ],
+ "man_picks_week6": [
+  {
+   "pick": "New Mexico State +6.5 at FIU",
+   "week": 6,
+   "line_note": "his line (his slide); market at our freeze FIU -7; Superdog",
+   "final": null,
+   "result": null,
+   "points": null
+  },
+  {
+   "pick": "UCF +11.5 at Oklahoma State",
+   "week": 6,
+   "line_note": "his line (his slide); Giant Killer (Oklahoma State AP-ranked, unranked in the machine); market at our freeze not on our card pull - record Sunday",
+   "final": null,
+   "result": null,
+   "points": null
   }
  ]
 }
