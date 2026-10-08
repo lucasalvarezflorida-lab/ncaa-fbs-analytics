@@ -130,7 +130,7 @@ placeholders until his deck updates. Betting-line context stays in the internal 
     - BYU: his 11, our 23
   - Where we agree: Georgia top two; Indiana 6 and 8; Missouri and Northwestern new to both lists; Florida down (his 7 → 15, our 9 → 15)
   - His moves: Florida 7 → 15; Mississippi State 16 → 24; Texas A&M, Missouri, Northwestern, Houston, Boise State in; Ohio State 10 → 8; Texas Tech 9 → 7
-  - Ours not his: Oregon 11 (his 13), Texas A&M 10 (his 21), Oklahoma 14, Wisconsin 22, Florida State 20, South Carolina 24 · His not ours: Houston, Iowa (our 30), Boise State, Mississippi State (our 22 — agree)
+  - Ours not his: Oregon 11 (his 13), Texas A&M 9 (his 21), Oklahoma 14, Wisconsin 22, Florida State 20, South Carolina 24 · His not ours: Houston, Iowa (our 30), Boise State, Mississippi State (our 22 — agree)
 
 - **Heisman board (machine)** — the Best-Player Board: points added per game × team factor (market: DraftKings 2026-10-04)
   - What the board is, say it once

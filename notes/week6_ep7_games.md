@@ -90,15 +90,15 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: third down on defense — opponents are 15-of-59 (25%) and 8-of-38 on third-and-long; Indiana converts 52%
   - Corey: PLACEHOLDER
 
-- **Texas A&M at Missouri — Sat Oct 10, 12:00 PM ET, Memorial Stadium · Texas A&M · Missouri (machine #10 at #17)**
-  - Why it matters: The week's biggest riser hosts the team the machine still has 10th after two losses
+- **Texas A&M at Missouri — Sat Oct 10, 12:00 PM ET, Memorial Stadium · Texas A&M · Missouri (machine #9 at #17)**
+  - Why it matters: The week's biggest riser hosts the team the machine still has 9th after two losses
   - Why the number: The July prior is still carrying A&M (20.0 to 18.0 through two losses); on September form Missouri has the better case — A&M by 1, the weakest lean on the card
   
   - The read
-    - Texas A&M is 3–2 and still the machine's No. 10 at 18.0: it lost to Kentucky by 10 and at LSU 35–6, then beat Arkansas 34–7 running 49 times for 231
+    - Texas A&M is 3–2 and still the machine's No. 9 at 18.0 (up a spot only because Oregon lost its quarterback): it lost to Kentucky by 10 and at LSU 35–6, then beat Arkansas 34–7 running 49 times for 231
     - Missouri is 4–1 and the week's biggest riser (No. 31 to No. 17) after 45–17 over Florida; Simmons has 13 touchdowns and no interceptions at 9.3 a throw
     - The game is Missouri's passing game (25 explosive passes in 156 dropbacks) against an A&M defense that gave up 14.0 a throw to Kentucky and 11.1 to LSU
-  - The number: Texas A&M −1.0, 52% · Call Texas A&M 25–24
+  - The number: Texas A&M −0.9, 52% · Call Texas A&M 25–24
     - Honesty: this is the July prior talking. A&M started at 20.0 and has only come down 2.0 despite two losses, because the prior is still worth three games and the Arkansas win held it up; Missouri started at 12.2. On what both have done since September, Missouri has the better case — say that on air
     - Pre-mortem — written on recording day from the frozen card
   - Texas A&M keys
@@ -177,7 +177,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
   
   - The read
     - UCLA is 4–0 and the machine's biggest climber of the season: 0.5 in July, 9.9 now (No. 32). It runs for 7.0 a carry — Knight 49 for 445 and 9 touchdowns — and won 54–3 at Maryland
-    - Oregon is 3–1 and has fallen 6.3 points since July to No. 9 at 19.0; it lost at Oklahoma State 39–31 allowing 40 carries for 237, then won 41–27 at USC
+    - Oregon is 3–1 and has fallen 8.3 points since July to No. 11 at 17.0 — 2.0 of it the machine's penalty for Moore; it lost at Oklahoma State 39–31 allowing 40 carries for 237, then won 41–27 at USC
     - The game is UCLA's run game against the Oregon front that Oklahoma State ran through — and whether UCLA's secondary, which gave up 13.9 a throw to Purdue, can live with Raiola, who threw for 289 and 2 touchdowns in relief at USC
   - The number: Oregon −9.6, 73% · Call Oregon 34–24
     - Moore is OUT on our card (say this on air): concussion on the USC hit, back at practice Monday, not cleared; CBS reported at 4:12 PM ET Wednesday that he is unlikely to play and Raiola starts. We marked him out before recording: the machine takes 2 points off Oregon for the quarterback (Raiola already has 24 dropbacks in this offense, closer to a continuing sub than a cold first start), Oregon 19.0 to 17.0, the line from 11.6 to 9.6, 77% to 73%. Still Oregon. If he is cleared after all, the frozen call stands and we say so Sunday

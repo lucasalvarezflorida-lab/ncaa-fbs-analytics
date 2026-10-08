@@ -1118,7 +1118,7 @@ GAMES = [  # Week 6 — Lucas's card (Sun 10/4) in COREY'S order (his deck, read
         ctx_b=dict(coach="Drinkwitz, year 7",
                    qb="NEW — Austin Simmons (from Ole Miss) · 9.3 a throw, 13 TD, 0 INT",
                    roster="42% of production back · 78% of the rushing"),
-        matters="The week's biggest riser hosts the team the machine still has 10th after two losses",
+        matters="The week's biggest riser hosts the team the machine still has 9th after two losses",
         because="The July prior is still carrying A&M (20.0 to 18.0 through two losses); on September form Missouri has the better case — A&M by 1, the weakest lean on the card",
         honesty="Machine Texas A&M −1.0, market Missouri −1.5. A&M started at 20.0 in July and has come down only 2.0 with two losses; Missouri started at 12.2. On what both have done since September, Missouri has the better case — the machine's side here is the prior.",
         keys_a=["Run it like the Arkansas game", "Cover Lee and Olugbode", "Which A&M is this", "Third-and-long — 10-of-41"],
