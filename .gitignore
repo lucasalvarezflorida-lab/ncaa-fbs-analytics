@@ -51,3 +51,7 @@ internal/
 # every read-only export of Corey's deck stays local
 decks/corey_*.pptx
 decks/*_live_export.pptx
+
+# Tale of the Tape build: embeds ESPN logos (re-build with tape.py --data), the artifact is private
+tape/
+tape_data_2026.json

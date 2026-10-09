@@ -1,0 +1,356 @@
+<meta charset="utf-8">
+<title>Tale of the Tape</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: a scouting sheet. Controls on top, a verdict strip with the two schools on the flanks in their own
+   colours and the machine's number in the middle, then four stacked "why" sections read top to bottom. */
+:root {
+  --bg: #f3f1ec; --paper: #fbfaf7; --fg: #1c1d1f; --muted: #686a70; --line: #d9d6cf; --line-soft: #e8e5de;
+  --chalk: #e0b11a; --good: #2f7d4f; --bad: #b3372b; --shadow-tag: #6b5bd2;
+  --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --a: #782f40; --b: #005030; --a-ink: #ffffff; --b-ink: #ffffff;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #16171a; --paper: #1f2024; --fg: #ecebe6; --muted: #9a9ca3; --line: #34363c; --line-soft: #2a2c31;
+  --chalk: #f0c23a; --good: #5cc48a; --bad: #ef7a6c; --shadow-tag: #a89bff; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #16171a; --paper: #1f2024; --fg: #ecebe6; --muted: #9a9ca3; --line: #34363c; --line-soft: #2a2c31;
+  --chalk: #f0c23a; --good: #5cc48a; --bad: #ef7a6c; --shadow-tag: #a89bff; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.45; margin: 0; }
+.wrap { max-width: 1100px; margin: 0 auto; padding-block: 18px 48px; padding-inline: 16px; }
+h1, h2, h3, .disp { font-family: var(--display); font-weight: 700; letter-spacing: .01em; text-wrap: balance; margin: 0; }
+h1 { font-size: 34px; line-height: 1; text-transform: uppercase; }
+.sub { color: var(--muted); font-size: 14px; margin-top: 4px; }
+.eyebrow { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; padding: 2px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--muted); vertical-align: middle; }
+.tag.shadow { color: var(--shadow-tag); border-color: var(--shadow-tag); }
+
+/* controls */
+.controls { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: end; margin-top: 18px; }
+.ctl label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; letter-spacing: .04em; text-transform: uppercase; }
+select, button { font: inherit; color: var(--fg); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 9px 10px; width: 100%; }
+select:focus-visible, button:focus-visible, .seg button:focus-visible { outline: 2px solid var(--chalk); outline-offset: 1px; }
+.mid { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--paper); }
+.seg button { border: 0; border-radius: 0; width: auto; padding: 8px 12px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+#swap { width: auto; padding: 6px 12px; cursor: pointer; }
+
+/* verdict strip */
+.verdict { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 0; margin-top: 20px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper); }
+.side { padding: 18px 16px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; min-width: 0; }
+.side.a { background: var(--a); color: var(--a-ink); }
+.side.b { background: var(--b); color: var(--b-ink); align-items: flex-end; text-align: right; }
+.side img { width: 64px; height: 64px; object-fit: contain; background: rgba(255,255,255,.92); border-radius: 50%; padding: 6px; }
+.side .name { font-family: var(--display); font-weight: 800; font-size: 32px; line-height: 1; text-transform: uppercase; }
+.side .meta { font-size: 13px; opacity: .92; }
+.side .rating { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1; }
+.center { padding: 18px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 4px; min-width: 0; }
+.center .call { font-family: var(--display); font-weight: 800; font-size: 44px; line-height: 1; text-transform: uppercase; }
+.center .call small { font-size: 22px; font-weight: 700; text-transform: none; color: var(--muted); }
+.center .prob { font-family: var(--display); font-weight: 700; font-size: 26px; }
+.center .shape { color: var(--muted); font-size: 14px; }
+.center .read { margin-top: 8px; font-size: 15px; max-width: 34ch; }
+.wp { width: 100%; height: 8px; border-radius: 4px; background: var(--b); overflow: hidden; margin-top: 10px; }
+.wp i { display: block; height: 100%; background: var(--a); }
+
+/* sections */
+section { margin-top: 26px; }
+section h2 { font-size: 24px; text-transform: uppercase; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+section h2 .k { color: var(--chalk); font-size: 18px; }
+section > p.lead { margin: 6px 0 12px; max-width: 72ch; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } .controls { grid-template-columns: 1fr; } .verdict { grid-template-columns: 1fr; } .side.b { align-items: flex-start; text-align: left; } }
+
+/* rating bars */
+.bars { display: grid; grid-template-columns: max-content 1fr; gap: 8px 12px; align-items: center; }
+.bars .lab { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.track { position: relative; height: 22px; background: var(--line-soft); border-radius: 4px; }
+.track i { position: absolute; top: 0; bottom: 0; border-radius: 4px; }
+.track span { position: absolute; top: 0; line-height: 22px; font-size: 13px; font-weight: 600; padding: 0 6px; white-space: nowrap; }
+.math { font-family: var(--display); font-size: 20px; margin-top: 10px; }
+.math b { color: var(--chalk); }
+
+/* plays matchups */
+.mu { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px 12px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line-soft); }
+.mu:first-of-type { border-top: 0; }
+.mu .u { display: flex; flex-direction: column; min-width: 0; }
+.mu .u.r { text-align: right; }
+.mu .u .v { font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1; }
+.mu .u .l { font-size: 12px; color: var(--muted); }
+.mu .vs { font-family: var(--display); font-size: 14px; color: var(--muted); letter-spacing: .1em; text-align: center; }
+.mu .edge { font-size: 13px; grid-column: 1 / -1; color: var(--muted); }
+.mu .edge b { color: var(--fg); }
+
+/* tape tables */
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 6px 6px; text-align: right; border-bottom: 1px solid var(--line-soft); white-space: nowrap; }
+th { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+td.lab, th.lab { text-align: left; color: var(--muted); white-space: normal; }
+td .rk { color: var(--muted); font-size: 12px; margin-left: 4px; }
+td.w { font-weight: 700; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-left: 6px; vertical-align: middle; }
+.tscroll { overflow-x: auto; }
+.tape-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; gap: 6px; }
+.tape-head .edges { font-size: 13px; color: var(--muted); }
+
+/* resume */
+.log { width: 100%; }
+.log td.res { font-weight: 700; }
+.pill { display: inline-block; min-width: 46px; text-align: center; padding: 1px 6px; border-radius: 10px; font-size: 12px; font-weight: 600; color: #fff; }
+.pill.good { background: var(--good); } .pill.bad { background: var(--bad); } .pill.flat { background: var(--muted); }
+.luck { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.foot { margin-top: 30px; font-size: 13px; color: var(--muted); max-width: 80ch; }
+.foot p { margin: 6px 0; }
+@media (prefers-reduced-motion: no-preference) { .wp i, .track i { transition: width .35s ease, left .35s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Tale of the Tape</h1>
+    <div class="sub" id="sub">The machine's read on any two FBS teams.</div>
+  </header>
+
+  <div class="controls">
+    <div class="ctl"><label for="selA">Team A</label><select id="selA"></select></div>
+    <div class="mid">
+      <div class="seg" role="group" aria-label="Site">
+        <button type="button" id="siteA" aria-pressed="false">A at home</button>
+        <button type="button" id="siteN" aria-pressed="false">Neutral</button>
+        <button type="button" id="siteB" aria-pressed="true">B at home</button>
+      </div>
+      <button type="button" id="swap" title="Swap the two teams">Swap</button>
+    </div>
+    <div class="ctl"><label for="selB">Team B</label><select id="selB"></select></div>
+  </div>
+
+  <div class="verdict" id="verdict">
+    <div class="side a" id="sideA"></div>
+    <div class="center" id="center"></div>
+    <div class="side b" id="sideB"></div>
+  </div>
+
+  <section id="sec-number">
+    <h2><span class="k">1</span> The number</h2>
+    <p class="lead" id="numLead"></p>
+    <div class="card">
+      <div class="bars" id="bars"></div>
+      <div class="math num" id="math"></div>
+    </div>
+  </section>
+
+  <section id="sec-plays">
+    <h2><span class="k">2</span> The plays <span class="tag shadow">shadow</span></h2>
+    <p class="lead" id="playsLead"></p>
+    <div class="card" id="plays"></div>
+  </section>
+
+  <section id="sec-tape">
+    <h2><span class="k">3</span> The tape</h2>
+    <p class="lead" id="tapeLead"></p>
+    <div class="cols">
+      <div class="card"><div class="tape-head"><h3 id="tapeHeadA"></h3><span class="edges" id="tapeEdgesA"></span></div><div class="tscroll"><table id="tapeA"></table></div></div>
+      <div class="card"><div class="tape-head"><h3 id="tapeHeadB"></h3><span class="edges" id="tapeEdgesB"></span></div><div class="tscroll"><table id="tapeB"></table></div></div>
+    </div>
+  </section>
+
+  <section id="sec-resume">
+    <h2><span class="k">4</span> The résumé</h2>
+    <p class="lead" id="resLead"></p>
+    <div class="cols">
+      <div class="card"><h3 id="resHeadA"></h3><div class="tscroll"><table class="log" id="logA"></table></div><div class="luck" id="luckA"></div></div>
+      <div class="card"><h3 id="resHeadB"></h3><div class="tscroll"><table class="log" id="logB"></table></div><div class="luck" id="luckB"></div></div>
+    </div>
+    <div class="card" id="common" style="margin-top:14px"></div>
+  </section>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script type="application/json" id="tape-data">__TAPE_DATA__</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('tape-data').textContent);
+  const T = D.teams;
+  const keys = Object.keys(T).sort((x, y) => T[x].name.localeCompare(T[y].name));
+  const HFA = D.rule.hfa;
+  const $ = id => document.getElementById(id);
+  const f1 = x => (Math.round(x * 10) / 10).toFixed(1);
+  const sg = x => (x > 0 ? '+' : '') + f1(x);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  // --- state ---------------------------------------------------------------
+  let state = { a: 'florida state', b: 'miami', site: 'B' };
+  try { const s = JSON.parse(localStorage.getItem('tape.state') || 'null'); if (s && T[s.a] && T[s.b]) state = s; } catch (e) {}
+  function save() { try { localStorage.setItem('tape.state', JSON.stringify(state)); } catch (e) {} }
+
+  // --- helpers ---------------------------------------------------------------
+  function winProb(m) {  // interpolate the production curve table: [margin, p]
+    const c = D.curve; if (m <= c[0][0]) return c[0][1]; if (m >= c[c.length - 1][0]) return c[c.length - 1][1];
+    let lo = 0, hi = c.length - 1;
+    while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (c[mid][0] <= m) lo = mid; else hi = mid; }
+    const t = (m - c[lo][0]) / (c[hi][0] - c[lo][0]); return c[lo][1] + t * (c[hi][1] - c[lo][1]);
+  }
+  function lum(hex) { const h = hex.replace('#', ''); const r = parseInt(h.slice(0, 2), 16) / 255, g = parseInt(h.slice(2, 4), 16) / 255, b = parseInt(h.slice(4, 6), 16) / 255;
+    const f = v => v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); return .2126 * f(r) + .7152 * f(g) + .0722 * f(b); }
+  function teamColor(t) {  // the school colour, unless it is near-white or near-black (then the alternate); ink picked for contrast
+    let c = t.color || '#555555'; if (lum(c) > .8 || lum(c) < .03) c = t.alt || c;
+    return { bg: c, ink: lum(c) > .45 ? '#111111' : '#ffffff' };
+  }
+  function first(t) { return t.name; }
+  function siteWord(site, A, B) { return site === 'N' ? 'on a neutral field' : (site === 'A' ? `at ${A.name}` : `at ${B.name}`); }
+  function ordinal(n) { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
+
+  // --- fill selects ------------------------------------------------------------
+  for (const id of ['selA', 'selB']) {
+    const sel = $(id); sel.innerHTML = keys.map(k => `<option value="${esc(k)}">${esc(T[k].name)}</option>`).join('');
+  }
+  $('selA').value = state.a; $('selB').value = state.b;
+  $('selA').addEventListener('change', e => { state.a = e.target.value; if (state.a === state.b) state.b = keys.find(k => k !== state.a); $('selB').value = state.b; render(); });
+  $('selB').addEventListener('change', e => { state.b = e.target.value; if (state.a === state.b) state.a = keys.find(k => k !== state.b); $('selA').value = state.a; render(); });
+  for (const s of ['A', 'N', 'B']) $('site' + s).addEventListener('click', () => { state.site = s; render(); });
+  $('swap').addEventListener('click', () => { [state.a, state.b] = [state.b, state.a]; state.site = state.site === 'A' ? 'B' : (state.site === 'B' ? 'A' : 'N'); $('selA').value = state.a; $('selB').value = state.b; render(); });
+
+  // --- render -----------------------------------------------------------------
+  function render() {
+    save();
+    const A = T[state.a], B = T[state.b], site = state.site;
+    const ca = teamColor(A), cb = teamColor(B);
+    const root = document.documentElement.style;
+    root.setProperty('--a', ca.bg); root.setProperty('--a-ink', ca.ink); root.setProperty('--b', cb.bg); root.setProperty('--b-ink', cb.ink);
+    for (const s of ['A', 'N', 'B']) $('site' + s).setAttribute('aria-pressed', String(site === s));
+    $('siteA').textContent = `${A.abbr || A.name} at home`; $('siteB').textContent = `${B.abbr || B.name} at home`;
+    $('sub').textContent = `The machine's read on any two FBS teams · through Week ${D.through_week} · no market numbers, the plays view is a shadow rating`;
+
+    // the number: A minus B, home field to whoever hosts
+    const h = site === 'A' ? HFA : (site === 'B' ? -HFA : 0);
+    const m = A.now - B.now + h;                         // A margin
+    const pA = site === 'B' ? 1 - winProb(-m) : winProb(m); // curve is home-perspective; neutral uses it as is
+    const fav = m >= 0 ? A : B, dog = m >= 0 ? B : A, am = Math.abs(m);
+    const ppg = (t, side) => (t.stats && t.stats[side] && t.stats[side].ppg != null) ? t.stats[side].ppg : D.league[side].ppg;
+    const total = ((ppg(A, 'off') + ppg(B, 'def_')) + (ppg(B, 'off') + ppg(A, 'def_'))) / 2;
+    const sA = Math.max(0, Math.round((total + m) / 2)), sB = Math.max(0, Math.round((total - m) / 2));
+
+    // sides
+    const sideHtml = (t, c) => `
+      <img src="${t.logo || ''}" alt="" ${t.logo ? '' : 'hidden'}>
+      <div class="name">${esc(t.name)}</div>
+      <div class="meta">${esc(t.record)} · ${esc(t.conf || '')}</div>
+      <div class="rating num">${f1(t.now)} <span class="meta">· ${ordinal(t.rank)} in the machine${t.qb_out ? ` · QB out −${f1(t.qb_out)}` : ''}</span></div>`;
+    $('sideA').innerHTML = sideHtml(A, ca); $('sideB').innerHTML = sideHtml(B, cb);
+
+    const gap = Math.abs(A.now - B.now);
+    let read;
+    if (am < 1) read = `A coin flip: the ratings are ${f1(gap)} apart and ${site === 'N' ? 'there is no home field to break it' : 'home field all but cancels the gap'}.`;
+    else if (gap < HFA && site !== 'N') read = `${fav.name} by ${f1(am)}: the two are ${f1(gap)} apart on the ratings, so home field (${HFA}) is most of the call.`;
+    else read = `${fav.name} by ${f1(am)}: a ${f1(gap)}-point gap in the ratings${site === 'N' ? '' : (h * (fav === A ? 1 : -1) > 0 ? ` plus ${HFA} for the home field` : ` less ${HFA} for playing on the road`)}.`;
+    $('center').innerHTML = `
+      <div class="eyebrow">${esc(siteWord(site, A, B))}</div>
+      <div class="call">${esc(fav.name)} <small>by ${f1(am)}</small></div>
+      <div class="prob num">${Math.round((fav === A ? pA : 1 - pA) * 100)}% to win</div>
+      <div class="shape num">Score shape ${esc(A.abbr || A.name)} ${sA} · ${esc(B.abbr || B.name)} ${sB} <span title="Pace from both teams' season scoring averages, not the on-air total">(pace guess)</span></div>
+      <div class="wp" aria-hidden="true"><i style="width:${(pA * 100).toFixed(1)}%"></i></div>
+      <div class="read">${esc(read)}</div>`;
+
+    // 1. the number
+    const lo = Math.min(A.july, A.now, B.july, B.now, -5), hi = Math.max(A.july, A.now, B.july, B.now, 30);
+    const pct = v => ((v - lo) / (hi - lo) * 100);
+    const bar = (lab, v, color, ink) => `<div class="lab">${esc(lab)}</div><div class="track"><i style="left:${pct(Math.min(0, v)).toFixed(1)}%;width:${Math.abs(pct(v) - pct(0)).toFixed(1)}%;background:${color}"></i><span class="num" style="left:${Math.max(pct(v), pct(0)).toFixed(1)}%">${f1(v)}</span></div>`;
+    $('bars').innerHTML = bar(`${A.name} · July`, A.july, ca.bg + '88') + bar(`${A.name} · now`, A.now, ca.bg) + bar(`${B.name} · July`, B.july, cb.bg + '88') + bar(`${B.name} · now`, B.now, cb.bg);
+    $('math').innerHTML = `${esc(A.abbr || A.name)} ${f1(A.now)} − ${esc(B.abbr || B.name)} ${f1(B.now)} ${h ? (h > 0 ? `+ ${HFA} home` : `− ${HFA} road`) : '(neutral)'} = <b>${esc(A.abbr || A.name)} ${sg(m)}</b>`;
+    const julyGap = A.july - B.july, julyFav = julyGap >= 0 ? A : B;
+    const moved = [A, B].map(t => `${t.name} ${sg(t.delta)}`).join(', ');
+    let numLead = `In July the machine had ${julyFav.name} ahead by ${f1(Math.abs(julyGap))}; since then ${moved}` + ` (the July number is worth ${D.rule.lam} games of evidence, so after ${A.rated_gp} and ${B.rated_gp} rated games it still carries a share).`;
+    if (A.qb_out || B.qb_out) numLead += ` ${(A.qb_out ? A : B).name} is carrying a QB-out adjustment of ${f1(A.qb_out || B.qb_out)} points.`;
+    $('numLead').textContent = numLead;
+
+    // 2. the plays (efficiency shadow)
+    if (A.eff && B.eff) {
+      const ea = A.eff, eb = B.eff;
+      const aOff = ea.off - eb.def_, bOff = eb.off - ea.def_, st = ea.st - eb.st;
+      const em = aOff - bOff + st + h;  // same HFA
+      const blend = 0.5 * (m + em);
+      const dis = em - m;
+      const effFav = em >= 0 ? A : B;
+      const mu = (o, oName, d, dName, v, oColor) => `
+        <div class="mu">
+          <div class="u"><div class="v num" style="color:${oColor}">${sg(o)}</div><div class="l">${esc(oName)} offense · points above an average offense</div></div>
+          <div class="vs">VS</div>
+          <div class="u r"><div class="v num">${sg(d)}</div><div class="l">${esc(dName)} defense · points taken away</div></div>
+          <div class="edge">Net <b>${esc(oName)} ${sg(v)}</b> a game on this side of the ball${Math.abs(v) >= 7 ? ' — the mismatch in the game' : ''}.</div>
+        </div>`;
+      $('plays').innerHTML = mu(ea.off, A.name, eb.def_, B.name, aOff, ca.bg) + mu(eb.off, B.name, ea.def_, A.name, bOff, cb.bg) +
+        `<div class="math num" style="margin-top:12px">Plays: <b>${esc(effFav.name)} by ${f1(Math.abs(em))}</b> · machine ${esc(fav.name)} by ${f1(am)} · 50/50 blend ${esc((blend >= 0 ? A : B).name)} by ${f1(Math.abs(blend))}</div>`;
+      const bigger = Math.abs(aOff) >= Math.abs(bOff) ? { o: aOff >= 0 ? A : B, d: aOff >= 0 ? B : A, v: Math.abs(aOff), side: aOff >= 0 ? 'offense' : 'defense' } : { o: bOff >= 0 ? B : A, d: bOff >= 0 ? A : B, v: Math.abs(bOff), side: bOff >= 0 ? 'offense' : 'defense' };
+      let pl = `Play by play (PPA and success rate, garbage time out, ${D.shadow_week ? `through Week ${D.shadow_week - 1}` : 'this season'}) `;
+      if (Math.abs(dis) < 1.5) pl += `agrees with the machine within a point: ${effFav.name} by ${f1(Math.abs(em))}.`;
+      else if (Math.sign(em) === Math.sign(m)) pl += `sides with ${effFav.name} ${Math.abs(em) > am ? 'harder' : 'less'} than the scoreboard does: ${f1(Math.abs(em))} against the machine's ${f1(am)}.`;
+      else pl += `leans the other way: ${effFav.name} by ${f1(Math.abs(em))} against the machine's ${fav.name} by ${f1(am)}.`;
+      pl += ` The biggest unit edge is ${bigger.o.name}'s ${bigger.side === 'offense' ? 'offense against ' + bigger.d.name + "'s defense" : 'defense against ' + bigger.d.name + "'s offense"} (${sg(bigger.side === 'offense' ? bigger.v : -bigger.v)} a game).`;
+      if (Math.abs(dis) >= 3 && A.rank <= 40 && B.rank <= 40 && am <= 14) pl += ` This is an A&M-type gap: on close games between top-40 teams the final has landed about halfway from the machine toward the plays' number (2022–26), so the blend is the number to argue about.`;
+      $('playsLead').textContent = pl;
+    } else { $('plays').innerHTML = ''; $('playsLead').textContent = 'No efficiency shadow for one of these teams yet.'; }
+
+    // 3. the tape
+    const tape = (O, Dd, tableId, headId, edgesId, oColor, dColor) => {
+      let eO = 0, eD = 0; const rows = [];
+      for (const [k, lab, hi] of D.stat_keys) {
+        const ov = O.stats && O.stats.off[k], dv = Dd.stats && Dd.stats.def_[k];
+        const orK = O.stats && O.stats.off[k + '_rk'], drK = Dd.stats && Dd.stats.def_[k + '_rk'];
+        let win = null;
+        if (ov != null && dv != null) {
+          // offense rank low = good; defense rank low = good. Edge to the better-ranked unit.
+          if (orK != null && drK != null && orK !== drK) win = orK < drK ? 'O' : 'D';
+          if (win === 'O') eO++; else if (win === 'D') eD++;
+        }
+        const fmt = v => v == null ? '–' : (Number.isInteger(v) ? v : f1(v));
+        rows.push(`<tr><td class="${win === 'O' ? 'w' : ''} num">${fmt(ov)}<span class="rk">${orK ? '#' + orK : ''}</span>${win === 'O' ? `<span class="dot" style="background:${oColor}"></span>` : ''}</td><td class="lab">${esc(lab)}</td><td class="${win === 'D' ? 'w' : ''} num">${win === 'D' ? `<span class="dot" style="background:${dColor};margin:0 6px 0 0"></span>` : ''}${fmt(dv)}<span class="rk">${drK ? '#' + drK : ''}</span></td></tr>`);
+      }
+      $(tableId).innerHTML = `<thead><tr><th>${esc(O.name)} offense</th><th class="lab">per game · FBS rank</th><th>${esc(Dd.name)} defense</th></tr></thead><tbody>${rows.join('')}</tbody>`;
+      $(headId).textContent = `${O.name} with the ball`;
+      $(edgesId).textContent = `edges ${O.abbr || O.name} ${eO} · ${Dd.abbr || Dd.name} ${eD}`;
+      return { eO, eD };
+    };
+    const t1 = tape(A, B, 'tapeA', 'tapeHeadA', 'tapeEdgesA', ca.bg, cb.bg), t2 = tape(B, A, 'tapeB', 'tapeHeadB', 'tapeEdgesB', cb.bg, ca.bg);
+    const aEdges = t1.eO + t2.eD, bEdges = t1.eD + t2.eO;
+    $('tapeLead').textContent = `Season rates per game with FBS ranks (FCS games included). Row by row the better-ranked unit takes the dot: ${A.name} ${aEdges}, ${B.name} ${bEdges}. ` +
+      (Math.sign(aEdges - bEdges) === Math.sign(m) || aEdges === bEdges ? 'The tape and the number point the same way.' : `The tape leans ${aEdges > bEdges ? A.name : B.name} while the number says ${fav.name}; the number weighs who the stats came against, the tape does not.`);
+
+    // 4. the resume
+    const logTable = (t, id, headId, luckId, color) => {
+      const rows = t.games.map(g => {
+        const site = g.site === 'home' ? 'vs' : (g.site === 'away' ? 'at' : 'n.');
+        if (!g.rated) return `<tr><td class="num">${g.wk}</td><td class="lab">${site} ${esc(g.opp)} <span class="rk">FCS</span></td><td class="res num">${esc(g.result)}</td><td colspan="3" class="lab">not rated</td></tr>`;
+        const cls = g.resid >= 7 ? 'good' : (g.resid <= -7 ? 'bad' : 'flat');
+        return `<tr><td class="num">${g.wk}</td><td class="lab">${site} ${esc(g.opp)} <span class="rk">#${g.opp_rank}</span></td><td class="res num">${esc(g.result)}</td><td class="num">${sg(g.expected)}</td><td class="num">${sg(g.delucked)}${g.to ? `<span class="rk" title="turnover margin">TO ${g.to > 0 ? '+' : ''}${g.to}</span>` : ''}</td><td><span class="pill ${cls} num">${sg(g.resid)}</span></td></tr>`;
+      });
+      $(id).innerHTML = `<thead><tr><th>Wk</th><th class="lab">Opponent · machine rank</th><th>Result</th><th title="What the current ratings expected">Expected</th><th title="Margin minus 3 x turnover margin">De-lucked</th><th title="De-lucked minus expected: the game's grade">Grade</th></tr></thead><tbody>${rows.join('')}</tbody>`;
+      $(headId).textContent = `${t.name} ${t.record}`;
+      const rated = t.games.filter(g => g.rated);
+      const luck = rated.reduce((s, g) => s + g.to, 0) * D.rule.to_pts;
+      const best = rated.slice().sort((x, y) => y.resid - x.resid)[0], worst = rated.slice().sort((x, y) => x.resid - y.resid)[0];
+      $(luckId).innerHTML = rated.length ? `Best grade: ${esc(best.opp)} (${sg(best.resid)}). Worst: ${esc(worst.opp)} (${sg(worst.resid)}). Turnover luck so far: ${sg(luck)} points of margin${luck > 6 ? ', which the machine takes back out' : (luck < -6 ? ', which the machine gives back' : '')}.` : 'No rated games yet.';
+    };
+    logTable(A, 'logA', 'resHeadA', 'luckA', ca.bg); logTable(B, 'logB', 'resHeadB', 'luckB', cb.bg);
+    const resA = A.games.filter(g => g.rated), resB = B.games.filter(g => g.rated);
+    const sum = arr => arr.reduce((s, g) => s + g.resid, 0);
+    $('resLead').textContent = `Every result graded against today's ratings: what the machine expected, the margin with turnover luck taken out, and the difference. ` +
+      `${A.name} has ${sum(resA) >= 0 ? 'beaten' : 'fallen short of'} expectation by ${f1(Math.abs(sum(resA)))} points over ${resA.length} rated games; ${B.name} by ${f1(Math.abs(sum(resB)))} (${sum(resB) >= 0 ? 'ahead' : 'short'}).`;
+    const common = resA.filter(g => resB.some(x => x.opp_key === g.opp_key));
+    $('common').innerHTML = common.length
+      ? `<div class="eyebrow">Common opponents</div>` + common.map(g => { const x = resB.find(x => x.opp_key === g.opp_key);
+          return `<div class="num" style="margin-top:6px"><b>${esc(g.opp)}</b>: ${esc(A.name)} ${esc(g.result)} ${g.site === 'home' ? 'at home' : (g.site === 'away' ? 'away' : 'neutral')} (grade ${sg(g.resid)}) · ${esc(B.name)} ${esc(x.result)} ${x.site === 'home' ? 'at home' : (x.site === 'away' ? 'away' : 'neutral')} (grade ${sg(x.resid)})</div>`; }).join('')
+      : `<div class="eyebrow">Common opponents</div><div style="margin-top:6px;color:var(--muted)">None yet this season.</div>`;
+
+    $('foot').innerHTML = `<p><b>How to read it.</b> The number is the on-air machine: ESPN's July FPI as the prior, updated by ridge over every rated 2026 game on turnover-adjusted margins (margin − ${D.rule.to_pts} × turnover margin, residual cap ${D.rule.cap}, prior worth ${D.rule.lam} games), home field ${HFA}. Win probability comes from the machine's own margin curve (residual sd ${D.rule.sd}); it misses the final margin by about ${D.rule.mae} points a game, so a 7-point favorite wins roughly two of three.</p>
+      <p><b>The plays</b> is the efficiency shadow rating (points an offense deserved from its non-garbage plays, same prior): internal, never the on-air number. The tape is per-game season rates with FBS ranks; it does not adjust for opponent. Updated ${esc(D.as_of.slice(0, 10))}, through Week ${D.through_week}. No market numbers appear on this page.</p>`;
+  }
+  render();
+})();
+</script>
