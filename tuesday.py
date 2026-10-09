@@ -46,8 +46,10 @@ def main():
     R.step(f"3 edge report week {n} (publish, not frozen)", [PY, "edge_report.py", "--week", str(n), "--view", "ml", "--publish"], tail=45)
     R.step(f"4 superdog board week {n}", [PY, "superdog_board.py", "--week", str(n)], tail=12)
     R.step(f"5 old-rule shadow week {n}", [PY, "turnover_shadow.py", "--week", str(n)], tail=30)
-    R.note("> Injury news goes in first: `python availability.py add \"Team\" \"Player\" QB out --return N --note \"...\"`")
+    R.step(f"5b injury sweep (CANDIDATES only - internal/availability_candidates_week{n}.md; run the lines you agree with)", [PY, "availability_sweep.py", "--week", str(n)], tail=24)
+    R.note("> Injury news goes in first: `python availability.py add \"Team\" \"Player\" QB out --return N --note \"...\"` (the sweep above drafts the lines)")
     R.step(f"6 availability shadow week {n}", [PY, "availability.py", "--week", str(n)], tail=20)
+    R.step(f"6b preflight (doctor.py)", [PY, "doctor.py", "--week", str(n)], tail=16)
     pairs, ep, wk = card_teams_from_deck()
     if pairs and wk == n:
         teams = ",".join(t for p in pairs for t in p)

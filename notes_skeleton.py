@@ -180,7 +180,12 @@ def games_skeleton(week, ep, games):
             winner = home if m >= 0 else away
             call = f"{winner} {max(a_pts, h_pts) if isinstance(a_pts, int) else '?'}–{min(a_pts, h_pts) if isinstance(a_pts, int) else '?'}"
             L.append(f"  - The number: {fav} −{abs(line):.1f}, {100 * p:.0f}% · Call {call}")
-            L.append("    - Honesty: (write it — the number's source, what the machine has not seen)")
+            try:   # machine draft of the honesty line from why.py (one source with Tale of the Tape); edit before air
+                from why import matchup as _why
+                w = _why(away, home, "N" if g.get("neutral") else "B")
+                L.append(f"    - Honesty (machine draft — edit): {w['honesty']}")
+            except Exception as e:  # noqa: BLE001 - no tape data yet, or an unrated team
+                L.append(f"    - Honesty: (write it — the number's source, what the machine has not seen) [why.py: {e}]")
             L.append("    - Pre-mortem — written on recording day from the frozen card")
         else:
             L.append("  - The number: (run edge_report --publish first)")

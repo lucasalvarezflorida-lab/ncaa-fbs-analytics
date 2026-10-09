@@ -55,3 +55,6 @@ decks/*_live_export.pptx
 # Tale of the Tape build: embeds ESPN logos (re-build with tape.py --data), the artifact is private
 tape/
 tape_data_2026.json
+
+# The Receipts page build (receipts_page.py); the artifact is private
+receipts/

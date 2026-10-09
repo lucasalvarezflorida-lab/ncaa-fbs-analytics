@@ -57,6 +57,7 @@ def main():
     R = Runner("recording", n)
     if wk != n:
         R.note(f"WARNING: make_episode_deck.py GAMES is week {wk}, not {n} — fix EPISODE, WEEK and GAMES first.")
+    R.step(f"0 preflight (doctor.py - stale packages, drift, expiries, notes vs card, workbook formulas)", [PY, "doctor.py", "--week", str(n)], tail=16)
     R.step(f"1 pre-record pull (edge report publish)", [PY, "edge_report.py", "--week", str(n), "--view", "ml", "--publish"], tail=45)
     if not a.no_freeze:
         R.step(f"2 freeze card week {n}", [PY, "freeze_card.py", "--week", str(n)], tail=14)

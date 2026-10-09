@@ -155,6 +155,8 @@ print(' · '.join(f"{{v['team']}} {{v['playoff']*100:.0f}}% (conf {{v['conf_titl
     R.step(f"14 social pack week {n}", [PY, "social_pack.py", "--week", str(n)], tail=3)
     R.step("15 efficiency blend on the cards (SHADOW, pre-registered 10/8 - EFFICIENCY_BLEND_2026.md)", [PY, "efficiency_blend_check.py", "--cards"], tail=8)
     R.step("16 Tale of the Tape data + page (tape/index.html; republish the artifact in session)", [PY, "tape.py", "--data"], tail=3)
+    R.step("17 The Receipts page (receipts/index.html; republish the artifact in session)", [PY, "receipts_page.py"], tail=3)
+    R.step(f"18 preflight for the next card (doctor.py --week {nxt})", [PY, "doctor.py", "--week", str(nxt)], tail=16)
     R.note(f"\n## Next\n- Update WEEK0_MISS / PRIOR_GAMES / LEANS_LINE in make_episode_deck.py from the receipts (running totals).\n- Card: ask Lucas; then `python notes_skeleton.py --week {nxt} --ep <E> --games \"A at B,...\"` and `--boards`, write the reads/keys, push OneNote with -Prefix \"Week {nxt} - \".\n- Corey's calls into score_tracker.json (man) and the ledger when his slides post.")
     R.finish()
 
