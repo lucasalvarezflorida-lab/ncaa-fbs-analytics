@@ -1,5 +1,290 @@
 [
  {
+  "week": 0,
+  "game": "North Carolina vs TCU",
+  "away": "North Carolina",
+  "home": "TCU",
+  "machine": [
+   23,
+   24
+  ],
+  "man": [
+   24,
+   26
+  ],
+  "final": [
+   15,
+   10
+  ],
+  "note": "added 10/9 from the published episode (video _ebZOhcx9wY): man = Corey's score slide (winner green), machine = the on-air number slide; neutral (Dublin); finals from the CFBD cache"
+ },
+ {
+  "week": 0,
+  "game": "NC State at Virginia",
+  "away": "NC State",
+  "home": "Virginia",
+  "machine": [
+   23,
+   30
+  ],
+  "man": [
+   24,
+   31
+  ],
+  "final": [
+   8,
+   34
+  ],
+  "note": "added 10/9 from the published episode (video _ebZOhcx9wY): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 0,
+  "game": "Jacksonville State at North Dakota State",
+  "away": "Jacksonville State",
+  "home": "North Dakota State",
+  "machine": [
+   22,
+   25
+  ],
+  "man": [
+   25,
+   28
+  ],
+  "final": [
+   7,
+   33
+  ],
+  "note": "added 10/9 from the published episode (video _ebZOhcx9wY): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 0,
+  "game": "Hawai'i at Stanford",
+  "away": "Hawai'i",
+  "home": "Stanford",
+  "machine": [
+   24,
+   26
+  ],
+  "man": [
+   24,
+   26
+  ],
+  "final": [
+   27,
+   37
+  ],
+  "note": "added 10/9 from the published episode (video _ebZOhcx9wY): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 0,
+  "game": "Memphis at UNLV",
+  "away": "Memphis",
+  "home": "UNLV",
+  "machine": [
+   26,
+   32
+  ],
+  "man": [
+   26,
+   33
+  ],
+  "final": [
+   27,
+   21
+  ],
+  "note": "added 10/9 from the published episode (video _ebZOhcx9wY): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 1,
+  "game": "Baylor vs Auburn",
+  "away": "Baylor",
+  "home": "Auburn",
+  "machine": [
+   27,
+   33
+  ],
+  "man": [
+   24,
+   31
+  ],
+  "final": [
+   16,
+   17
+  ],
+  "note": "added 10/9 from the published episode (video Pqg3lIFBwL4): man = Corey's score slide (winner green), machine = the on-air number slide; neutral; finals from the CFBD cache"
+ },
+ {
+  "week": 1,
+  "game": "Clemson at LSU",
+  "away": "Clemson",
+  "home": "LSU",
+  "machine": [
+   21,
+   30
+  ],
+  "man": [
+   17,
+   27
+  ],
+  "final": [
+   10,
+   51
+  ],
+  "note": "added 10/9 from the published episode (video Pqg3lIFBwL4): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 1,
+  "game": "Louisville vs Ole Miss",
+  "away": "Louisville",
+  "home": "Ole Miss",
+  "machine": [
+   25,
+   31
+  ],
+  "man": [
+   24,
+   31
+  ],
+  "final": [
+   38,
+   41
+  ],
+  "note": "added 10/9 from the published episode (video Pqg3lIFBwL4): man = Corey's score slide (winner green), machine = the on-air number slide; neutral (Nashville); finals from the CFBD cache"
+ },
+ {
+  "week": 1,
+  "game": "Wisconsin vs Notre Dame",
+  "away": "Wisconsin",
+  "home": "Notre Dame",
+  "machine": [
+   13,
+   34
+  ],
+  "man": [
+   13,
+   34
+  ],
+  "final": [
+   13,
+   41
+  ],
+  "note": "added 10/9 from the published episode (video Pqg3lIFBwL4): man = Corey's score slide (winner green), machine = the on-air number slide; neutral (Lambeau); finals from the CFBD cache"
+ },
+ {
+  "week": 1,
+  "game": "SMU at Florida State",
+  "away": "SMU",
+  "home": "Florida State",
+  "machine": [
+   26,
+   27
+  ],
+  "man": [
+   27,
+   24
+  ],
+  "final": [
+   27,
+   24
+  ],
+  "note": "added 10/9 from the published episode (video Pqg3lIFBwL4): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 2,
+  "game": "Oklahoma at Michigan",
+  "away": "Oklahoma",
+  "home": "Michigan",
+  "machine": [
+   23,
+   21
+  ],
+  "man": [
+   21,
+   17
+  ],
+  "final": [
+   10,
+   17
+  ],
+  "note": "added 10/9 from the published episode (video WW4MWWi3kVU (man) + _RECAP_ROWS_WK2 (machine)): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 2,
+  "game": "Arizona State at Texas A&M",
+  "away": "Arizona State",
+  "home": "Texas A&M",
+  "machine": [
+   17,
+   34
+  ],
+  "man": [
+   24,
+   41
+  ],
+  "final": [
+   20,
+   48
+  ],
+  "note": "added 10/9 from the published episode (video WW4MWWi3kVU (man) + _RECAP_ROWS_WK2 (machine)): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 2,
+  "game": "Arizona at BYU",
+  "away": "Arizona",
+  "home": "BYU",
+  "machine": [
+   20,
+   28
+  ],
+  "man": [
+   24,
+   34
+  ],
+  "final": [
+   17,
+   28
+  ],
+  "note": "added 10/9 from the published episode (video WW4MWWi3kVU (man) + _RECAP_ROWS_WK2 (machine)): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 2,
+  "game": "Alabama at Kentucky",
+  "away": "Alabama",
+  "home": "Kentucky",
+  "machine": [
+   31,
+   18
+  ],
+  "man": [
+   38,
+   24
+  ],
+  "final": [
+   45,
+   17
+  ],
+  "note": "added 10/9 from the published episode (video WW4MWWi3kVU (man) + _RECAP_ROWS_WK2 (machine)): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
+  "week": 2,
+  "game": "Ohio State at Texas",
+  "away": "Ohio State",
+  "home": "Texas",
+  "machine": [
+   23,
+   27
+  ],
+  "man": [
+   31,
+   34
+  ],
+  "final": [
+   23,
+   24
+  ],
+  "note": "added 10/9 from the published episode (video WW4MWWi3kVU (man) + _RECAP_ROWS_WK2 (machine)): man = Corey's score slide (winner green), machine = the on-air number slide; finals from the CFBD cache"
+ },
+ {
   "week": 3,
   "game": "Houston at Texas Tech",
   "away": "Houston",
