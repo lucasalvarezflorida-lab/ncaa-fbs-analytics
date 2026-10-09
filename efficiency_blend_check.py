@@ -163,9 +163,11 @@ def cards(week: int | None = None) -> str:
     eff = EfficiencyModel(); cur = bt.MODELS["current"]
     L = [f"## efficiency blend on the cards - {dt.date.today()}"]
     tot = dict(m=0.0, b=0.0, e=0.0, k=0.0, n=0, wm=0, wb=0, we=0)
+    ev = dict(m=0.0, b=0.0, e=0.0, k=0.0, n=0)        # cards from weeks with evidence (CFBD week 2+): week 0/1 cards are the prior alone
     for w in sorted({g["week"] for g in tr}):
-        pc, pe = bt.ridge_predict(ctx, w, cur), eff(ctx, w)
-        by = {(g["home"], g["away"]): g for g in ctx.games if g["week"] == w}
+        cw = max(int(w), 1)                              # the tracker's Week 0 sits in CFBD's week 1
+        pc, pe = bt.ridge_predict(ctx, cw, cur), eff(ctx, cw)
+        by = {(g["home"], g["away"]): g for g in ctx.games if g["week"] == cw}
         for g in [g for g in tr if g["week"] == w]:
             h, a = normalize_name(g["home"]), normalize_name(g["away"])
             gg = by.get((h, a))
@@ -178,6 +180,9 @@ def cards(week: int | None = None) -> str:
                 tot["m"] += abs(act - m); tot["b"] += abs(act - b); tot["e"] += abs(act - e); tot["n"] += 1
                 tot["k"] += abs(act - k) if k is not None else 0
                 tot["wm"] += int(np.sign(act) == np.sign(m)); tot["wb"] += int(np.sign(act) == np.sign(b)); tot["we"] += int(np.sign(act) == np.sign(e))
+                if cw >= 2:
+                    ev["m"] += abs(act - m); ev["b"] += abs(act - b); ev["e"] += abs(act - e); ev["n"] += 1
+                    ev["k"] += abs(act - k) if k is not None else 0
                 L.append(f"wk{w} {g['game']}: final {act:+.0f} | machine {m:+.1f} blend {b:+.1f} eff {e:+.1f} mkt {k}")
             else:
                 L.append(f"wk{w} {g['game']}: PENDING | machine {m:+.1f} blend {b:+.1f} eff {e:+.1f} mkt {k}")
@@ -200,6 +205,9 @@ def cards(week: int | None = None) -> str:
     if tot["n"]:
         L.append(f"{tot['n']} graded: total miss machine {tot['m']:.1f} / blend 0.5 {tot['b']:.1f} / efficiency {tot['e']:.1f} / market {tot['k']:.1f}; "
                  f"per game machine {tot['m']/tot['n']:.2f} blend {tot['b']/tot['n']:.2f} eff {tot['e']/tot['n']:.2f}; winners {tot['wm']} / {tot['wb']} / {tot['we']}")
+    if ev["n"]:
+        L.append(f"THE TEST (weeks with evidence, {ev['n']} cards): per game machine {ev['m']/ev['n']:.2f} / blend 0.5 {ev['b']/ev['n']:.2f} / efficiency {ev['e']/ev['n']:.2f} / market {ev['k']/ev['n']:.2f}; "
+                 f"blend ahead of the machine by {(ev['m'] - ev['b'])/ev['n']:+.2f} a game (pre-registered bar after Week 10: +0.50)")
     out = "\n".join(L)
     with (HERE / "internal" / "efficiency_blend_cards.md").open("a", encoding="utf-8") as f:
         f.write(out + "\n\n")
