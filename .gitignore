@@ -58,3 +58,6 @@ tape_data_2026.json
 
 # The Receipts page build (receipts_page.py); the artifact is private
 receipts/
+
+# episode downloads + slide frames (episode_frames.py)
+decks/video/
