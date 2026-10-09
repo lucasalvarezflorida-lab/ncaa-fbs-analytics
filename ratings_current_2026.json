@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-07T23:28:20+00:00",
+ "as_of": "2026-10-09T17:33:48+00:00",
  "params": {
   "lam": 3.0,
   "cap": 42.0,
@@ -8,23 +8,23 @@
   "eff_w": 1.0,
   "hfa": 2.5,
   "sigma": 15.8,
-  "rule_date": "2026-10-07"
+  "rule_date": "2026-10-09"
  },
- "games_used": 272,
+ "games_used": 278,
  "teams": [
-  {
-   "team": "alabama",
-   "pre": 20.1,
-   "cur": 27.9,
-   "delta": 7.8,
-   "gp": 5
-  },
   {
    "team": "georgia",
    "pre": 24.8,
-   "cur": 27.8,
-   "delta": 3.0,
+   "cur": 28.1,
+   "delta": 3.3,
    "gp": 4
+  },
+  {
+   "team": "alabama",
+   "pre": 20.1,
+   "cur": 27.8,
+   "delta": 7.7,
+   "gp": 5
   },
   {
    "team": "ohio state",
@@ -57,22 +57,22 @@
   {
    "team": "lsu",
    "pre": 20.0,
-   "cur": 25.9,
-   "delta": 5.9,
+   "cur": 25.8,
+   "delta": 5.8,
    "gp": 4
   },
   {
    "team": "indiana",
    "pre": 23.1,
-   "cur": 23.0,
-   "delta": -0.1,
+   "cur": 23.3,
+   "delta": 0.2,
    "gp": 4
   },
   {
    "team": "texas am",
    "pre": 20.0,
-   "cur": 18.0,
-   "delta": -2.0,
+   "cur": 17.7,
+   "delta": -2.3,
    "gp": 5
   },
   {
@@ -98,13 +98,6 @@
    "gp": 4
   },
   {
-   "team": "texas tech",
-   "pre": 20.0,
-   "cur": 16.2,
-   "delta": -3.8,
-   "gp": 4
-  },
-  {
    "team": "oklahoma",
    "pre": 17.8,
    "cur": 15.9,
@@ -112,10 +105,17 @@
    "gp": 4
   },
   {
+   "team": "texas tech",
+   "pre": 20.0,
+   "cur": 15.8,
+   "delta": -4.2,
+   "gp": 4
+  },
+  {
    "team": "florida",
    "pre": 13.6,
-   "cur": 15.6,
-   "delta": 2.0,
+   "cur": 15.7,
+   "delta": 2.1,
    "gp": 4
   },
   {
@@ -135,8 +135,8 @@
   {
    "team": "nebraska",
    "pre": 8.8,
-   "cur": 14.3,
-   "delta": 5.5,
+   "cur": 14.4,
+   "delta": 5.6,
    "gp": 4
   },
   {
@@ -145,13 +145,6 @@
    "cur": 13.1,
    "delta": -3.9,
    "gp": 6
-  },
-  {
-   "team": "florida state",
-   "pre": 9.3,
-   "cur": 13.1,
-   "delta": 3.8,
-   "gp": 4
   },
   {
    "team": "mississippi state",
@@ -173,6 +166,13 @@
    "cur": 12.9,
    "delta": -0.2,
    "gp": 3
+  },
+  {
+   "team": "florida state",
+   "pre": 9.3,
+   "cur": 12.9,
+   "delta": 3.6,
+   "gp": 4
   },
   {
    "team": "south carolina",
@@ -203,24 +203,24 @@
    "gp": 5
   },
   {
+   "team": "iowa",
+   "pre": 10.6,
+   "cur": 10.7,
+   "delta": 0.1,
+   "gp": 4
+  },
+  {
    "team": "baylor",
    "pre": 6.5,
-   "cur": 10.8,
-   "delta": 4.3,
+   "cur": 10.7,
+   "delta": 4.2,
    "gp": 4
   },
   {
    "team": "boise state",
    "pre": 4.0,
-   "cur": 10.8,
-   "delta": 6.8,
-   "gp": 4
-  },
-  {
-   "team": "iowa",
-   "pre": 10.6,
    "cur": 10.7,
-   "delta": 0.1,
+   "delta": 6.7,
    "gp": 4
   },
   {
@@ -245,25 +245,11 @@
    "gp": 4
   },
   {
-   "team": "smu",
-   "pre": 11.1,
-   "cur": 9.4,
-   "delta": -1.7,
-   "gp": 4
-  },
-  {
    "team": "wake forest",
    "pre": 3.4,
    "cur": 9.2,
    "delta": 5.8,
    "gp": 5
-  },
-  {
-   "team": "houston",
-   "pre": 7.1,
-   "cur": 9.0,
-   "delta": 1.9,
-   "gp": 4
   },
   {
    "team": "north carolina",
@@ -273,10 +259,24 @@
    "gp": 3
   },
   {
+   "team": "smu",
+   "pre": 11.1,
+   "cur": 8.9,
+   "delta": -2.2,
+   "gp": 4
+  },
+  {
+   "team": "houston",
+   "pre": 7.1,
+   "cur": 8.9,
+   "delta": 1.8,
+   "gp": 4
+  },
+  {
    "team": "kentucky",
    "pre": 5.4,
-   "cur": 8.4,
-   "delta": 3.0,
+   "cur": 8.5,
+   "delta": 3.1,
    "gp": 4
   },
   {
@@ -289,8 +289,8 @@
   {
    "team": "oklahoma state",
    "pre": 3.3,
-   "cur": 7.9,
-   "delta": 4.6,
+   "cur": 7.8,
+   "delta": 4.5,
    "gp": 3
   },
   {
@@ -322,13 +322,6 @@
    "gp": 3
   },
   {
-   "team": "tcu",
-   "pre": 6.4,
-   "cur": 6.3,
-   "delta": -0.1,
-   "gp": 4
-  },
-  {
    "team": "kansas state",
    "pre": 5.1,
    "cur": 6.3,
@@ -338,8 +331,15 @@
   {
    "team": "vanderbilt",
    "pre": 9.0,
-   "cur": 6.0,
-   "delta": -3.0,
+   "cur": 6.1,
+   "delta": -2.9,
+   "gp": 4
+  },
+  {
+   "team": "tcu",
+   "pre": 6.4,
+   "cur": 6.1,
+   "delta": -0.3,
    "gp": 4
   },
   {
@@ -352,8 +352,8 @@
   {
    "team": "new mexico",
    "pre": -3.5,
-   "cur": 5.4,
-   "delta": 8.9,
+   "cur": 5.2,
+   "delta": 8.7,
    "gp": 4
   },
   {
@@ -374,15 +374,15 @@
   {
    "team": "james madison",
    "pre": -2.0,
-   "cur": 4.3,
-   "delta": 6.3,
+   "cur": 4.5,
+   "delta": 6.5,
    "gp": 4
   },
   {
    "team": "memphis",
    "pre": -1.9,
-   "cur": 3.9,
-   "delta": 5.8,
+   "cur": 3.7,
+   "delta": 5.6,
    "gp": 4
   },
   {
@@ -442,6 +442,13 @@
    "gp": 4
   },
   {
+   "team": "liberty",
+   "pre": -7.7,
+   "cur": 1.1,
+   "delta": 8.8,
+   "gp": 5
+  },
+  {
    "team": "georgia tech",
    "pre": 4.2,
    "cur": 0.4,
@@ -451,8 +458,8 @@
   {
    "team": "west virginia",
    "pre": 0.2,
-   "cur": 0.3,
-   "delta": 0.1,
+   "cur": 0.4,
+   "delta": 0.2,
    "gp": 4
   },
   {
@@ -475,13 +482,6 @@
    "cur": -0.7,
    "delta": -5.5,
    "gp": 3
-  },
-  {
-   "team": "liberty",
-   "pre": -7.7,
-   "cur": -0.7,
-   "delta": 7.0,
-   "gp": 4
   },
   {
    "team": "syracuse",
@@ -528,23 +528,23 @@
   {
    "team": "georgia state",
    "pre": -15.2,
-   "cur": -2.1,
-   "delta": 13.1,
+   "cur": -2.2,
+   "delta": 13.0,
    "gp": 4
   },
   {
    "team": "tulane",
    "pre": 2.3,
-   "cur": -2.7,
-   "delta": -5.0,
+   "cur": -2.5,
+   "delta": -4.8,
    "gp": 4
   },
   {
    "team": "utsa",
    "pre": -5.3,
-   "cur": -2.8,
-   "delta": 2.5,
-   "gp": 4
+   "cur": -2.5,
+   "delta": 2.8,
+   "gp": 5
   },
   {
    "team": "maryland",
@@ -563,8 +563,8 @@
   {
    "team": "unlv",
    "pre": 1.8,
-   "cur": -3.4,
-   "delta": -5.2,
+   "cur": -3.5,
+   "delta": -5.3,
    "gp": 5
   },
   {
@@ -577,8 +577,8 @@
   {
    "team": "utah state",
    "pre": -6.7,
-   "cur": -3.8,
-   "delta": 2.9,
+   "cur": -3.9,
+   "delta": 2.8,
    "gp": 4
   },
   {
@@ -598,8 +598,8 @@
   {
    "team": "western michigan",
    "pre": -4.0,
-   "cur": -4.9,
-   "delta": -0.9,
+   "cur": -4.8,
+   "delta": -0.8,
    "gp": 4
   },
   {
@@ -614,62 +614,69 @@
    "pre": -0.9,
    "cur": -5.0,
    "delta": -4.1,
-   "gp": 4
+   "gp": 5
   },
   {
    "team": "air force",
    "pre": -6.8,
-   "cur": -5.1,
-   "delta": 1.7,
+   "cur": -5.0,
+   "delta": 1.8,
    "gp": 3
   },
   {
    "team": "east carolina",
    "pre": -0.6,
-   "cur": -5.3,
-   "delta": -4.7,
+   "cur": -5.2,
+   "delta": -4.6,
    "gp": 3
   },
   {
    "team": "san diego state",
    "pre": 1.4,
-   "cur": -5.6,
-   "delta": -7.0,
+   "cur": -5.5,
+   "delta": -6.9,
    "gp": 4
   },
   {
    "team": "troy",
    "pre": -7.4,
-   "cur": -5.6,
-   "delta": 1.8,
+   "cur": -5.9,
+   "delta": 1.5,
    "gp": 4
   },
   {
    "team": "navy",
    "pre": -0.7,
-   "cur": -6.2,
-   "delta": -5.5,
+   "cur": -6.1,
+   "delta": -5.4,
    "gp": 3
+  },
+  {
+   "team": "fiu",
+   "pre": -12.6,
+   "cur": -6.3,
+   "delta": 6.3,
+   "gp": 4
   },
   {
    "team": "louisiana",
    "pre": -8.3,
-   "cur": -6.2,
-   "delta": 2.1,
+   "cur": -6.4,
+   "delta": 1.9,
    "gp": 4
   },
   {
    "team": "temple",
    "pre": -8.6,
-   "cur": -6.5,
-   "delta": 2.1,
+   "cur": -6.4,
+   "delta": 2.2,
    "gp": 4
   },
   {
    "team": "tulsa",
    "pre": -9.0,
-   "cur": -7.4,
-   "delta": 1.6,
+   "cur": -7.8,
+   "delta": 1.2,
    "gp": 4
   },
   {
@@ -687,17 +694,10 @@
    "gp": 4
   },
   {
-   "team": "fiu",
-   "pre": -12.6,
-   "cur": -8.2,
-   "delta": 4.4,
-   "gp": 3
-  },
-  {
    "team": "nevada",
    "pre": -11.9,
-   "cur": -8.5,
-   "delta": 3.4,
+   "cur": -8.1,
+   "delta": 3.8,
    "gp": 3
   },
   {
@@ -710,15 +710,22 @@
   {
    "team": "delaware",
    "pre": -6.6,
-   "cur": -9.3,
-   "delta": -2.7,
+   "cur": -9.0,
+   "delta": -2.4,
    "gp": 4
   },
   {
    "team": "jacksonville state",
    "pre": -8.5,
+   "cur": -9.3,
+   "delta": -0.8,
+   "gp": 5
+  },
+  {
+   "team": "ohio",
+   "pre": -8.0,
    "cur": -9.5,
-   "delta": -1.0,
+   "delta": -1.5,
    "gp": 4
   },
   {
@@ -729,25 +736,18 @@
    "gp": 4
   },
   {
-   "team": "ohio",
-   "pre": -8.0,
-   "cur": -9.7,
-   "delta": -1.7,
-   "gp": 4
-  },
-  {
    "team": "florida atlantic",
    "pre": -11.3,
-   "cur": -9.8,
-   "delta": 1.5,
+   "cur": -9.5,
+   "delta": 1.8,
    "gp": 4
   },
   {
-   "team": "arkansas state",
-   "pre": -9.2,
-   "cur": -10.3,
-   "delta": -1.1,
-   "gp": 4
+   "team": "south alabama",
+   "pre": -10.5,
+   "cur": -9.9,
+   "delta": 0.6,
+   "gp": 5
   },
   {
    "team": "app state",
@@ -764,46 +764,46 @@
    "gp": 4
   },
   {
-   "team": "new mexico state",
-   "pre": -15.7,
-   "cur": -10.5,
-   "delta": 5.2,
-   "gp": 4
-  },
-  {
-   "team": "south alabama",
-   "pre": -10.5,
-   "cur": -11.1,
-   "delta": -0.6,
-   "gp": 4
-  },
-  {
    "team": "hawaii",
    "pre": -2.4,
-   "cur": -11.4,
-   "delta": -9.0,
+   "cur": -11.6,
+   "delta": -9.2,
    "gp": 5
   },
   {
-   "team": "kennesaw state",
-   "pre": -9.0,
-   "cur": -11.7,
-   "delta": -2.7,
-   "gp": 3
+   "team": "arkansas state",
+   "pre": -9.2,
+   "cur": -11.6,
+   "delta": -2.4,
+   "gp": 5
   },
   {
    "team": "old dominion",
    "pre": -4.4,
-   "cur": -11.8,
-   "delta": -7.4,
+   "cur": -11.7,
+   "delta": -7.3,
    "gp": 4
   },
   {
    "team": "rice",
    "pre": -13.4,
-   "cur": -11.8,
-   "delta": 1.6,
+   "cur": -11.7,
+   "delta": 1.7,
    "gp": 4
+  },
+  {
+   "team": "coastal carolina",
+   "pre": -12.1,
+   "cur": -11.8,
+   "delta": 0.3,
+   "gp": 4
+  },
+  {
+   "team": "new mexico state",
+   "pre": -15.7,
+   "cur": -11.9,
+   "delta": 3.8,
+   "gp": 5
   },
   {
    "team": "stanford",
@@ -813,17 +813,17 @@
    "gp": 5
   },
   {
-   "team": "coastal carolina",
-   "pre": -12.1,
+   "team": "kennesaw state",
+   "pre": -9.0,
    "cur": -12.1,
-   "delta": 0.0,
+   "delta": -3.1,
    "gp": 4
   },
   {
    "team": "central michigan",
    "pre": -12.8,
-   "cur": -12.4,
-   "delta": 0.4,
+   "cur": -12.5,
+   "delta": 0.3,
    "gp": 4
   },
   {
@@ -848,11 +848,11 @@
    "gp": 4
   },
   {
-   "team": "marshall",
-   "pre": -8.8,
-   "cur": -13.7,
-   "delta": -4.9,
-   "gp": 4
+   "team": "buffalo",
+   "pre": -10.8,
+   "cur": -13.6,
+   "delta": -2.8,
+   "gp": 3
   },
   {
    "team": "uab",
@@ -862,11 +862,11 @@
    "gp": 4
   },
   {
-   "team": "buffalo",
-   "pre": -10.8,
-   "cur": -13.9,
-   "delta": -3.1,
-   "gp": 3
+   "team": "western kentucky",
+   "pre": -4.9,
+   "cur": -13.8,
+   "delta": -8.9,
+   "gp": 5
   },
   {
    "team": "umass",
@@ -876,25 +876,18 @@
    "gp": 3
   },
   {
-   "team": "sam houston",
-   "pre": -18.4,
-   "cur": -14.6,
-   "delta": 3.8,
-   "gp": 3
+   "team": "marshall",
+   "pre": -8.8,
+   "cur": -14.1,
+   "delta": -5.3,
+   "gp": 4
   },
   {
    "team": "wyoming",
    "pre": -13.1,
-   "cur": -14.9,
-   "delta": -1.8,
-   "gp": 4
-  },
-  {
-   "team": "missouri state",
-   "pre": -10.3,
    "cur": -15.0,
-   "delta": -4.7,
-   "gp": 3
+   "delta": -1.9,
+   "gp": 4
   },
   {
    "team": "eastern michigan",
@@ -904,10 +897,17 @@
    "gp": 5
   },
   {
-   "team": "western kentucky",
-   "pre": -4.9,
-   "cur": -15.8,
-   "delta": -10.9,
+   "team": "sam houston",
+   "pre": -18.4,
+   "cur": -16.7,
+   "delta": 1.7,
+   "gp": 4
+  },
+  {
+   "team": "missouri state",
+   "pre": -10.3,
+   "cur": -17.6,
+   "delta": -7.3,
    "gp": 4
   },
   {
@@ -934,8 +934,15 @@
   {
    "team": "charlotte",
    "pre": -14.6,
-   "cur": -19.8,
-   "delta": -5.2,
+   "cur": -19.9,
+   "delta": -5.3,
+   "gp": 4
+  },
+  {
+   "team": "kent state",
+   "pre": -17.9,
+   "cur": -20.3,
+   "delta": -2.4,
    "gp": 4
   },
   {
@@ -943,13 +950,6 @@
    "pre": -16.9,
    "cur": -20.4,
    "delta": -3.5,
-   "gp": 4
-  },
-  {
-   "team": "kent state",
-   "pre": -17.9,
-   "cur": -20.4,
-   "delta": -2.5,
    "gp": 4
   },
   {
@@ -962,15 +962,15 @@
   {
    "team": "ball state",
    "pre": -17.3,
-   "cur": -22.8,
-   "delta": -5.5,
+   "cur": -22.5,
+   "delta": -5.2,
    "gp": 4
   },
   {
    "team": "ul monroe",
    "pre": -19.3,
-   "cur": -24.1,
-   "delta": -4.8,
+   "cur": -23.8,
+   "delta": -4.5,
    "gp": 4
   },
   {
