@@ -46,3 +46,11 @@ week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
 5,2026-09-26,Texas A&M +9.5,LSU -9.5 (mkt -8.5),70,0.60,0.53,L,-70,1041
 5,2026-09-26,Missouri State +34.5,SMU -34.5,80,0.65,0.50,W,80,1121
 5,2026-09-26,Nevada +5.5,Air Force -5.5,90,0.67,0.50,W,90,1211
+7,2026-10-09,Florida State +3.5,Louisville -3.5 (mkt -4),75,0.67,0.48,,,
+7,2026-10-09,Iowa +3,Washington -3 (mkt -2.5),96,0.70,0.52,,,
+7,2026-10-10,South Carolina +11.5,Florida -11.5,71,0.65,0.50,,,
+7,2026-10-10,Charlotte +28.5,North Texas -28.5,89,0.69,0.50,,,
+7,2026-10-10,Buffalo +20.5,Toledo -20.5,74,0.66,0.50,,,
+7,2026-10-10,San Diego State +15.5,Oregon State -15.5,95,0.71,0.50,,,
+7,2026-10-10,LSU -8.5,LSU -8.5 @ Kentucky (mkt -9.5),84,0.66,0.53,,,
+7,2026-10-10,Hawai'i +20.5,Arizona State -20.5,82,0.68,0.50,,,
