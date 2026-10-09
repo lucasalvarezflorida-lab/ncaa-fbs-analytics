@@ -524,6 +524,15 @@ def main() -> int:
     except Exception as e:
         print(f"team stats skipped: {e}")
 
+    # MATCHUP sheet (Lucas 10/9): the Excel twin of Tale of the Tape - dropdown-driven, formulas only,
+    # hidden _Tape* data sheets rebuilt from the same json the artifact uses. No market numbers.
+    print("\n== matchup sheet (Tale of the Tape) ==")
+    try:
+        from tape_sheet import write_tape_sheet
+        write_tape_sheet(book, rebuild_data=True)
+    except Exception as e:
+        print(f"matchup sheet skipped: {e}")
+
     print("\n== deep-dive text boxes (Excel automation) ==")
     try:
         from deep_dive_boxes import add_boxes
