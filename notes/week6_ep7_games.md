@@ -100,6 +100,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - The game is Missouri's passing game (25 explosive passes in 156 dropbacks) against an A&M defense that gave up 14.0 a throw to Kentucky and 11.1 to LSU
   - The number: Texas A&M −0.9, 52% · Call Texas A&M 25–24
     - Honesty: this is the July prior talking. A&M started at 20.0 and has only come down 2.0 despite two losses, because the prior is still worth three games and the Arkansas win held it up; Missouri started at 12.2. On what both have done since September, Missouri has the better case — say that on air
+      - The plays say the other way: on play-by-play efficiency (shadow rating, not the on-air number) Missouri is better by 6.2 — its defense against A&M's offense is the mismatch, 3.6 a game. The 50/50 blend of the machine and the plays is Missouri by 2.6. On close games between top-40 teams the final has landed about halfway from the machine toward the plays since 2022, so the blend is the number to argue about on air
     - Pre-mortem — written on recording day from the frozen card
   - Texas A&M keys
     - Run it like the Arkansas game
