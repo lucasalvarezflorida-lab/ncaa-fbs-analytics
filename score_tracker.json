@@ -622,7 +622,10 @@
    31,
    24
   ],
-  "final": null,
+  "final": [
+   20,
+   17
+  ],
   "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
   "machine_shadow": [
    29,
@@ -643,7 +646,10 @@
    27,
    28
   ],
-  "final": null,
+  "final": [
+   6,
+   27
+  ],
   "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
   "machine_shadow": [
    25,
@@ -664,7 +670,10 @@
    27,
    41
   ],
-  "final": null,
+  "final": [
+   17,
+   15
+  ],
   "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
   "machine_shadow": [
    21,
@@ -685,7 +694,10 @@
    34,
    35
   ],
-  "final": null,
+  "final": [
+   20,
+   17
+  ],
   "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
   "machine_shadow": [
    25,
@@ -706,7 +718,10 @@
    27,
    31
   ],
-  "final": null,
+  "final": [
+   31,
+   23
+  ],
   "note": "man = Corey's Week 6 score slides (left = away, green = his winner), read Wed 10/7 off a read-only export (decks/corey_1UpeONbb_export_wk6_calls.pptx); machine = the Sunday card's score calls from notes/week6_ep7_games.md - freeze_card.py overwrites them from the frozen card at recording",
   "machine_shadow": [
    27,

@@ -1,12 +1,42 @@
 # Score tracker — who was closer to each team's final score (INTERNAL)
 
-Season: **man closer on 14 teams · machine on 12 · 4 tie** — points off, all teams: man 250 · machine 253 — games (both teams added up): man 5 · machine 6 · 4 tie
+Season: **man closer on 26 teams · machine on 33 · 11 tie** — points off, all teams: man 615 · machine 573 — games (both teams added up): man 11 · machine 15 · 9 tie
 
 The machine predicts the margin, not the points - it has no totals model - so its team-score
 misses are mostly a points-total miss. Corey's totals are his own.
 
 | Wk | Game | Team | Final | Machine | off | Man | off | Closer |
 |---|---|---|---|---|---|---|---|---|
+| 0 | North Carolina vs TCU | North Carolina | 15 | 23 | 8 | 24 | 9 | machine |
+| 0 | North Carolina vs TCU | TCU | 10 | 24 | 14 | 26 | 16 | machine |
+| 0 | NC State at Virginia | NC State | 8 | 23 | 15 | 24 | 16 | machine |
+| 0 | NC State at Virginia | Virginia | 34 | 30 | 4 | 31 | 3 | man |
+| 0 | Jacksonville State at North Dakota State | Jacksonville State | 7 | 22 | 15 | 25 | 18 | machine |
+| 0 | Jacksonville State at North Dakota State | North Dakota State | 33 | 25 | 8 | 28 | 5 | man |
+| 0 | Hawai'i at Stanford | Hawai'i | 27 | 24 | 3 | 24 | 3 | tie |
+| 0 | Hawai'i at Stanford | Stanford | 37 | 26 | 11 | 26 | 11 | tie |
+| 0 | Memphis at UNLV | Memphis | 27 | 26 | 1 | 26 | 1 | tie |
+| 0 | Memphis at UNLV | UNLV | 21 | 32 | 11 | 33 | 12 | machine |
+| 1 | Baylor vs Auburn | Baylor | 16 | 27 | 11 | 24 | 8 | man |
+| 1 | Baylor vs Auburn | Auburn | 17 | 33 | 16 | 31 | 14 | man |
+| 1 | Clemson at LSU | Clemson | 10 | 21 | 11 | 17 | 7 | man |
+| 1 | Clemson at LSU | LSU | 51 | 30 | 21 | 27 | 24 | machine |
+| 1 | Louisville vs Ole Miss | Louisville | 38 | 25 | 13 | 24 | 14 | machine |
+| 1 | Louisville vs Ole Miss | Ole Miss | 41 | 31 | 10 | 31 | 10 | tie |
+| 1 | Wisconsin vs Notre Dame | Wisconsin | 13 | 13 | 0 | 13 | 0 | tie |
+| 1 | Wisconsin vs Notre Dame | Notre Dame | 41 | 34 | 7 | 34 | 7 | tie |
+| 1 | SMU at Florida State | SMU | 27 | 26 | 1 | 27 | 0 | man |
+| 1 | SMU at Florida State | Florida State | 24 | 27 | 3 | 24 | 0 | man |
+| 2 | Oklahoma at Michigan | Oklahoma | 10 | 23 | 13 | 21 | 11 | man |
+| 2 | Oklahoma at Michigan | Michigan | 17 | 21 | 4 | 17 | 0 | man |
+| 2 | Arizona State at Texas A&M | Arizona State | 20 | 17 | 3 | 24 | 4 | machine |
+| 2 | Arizona State at Texas A&M | Texas A&M | 48 | 34 | 14 | 41 | 7 | man |
+| 2 | Arizona at BYU | Arizona | 17 | 20 | 3 | 24 | 7 | machine |
+| 2 | Arizona at BYU | BYU | 28 | 28 | 0 | 34 | 6 | machine |
+| 2 | Alabama at Kentucky | Alabama | 45 | 31 | 14 | 38 | 7 | man |
+| 2 | Alabama at Kentucky | Kentucky | 17 | 18 | 1 | 24 | 7 | machine |
+| 2 | Ohio State at Texas | Ohio State | 23 | 23 | 0 | 31 | 8 | machine |
+| 2 | Ohio State at Texas | Texas | 24 | 27 | 3 | 34 | 10 | machine |
 | 3 | Houston at Texas Tech | Houston | 26 | 20 | 6 | 24 | 2 | man |
 | 3 | Houston at Texas Tech | Texas Tech | 28 | 33 | 5 | 35 | 7 | machine |
 | 3 | SMU at Louisville | SMU | 31 | 29 | 2 | 34 | 3 | machine |
@@ -37,8 +67,18 @@ misses are mostly a points-total miss. Corey's totals are his own.
 | 5 | Auburn at Tennessee | Tennessee | 24 | 31 | 7 | 31 | 7 | tie |
 | 5 | Ohio State at Iowa | Ohio State | 31 | 30 | 1 | 31 | 0 | man |
 | 5 | Ohio State at Iowa | Iowa | 14 | 16 | 2 | 20 | 6 | machine |
+| 6 | Indiana at Nebraska | Indiana | 20 | 27 | 7 | 31 | 11 | machine |
+| 6 | Indiana at Nebraska | Nebraska | 17 | 21 | 4 | 24 | 7 | machine |
+| 6 | Texas A&M at Missouri | Texas A&M | 6 | 25 | 19 | 27 | 21 | machine |
+| 6 | Texas A&M at Missouri | Missouri | 27 | 24 | 3 | 28 | 1 | man |
+| 6 | UCLA at Oregon | UCLA | 17 | 24 | 7 | 27 | 10 | machine |
+| 6 | UCLA at Oregon | Oregon | 15 | 34 | 19 | 41 | 26 | machine |
+| 6 | Georgia at Alabama | Georgia | 20 | 24 | 4 | 34 | 14 | machine |
+| 6 | Georgia at Alabama | Alabama | 17 | 27 | 10 | 35 | 18 | machine |
+| 6 | USC at Penn State | USC | 31 | 27 | 4 | 27 | 4 | tie |
+| 6 | USC at Penn State | Penn State | 23 | 28 | 5 | 31 | 8 | machine |
 
-Shadow score call (machine margin over the MODELED total, Phase 2 - not on air): 169 points off across 20 team scores vs 170 for the on-air call.
+Shadow score call (machine margin over the MODELED total, Phase 2 - not on air): 253 points off across 30 team scores vs 252 for the on-air call.
 
 | Wk | Game | Team | Final | On-air call | off | Shadow call | off |
 |---|---|---|---|---|---|---|---|
@@ -62,3 +102,13 @@ Shadow score call (machine margin over the MODELED total, Phase 2 - not on air):
 | 5 | Auburn at Tennessee | Tennessee | 24 | 31 | 7 | 30 | 6 |
 | 5 | Ohio State at Iowa | Ohio State | 31 | 30 | 1 | 32 | 1 |
 | 5 | Ohio State at Iowa | Iowa | 14 | 16 | 2 | 17 | 3 |
+| 6 | Indiana at Nebraska | Indiana | 20 | 27 | 7 | 29 | 9 |
+| 6 | Indiana at Nebraska | Nebraska | 17 | 21 | 4 | 23 | 6 |
+| 6 | Texas A&M at Missouri | Texas A&M | 6 | 25 | 19 | 25 | 19 |
+| 6 | Texas A&M at Missouri | Missouri | 27 | 24 | 3 | 24 | 3 |
+| 6 | UCLA at Oregon | UCLA | 17 | 24 | 7 | 21 | 4 |
+| 6 | UCLA at Oregon | Oregon | 15 | 34 | 19 | 33 | 18 |
+| 6 | Georgia at Alabama | Georgia | 20 | 24 | 4 | 25 | 5 |
+| 6 | Georgia at Alabama | Alabama | 17 | 27 | 10 | 28 | 11 |
+| 6 | USC at Penn State | USC | 31 | 27 | 4 | 27 | 4 |
+| 6 | USC at Penn State | Penn State | 23 | 28 | 5 | 28 | 5 |

@@ -707,7 +707,17 @@
      "gap": 2.53
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     20,
+     17
+    ],
+    "observed": 3.28,
+    "fired": false,
+    "pick_lost": false,
+    "own_line": -3.2,
+    "verdict": "clean"
+   }
   },
   "Texas A&M at Missouri": {
    "game_id": 401856716,
@@ -762,7 +772,17 @@
      "gap": 1.21
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     6,
+     27
+    ],
+    "observed": 1.26,
+    "fired": true,
+    "pick_lost": true,
+    "own_line": -21.9,
+    "verdict": "named it"
+   }
   },
   "UCLA at Oregon": {
    "game_id": 401858484,
@@ -817,7 +837,17 @@
      "gap": 1.89
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     17,
+     15
+    ],
+    "observed": 2.98,
+    "fired": false,
+    "pick_lost": true,
+    "own_line": -11.6,
+    "verdict": "missed it"
+   }
   },
   "Georgia at Alabama": {
    "game_id": 401856712,
@@ -872,7 +902,17 @@
      "gap": 2.6
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     20,
+     17
+    ],
+    "observed": 5.28,
+    "fired": true,
+    "pick_lost": true,
+    "own_line": -5.6,
+    "verdict": "named it"
+   }
   },
   "USC at Penn State": {
    "game_id": 401858485,
@@ -927,7 +967,17 @@
      "gap": 1.82
     }
    ],
-   "result": null
+   "result": {
+    "final": [
+     31,
+     23
+    ],
+    "observed": 9.1,
+    "fired": true,
+    "pick_lost": true,
+    "own_line": -8.9,
+    "verdict": "named it"
+   }
   }
  }
 }
