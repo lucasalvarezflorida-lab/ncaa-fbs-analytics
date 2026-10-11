@@ -34,9 +34,9 @@ INK = RGBColor(0x16, 0x27, 0x3D)
 MUTE = RGBColor(0x5C, 0x6B, 0x7E)
 LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
-EPISODE, WEEK = 7, 6
+EPISODE, WEEK = 8, 7
 RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
-EP_DATE = "OCT 10, 2026"   # the card's game dates (all five on Saturday)
+EP_DATE = "OCT 17, 2026"   # the card's game dates (all five on Saturday)
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
 from name_mapping import normalize_name  # noqa: E402
@@ -1227,7 +1227,7 @@ _RECAP_ROWS_WK4 = [
     ("ORE", "USC", "Oregon at USC", ("Oregon", "USC"), "Oregon 32–31", 0.5, 3.0, "Oregon 35–34", 62.5),
     ("TAMU", "LSU", "Texas A&M at LSU", ("Texas A&M", "LSU"), "LSU 29–23", -5.5, -8.5, "LSU 31–27", 51.5),
 ]   # Week 4 margin miss: market 68.0 · machine 78.0 · man 79.0 — winners: machine 5–0, man 5–0
-RECAP_ROWS = [
+_RECAP_ROWS_WK5 = [
     # Week 5 (graded Sun 10/4): on-air machine line, frozen close (card_data_week5_frozen.json, 6:18 pm CT 9/30),
     # Corey's call off his score slides, closing total.
     ("PITT", "VT", "Pitt at Virginia Tech", ("Pittsburgh", "Virginia Tech"), "Pittsburgh 28–27", 0.5, -3.0, "Pittsburgh 28–27", 54.5),
@@ -1236,10 +1236,17 @@ RECAP_ROWS = [
     ("AUB", "TENN", "Auburn at Tennessee", ("Auburn", "Tennessee"), "Tennessee 31–24", -7.0, -7.0, "Tennessee 31–21", 54.5),
     ("OSU", "IOWA", "Ohio State at Iowa", ("Ohio State", "Iowa"), "Ohio State 30–16", 14.0, 14.5, "Ohio State 31–20", 45.5),
 ]   # Week 5 margin miss (score calls): man 54.0 · machine 55.0 · market (line) 61.0 — winners: machine 4–1, man 4–1; machine on its line 55.0
+RECAP_ROWS = [   # Week 6 (auto from card_data_week6_frozen.json + score_tracker.json; on-air line = the rounded machine margin)
+    ("INDI", "NEBR", "Indiana at Nebraska", ("Indiana", "Nebraska"), "Indiana 27–21", 6, 7.5, "Indiana 31–24", 48.5),
+    ("TEXA", "MISS", "Texas A&M at Missouri", ("Texas A&M", "Missouri"), "Texas A&M 25–24", 1, -3.5, "Missouri 28–27", 48.5),
+    ("UCLA", "OREG", "UCLA at Oregon", ("UCLA", "Oregon"), "Oregon 34–24", -9.5, -11.5, "Oregon 41–27", 58.5),
+    ("GEOR", "ALAB", "Georgia at Alabama", ("Georgia", "Alabama"), "Alabama 27–24", -2.5, -1.5, "Alabama 35–34", 51.5),
+    ("USC", "PENN", "USC at Penn State", ("USC", "Penn State"), "Penn State 28–27", -1, -1.5, "Penn State 31–27", 54.5),
+]   # Week 6 margin miss (score calls): machine 52.0 · man 56.0 · market (line) 49.5 — winners: machine 1–4, man 2–3
 WINNER_LOSER = None   # Lucas 10/6: the machine's winner / loser of the week lives on the OneNote Recap page, not the slide
-WEEK0_MISS = (289.0, 273.5)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 4 (25 games) — running total
-WEEK0_LINE_MISS = 289.5      # INTERNAL: the machine graded on its LINE through Week 4 (the old convention) — how our spread was off
-PRIOR_GAMES = 25
+WEEK0_MISS = (396.0, 384.0)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 6 (35 games) — running total (Wk5 55/61, Wk6 52/49.5)
+WEEK0_LINE_MISS = 395.7      # INTERNAL: the machine graded on its LINE through Week 6 (the old convention) — how our spread was off (Wk5 55.0, Wk6 51.2)
+PRIOR_GAMES = 35
 LEANS_LINE = "stated leans 4–3 · no position taken in Weeks 4–5"
 
 
