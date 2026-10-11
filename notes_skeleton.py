@@ -226,14 +226,8 @@ def boards_skeleton(week, ep):
     L.append(f"  - Margin miss, lower is better: Machine {mm:g} · Man {cm:g}")
     if line_rows:
         (HERE / "internal" / f"receipts_week{prev}.md").write_text(
-            f"# Week {prev} receipts — INTERNAL: how our SPREAD was off (the on-air line vs the final margin; the show grades the score call)
-
-"
-            "| game | final margin (home) | our line | line off by | score-call margin | call off by |
-|---|--:|--:|--:|--:|--:|
-" + "
-".join(line_rows) + "
-", encoding="utf-8")
+            f"# Week {prev} receipts — INTERNAL: how our SPREAD was off (the on-air line vs the final margin; the show grades the score call)\n\n"
+            "| game | final margin (home) | our line | line off by | score-call margin | call off by |\n|---|--:|--:|--:|--:|--:|\n" + "\n".join(line_rows) + "\n", encoding="utf-8")
     L.append("  - Points off the FINAL SCORE: see notes/score_tracker.md (both teams' points, per team)")
     L += ["  - Game by game"] + ["  " + g for g in gm]
     L.append("  - Pre-mortems: see notes/premortems.md (fired / lost / named the reason)")
