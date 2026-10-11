@@ -121,12 +121,12 @@ BUYOUT = {   # team: (slide text, est, note)
 }
 
 # Heisman market (DraftKings via Covers, Sun Sep 13 2026) — refresh weekly
-MARKET_DATE = "2026-10-04"
-MARKET = {   # DraftKings via SI's Week 6 tracker, Sun 10/4 (post-Week 5); players not on that list carry no market number this week
-    "Jeremiah Smith": 115, "Darian Mensah": 460, "Keelon Russell": 750, "C.J. Carr": 800,
-    "Trinidad Chambliss": 1600, "Gunner Stockton": 2900, "Julian Sayin": 3100,
-    "Arch Manning": 3200, "Kamario Taylor": 3200, "Malachi Toney": 3500,
-}   # Bettors Insider had Smith +110 on 10/5 (+260 the week before) - the 10/4 table is used for one consistent snapshot
+MARKET_DATE = "2026-10-11"
+MARKET = {   # SI's Week 7 tracker, Sun 10/11 (post-Week 6; the page does not name the book this week - DK last week); players not on that list carry no market number this week
+    "Jeremiah Smith": -220, "C.J. Carr": 1000, "Darian Mensah": 1000, "Trinidad Chambliss": 1500,
+    "Keelon Russell": 1600, "Gunner Stockton": 1750, "Julian Sayin": 3400,
+    "Kamario Taylor": 4000, "Drew Mestemaker": 4000, "Josh Hoover": 4500,
+}   # 10/4 table: Smith +115, Mensah +460, Russell +750, Carr +800, Chambliss +1600, Stockton +2900, Sayin +3100, Manning / Taylor +3200, Toney +3500
 QB_POOL = ["Julian Sayin", "Darian Mensah", "C.J. Carr", "Josh Hoover",
            "Arch Manning", "Dante Moore", "Jayden Maiava", "Will Hammond",
            "Sam Leavitt", "Trinidad Chambliss", "Marcel Reed", "John Mateer",
@@ -135,6 +135,14 @@ QB_POOL = ["Julian Sayin", "Darian Mensah", "C.J. Carr", "Josh Hoover",
            "LaNorris Sellers", "Lanorris Sellers", "Lincoln Kienholz", "Gunner Stockton"]
 NON_QB = ["Jeremiah Smith", "Malachi Toney", "Ryan Wingo", "Trent Mosley",
           "Jadan Baugh", "Koby Howard"]
+def implied_pct(ml):
+    """American odds -> implied win % (no vig removal). -220 -> 68.8, +1000 -> 9.1; None when no market."""
+    if ml is None:
+        return None
+    ml = float(ml)
+    return round((-ml / (100 - ml) if ml < 0 else 100 / (100 + ml)) * 100, 1)
+
+
 K_PRIOR = 150.0
 PRIOR_DEFAULT = 0.35
 # ALL-POSITIONS board (Lucas 9/29: "who are our favorites regardless of position"):
@@ -254,7 +262,7 @@ def heisman(sim, refresh, games=None):
                     ppa25=round(avg25, 3) if avg25 is not None else None,
                     blend=round(blend, 3), ppg=round(ppg, 1), p10w=round(p10w, 2),
                     team_factor=round(tf, 3), index=round(tf * ppg, 1),
-                    market=ml, market_p=round(100 / (100 + ml) * 100, 1) if ml else None)
+                    market=ml, market_p=implied_pct(ml))
 
     for name in QB_POOL:
         c = cur.get(name)
@@ -274,7 +282,7 @@ def heisman(sim, refresh, games=None):
                          ppa25=round(avg25, 3) if avg25 is not None else None,
                          blend=round(blend, 3), p10w=round(p10w, 2),
                          team_factor=round(tf, 3), index=round(100 * tf * blend, 1),
-                         market=ml, market_p=round(100 / (100 + ml) * 100, 1) if ml else None))
+                         market=ml, market_p=implied_pct(ml)))
         ar = _all_row(name, c, "QB", avg25, K_PRIOR, PRIOR_DEFAULT)
         ar["qb_index"] = rows[-1]["index"]
         all_rows.append(ar)
@@ -358,12 +366,12 @@ def main():
     for i, r in enumerate(hall[:12], 1):
         print(f"{i:2d} {r['name']:<20} {r['pos']:<3}{r['team']:<18} {r['ppa26']:.3f} on {r['plays26']} plays in {r['games']} g"
               f"  blend {r['blend']:.3f}  pts/g {r['ppg']:5.1f}  tf {r['team_factor']:.2f}  index {r['index']:5.1f}"
-              f"  market {('+' + str(r['market'])) if r['market'] else '—'}")
+              f"  market {('%+d' % r['market']) if r['market'] else '—'}")
     print(f"\nHEISMAN BOARD (market DK {MARKET_DATE})")
     for i, r in enumerate(hb[:12], 1):
         print(f"{i:>2} {r['name']:<20}{r['team']:<14} 2026 {r['ppa26']:.3f} on {r['plays26']} plays  "
               f"prior {r['ppa25']}  blend {r['blend']:.3f}  P(10+) {r['p10w']:.2f}  "
-              f"index {r['index']}  market {('+' + str(r['market'])) if r['market'] else '—'}")
+              f"index {r['index']}  market {('%+d' % r['market']) if r['market'] else '—'}")
     print("non-QB:", [(x['name'], x['ppa26'], x['tot26'], x['ppa25'], x['market']) for x in non])
     print(f"\nUPSET BOARD week {a.week}: {len(ub['rows'])} alerts")
     for r in ub["rows"]:
