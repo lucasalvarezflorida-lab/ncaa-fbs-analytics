@@ -74,7 +74,7 @@ section > p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
 .po { display: grid; grid-template-columns: 28px 150px 1fr 48px 60px; gap: 4px 10px; align-items: center; }
 .po .h { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .po .v { font-family: var(--display); font-weight: 700; font-size: 17px; text-align: right; }
-.po .c { font-size: 12px; color: var(--muted); text-align: right; white-space: nowrap; }
+.po .c { font-size: 12px; color: var(--muted); text-align: left; white-space: nowrap; }
 @media (max-width: 560px) { .po { grid-template-columns: 24px 110px 1fr 44px; } .po .c, .po .hc { display: none; } }
 
 /* table */
@@ -177,6 +177,7 @@ tbody tr:hover { background: color-mix(in srgb, var(--chalk) 10%, transparent); 
   const sg = (x) => (x == null ? '—' : (x > 0 ? '+' : '') + f1(x));
   const pct = (x) => (x == null ? '—' : Math.round(x * 100) + '%');
   const logo = (t) => t.logo ? `<img src="${t.logo}" alt="">` : '<span></span>';
+  const shortConf = (c) => !c ? '' : c.replace('FBS Independents', 'Indep').replace('Mountain West', 'MWC').replace('Conference USA', 'C-USA').replace('Mid-American', 'MAC').replace('American Athletic', 'American');
 
   const ruleTxt = (r) => !r ? 'on-air rule' : (typeof r === 'string' ? r : `on-air rule: lam ${r.lam}, residual cap ${r.cap}, ${r.to_pts ? r.to_pts + ' a turnover' : 'raw margins'}`);
   $('sub').textContent = `2026 through Week ${D.through_week} · ${D.games_used} rated games · ${ruleTxt(D.rule)} · built ${D.as_of.replace('T', ' ')}`;
@@ -216,7 +217,7 @@ tbody tr:hover { background: color-mix(in srgb, var(--chalk) 10%, transparent); 
     <div class="n">${esc(t.name)} <small style="color:var(--muted)">#${t.rank}</small></div>
     <div class="track" style="--tc:${t.color || 'var(--bar)'}"><i style="width:${Math.max(1, t.playoff * 100)}%"></i></div>
     <div class="v num">${pct(t.playoff)}</div>
-    <div class="c num">${pct(t.conf_title)} ${esc(t.conf || '')}</div>`).join('');
+    <div class="c num">${pct(t.conf_title)} ${esc(shortConf(t.conf))}</div>`).join('');
 
   // table
   const confSel = $('conf');
