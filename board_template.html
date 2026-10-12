@@ -1,0 +1,273 @@
+<meta charset="utf-8">
+<title>The Board</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: the machine's weekly board as a chalk sheet. The ten on top with their logos, the cliff drawn to
+   scale (rating bars 1-25), the week's movers, the playoff picture, then the whole FBS table with filters and
+   a rank sparkline per team. Same tokens as Tale of the Tape so the pages read as one system. */
+:root {
+  --bg: #f3f1ec; --paper: #fbfaf7; --fg: #1c1d1f; --muted: #686a70; --line: #d9d6cf; --line-soft: #e8e5de;
+  --chalk: #e0b11a; --good: #2f7d4f; --bad: #b3372b; --shadow-tag: #6b5bd2; --bar: #1c1d1f; --bar-soft: #c9c5bb;
+  --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #16171a; --paper: #1f2024; --fg: #ecebe6; --muted: #9a9ca3; --line: #34363c; --line-soft: #2a2c31;
+  --chalk: #f0c23a; --good: #5cc48a; --bad: #ef7a6c; --shadow-tag: #a89bff; --bar: #ecebe6; --bar-soft: #3d3f46; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #16171a; --paper: #1f2024; --fg: #ecebe6; --muted: #9a9ca3; --line: #34363c; --line-soft: #2a2c31;
+  --chalk: #f0c23a; --good: #5cc48a; --bad: #ef7a6c; --shadow-tag: #a89bff; --bar: #ecebe6; --bar-soft: #3d3f46; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.45; margin: 0; }
+.wrap { max-width: 1100px; margin: 0 auto; padding-block: 18px 48px; padding-inline: 16px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: .01em; text-wrap: balance; margin: 0; }
+h1 { font-size: 34px; line-height: 1; text-transform: uppercase; }
+.sub { color: var(--muted); font-size: 14px; margin-top: 4px; }
+.eyebrow { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; padding: 2px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--muted); vertical-align: middle; }
+.tag.shadow { color: var(--shadow-tag); border-color: var(--shadow-tag); }
+.up { color: var(--good); } .down { color: var(--bad); }
+section { margin-top: 28px; }
+section h2 { font-size: 24px; text-transform: uppercase; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+section h2 .k { color: var(--chalk); font-size: 18px; }
+section > p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+
+/* the ten */
+.ten { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
+.tile { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: grid; grid-template-columns: 44px 1fr; gap: 4px 10px; align-items: center; border-top: 4px solid var(--tc, var(--line)); min-width: 0; }
+.tile img { width: 44px; height: 44px; object-fit: contain; grid-row: span 2; }
+.tile .rk { font-family: var(--display); font-weight: 800; font-size: 13px; color: var(--muted); letter-spacing: .08em; }
+.tile .nm { font-family: var(--display); font-weight: 800; font-size: 20px; line-height: 1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .rt { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1; }
+.tile .mv { font-size: 12px; color: var(--muted); }
+@media (max-width: 900px) { .ten { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .ten { grid-template-columns: repeat(2, 1fr); } }
+
+/* the cliff */
+.cliff { display: grid; grid-template-columns: 28px 150px 1fr 56px; gap: 4px 10px; align-items: center; }
+.cliff .r { font-family: var(--display); font-weight: 700; color: var(--muted); text-align: right; }
+.cliff .n { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.cliff .n small { color: var(--muted); font-weight: 400; }
+.track { position: relative; height: 18px; background: var(--line-soft); border-radius: 3px; }
+.track i { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 3px; background: var(--tc, var(--bar)); }
+.cliff .v { font-family: var(--display); font-weight: 700; font-size: 17px; text-align: right; }
+.gap { grid-column: 1 / -1; font-size: 12px; color: var(--chalk); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-align: center; border-top: 1px dashed var(--chalk); padding-top: 2px; margin: 2px 0; }
+@media (max-width: 560px) { .cliff { grid-template-columns: 24px 110px 1fr 44px; } }
+
+/* movers */
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+.mv-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.mv-list li { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: baseline; border-bottom: 1px solid var(--line-soft); padding-bottom: 6px; }
+.mv-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.mv-list .who { font-weight: 600; }
+.mv-list .who small { display: block; color: var(--muted); font-weight: 400; font-size: 12px; }
+.mv-list .d { font-family: var(--display); font-weight: 700; font-size: 18px; }
+.mv-list .rk { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.inout { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.inout b { color: var(--fg); }
+
+/* playoff */
+.po { display: grid; grid-template-columns: 28px 150px 1fr 48px 60px; gap: 4px 10px; align-items: center; }
+.po .h { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.po .v { font-family: var(--display); font-weight: 700; font-size: 17px; text-align: right; }
+.po .c { font-size: 12px; color: var(--muted); text-align: right; white-space: nowrap; }
+@media (max-width: 560px) { .po { grid-template-columns: 24px 110px 1fr 44px; } .po .c, .po .hc { display: none; } }
+
+/* table */
+.filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin-top: 12px; }
+.filters label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; letter-spacing: .04em; text-transform: uppercase; }
+select, input { font: inherit; color: var(--fg); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+select:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--chalk); outline-offset: 1px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--paper); }
+.seg button { font: inherit; border: 0; background: transparent; padding: 8px 12px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.tw { overflow-x: auto; margin-top: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 14px; }
+th, td { padding: 7px 10px; text-align: right; border-bottom: 1px solid var(--line-soft); white-space: nowrap; }
+th { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; position: sticky; top: 0; background: var(--paper); cursor: pointer; user-select: none; }
+th.l, td.l { text-align: left; }
+th[aria-sort="descending"]::after { content: " \25BC"; color: var(--chalk); }
+th[aria-sort="ascending"]::after { content: " \25B2"; color: var(--chalk); }
+td.team { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+td.team img { width: 22px; height: 22px; object-fit: contain; }
+td.team small { color: var(--muted); font-weight: 400; }
+td .rank { font-family: var(--display); font-weight: 700; font-size: 16px; }
+td.spark svg { display: block; width: 90px; height: 24px; }
+tbody tr:hover { background: color-mix(in srgb, var(--chalk) 10%, transparent); }
+.foot { color: var(--muted); font-size: 13px; margin-top: 14px; }
+@media (prefers-reduced-motion: no-preference) { .track i { transition: width .4s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Man vs Machine · the machine's board</div>
+    <h1>The Board</h1>
+    <div class="sub" id="sub"></div>
+  </header>
+
+  <section id="s-ten">
+    <h2>The ten <span class="k num" id="k-ten"></span></h2>
+    <div class="ten" id="ten"></div>
+  </section>
+
+  <section id="s-cliff">
+    <h2>The cliff <span class="k">top 25 to scale</span></h2>
+    <p class="lead">Each bar is the rating in points against an average FBS team. The dashed line marks the biggest drop between neighbours; that is where the contenders end.</p>
+    <div class="card"><div class="cliff" id="cliff"></div></div>
+  </section>
+
+  <section id="s-movers">
+    <h2>This week <span class="k" id="k-wk"></span></h2>
+    <p class="lead">Moves from this week's results alone, never from a rule change. A team moves when it beats or misses what the machine expected, and when its opponents do.</p>
+    <div class="cols">
+      <div class="card"><div class="eyebrow">Risers</div><ul class="mv-list" id="risers"></ul></div>
+      <div class="card"><div class="eyebrow">Fallers</div><ul class="mv-list" id="fallers"></ul></div>
+    </div>
+    <div class="inout" id="inout"></div>
+  </section>
+
+  <section id="s-po">
+    <h2>Playoff picture <span class="k" id="k-po"></span></h2>
+    <p class="lead">The season simulated from today's ratings: the chance of a playoff spot, with the conference title chance beside it.</p>
+    <div class="card"><div class="po" id="po"></div></div>
+  </section>
+
+  <section id="s-all">
+    <h2>Every team <span class="k num" id="k-all"></span></h2>
+    <div class="filters">
+      <div><label for="conf">Conference</label><select id="conf"><option value="">All</option></select></div>
+      <div><label for="q">Find</label><input id="q" type="search" placeholder="team" autocomplete="off"></div>
+      <div><label>Show</label><div class="seg" role="group" aria-label="Show"><button id="show25" aria-pressed="true">Top 25</button><button id="showall" aria-pressed="false">All</button></div></div>
+    </div>
+    <div class="tw"><table id="tbl">
+      <thead><tr>
+        <th data-k="rank" aria-sort="ascending">#</th>
+        <th class="l" data-k="name">Team</th>
+        <th data-k="now">Rating</th>
+        <th data-k="d_week">Week</th>
+        <th data-k="d_rank">Spots</th>
+        <th data-k="july">July</th>
+        <th data-k="delta">Since</th>
+        <th data-k="record">Record</th>
+        <th data-k="playoff">Playoff</th>
+        <th data-k="eff_rank">Plays <span class="tag shadow">shadow</span></th>
+        <th data-k="ap">AP</th>
+        <th>Rank by week</th>
+      </tr></thead>
+      <tbody id="tb"></tbody>
+    </table></div>
+    <div class="foot" id="foot"></div>
+  </section>
+</div>
+
+<script id="data" type="application/json">__BOARD_DATA__</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const T = D.teams;
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const f1 = (x) => (x == null ? '—' : (Math.round(x * 10) / 10).toFixed(1));
+  const sg = (x) => (x == null ? '—' : (x > 0 ? '+' : '') + f1(x));
+  const pct = (x) => (x == null ? '—' : Math.round(x * 100) + '%');
+  const logo = (t) => t.logo ? `<img src="${t.logo}" alt="">` : '<span></span>';
+
+  $('sub').textContent = `2026 through Week ${D.through_week} · ${D.games_used} rated games · ${D.rule || 'on-air rule'} · built ${D.as_of.replace('T', ' ')}`;
+
+  // the ten
+  $('k-ten').textContent = `#1 ${f1(T[0].now)} · #10 ${f1(T[9].now)}`;
+  $('ten').innerHTML = T.slice(0, 10).map((t) => `
+    <div class="tile" style="--tc:${t.color || 'var(--line)'}">
+      ${logo(t)}
+      <div><span class="rk">#${t.rank}</span> <span class="nm" title="${esc(t.name)}">${esc(t.name)}</span></div>
+      <div><span class="rt num">${f1(t.now)}</span> <span class="mv num">${t.d_rank > 0 ? '<span class="up">▲' + t.d_rank + '</span>' : t.d_rank < 0 ? '<span class="down">▼' + (-t.d_rank) + '</span>' : '—'} · ${esc(t.record)}</span></div>
+    </div>`).join('');
+
+  // the cliff
+  const top = T.slice(0, 25), mx = top[0].now, mn = Math.min(0, top[24].now);
+  let gapAt = 0, gapV = 0;
+  for (let i = 1; i < top.length; i++) { const g = top[i - 1].now - top[i].now; if (g > gapV) { gapV = g; gapAt = i; } }
+  $('cliff').innerHTML = top.map((t, i) => `
+    ${i === gapAt ? `<div class="gap">the cliff · ${f1(gapV)} points between #${i} and #${i + 1}</div>` : ''}
+    <div class="r num">${t.rank}</div>
+    <div class="n">${esc(t.name)} <small>${esc(t.record)}</small></div>
+    <div class="track" style="--tc:${t.color || 'var(--bar)'}"><i style="width:${Math.max(2, (t.now - mn) / (mx - mn) * 100)}%"></i></div>
+    <div class="v num">${f1(t.now)}</div>`).join('');
+
+  // movers
+  $('k-wk').textContent = `week ${D.through_week} results`;
+  const mv = (list) => list.map((m) => `<li><span class="who">${esc(m.name)}<small>${esc(m.last)}</small></span><span class="d num ${m.d > 0 ? 'up' : 'down'}">${sg(m.d)}</span><span class="rk num">#${m.frm} → #${m.to}</span></li>`).join('');
+  $('risers').innerHTML = mv(D.risers);
+  $('fallers').innerHTML = mv(D.fallers);
+  $('inout').innerHTML = `<b>Into the 25:</b> ${D.into.length ? D.into.map((x) => `${esc(x.name)} (#${x.frm} → #${x.to})`).join(', ') : 'none'} &nbsp;·&nbsp; <b>Out:</b> ${D.out.length ? D.out.map((x) => `${esc(x.name)} (#${x.frm} → #${x.to})`).join(', ') : 'none'}`;
+
+  // playoff
+  const po = T.filter((t) => t.playoff != null).sort((a, b) => b.playoff - a.playoff).slice(0, 16);
+  $('k-po').textContent = D.playoff_week ? `simulated after week ${D.playoff_week}` : '';
+  $('po').innerHTML = `<div></div><div class="h">team</div><div class="h">playoff</div><div class="h">%</div><div class="h hc">conf title</div>` + po.map((t, i) => `
+    <div class="r num" style="color:var(--muted);font-family:var(--display);font-weight:700;text-align:right">${i + 1}</div>
+    <div class="n">${esc(t.name)} <small style="color:var(--muted)">#${t.rank}</small></div>
+    <div class="track" style="--tc:${t.color || 'var(--bar)'}"><i style="width:${Math.max(1, t.playoff * 100)}%"></i></div>
+    <div class="v num">${pct(t.playoff)}</div>
+    <div class="c num">${pct(t.conf_title)} ${esc(t.conf || '')}</div>`).join('');
+
+  // table
+  const confSel = $('conf');
+  D.confs.forEach((c) => { const o = document.createElement('option'); o.value = c; o.textContent = c; confSel.appendChild(o); });
+  let sortK = 'rank', sortDir = 1, showAll = false;
+  const spark = (ranks) => {
+    if (!ranks || ranks.length < 2) return '';
+    const w = 90, h = 24, n = ranks.length, lo = Math.min(...ranks), hi = Math.max(...ranks);
+    const y = (r) => hi === lo ? h / 2 : 3 + (r - lo) / (hi - lo) * (h - 6);
+    const pts = ranks.map((r, i) => `${(i / (n - 1) * (w - 6) + 3).toFixed(1)},${y(r).toFixed(1)}`);
+    const last = pts[pts.length - 1].split(',');
+    return `<svg viewBox="0 0 ${w} ${h}" aria-label="rank by week ${ranks.join(', ')}"><polyline points="${pts.join(' ')}" fill="none" stroke="var(--muted)" stroke-width="1.5"/><circle cx="${last[0]}" cy="${last[1]}" r="2.5" fill="var(--chalk)"/></svg>`;
+  };
+  const render = () => {
+    const c = confSel.value, q = $('q').value.trim().toLowerCase();
+    let rows = T.filter((t) => (!c || t.conf === c) && (!q || t.name.toLowerCase().includes(q) || (t.abbr || '').toLowerCase().includes(q)));
+    if (!showAll && !c && !q) rows = rows.filter((t) => t.rank <= 25);
+    rows = rows.slice().sort((a, b) => {
+      const av = a[sortK], bv = b[sortK];
+      if (av == null && bv == null) return 0; if (av == null) return 1; if (bv == null) return -1;
+      if (typeof av === 'string') return av.localeCompare(bv) * sortDir;
+      return (av - bv) * sortDir;
+    });
+    $('tb').innerHTML = rows.map((t) => `<tr>
+      <td><span class="rank num">${t.rank}</span></td>
+      <td class="l team">${logo(t)}${esc(t.name)} <small>${esc(t.conf || '')}${t.qb_out ? ' · QB out −' + f1(t.qb_out) : ''}</small></td>
+      <td class="num"><b>${f1(t.now)}</b></td>
+      <td class="num ${t.d_week > 0 ? 'up' : t.d_week < 0 ? 'down' : ''}">${sg(t.d_week)}</td>
+      <td class="num ${t.d_rank > 0 ? 'up' : t.d_rank < 0 ? 'down' : ''}">${t.d_rank == null ? '—' : (t.d_rank > 0 ? '▲' + t.d_rank : t.d_rank < 0 ? '▼' + (-t.d_rank) : '—')}</td>
+      <td class="num">${f1(t.july)}</td>
+      <td class="num ${t.delta > 0 ? 'up' : t.delta < 0 ? 'down' : ''}">${sg(t.delta)}</td>
+      <td class="num">${esc(t.record)}</td>
+      <td class="num">${pct(t.playoff)}</td>
+      <td class="num">${t.eff_rank ? '#' + t.eff_rank : '—'}</td>
+      <td class="num">${t.ap ? '#' + t.ap : '—'}</td>
+      <td class="spark">${spark(t.ranks)}</td>
+    </tr>`).join('');
+    $('k-all').textContent = `${rows.length} of ${T.length}`;
+  };
+  document.querySelectorAll('th[data-k]').forEach((th) => th.addEventListener('click', () => {
+    const k = th.dataset.k;
+    if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = (k === 'rank' || k === 'name' || k === 'eff_rank' || k === 'ap') ? 1 : -1; }
+    document.querySelectorAll('th[data-k]').forEach((x) => x.removeAttribute('aria-sort'));
+    th.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+    render();
+  }));
+  confSel.addEventListener('change', render);
+  $('q').addEventListener('input', render);
+  $('show25').addEventListener('click', () => { showAll = false; $('show25').setAttribute('aria-pressed', 'true'); $('showall').setAttribute('aria-pressed', 'false'); render(); });
+  $('showall').addEventListener('click', () => { showAll = true; $('showall').setAttribute('aria-pressed', 'true'); $('show25').setAttribute('aria-pressed', 'false'); render(); });
+  $('foot').textContent = `Rating = points better than an average FBS team on a neutral field (July prior from the preseason FPI, updated by every rated game under the on-air rule). Week = this week's results alone. Since = movement from July. Plays = the play-by-play efficiency rating's rank, a shadow number that is not on air. AP = the latest poll on file${D.ap_week ? ' (week ' + D.ap_week + ')' : ' (not posted yet)'}. Rank by week = the team's rank after each completed week.`;
+  try { const c = localStorage.getItem('board-conf'); if (c != null) { confSel.value = c; } } catch (e) {}
+  confSel.addEventListener('change', () => { try { localStorage.setItem('board-conf', confSel.value); } catch (e) {} });
+  render();
+})();
+</script>

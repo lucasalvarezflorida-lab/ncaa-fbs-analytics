@@ -68,6 +68,7 @@ def main():
     R.step(f"4 pre-mortems week {n}", [PY, "premortems.py", "--week", str(n), "--force", "--show"], tail=12)
     R.step(f"5 totals-model shadow call", [PY, "totals_model.py", "--week", str(n), "--calib", TOTALS_CALIB], tail=12)
     R.step(f"6 availability shadow", [PY, "availability.py", "--week", str(n)], tail=16)
+    R.step("6b The Card page from the frozen numbers (card/index.html; republish the artifact in session)", [PY, "card_page.py"], tail=3)
     R.step("7 build the deck", [PY, "make_episode_deck.py"], tail=14, timeout=1200)
     R.step("8 deck lint", [PY, "deck_lint.py"], tail=30)
     R.note("## 9 review-before-air candidates (extreme numbers — pick 5-10 for the list)\n```\n" + review_candidates(n, pairs) + "\n```")

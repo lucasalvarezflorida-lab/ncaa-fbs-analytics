@@ -61,3 +61,10 @@ receipts/
 
 # episode downloads + slide frames (episode_frames.py)
 decks/video/
+
+# The Board page build (board.py); the artifact is private
+board/
+board_data_2026.json
+
+# The Card page build (card_page.py); the artifact is private
+card/
