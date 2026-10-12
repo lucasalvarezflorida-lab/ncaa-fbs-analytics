@@ -167,7 +167,7 @@ p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
         ${logo(r)}
         <div class="who"><b>${esc(r.name)}</b><span>${esc(r.pos)} · ${esc(r.team)} · ${r.games} games, ${r.plays26} plays</span></div>
         <div class="scorecell"><div class="v num">${f1(r.index)}</div><div class="track idx"><i style="width:${r.index / heisMax * 100}%"></i></div></div>
-        <div class="cell c5"><b class="num">${f1(r.ppg)}</b> pts a game<br>PPA ${r.ppa26} / ${r.ppa25 == null ? 'no 2025' : r.ppa25}</div>
+        <div class="cell c5"><b class="num">${f1(r.ppg)}</b> pts/g<br>PPA ${r.ppa26}${r.ppa25 == null ? '' : ' · ' + r.ppa25}</div>
         <div class="cell c6"><b class="num">${pct(r.p10w)}</b> ten wins<br>team factor ${r.team_factor}</div>
         <div class="cell c7"><div class="spark">${spark(r.hist, D.heisman_weeks, 110, 30, null)}</div></div>
       </div>`).join('');
