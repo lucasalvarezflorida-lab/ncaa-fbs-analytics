@@ -168,7 +168,7 @@ h1 { font-size: 34px; line-height: 1; text-transform: uppercase; }
 .game { margin-top: 26px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper); }
 .strip { display: grid; grid-template-columns: 1fr 1.1fr 1fr; }
 .side { padding: 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; color: #fff; background: var(--tc, #444); }
-.side.h { align-items: flex-end; text-align: right; }
+.side.h { align-items: flex-start; text-align: left; }
 .side img { width: 52px; height: 52px; object-fit: contain; background: rgba(255,255,255,.92); border-radius: 50%; padding: 5px; }
 .side .nm { font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1; text-transform: uppercase; }
 .side .meta { font-size: 13px; opacity: .92; }
@@ -201,7 +201,7 @@ h1 { font-size: 34px; line-height: 1; text-transform: uppercase; }
 .season .s { color: var(--muted); font-size: 13px; }
 .foot { color: var(--muted); font-size: 13px; margin-top: 16px; max-width: 72ch; }
 .note { margin-top: 16px; padding: 10px 14px; border-left: 3px solid var(--chalk); background: var(--paper); border-radius: 0 6px 6px 0; }
-@media (max-width: 700px) { .strip { grid-template-columns: 1fr; } .side.h { align-items: flex-start; text-align: left; } .res, .stats, .season { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .strip { grid-template-columns: 1fr; } .res, .stats, .season { grid-template-columns: 1fr; } }
 """
 
 
@@ -229,9 +229,9 @@ def render(d: dict) -> str:
             bf = c["home"] if (c["blend"] or 0) >= 0 else c["away"]
             plays = f'<div class="plays"><span class="tag shadow">plays</span> <b>{esc(pf)} by {f1(abs(c["plays"]))}</b> · blend {esc(bf)} by {f1(abs(c["blend"]))}</div>'
         P.append(f'<article class="game"><div class="strip">')
-        P.append(f'<div class="side a" style="--tc:{esc(ta.get("color") or "#444")}">{"<img src=\"" + ta["logo"] + "\" alt=\"\">" if ta.get("logo") else ""}<div class="nm">{esc(c["away"])}</div><div class="meta">{esc(ta.get("record", ""))} · #{ta.get("rank", "—")} in the machine · {f1(ta.get("now"))}</div></div>')
+        P.append(f'<div class="side a" style="--tc:{esc(ta.get("color") or "#444")}">{"<img src=\"" + ta["logo"] + "\" alt=\"\">" if ta.get("logo") else ""}<div class="nm">{esc(c["away"])}</div><div class="meta">{esc(ta.get("record", ""))} · #{ta.get("rank", "—")} · {f1(ta.get("now"))}</div></div>')
         P.append(f'<div class="mid"><div class="eyebrow">the machine</div><div class="call">{call}</div><div class="score num">{score}</div><div class="p num">{"" if pwin is None else f"{pwin * 100:.0f}% to win"}</div>{plays}<div class="date">{esc(c.get("date") or "")}{" · neutral site" if c["neutral"] else ""}</div></div>')
-        P.append(f'<div class="side h" style="--tc:{esc(th.get("color") or "#444")}">{"<img src=\"" + th["logo"] + "\" alt=\"\">" if th.get("logo") else ""}<div class="nm">{esc(c["home"])}</div><div class="meta">{esc(th.get("record", ""))} · #{th.get("rank", "—")} in the machine · {f1(th.get("now"))}</div></div>')
+        P.append(f'<div class="side h" style="--tc:{esc(th.get("color") or "#444")}">{"<img src=\"" + th["logo"] + "\" alt=\"\">" if th.get("logo") else ""}<div class="nm">{esc(c["home"])}</div><div class="meta">{esc(th.get("record", ""))} · #{th.get("rank", "—")} · {f1(th.get("now"))}</div></div>')
         P.append('</div><div class="body">')
         # results row
         boxes = []
