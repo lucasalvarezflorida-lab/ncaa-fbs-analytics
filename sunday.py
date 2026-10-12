@@ -21,6 +21,7 @@ Steps (each logged; a failure does not stop the rest; summary in internal/sunday
  16. tape.py --data (Tale of the Tape matchup page: tape_data_2026.json + tape/index.html; republish the artifact in session)
  16b. board.py --data (The Board: Top 25, movers, playoff picture, every team; board/index.html; republish in session)
  16c. card_page.py (The Card: this week's five games, no market; card/index.html; republish in session)
+ 16d. seat.py --data (The Seat and the Trophy: hot seat + Heisman boards with week-by-week sparklines, no market; seat/index.html; republish in session)
 Then: notes_skeleton.py once the card is picked; OneNote pages with -Prefix "Week N+1 - ".
 """
 from __future__ import annotations
@@ -159,6 +160,7 @@ print(' · '.join(f"{{v['team']}} {{v['playoff']*100:.0f}}% (conf {{v['conf_titl
     R.step("16 Tale of the Tape data + page (tape/index.html; republish the artifact in session)", [PY, "tape.py", "--data"], tail=3)
     R.step("16b The Board (board/index.html; republish the artifact in session)", [PY, "board.py", "--data"], tail=3)
     R.step("16c The Card (card/index.html; republish the artifact in session)", [PY, "card_page.py"], tail=3)
+    R.step("16d The Seat and the Trophy (seat/index.html; republish the artifact in session)", [PY, "seat.py", "--data"], tail=3)
     R.step("17 The Receipts page (receipts/index.html; republish the artifact in session)", [PY, "receipts_page.py"], tail=3)
     R.step(f"18 preflight for the next card (doctor.py --week {nxt})", [PY, "doctor.py", "--week", str(nxt)], tail=16)
     R.note(f"\n## Next\n- Update WEEK0_MISS / PRIOR_GAMES / LEANS_LINE in make_episode_deck.py from the receipts (running totals).\n- Card: ask Lucas; then `python notes_skeleton.py --week {nxt} --ep <E> --games \"A at B,...\"` and `--boards`, write the reads/keys, push OneNote with -Prefix \"Week {nxt} - \".\n- Corey's calls into score_tracker.json (man) and the ledger when his slides post.")

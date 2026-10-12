@@ -68,3 +68,10 @@ board_data_2026.json
 
 # The Card page build (card_page.py); the artifact is private
 card/
+
+# The Seat and the Trophy page build (seat.py); the artifact is private
+seat/
+seat_data_2026.json
+
+# session launch config (local preview server for the pages)
+.claude/
