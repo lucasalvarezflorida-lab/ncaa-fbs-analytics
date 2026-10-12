@@ -87,6 +87,19 @@ def build() -> dict:
     av = load(HERE / "internal" / "availability.json") or []
     out_names = {f"{e.get('player', '')}".lower() for e in av if e.get("status") == "out"}
     import why
+    pre_rows = {}
+    if not pending:   # graded card: the machine and the plays re-solved from the weeks BEFORE the card week (as efficiency_blend_check --cards does)
+        try:
+            import backtest as bt
+            from efficiency_ratings import EfficiencyModel
+            ctx = bt.SeasonCtx(2026)
+            cw = max(week, 1)
+            pc, pe = bt.ridge_predict(ctx, cw, bt.MODELS["current"]), EfficiencyModel()(ctx, cw)
+            for g in ctx.games:
+                if g["week"] == cw and g["id"] in pc and g["id"] in pe:
+                    pre_rows[(week, g["home"], g["away"])] = dict(cur=pc[g["id"]][0], eff=pe[g["id"]][0])
+        except Exception as e:  # noqa: BLE001
+            print("pre-week numbers unavailable:", e)
     cards = []
     for r in rows:
         h, a = normalize_name(r["home"]), normalize_name(r["away"])
@@ -100,6 +113,10 @@ def build() -> dict:
         plays = -w["plays_margin"] if w.get("plays_margin") is not None else None
         blend = -w["blend"] if w.get("blend") is not None else None
         fin = r.get("final")
+        if fin and pre_rows:   # a graded card shows the numbers the plays had BEFORE the game, not today's
+            pr = pre_rows.get((week, h, a))
+            if pr:
+                plays, blend = pr["eff"], 0.5 * (pr["cur"] + pr["eff"])
         def grade(call):
             if not (call and fin):
                 return None

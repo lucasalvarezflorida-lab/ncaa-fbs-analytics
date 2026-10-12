@@ -93,7 +93,8 @@ th { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: v
 th.l, td.l { text-align: left; }
 th[aria-sort="descending"]::after { content: " \25BC"; color: var(--chalk); }
 th[aria-sort="ascending"]::after { content: " \25B2"; color: var(--chalk); }
-td.team { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+td.team { font-weight: 600; }
+td.team .cell { display: flex; align-items: center; gap: 8px; }
 td.team img { width: 22px; height: 22px; object-fit: contain; }
 td.team small { color: var(--muted); font-weight: 400; }
 td .rank { font-family: var(--display); font-weight: 700; font-size: 16px; }
@@ -177,7 +178,8 @@ tbody tr:hover { background: color-mix(in srgb, var(--chalk) 10%, transparent); 
   const pct = (x) => (x == null ? '—' : Math.round(x * 100) + '%');
   const logo = (t) => t.logo ? `<img src="${t.logo}" alt="">` : '<span></span>';
 
-  $('sub').textContent = `2026 through Week ${D.through_week} · ${D.games_used} rated games · ${D.rule || 'on-air rule'} · built ${D.as_of.replace('T', ' ')}`;
+  const ruleTxt = (r) => !r ? 'on-air rule' : (typeof r === 'string' ? r : `on-air rule: lam ${r.lam}, residual cap ${r.cap}, ${r.to_pts ? r.to_pts + ' a turnover' : 'raw margins'}`);
+  $('sub').textContent = `2026 through Week ${D.through_week} · ${D.games_used} rated games · ${ruleTxt(D.rule)} · built ${D.as_of.replace('T', ' ')}`;
 
   // the ten
   $('k-ten').textContent = `#1 ${f1(T[0].now)} · #10 ${f1(T[9].now)}`;
@@ -240,7 +242,7 @@ tbody tr:hover { background: color-mix(in srgb, var(--chalk) 10%, transparent); 
     });
     $('tb').innerHTML = rows.map((t) => `<tr>
       <td><span class="rank num">${t.rank}</span></td>
-      <td class="l team">${logo(t)}${esc(t.name)} <small>${esc(t.conf || '')}${t.qb_out ? ' · QB out −' + f1(t.qb_out) : ''}</small></td>
+      <td class="l team"><span class="cell">${logo(t)}<span>${esc(t.name)} <small>${esc(t.conf || '')}${t.qb_out ? ' · QB out −' + f1(t.qb_out) : ''}</small></span></span></td>
       <td class="num"><b>${f1(t.now)}</b></td>
       <td class="num ${t.d_week > 0 ? 'up' : t.d_week < 0 ? 'down' : ''}">${sg(t.d_week)}</td>
       <td class="num ${t.d_rank > 0 ? 'up' : t.d_rank < 0 ? 'down' : ''}">${t.d_rank == null ? '—' : (t.d_rank > 0 ? '▲' + t.d_rank : t.d_rank < 0 ? '▼' + (-t.d_rank) : '—')}</td>
