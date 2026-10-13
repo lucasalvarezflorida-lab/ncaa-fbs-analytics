@@ -2561,16 +2561,12 @@ for g in GAMES:
 # One slide outside the card: a game the show wants to talk about without grading it. FEATURE = None skips it.
 FEATURE = dict(
     a="FSU", b="MIA", title="Florida State at Miami",
-    sub="Sat Oct 17 · 7:00 ET · Hard Rock Stadium · Florida State 3–3 at Miami 5–0 · Miami leads the series 37–33",
+    sub="Sat Oct 17 · 7:00 ET · Hard Rock Stadium · Florida State 3–3 at Miami 5–0",
     call="Miami by 19", score="Miami 34–15", prob="88% Miami",
-    matters=["The only top-10 team the show has not had on a card: No. 5 in the machine, 91% to make the playoff, 79% to win the ACC",
-             "Mensah's first national stage: second on the best-player board, 0.2 behind Sayin",
-             "Norvell is seventh on the seat board after 20–44 at Louisville; every human list has him"],
-    history=["1985–94: seven straight top-10 meetings, Wide Right I and II, four national titles between them",
-             "Miami won six straight 2000–04; Florida State six straight 2010–15; Miami has the last two (28–22 last year)",
-             "Why it fell off: the two have not been top-five at the same time since 2004 — 2021's combined record was 8–10"],
-    pick=["Miami's offense vs Florida State's defense is the mismatch: 10.6 an attempt (3rd), 49.6 a game (1st), against a defense that gave up 44 to Louisville",
-          "Daniels is a runner with eight touchdowns and seven picks as a passer — Miami's front is built for that quarterback",
+    game=["Miami's first real test: No. 5, unbeaten, 79% to win the ACC — and the first time it is on our card",
+          "Miami leads the series 37–33 — Wide Right, four titles in ten years, then two decades of one good team at a time",
+          "Mensah is second on the Heisman board; Norvell is seventh on the seat board after 20–44 at Louisville"],
+    pick=["Miami's offense against Florida State's defense: 49.6 a game, first in the country, against a defense that gave up 44 to Louisville",
           "The loss would look like: Florida State over 5.0 a carry"],
 )
 if FEATURE:
@@ -2580,15 +2576,15 @@ if FEATURE:
     logo_badge(s, 2.35, 0.42, 0.8, FEATURE["b"])
     txt(s, 3.45, 0.38, 8.9, 0.55, FEATURE["title"], 27, NAVY, bold=True)
     txt(s, 3.45, 0.94, 8.9, 0.35, FEATURE["sub"], 11, MUTE, italic=True)
-    _fy = 1.62
-    for _lab, _lines in (("WHY IT MATTERS", FEATURE["matters"]), ("THE HISTORY", FEATURE["history"]), ("THE PICK · " + FEATURE["call"].upper(), FEATURE["pick"])):
-        txt(s, 0.9, _fy, 8.0, 0.32, _lab, 12.5, NAVY, bold=True)
-        _fy += 0.34
+    _fy = 1.75
+    for _lab, _lines in (("THE GAME", FEATURE["game"]), ("THE PICK · " + FEATURE["call"].upper(), FEATURE["pick"])):
+        txt(s, 0.9, _fy, 8.0, 0.4, _lab, 13, NAVY, bold=True)
+        _fy += 0.45
         for _ln in _lines:
-            shape(s, MSO_SHAPE.OVAL, 1.0, _fy + 0.09, 0.11, 0.11, ORANGE)
-            txt(s, 1.28, _fy, 7.7, 0.42, _ln, 11, INK)
-            _fy += 0.42
-        _fy += 0.08
+            shape(s, MSO_SHAPE.OVAL, 1.0, _fy + 0.2, 0.15, 0.15, ORANGE)
+            txt(s, 1.45, _fy, 7.5, 0.85, _ln, 16, INK, bold=True)
+            _fy += 0.92
+        _fy += 0.2
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 9.2, 1.75, 3.3, 2.6, NAVY)
     txt(s, 9.4, 1.9, 2.9, 0.3, "THE MACHINE", 10, ORANGE, bold=True)
     txt(s, 9.4, 2.25, 2.9, 0.6, FEATURE["call"], 26, WHITE, bold=True)
