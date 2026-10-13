@@ -1497,7 +1497,7 @@ def build_recap():
                 _ca, _ch = _call_pts(man, key)
                 _gap_c = abs((_ch - _ca) + close)
                 T["gc"] = T.get("gc", 0.0) + _gap_c
-                _gap_txt += f" · man {_gap_c:g}"
+                _gap_txt = f"off the spread · man {_gap_c:g} · machine {_gap_m:g}"   # Lucas 10/13: man first
                 _gap_mark = "M" if _gap_m < _gap_c else ("C" if _gap_c < _gap_m else "T")
                 T[{"M": "gnm", "C": "gnc", "T": "gnt"}[_gap_mark]] = T.get({"M": "gnm", "C": "gnc", "T": "gnt"}[_gap_mark], 0) + 1
                 _gap_txt += {"M": " — machine closer", "C": " — man closer", "T": " — tie"}[_gap_mark]
@@ -1524,10 +1524,10 @@ def build_recap():
             mark, verdict = "T", ("dead tie" if len(who) == len(shown) else " / ".join(label[k] for k in who) + " tie")
             T["nt"] += 1
         miss = f"off by · machine {off['M']:g}"
+        if man:
+            miss = f"off by · man {off['C']:g} · machine {off['M']:g}"   # Lucas 10/13: man first
         if RECEIPTS_SHOW_MARKET:
             miss += f" · market {off['K']:g}"
-        if man:
-            miss += f" · man {off['C']:g}"
         if len(shown) == 1:
             mark, verdict = "M", ""
         rows.append((a, b, title, callfin, lines_, miss + (f" — {verdict}" if verdict else ""), mark,
