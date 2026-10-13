@@ -1499,6 +1499,8 @@ def build_recap():
                 T["gc"] = T.get("gc", 0.0) + _gap_c
                 _gap_txt += f" · man {_gap_c:g}"
                 _gap_mark = "M" if _gap_m < _gap_c else ("C" if _gap_c < _gap_m else "T")
+                T[{"M": "gnm", "C": "gnc", "T": "gnt"}[_gap_mark]] = T.get({"M": "gnm", "C": "gnc", "T": "gnt"}[_gap_mark], 0) + 1
+                _gap_txt += {"M": " — machine closer", "C": " — man closer", "T": " — tie"}[_gap_mark]
             lines_ += (" · " if lines_ else "") + _gap_txt
         T["l"] = T.get("l", 0.0) + abs(margin + ours)                     # internal: the LINE's miss (how our spread was off)
         T["sm"] += abs(ma - ap_) + abs(mh - hp_)
@@ -2431,7 +2433,7 @@ for a, b, tit, callfin, lines_, miss, mark, gmark in RECAP:
     txt(s, 7.35, y + 0.11, 4.8, 0.3, lines_, 10, VERD[gmark], bold=True)   # Lucas 10/13: same size as off-by, coloured for the closer call
     txt(s, 7.35, y + 0.44, 4.8, 0.3, miss, 10, VERD[mark], bold=True)
     y += 0.94
-shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85 + (0.3 if WINNER_LOSER else 0), NAVY)
+shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 1.1 + (0.3 if WINNER_LOSER else 0), NAVY)   # three lines since 10/13: miss, spread, the small print
 _rs = RECAP_SUM
 _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
 if _rs["man"] and not RECEIPTS_SHOW_MARKET:
@@ -2458,12 +2460,17 @@ else:
            f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}")
 if RECEIPTS_SHOW_SPREAD_GAP and SPREAD_GAP_SEASON:
     _gm, _gc, _gn = SPREAD_GAP_SEASON
-    _l1 += f"   |   Off the spread, {_gn} games: man {_gc:g} · machine {_gm:g}"
-txt(s, 1.15, y + 0.13, 11.0, 0.35, _l1, 14.5 if len(_l1) <= 95 else 12.5, WHITE, bold=True)
+    _wk = f"this week man {_rs.get('gc', 0):g} · machine {_rs.get('gm', 0):g} — closer: man {_rs.get('gnc', 0)}, machine {_rs.get('gnm', 0)}" + (f", {_rs['gnt']} tie" if _rs.get("gnt") else "")
+    _lspread = f"Off the spread: {_wk}   |   season ({_gn} games): man {_gc:g} · machine {_gm:g}"
+else:
+    _lspread = ""
+txt(s, 1.15, y + 0.12, 11.0, 0.35, _l1, 14.5 if len(_l1) <= 95 else 12.5, WHITE, bold=True)
+if _lspread:
+    txt(s, 1.15, y + 0.5, 11.0, 0.3, _lspread, 11.5, WHITE, bold=True)
 # pre-mortems stay in the notes (Lucas 10/13: off the receipts slide)
-txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5 if len(_l2) <= 150 else 9, RGBColor(0xCA, 0xDC, 0xFC))
+txt(s, 1.15, y + (0.82 if _lspread else 0.5), 11.0, 0.3, _l2, 10.5 if len(_l2) <= 150 else 9, RGBColor(0xCA, 0xDC, 0xFC))
 if WINNER_LOSER:
-    txt(s, 1.15, y + 0.8, 11.0, 0.3, f"Machine's week — WINNER: {WINNER_LOSER[0]}   ·   LOSER: {WINNER_LOSER[1]}", 10, ORANGE, bold=True)
+    txt(s, 1.15, y + (1.1 if _lspread else 0.8), 11.0, 0.3, f"Machine's week — WINNER: {WINNER_LOSER[0]}   ·   LOSER: {WINNER_LOSER[1]}", 10, ORANGE, bold=True)
 
 # ---------------- per-game slides ----------------
 for g in GAMES:
