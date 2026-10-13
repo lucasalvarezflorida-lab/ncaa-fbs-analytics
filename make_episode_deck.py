@@ -1722,6 +1722,22 @@ def _weekly():
 
 
 WEEKLY, WEEKLY_WEEK = _weekly() if TOP25_DELTA == "week" else ({}, None)
+TOP25_COL = "playoff"   # Lucas 10/13: the Δ column shows each team's PLAYOFF CHANCE (season sim) - a preview of the playoff-odds ranking to come; "week" = the old move column
+
+
+def _playoff():
+    """{team: P(playoff)} from the latest internal/playoff_sim_weekN.json (the Sunday sim); {} if missing."""
+    import glob as _glob
+    files = sorted(_glob.glob(os.path.join(HERE, "internal", "playoff_sim_week*.json")),
+                   key=lambda f: int(f.rsplit("week", 1)[1].split(".")[0]))
+    if not files:
+        return {}, None
+    d = _json.load(open(files[-1], encoding="utf-8"))
+    rows = d["teams"] if isinstance(d["teams"], list) else [dict(team=k, **v) for k, v in d["teams"].items()]
+    return {r["team"]: r["playoff"] for r in rows}, d.get("week")
+
+
+PLAYOFF, PLAYOFF_WEEK = _playoff() if TOP25_COL == "playoff" else ({}, None)
 
 
 def _luck():
@@ -1767,14 +1783,15 @@ txt(s, 0.9, 0.42, 11.5, 0.4,
     bold=True)
 txt(s, 0.9, 0.76, 11.5, 0.8, "Our Top 25", 40, WHITE, bold=True)
 txt(s, 0.9, 1.5, 11.5, 0.3,
-    (f"Machine rating · Δ this week · AP week {AP_WEEK} poll" if WEEKLY
+    (f"Machine rating · playoff chance (season sim) · AP week {AP_WEEK} poll" if PLAYOFF
+     else f"Machine rating · Δ this week · AP week {AP_WEEK} poll" if WEEKLY
      else f"Machine rating · Δ vs preseason · AP week {AP_WEEK} poll"), 13, PALE,
     bold=True)
 TOP, RH, CW = 2.0, 0.35, 5.5
 for x0 in (0.9, 6.95):
     txt(s, x0 + 3.3, TOP - 0.24, 0.75, 0.22, "RATING", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
-    txt(s, x0 + 4.05, TOP - 0.24, 0.75, 0.22, "Δ WEEK" if WEEKLY else "Δ PRE", 8, PALE,
+    txt(s, x0 + 4.05, TOP - 0.24, 0.75, 0.22, "PLAYOFF" if PLAYOFF else ("Δ WEEK" if WEEKLY else "Δ PRE"), 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
     txt(s, x0 + 4.8, TOP - 0.24, 0.65, 0.22, "VOTERS", 8, PALE,
         bold=True, align=PP_ALIGN.RIGHT)
@@ -1794,10 +1811,16 @@ for col, (x0, rows) in enumerate(((0.9, _top[:13]), (6.95, _top[13:]))):
             bold=True)
         txt(s, x0 + 3.3, y + 0.035, 0.75, 0.3, f"{t['cur']:.1f}", 12.5,
             WHITE, align=PP_ALIGN.RIGHT)
-        d = WEEKLY[t["team"]]["d_week"] if WEEKLY and t["team"] in WEEKLY else t["delta"]
-        txt(s, x0 + 4.05, y + 0.05, 0.75, 0.3, f"{d:+.1f}" if d else "0.0",
-            11, UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d),
-            align=PP_ALIGN.RIGHT)
+        if PLAYOFF:
+            _pp = PLAYOFF.get(t["team"])
+            txt(s, x0 + 4.05, y + 0.05, 0.75, 0.3, f"{round(100 * _pp)}%" if _pp is not None else "—",
+                11, UP if (_pp or 0) >= 0.5 else (DOWN if (_pp or 0) < 0.2 else PALE), bold=True,
+                align=PP_ALIGN.RIGHT)
+        else:
+            d = WEEKLY[t["team"]]["d_week"] if WEEKLY and t["team"] in WEEKLY else t["delta"]
+            txt(s, x0 + 4.05, y + 0.05, 0.75, 0.3, f"{d:+.1f}" if d else "0.0",
+                11, UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d),
+                align=PP_ALIGN.RIGHT)
         ap = AP_TOP25.get(t["team"])
         txt(s, x0 + 4.8, y + 0.05, 0.65, 0.3, f"AP {ap}" if ap else "NR", 10,
             PALE, align=PP_ALIGN.RIGHT)
