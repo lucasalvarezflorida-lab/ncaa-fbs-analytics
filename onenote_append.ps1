@@ -51,7 +51,13 @@ if ($DryRun) { "dry run - nothing written"; exit 0 }
 $esc = [System.Security.SecurityElement]::Escape($Text)
 $body = ''
 if ($Heading) { $body += '<one:OE><one:T><![CDATA[<span style="font-weight:bold">' + [System.Security.SecurityElement]::Escape($Heading) + '</span>]]></one:T></one:OE>' }
-$body += '<one:OE><one:T><![CDATA[' + $esc + ']]></one:T></one:OE>'
+# one outline, one paragraph per line of -Text; lines starting with '- ' become bullets (10/13)
+foreach ($ln in ($Text -split "`r?`n")) {
+  if ($ln.Trim() -eq '') { continue }
+  $t = [System.Security.SecurityElement]::Escape($ln.Trim())
+  if ($t.StartsWith('- ')) { $body += '<one:OE><one:List><one:Bullet bullet="2" fontSize="11"/></one:List><one:T><![CDATA[' + $t.Substring(2) + ']]></one:T></one:OE>' }
+  else { $body += '<one:OE><one:T><![CDATA[' + $t + ']]></one:T></one:OE>' }
+}
 $y = [math]::Round($bottom + 18, 1)
 $frag = '<one:Outline xmlns:one="' + $pd.DocumentElement.NamespaceURI + '"><one:Position x="' + $left + '" y="' + $y + '" z="0"/><one:Size width="' + $width + '" height="40" isSetByUser="false"/><one:OEChildren>' + $body + '</one:OEChildren></one:Outline>'
 $node = $pd.ImportNode(([xml]$frag).DocumentElement, $true)

@@ -66,6 +66,20 @@ review before air. Betting-line context stays in the internal folder.
   - Shane Beamer (South Carolina) 60.5 (-7.2, #7 → #9) — 3–3, P(gone) 0.24
   - Dabo Swinney (Clemson) 59.7 (-2.9, #9 → #10) — 3–2, P(gone) 0.32
   - Next up: Tim Albin (Charlotte) 58.7 · Joe Moorhead (Akron) 57.1
+  - Why they moved this week (the human lists did not change; every move is the model half — the result, the record, the projection, the chance he is gone)
+    - Walden (UTEP) to #1, no change in score: 13–30 to Nevada, 1–5, projected 2.5 wins; the model has him at 52% gone and no list is needed to get there
+    - Locksley (Maryland) #4 → #2, +5.1: 16–45 at Ohio State, a third straight loss by 25 or more; P(gone) 30% → 34% as the projection fell to 4.2 wins
+    - O'Brien (Boston College) #1 → #3, −4.3: 16–25 at SMU was a loss, but a 9-point loss on the road is better than the model expected; P(gone) 44% → 40%
+    - Sanders (Colorado) #3 → #4, −3.8: 7–29 to Texas Tech, yet the model's chance fell 43% → 40% — the projection is still 5 wins and the buyout is the brake
+    - Vincent (UL Monroe) #6 → #5, no change: 35–52 at South Alabama, 0–5; 56% gone with no human list on him, which is the model doing the work alone
+    - Mason (Middle Tennessee) #5 → #6, −3.8: 0–55 at Kansas, but the model had priced a loss there; the projection held at 4 wins
+    - Norvell (Florida State) #13 → #7, +4.2: 20–44 at Louisville, 3–3; P(gone) 15% → 19% and every one of the six lists has him — the human half is maxed, the model half is the only thing still low (projected 7.1 wins)
+    - Schiano (Rutgers) stays #8, −2.7: 15–47 to Indiana, 1–4; the model moved down a point because the projection was already 3.9
+    - Beamer (South Carolina) #7 → #9, −7.2: the week's biggest fall in the ten — 38–19 at Florida, 3–3, P(gone) 30% → 24%
+    - Swinney (Clemson) #9 → #10, −2.9: 13–41 to Miami, but 3–2 and a 6.8-win projection; the $57M buyout keeps the model under 35%
+    - Next up: Albin (Charlotte) #16 → #11, +2.0, 0–6 after 10–50 at North Texas; Moorhead (Akron) #14 → #12 after 23–25 to Eastern Michigan
+    - Biggest fallers outside the ten: Helton (Western Kentucky) #12 → #18, −11.4, beat Missouri State; Lembo (Buffalo) #17 → #22, −9.4, won at Toledo; Creighton (Eastern Michigan) #11 → #16, −8.6, won at Akron; Sawvel (Wyoming) #10 → #13, −7.6, won at San José State — a win moves a Group of Five seat more than a loss does, because the projection is close to the bar
+    - Biggest riser outside the ten: Harley (Northern Illinois) #33 → #19, +6.7, 0–5 after 7–28 to Air Force
   - First-firing watch: none yet. Walden, Vincent and Albin are the three winless-or-near-it seats with no buyout on file.
 
 - **Superdog picks** (lines as of Sun 10/11 — re-read at the freeze)
