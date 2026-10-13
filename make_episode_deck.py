@@ -1927,9 +1927,8 @@ if BOARDS:
     _hdr(s, 6.2, 0.55, TOP - 0.25, "RECORD", R)
     _hdr(s, 6.85, 0.7, TOP - 0.25, "P(GONE)", R)
     _hdr(s, 7.6, 0.95, TOP - 0.25, "BUYOUT", R)
-    _hdr(s, 8.6, 0.5, TOP - 0.25, "Δ", R)
-    _hdr(s, 9.15, 0.6, TOP - 0.25, "ON LISTS", R)
-    _hdr(s, 9.85, 2.55, TOP - 0.25, "LAST RESULT")
+    _hdr(s, 8.65, 0.6, TOP - 0.25, "ON LISTS", R)
+    _hdr(s, 9.4, 3.0, TOP - 0.25, "LAST RESULT")
     for i, r in enumerate(BOARDS["hot_seat"][:10]):
         y = TOP + i * RH
         if i % 2 == 0:
@@ -1944,12 +1943,9 @@ if BOARDS:
             bold=True, align=R)
         txt(s, 7.6, y + 0.07, 0.95, 0.3, f"{r.get('buyout', '—')}{'*' if r.get('buyout_est') else ''}",
             10.5, WHITE, bold=True, align=R)
-        d = r["delta"] or 0.0
-        txt(s, 8.6, y + 0.09, 0.5, 0.3, f"{d:+.1f}" if d else "0.0", 10,
-            UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d), align=R)
-        txt(s, 9.15, y + 0.07, 0.6, 0.3, r.get("lists") or "—", 11, ORANGE, bold=True, align=R)
+        txt(s, 8.65, y + 0.07, 0.6, 0.3, r.get("lists") or "—", 11, ORANGE, bold=True, align=R)
         last = (r["results"] or ["—"])[-1].replace("vs ", "vs ").replace("at ", "at ")
-        txt(s, 9.85, y + 0.09, 2.55, 0.3, last, 8.5, PALE)
+        txt(s, 9.4, y + 0.09, 3.0, 0.3, last, 8.5, PALE)
     _fy = TOP + 10 * RH + 0.12
     _nxt = BOARDS["hot_seat"][10:13]
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.95, NAVY2)      # 0.95 tall: the footnote wraps to two lines in Slides (Lucas 10/13)

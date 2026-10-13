@@ -81,7 +81,7 @@ def hot_seat_requests(slide_id, rows, episode, week):
     b.text(0.9, 1.5, 11.5, 0.3, "Ranked by the machine's odds he is gone by next season (fit on 2014–25 changes) · the six hot-seat lists shown beside it", 13, PALE, True)
     TOP, RH = 2.08, 0.4
     hdr = [(1.75, 2.85, "COACH · SCHOOL", "START"), (4.6, 1.4, "TENURE", "START"), (6.1, 0.75, "RECORD", "END"),
-           (6.75, 0.8, "P(GONE)", "END"), (7.55, 1.0, "BUYOUT", "END"), (8.5, 0.65, "Δ", "END"), (9.05, 0.8, "ON LISTS", "END"), (9.85, 2.55, "LAST RESULT", "START")]
+           (6.75, 0.8, "P(GONE)", "END"), (7.55, 1.0, "BUYOUT", "END"), (8.6, 0.8, "ON LISTS", "END"), (9.4, 3.0, "LAST RESULT", "START")]
     for x, w, lab, al in hdr:
         b.text(x, TOP - 0.25, w, 0.22, lab, 8, PALE, True, al)
     for i, r in enumerate(rows[:10]):
@@ -97,10 +97,8 @@ def hot_seat_requests(slide_id, rows, episode, week):
         p = r["p_gone"]
         b.text(6.75, y + 0.07, 0.8, 0.3, f"{round(100 * p)}%", 11, DOWN if p >= 0.3 else (UP if p < 0.15 else WHITE), True, "END")
         b.text(7.55, y + 0.07, 1.0, 0.3, f"{r.get('buyout', '—')}{'*' if r.get('buyout_est') else ''}", 10.5, WHITE, True, "END")
-        d = r.get("delta") or 0.0
-        b.text(8.5, y + 0.09, 0.65, 0.3, f"{d:+.1f}" if d else "0.0", 10, UP if d > 0 else (DOWN if d < 0 else PALE), bool(d), "END")
-        b.text(9.05, y + 0.07, 0.8, 0.3, r.get("lists") or "—", 11, ORANGE, True, "END")
-        b.text(9.85, y + 0.09, 2.55, 0.3, (r.get("results") or ["—"])[-1], 8.5, PALE)
+        b.text(8.6, y + 0.07, 0.8, 0.3, r.get("lists") or "—", 11, ORANGE, True, "END")
+        b.text(9.4, y + 0.09, 3.0, 0.3, (r.get("results") or ["—"])[-1], 8.5, PALE)
     fy = TOP + 10 * RH + 0.12
     b.box(0.9, fy, 11.5, 0.95, NAVY2, "ROUND_RECTANGLE")
     b.text(1.1, fy + 0.06, 11.2, 0.28, "Next three: " + " · ".join(f"{x['coach']} {round(100 * x['p_gone'])}%" for x in rows[10:13]), 11, WHITE, True)
