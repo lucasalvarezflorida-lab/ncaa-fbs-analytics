@@ -1480,7 +1480,8 @@ def build_recap():
             continue
         ap_, hp_ = fin
         win = b if hp_ >= ap_ else a
-        callfin = f"FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)} · {calls}"
+        _cl = ("pick" if not close else f"{b if close < 0 else a} –{abs(close):g}")   # closing line in codes (home-perspective: negative = home favored)
+        callfin = f"FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)} ({_cl}) · {calls}"   # Lucas 10/13: the closing line after the final
         margin = hp_ - ap_                       # actual home margin
         des = DESERVED.get((normalize_name(key[0]), normalize_name(key[1])))
         if des is not None:
@@ -2429,7 +2430,7 @@ for a, b, tit, callfin, lines_, miss, mark, gmark in RECAP:
     logo_badge(s, 1.1, y + 0.13, 0.6, a)
     logo_badge(s, 1.8, y + 0.13, 0.6, b)
     txt(s, 2.6, y + 0.09, 4.8, 0.35, tit, 13.5, INK, bold=True)
-    txt(s, 2.6, y + 0.46, 4.9, 0.3, callfin, 10.5, INK)
+    txt(s, 2.6, y + 0.46, 4.9, 0.3, callfin, 10.5 if len(callfin) <= 58 else 9.5, INK)
     txt(s, 7.35, y + 0.11, 4.8, 0.3, lines_, 10, VERD[gmark], bold=True)   # Lucas 10/13: same size as off-by, coloured for the closer call
     txt(s, 7.35, y + 0.44, 4.8, 0.3, miss, 10, VERD[mark], bold=True)
     y += 0.94
