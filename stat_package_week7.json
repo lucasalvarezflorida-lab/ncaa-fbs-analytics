@@ -1,0 +1,8122 @@
+[
+ {
+  "team": "Ohio State",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Ball State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 56-3",
+    "offense": {
+     "plays": 72,
+     "dropbacks": 39,
+     "sacks": 2,
+     "att": 37,
+     "comp": 31,
+     "pass_yds": 434,
+     "ypa": 11.7,
+     "ypc": 14.0,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 5,
+     "deep_comp": 3,
+     "ints": 1,
+     "rushes": 33,
+     "rush_yds": 249,
+     "ypr": 7.5,
+     "r10": 6,
+     "stuffs": 6,
+     "t3": "5/11",
+     "t3_long": "3/8",
+     "t3_short": "1/1",
+     "rz": "4/4",
+     "ppa": 0.617,
+     "box_rush": {
+      "att": 35,
+      "yds": 237,
+      "ypc": 6.8
+     }
+    },
+    "defense": {
+     "plays": 60,
+     "dropbacks": 38,
+     "sacks": 1,
+     "att": 37,
+     "comp": 20,
+     "pass_yds": 120,
+     "ypa": 3.2,
+     "ypc": 6.0,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 4,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 22,
+     "rush_yds": 47,
+     "ypr": 2.1,
+     "r10": 2,
+     "stuffs": 7,
+     "t3": "3/14",
+     "t3_long": "2/12",
+     "t3_short": "0/0",
+     "rz": "0/0",
+     "ppa": -0.33,
+     "box_rush": {
+      "att": 23,
+      "yds": 45,
+      "ypc": 2.0
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Texas",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "L 23-24",
+    "offense": {
+     "plays": 63,
+     "dropbacks": 34,
+     "sacks": 2,
+     "att": 32,
+     "comp": 17,
+     "pass_yds": 278,
+     "ypa": 8.7,
+     "ypc": 16.4,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 6,
+     "deep_comp": 3,
+     "ints": 1,
+     "rushes": 29,
+     "rush_yds": 108,
+     "ypr": 3.7,
+     "r10": 2,
+     "stuffs": 6,
+     "t3": "6/14",
+     "t3_long": "4/10",
+     "t3_short": "0/0",
+     "rz": "2/5",
+     "ppa": 0.108,
+     "box_rush": {
+      "att": 31,
+      "yds": 94,
+      "ypc": 3.0
+     }
+    },
+    "defense": {
+     "plays": 75,
+     "dropbacks": 37,
+     "sacks": 2,
+     "att": 35,
+     "comp": 21,
+     "pass_yds": 186,
+     "ypa": 5.3,
+     "ypc": 8.9,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 38,
+     "rush_yds": 157,
+     "ypr": 4.1,
+     "r10": 5,
+     "stuffs": 5,
+     "t3": "8/15",
+     "t3_long": "0/6",
+     "t3_short": "7/7",
+     "rz": "3/4",
+     "ppa": 0.116,
+     "box_rush": {
+      "att": 41,
+      "yds": 141,
+      "ypc": 3.4
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Kent State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 59-3",
+    "offense": {
+     "plays": 66,
+     "dropbacks": 29,
+     "sacks": 1,
+     "att": 28,
+     "comp": 22,
+     "pass_yds": 382,
+     "ypa": 13.6,
+     "ypc": 17.4,
+     "p20": 8,
+     "p30": 4,
+     "deep_att": 3,
+     "deep_comp": 3,
+     "ints": 2,
+     "rushes": 37,
+     "rush_yds": 152,
+     "ypr": 4.1,
+     "r10": 4,
+     "stuffs": 6,
+     "t3": "2/8",
+     "t3_long": "1/2",
+     "t3_short": "0/2",
+     "rz": "4/7",
+     "ppa": 0.292,
+     "box_rush": {
+      "att": 38,
+      "yds": 145,
+      "ypc": 3.8
+     }
+    },
+    "defense": {
+     "plays": 54,
+     "dropbacks": 22,
+     "sacks": 1,
+     "att": 21,
+     "comp": 8,
+     "pass_yds": 63,
+     "ypa": 3.0,
+     "ypc": 7.9,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 1,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 32,
+     "rush_yds": 88,
+     "ypr": 2.8,
+     "r10": 0,
+     "stuffs": 9,
+     "t3": "4/16",
+     "t3_long": "2/11",
+     "t3_short": "2/4",
+     "rz": "0/2",
+     "ppa": -0.318,
+     "box_rush": {
+      "att": 34,
+      "yds": 71,
+      "ypc": 2.1
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Illinois",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 42-19",
+    "offense": {
+     "plays": 68,
+     "dropbacks": 36,
+     "sacks": 0,
+     "att": 36,
+     "comp": 27,
+     "pass_yds": 367,
+     "ypa": 10.2,
+     "ypc": 13.6,
+     "p20": 6,
+     "p30": 2,
+     "deep_att": 6,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 32,
+     "rush_yds": 151,
+     "ypr": 4.7,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "8/12",
+     "t3_long": "2/3",
+     "t3_short": "5/6",
+     "rz": "4/4",
+     "ppa": 0.532,
+     "box_rush": {
+      "att": 32,
+      "yds": 151,
+      "ypc": 4.7
+     }
+    },
+    "defense": {
+     "plays": 71,
+     "dropbacks": 41,
+     "sacks": 3,
+     "att": 38,
+     "comp": 21,
+     "pass_yds": 263,
+     "ypa": 6.9,
+     "ypc": 12.5,
+     "p20": 5,
+     "p30": 1,
+     "deep_att": 9,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 30,
+     "rush_yds": 225,
+     "ypr": 7.5,
+     "r10": 7,
+     "stuffs": 3,
+     "t3": "6/14",
+     "t3_long": "3/9",
+     "t3_short": "1/2",
+     "rz": "0/1",
+     "ppa": 0.223,
+     "box_rush": {
+      "att": 33,
+      "yds": 199,
+      "ypc": 6.0
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Iowa",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 31-14",
+    "offense": {
+     "plays": 73,
+     "dropbacks": 30,
+     "sacks": 3,
+     "att": 27,
+     "comp": 20,
+     "pass_yds": 324,
+     "ypa": 12.0,
+     "ypc": 16.2,
+     "p20": 4,
+     "p30": 3,
+     "deep_att": 4,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 43,
+     "rush_yds": 189,
+     "ypr": 4.4,
+     "r10": 4,
+     "stuffs": 7,
+     "t3": "8/15",
+     "t3_long": "4/10",
+     "t3_short": "2/3",
+     "rz": "3/6",
+     "ppa": 0.296,
+     "box_rush": {
+      "att": 47,
+      "yds": 160,
+      "ypc": 3.4
+     }
+    },
+    "defense": {
+     "plays": 52,
+     "dropbacks": 33,
+     "sacks": 1,
+     "att": 32,
+     "comp": 17,
+     "pass_yds": 199,
+     "ypa": 6.2,
+     "ypc": 11.7,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 19,
+     "rush_yds": 62,
+     "ypr": 3.3,
+     "r10": 1,
+     "stuffs": 4,
+     "t3": "5/11",
+     "t3_long": "3/8",
+     "t3_short": "1/2",
+     "rz": "1/2",
+     "ppa": 0.012,
+     "box_rush": {
+      "att": 21,
+      "yds": 39,
+      "ypc": 1.9
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Maryland",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 45-16",
+    "offense": {
+     "plays": 68,
+     "dropbacks": 21,
+     "sacks": 0,
+     "att": 21,
+     "comp": 13,
+     "pass_yds": 242,
+     "ypa": 11.5,
+     "ypc": 18.6,
+     "p20": 5,
+     "p30": 5,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 47,
+     "rush_yds": 220,
+     "ypr": 4.7,
+     "r10": 3,
+     "stuffs": 4,
+     "t3": "5/11",
+     "t3_long": "0/2",
+     "t3_short": "4/5",
+     "rz": "2/3",
+     "ppa": 0.21,
+     "box_rush": {
+      "att": 48,
+      "yds": 207,
+      "ypc": 4.3
+     }
+    },
+    "defense": {
+     "plays": 53,
+     "dropbacks": 25,
+     "sacks": 0,
+     "att": 25,
+     "comp": 12,
+     "pass_yds": 64,
+     "ypa": 2.6,
+     "ypc": 5.3,
+     "p20": 0,
+     "p30": 0,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 28,
+     "rush_yds": 82,
+     "ypr": 2.9,
+     "r10": 2,
+     "stuffs": 5,
+     "t3": "3/12",
+     "t3_long": "1/9",
+     "t3_short": "1/1",
+     "rz": "1/2",
+     "ppa": -0.22,
+     "box_rush": {
+      "att": 28,
+      "yds": 82,
+      "ypc": 2.9
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 410,
+   "dropbacks": 189,
+   "sacks": 8,
+   "att": 181,
+   "comp": 130,
+   "pass_yds": 2027,
+   "p20": 31,
+   "p30": 17,
+   "deep_att": 26,
+   "deep_comp": 14,
+   "ints": 5,
+   "rushes": 221,
+   "rush_yds": 1069,
+   "r10": 23,
+   "stuffs": 33,
+   "box_att": 231,
+   "box_yds": 994,
+   "box_ypc": 4.3,
+   "ypa": 11.2,
+   "ypr": 4.8,
+   "sack_rate": 4.2,
+   "p20_rate": 16.4,
+   "r10_rate": 10.4,
+   "stuff_rate": 14.9,
+   "deep_rate": 14.4,
+   "t3": "34/71",
+   "t3_long": "14/35",
+   "t3_short": "12/17",
+   "rz": "19/29"
+  },
+  "defense": {
+   "plays": 365,
+   "dropbacks": 196,
+   "sacks": 8,
+   "att": 188,
+   "comp": 99,
+   "pass_yds": 895,
+   "p20": 9,
+   "p30": 1,
+   "deep_att": 21,
+   "deep_comp": 3,
+   "ints": 4,
+   "rushes": 169,
+   "rush_yds": 661,
+   "r10": 17,
+   "stuffs": 33,
+   "box_att": 180,
+   "box_yds": 577,
+   "box_ypc": 3.2,
+   "ypa": 4.8,
+   "ypr": 3.9,
+   "sack_rate": 4.1,
+   "p20_rate": 4.6,
+   "r10_rate": 10.1,
+   "stuff_rate": 19.5,
+   "deep_rate": 11.2,
+   "t3": "29/82",
+   "t3_long": "11/55",
+   "t3_short": "12/16",
+   "rz": "5/11"
+  },
+  "offense_vs_fbs": {
+   "plays": 410,
+   "dropbacks": 189,
+   "sacks": 8,
+   "att": 181,
+   "comp": 130,
+   "pass_yds": 2027,
+   "p20": 31,
+   "p30": 17,
+   "deep_att": 26,
+   "deep_comp": 14,
+   "ints": 5,
+   "rushes": 221,
+   "rush_yds": 1069,
+   "r10": 23,
+   "stuffs": 33,
+   "box_att": 231,
+   "box_yds": 994,
+   "box_ypc": 4.3,
+   "ypa": 11.2,
+   "ypr": 4.8,
+   "sack_rate": 4.2,
+   "p20_rate": 16.4,
+   "r10_rate": 10.4,
+   "stuff_rate": 14.9,
+   "deep_rate": 14.4,
+   "t3": "34/71",
+   "t3_long": "14/35",
+   "t3_short": "12/17",
+   "rz": "19/29"
+  },
+  "defense_vs_fbs": {
+   "plays": 365,
+   "dropbacks": 196,
+   "sacks": 8,
+   "att": 188,
+   "comp": 99,
+   "pass_yds": 895,
+   "p20": 9,
+   "p30": 1,
+   "deep_att": 21,
+   "deep_comp": 3,
+   "ints": 4,
+   "rushes": 169,
+   "rush_yds": 661,
+   "r10": 17,
+   "stuffs": 33,
+   "box_att": 180,
+   "box_yds": 577,
+   "box_ypc": 3.2,
+   "ypa": 4.8,
+   "ypr": 3.9,
+   "sack_rate": 4.1,
+   "p20_rate": 4.6,
+   "r10_rate": 10.1,
+   "stuff_rate": 19.5,
+   "deep_rate": 11.2,
+   "t3": "29/82",
+   "t3_long": "11/55",
+   "t3_short": "12/16",
+   "rz": "5/11"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Julian Sayin",
+     {
+      "ATT": 163.0,
+      "COMPLETIONS": 116.0,
+      "INT": 2.0,
+      "PCT": 0.712,
+      "TD": 17.0,
+      "YDS": 1772.0,
+      "YPA": 10.9
+     }
+    ],
+    [
+     "Luke Fahey",
+     {
+      "ATT": 11.0,
+      "COMPLETIONS": 9.0,
+      "INT": 2.0,
+      "PCT": 0.818,
+      "TD": 2.0,
+      "YDS": 203.0,
+      "YPA": 18.5
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Bo Jackson",
+     {
+      "CAR": 89.0,
+      "LONG": 65.0,
+      "TD": 4.0,
+      "YDS": 460.0,
+      "YPC": 5.2
+     }
+    ],
+    [
+     "Ja'Kobi Jackson",
+     {
+      "CAR": 59.0,
+      "LONG": 49.0,
+      "TD": 6.0,
+      "YDS": 354.0,
+      "YPC": 6.0
+     }
+    ],
+    [
+     "Isaiah West",
+     {
+      "CAR": 22.0,
+      "LONG": 14.0,
+      "TD": 1.0,
+      "YDS": 80.0,
+      "YPC": 3.6
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Jeremiah Smith",
+     {
+      "LONG": 72.0,
+      "REC": 48.0,
+      "TD": 11.0,
+      "YDS": 916.0,
+      "YPR": 19.1
+     }
+    ],
+    [
+     "Devin Mccuin",
+     {
+      "LONG": 34.0,
+      "REC": 17.0,
+      "TD": 2.0,
+      "YDS": 245.0,
+      "YPR": 14.4
+     }
+    ],
+    [
+     "Nate Roberts",
+     {
+      "LONG": 68.0,
+      "REC": 10.0,
+      "TD": 2.0,
+      "YDS": 160.0,
+      "YPR": 16.0
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Kenyatta Jackson",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 3.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 15.0
+     }
+    ],
+    [
+     "Riley Pettijohn",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 2.0,
+      "SOLO": 10.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 20.0
+     }
+    ],
+    [
+     "Qua Russaw",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 1.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 3.5,
+      "TOT": 13.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Kenyatta Jackson",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 3.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 15.0
+     }
+    ],
+    [
+     "Riley Pettijohn",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 2.0,
+      "SOLO": 10.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 20.0
+     }
+    ],
+    [
+     "Qua Russaw",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 1.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 3.5,
+      "TOT": 13.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Indiana",
+  "games": [
+   {
+    "week": 1,
+    "opp": "North Texas",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 52-16",
+    "offense": {
+     "plays": 46,
+     "dropbacks": 16,
+     "sacks": 0,
+     "att": 16,
+     "comp": 13,
+     "pass_yds": 231,
+     "ypa": 14.4,
+     "ypc": 17.8,
+     "p20": 5,
+     "p30": 3,
+     "deep_att": 3,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 30,
+     "rush_yds": 134,
+     "ypr": 4.5,
+     "r10": 2,
+     "stuffs": 4,
+     "t3": "5/9",
+     "t3_long": "2/4",
+     "t3_short": "0/1",
+     "rz": "4/4",
+     "ppa": 0.633,
+     "box_rush": {
+      "att": 30,
+      "yds": 134,
+      "ypc": 4.5
+     }
+    },
+    "defense": {
+     "plays": 67,
+     "dropbacks": 30,
+     "sacks": 1,
+     "att": 29,
+     "comp": 23,
+     "pass_yds": 215,
+     "ypa": 7.4,
+     "ypc": 9.3,
+     "p20": 5,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 37,
+     "rush_yds": 160,
+     "ypr": 4.3,
+     "r10": 5,
+     "stuffs": 5,
+     "t3": "6/15",
+     "t3_long": "3/8",
+     "t3_short": "1/3",
+     "rz": "1/2",
+     "ppa": 0.067,
+     "box_rush": {
+      "att": 38,
+      "yds": 152,
+      "ypc": 4.0
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Howard",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 55-0",
+    "offense": {
+     "plays": 60,
+     "dropbacks": 17,
+     "sacks": 1,
+     "att": 16,
+     "comp": 9,
+     "pass_yds": 209,
+     "ypa": 13.1,
+     "ypc": 23.2,
+     "p20": 5,
+     "p30": 4,
+     "deep_att": 5,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 43,
+     "rush_yds": 305,
+     "ypr": 7.1,
+     "r10": 11,
+     "stuffs": 4,
+     "t3": "7/10",
+     "t3_long": "4/6",
+     "t3_short": "1/2",
+     "rz": "3/3",
+     "ppa": 0.551,
+     "box_rush": {
+      "att": 46,
+      "yds": 296,
+      "ypc": 6.4
+     }
+    },
+    "defense": {
+     "plays": 46,
+     "dropbacks": 24,
+     "sacks": 4,
+     "att": 20,
+     "comp": 10,
+     "pass_yds": 44,
+     "ypa": 2.2,
+     "ypc": 4.4,
+     "p20": 0,
+     "p30": 0,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 22,
+     "rush_yds": 38,
+     "ypr": 1.7,
+     "r10": 0,
+     "stuffs": 8,
+     "t3": "3/14",
+     "t3_long": "2/12",
+     "t3_short": "1/1",
+     "rz": "0/0",
+     "ppa": -0.48,
+     "box_rush": {
+      "att": 27,
+      "yds": 13,
+      "ypc": 0.5
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Western Kentucky",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 38-0",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 26,
+     "sacks": 2,
+     "att": 24,
+     "comp": 18,
+     "pass_yds": 268,
+     "ypa": 11.2,
+     "ypc": 14.9,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 39,
+     "rush_yds": 240,
+     "ypr": 6.2,
+     "r10": 7,
+     "stuffs": 2,
+     "t3": "2/10",
+     "t3_long": "1/6",
+     "t3_short": "1/2",
+     "rz": "2/3",
+     "ppa": 0.336,
+     "box_rush": {
+      "att": 41,
+      "yds": 233,
+      "ypc": 5.7
+     }
+    },
+    "defense": {
+     "plays": 57,
+     "dropbacks": 30,
+     "sacks": 0,
+     "att": 30,
+     "comp": 15,
+     "pass_yds": 111,
+     "ypa": 3.7,
+     "ypc": 7.4,
+     "p20": 2,
+     "p30": 0,
+     "deep_att": 2,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 27,
+     "rush_yds": 76,
+     "ypr": 2.8,
+     "r10": 0,
+     "stuffs": 9,
+     "t3": "5/13",
+     "t3_long": "1/6",
+     "t3_short": "2/3",
+     "rz": "0/1",
+     "ppa": -0.367,
+     "box_rush": {
+      "att": 29,
+      "yds": 66,
+      "ypc": 2.3
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Northwestern",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 29-23",
+    "offense": {
+     "plays": 69,
+     "dropbacks": 31,
+     "sacks": 2,
+     "att": 29,
+     "comp": 19,
+     "pass_yds": 201,
+     "ypa": 6.9,
+     "ypc": 10.6,
+     "p20": 3,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 38,
+     "rush_yds": 293,
+     "ypr": 7.7,
+     "r10": 7,
+     "stuffs": 7,
+     "t3": "9/15",
+     "t3_long": "3/8",
+     "t3_short": "4/4",
+     "rz": "3/5",
+     "ppa": 0.262,
+     "box_rush": {
+      "att": 40,
+      "yds": 271,
+      "ypc": 6.8
+     }
+    },
+    "defense": {
+     "plays": 55,
+     "dropbacks": 34,
+     "sacks": 4,
+     "att": 30,
+     "comp": 22,
+     "pass_yds": 293,
+     "ypa": 9.8,
+     "ypc": 13.3,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 4,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 21,
+     "rush_yds": 72,
+     "ypr": 3.4,
+     "r10": 2,
+     "stuffs": 2,
+     "t3": "4/11",
+     "t3_long": "4/9",
+     "t3_short": "0/0",
+     "rz": "3/3",
+     "ppa": 0.307,
+     "box_rush": {
+      "att": 27,
+      "yds": 32,
+      "ypc": 1.2
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Rutgers",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 47-15",
+    "offense": {
+     "plays": 68,
+     "dropbacks": 30,
+     "sacks": 1,
+     "att": 29,
+     "comp": 21,
+     "pass_yds": 264,
+     "ypa": 9.1,
+     "ypc": 12.6,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 5,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 38,
+     "rush_yds": 339,
+     "ypr": 8.9,
+     "r10": 12,
+     "stuffs": 5,
+     "t3": "5/10",
+     "t3_long": "1/6",
+     "t3_short": "3/3",
+     "rz": "6/8",
+     "ppa": 0.513,
+     "box_rush": {
+      "att": 39,
+      "yds": 329,
+      "ypc": 8.4
+     }
+    },
+    "defense": {
+     "plays": 55,
+     "dropbacks": 24,
+     "sacks": 4,
+     "att": 20,
+     "comp": 11,
+     "pass_yds": 195,
+     "ypa": 9.8,
+     "ypc": 17.7,
+     "p20": 3,
+     "p30": 3,
+     "deep_att": 4,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 31,
+     "rush_yds": 83,
+     "ypr": 2.7,
+     "r10": 1,
+     "stuffs": 10,
+     "t3": "2/14",
+     "t3_long": "0/8",
+     "t3_short": "2/5",
+     "rz": "1/1",
+     "ppa": -0.027,
+     "box_rush": {
+      "att": 35,
+      "yds": 59,
+      "ypc": 1.7
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Nebraska",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 20-17",
+    "offense": {
+     "plays": 44,
+     "dropbacks": 24,
+     "sacks": 2,
+     "att": 22,
+     "comp": 12,
+     "pass_yds": 263,
+     "ypa": 12.0,
+     "ypc": 21.9,
+     "p20": 4,
+     "p30": 4,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 20,
+     "rush_yds": 72,
+     "ypr": 3.6,
+     "r10": 3,
+     "stuffs": 5,
+     "t3": "1/10",
+     "t3_long": "1/7",
+     "t3_short": "0/0",
+     "rz": "0/1",
+     "ppa": 0.243,
+     "box_rush": {
+      "att": 22,
+      "yds": 65,
+      "ypc": 3.0
+     }
+    },
+    "defense": {
+     "plays": 82,
+     "dropbacks": 49,
+     "sacks": 5,
+     "att": 44,
+     "comp": 25,
+     "pass_yds": 262,
+     "ypa": 6.0,
+     "ypc": 10.5,
+     "p20": 3,
+     "p30": 0,
+     "deep_att": 7,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 33,
+     "rush_yds": 172,
+     "ypr": 5.2,
+     "r10": 5,
+     "stuffs": 7,
+     "t3": "10/19",
+     "t3_long": "6/14",
+     "t3_short": "3/4",
+     "rz": "1/3",
+     "ppa": 0.07,
+     "box_rush": {
+      "att": 39,
+      "yds": 128,
+      "ypc": 3.3
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 352,
+   "dropbacks": 144,
+   "sacks": 8,
+   "att": 136,
+   "comp": 92,
+   "pass_yds": 1436,
+   "p20": 24,
+   "p30": 14,
+   "deep_att": 22,
+   "deep_comp": 10,
+   "ints": 0,
+   "rushes": 208,
+   "rush_yds": 1383,
+   "r10": 42,
+   "stuffs": 27,
+   "box_att": 218,
+   "box_yds": 1328,
+   "box_ypc": 6.1,
+   "ypa": 10.6,
+   "ypr": 6.6,
+   "sack_rate": 5.6,
+   "p20_rate": 16.7,
+   "r10_rate": 20.2,
+   "stuff_rate": 13.0,
+   "deep_rate": 16.2,
+   "t3": "29/64",
+   "t3_long": "12/37",
+   "t3_short": "9/12",
+   "rz": "18/24"
+  },
+  "defense": {
+   "plays": 362,
+   "dropbacks": 191,
+   "sacks": 18,
+   "att": 173,
+   "comp": 106,
+   "pass_yds": 1120,
+   "p20": 17,
+   "p30": 7,
+   "deep_att": 21,
+   "deep_comp": 10,
+   "ints": 4,
+   "rushes": 171,
+   "rush_yds": 601,
+   "r10": 13,
+   "stuffs": 41,
+   "box_att": 195,
+   "box_yds": 450,
+   "box_ypc": 2.3,
+   "ypa": 6.5,
+   "ypr": 3.5,
+   "sack_rate": 9.4,
+   "p20_rate": 8.9,
+   "r10_rate": 7.6,
+   "stuff_rate": 24.0,
+   "deep_rate": 12.1,
+   "t3": "30/86",
+   "t3_long": "16/57",
+   "t3_short": "9/16",
+   "rz": "6/10"
+  },
+  "offense_vs_fbs": {
+   "plays": 292,
+   "dropbacks": 127,
+   "sacks": 7,
+   "att": 120,
+   "comp": 83,
+   "pass_yds": 1227,
+   "p20": 19,
+   "p30": 10,
+   "deep_att": 17,
+   "deep_comp": 7,
+   "ints": 0,
+   "rushes": 165,
+   "rush_yds": 1078,
+   "r10": 31,
+   "stuffs": 23,
+   "box_att": 172,
+   "box_yds": 1032,
+   "box_ypc": 6.0,
+   "ypa": 10.2,
+   "ypr": 6.5,
+   "sack_rate": 5.5,
+   "p20_rate": 15.0,
+   "r10_rate": 18.8,
+   "stuff_rate": 13.9,
+   "deep_rate": 14.2,
+   "t3": "22/54",
+   "t3_long": "8/31",
+   "t3_short": "8/10",
+   "rz": "15/21"
+  },
+  "defense_vs_fbs": {
+   "plays": 316,
+   "dropbacks": 167,
+   "sacks": 14,
+   "att": 153,
+   "comp": 96,
+   "pass_yds": 1076,
+   "p20": 17,
+   "p30": 7,
+   "deep_att": 20,
+   "deep_comp": 10,
+   "ints": 3,
+   "rushes": 149,
+   "rush_yds": 563,
+   "r10": 13,
+   "stuffs": 33,
+   "box_att": 168,
+   "box_yds": 437,
+   "box_ypc": 2.6,
+   "ypa": 7.0,
+   "ypr": 3.8,
+   "sack_rate": 8.4,
+   "p20_rate": 10.2,
+   "r10_rate": 8.7,
+   "stuff_rate": 22.1,
+   "deep_rate": 13.1,
+   "t3": "27/72",
+   "t3_long": "14/45",
+   "t3_short": "8/15",
+   "rz": "6/10"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Josh Hoover",
+     {
+      "ATT": 129.0,
+      "COMPLETIONS": 88.0,
+      "INT": 0.0,
+      "PCT": 0.682,
+      "TD": 17.0,
+      "YDS": 1364.0,
+      "YPA": 10.6
+     }
+    ],
+    [
+     "Grant Wilson",
+     {
+      "ATT": 5.0,
+      "COMPLETIONS": 4.0,
+      "INT": 0.0,
+      "PCT": 0.8,
+      "TD": 2.0,
+      "YDS": 74.0,
+      "YPA": 14.8
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Turbo Richard",
+     {
+      "CAR": 71.0,
+      "LONG": 57.0,
+      "TD": 5.0,
+      "YDS": 597.0,
+      "YPC": 8.4
+     }
+    ],
+    [
+     "Lee Beebe",
+     {
+      "CAR": 98.0,
+      "LONG": 70.0,
+      "TD": 4.0,
+      "YDS": 551.0,
+      "YPC": 5.6
+     }
+    ],
+    [
+     "Jayreon Campbell",
+     {
+      "CAR": 8.0,
+      "LONG": 23.0,
+      "TD": 0.0,
+      "YDS": 50.0,
+      "YPC": 6.3
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Charlie Becker",
+     {
+      "LONG": 79.0,
+      "REC": 30.0,
+      "TD": 8.0,
+      "YDS": 529.0,
+      "YPR": 17.6
+     }
+    ],
+    [
+     "Nick Marsh",
+     {
+      "LONG": 75.0,
+      "REC": 29.0,
+      "TD": 6.0,
+      "YDS": 528.0,
+      "YPR": 18.2
+     }
+    ],
+    [
+     "Shazz Preston",
+     {
+      "LONG": 39.0,
+      "REC": 9.0,
+      "TD": 1.0,
+      "YDS": 123.0,
+      "YPR": 13.7
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Tobi Osunsanmi",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 5.0,
+      "SOLO": 13.0,
+      "TD": 0.0,
+      "TFL": 9.5,
+      "TOT": 23.0
+     }
+    ],
+    [
+     "Stephen Daley",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 5.0,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 6.0,
+      "TOT": 19.0
+     }
+    ],
+    [
+     "Mario Landino",
+     {
+      "PD": 1.0,
+      "QB HUR": 4.0,
+      "SACKS": 2.0,
+      "SOLO": 7.0,
+      "TD": 0.0,
+      "TFL": 2.5,
+      "TOT": 11.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Tobi Osunsanmi",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 5.0,
+      "SOLO": 13.0,
+      "TD": 0.0,
+      "TFL": 9.5,
+      "TOT": 23.0
+     }
+    ],
+    [
+     "Stephen Daley",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 5.0,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 6.0,
+      "TOT": 19.0
+     }
+    ],
+    [
+     "Daniel Ndukwe",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 0.0,
+      "SOLO": 4.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 6.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Notre Dame",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Wisconsin",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 41-13",
+    "offense": {
+     "plays": 59,
+     "dropbacks": 29,
+     "sacks": 0,
+     "att": 29,
+     "comp": 19,
+     "pass_yds": 239,
+     "ypa": 8.2,
+     "ypc": 12.6,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 30,
+     "rush_yds": 118,
+     "ypr": 3.9,
+     "r10": 3,
+     "stuffs": 0,
+     "t3": "3/8",
+     "t3_long": "0/3",
+     "t3_short": "2/3",
+     "rz": "3/4",
+     "ppa": 0.338,
+     "box_rush": {
+      "att": 32,
+      "yds": 111,
+      "ypc": 3.5
+     }
+    },
+    "defense": {
+     "plays": 61,
+     "dropbacks": 32,
+     "sacks": 2,
+     "att": 30,
+     "comp": 19,
+     "pass_yds": 217,
+     "ypa": 7.2,
+     "ypc": 11.4,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 1,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 29,
+     "rush_yds": 79,
+     "ypr": 2.7,
+     "r10": 0,
+     "stuffs": 6,
+     "t3": "5/13",
+     "t3_long": "3/8",
+     "t3_short": "1/1",
+     "rz": "0/2",
+     "ppa": -0.042,
+     "box_rush": {
+      "att": 31,
+      "yds": 67,
+      "ypc": 2.2
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Rice",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 52-0",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 33,
+     "sacks": 0,
+     "att": 33,
+     "comp": 25,
+     "pass_yds": 360,
+     "ypa": 10.9,
+     "ypc": 14.4,
+     "p20": 7,
+     "p30": 2,
+     "deep_att": 8,
+     "deep_comp": 5,
+     "ints": 0,
+     "rushes": 32,
+     "rush_yds": 118,
+     "ypr": 3.7,
+     "r10": 3,
+     "stuffs": 4,
+     "t3": "7/12",
+     "t3_long": "1/4",
+     "t3_short": "2/2",
+     "rz": "4/6",
+     "ppa": 0.425,
+     "box_rush": {
+      "att": 32,
+      "yds": 118,
+      "ypc": 3.7
+     }
+    },
+    "defense": {
+     "plays": 44,
+     "dropbacks": 13,
+     "sacks": 1,
+     "att": 12,
+     "comp": 8,
+     "pass_yds": 64,
+     "ypa": 5.3,
+     "ypc": 8.0,
+     "p20": 1,
+     "p30": 1,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 31,
+     "rush_yds": 60,
+     "ypr": 1.9,
+     "r10": 1,
+     "stuffs": 8,
+     "t3": "2/12",
+     "t3_long": "2/10",
+     "t3_short": "0/1",
+     "rz": "0/1",
+     "ppa": -0.27,
+     "box_rush": {
+      "att": 34,
+      "yds": 64,
+      "ypc": 1.9
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Michigan State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 27-10",
+    "offense": {
+     "plays": 67,
+     "dropbacks": 25,
+     "sacks": 1,
+     "att": 24,
+     "comp": 18,
+     "pass_yds": 234,
+     "ypa": 9.8,
+     "ypc": 13.0,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 5,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 42,
+     "rush_yds": 162,
+     "ypr": 3.9,
+     "r10": 3,
+     "stuffs": 12,
+     "t3": "4/12",
+     "t3_long": "0/4",
+     "t3_short": "1/2",
+     "rz": "3/5",
+     "ppa": 0.193,
+     "box_rush": {
+      "att": 43,
+      "yds": 161,
+      "ypc": 3.7
+     }
+    },
+    "defense": {
+     "plays": 45,
+     "dropbacks": 22,
+     "sacks": 3,
+     "att": 19,
+     "comp": 9,
+     "pass_yds": 123,
+     "ypa": 6.5,
+     "ypc": 13.7,
+     "p20": 1,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 23,
+     "rush_yds": 79,
+     "ypr": 3.4,
+     "r10": 1,
+     "stuffs": 6,
+     "t3": "4/10",
+     "t3_long": "0/3",
+     "t3_short": "3/4",
+     "rz": "1/2",
+     "ppa": -0.146,
+     "box_rush": {
+      "att": 27,
+      "yds": 44,
+      "ypc": 1.6
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Purdue",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 49-10",
+    "offense": {
+     "plays": 58,
+     "dropbacks": 26,
+     "sacks": 0,
+     "att": 26,
+     "comp": 16,
+     "pass_yds": 267,
+     "ypa": 10.3,
+     "ypc": 16.7,
+     "p20": 6,
+     "p30": 2,
+     "deep_att": 8,
+     "deep_comp": 5,
+     "ints": 1,
+     "rushes": 32,
+     "rush_yds": 177,
+     "ypr": 5.5,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "3/8",
+     "t3_long": "0/3",
+     "t3_short": "1/2",
+     "rz": "4/4",
+     "ppa": 0.394,
+     "box_rush": {
+      "att": 32,
+      "yds": 177,
+      "ypc": 5.5
+     }
+    },
+    "defense": {
+     "plays": 66,
+     "dropbacks": 42,
+     "sacks": 5,
+     "att": 37,
+     "comp": 25,
+     "pass_yds": 178,
+     "ypa": 4.8,
+     "ypc": 7.1,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 24,
+     "rush_yds": 84,
+     "ypr": 3.5,
+     "r10": 1,
+     "stuffs": 4,
+     "t3": "8/17",
+     "t3_long": "2/7",
+     "t3_short": "4/5",
+     "rz": "1/2",
+     "ppa": -0.091,
+     "box_rush": {
+      "att": 31,
+      "yds": 40,
+      "ypc": 1.3
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "North Carolina",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 37-26",
+    "offense": {
+     "plays": 75,
+     "dropbacks": 30,
+     "sacks": 0,
+     "att": 30,
+     "comp": 21,
+     "pass_yds": 234,
+     "ypa": 7.8,
+     "ypc": 11.1,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 45,
+     "rush_yds": 241,
+     "ypr": 5.4,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "4/11",
+     "t3_long": "2/7",
+     "t3_short": "0/1",
+     "rz": "3/5",
+     "ppa": 0.298,
+     "box_rush": {
+      "att": 45,
+      "yds": 241,
+      "ypc": 5.4
+     }
+    },
+    "defense": {
+     "plays": 51,
+     "dropbacks": 29,
+     "sacks": 1,
+     "att": 28,
+     "comp": 17,
+     "pass_yds": 208,
+     "ypa": 7.4,
+     "ypc": 12.2,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 2,
+     "rushes": 22,
+     "rush_yds": 84,
+     "ypr": 3.8,
+     "r10": 3,
+     "stuffs": 6,
+     "t3": "5/10",
+     "t3_long": "3/7",
+     "t3_short": "0/0",
+     "rz": "3/3",
+     "ppa": 0.172,
+     "box_rush": {
+      "att": 23,
+      "yds": 77,
+      "ypc": 3.3
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Stanford",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 58-7",
+    "offense": {
+     "plays": 75,
+     "dropbacks": 27,
+     "sacks": 0,
+     "att": 27,
+     "comp": 19,
+     "pass_yds": 237,
+     "ypa": 8.8,
+     "ypc": 12.5,
+     "p20": 2,
+     "p30": 2,
+     "deep_att": 5,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 48,
+     "rush_yds": 365,
+     "ypr": 7.6,
+     "r10": 5,
+     "stuffs": 8,
+     "t3": "8/13",
+     "t3_long": "1/3",
+     "t3_short": "5/6",
+     "rz": "3/4",
+     "ppa": 0.548,
+     "box_rush": {
+      "att": 47,
+      "yds": 361,
+      "ypc": 7.7
+     }
+    },
+    "defense": {
+     "plays": 42,
+     "dropbacks": 23,
+     "sacks": 0,
+     "att": 23,
+     "comp": 12,
+     "pass_yds": 144,
+     "ypa": 6.3,
+     "ypc": 12.0,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 19,
+     "rush_yds": 67,
+     "ypr": 3.5,
+     "r10": 1,
+     "stuffs": 3,
+     "t3": "3/10",
+     "t3_long": "2/7",
+     "t3_short": "0/1",
+     "rz": "1/1",
+     "ppa": -0.115,
+     "box_rush": {
+      "att": 21,
+      "yds": 58,
+      "ypc": 2.8
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 399,
+   "dropbacks": 170,
+   "sacks": 1,
+   "att": 169,
+   "comp": 118,
+   "pass_yds": 1571,
+   "p20": 25,
+   "p30": 10,
+   "deep_att": 33,
+   "deep_comp": 17,
+   "ints": 1,
+   "rushes": 229,
+   "rush_yds": 1181,
+   "r10": 22,
+   "stuffs": 32,
+   "box_att": 231,
+   "box_yds": 1169,
+   "box_ypc": 5.1,
+   "ypa": 9.3,
+   "ypr": 5.2,
+   "sack_rate": 0.6,
+   "p20_rate": 14.7,
+   "r10_rate": 9.6,
+   "stuff_rate": 14.0,
+   "deep_rate": 19.5,
+   "t3": "29/64",
+   "t3_long": "4/24",
+   "t3_short": "11/16",
+   "rz": "20/28"
+  },
+  "defense": {
+   "plays": 309,
+   "dropbacks": 161,
+   "sacks": 12,
+   "att": 149,
+   "comp": 90,
+   "pass_yds": 934,
+   "p20": 10,
+   "p30": 5,
+   "deep_att": 10,
+   "deep_comp": 4,
+   "ints": 7,
+   "rushes": 148,
+   "rush_yds": 453,
+   "r10": 7,
+   "stuffs": 33,
+   "box_att": 167,
+   "box_yds": 350,
+   "box_ypc": 2.1,
+   "ypa": 6.3,
+   "ypr": 3.1,
+   "sack_rate": 7.5,
+   "p20_rate": 6.2,
+   "r10_rate": 4.7,
+   "stuff_rate": 22.3,
+   "deep_rate": 6.7,
+   "t3": "27/72",
+   "t3_long": "12/42",
+   "t3_short": "8/12",
+   "rz": "6/11"
+  },
+  "offense_vs_fbs": {
+   "plays": 399,
+   "dropbacks": 170,
+   "sacks": 1,
+   "att": 169,
+   "comp": 118,
+   "pass_yds": 1571,
+   "p20": 25,
+   "p30": 10,
+   "deep_att": 33,
+   "deep_comp": 17,
+   "ints": 1,
+   "rushes": 229,
+   "rush_yds": 1181,
+   "r10": 22,
+   "stuffs": 32,
+   "box_att": 231,
+   "box_yds": 1169,
+   "box_ypc": 5.1,
+   "ypa": 9.3,
+   "ypr": 5.2,
+   "sack_rate": 0.6,
+   "p20_rate": 14.7,
+   "r10_rate": 9.6,
+   "stuff_rate": 14.0,
+   "deep_rate": 19.5,
+   "t3": "29/64",
+   "t3_long": "4/24",
+   "t3_short": "11/16",
+   "rz": "20/28"
+  },
+  "defense_vs_fbs": {
+   "plays": 309,
+   "dropbacks": 161,
+   "sacks": 12,
+   "att": 149,
+   "comp": 90,
+   "pass_yds": 934,
+   "p20": 10,
+   "p30": 5,
+   "deep_att": 10,
+   "deep_comp": 4,
+   "ints": 7,
+   "rushes": 148,
+   "rush_yds": 453,
+   "r10": 7,
+   "stuffs": 33,
+   "box_att": 167,
+   "box_yds": 350,
+   "box_ypc": 2.1,
+   "ypa": 6.3,
+   "ypr": 3.1,
+   "sack_rate": 7.5,
+   "p20_rate": 6.2,
+   "r10_rate": 4.7,
+   "stuff_rate": 22.3,
+   "deep_rate": 6.7,
+   "t3": "27/72",
+   "t3_long": "12/42",
+   "t3_short": "8/12",
+   "rz": "6/11"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "C.J. Carr",
+     {
+      "ATT": 144.0,
+      "COMPLETIONS": 102.0,
+      "INT": 1.0,
+      "PCT": 0.708,
+      "TD": 16.0,
+      "YDS": 1378.0,
+      "YPA": 9.6
+     }
+    ],
+    [
+     "Noah Grubbs",
+     {
+      "ATT": 22.0,
+      "COMPLETIONS": 14.0,
+      "INT": 0.0,
+      "PCT": 0.636,
+      "TD": 1.0,
+      "YDS": 164.0,
+      "YPA": 7.5
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Jonaz Walton",
+     {
+      "CAR": 52.0,
+      "LONG": 97.0,
+      "TD": 2.0,
+      "YDS": 409.0,
+      "YPC": 7.9
+     }
+    ],
+    [
+     "Nolan James Jr.",
+     {
+      "CAR": 65.0,
+      "LONG": 31.0,
+      "TD": 5.0,
+      "YDS": 335.0,
+      "YPC": 5.2
+     }
+    ],
+    [
+     "Aneyas Williams",
+     {
+      "CAR": 67.0,
+      "LONG": 24.0,
+      "TD": 4.0,
+      "YDS": 294.0,
+      "YPC": 4.4
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Jordan Faison",
+     {
+      "LONG": 39.0,
+      "REC": 28.0,
+      "TD": 4.0,
+      "YDS": 387.0,
+      "YPR": 13.8
+     }
+    ],
+    [
+     "Micah Gilbert",
+     {
+      "LONG": 61.0,
+      "REC": 19.0,
+      "TD": 2.0,
+      "YDS": 378.0,
+      "YPR": 19.9
+     }
+    ],
+    [
+     "Jaden Greathouse",
+     {
+      "LONG": 28.0,
+      "REC": 11.0,
+      "TD": 2.0,
+      "YDS": 138.0,
+      "YPR": 12.5
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Boubacar Traore",
+     {
+      "PD": 1.0,
+      "QB HUR": 8.0,
+      "SACKS": 3.5,
+      "SOLO": 15.0,
+      "TD": 1.0,
+      "TFL": 5.5,
+      "TOT": 17.0
+     }
+    ],
+    [
+     "Bryce Young",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.0,
+      "SOLO": 10.0,
+      "TD": 0.0,
+      "TFL": 5.5,
+      "TOT": 16.0
+     }
+    ],
+    [
+     "Loghan Thomas",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 2.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 2.0,
+      "TOT": 11.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Boubacar Traore",
+     {
+      "PD": 1.0,
+      "QB HUR": 8.0,
+      "SACKS": 3.5,
+      "SOLO": 15.0,
+      "TD": 1.0,
+      "TFL": 5.5,
+      "TOT": 17.0
+     }
+    ],
+    [
+     "Bryce Young",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.0,
+      "SOLO": 10.0,
+      "TD": 0.0,
+      "TFL": 5.5,
+      "TOT": 16.0
+     }
+    ],
+    [
+     "Luke Talich",
+     {
+      "PD": 1.0,
+      "QB HUR": 0.0,
+      "SACKS": 1.0,
+      "SOLO": 17.0,
+      "TD": 0.0,
+      "TFL": 3.5,
+      "TOT": 19.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "BYU",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Utah Tech",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 63-7",
+    "offense": {
+     "plays": 68,
+     "dropbacks": 23,
+     "sacks": 1,
+     "att": 22,
+     "comp": 17,
+     "pass_yds": 213,
+     "ypa": 9.7,
+     "ypc": 12.5,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 45,
+     "rush_yds": 313,
+     "ypr": 7.0,
+     "r10": 9,
+     "stuffs": 3,
+     "t3": "9/11",
+     "t3_long": "1/2",
+     "t3_short": "6/6",
+     "rz": "6/6",
+     "ppa": 0.552,
+     "box_rush": {
+      "att": 46,
+      "yds": 308,
+      "ypc": 6.7
+     }
+    },
+    "defense": {
+     "plays": 56,
+     "dropbacks": 32,
+     "sacks": 1,
+     "att": 31,
+     "comp": 15,
+     "pass_yds": 135,
+     "ypa": 4.4,
+     "ypc": 9.0,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 3,
+     "rushes": 24,
+     "rush_yds": 56,
+     "ypr": 2.3,
+     "r10": 2,
+     "stuffs": 6,
+     "t3": "5/13",
+     "t3_long": "3/7",
+     "t3_short": "0/1",
+     "rz": "1/2",
+     "ppa": -0.292,
+     "box_rush": {
+      "att": 25,
+      "yds": 49,
+      "ypc": 2.0
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Arizona",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 28-17",
+    "offense": {
+     "plays": 56,
+     "dropbacks": 27,
+     "sacks": 1,
+     "att": 26,
+     "comp": 16,
+     "pass_yds": 217,
+     "ypa": 8.3,
+     "ypc": 13.6,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 29,
+     "rush_yds": 158,
+     "ypr": 5.4,
+     "r10": 5,
+     "stuffs": 4,
+     "t3": "6/11",
+     "t3_long": "3/7",
+     "t3_short": "1/2",
+     "rz": "3/4",
+     "ppa": 0.4,
+     "box_rush": {
+      "att": 30,
+      "yds": 148,
+      "ypc": 4.9
+     }
+    },
+    "defense": {
+     "plays": 62,
+     "dropbacks": 34,
+     "sacks": 3,
+     "att": 31,
+     "comp": 23,
+     "pass_yds": 230,
+     "ypa": 7.4,
+     "ypc": 10.0,
+     "p20": 2,
+     "p30": 2,
+     "deep_att": 5,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 28,
+     "rush_yds": 117,
+     "ypr": 4.2,
+     "r10": 3,
+     "stuffs": 5,
+     "t3": "6/12",
+     "t3_long": "4/9",
+     "t3_short": "2/3",
+     "rz": "2/3",
+     "ppa": 0.11,
+     "box_rush": {
+      "att": 31,
+      "yds": 97,
+      "ypc": 3.1
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Colorado State",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 41-23",
+    "offense": {
+     "plays": 58,
+     "dropbacks": 17,
+     "sacks": 0,
+     "att": 17,
+     "comp": 12,
+     "pass_yds": 227,
+     "ypa": 13.4,
+     "ypc": 18.9,
+     "p20": 5,
+     "p30": 1,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 41,
+     "rush_yds": 332,
+     "ypr": 8.1,
+     "r10": 8,
+     "stuffs": 7,
+     "t3": "5/9",
+     "t3_long": "3/6",
+     "t3_short": "2/2",
+     "rz": "4/6",
+     "ppa": 0.355,
+     "box_rush": {
+      "att": 41,
+      "yds": 332,
+      "ypc": 8.1
+     }
+    },
+    "defense": {
+     "plays": 65,
+     "dropbacks": 41,
+     "sacks": 0,
+     "att": 41,
+     "comp": 25,
+     "pass_yds": 220,
+     "ypa": 5.4,
+     "ypc": 8.8,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 24,
+     "rush_yds": 82,
+     "ypr": 3.4,
+     "r10": 2,
+     "stuffs": 6,
+     "t3": "7/14",
+     "t3_long": "3/8",
+     "t3_short": "3/3",
+     "rz": "3/3",
+     "ppa": -0.027,
+     "box_rush": {
+      "att": 24,
+      "yds": 82,
+      "ypc": 3.4
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "TCU",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 17-10",
+    "offense": {
+     "plays": 61,
+     "dropbacks": 25,
+     "sacks": 1,
+     "att": 24,
+     "comp": 11,
+     "pass_yds": 62,
+     "ypa": 2.6,
+     "ypc": 5.6,
+     "p20": 0,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 36,
+     "rush_yds": 161,
+     "ypr": 4.5,
+     "r10": 5,
+     "stuffs": 7,
+     "t3": "8/16",
+     "t3_long": "1/9",
+     "t3_short": "3/3",
+     "rz": "2/2",
+     "ppa": -0.008,
+     "box_rush": {
+      "att": 38,
+      "yds": 154,
+      "ypc": 4.1
+     }
+    },
+    "defense": {
+     "plays": 55,
+     "dropbacks": 29,
+     "sacks": 4,
+     "att": 25,
+     "comp": 18,
+     "pass_yds": 187,
+     "ypa": 7.5,
+     "ypc": 10.4,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 26,
+     "rush_yds": 102,
+     "ypr": 3.9,
+     "r10": 3,
+     "stuffs": 7,
+     "t3": "4/13",
+     "t3_long": "0/8",
+     "t3_short": "1/2",
+     "rz": "1/1",
+     "ppa": -0.091,
+     "box_rush": {
+      "att": 30,
+      "yds": 72,
+      "ypc": 2.4
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Iowa State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 24-10",
+    "offense": {
+     "plays": 61,
+     "dropbacks": 30,
+     "sacks": 0,
+     "att": 30,
+     "comp": 22,
+     "pass_yds": 329,
+     "ypa": 11.0,
+     "ypc": 15.0,
+     "p20": 5,
+     "p30": 2,
+     "deep_att": 4,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 31,
+     "rush_yds": 177,
+     "ypr": 5.7,
+     "r10": 4,
+     "stuffs": 6,
+     "t3": "4/10",
+     "t3_long": "2/4",
+     "t3_short": "1/2",
+     "rz": "2/5",
+     "ppa": 0.228,
+     "box_rush": {
+      "att": 31,
+      "yds": 177,
+      "ypc": 5.7
+     }
+    },
+    "defense": {
+     "plays": 56,
+     "dropbacks": 32,
+     "sacks": 3,
+     "att": 29,
+     "comp": 16,
+     "pass_yds": 98,
+     "ypa": 3.4,
+     "ypc": 6.1,
+     "p20": 0,
+     "p30": 0,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 24,
+     "rush_yds": 122,
+     "ypr": 5.1,
+     "r10": 6,
+     "stuffs": 7,
+     "t3": "2/13",
+     "t3_long": "1/11",
+     "t3_short": "0/0",
+     "rz": "1/1",
+     "ppa": -0.13,
+     "box_rush": {
+      "att": 27,
+      "yds": 102,
+      "ypc": 3.8
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 304,
+   "dropbacks": 122,
+   "sacks": 3,
+   "att": 119,
+   "comp": 78,
+   "pass_yds": 1048,
+   "p20": 17,
+   "p30": 5,
+   "deep_att": 14,
+   "deep_comp": 5,
+   "ints": 2,
+   "rushes": 182,
+   "rush_yds": 1141,
+   "r10": 31,
+   "stuffs": 27,
+   "box_att": 186,
+   "box_yds": 1119,
+   "box_ypc": 6.0,
+   "ypa": 8.8,
+   "ypr": 6.3,
+   "sack_rate": 2.5,
+   "p20_rate": 13.9,
+   "r10_rate": 17.0,
+   "stuff_rate": 14.8,
+   "deep_rate": 11.8,
+   "t3": "32/57",
+   "t3_long": "10/28",
+   "t3_short": "13/15",
+   "rz": "17/23"
+  },
+  "defense": {
+   "plays": 294,
+   "dropbacks": 168,
+   "sacks": 11,
+   "att": 157,
+   "comp": 97,
+   "pass_yds": 870,
+   "p20": 10,
+   "p30": 6,
+   "deep_att": 15,
+   "deep_comp": 3,
+   "ints": 6,
+   "rushes": 126,
+   "rush_yds": 479,
+   "r10": 16,
+   "stuffs": 31,
+   "box_att": 137,
+   "box_yds": 402,
+   "box_ypc": 2.9,
+   "ypa": 5.5,
+   "ypr": 3.8,
+   "sack_rate": 6.5,
+   "p20_rate": 6.0,
+   "r10_rate": 12.7,
+   "stuff_rate": 24.6,
+   "deep_rate": 9.6,
+   "t3": "24/65",
+   "t3_long": "11/43",
+   "t3_short": "6/9",
+   "rz": "8/10"
+  },
+  "offense_vs_fbs": {
+   "plays": 236,
+   "dropbacks": 99,
+   "sacks": 2,
+   "att": 97,
+   "comp": 61,
+   "pass_yds": 835,
+   "p20": 14,
+   "p30": 4,
+   "deep_att": 12,
+   "deep_comp": 4,
+   "ints": 2,
+   "rushes": 137,
+   "rush_yds": 828,
+   "r10": 22,
+   "stuffs": 24,
+   "box_att": 140,
+   "box_yds": 811,
+   "box_ypc": 5.8,
+   "ypa": 8.6,
+   "ypr": 6.0,
+   "sack_rate": 2.0,
+   "p20_rate": 14.1,
+   "r10_rate": 16.1,
+   "stuff_rate": 17.5,
+   "deep_rate": 12.4,
+   "t3": "23/46",
+   "t3_long": "9/26",
+   "t3_short": "7/9",
+   "rz": "11/17"
+  },
+  "defense_vs_fbs": {
+   "plays": 238,
+   "dropbacks": 136,
+   "sacks": 10,
+   "att": 126,
+   "comp": 82,
+   "pass_yds": 735,
+   "p20": 9,
+   "p30": 6,
+   "deep_att": 12,
+   "deep_comp": 3,
+   "ints": 3,
+   "rushes": 102,
+   "rush_yds": 423,
+   "r10": 14,
+   "stuffs": 25,
+   "box_att": 112,
+   "box_yds": 353,
+   "box_ypc": 3.2,
+   "ypa": 5.8,
+   "ypr": 4.1,
+   "sack_rate": 7.4,
+   "p20_rate": 6.6,
+   "r10_rate": 13.7,
+   "stuff_rate": 24.5,
+   "deep_rate": 9.5,
+   "t3": "19/52",
+   "t3_long": "8/36",
+   "t3_short": "6/8",
+   "rz": "7/8"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Bear Bachmeier",
+     {
+      "ATT": 116.0,
+      "COMPLETIONS": 77.0,
+      "INT": 1.0,
+      "PCT": 0.664,
+      "TD": 8.0,
+      "YDS": 1033.0,
+      "YPA": 8.9
+     }
+    ],
+    [
+     "Treyson Bourguet",
+     {
+      "ATT": 3.0,
+      "COMPLETIONS": 1.0,
+      "INT": 1.0,
+      "PCT": 0.333,
+      "TD": 0.0,
+      "YDS": 15.0,
+      "YPA": 5.0
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "LJ Martin",
+     {
+      "CAR": 44.0,
+      "LONG": 56.0,
+      "TD": 3.0,
+      "YDS": 344.0,
+      "YPC": 7.8
+     }
+    ],
+    [
+     "Bear Bachmeier",
+     {
+      "CAR": 36.0,
+      "LONG": 39.0,
+      "TD": 4.0,
+      "YDS": 239.0,
+      "YPC": 6.6
+     }
+    ],
+    [
+     "Journee Tonga",
+     {
+      "CAR": 27.0,
+      "LONG": 38.0,
+      "TD": 2.0,
+      "YDS": 176.0,
+      "YPC": 6.5
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Legend Glasker",
+     {
+      "LONG": 75.0,
+      "REC": 19.0,
+      "TD": 3.0,
+      "YDS": 378.0,
+      "YPR": 19.9
+     }
+    ],
+    [
+     "Kyler Kasper",
+     {
+      "LONG": 29.0,
+      "REC": 14.0,
+      "TD": 3.0,
+      "YDS": 178.0,
+      "YPR": 12.7
+     }
+    ],
+    [
+     "Walker Lyons",
+     {
+      "LONG": 26.0,
+      "REC": 13.0,
+      "TD": 0.0,
+      "YDS": 150.0,
+      "YPR": 11.5
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Tausili Akana",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 3.5,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 6.5,
+      "TOT": 11.0
+     }
+    ],
+    [
+     "Jake Clifton",
+     {
+      "PD": 2.0,
+      "QB HUR": 0.0,
+      "SACKS": 1.5,
+      "SOLO": 10.0,
+      "TD": 0.0,
+      "TFL": 1.5,
+      "TOT": 15.0
+     }
+    ],
+    [
+     "Siale Esera",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 1.0,
+      "SOLO": 2.0,
+      "TD": 0.0,
+      "TFL": 1.0,
+      "TOT": 2.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Tausili Akana",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 3.5,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 6.5,
+      "TOT": 11.0
+     }
+    ],
+    [
+     "Keanu Tanuvasa",
+     {
+      "PD": 2.0,
+      "QB HUR": 0.0,
+      "SACKS": 0.5,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 3.5,
+      "TOT": 10.0
+     }
+    ],
+    [
+     "Cannon DeVries",
+     {
+      "PD": 1.0,
+      "QB HUR": 0.0,
+      "SACKS": 0.0,
+      "SOLO": 8.0,
+      "TD": 1.0,
+      "TFL": 3.0,
+      "TOT": 14.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Alabama",
+  "games": [
+   {
+    "week": 1,
+    "opp": "East Carolina",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 48-10",
+    "offense": {
+     "plays": 79,
+     "dropbacks": 32,
+     "sacks": 1,
+     "att": 31,
+     "comp": 18,
+     "pass_yds": 253,
+     "ypa": 8.2,
+     "ypc": 14.1,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 47,
+     "rush_yds": 228,
+     "ypr": 4.9,
+     "r10": 7,
+     "stuffs": 8,
+     "t3": "8/15",
+     "t3_long": "5/8",
+     "t3_short": "1/2",
+     "rz": "5/6",
+     "ppa": 0.312,
+     "box_rush": {
+      "att": 49,
+      "yds": 227,
+      "ypc": 4.6
+     }
+    },
+    "defense": {
+     "plays": 41,
+     "dropbacks": 22,
+     "sacks": 3,
+     "att": 19,
+     "comp": 11,
+     "pass_yds": 160,
+     "ypa": 8.4,
+     "ypc": 14.5,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 19,
+     "rush_yds": 14,
+     "ypr": 0.7,
+     "r10": 0,
+     "stuffs": 7,
+     "t3": "0/9",
+     "t3_long": "0/7",
+     "t3_short": "0/1",
+     "rz": "1/2",
+     "ppa": -0.199,
+     "box_rush": {
+      "att": 22,
+      "yds": 2,
+      "ypc": 0.1
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Kentucky",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 45-17",
+    "offense": {
+     "plays": 62,
+     "dropbacks": 26,
+     "sacks": 3,
+     "att": 23,
+     "comp": 16,
+     "pass_yds": 188,
+     "ypa": 8.2,
+     "ypc": 11.8,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 3,
+     "ints": 2,
+     "rushes": 36,
+     "rush_yds": 195,
+     "ypr": 5.4,
+     "r10": 7,
+     "stuffs": 6,
+     "t3": "6/11",
+     "t3_long": "3/5",
+     "t3_short": "2/4",
+     "rz": "4/6",
+     "ppa": 0.162,
+     "box_rush": {
+      "att": 40,
+      "yds": 155,
+      "ypc": 3.9
+     }
+    },
+    "defense": {
+     "plays": 61,
+     "dropbacks": 34,
+     "sacks": 3,
+     "att": 31,
+     "comp": 17,
+     "pass_yds": 145,
+     "ypa": 4.7,
+     "ypc": 8.5,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 27,
+     "rush_yds": 98,
+     "ypr": 3.6,
+     "r10": 2,
+     "stuffs": 4,
+     "t3": "2/13",
+     "t3_long": "1/8",
+     "t3_short": "0/3",
+     "rz": "1/1",
+     "ppa": -0.271,
+     "box_rush": {
+      "att": 32,
+      "yds": 63,
+      "ypc": 2.0
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Florida State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 50-36",
+    "offense": {
+     "plays": 68,
+     "dropbacks": 32,
+     "sacks": 1,
+     "att": 31,
+     "comp": 23,
+     "pass_yds": 301,
+     "ypa": 9.7,
+     "ypc": 13.1,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 36,
+     "rush_yds": 256,
+     "ypr": 7.1,
+     "r10": 9,
+     "stuffs": 9,
+     "t3": "4/12",
+     "t3_long": "1/7",
+     "t3_short": "1/2",
+     "rz": "3/4",
+     "ppa": 0.449,
+     "box_rush": {
+      "att": 36,
+      "yds": 247,
+      "ypc": 6.9
+     }
+    },
+    "defense": {
+     "plays": 64,
+     "dropbacks": 32,
+     "sacks": 3,
+     "att": 29,
+     "comp": 17,
+     "pass_yds": 377,
+     "ypa": 13.0,
+     "ypc": 22.2,
+     "p20": 9,
+     "p30": 6,
+     "deep_att": 6,
+     "deep_comp": 4,
+     "ints": 3,
+     "rushes": 32,
+     "rush_yds": 114,
+     "ypr": 3.6,
+     "r10": 3,
+     "stuffs": 8,
+     "t3": "8/14",
+     "t3_long": "4/9",
+     "t3_short": "3/4",
+     "rz": "5/5",
+     "ppa": 0.162,
+     "box_rush": {
+      "att": 35,
+      "yds": 94,
+      "ypc": 2.7
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "South Carolina",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 49-18",
+    "offense": {
+     "plays": 57,
+     "dropbacks": 29,
+     "sacks": 2,
+     "att": 27,
+     "comp": 21,
+     "pass_yds": 365,
+     "ypa": 13.5,
+     "ypc": 17.4,
+     "p20": 7,
+     "p30": 5,
+     "deep_att": 6,
+     "deep_comp": 5,
+     "ints": 0,
+     "rushes": 28,
+     "rush_yds": 135,
+     "ypr": 4.8,
+     "r10": 4,
+     "stuffs": 7,
+     "t3": "5/10",
+     "t3_long": "2/4",
+     "t3_short": "1/1",
+     "rz": "3/3",
+     "ppa": 0.51,
+     "box_rush": {
+      "att": 30,
+      "yds": 124,
+      "ypc": 4.1
+     }
+    },
+    "defense": {
+     "plays": 71,
+     "dropbacks": 33,
+     "sacks": 1,
+     "att": 32,
+     "comp": 19,
+     "pass_yds": 182,
+     "ypa": 5.7,
+     "ypc": 9.6,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 38,
+     "rush_yds": 210,
+     "ypr": 5.5,
+     "r10": 6,
+     "stuffs": 8,
+     "t3": "3/14",
+     "t3_long": "2/9",
+     "t3_short": "1/1",
+     "rz": "1/2",
+     "ppa": -0.008,
+     "box_rush": {
+      "att": 40,
+      "yds": 216,
+      "ypc": 5.4
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Mississippi State",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 56-23",
+    "offense": {
+     "plays": 60,
+     "dropbacks": 28,
+     "sacks": 4,
+     "att": 24,
+     "comp": 18,
+     "pass_yds": 304,
+     "ypa": 12.7,
+     "ypc": 16.9,
+     "p20": 6,
+     "p30": 4,
+     "deep_att": 8,
+     "deep_comp": 5,
+     "ints": 0,
+     "rushes": 32,
+     "rush_yds": 193,
+     "ypr": 6.0,
+     "r10": 4,
+     "stuffs": 2,
+     "t3": "6/9",
+     "t3_long": "4/4",
+     "t3_short": "0/0",
+     "rz": "6/7",
+     "ppa": 0.473,
+     "box_rush": {
+      "att": 37,
+      "yds": 179,
+      "ypc": 4.8
+     }
+    },
+    "defense": {
+     "plays": 68,
+     "dropbacks": 43,
+     "sacks": 4,
+     "att": 39,
+     "comp": 21,
+     "pass_yds": 257,
+     "ypa": 6.6,
+     "ypc": 12.2,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 25,
+     "rush_yds": 48,
+     "ypr": 1.9,
+     "r10": 1,
+     "stuffs": 8,
+     "t3": "8/17",
+     "t3_long": "3/10",
+     "t3_short": "3/3",
+     "rz": "2/3",
+     "ppa": 0.019,
+     "box_rush": {
+      "att": 30,
+      "yds": 18,
+      "ypc": 0.6
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Georgia",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "L 17-20",
+    "offense": {
+     "plays": 60,
+     "dropbacks": 35,
+     "sacks": 3,
+     "att": 32,
+     "comp": 17,
+     "pass_yds": 187,
+     "ypa": 5.8,
+     "ypc": 11.0,
+     "p20": 4,
+     "p30": 0,
+     "deep_att": 5,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 25,
+     "rush_yds": 190,
+     "ypr": 7.6,
+     "r10": 4,
+     "stuffs": 2,
+     "t3": "6/13",
+     "t3_long": "2/5",
+     "t3_short": "2/3",
+     "rz": "1/1",
+     "ppa": 0.205,
+     "box_rush": {
+      "att": 29,
+      "yds": 161,
+      "ypc": 5.6
+     }
+    },
+    "defense": {
+     "plays": 59,
+     "dropbacks": 23,
+     "sacks": 1,
+     "att": 22,
+     "comp": 18,
+     "pass_yds": 249,
+     "ypa": 11.3,
+     "ypc": 13.8,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 3,
+     "ints": 1,
+     "rushes": 36,
+     "rush_yds": 212,
+     "ypr": 5.9,
+     "r10": 5,
+     "stuffs": 7,
+     "t3": "7/12",
+     "t3_long": "4/8",
+     "t3_short": "1/1",
+     "rz": "2/4",
+     "ppa": 0.271,
+     "box_rush": {
+      "att": 39,
+      "yds": 206,
+      "ypc": 5.3
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 386,
+   "dropbacks": 182,
+   "sacks": 14,
+   "att": 168,
+   "comp": 113,
+   "pass_yds": 1598,
+   "p20": 29,
+   "p30": 14,
+   "deep_att": 25,
+   "deep_comp": 16,
+   "ints": 2,
+   "rushes": 204,
+   "rush_yds": 1197,
+   "r10": 35,
+   "stuffs": 34,
+   "box_att": 221,
+   "box_yds": 1093,
+   "box_ypc": 4.9,
+   "ypa": 9.5,
+   "ypr": 5.9,
+   "sack_rate": 7.7,
+   "p20_rate": 15.9,
+   "r10_rate": 17.2,
+   "stuff_rate": 16.7,
+   "deep_rate": 14.9,
+   "t3": "35/70",
+   "t3_long": "17/33",
+   "t3_short": "7/12",
+   "rz": "22/27"
+  },
+  "defense": {
+   "plays": 364,
+   "dropbacks": 187,
+   "sacks": 15,
+   "att": 172,
+   "comp": 103,
+   "pass_yds": 1370,
+   "p20": 25,
+   "p30": 14,
+   "deep_att": 19,
+   "deep_comp": 9,
+   "ints": 9,
+   "rushes": 177,
+   "rush_yds": 696,
+   "r10": 17,
+   "stuffs": 42,
+   "box_att": 198,
+   "box_yds": 599,
+   "box_ypc": 3.0,
+   "ypa": 8.0,
+   "ypr": 3.9,
+   "sack_rate": 8.0,
+   "p20_rate": 13.4,
+   "r10_rate": 9.6,
+   "stuff_rate": 23.7,
+   "deep_rate": 11.0,
+   "t3": "28/79",
+   "t3_long": "14/51",
+   "t3_short": "8/13",
+   "rz": "12/17"
+  },
+  "offense_vs_fbs": {
+   "plays": 386,
+   "dropbacks": 182,
+   "sacks": 14,
+   "att": 168,
+   "comp": 113,
+   "pass_yds": 1598,
+   "p20": 29,
+   "p30": 14,
+   "deep_att": 25,
+   "deep_comp": 16,
+   "ints": 2,
+   "rushes": 204,
+   "rush_yds": 1197,
+   "r10": 35,
+   "stuffs": 34,
+   "box_att": 221,
+   "box_yds": 1093,
+   "box_ypc": 4.9,
+   "ypa": 9.5,
+   "ypr": 5.9,
+   "sack_rate": 7.7,
+   "p20_rate": 15.9,
+   "r10_rate": 17.2,
+   "stuff_rate": 16.7,
+   "deep_rate": 14.9,
+   "t3": "35/70",
+   "t3_long": "17/33",
+   "t3_short": "7/12",
+   "rz": "22/27"
+  },
+  "defense_vs_fbs": {
+   "plays": 364,
+   "dropbacks": 187,
+   "sacks": 15,
+   "att": 172,
+   "comp": 103,
+   "pass_yds": 1370,
+   "p20": 25,
+   "p30": 14,
+   "deep_att": 19,
+   "deep_comp": 9,
+   "ints": 9,
+   "rushes": 177,
+   "rush_yds": 696,
+   "r10": 17,
+   "stuffs": 42,
+   "box_att": 198,
+   "box_yds": 599,
+   "box_ypc": 3.0,
+   "ypa": 8.0,
+   "ypr": 3.9,
+   "sack_rate": 8.0,
+   "p20_rate": 13.4,
+   "r10_rate": 9.6,
+   "stuff_rate": 23.7,
+   "deep_rate": 11.0,
+   "t3": "28/79",
+   "t3_long": "14/51",
+   "t3_short": "8/13",
+   "rz": "12/17"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Keelon Russell",
+     {
+      "ATT": 162.0,
+      "COMPLETIONS": 110.0,
+      "INT": 2.0,
+      "PCT": 0.679,
+      "TD": 12.0,
+      "YDS": 1599.0,
+      "YPA": 9.9
+     }
+    ],
+    [
+     "Austin Mack",
+     {
+      "ATT": 4.0,
+      "COMPLETIONS": 3.0,
+      "INT": 0.0,
+      "PCT": 0.75,
+      "TD": 0.0,
+      "YDS": 23.0,
+      "YPA": 5.8
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Trae'shawn Brown",
+     {
+      "CAR": 51.0,
+      "LONG": 58.0,
+      "TD": 5.0,
+      "YDS": 301.0,
+      "YPC": 5.9
+     }
+    ],
+    [
+     "Daniel Hill",
+     {
+      "CAR": 55.0,
+      "LONG": 31.0,
+      "TD": 4.0,
+      "YDS": 262.0,
+      "YPC": 4.8
+     }
+    ],
+    [
+     "Keelon Russell",
+     {
+      "CAR": 46.0,
+      "LONG": 57.0,
+      "TD": 4.0,
+      "YDS": 225.0,
+      "YPC": 4.9
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Ryan Williams",
+     {
+      "LONG": 58.0,
+      "REC": 23.0,
+      "TD": 4.0,
+      "YDS": 415.0,
+      "YPR": 18.0
+     }
+    ],
+    [
+     "Lotzeir Brooks",
+     {
+      "LONG": 75.0,
+      "REC": 23.0,
+      "TD": 1.0,
+      "YDS": 389.0,
+      "YPR": 16.9
+     }
+    ],
+    [
+     "Rico Scott",
+     {
+      "LONG": 32.0,
+      "REC": 18.0,
+      "TD": 3.0,
+      "YDS": 224.0,
+      "YPR": 12.4
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Devan Thompkins",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.0,
+      "SOLO": 10.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 25.0
+     }
+    ],
+    [
+     "Yhonzae Pierre",
+     {
+      "PD": 3.0,
+      "QB HUR": 7.0,
+      "SACKS": 2.5,
+      "SOLO": 8.0,
+      "TD": 1.0,
+      "TFL": 3.5,
+      "TOT": 18.0
+     }
+    ],
+    [
+     "Terrance Green",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 2.5,
+      "SOLO": 5.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 11.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Devan Thompkins",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.0,
+      "SOLO": 10.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 25.0
+     }
+    ],
+    [
+     "Terrance Green",
+     {
+      "PD": 0.0,
+      "QB HUR": 0.0,
+      "SACKS": 2.5,
+      "SOLO": 5.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 11.0
+     }
+    ],
+    [
+     "Yhonzae Pierre",
+     {
+      "PD": 3.0,
+      "QB HUR": 7.0,
+      "SACKS": 2.5,
+      "SOLO": 8.0,
+      "TD": 1.0,
+      "TFL": 3.5,
+      "TOT": 18.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Tennessee",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Furman",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 56-9",
+    "offense": {
+     "plays": 74,
+     "dropbacks": 28,
+     "sacks": 1,
+     "att": 27,
+     "comp": 21,
+     "pass_yds": 309,
+     "ypa": 11.4,
+     "ypc": 14.7,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 46,
+     "rush_yds": 337,
+     "ypr": 7.3,
+     "r10": 10,
+     "stuffs": 5,
+     "t3": "5/11",
+     "t3_long": "2/4",
+     "t3_short": "1/1",
+     "rz": "4/4",
+     "ppa": 0.485,
+     "box_rush": {
+      "att": 47,
+      "yds": 329,
+      "ypc": 7.0
+     }
+    },
+    "defense": {
+     "plays": 57,
+     "dropbacks": 28,
+     "sacks": 6,
+     "att": 22,
+     "comp": 11,
+     "pass_yds": 50,
+     "ypa": 2.3,
+     "ypc": 4.5,
+     "p20": 0,
+     "p30": 0,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 29,
+     "rush_yds": 210,
+     "ypr": 7.2,
+     "r10": 6,
+     "stuffs": 7,
+     "t3": "4/14",
+     "t3_long": "2/10",
+     "t3_short": "0/1",
+     "rz": "0/0",
+     "ppa": -0.202,
+     "box_rush": {
+      "att": 36,
+      "yds": 178,
+      "ypc": 4.9
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Georgia Tech",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 45-24",
+    "offense": {
+     "plays": 66,
+     "dropbacks": 22,
+     "sacks": 1,
+     "att": 21,
+     "comp": 10,
+     "pass_yds": 148,
+     "ypa": 7.0,
+     "ypc": 14.8,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 44,
+     "rush_yds": 300,
+     "ypr": 6.8,
+     "r10": 9,
+     "stuffs": 6,
+     "t3": "8/14",
+     "t3_long": "4/8",
+     "t3_short": "3/3",
+     "rz": "2/3",
+     "ppa": 0.356,
+     "box_rush": {
+      "att": 45,
+      "yds": 299,
+      "ypc": 6.6
+     }
+    },
+    "defense": {
+     "plays": 71,
+     "dropbacks": 44,
+     "sacks": 4,
+     "att": 40,
+     "comp": 26,
+     "pass_yds": 221,
+     "ypa": 5.5,
+     "ypc": 8.5,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 27,
+     "rush_yds": 162,
+     "ypr": 6.0,
+     "r10": 6,
+     "stuffs": 2,
+     "t3": "7/13",
+     "t3_long": "3/8",
+     "t3_short": "1/1",
+     "rz": "2/4",
+     "ppa": -0.067,
+     "box_rush": {
+      "att": 31,
+      "yds": 135,
+      "ypc": 4.4
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Kennesaw State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 42-9",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 26,
+     "sacks": 0,
+     "att": 26,
+     "comp": 18,
+     "pass_yds": 178,
+     "ypa": 6.8,
+     "ypc": 9.9,
+     "p20": 1,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 39,
+     "rush_yds": 274,
+     "ypr": 7.0,
+     "r10": 10,
+     "stuffs": 5,
+     "t3": "4/9",
+     "t3_long": "2/5",
+     "t3_short": "2/3",
+     "rz": "4/4",
+     "ppa": 0.402,
+     "box_rush": {
+      "att": 41,
+      "yds": 268,
+      "ypc": 6.5
+     }
+    },
+    "defense": {
+     "plays": 63,
+     "dropbacks": 35,
+     "sacks": 2,
+     "att": 33,
+     "comp": 21,
+     "pass_yds": 184,
+     "ypa": 5.6,
+     "ypc": 8.8,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 28,
+     "rush_yds": 111,
+     "ypr": 4.0,
+     "r10": 5,
+     "stuffs": 8,
+     "t3": "5/13",
+     "t3_long": "2/9",
+     "t3_short": "2/2",
+     "rz": "0/3",
+     "ppa": 0.109,
+     "box_rush": {
+      "att": 30,
+      "yds": 102,
+      "ypc": 3.4
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Texas",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "L 17-20",
+    "offense": {
+     "plays": 74,
+     "dropbacks": 40,
+     "sacks": 8,
+     "att": 32,
+     "comp": 18,
+     "pass_yds": 151,
+     "ypa": 4.7,
+     "ypc": 8.4,
+     "p20": 1,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 34,
+     "rush_yds": 143,
+     "ypr": 4.2,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "4/16",
+     "t3_long": "2/12",
+     "t3_short": "1/2",
+     "rz": "0/1",
+     "ppa": -0.14,
+     "box_rush": {
+      "att": 44,
+      "yds": 70,
+      "ypc": 1.6
+     }
+    },
+    "defense": {
+     "plays": 55,
+     "dropbacks": 25,
+     "sacks": 6,
+     "att": 19,
+     "comp": 14,
+     "pass_yds": 201,
+     "ypa": 10.6,
+     "ypc": 14.4,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 4,
+     "deep_comp": 3,
+     "ints": 1,
+     "rushes": 30,
+     "rush_yds": 107,
+     "ypr": 3.6,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "3/12",
+     "t3_long": "1/9",
+     "t3_short": "2/2",
+     "rz": "2/3",
+     "ppa": 0.045,
+     "box_rush": {
+      "att": 36,
+      "yds": 61,
+      "ypc": 1.7
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Auburn",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 24-14",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 21,
+     "sacks": 3,
+     "att": 18,
+     "comp": 11,
+     "pass_yds": 86,
+     "ypa": 4.8,
+     "ypc": 7.8,
+     "p20": 1,
+     "p30": 1,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 44,
+     "rush_yds": 261,
+     "ypr": 5.9,
+     "r10": 6,
+     "stuffs": 5,
+     "t3": "4/15",
+     "t3_long": "1/9",
+     "t3_short": "3/5",
+     "rz": "1/2",
+     "ppa": 0.076,
+     "box_rush": {
+      "att": 49,
+      "yds": 237,
+      "ypc": 4.8
+     }
+    },
+    "defense": {
+     "plays": 65,
+     "dropbacks": 37,
+     "sacks": 4,
+     "att": 33,
+     "comp": 22,
+     "pass_yds": 159,
+     "ypa": 4.8,
+     "ypc": 7.2,
+     "p20": 1,
+     "p30": 1,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 2,
+     "rushes": 28,
+     "rush_yds": 203,
+     "ypr": 7.2,
+     "r10": 5,
+     "stuffs": 5,
+     "t3": "5/14",
+     "t3_long": "2/8",
+     "t3_short": "1/2",
+     "rz": "2/3",
+     "ppa": -0.12,
+     "box_rush": {
+      "att": 32,
+      "yds": 186,
+      "ypc": 5.8
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Arkansas",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 24-17",
+    "offense": {
+     "plays": 64,
+     "dropbacks": 30,
+     "sacks": 1,
+     "att": 29,
+     "comp": 18,
+     "pass_yds": 247,
+     "ypa": 8.5,
+     "ypc": 13.7,
+     "p20": 5,
+     "p30": 2,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 2,
+     "rushes": 34,
+     "rush_yds": 231,
+     "ypr": 6.8,
+     "r10": 5,
+     "stuffs": 6,
+     "t3": "6/13",
+     "t3_long": "2/8",
+     "t3_short": "3/3",
+     "rz": "3/4",
+     "ppa": 0.18,
+     "box_rush": {
+      "att": 35,
+      "yds": 167,
+      "ypc": 4.8
+     }
+    },
+    "defense": {
+     "plays": 59,
+     "dropbacks": 28,
+     "sacks": 1,
+     "att": 27,
+     "comp": 15,
+     "pass_yds": 155,
+     "ypa": 5.7,
+     "ypc": 10.3,
+     "p20": 3,
+     "p30": 0,
+     "deep_att": 1,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 31,
+     "rush_yds": 150,
+     "ypr": 4.8,
+     "r10": 4,
+     "stuffs": 6,
+     "t3": "2/11",
+     "t3_long": "0/8",
+     "t3_short": "2/2",
+     "rz": "2/3",
+     "ppa": 0.103,
+     "box_rush": {
+      "att": 34,
+      "yds": 133,
+      "ypc": 3.9
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 408,
+   "dropbacks": 167,
+   "sacks": 14,
+   "att": 153,
+   "comp": 96,
+   "pass_yds": 1119,
+   "p20": 15,
+   "p30": 8,
+   "deep_att": 17,
+   "deep_comp": 6,
+   "ints": 3,
+   "rushes": 241,
+   "rush_yds": 1546,
+   "r10": 44,
+   "stuffs": 31,
+   "box_att": 261,
+   "box_yds": 1370,
+   "box_ypc": 5.2,
+   "ypa": 7.3,
+   "ypr": 6.4,
+   "sack_rate": 8.4,
+   "p20_rate": 9.0,
+   "r10_rate": 18.3,
+   "stuff_rate": 12.9,
+   "deep_rate": 11.1,
+   "t3": "31/78",
+   "t3_long": "13/46",
+   "t3_short": "13/17",
+   "rz": "14/18"
+  },
+  "defense": {
+   "plays": 370,
+   "dropbacks": 197,
+   "sacks": 23,
+   "att": 174,
+   "comp": 109,
+   "pass_yds": 970,
+   "p20": 10,
+   "p30": 4,
+   "deep_att": 11,
+   "deep_comp": 5,
+   "ints": 5,
+   "rushes": 173,
+   "rush_yds": 943,
+   "r10": 30,
+   "stuffs": 32,
+   "box_att": 199,
+   "box_yds": 795,
+   "box_ypc": 4.0,
+   "ypa": 5.6,
+   "ypr": 5.5,
+   "sack_rate": 11.7,
+   "p20_rate": 5.1,
+   "r10_rate": 17.3,
+   "stuff_rate": 18.5,
+   "deep_rate": 6.3,
+   "t3": "26/77",
+   "t3_long": "10/52",
+   "t3_short": "8/10",
+   "rz": "8/16"
+  },
+  "offense_vs_fbs": {
+   "plays": 334,
+   "dropbacks": 139,
+   "sacks": 13,
+   "att": 126,
+   "comp": 75,
+   "pass_yds": 810,
+   "p20": 11,
+   "p30": 6,
+   "deep_att": 14,
+   "deep_comp": 3,
+   "ints": 3,
+   "rushes": 195,
+   "rush_yds": 1209,
+   "r10": 34,
+   "stuffs": 26,
+   "box_att": 214,
+   "box_yds": 1041,
+   "box_ypc": 4.9,
+   "ypa": 6.4,
+   "ypr": 6.2,
+   "sack_rate": 9.4,
+   "p20_rate": 7.9,
+   "r10_rate": 17.4,
+   "stuff_rate": 13.3,
+   "deep_rate": 11.1,
+   "t3": "26/67",
+   "t3_long": "11/42",
+   "t3_short": "12/16",
+   "rz": "10/14"
+  },
+  "defense_vs_fbs": {
+   "plays": 313,
+   "dropbacks": 169,
+   "sacks": 17,
+   "att": 152,
+   "comp": 98,
+   "pass_yds": 920,
+   "p20": 10,
+   "p30": 4,
+   "deep_att": 11,
+   "deep_comp": 5,
+   "ints": 5,
+   "rushes": 144,
+   "rush_yds": 733,
+   "r10": 24,
+   "stuffs": 25,
+   "box_att": 163,
+   "box_yds": 617,
+   "box_ypc": 3.8,
+   "ypa": 6.1,
+   "ypr": 5.1,
+   "sack_rate": 10.1,
+   "p20_rate": 5.9,
+   "r10_rate": 16.7,
+   "stuff_rate": 17.4,
+   "deep_rate": 7.2,
+   "t3": "22/63",
+   "t3_long": "8/42",
+   "t3_short": "8/9",
+   "rz": "8/16"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Faizon Brandon",
+     {
+      "ATT": 101.0,
+      "COMPLETIONS": 61.0,
+      "INT": 1.0,
+      "PCT": 0.604,
+      "TD": 7.0,
+      "YDS": 697.0,
+      "YPA": 6.9
+     }
+    ],
+    [
+     "George MacIntyre",
+     {
+      "ATT": 49.0,
+      "COMPLETIONS": 32.0,
+      "INT": 2.0,
+      "PCT": 0.653,
+      "TD": 2.0,
+      "YDS": 395.0,
+      "YPA": 8.1
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "DeSean Bishop",
+     {
+      "CAR": 107.0,
+      "LONG": 59.0,
+      "TD": 8.0,
+      "YDS": 678.0,
+      "YPC": 6.3
+     }
+    ],
+    [
+     "Daune Morris",
+     {
+      "CAR": 54.0,
+      "LONG": 47.0,
+      "TD": 2.0,
+      "YDS": 332.0,
+      "YPC": 6.1
+     }
+    ],
+    [
+     "Faizon Brandon",
+     {
+      "CAR": 53.0,
+      "LONG": 22.0,
+      "TD": 3.0,
+      "YDS": 130.0,
+      "YPC": 2.5
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Mike Matthews",
+     {
+      "LONG": 57.0,
+      "REC": 22.0,
+      "TD": 3.0,
+      "YDS": 396.0,
+      "YPR": 18.0
+     }
+    ],
+    [
+     "Braylon Staley",
+     {
+      "LONG": 35.0,
+      "REC": 24.0,
+      "TD": 2.0,
+      "YDS": 193.0,
+      "YPR": 8.0
+     }
+    ],
+    [
+     "Dasaahn Brame",
+     {
+      "LONG": 68.0,
+      "REC": 9.0,
+      "TD": 0.0,
+      "YDS": 130.0,
+      "YPR": 14.4
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Xavier Gilliam",
+     {
+      "PD": 1.0,
+      "QB HUR": 6.0,
+      "SACKS": 5.0,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 10.0,
+      "TOT": 22.0
+     }
+    ],
+    [
+     "Tyree Weathersby",
+     {
+      "PD": 1.0,
+      "QB HUR": 3.0,
+      "SACKS": 4.5,
+      "SOLO": 7.0,
+      "TD": 0.0,
+      "TFL": 5.5,
+      "TOT": 13.0
+     }
+    ],
+    [
+     "Mariyon Dye",
+     {
+      "PD": 1.0,
+      "QB HUR": 1.0,
+      "SACKS": 4.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 5.0,
+      "TOT": 9.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Xavier Gilliam",
+     {
+      "PD": 1.0,
+      "QB HUR": 6.0,
+      "SACKS": 5.0,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 10.0,
+      "TOT": 22.0
+     }
+    ],
+    [
+     "Tyree Weathersby",
+     {
+      "PD": 1.0,
+      "QB HUR": 3.0,
+      "SACKS": 4.5,
+      "SOLO": 7.0,
+      "TD": 0.0,
+      "TFL": 5.5,
+      "TOT": 13.0
+     }
+    ],
+    [
+     "Mariyon Dye",
+     {
+      "PD": 1.0,
+      "QB HUR": 1.0,
+      "SACKS": 4.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 5.0,
+      "TOT": 9.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Missouri",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Arkansas-Pine Bluff",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 54-14",
+    "offense": {
+     "plays": 76,
+     "dropbacks": 33,
+     "sacks": 1,
+     "att": 32,
+     "comp": 25,
+     "pass_yds": 348,
+     "ypa": 10.9,
+     "ypc": 13.9,
+     "p20": 6,
+     "p30": 2,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 43,
+     "rush_yds": 200,
+     "ypr": 4.7,
+     "r10": 7,
+     "stuffs": 7,
+     "t3": "6/10",
+     "t3_long": "3/6",
+     "t3_short": "0/1",
+     "rz": "4/5",
+     "ppa": 0.473,
+     "box_rush": {
+      "att": 45,
+      "yds": 205,
+      "ypc": 4.6
+     }
+    },
+    "defense": {
+     "plays": 52,
+     "dropbacks": 25,
+     "sacks": 1,
+     "att": 24,
+     "comp": 10,
+     "pass_yds": 94,
+     "ypa": 3.9,
+     "ypc": 9.4,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 6,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 27,
+     "rush_yds": 139,
+     "ypr": 5.1,
+     "r10": 5,
+     "stuffs": 7,
+     "t3": "2/13",
+     "t3_long": "1/8",
+     "t3_short": "1/1",
+     "rz": "1/1",
+     "ppa": 0.016,
+     "box_rush": {
+      "att": 29,
+      "yds": 89,
+      "ypc": 3.1
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Kansas",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 38-21",
+    "offense": {
+     "plays": 69,
+     "dropbacks": 30,
+     "sacks": 0,
+     "att": 30,
+     "comp": 19,
+     "pass_yds": 292,
+     "ypa": 9.7,
+     "ypc": 15.4,
+     "p20": 6,
+     "p30": 1,
+     "deep_att": 6,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 39,
+     "rush_yds": 180,
+     "ypr": 4.6,
+     "r10": 3,
+     "stuffs": 7,
+     "t3": "8/17",
+     "t3_long": "4/11",
+     "t3_short": "2/2",
+     "rz": "3/7",
+     "ppa": 0.301,
+     "box_rush": {
+      "att": 41,
+      "yds": 177,
+      "ypc": 4.3
+     }
+    },
+    "defense": {
+     "plays": 64,
+     "dropbacks": 34,
+     "sacks": 3,
+     "att": 31,
+     "comp": 14,
+     "pass_yds": 174,
+     "ypa": 5.6,
+     "ypc": 12.4,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 2,
+     "ints": 2,
+     "rushes": 30,
+     "rush_yds": 120,
+     "ypr": 4.0,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "3/15",
+     "t3_long": "2/11",
+     "t3_short": "0/1",
+     "rz": "2/2",
+     "ppa": -0.105,
+     "box_rush": {
+      "att": 36,
+      "yds": 81,
+      "ypc": 2.2
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Troy",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 27-17",
+    "offense": {
+     "plays": 48,
+     "dropbacks": 20,
+     "sacks": 0,
+     "att": 20,
+     "comp": 11,
+     "pass_yds": 91,
+     "ypa": 4.5,
+     "ypc": 8.3,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 2,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 28,
+     "rush_yds": 139,
+     "ypr": 5.0,
+     "r10": 6,
+     "stuffs": 5,
+     "t3": "2/11",
+     "t3_long": "1/8",
+     "t3_short": "0/0",
+     "rz": "2/5",
+     "ppa": 0.124,
+     "box_rush": {
+      "att": 28,
+      "yds": 139,
+      "ypc": 5.0
+     }
+    },
+    "defense": {
+     "plays": 70,
+     "dropbacks": 33,
+     "sacks": 1,
+     "att": 32,
+     "comp": 18,
+     "pass_yds": 230,
+     "ypa": 7.2,
+     "ypc": 12.8,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 37,
+     "rush_yds": 123,
+     "ypr": 3.3,
+     "r10": 2,
+     "stuffs": 10,
+     "t3": "7/17",
+     "t3_long": "1/8",
+     "t3_short": "1/2",
+     "rz": "0/1",
+     "ppa": 0.03,
+     "box_rush": {
+      "att": 40,
+      "yds": 93,
+      "ypc": 2.3
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Mississippi State",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "L 24-31",
+    "offense": {
+     "plays": 75,
+     "dropbacks": 42,
+     "sacks": 2,
+     "att": 40,
+     "comp": 23,
+     "pass_yds": 295,
+     "ypa": 7.4,
+     "ypc": 12.8,
+     "p20": 6,
+     "p30": 1,
+     "deep_att": 8,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 33,
+     "rush_yds": 127,
+     "ypr": 3.8,
+     "r10": 3,
+     "stuffs": 5,
+     "t3": "7/16",
+     "t3_long": "5/11",
+     "t3_short": "2/2",
+     "rz": "1/4",
+     "ppa": 0.103,
+     "box_rush": {
+      "att": 35,
+      "yds": 119,
+      "ypc": 3.4
+     }
+    },
+    "defense": {
+     "plays": 78,
+     "dropbacks": 42,
+     "sacks": 4,
+     "att": 38,
+     "comp": 27,
+     "pass_yds": 360,
+     "ypa": 9.5,
+     "ypc": 13.3,
+     "p20": 5,
+     "p30": 2,
+     "deep_att": 6,
+     "deep_comp": 3,
+     "ints": 1,
+     "rushes": 36,
+     "rush_yds": 154,
+     "ypr": 4.3,
+     "r10": 6,
+     "stuffs": 9,
+     "t3": "7/15",
+     "t3_long": "2/10",
+     "t3_short": "2/2",
+     "rz": "1/4",
+     "ppa": 0.218,
+     "box_rush": {
+      "att": 40,
+      "yds": 139,
+      "ypc": 3.5
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Florida",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 45-17",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 31,
+     "sacks": 1,
+     "att": 30,
+     "comp": 23,
+     "pass_yds": 340,
+     "ypa": 11.3,
+     "ypc": 14.8,
+     "p20": 6,
+     "p30": 3,
+     "deep_att": 4,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 34,
+     "rush_yds": 224,
+     "ypr": 6.6,
+     "r10": 2,
+     "stuffs": 8,
+     "t3": "7/12",
+     "t3_long": "2/6",
+     "t3_short": "2/2",
+     "rz": "2/3",
+     "ppa": 0.471,
+     "box_rush": {
+      "att": 36,
+      "yds": 220,
+      "ypc": 6.1
+     }
+    },
+    "defense": {
+     "plays": 64,
+     "dropbacks": 42,
+     "sacks": 3,
+     "att": 39,
+     "comp": 26,
+     "pass_yds": 283,
+     "ypa": 7.3,
+     "ypc": 10.9,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 5,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 22,
+     "rush_yds": 68,
+     "ypr": 3.1,
+     "r10": 4,
+     "stuffs": 8,
+     "t3": "6/16",
+     "t3_long": "2/10",
+     "t3_short": "2/4",
+     "rz": "1/2",
+     "ppa": 0.03,
+     "box_rush": {
+      "att": 25,
+      "yds": 42,
+      "ypc": 1.7
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Texas A&M",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 27-6",
+    "offense": {
+     "plays": 71,
+     "dropbacks": 28,
+     "sacks": 0,
+     "att": 28,
+     "comp": 14,
+     "pass_yds": 147,
+     "ypa": 5.2,
+     "ypc": 10.5,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 43,
+     "rush_yds": 239,
+     "ypr": 5.6,
+     "r10": 8,
+     "stuffs": 8,
+     "t3": "7/16",
+     "t3_long": "0/8",
+     "t3_short": "2/2",
+     "rz": "1/1",
+     "ppa": 0.105,
+     "box_rush": {
+      "att": 44,
+      "yds": 252,
+      "ypc": 5.7
+     }
+    },
+    "defense": {
+     "plays": 62,
+     "dropbacks": 42,
+     "sacks": 3,
+     "att": 39,
+     "comp": 19,
+     "pass_yds": 189,
+     "ypa": 4.8,
+     "ypc": 9.9,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 6,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 20,
+     "rush_yds": 55,
+     "ypr": 2.8,
+     "r10": 0,
+     "stuffs": 3,
+     "t3": "5/17",
+     "t3_long": "1/9",
+     "t3_short": "3/5",
+     "rz": "0/3",
+     "ppa": -0.163,
+     "box_rush": {
+      "att": 23,
+      "yds": 29,
+      "ypc": 1.3
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 404,
+   "dropbacks": 184,
+   "sacks": 4,
+   "att": 180,
+   "comp": 115,
+   "pass_yds": 1513,
+   "p20": 28,
+   "p30": 8,
+   "deep_att": 26,
+   "deep_comp": 9,
+   "ints": 1,
+   "rushes": 220,
+   "rush_yds": 1109,
+   "r10": 29,
+   "stuffs": 40,
+   "box_att": 229,
+   "box_yds": 1112,
+   "box_ypc": 4.9,
+   "ypa": 8.4,
+   "ypr": 5.0,
+   "sack_rate": 2.2,
+   "p20_rate": 15.2,
+   "r10_rate": 13.2,
+   "stuff_rate": 18.2,
+   "deep_rate": 14.4,
+   "t3": "37/82",
+   "t3_long": "15/50",
+   "t3_short": "8/9",
+   "rz": "13/25"
+  },
+  "defense": {
+   "plays": 390,
+   "dropbacks": 218,
+   "sacks": 15,
+   "att": 203,
+   "comp": 114,
+   "pass_yds": 1330,
+   "p20": 19,
+   "p30": 7,
+   "deep_att": 31,
+   "deep_comp": 10,
+   "ints": 7,
+   "rushes": 172,
+   "rush_yds": 659,
+   "r10": 21,
+   "stuffs": 41,
+   "box_att": 193,
+   "box_yds": 473,
+   "box_ypc": 2.5,
+   "ypa": 6.6,
+   "ypr": 3.8,
+   "sack_rate": 6.9,
+   "p20_rate": 8.7,
+   "r10_rate": 12.2,
+   "stuff_rate": 23.8,
+   "deep_rate": 15.3,
+   "t3": "30/93",
+   "t3_long": "9/56",
+   "t3_short": "9/15",
+   "rz": "5/13"
+  },
+  "offense_vs_fbs": {
+   "plays": 328,
+   "dropbacks": 151,
+   "sacks": 3,
+   "att": 148,
+   "comp": 90,
+   "pass_yds": 1165,
+   "p20": 22,
+   "p30": 6,
+   "deep_att": 24,
+   "deep_comp": 8,
+   "ints": 1,
+   "rushes": 177,
+   "rush_yds": 909,
+   "r10": 22,
+   "stuffs": 33,
+   "box_att": 184,
+   "box_yds": 907,
+   "box_ypc": 4.9,
+   "ypa": 7.9,
+   "ypr": 5.1,
+   "sack_rate": 2.0,
+   "p20_rate": 14.6,
+   "r10_rate": 12.4,
+   "stuff_rate": 18.6,
+   "deep_rate": 16.2,
+   "t3": "31/72",
+   "t3_long": "12/44",
+   "t3_short": "8/8",
+   "rz": "9/20"
+  },
+  "defense_vs_fbs": {
+   "plays": 338,
+   "dropbacks": 193,
+   "sacks": 14,
+   "att": 179,
+   "comp": 104,
+   "pass_yds": 1236,
+   "p20": 18,
+   "p30": 7,
+   "deep_att": 25,
+   "deep_comp": 9,
+   "ints": 6,
+   "rushes": 145,
+   "rush_yds": 520,
+   "r10": 16,
+   "stuffs": 34,
+   "box_att": 164,
+   "box_yds": 384,
+   "box_ypc": 2.3,
+   "ypa": 6.9,
+   "ypr": 3.6,
+   "sack_rate": 7.3,
+   "p20_rate": 9.3,
+   "r10_rate": 11.0,
+   "stuff_rate": 23.4,
+   "deep_rate": 14.0,
+   "t3": "28/80",
+   "t3_long": "8/48",
+   "t3_short": "8/14",
+   "rz": "4/12"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Austin Simmons",
+     {
+      "ATT": 164.0,
+      "COMPLETIONS": 106.0,
+      "INT": 1.0,
+      "PCT": 0.646,
+      "TD": 14.0,
+      "YDS": 1417.0,
+      "YPA": 8.6
+     }
+    ],
+    [
+     "Matt Zollers",
+     {
+      "ATT": 13.0,
+      "COMPLETIONS": 8.0,
+      "INT": 0.0,
+      "PCT": 0.615,
+      "TD": 0.0,
+      "YDS": 87.0,
+      "YPA": 6.7
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Jamal Roberts",
+     {
+      "CAR": 147.0,
+      "LONG": 80.0,
+      "TD": 8.0,
+      "YDS": 828.0,
+      "YPC": 5.6
+     }
+    ],
+    [
+     "Xai'Shaun Edwards",
+     {
+      "CAR": 36.0,
+      "LONG": 17.0,
+      "TD": 1.0,
+      "YDS": 138.0,
+      "YPC": 3.8
+     }
+    ],
+    [
+     "Austin Simmons",
+     {
+      "CAR": 16.0,
+      "LONG": 13.0,
+      "TD": 0.0,
+      "YDS": 34.0,
+      "YPC": 2.1
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Cayden Lee",
+     {
+      "LONG": 47.0,
+      "REC": 40.0,
+      "TD": 5.0,
+      "YDS": 590.0,
+      "YPR": 14.8
+     }
+    ],
+    [
+     "Donovan Olugbode",
+     {
+      "LONG": 65.0,
+      "REC": 27.0,
+      "TD": 6.0,
+      "YDS": 416.0,
+      "YPR": 15.4
+     }
+    ],
+    [
+     "Shaun Terry II",
+     {
+      "LONG": 25.0,
+      "REC": 9.0,
+      "TD": 1.0,
+      "YDS": 96.0,
+      "YPR": 10.7
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Daeden Hopkins",
+     {
+      "PD": 0.0,
+      "QB HUR": 6.0,
+      "SACKS": 7.0,
+      "SOLO": 7.0,
+      "TD": 0.0,
+      "TFL": 7.5,
+      "TOT": 16.0
+     }
+    ],
+    [
+     "Donta Simpson",
+     {
+      "PD": 0.0,
+      "QB HUR": 5.0,
+      "SACKS": 4.0,
+      "SOLO": 4.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 8.0
+     }
+    ],
+    [
+     "Jason Dowell",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 2.0,
+      "SOLO": 4.0,
+      "TD": 0.0,
+      "TFL": 2.5,
+      "TOT": 13.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Daeden Hopkins",
+     {
+      "PD": 0.0,
+      "QB HUR": 6.0,
+      "SACKS": 7.0,
+      "SOLO": 7.0,
+      "TD": 0.0,
+      "TFL": 7.5,
+      "TOT": 16.0
+     }
+    ],
+    [
+     "Kensley Louidor-Faustin",
+     {
+      "PD": 2.0,
+      "QB HUR": 0.0,
+      "SACKS": 0.0,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 5.0,
+      "TOT": 26.0
+     }
+    ],
+    [
+     "Nicholas Rodriguez",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 1.5,
+      "SOLO": 26.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 59.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Ole Miss",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Louisville",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 41-38",
+    "offense": {
+     "plays": 77,
+     "dropbacks": 37,
+     "sacks": 0,
+     "att": 37,
+     "comp": 21,
+     "pass_yds": 336,
+     "ypa": 9.1,
+     "ypc": 16.0,
+     "p20": 4,
+     "p30": 4,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 40,
+     "rush_yds": 173,
+     "ypr": 4.3,
+     "r10": 3,
+     "stuffs": 4,
+     "t3": "6/16",
+     "t3_long": "1/7",
+     "t3_short": "3/4",
+     "rz": "2/2",
+     "ppa": 0.267,
+     "box_rush": {
+      "att": 41,
+      "yds": 152,
+      "ypc": 3.7
+     }
+    },
+    "defense": {
+     "plays": 67,
+     "dropbacks": 32,
+     "sacks": 3,
+     "att": 29,
+     "comp": 18,
+     "pass_yds": 307,
+     "ypa": 10.6,
+     "ypc": 17.1,
+     "p20": 7,
+     "p30": 3,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 35,
+     "rush_yds": 210,
+     "ypr": 6.0,
+     "r10": 5,
+     "stuffs": 8,
+     "t3": "7/16",
+     "t3_long": "1/9",
+     "t3_short": "3/3",
+     "rz": "1/2",
+     "ppa": 0.353,
+     "box_rush": {
+      "att": 39,
+      "yds": 162,
+      "ypc": 4.2
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Charlotte",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 41-9",
+    "offense": {
+     "plays": 58,
+     "dropbacks": 35,
+     "sacks": 1,
+     "att": 34,
+     "comp": 27,
+     "pass_yds": 293,
+     "ypa": 8.6,
+     "ypc": 10.9,
+     "p20": 2,
+     "p30": 2,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 23,
+     "rush_yds": 133,
+     "ypr": 5.8,
+     "r10": 5,
+     "stuffs": 7,
+     "t3": "1/4",
+     "t3_long": "0/2",
+     "t3_short": "1/1",
+     "rz": "4/5",
+     "ppa": 0.401,
+     "box_rush": {
+      "att": 24,
+      "yds": 127,
+      "ypc": 5.3
+     }
+    },
+    "defense": {
+     "plays": 61,
+     "dropbacks": 29,
+     "sacks": 1,
+     "att": 28,
+     "comp": 20,
+     "pass_yds": 179,
+     "ypa": 6.4,
+     "ypc": 8.9,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 32,
+     "rush_yds": 144,
+     "ypr": 4.5,
+     "r10": 3,
+     "stuffs": 11,
+     "t3": "4/14",
+     "t3_long": "2/9",
+     "t3_short": "2/5",
+     "rz": "0/3",
+     "ppa": -0.021,
+     "box_rush": {
+      "att": 33,
+      "yds": 143,
+      "ypc": 4.3
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "LSU",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 32-24",
+    "offense": {
+     "plays": 72,
+     "dropbacks": 50,
+     "sacks": 2,
+     "att": 48,
+     "comp": 33,
+     "pass_yds": 363,
+     "ypa": 7.6,
+     "ypc": 11.0,
+     "p20": 6,
+     "p30": 2,
+     "deep_att": 5,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 22,
+     "rush_yds": 99,
+     "ypr": 4.5,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "10/15",
+     "t3_long": "6/11",
+     "t3_short": "2/2",
+     "rz": "4/4",
+     "ppa": 0.319,
+     "box_rush": {
+      "att": 25,
+      "yds": 63,
+      "ypc": 2.5
+     }
+    },
+    "defense": {
+     "plays": 69,
+     "dropbacks": 29,
+     "sacks": 2,
+     "att": 27,
+     "comp": 16,
+     "pass_yds": 158,
+     "ypa": 5.9,
+     "ypc": 9.9,
+     "p20": 2,
+     "p30": 0,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 40,
+     "rush_yds": 182,
+     "ypr": 4.5,
+     "r10": 4,
+     "stuffs": 7,
+     "t3": "9/16",
+     "t3_long": "5/10",
+     "t3_short": "0/0",
+     "rz": "2/4",
+     "ppa": 0.252,
+     "box_rush": {
+      "att": 43,
+      "yds": 172,
+      "ypc": 4.0
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Florida",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "L 28-52",
+    "offense": {
+     "plays": 59,
+     "dropbacks": 34,
+     "sacks": 0,
+     "att": 34,
+     "comp": 25,
+     "pass_yds": 298,
+     "ypa": 8.8,
+     "ypc": 11.9,
+     "p20": 4,
+     "p30": 3,
+     "deep_att": 7,
+     "deep_comp": 4,
+     "ints": 1,
+     "rushes": 25,
+     "rush_yds": 135,
+     "ypr": 5.4,
+     "r10": 4,
+     "stuffs": 1,
+     "t3": "4/11",
+     "t3_long": "1/4",
+     "t3_short": "2/3",
+     "rz": "2/4",
+     "ppa": 0.323,
+     "box_rush": {
+      "att": 27,
+      "yds": 128,
+      "ypc": 4.7
+     }
+    },
+    "defense": {
+     "plays": 76,
+     "dropbacks": 23,
+     "sacks": 0,
+     "att": 23,
+     "comp": 16,
+     "pass_yds": 196,
+     "ypa": 8.5,
+     "ypc": 12.2,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 53,
+     "rush_yds": 302,
+     "ypr": 5.7,
+     "r10": 7,
+     "stuffs": 8,
+     "t3": "7/11",
+     "t3_long": "1/4",
+     "t3_short": "4/4",
+     "rz": "5/7",
+     "ppa": 0.359,
+     "box_rush": {
+      "att": 53,
+      "yds": 302,
+      "ypc": 5.7
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Vanderbilt",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 52-17",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 31,
+     "sacks": 1,
+     "att": 30,
+     "comp": 20,
+     "pass_yds": 213,
+     "ypa": 7.1,
+     "ypc": 10.7,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 34,
+     "rush_yds": 199,
+     "ypr": 5.9,
+     "r10": 6,
+     "stuffs": 6,
+     "t3": "5/12",
+     "t3_long": "2/7",
+     "t3_short": "3/4",
+     "rz": "4/4",
+     "ppa": 0.329,
+     "box_rush": {
+      "att": 35,
+      "yds": 196,
+      "ypc": 5.6
+     }
+    },
+    "defense": {
+     "plays": 72,
+     "dropbacks": 39,
+     "sacks": 2,
+     "att": 37,
+     "comp": 21,
+     "pass_yds": 240,
+     "ypa": 6.5,
+     "ypc": 11.4,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 33,
+     "rush_yds": 126,
+     "ypr": 3.8,
+     "r10": 2,
+     "stuffs": 8,
+     "t3": "9/16",
+     "t3_long": "6/12",
+     "t3_short": "1/2",
+     "rz": "2/4",
+     "ppa": -0.059,
+     "box_rush": {
+      "att": 37,
+      "yds": 103,
+      "ypc": 2.8
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 331,
+   "dropbacks": 187,
+   "sacks": 4,
+   "att": 183,
+   "comp": 126,
+   "pass_yds": 1503,
+   "p20": 18,
+   "p30": 12,
+   "deep_att": 19,
+   "deep_comp": 7,
+   "ints": 5,
+   "rushes": 144,
+   "rush_yds": 739,
+   "r10": 22,
+   "stuffs": 22,
+   "box_att": 152,
+   "box_yds": 666,
+   "box_ypc": 4.4,
+   "ypa": 8.2,
+   "ypr": 5.1,
+   "sack_rate": 2.1,
+   "p20_rate": 9.6,
+   "r10_rate": 15.3,
+   "stuff_rate": 15.3,
+   "deep_rate": 10.4,
+   "t3": "26/58",
+   "t3_long": "10/31",
+   "t3_short": "11/14",
+   "rz": "16/19"
+  },
+  "defense": {
+   "plays": 345,
+   "dropbacks": 152,
+   "sacks": 8,
+   "att": 144,
+   "comp": 91,
+   "pass_yds": 1080,
+   "p20": 19,
+   "p30": 7,
+   "deep_att": 16,
+   "deep_comp": 6,
+   "ints": 4,
+   "rushes": 193,
+   "rush_yds": 964,
+   "r10": 21,
+   "stuffs": 42,
+   "box_att": 205,
+   "box_yds": 882,
+   "box_ypc": 4.3,
+   "ypa": 7.5,
+   "ypr": 5.0,
+   "sack_rate": 5.3,
+   "p20_rate": 12.5,
+   "r10_rate": 10.9,
+   "stuff_rate": 21.8,
+   "deep_rate": 11.1,
+   "t3": "36/73",
+   "t3_long": "15/44",
+   "t3_short": "10/14",
+   "rz": "10/20"
+  },
+  "offense_vs_fbs": {
+   "plays": 331,
+   "dropbacks": 187,
+   "sacks": 4,
+   "att": 183,
+   "comp": 126,
+   "pass_yds": 1503,
+   "p20": 18,
+   "p30": 12,
+   "deep_att": 19,
+   "deep_comp": 7,
+   "ints": 5,
+   "rushes": 144,
+   "rush_yds": 739,
+   "r10": 22,
+   "stuffs": 22,
+   "box_att": 152,
+   "box_yds": 666,
+   "box_ypc": 4.4,
+   "ypa": 8.2,
+   "ypr": 5.1,
+   "sack_rate": 2.1,
+   "p20_rate": 9.6,
+   "r10_rate": 15.3,
+   "stuff_rate": 15.3,
+   "deep_rate": 10.4,
+   "t3": "26/58",
+   "t3_long": "10/31",
+   "t3_short": "11/14",
+   "rz": "16/19"
+  },
+  "defense_vs_fbs": {
+   "plays": 345,
+   "dropbacks": 152,
+   "sacks": 8,
+   "att": 144,
+   "comp": 91,
+   "pass_yds": 1080,
+   "p20": 19,
+   "p30": 7,
+   "deep_att": 16,
+   "deep_comp": 6,
+   "ints": 4,
+   "rushes": 193,
+   "rush_yds": 964,
+   "r10": 21,
+   "stuffs": 42,
+   "box_att": 205,
+   "box_yds": 882,
+   "box_ypc": 4.3,
+   "ypa": 7.5,
+   "ypr": 5.0,
+   "sack_rate": 5.3,
+   "p20_rate": 12.5,
+   "r10_rate": 10.9,
+   "stuff_rate": 21.8,
+   "deep_rate": 11.1,
+   "t3": "36/73",
+   "t3_long": "15/44",
+   "t3_short": "10/14",
+   "rz": "10/20"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Trinidad Chambliss",
+     {
+      "ATT": 174.0,
+      "COMPLETIONS": 122.0,
+      "INT": 4.0,
+      "PCT": 0.701,
+      "TD": 11.0,
+      "YDS": 1435.0,
+      "YPA": 8.2
+     }
+    ],
+    [
+     "Deuce Knight",
+     {
+      "ATT": 8.0,
+      "COMPLETIONS": 4.0,
+      "INT": 1.0,
+      "PCT": 0.5,
+      "TD": 0.0,
+      "YDS": 68.0,
+      "YPA": 8.5
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Kewan Lacy",
+     {
+      "CAR": 46.0,
+      "LONG": 28.0,
+      "TD": 5.0,
+      "YDS": 230.0,
+      "YPC": 5.0
+     }
+    ],
+    [
+     "Makhi Frazier",
+     {
+      "CAR": 30.0,
+      "LONG": 16.0,
+      "TD": 0.0,
+      "YDS": 153.0,
+      "YPC": 5.1
+     }
+    ],
+    [
+     "Trinidad Chambliss",
+     {
+      "CAR": 32.0,
+      "LONG": 17.0,
+      "TD": 5.0,
+      "YDS": 113.0,
+      "YPC": 3.5
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Deuce Alexander",
+     {
+      "LONG": 62.0,
+      "REC": 32.0,
+      "TD": 5.0,
+      "YDS": 503.0,
+      "YPR": 15.7
+     }
+    ],
+    [
+     "Traylon Ray",
+     {
+      "LONG": 36.0,
+      "REC": 17.0,
+      "TD": 1.0,
+      "YDS": 231.0,
+      "YPR": 13.6
+     }
+    ],
+    [
+     "Caleb Odom",
+     {
+      "LONG": 35.0,
+      "REC": 17.0,
+      "TD": 1.0,
+      "YDS": 230.0,
+      "YPR": 13.5
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Blake Purchase",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.5,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 6.5,
+      "TOT": 21.0
+     }
+    ],
+    [
+     "Suntarine Perkins",
+     {
+      "PD": 1.0,
+      "QB HUR": 3.0,
+      "SACKS": 1.5,
+      "SOLO": 10.0,
+      "TD": 1.0,
+      "TFL": 2.5,
+      "TOT": 19.0
+     }
+    ],
+    [
+     "Jordan Renaud",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 1.0,
+      "SOLO": 4.0,
+      "TD": 0.0,
+      "TFL": 2.0,
+      "TOT": 5.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Blake Purchase",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.5,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 6.5,
+      "TOT": 21.0
+     }
+    ],
+    [
+     "William Echoles",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 1.0,
+      "SOLO": 5.0,
+      "TD": 0.0,
+      "TFL": 3.5,
+      "TOT": 13.0
+     }
+    ],
+    [
+     "Kamarion Franklin",
+     {
+      "PD": 1.0,
+      "QB HUR": 1.0,
+      "SACKS": 1.0,
+      "SOLO": 7.0,
+      "TD": 0.0,
+      "TFL": 3.0,
+      "TOT": 12.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Nebraska",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Ohio",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 49-21",
+    "offense": {
+     "plays": 73,
+     "dropbacks": 34,
+     "sacks": 2,
+     "att": 32,
+     "comp": 18,
+     "pass_yds": 275,
+     "ypa": 8.6,
+     "ypc": 15.3,
+     "p20": 5,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 39,
+     "rush_yds": 279,
+     "ypr": 7.2,
+     "r10": 10,
+     "stuffs": 5,
+     "t3": "9/15",
+     "t3_long": "3/6",
+     "t3_short": "5/5",
+     "rz": "4/4",
+     "ppa": 0.489,
+     "box_rush": {
+      "att": 42,
+      "yds": 248,
+      "ypc": 5.9
+     }
+    },
+    "defense": {
+     "plays": 65,
+     "dropbacks": 34,
+     "sacks": 2,
+     "att": 32,
+     "comp": 14,
+     "pass_yds": 164,
+     "ypa": 5.1,
+     "ypc": 11.7,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 7,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 31,
+     "rush_yds": 144,
+     "ypr": 4.6,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "7/15",
+     "t3_long": "3/10",
+     "t3_short": "2/2",
+     "rz": "1/2",
+     "ppa": 0.025,
+     "box_rush": {
+      "att": 33,
+      "yds": 139,
+      "ypc": 4.2
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Bowling Green",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 56-7",
+    "offense": {
+     "plays": 66,
+     "dropbacks": 33,
+     "sacks": 1,
+     "att": 32,
+     "comp": 26,
+     "pass_yds": 282,
+     "ypa": 8.8,
+     "ypc": 10.8,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 6,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 33,
+     "rush_yds": 265,
+     "ypr": 8.0,
+     "r10": 8,
+     "stuffs": 4,
+     "t3": "5/8",
+     "t3_long": "1/3",
+     "t3_short": "2/3",
+     "rz": "4/4",
+     "ppa": 0.632,
+     "box_rush": {
+      "att": 34,
+      "yds": 264,
+      "ypc": 7.8
+     }
+    },
+    "defense": {
+     "plays": 46,
+     "dropbacks": 17,
+     "sacks": 0,
+     "att": 17,
+     "comp": 10,
+     "pass_yds": 84,
+     "ypa": 4.9,
+     "ypc": 8.4,
+     "p20": 0,
+     "p30": 0,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 29,
+     "rush_yds": 96,
+     "ypr": 3.3,
+     "r10": 2,
+     "stuffs": 5,
+     "t3": "2/10",
+     "t3_long": "1/6",
+     "t3_short": "0/1",
+     "rz": "0/1",
+     "ppa": -0.032,
+     "box_rush": {
+      "att": 32,
+      "yds": 85,
+      "ypc": 2.7
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "North Dakota",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 34-7",
+    "offense": {
+     "plays": 71,
+     "dropbacks": 26,
+     "sacks": 0,
+     "att": 26,
+     "comp": 18,
+     "pass_yds": 216,
+     "ypa": 8.3,
+     "ypc": 12.0,
+     "p20": 5,
+     "p30": 2,
+     "deep_att": 5,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 45,
+     "rush_yds": 277,
+     "ypr": 6.2,
+     "r10": 7,
+     "stuffs": 5,
+     "t3": "7/15",
+     "t3_long": "2/6",
+     "t3_short": "2/4",
+     "rz": "3/4",
+     "ppa": 0.386,
+     "box_rush": {
+      "att": 45,
+      "yds": 277,
+      "ypc": 6.2
+     }
+    },
+    "defense": {
+     "plays": 55,
+     "dropbacks": 24,
+     "sacks": 5,
+     "att": 19,
+     "comp": 9,
+     "pass_yds": 106,
+     "ypa": 5.6,
+     "ypc": 11.8,
+     "p20": 1,
+     "p30": 1,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 31,
+     "rush_yds": 147,
+     "ypr": 4.7,
+     "r10": 4,
+     "stuffs": 6,
+     "t3": "1/13",
+     "t3_long": "0/5",
+     "t3_short": "1/4",
+     "rz": "1/2",
+     "ppa": -0.166,
+     "box_rush": {
+      "att": 36,
+      "yds": 99,
+      "ypc": 2.8
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Michigan State",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 31-13",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 26,
+     "sacks": 0,
+     "att": 26,
+     "comp": 14,
+     "pass_yds": 200,
+     "ypa": 7.7,
+     "ypc": 14.3,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 39,
+     "rush_yds": 141,
+     "ypr": 3.6,
+     "r10": 3,
+     "stuffs": 9,
+     "t3": "6/13",
+     "t3_long": "4/9",
+     "t3_short": "1/2",
+     "rz": "3/5",
+     "ppa": 0.166,
+     "box_rush": {
+      "att": 41,
+      "yds": 157,
+      "ypc": 3.8
+     }
+    },
+    "defense": {
+     "plays": 58,
+     "dropbacks": 32,
+     "sacks": 4,
+     "att": 28,
+     "comp": 19,
+     "pass_yds": 218,
+     "ypa": 7.8,
+     "ypc": 11.5,
+     "p20": 4,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 26,
+     "rush_yds": 89,
+     "ypr": 3.4,
+     "r10": 1,
+     "stuffs": 6,
+     "t3": "3/7",
+     "t3_long": "3/7",
+     "t3_short": "0/0",
+     "rz": "1/3",
+     "ppa": -0.003,
+     "box_rush": {
+      "att": 32,
+      "yds": 39,
+      "ypc": 1.2
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Maryland",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 48-23",
+    "offense": {
+     "plays": 75,
+     "dropbacks": 41,
+     "sacks": 2,
+     "att": 39,
+     "comp": 26,
+     "pass_yds": 238,
+     "ypa": 6.1,
+     "ypc": 9.2,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 5,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 34,
+     "rush_yds": 229,
+     "ypr": 6.7,
+     "r10": 8,
+     "stuffs": 4,
+     "t3": "6/13",
+     "t3_long": "3/9",
+     "t3_short": "1/1",
+     "rz": "5/5",
+     "ppa": 0.21,
+     "box_rush": {
+      "att": 36,
+      "yds": 209,
+      "ypc": 5.8
+     }
+    },
+    "defense": {
+     "plays": 68,
+     "dropbacks": 45,
+     "sacks": 1,
+     "att": 44,
+     "comp": 23,
+     "pass_yds": 254,
+     "ypa": 5.8,
+     "ypc": 11.0,
+     "p20": 5,
+     "p30": 3,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 2,
+     "rushes": 23,
+     "rush_yds": 146,
+     "ypr": 6.3,
+     "r10": 6,
+     "stuffs": 2,
+     "t3": "2/14",
+     "t3_long": "1/10",
+     "t3_short": "1/1",
+     "rz": "1/3",
+     "ppa": -0.18,
+     "box_rush": {
+      "att": 25,
+      "yds": 141,
+      "ypc": 5.6
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Indiana",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "L 17-20",
+    "offense": {
+     "plays": 82,
+     "dropbacks": 49,
+     "sacks": 5,
+     "att": 44,
+     "comp": 25,
+     "pass_yds": 262,
+     "ypa": 6.0,
+     "ypc": 10.5,
+     "p20": 3,
+     "p30": 0,
+     "deep_att": 7,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 33,
+     "rush_yds": 172,
+     "ypr": 5.2,
+     "r10": 5,
+     "stuffs": 7,
+     "t3": "10/19",
+     "t3_long": "6/14",
+     "t3_short": "3/4",
+     "rz": "1/3",
+     "ppa": 0.07,
+     "box_rush": {
+      "att": 39,
+      "yds": 128,
+      "ypc": 3.3
+     }
+    },
+    "defense": {
+     "plays": 44,
+     "dropbacks": 24,
+     "sacks": 2,
+     "att": 22,
+     "comp": 12,
+     "pass_yds": 263,
+     "ypa": 12.0,
+     "ypc": 21.9,
+     "p20": 4,
+     "p30": 4,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 20,
+     "rush_yds": 72,
+     "ypr": 3.6,
+     "r10": 3,
+     "stuffs": 5,
+     "t3": "1/10",
+     "t3_long": "1/7",
+     "t3_short": "0/0",
+     "rz": "0/1",
+     "ppa": 0.243,
+     "box_rush": {
+      "att": 22,
+      "yds": 65,
+      "ypc": 3.0
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 432,
+   "dropbacks": 209,
+   "sacks": 10,
+   "att": 199,
+   "comp": 127,
+   "pass_yds": 1473,
+   "p20": 22,
+   "p30": 8,
+   "deep_att": 29,
+   "deep_comp": 12,
+   "ints": 3,
+   "rushes": 223,
+   "rush_yds": 1363,
+   "r10": 41,
+   "stuffs": 34,
+   "box_att": 237,
+   "box_yds": 1283,
+   "box_ypc": 5.4,
+   "ypa": 7.4,
+   "ypr": 6.1,
+   "sack_rate": 4.8,
+   "p20_rate": 10.5,
+   "r10_rate": 18.4,
+   "stuff_rate": 15.2,
+   "deep_rate": 14.6,
+   "t3": "43/83",
+   "t3_long": "19/47",
+   "t3_short": "14/19",
+   "rz": "20/25"
+  },
+  "defense": {
+   "plays": 336,
+   "dropbacks": 176,
+   "sacks": 14,
+   "att": 162,
+   "comp": 87,
+   "pass_yds": 1089,
+   "p20": 17,
+   "p30": 10,
+   "deep_att": 17,
+   "deep_comp": 4,
+   "ints": 6,
+   "rushes": 160,
+   "rush_yds": 694,
+   "r10": 20,
+   "stuffs": 28,
+   "box_att": 180,
+   "box_yds": 568,
+   "box_ypc": 3.2,
+   "ypa": 6.7,
+   "ypr": 4.3,
+   "sack_rate": 8.0,
+   "p20_rate": 9.7,
+   "r10_rate": 12.5,
+   "stuff_rate": 17.5,
+   "deep_rate": 10.5,
+   "t3": "16/69",
+   "t3_long": "9/45",
+   "t3_short": "4/8",
+   "rz": "4/12"
+  },
+  "offense_vs_fbs": {
+   "plays": 361,
+   "dropbacks": 183,
+   "sacks": 10,
+   "att": 173,
+   "comp": 109,
+   "pass_yds": 1257,
+   "p20": 17,
+   "p30": 6,
+   "deep_att": 24,
+   "deep_comp": 10,
+   "ints": 3,
+   "rushes": 178,
+   "rush_yds": 1086,
+   "r10": 34,
+   "stuffs": 29,
+   "box_att": 192,
+   "box_yds": 1006,
+   "box_ypc": 5.2,
+   "ypa": 7.3,
+   "ypr": 6.1,
+   "sack_rate": 5.5,
+   "p20_rate": 9.3,
+   "r10_rate": 19.1,
+   "stuff_rate": 16.3,
+   "deep_rate": 13.9,
+   "t3": "36/68",
+   "t3_long": "17/41",
+   "t3_short": "12/15",
+   "rz": "17/21"
+  },
+  "defense_vs_fbs": {
+   "plays": 281,
+   "dropbacks": 152,
+   "sacks": 9,
+   "att": 143,
+   "comp": 78,
+   "pass_yds": 983,
+   "p20": 16,
+   "p30": 9,
+   "deep_att": 17,
+   "deep_comp": 4,
+   "ints": 6,
+   "rushes": 129,
+   "rush_yds": 547,
+   "r10": 16,
+   "stuffs": 22,
+   "box_att": 144,
+   "box_yds": 469,
+   "box_ypc": 3.3,
+   "ypa": 6.9,
+   "ypr": 4.2,
+   "sack_rate": 5.9,
+   "p20_rate": 10.5,
+   "r10_rate": 12.4,
+   "stuff_rate": 17.1,
+   "deep_rate": 11.9,
+   "t3": "15/56",
+   "t3_long": "9/40",
+   "t3_short": "3/4",
+   "rz": "3/10"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Anthony Colandrea",
+     {
+      "ATT": 186.0,
+      "COMPLETIONS": 119.0,
+      "INT": 3.0,
+      "PCT": 0.64,
+      "TD": 13.0,
+      "YDS": 1405.0,
+      "YPA": 7.6
+     }
+    ],
+    [
+     "TJ Lateef",
+     {
+      "ATT": 11.0,
+      "COMPLETIONS": 8.0,
+      "INT": 0.0,
+      "PCT": 0.727,
+      "TD": 1.0,
+      "YDS": 82.0,
+      "YPA": 7.5
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Jamal Rule",
+     {
+      "CAR": 57.0,
+      "LONG": 59.0,
+      "TD": 5.0,
+      "YDS": 386.0,
+      "YPC": 6.8
+     }
+    ],
+    [
+     "Anthony Colandrea",
+     {
+      "CAR": 55.0,
+      "LONG": 51.0,
+      "TD": 3.0,
+      "YDS": 296.0,
+      "YPC": 5.4
+     }
+    ],
+    [
+     "Mekhi Nelson",
+     {
+      "CAR": 60.0,
+      "LONG": 29.0,
+      "TD": 4.0,
+      "YDS": 284.0,
+      "YPC": 4.7
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Kwazi Gilmer",
+     {
+      "LONG": 44.0,
+      "REC": 32.0,
+      "TD": 6.0,
+      "YDS": 418.0,
+      "YPR": 13.1
+     }
+    ],
+    [
+     "Jacory Barney Jr.",
+     {
+      "LONG": 35.0,
+      "REC": 27.0,
+      "TD": 2.0,
+      "YDS": 341.0,
+      "YPR": 12.6
+     }
+    ],
+    [
+     "Luke Lindenmeyer",
+     {
+      "LONG": 33.0,
+      "REC": 19.0,
+      "TD": 1.0,
+      "YDS": 161.0,
+      "YPR": 8.5
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Jahsear Whittington",
+     {
+      "PD": 0.0,
+      "QB HUR": 4.0,
+      "SACKS": 2.5,
+      "SOLO": 2.0,
+      "TD": 0.0,
+      "TFL": 2.5,
+      "TOT": 10.0
+     }
+    ],
+    [
+     "Riley Van Poppel",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 2.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 7.0
+     }
+    ],
+    [
+     "Williams Nwaneri",
+     {
+      "PD": 1.0,
+      "QB HUR": 5.0,
+      "SACKS": 2.0,
+      "SOLO": 4.0,
+      "TD": 0.0,
+      "TFL": 3.0,
+      "TOT": 6.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Jamir Conn",
+     {
+      "PD": 1.0,
+      "QB HUR": 0.0,
+      "SACKS": 2.0,
+      "SOLO": 14.0,
+      "TD": 0.0,
+      "TFL": 5.0,
+      "TOT": 26.0
+     }
+    ],
+    [
+     "Donovan Jones",
+     {
+      "PD": 3.0,
+      "QB HUR": 2.0,
+      "SACKS": 2.0,
+      "SOLO": 18.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 26.0
+     }
+    ],
+    [
+     "Riley Van Poppel",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 2.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 7.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Oregon",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Boise State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 34-27",
+    "offense": {
+     "plays": 64,
+     "dropbacks": 40,
+     "sacks": 1,
+     "att": 39,
+     "comp": 29,
+     "pass_yds": 387,
+     "ypa": 9.9,
+     "ypc": 13.3,
+     "p20": 7,
+     "p30": 4,
+     "deep_att": 7,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 24,
+     "rush_yds": 126,
+     "ypr": 5.2,
+     "r10": 3,
+     "stuffs": 3,
+     "t3": "4/12",
+     "t3_long": "2/8",
+     "t3_short": "2/4",
+     "rz": "2/3",
+     "ppa": 0.188,
+     "box_rush": {
+      "att": 25,
+      "yds": 119,
+      "ypc": 4.8
+     }
+    },
+    "defense": {
+     "plays": 66,
+     "dropbacks": 32,
+     "sacks": 3,
+     "att": 29,
+     "comp": 15,
+     "pass_yds": 181,
+     "ypa": 6.2,
+     "ypc": 12.1,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 34,
+     "rush_yds": 110,
+     "ypr": 3.2,
+     "r10": 0,
+     "stuffs": 4,
+     "t3": "4/15",
+     "t3_long": "1/6",
+     "t3_short": "2/3",
+     "rz": "2/4",
+     "ppa": 0.067,
+     "box_rush": {
+      "att": 36,
+      "yds": 93,
+      "ypc": 2.6
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Oklahoma State",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "L 31-39",
+    "offense": {
+     "plays": 60,
+     "dropbacks": 33,
+     "sacks": 4,
+     "att": 29,
+     "comp": 14,
+     "pass_yds": 191,
+     "ypa": 6.6,
+     "ypc": 13.6,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 5,
+     "deep_comp": 4,
+     "ints": 0,
+     "rushes": 27,
+     "rush_yds": 114,
+     "ypr": 4.2,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "5/15",
+     "t3_long": "1/10",
+     "t3_short": "2/2",
+     "rz": "1/1",
+     "ppa": -0.114,
+     "box_rush": {
+      "att": 30,
+      "yds": 90,
+      "ypc": 3.0
+     }
+    },
+    "defense": {
+     "plays": 86,
+     "dropbacks": 45,
+     "sacks": 0,
+     "att": 45,
+     "comp": 26,
+     "pass_yds": 317,
+     "ypa": 7.0,
+     "ypc": 12.2,
+     "p20": 6,
+     "p30": 5,
+     "deep_att": 4,
+     "deep_comp": 2,
+     "ints": 2,
+     "rushes": 41,
+     "rush_yds": 235,
+     "ypr": 5.7,
+     "r10": 5,
+     "stuffs": 7,
+     "t3": "6/18",
+     "t3_long": "1/8",
+     "t3_short": "3/6",
+     "rz": "2/7",
+     "ppa": -0.041,
+     "box_rush": {
+      "att": 40,
+      "yds": 237,
+      "ypc": 5.9
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Portland State",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 84-0",
+    "offense": {
+     "plays": 94,
+     "dropbacks": 46,
+     "sacks": 2,
+     "att": 44,
+     "comp": 36,
+     "pass_yds": 453,
+     "ypa": 10.3,
+     "ypc": 12.6,
+     "p20": 7,
+     "p30": 2,
+     "deep_att": 8,
+     "deep_comp": 4,
+     "ints": 0,
+     "rushes": 48,
+     "rush_yds": 282,
+     "ypr": 5.9,
+     "r10": 8,
+     "stuffs": 2,
+     "t3": "11/14",
+     "t3_long": "4/6",
+     "t3_short": "3/3",
+     "rz": "10/10",
+     "ppa": 0.614,
+     "box_rush": {
+      "att": 51,
+      "yds": 273,
+      "ypc": 5.4
+     }
+    },
+    "defense": {
+     "plays": 37,
+     "dropbacks": 22,
+     "sacks": 2,
+     "att": 20,
+     "comp": 8,
+     "pass_yds": 101,
+     "ypa": 5.0,
+     "ypc": 12.6,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 3,
+     "rushes": 15,
+     "rush_yds": 17,
+     "ypr": 1.1,
+     "r10": 0,
+     "stuffs": 7,
+     "t3": "0/9",
+     "t3_long": "0/7",
+     "t3_short": "0/1",
+     "rz": "0/0",
+     "ppa": -0.58,
+     "box_rush": {
+      "att": 17,
+      "yds": 2,
+      "ypc": 0.1
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "USC",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 41-27",
+    "offense": {
+     "plays": 67,
+     "dropbacks": 35,
+     "sacks": 0,
+     "att": 35,
+     "comp": 27,
+     "pass_yds": 366,
+     "ypa": 10.5,
+     "ypc": 13.6,
+     "p20": 6,
+     "p30": 3,
+     "deep_att": 5,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 32,
+     "rush_yds": 129,
+     "ypr": 4.0,
+     "r10": 3,
+     "stuffs": 7,
+     "t3": "6/12",
+     "t3_long": "3/7",
+     "t3_short": "1/3",
+     "rz": "4/6",
+     "ppa": 0.452,
+     "box_rush": {
+      "att": 33,
+      "yds": 138,
+      "ypc": 4.2
+     }
+    },
+    "defense": {
+     "plays": 75,
+     "dropbacks": 44,
+     "sacks": 2,
+     "att": 42,
+     "comp": 23,
+     "pass_yds": 326,
+     "ypa": 7.8,
+     "ypc": 14.2,
+     "p20": 6,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 31,
+     "rush_yds": 130,
+     "ypr": 4.2,
+     "r10": 4,
+     "stuffs": 5,
+     "t3": "2/11",
+     "t3_long": "1/7",
+     "t3_short": "0/2",
+     "rz": "2/4",
+     "ppa": 0.271,
+     "box_rush": {
+      "att": 33,
+      "yds": 120,
+      "ypc": 3.6
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "UCLA",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "L 15-17",
+    "offense": {
+     "plays": 59,
+     "dropbacks": 33,
+     "sacks": 0,
+     "att": 33,
+     "comp": 15,
+     "pass_yds": 162,
+     "ypa": 4.9,
+     "ypc": 10.8,
+     "p20": 2,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 2,
+     "rushes": 26,
+     "rush_yds": 79,
+     "ypr": 3.0,
+     "r10": 2,
+     "stuffs": 9,
+     "t3": "1/12",
+     "t3_long": "0/9",
+     "t3_short": "1/2",
+     "rz": "1/3",
+     "ppa": -0.358,
+     "box_rush": {
+      "att": 27,
+      "yds": 73,
+      "ypc": 2.7
+     }
+    },
+    "defense": {
+     "plays": 70,
+     "dropbacks": 25,
+     "sacks": 2,
+     "att": 23,
+     "comp": 13,
+     "pass_yds": 205,
+     "ypa": 8.9,
+     "ypc": 15.8,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 4,
+     "deep_comp": 3,
+     "ints": 2,
+     "rushes": 45,
+     "rush_yds": 160,
+     "ypr": 3.6,
+     "r10": 3,
+     "stuffs": 10,
+     "t3": "4/16",
+     "t3_long": "1/6",
+     "t3_short": "2/3",
+     "rz": "1/4",
+     "ppa": -0.141,
+     "box_rush": {
+      "att": 47,
+      "yds": 140,
+      "ypc": 3.0
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 344,
+   "dropbacks": 187,
+   "sacks": 7,
+   "att": 180,
+   "comp": 121,
+   "pass_yds": 1559,
+   "p20": 26,
+   "p30": 13,
+   "deep_att": 28,
+   "deep_comp": 14,
+   "ints": 2,
+   "rushes": 157,
+   "rush_yds": 730,
+   "r10": 20,
+   "stuffs": 25,
+   "box_att": 166,
+   "box_yds": 693,
+   "box_ypc": 4.2,
+   "ypa": 8.7,
+   "ypr": 4.6,
+   "sack_rate": 3.7,
+   "p20_rate": 13.9,
+   "r10_rate": 12.7,
+   "stuff_rate": 15.9,
+   "deep_rate": 15.6,
+   "t3": "27/65",
+   "t3_long": "10/40",
+   "t3_short": "9/14",
+   "rz": "18/23"
+  },
+  "defense": {
+   "plays": 334,
+   "dropbacks": 168,
+   "sacks": 9,
+   "att": 159,
+   "comp": 85,
+   "pass_yds": 1130,
+   "p20": 21,
+   "p30": 9,
+   "deep_att": 16,
+   "deep_comp": 8,
+   "ints": 8,
+   "rushes": 166,
+   "rush_yds": 652,
+   "r10": 12,
+   "stuffs": 33,
+   "box_att": 173,
+   "box_yds": 592,
+   "box_ypc": 3.4,
+   "ypa": 7.1,
+   "ypr": 3.9,
+   "sack_rate": 5.4,
+   "p20_rate": 12.5,
+   "r10_rate": 7.2,
+   "stuff_rate": 19.9,
+   "deep_rate": 10.1,
+   "t3": "16/69",
+   "t3_long": "4/34",
+   "t3_short": "7/15",
+   "rz": "7/19"
+  },
+  "offense_vs_fbs": {
+   "plays": 250,
+   "dropbacks": 141,
+   "sacks": 5,
+   "att": 136,
+   "comp": 85,
+   "pass_yds": 1106,
+   "p20": 19,
+   "p30": 11,
+   "deep_att": 20,
+   "deep_comp": 10,
+   "ints": 2,
+   "rushes": 109,
+   "rush_yds": 448,
+   "r10": 12,
+   "stuffs": 23,
+   "box_att": 115,
+   "box_yds": 420,
+   "box_ypc": 3.7,
+   "ypa": 8.1,
+   "ypr": 4.1,
+   "sack_rate": 3.5,
+   "p20_rate": 13.5,
+   "r10_rate": 11.0,
+   "stuff_rate": 21.1,
+   "deep_rate": 14.7,
+   "t3": "16/51",
+   "t3_long": "6/34",
+   "t3_short": "6/11",
+   "rz": "8/13"
+  },
+  "defense_vs_fbs": {
+   "plays": 297,
+   "dropbacks": 146,
+   "sacks": 7,
+   "att": 139,
+   "comp": 77,
+   "pass_yds": 1029,
+   "p20": 19,
+   "p30": 8,
+   "deep_att": 13,
+   "deep_comp": 7,
+   "ints": 5,
+   "rushes": 151,
+   "rush_yds": 635,
+   "r10": 12,
+   "stuffs": 26,
+   "box_att": 156,
+   "box_yds": 590,
+   "box_ypc": 3.8,
+   "ypa": 7.4,
+   "ypr": 4.2,
+   "sack_rate": 4.8,
+   "p20_rate": 13.0,
+   "r10_rate": 7.9,
+   "stuff_rate": 17.2,
+   "deep_rate": 9.4,
+   "t3": "16/60",
+   "t3_long": "4/27",
+   "t3_short": "7/14",
+   "rz": "7/19"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Dante Moore",
+     {
+      "ATT": 99.0,
+      "COMPLETIONS": 69.0,
+      "INT": 0.0,
+      "PCT": 0.697,
+      "TD": 9.0,
+      "YDS": 926.0,
+      "YPA": 9.4
+     }
+    ],
+    [
+     "Dylan Raiola",
+     {
+      "ATT": 55.0,
+      "COMPLETIONS": 36.0,
+      "INT": 2.0,
+      "PCT": 0.655,
+      "TD": 5.0,
+      "YDS": 456.0,
+      "YPA": 8.3
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Jordon Davison",
+     {
+      "CAR": 62.0,
+      "LONG": 45.0,
+      "TD": 6.0,
+      "YDS": 301.0,
+      "YPC": 4.9
+     }
+    ],
+    [
+     "Dierre Hill Jr.",
+     {
+      "CAR": 52.0,
+      "LONG": 16.0,
+      "TD": 3.0,
+      "YDS": 228.0,
+      "YPC": 4.4
+     }
+    ],
+    [
+     "Brandon Smith",
+     {
+      "CAR": 16.0,
+      "LONG": 11.0,
+      "TD": 1.0,
+      "YDS": 71.0,
+      "YPC": 4.4
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Evan Stewart",
+     {
+      "LONG": 44.0,
+      "REC": 27.0,
+      "TD": 4.0,
+      "YDS": 352.0,
+      "YPR": 13.0
+     }
+    ],
+    [
+     "Dakorien Moore",
+     {
+      "LONG": 62.0,
+      "REC": 18.0,
+      "TD": 4.0,
+      "YDS": 311.0,
+      "YPR": 17.3
+     }
+    ],
+    [
+     "Jamari Johnson",
+     {
+      "LONG": 37.0,
+      "REC": 12.0,
+      "TD": 1.0,
+      "YDS": 189.0,
+      "YPR": 15.8
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Matayo Uiagalelei",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 4.0,
+      "SOLO": 8.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 18.0
+     }
+    ],
+    [
+     "Bear Alexander",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 2.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 3.0,
+      "TOT": 23.0
+     }
+    ],
+    [
+     "Teitum Tuioti",
+     {
+      "PD": 0.0,
+      "QB HUR": 6.0,
+      "SACKS": 1.0,
+      "SOLO": 12.0,
+      "TD": 0.0,
+      "TFL": 3.0,
+      "TOT": 26.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Matayo Uiagalelei",
+     {
+      "PD": 0.0,
+      "QB HUR": 2.0,
+      "SACKS": 4.0,
+      "SOLO": 8.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 18.0
+     }
+    ],
+    [
+     "Bear Alexander",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 2.0,
+      "SOLO": 6.0,
+      "TD": 0.0,
+      "TFL": 3.0,
+      "TOT": 23.0
+     }
+    ],
+    [
+     "Teitum Tuioti",
+     {
+      "PD": 0.0,
+      "QB HUR": 6.0,
+      "SACKS": 1.0,
+      "SOLO": 12.0,
+      "TD": 0.0,
+      "TFL": 3.0,
+      "TOT": 26.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Miami",
+  "games": [
+   {
+    "week": 1,
+    "opp": "Stanford",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 45-6",
+    "offense": {
+     "plays": 67,
+     "dropbacks": 35,
+     "sacks": 0,
+     "att": 35,
+     "comp": 30,
+     "pass_yds": 428,
+     "ypa": 12.2,
+     "ypc": 14.3,
+     "p20": 6,
+     "p30": 4,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 32,
+     "rush_yds": 121,
+     "ypr": 3.8,
+     "r10": 3,
+     "stuffs": 6,
+     "t3": "8/11",
+     "t3_long": "2/3",
+     "t3_short": "1/1",
+     "rz": "3/3",
+     "ppa": 0.499,
+     "box_rush": {
+      "att": 32,
+      "yds": 121,
+      "ypc": 3.8
+     }
+    },
+    "defense": {
+     "plays": 65,
+     "dropbacks": 43,
+     "sacks": 1,
+     "att": 42,
+     "comp": 22,
+     "pass_yds": 221,
+     "ypa": 5.3,
+     "ypc": 10.0,
+     "p20": 2,
+     "p30": 0,
+     "deep_att": 7,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 22,
+     "rush_yds": 83,
+     "ypr": 3.8,
+     "r10": 1,
+     "stuffs": 5,
+     "t3": "5/15",
+     "t3_long": "4/12",
+     "t3_short": "1/2",
+     "rz": "0/2",
+     "ppa": 0.021,
+     "box_rush": {
+      "att": 23,
+      "yds": 78,
+      "ypc": 3.4
+     }
+    }
+   },
+   {
+    "week": 2,
+    "opp": "Florida A&M",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 77-7",
+    "offense": {
+     "plays": 71,
+     "dropbacks": 27,
+     "sacks": 0,
+     "att": 27,
+     "comp": 25,
+     "pass_yds": 411,
+     "ypa": 15.2,
+     "ypc": 16.4,
+     "p20": 6,
+     "p30": 4,
+     "deep_att": 6,
+     "deep_comp": 5,
+     "ints": 0,
+     "rushes": 44,
+     "rush_yds": 428,
+     "ypr": 9.7,
+     "r10": 16,
+     "stuffs": 2,
+     "t3": "1/2",
+     "t3_long": "0/1",
+     "t3_short": "0/0",
+     "rz": "5/7",
+     "ppa": 0.777,
+     "box_rush": {
+      "att": 44,
+      "yds": 430,
+      "ypc": 9.8
+     }
+    },
+    "defense": {
+     "plays": 46,
+     "dropbacks": 28,
+     "sacks": 2,
+     "att": 26,
+     "comp": 11,
+     "pass_yds": 70,
+     "ypa": 2.7,
+     "ypc": 6.4,
+     "p20": 0,
+     "p30": 0,
+     "deep_att": 1,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 18,
+     "rush_yds": 56,
+     "ypr": 3.1,
+     "r10": 1,
+     "stuffs": 5,
+     "t3": "1/14",
+     "t3_long": "0/9",
+     "t3_short": "1/2",
+     "rz": "0/0",
+     "ppa": -0.211,
+     "box_rush": {
+      "att": 21,
+      "yds": 37,
+      "ypc": 1.8
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Wake Forest",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 33-20",
+    "offense": {
+     "plays": 67,
+     "dropbacks": 34,
+     "sacks": 1,
+     "att": 33,
+     "comp": 29,
+     "pass_yds": 216,
+     "ypa": 6.5,
+     "ypc": 7.4,
+     "p20": 3,
+     "p30": 0,
+     "deep_att": 2,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 33,
+     "rush_yds": 159,
+     "ypr": 4.8,
+     "r10": 4,
+     "stuffs": 7,
+     "t3": "5/13",
+     "t3_long": "0/7",
+     "t3_short": "3/4",
+     "rz": "3/4",
+     "ppa": 0.276,
+     "box_rush": {
+      "att": 34,
+      "yds": 158,
+      "ypc": 4.6
+     }
+    },
+    "defense": {
+     "plays": 62,
+     "dropbacks": 49,
+     "sacks": 3,
+     "att": 46,
+     "comp": 29,
+     "pass_yds": 312,
+     "ypa": 6.8,
+     "ypc": 10.8,
+     "p20": 4,
+     "p30": 1,
+     "deep_att": 5,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 13,
+     "rush_yds": 41,
+     "ypr": 3.2,
+     "r10": 1,
+     "stuffs": 3,
+     "t3": "4/12",
+     "t3_long": "1/5",
+     "t3_short": "2/2",
+     "rz": "2/3",
+     "ppa": 0.066,
+     "box_rush": {
+      "att": 16,
+      "yds": 22,
+      "ypc": 1.4
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Central Michigan",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 52-3",
+    "offense": {
+     "plays": 67,
+     "dropbacks": 36,
+     "sacks": 2,
+     "att": 34,
+     "comp": 27,
+     "pass_yds": 371,
+     "ypa": 10.9,
+     "ypc": 13.7,
+     "p20": 8,
+     "p30": 3,
+     "deep_att": 4,
+     "deep_comp": 3,
+     "ints": 0,
+     "rushes": 31,
+     "rush_yds": 218,
+     "ypr": 7.0,
+     "r10": 6,
+     "stuffs": 2,
+     "t3": "5/10",
+     "t3_long": "3/7",
+     "t3_short": "0/0",
+     "rz": "5/7",
+     "ppa": 0.597,
+     "box_rush": {
+      "att": 34,
+      "yds": 201,
+      "ypc": 5.9
+     }
+    },
+    "defense": {
+     "plays": 50,
+     "dropbacks": 29,
+     "sacks": 3,
+     "att": 26,
+     "comp": 21,
+     "pass_yds": 137,
+     "ypa": 5.3,
+     "ypc": 6.5,
+     "p20": 2,
+     "p30": 0,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 21,
+     "rush_yds": 37,
+     "ypr": 1.8,
+     "r10": 1,
+     "stuffs": 7,
+     "t3": "6/13",
+     "t3_long": "2/7",
+     "t3_short": "1/2",
+     "rz": "0/0",
+     "ppa": -0.075,
+     "box_rush": {
+      "att": 25,
+      "yds": 21,
+      "ypc": 0.8
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Clemson",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "W 41-13",
+    "offense": {
+     "plays": 62,
+     "dropbacks": 29,
+     "sacks": 2,
+     "att": 27,
+     "comp": 18,
+     "pass_yds": 227,
+     "ypa": 8.4,
+     "ypc": 12.6,
+     "p20": 3,
+     "p30": 1,
+     "deep_att": 2,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 33,
+     "rush_yds": 199,
+     "ypr": 6.0,
+     "r10": 4,
+     "stuffs": 2,
+     "t3": "4/11",
+     "t3_long": "1/4",
+     "t3_short": "2/4",
+     "rz": "2/3",
+     "ppa": 0.283,
+     "box_rush": {
+      "att": 35,
+      "yds": 192,
+      "ypc": 5.5
+     }
+    },
+    "defense": {
+     "plays": 75,
+     "dropbacks": 50,
+     "sacks": 6,
+     "att": 44,
+     "comp": 29,
+     "pass_yds": 295,
+     "ypa": 6.7,
+     "ypc": 10.2,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 4,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 25,
+     "rush_yds": 90,
+     "ypr": 3.6,
+     "r10": 2,
+     "stuffs": 4,
+     "t3": "8/18",
+     "t3_long": "4/10",
+     "t3_short": "2/3",
+     "rz": "1/3",
+     "ppa": -0.031,
+     "box_rush": {
+      "att": 31,
+      "yds": 55,
+      "ypc": 1.8
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 334,
+   "dropbacks": 161,
+   "sacks": 5,
+   "att": 156,
+   "comp": 129,
+   "pass_yds": 1653,
+   "p20": 26,
+   "p30": 12,
+   "deep_att": 17,
+   "deep_comp": 10,
+   "ints": 1,
+   "rushes": 173,
+   "rush_yds": 1125,
+   "r10": 33,
+   "stuffs": 19,
+   "box_att": 179,
+   "box_yds": 1102,
+   "box_ypc": 6.2,
+   "ypa": 10.6,
+   "ypr": 6.5,
+   "sack_rate": 3.1,
+   "p20_rate": 16.1,
+   "r10_rate": 19.1,
+   "stuff_rate": 11.0,
+   "deep_rate": 10.9,
+   "t3": "23/47",
+   "t3_long": "6/22",
+   "t3_short": "6/9",
+   "rz": "18/24"
+  },
+  "defense": {
+   "plays": 298,
+   "dropbacks": 199,
+   "sacks": 15,
+   "att": 184,
+   "comp": 112,
+   "pass_yds": 1035,
+   "p20": 12,
+   "p30": 3,
+   "deep_att": 19,
+   "deep_comp": 4,
+   "ints": 3,
+   "rushes": 99,
+   "rush_yds": 307,
+   "r10": 6,
+   "stuffs": 24,
+   "box_att": 116,
+   "box_yds": 213,
+   "box_ypc": 1.8,
+   "ypa": 5.6,
+   "ypr": 3.1,
+   "sack_rate": 7.5,
+   "p20_rate": 6.0,
+   "r10_rate": 6.1,
+   "stuff_rate": 24.2,
+   "deep_rate": 10.3,
+   "t3": "24/72",
+   "t3_long": "11/43",
+   "t3_short": "7/11",
+   "rz": "3/8"
+  },
+  "offense_vs_fbs": {
+   "plays": 263,
+   "dropbacks": 134,
+   "sacks": 5,
+   "att": 129,
+   "comp": 104,
+   "pass_yds": 1242,
+   "p20": 20,
+   "p30": 8,
+   "deep_att": 11,
+   "deep_comp": 5,
+   "ints": 1,
+   "rushes": 129,
+   "rush_yds": 697,
+   "r10": 17,
+   "stuffs": 17,
+   "box_att": 135,
+   "box_yds": 672,
+   "box_ypc": 5.0,
+   "ypa": 9.6,
+   "ypr": 5.4,
+   "sack_rate": 3.7,
+   "p20_rate": 14.9,
+   "r10_rate": 13.2,
+   "stuff_rate": 13.2,
+   "deep_rate": 8.5,
+   "t3": "22/45",
+   "t3_long": "6/21",
+   "t3_short": "6/9",
+   "rz": "13/17"
+  },
+  "defense_vs_fbs": {
+   "plays": 252,
+   "dropbacks": 171,
+   "sacks": 13,
+   "att": 158,
+   "comp": 101,
+   "pass_yds": 965,
+   "p20": 12,
+   "p30": 3,
+   "deep_att": 18,
+   "deep_comp": 4,
+   "ints": 3,
+   "rushes": 81,
+   "rush_yds": 251,
+   "r10": 5,
+   "stuffs": 19,
+   "box_att": 95,
+   "box_yds": 176,
+   "box_ypc": 1.9,
+   "ypa": 6.1,
+   "ypr": 3.1,
+   "sack_rate": 7.6,
+   "p20_rate": 7.0,
+   "r10_rate": 6.2,
+   "stuff_rate": 23.5,
+   "deep_rate": 11.4,
+   "t3": "23/58",
+   "t3_long": "11/34",
+   "t3_short": "6/9",
+   "rz": "3/8"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Darian Mensah",
+     {
+      "ATT": 133.0,
+      "COMPLETIONS": 112.0,
+      "INT": 0.0,
+      "PCT": 0.842,
+      "TD": 15.0,
+      "YDS": 1438.0,
+      "YPA": 10.8
+     }
+    ],
+    [
+     "Luke Nickel",
+     {
+      "ATT": 20.0,
+      "COMPLETIONS": 15.0,
+      "INT": 1.0,
+      "PCT": 0.75,
+      "TD": 3.0,
+      "YDS": 204.0,
+      "YPA": 10.2
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Mark Fletcher Jr.",
+     {
+      "CAR": 52.0,
+      "LONG": 46.0,
+      "TD": 5.0,
+      "YDS": 307.0,
+      "YPC": 5.9
+     }
+    ],
+    [
+     "Javian Mallory",
+     {
+      "CAR": 39.0,
+      "LONG": 52.0,
+      "TD": 3.0,
+      "YDS": 289.0,
+      "YPC": 7.4
+     }
+    ],
+    [
+     "Chris Wheatley-Humphrey",
+     {
+      "CAR": 11.0,
+      "LONG": 35.0,
+      "TD": 1.0,
+      "YDS": 104.0,
+      "YPC": 9.5
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Malachi Toney",
+     {
+      "LONG": 52.0,
+      "REC": 39.0,
+      "TD": 6.0,
+      "YDS": 604.0,
+      "YPR": 15.5
+     }
+    ],
+    [
+     "Cooper Barkate",
+     {
+      "LONG": 61.0,
+      "REC": 19.0,
+      "TD": 4.0,
+      "YDS": 241.0,
+      "YPR": 12.7
+     }
+    ],
+    [
+     "Elija Lofton",
+     {
+      "LONG": 31.0,
+      "REC": 12.0,
+      "TD": 1.0,
+      "YDS": 134.0,
+      "YPR": 11.2
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Marquise Lightfoot",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 5.0,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 5.5,
+      "TOT": 19.0
+     }
+    ],
+    [
+     "Damon Wilson Jr.",
+     {
+      "PD": 2.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.5,
+      "SOLO": 4.0,
+      "TD": 0.0,
+      "TFL": 3.5,
+      "TOT": 5.0
+     }
+    ],
+    [
+     "Omar Thornton",
+     {
+      "PD": 1.0,
+      "QB HUR": 5.0,
+      "SACKS": 2.0,
+      "SOLO": 14.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 20.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Marquise Lightfoot",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 5.0,
+      "SOLO": 11.0,
+      "TD": 0.0,
+      "TFL": 5.5,
+      "TOT": 19.0
+     }
+    ],
+    [
+     "Omar Thornton",
+     {
+      "PD": 1.0,
+      "QB HUR": 5.0,
+      "SACKS": 2.0,
+      "SOLO": 14.0,
+      "TD": 0.0,
+      "TFL": 4.5,
+      "TOT": 20.0
+     }
+    ],
+    [
+     "Damon Wilson Jr.",
+     {
+      "PD": 2.0,
+      "QB HUR": 1.0,
+      "SACKS": 3.5,
+      "SOLO": 4.0,
+      "TD": 0.0,
+      "TFL": 3.5,
+      "TOT": 5.0
+     }
+    ]
+   ]
+  }
+ },
+ {
+  "team": "Florida State",
+  "games": [
+   {
+    "week": 1,
+    "opp": "New Mexico State",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 34-17",
+    "offense": {
+     "plays": 66,
+     "dropbacks": 28,
+     "sacks": 1,
+     "att": 27,
+     "comp": 17,
+     "pass_yds": 202,
+     "ypa": 7.5,
+     "ypc": 11.9,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 38,
+     "rush_yds": 226,
+     "ypr": 5.9,
+     "r10": 6,
+     "stuffs": 6,
+     "t3": "8/14",
+     "t3_long": "3/7",
+     "t3_short": "1/1",
+     "rz": "4/6",
+     "ppa": 0.271,
+     "box_rush": {
+      "att": 39,
+      "yds": 217,
+      "ypc": 5.6
+     }
+    },
+    "defense": {
+     "plays": 65,
+     "dropbacks": 45,
+     "sacks": 2,
+     "att": 43,
+     "comp": 26,
+     "pass_yds": 272,
+     "ypa": 6.3,
+     "ypc": 10.5,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 8,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 20,
+     "rush_yds": 72,
+     "ypr": 3.6,
+     "r10": 2,
+     "stuffs": 2,
+     "t3": "10/17",
+     "t3_long": "8/14",
+     "t3_short": "2/2",
+     "rz": "0/1",
+     "ppa": 0.134,
+     "box_rush": {
+      "att": 23,
+      "yds": 47,
+      "ypc": 2.0
+     }
+    }
+   },
+   {
+    "week": 1,
+    "opp": "SMU",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "L 24-27",
+    "offense": {
+     "plays": 67,
+     "dropbacks": 26,
+     "sacks": 3,
+     "att": 23,
+     "comp": 12,
+     "pass_yds": 123,
+     "ypa": 5.3,
+     "ypc": 10.2,
+     "p20": 2,
+     "p30": 1,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 41,
+     "rush_yds": 222,
+     "ypr": 5.4,
+     "r10": 4,
+     "stuffs": 5,
+     "t3": "2/14",
+     "t3_long": "1/8",
+     "t3_short": "0/2",
+     "rz": "2/2",
+     "ppa": 0.14,
+     "box_rush": {
+      "att": 45,
+      "yds": 199,
+      "ypc": 4.4
+     }
+    },
+    "defense": {
+     "plays": 67,
+     "dropbacks": 36,
+     "sacks": 0,
+     "att": 36,
+     "comp": 26,
+     "pass_yds": 432,
+     "ypa": 12.0,
+     "ypc": 16.6,
+     "p20": 6,
+     "p30": 4,
+     "deep_att": 0,
+     "deep_comp": 0,
+     "ints": 2,
+     "rushes": 31,
+     "rush_yds": 155,
+     "ypr": 5.0,
+     "r10": 3,
+     "stuffs": 4,
+     "t3": "8/14",
+     "t3_long": "6/10",
+     "t3_short": "2/2",
+     "rz": "1/4",
+     "ppa": 0.362,
+     "box_rush": {
+      "att": 31,
+      "yds": 155,
+      "ypc": 5.0
+     }
+    }
+   },
+   {
+    "week": 3,
+    "opp": "Alabama",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "L 36-50",
+    "offense": {
+     "plays": 64,
+     "dropbacks": 32,
+     "sacks": 3,
+     "att": 29,
+     "comp": 17,
+     "pass_yds": 377,
+     "ypa": 13.0,
+     "ypc": 22.2,
+     "p20": 9,
+     "p30": 6,
+     "deep_att": 6,
+     "deep_comp": 4,
+     "ints": 3,
+     "rushes": 32,
+     "rush_yds": 114,
+     "ypr": 3.6,
+     "r10": 3,
+     "stuffs": 8,
+     "t3": "8/14",
+     "t3_long": "4/9",
+     "t3_short": "3/4",
+     "rz": "5/5",
+     "ppa": 0.162,
+     "box_rush": {
+      "att": 35,
+      "yds": 94,
+      "ypc": 2.7
+     }
+    },
+    "defense": {
+     "plays": 68,
+     "dropbacks": 32,
+     "sacks": 1,
+     "att": 31,
+     "comp": 23,
+     "pass_yds": 301,
+     "ypa": 9.7,
+     "ypc": 13.1,
+     "p20": 4,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 1,
+     "ints": 0,
+     "rushes": 36,
+     "rush_yds": 256,
+     "ypr": 7.1,
+     "r10": 9,
+     "stuffs": 9,
+     "t3": "4/12",
+     "t3_long": "1/7",
+     "t3_short": "1/2",
+     "rz": "3/4",
+     "ppa": 0.449,
+     "box_rush": {
+      "att": 36,
+      "yds": 247,
+      "ypc": 6.9
+     }
+    }
+   },
+   {
+    "week": 4,
+    "opp": "Central Arkansas",
+    "site": "vs",
+    "opp_class": "fcs",
+    "result": "W 34-7",
+    "offense": {
+     "plays": 48,
+     "dropbacks": 21,
+     "sacks": 1,
+     "att": 20,
+     "comp": 14,
+     "pass_yds": 238,
+     "ypa": 11.9,
+     "ypc": 17.0,
+     "p20": 5,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 2,
+     "ints": 1,
+     "rushes": 27,
+     "rush_yds": 189,
+     "ypr": 7.0,
+     "r10": 8,
+     "stuffs": 2,
+     "t3": "2/5",
+     "t3_long": "0/2",
+     "t3_short": "1/1",
+     "rz": "2/4",
+     "ppa": 0.412,
+     "box_rush": {
+      "att": 28,
+      "yds": 179,
+      "ypc": 6.4
+     }
+    },
+    "defense": {
+     "plays": 72,
+     "dropbacks": 32,
+     "sacks": 3,
+     "att": 29,
+     "comp": 14,
+     "pass_yds": 131,
+     "ypa": 4.5,
+     "ypc": 9.4,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 2,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 40,
+     "rush_yds": 129,
+     "ypr": 3.2,
+     "r10": 2,
+     "stuffs": 8,
+     "t3": "5/16",
+     "t3_long": "1/12",
+     "t3_short": "3/3",
+     "rz": "1/1",
+     "ppa": -0.05,
+     "box_rush": {
+      "att": 43,
+      "yds": 110,
+      "ypc": 2.6
+     }
+    }
+   },
+   {
+    "week": 5,
+    "opp": "Virginia",
+    "site": "vs",
+    "opp_class": "fbs",
+    "result": "W 38-7",
+    "offense": {
+     "plays": 65,
+     "dropbacks": 23,
+     "sacks": 4,
+     "att": 19,
+     "comp": 12,
+     "pass_yds": 183,
+     "ypa": 9.6,
+     "ypc": 15.2,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 4,
+     "deep_comp": 1,
+     "ints": 1,
+     "rushes": 42,
+     "rush_yds": 313,
+     "ypr": 7.5,
+     "r10": 9,
+     "stuffs": 4,
+     "t3": "6/12",
+     "t3_long": "0/3",
+     "t3_short": "4/4",
+     "rz": "4/4",
+     "ppa": 0.335,
+     "box_rush": {
+      "att": 46,
+      "yds": 281,
+      "ypc": 6.1
+     }
+    },
+    "defense": {
+     "plays": 71,
+     "dropbacks": 42,
+     "sacks": 10,
+     "att": 32,
+     "comp": 14,
+     "pass_yds": 168,
+     "ypa": 5.2,
+     "ypc": 12.0,
+     "p20": 1,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 0,
+     "rushes": 29,
+     "rush_yds": 104,
+     "ypr": 3.6,
+     "r10": 1,
+     "stuffs": 7,
+     "t3": "3/15",
+     "t3_long": "1/13",
+     "t3_short": "0/0",
+     "rz": "1/3",
+     "ppa": -0.29,
+     "box_rush": {
+      "att": 40,
+      "yds": 37,
+      "ypc": 0.9
+     }
+    }
+   },
+   {
+    "week": 6,
+    "opp": "Louisville",
+    "site": "at",
+    "opp_class": "fbs",
+    "result": "L 20-44",
+    "offense": {
+     "plays": 77,
+     "dropbacks": 42,
+     "sacks": 4,
+     "att": 38,
+     "comp": 21,
+     "pass_yds": 209,
+     "ypa": 5.5,
+     "ypc": 10.0,
+     "p20": 3,
+     "p30": 0,
+     "deep_att": 3,
+     "deep_comp": 0,
+     "ints": 1,
+     "rushes": 35,
+     "rush_yds": 171,
+     "ypr": 4.9,
+     "r10": 4,
+     "stuffs": 4,
+     "t3": "7/17",
+     "t3_long": "3/9",
+     "t3_short": "4/5",
+     "rz": "2/3",
+     "ppa": 0.035,
+     "box_rush": {
+      "att": 39,
+      "yds": 153,
+      "ypc": 3.9
+     }
+    },
+    "defense": {
+     "plays": 58,
+     "dropbacks": 16,
+     "sacks": 1,
+     "att": 15,
+     "comp": 11,
+     "pass_yds": 140,
+     "ypa": 9.3,
+     "ypc": 12.7,
+     "p20": 3,
+     "p30": 2,
+     "deep_att": 3,
+     "deep_comp": 2,
+     "ints": 0,
+     "rushes": 42,
+     "rush_yds": 402,
+     "ypr": 9.6,
+     "r10": 11,
+     "stuffs": 8,
+     "t3": "4/9",
+     "t3_long": "1/5",
+     "t3_short": "2/2",
+     "rz": "3/4",
+     "ppa": 0.46,
+     "box_rush": {
+      "att": 43,
+      "yds": 397,
+      "ypc": 9.2
+     }
+    }
+   }
+  ],
+  "offense": {
+   "plays": 387,
+   "dropbacks": 172,
+   "sacks": 16,
+   "att": 156,
+   "comp": 93,
+   "pass_yds": 1332,
+   "p20": 26,
+   "p30": 13,
+   "deep_att": 19,
+   "deep_comp": 9,
+   "ints": 7,
+   "rushes": 215,
+   "rush_yds": 1235,
+   "r10": 34,
+   "stuffs": 29,
+   "box_att": 232,
+   "box_yds": 1123,
+   "box_ypc": 4.8,
+   "ypa": 8.5,
+   "ypr": 5.7,
+   "sack_rate": 9.3,
+   "p20_rate": 15.1,
+   "r10_rate": 15.8,
+   "stuff_rate": 13.5,
+   "deep_rate": 12.2,
+   "t3": "33/76",
+   "t3_long": "11/38",
+   "t3_short": "13/17",
+   "rz": "19/24"
+  },
+  "defense": {
+   "plays": 401,
+   "dropbacks": 203,
+   "sacks": 17,
+   "att": 186,
+   "comp": 114,
+   "pass_yds": 1444,
+   "p20": 19,
+   "p30": 10,
+   "deep_att": 19,
+   "deep_comp": 4,
+   "ints": 3,
+   "rushes": 198,
+   "rush_yds": 1118,
+   "r10": 28,
+   "stuffs": 38,
+   "box_att": 216,
+   "box_yds": 993,
+   "box_ypc": 4.6,
+   "ypa": 7.8,
+   "ypr": 5.6,
+   "sack_rate": 8.4,
+   "p20_rate": 9.4,
+   "r10_rate": 14.1,
+   "stuff_rate": 19.2,
+   "deep_rate": 10.2,
+   "t3": "34/83",
+   "t3_long": "18/61",
+   "t3_short": "10/11",
+   "rz": "9/17"
+  },
+  "offense_vs_fbs": {
+   "plays": 339,
+   "dropbacks": 151,
+   "sacks": 15,
+   "att": 136,
+   "comp": 79,
+   "pass_yds": 1094,
+   "p20": 21,
+   "p30": 11,
+   "deep_att": 16,
+   "deep_comp": 7,
+   "ints": 6,
+   "rushes": 188,
+   "rush_yds": 1046,
+   "r10": 26,
+   "stuffs": 27,
+   "box_att": 204,
+   "box_yds": 944,
+   "box_ypc": 4.6,
+   "ypa": 8.0,
+   "ypr": 5.6,
+   "sack_rate": 9.9,
+   "p20_rate": 13.9,
+   "r10_rate": 13.8,
+   "stuff_rate": 14.4,
+   "deep_rate": 11.8,
+   "t3": "31/71",
+   "t3_long": "11/36",
+   "t3_short": "12/16",
+   "rz": "17/20"
+  },
+  "defense_vs_fbs": {
+   "plays": 329,
+   "dropbacks": 171,
+   "sacks": 14,
+   "att": 157,
+   "comp": 100,
+   "pass_yds": 1313,
+   "p20": 18,
+   "p30": 10,
+   "deep_att": 17,
+   "deep_comp": 4,
+   "ints": 3,
+   "rushes": 158,
+   "rush_yds": 989,
+   "r10": 26,
+   "stuffs": 30,
+   "box_att": 173,
+   "box_yds": 883,
+   "box_ypc": 5.1,
+   "ypa": 8.4,
+   "ypr": 6.3,
+   "sack_rate": 8.2,
+   "p20_rate": 10.5,
+   "r10_rate": 16.5,
+   "stuff_rate": 19.0,
+   "deep_rate": 10.8,
+   "t3": "29/67",
+   "t3_long": "17/49",
+   "t3_short": "7/8",
+   "rz": "8/16"
+  },
+  "leaders": {
+   "passing": [
+    [
+     "Ashton Daniels",
+     {
+      "ATT": 153.0,
+      "COMPLETIONS": 91.0,
+      "INT": 7.0,
+      "PCT": 0.595,
+      "TD": 8.0,
+      "YDS": 1320.0,
+      "YPA": 8.6
+     }
+    ],
+    [
+     "Kevin Sperry",
+     {
+      "ATT": 3.0,
+      "COMPLETIONS": 2.0,
+      "INT": 0.0,
+      "PCT": 0.667,
+      "TD": 0.0,
+      "YDS": 14.0,
+      "YPA": 4.7
+     }
+    ]
+   ],
+   "rushing": [
+    [
+     "Ousmane Kromah",
+     {
+      "CAR": 100.0,
+      "LONG": 54.0,
+      "TD": 5.0,
+      "YDS": 565.0,
+      "YPC": 5.7
+     }
+    ],
+    [
+     "Ashton Daniels",
+     {
+      "CAR": 70.0,
+      "LONG": 81.0,
+      "TD": 10.0,
+      "YDS": 323.0,
+      "YPC": 4.6
+     }
+    ],
+    [
+     "Tre Wisner",
+     {
+      "CAR": 29.0,
+      "LONG": 16.0,
+      "TD": 0.0,
+      "YDS": 141.0,
+      "YPC": 4.9
+     }
+    ]
+   ],
+   "receiving": [
+    [
+     "Jayvan Boggs",
+     {
+      "LONG": 35.0,
+      "REC": 16.0,
+      "TD": 1.0,
+      "YDS": 299.0,
+      "YPR": 18.7
+     }
+    ],
+    [
+     "Duce Robinson",
+     {
+      "LONG": 40.0,
+      "REC": 17.0,
+      "TD": 2.0,
+      "YDS": 294.0,
+      "YPR": 17.3
+     }
+    ],
+    [
+     "Micahi Danzy",
+     {
+      "LONG": 56.0,
+      "REC": 19.0,
+      "TD": 2.0,
+      "YDS": 293.0,
+      "YPR": 15.4
+     }
+    ]
+   ],
+   "sacks": [
+    [
+     "Rylan Kennedy",
+     {
+      "PD": 1.0,
+      "QB HUR": 1.0,
+      "SACKS": 5.0,
+      "SOLO": 8.0,
+      "TD": 0.0,
+      "TFL": 7.5,
+      "TOT": 12.0
+     }
+    ],
+    [
+     "Mikai Gbayor",
+     {
+      "PD": 0.0,
+      "QB HUR": 3.0,
+      "SACKS": 2.0,
+      "SOLO": 16.0,
+      "TD": 0.0,
+      "TFL": 5.0,
+      "TOT": 26.0
+     }
+    ],
+    [
+     "Mandrell Desir",
+     {
+      "PD": 0.0,
+      "QB HUR": 1.0,
+      "SACKS": 2.0,
+      "SOLO": 7.0,
+      "TD": 0.0,
+      "TFL": 2.5,
+      "TOT": 14.0
+     }
+    ]
+   ],
+   "tfl": [
+    [
+     "Rylan Kennedy",
+     {
+      "PD": 1.0,
+      "QB HUR": 1.0,
+      "SACKS": 5.0,
+      "SOLO": 8.0,
+      "TD": 0.0,
+      "TFL": 7.5,
+      "TOT": 12.0
+     }
+    ],
+    [
+     "Mikai Gbayor",
+     {
+      "PD": 0.0,
+      "QB HUR": 3.0,
+      "SACKS": 2.0,
+      "SOLO": 16.0,
+      "TD": 0.0,
+      "TFL": 5.0,
+      "TOT": 26.0
+     }
+    ],
+    [
+     "Deante McCray",
+     {
+      "PD": 1.0,
+      "QB HUR": 0.0,
+      "SACKS": 1.0,
+      "SOLO": 5.0,
+      "TD": 0.0,
+      "TFL": 4.0,
+      "TOT": 10.0
+     }
+    ]
+   ]
+  }
+ }
+]

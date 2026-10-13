@@ -157,6 +157,7 @@ TEAMS = {
     "ND": dict(code="ND", color=(0x0C, 0x23, 0x40), logo="notredame.png"),
     "SMU": dict(code="SMU", color=(0x00, 0x33, 0xA0), logo="smu.png"),
     "FSU": dict(code="FSU", color=(0x78, 0x2F, 0x40), logo="fsu.png"),
+    "MIA": dict(code="MIA", color=(0x00, 0x50, 0x30), logo="miami.png"),
     "OSU": dict(code="OSU", color=(0xBB, 0x00, 0x00), logo="ohiostate.png"),
     "TEX": dict(code="TEX", color=(0xBF, 0x57, 0x00), logo="texas.png"),
     "OU": dict(code="OU", color=(0x84, 0x16, 0x17), logo="oklahoma.png"),
@@ -189,7 +190,7 @@ NAME2CODE = {"North Carolina": "UNC", "TCU": "TCU", "NC State": "NCSU",
              "Baylor": "BAY", "Auburn": "AUB", "Clemson": "CLEM",
              "LSU": "LSU", "Louisville": "LOU", "Ole Miss": "MISS",
              "Wisconsin": "WIS", "Notre Dame": "ND", "SMU": "SMU",
-             "Florida State": "FSU", "Ohio State": "OSU", "Texas": "TEX",
+             "Florida State": "FSU", "Miami": "MIA", "Ohio State": "OSU", "Texas": "TEX",
              "Oklahoma": "OU", "Michigan": "MICH", "Arizona State": "ASU",
              "Texas A&M": "TAMU", "Arizona": "ARIZ", "BYU": "BYU",
              "Alabama": "BAMA", "Kentucky": "UK", "Florida": "FLA",
@@ -1077,7 +1078,7 @@ _GAMES_WK5 = [  # Week 5 — Lucas's card (Sun 9/27) in COREY'S deck order (9/30
     ),
 ]
 
-GAMES = [  # Week 6 — Lucas's card (Sun 10/4) in COREY'S order (his deck, read Wed 10/7): IND-NEB, A&M-MIZ, UCLA-ORE, UGA-BAMA, USC-PSU; numbers are the Sunday publish pull (card_data overrides machine/market at build)
+_GAMES_WK6 = [  # Week 6 — Lucas's card (Sun 10/4) in COREY'S order (his deck, read Wed 10/7): IND-NEB, A&M-MIZ, UCLA-ORE, UGA-BAMA, USC-PSU; numbers are the Sunday publish pull (card_data overrides machine/market at build)
     dict(
         a="IND", b="NEB", vs="at", title="Indiana at Nebraska",
         cfbd=("Indiana", "Nebraska"),
@@ -1194,6 +1195,123 @@ GAMES = [  # Week 6 — Lucas's card (Sun 10/4) in COREY'S order (his deck, read
         keys_b=["Becht has to find the offense", "Run defense, one week later", "Third down — 39%", "The red zone"],
     ),
 ]
+GAMES = [  # Week 7 — Lucas's card (Sun 10/11) in HIS order until Corey's deck posts: OSU-IND, ND-BYU, BAMA-TENN, MIZ-MISS, NEB-ORE; numbers are the Sunday publish pull (card_data overrides machine/market at build)
+    dict(
+        a="OSU", b="IND", vs="at", title="Ohio State at Indiana",
+        cfbd=("Ohio State", "Indiana"),
+        where="Bloomington · Memorial Stadium",
+        sub="Sat Oct 17 · 12:00 ET · Ohio State 5–1 at Indiana 6–0 — No. 4 at No. 5",
+        machine="Ohio State –2.5", market="Ohio State –3.5", value="1 to Indiana — same side as the market, smaller number",
+        wp=("OSU", 56, "IND", 44),
+        decides=["Sayin 10.9 a throw, 17 TD, 2 INT — against a rush at 9.4% sacks and a front allowing 2.3 a carry",
+                 "Hoover 10.6 a throw, 17 TD, 0 INT; Indiana runs for 6.1 a carry (Turbo Richard 8.4)",
+                 "Ohio State's defense allows 4.8 a throw, first in the country, and 13.2 a game",
+                 "Indiana's last two Big Ten games were won by 6 and 3; Ohio State's margins since Texas: 56, 23, 17, 29"],
+        ctx_a=dict(coach="Day, year 8 · Arthur Smith calls the plays",
+                   qb="Julian Sayin, year 2 · 10.9 a throw, 17 TD, 2 INT",
+                   roster="three OL starters back · defensive exodus, Patricia's second year"),
+        ctx_b=dict(coach="Cignetti, year 3",
+                   qb="Josh Hoover (from TCU) · 10.6 a throw, 17 TD, 0 INT",
+                   roster="17% of last year's production back — the least on last week's card"),
+        matters="No. 4 at No. 5 — the Big Ten's two unbeatens in the league, and the winner holds the road to Indianapolis",
+        because="July had Ohio State by 5.6 and both have slipped about a point since — 2.6 after the home field, and the plays call it even",
+        honesty="Machine Ohio State −2.6, market −3.5. In July the machine had Ohio State ahead by 5.6; since then Ohio State −1.0, Indiana −0.5. Play by play sides with Ohio State less than the scoreboard does: 0.0 against the machine's 2.6, so the 50/50 blend is Ohio State by 1.3 — a coin flip the machine is calling by a field goal.",
+        keys_a=["Sayin to Smith against a secondary allowing 7.0 a throw", "Hold Richard under 5 a carry", "The red zone — Indiana scores on 15 of 21 trips"],
+        keys_b=["Hoover's zero picks against the No. 1 pass defense", "The front: 2.3 a carry allowed and 9.4% sacks — make Sayin hold it", "Run it — 6.1 a carry against a front at 3.9 allowed"],
+    ),
+    dict(
+        a="ND", b="BYU", vs="at", title="Notre Dame at BYU",
+        cfbd=("Notre Dame", "BYU"),
+        where="Provo · LaVell Edwards Stadium",
+        sub="Sat Oct 17 · 7:30 ET · Notre Dame 6–0 at BYU 5–0 — No. 2 at No. 8, 4,500 feet",
+        machine="Notre Dame –11.5", market="Notre Dame –10.5", value="1 to Notre Dame — same side, the machine a point higher",
+        wp=("ND", 76, "BYU", 24),
+        decides=["Carr 9.6 a throw, 16 TD, 1 INT, sacked on 0.6% of dropbacks — the best-protected quarterback in the country",
+                 "BYU's defense: 13.4 a game, 5.5 a throw allowed (5th), stuffs on 24.6% of runs",
+                 "Bachmeier 8.9 a throw, 8 TD, 1 INT; LJ Martin 7.8 a carry",
+                 "Notre Dame's turnover luck is +30, the most in the country — the machine's number already strips it"],
+        ctx_a=dict(coach="Freeman, year 5",
+                   qb="C.J. Carr, year 2 as the starter · 9.6 a throw, 16 TD, 1 INT",
+                   roster="6–0 with three road wins · No. 1 on the play-by-play shadow"),
+        ctx_b=dict(coach="Sitake, year 11",
+                   qb="Bear Bachmeier, year 2 · 8.9 a throw, 8 TD, 1 INT",
+                   roster="5–0 · a defense allowing 13.4 a game, 9th"),
+        matters="No. 2 goes to Provo — Notre Dame's last road test before Miami comes to South Bend, and BYU's shot at the win that puts it in the playoff picture",
+        because="July had Notre Dame by 12.8 and nothing since has moved it: Notre Dame +1.6, BYU +0.3 — 11.6 after the home field, and the plays say 12.6",
+        honesty="Machine Notre Dame −11.6, market −10.5. In July the machine had Notre Dame ahead by 12.8; since then Notre Dame +1.6, BYU +0.3. Play by play agrees within a point (12.6); the biggest unit edge is Notre Dame's defense against BYU's offense, 7.7 a game. The honest part: Notre Dame's +30 in turnover luck is the largest on the board, and the elevation and the crowd are not in the number.",
+        keys_a=["Carr's clean pocket against a 7.4% sack rate", "Take it away — 14 takeaways already", "Run at a front allowing 2.9 a carry"],
+        keys_b=["Martin and Bachmeier on the ground — 6.0 a carry", "Keep Carr under 9 a throw", "Third down: Notre Dame converts 45%, BYU allows 37%"],
+    ),
+    dict(
+        a="BAMA", b="TENN", vs="at", title="Alabama at Tennessee",
+        cfbd=("Alabama", "Tennessee"),
+        where="Knoxville · Neyland Stadium",
+        sub="Sat Oct 17 · 3:30 ET · Alabama 5–1 at Tennessee 5–1 — the Third Saturday in October",
+        machine="Alabama –7.5", market="Alabama –7.5", value="the machine and the market agree",
+        wp=("BAMA", 68, "TENN", 32),
+        decides=["Russell 9.9 a throw, 12 TD, 2 INT, against the No. 2 sack rate in the country (11.7%)",
+                 "Alabama's pass defense allows 8.0 a throw, 114th; Brandon is at 6.9 a throw",
+                 "Bishop: 678 yards, 6.3 a carry, 8 TD — Alabama allows 3.0",
+                 "Alabama's turnover luck is +24; Georgia ended the run 20–17"],
+        ctx_a=dict(coach="DeBoer, year 3 · Wommack's swarm defense",
+                   qb="Keelon Russell, RS freshman · 9.9 a throw, 12 TD, 2 INT",
+                   roster="48% back, 90th nationally · 35% on offense"),
+        ctx_b=dict(coach="Heupel, year 6 · new DC Jim Knowles",
+                   qb="Faizon Brandon, true freshman · 6.9 a throw, 7 TD, 1 INT",
+                   roster="35% back · 21 portal adds · 12 defensive transfers"),
+        matters="Alabama's first game since Georgia, at the stadium where it lost in 2022 and 2024 — the loser has two SEC losses in October",
+        because="July had Alabama by 5; Alabama is +6.9 since and Tennessee +1.8 — 7.6 after the home field, and the plays have it wider at 12.4",
+        honesty="Machine Alabama −7.6, market −7.5. In July the machine had Alabama ahead by 5.0; since then Alabama +6.9, Tennessee +1.8. Play by play sides with Alabama harder than the scoreboard does, 12.4 against the machine's 7.6, so the 50/50 blend is Alabama by 10 — an A&M-type gap, and on close games between top-40 teams the final has landed about halfway toward the plays' number since 2022.",
+        keys_a=["Russell against an 11.7% sack rate", "Stop Bishop — 6.3 a carry", "No giveaways — the luck has been +24"],
+        keys_b=["Throw on a secondary allowing 8.0 a throw", "Get to Russell — Alabama's line gives up 7.7% sacks", "Bishop 25 carries"],
+    ),
+    dict(
+        a="MIZ", b="MISS", vs="at", title="Missouri at Ole Miss",
+        cfbd=("Missouri", "Ole Miss"),
+        where="Oxford · Vaught-Hemingway Stadium",
+        sub="Sat Oct 17 · 3:30 ET · Missouri 5–1 at Ole Miss 4–1 — Simmons back in Oxford",
+        machine="Ole Miss –3.5", market="Ole Miss –6", value="2.5 to Missouri — same side as the market, smaller number",
+        wp=("MIZ", 40, "MISS", 60),
+        decides=["Simmons against the team he left: 8.6 a throw, 14 TD, 1 INT",
+                 "Roberts 828 yards, 5.6 a carry, against a defense allowing 4.3",
+                 "Ole Miss allows 28 a game, 111th; Missouri allows 17.7",
+                 "Chambliss 8.2 a throw, 11 TD, 4 INT, sacked on 2.1%"],
+        ctx_a=dict(coach="Drinkwitz, year 7",
+                   qb="Austin Simmons (from Ole Miss) · 8.6 a throw, 14 TD, 1 INT",
+                   roster="42% of production back · 78% of the rushing"),
+        ctx_b=dict(coach="Golding, year 1 · promoted, kept the defensive spine",
+                   qb="Trinidad Chambliss returns · 8.2 a throw, 11 TD, 4 INT",
+                   roster="50% back · 28 portal adds"),
+        matters="Simmons against the team he left, and the SEC's second tier sorting itself out — two one-loss teams chasing a playoff spot from 9th and 14th",
+        because="July had Ole Miss by 3.8; Missouri has climbed 4.3 since to Ole Miss's 1.6 — 3.6 after the home field, and the plays make it closer, 1.6",
+        honesty="Machine Ole Miss −3.6, market −6. In July the machine had Ole Miss ahead by 3.8; since then Missouri +4.3, Ole Miss +1.6. Play by play sides with Ole Miss less than the scoreboard does, 1.6 against the machine's 3.6; the biggest unit edge is Missouri's offense against Ole Miss's defense, 3.1 a game. The 50/50 blend is Ole Miss by 2.6.",
+        keys_a=["Roberts against a 4.3-a-carry defense", "Hold Chambliss under 8 a throw — 6.9 allowed, 7.3% sacks", "Simmons protected — 2.0% sacks, and the red zone (9 of 20)"],
+        keys_b=["Chambliss over 8 a throw against 6.9 allowed", "Slow Roberts — 4.3 a carry allowed is the problem", "Third down: Ole Miss converts 45%, Missouri allows 35%"],
+    ),
+    dict(
+        a="NEB", b="ORE", vs="at", title="Nebraska at Oregon",
+        cfbd=("Nebraska", "Oregon"),
+        where="Eugene · Autzen Stadium",
+        sub="Sat Oct 17 · Nebraska 5–1 at Oregon 3–2 — Oregon off the UCLA loss, Moore's status the story",
+        machine="Oregon –3", market="Oregon –7", value="4 to Nebraska — same side as the market, the machine half the number",
+        wp=("NEB", 41, "ORE", 59),
+        decides=["Moore: concussion since Sept 26; Raiola started the UCLA loss — the machine carries 2.0 off Oregon",
+                 "Colandrea 7.6 a throw, 13 TD, 3 INT; Nebraska's five wins came by 18 or more, then Indiana by 3",
+                 "Oregon's defense gives up 7.1 a throw and 22 a game, 58th",
+                 "Nebraska's defense: 15.2 a game, 17th, with sacks on 8.0% of dropbacks"],
+        ctx_a=dict(coach="Rhule, year 4",
+                   qb="Anthony Colandrea (from UNLV) · 7.6 a throw, 13 TD, 3 INT",
+                   roster="46% of production back · 74% of the receiving"),
+        ctx_b=dict(coach="Lanning, year 5 · both coordinators new",
+                   qb="Dante Moore (concussion, out since 9/26) · Raiola started the UCLA loss",
+                   roster="75% back · 13 portal adds · 200 returning starts"),
+        matters="Oregon is 15th in the machine and falling; Nebraska at 17th gets the first crack at an Autzen crowd that just watched UCLA win there",
+        because="July had Oregon by 16.5; since then Nebraska +6.9 and Oregon −8.9, plus 2.0 off for Moore — 3.2 after the home field, and the plays say 1.7",
+        honesty="Machine Oregon −3.2, market −7. In July the machine had Oregon ahead by 16.5; since then Nebraska +6.9, Oregon −8.9, and Oregon carries a QB-out adjustment of 2.0. Play by play sides with Oregon less than the scoreboard does, 1.7 against the machine's 3.2; the biggest unit edge is Nebraska's defense against Oregon's offense, 4.1 a game. If Moore is cleared the 2.0 comes back and the number is Oregon by 5.",
+        keys_a=["Colandrea on a secondary allowing 7.1 a throw", "Rush the quarterback — 8.0% sacks", "Rule and the run — 6.1 a carry"],
+        keys_b=["Whoever plays quarterback: 20 throws, not 40", "Stop the run — Nebraska's 6.1 a carry against 4.2 allowed", "Davison and the run — 4.1 a carry is the weakness"],
+    ),
+]
 
 # ---- Week 3 receipts (recap slide): frozen Ep4 predictions vs finals vs the
 # last pre-kick ledger pull (Fri Sep 18 5 PM MT publish pull,
@@ -1237,11 +1355,11 @@ _RECAP_ROWS_WK5 = [
     ("OSU", "IOWA", "Ohio State at Iowa", ("Ohio State", "Iowa"), "Ohio State 30–16", 14.0, 14.5, "Ohio State 31–20", 45.5),
 ]   # Week 5 margin miss (score calls): man 54.0 · machine 55.0 · market (line) 61.0 — winners: machine 4–1, man 4–1; machine on its line 55.0
 RECAP_ROWS = [   # Week 6 (auto from card_data_week6_frozen.json + score_tracker.json; on-air line = the rounded machine margin)
-    ("INDI", "NEBR", "Indiana at Nebraska", ("Indiana", "Nebraska"), "Indiana 27–21", 6, 7.5, "Indiana 31–24", 48.5),
-    ("TEXA", "MISS", "Texas A&M at Missouri", ("Texas A&M", "Missouri"), "Texas A&M 25–24", 1, -3.5, "Missouri 28–27", 48.5),
-    ("UCLA", "OREG", "UCLA at Oregon", ("UCLA", "Oregon"), "Oregon 34–24", -9.5, -11.5, "Oregon 41–27", 58.5),
-    ("GEOR", "ALAB", "Georgia at Alabama", ("Georgia", "Alabama"), "Alabama 27–24", -2.5, -1.5, "Alabama 35–34", 51.5),
-    ("USC", "PENN", "USC at Penn State", ("USC", "Penn State"), "Penn State 28–27", -1, -1.5, "Penn State 31–27", 54.5),
+    ("IND", "NEB", "Indiana at Nebraska", ("Indiana", "Nebraska"), "Indiana 27–21", 6, 7.5, "Indiana 31–24", 48.5),
+    ("TAMU", "MIZ", "Texas A&M at Missouri", ("Texas A&M", "Missouri"), "Texas A&M 25–24", 1, -3.5, "Missouri 28–27", 48.5),
+    ("UCLA", "ORE", "UCLA at Oregon", ("UCLA", "Oregon"), "Oregon 34–24", -9.5, -11.5, "Oregon 41–27", 58.5),
+    ("UGA", "BAMA", "Georgia at Alabama", ("Georgia", "Alabama"), "Alabama 27–24", -2.5, -1.5, "Alabama 35–34", 51.5),
+    ("USC", "PSU", "USC at Penn State", ("USC", "Penn State"), "Penn State 28–27", -1, -1.5, "Penn State 31–27", 54.5),
 ]   # Week 6 margin miss (score calls): machine 52.0 · man 56.0 · market (line) 49.5 — winners: machine 1–4, man 2–3
 WINNER_LOSER = None   # Lucas 10/6: the machine's winner / loser of the week lives on the OneNote Recap page, not the slide
 WEEK0_MISS = (396.0, 384.0)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 6 (35 games) — running total (Wk5 55/61, Wk6 52/49.5)
@@ -2438,6 +2556,47 @@ for g in GAMES:
     _el = list(_lst)[prs.slides.index(_num_slide)]
     _lst.remove(_el)
     _lst.append(_el)
+
+# ---------------- feature slide (Lucas 10/12: "add the UM slide") ----------------
+# One slide outside the card: a game the show wants to talk about without grading it. FEATURE = None skips it.
+FEATURE = dict(
+    a="FSU", b="MIA", title="Florida State at Miami",
+    sub="Sat Oct 17 · 7:00 ET · Hard Rock Stadium · Florida State 3–3 at Miami 5–0 · Miami leads the series 37–33",
+    call="Miami by 19", score="Miami 34–15", prob="88% Miami",
+    matters=["The only top-10 team the show has not had on a card: No. 5 in the machine, 91% to make the playoff, 79% to win the ACC",
+             "Mensah's first national stage: second on the best-player board, 0.2 behind Sayin",
+             "Norvell is seventh on the seat board after 20–44 at Louisville; every human list has him"],
+    history=["1985–94: seven straight top-10 meetings, Wide Right I and II, four national titles between them",
+             "Miami won six straight 2000–04; Florida State six straight 2010–15; Miami has the last two (28–22 last year)",
+             "Why it fell off: the two have not been top-five at the same time since 2004 — 2021's combined record was 8–10"],
+    pick=["Miami's offense vs Florida State's defense is the mismatch: 11.1 an attempt (1st) against a defense that gave up 44 to Louisville",
+          "Daniels is a runner with eight touchdowns and seven picks as a passer — Miami's front is built for that quarterback",
+          "The loss would look like: Florida State over 5.0 a carry"],
+)
+if FEATURE:
+    s = blank()
+    logo_badge(s, 0.9, 0.42, 0.8, FEATURE["a"])
+    txt(s, 1.82, 0.52, 0.5, 0.5, "at", 14, MUTE, align=PP_ALIGN.CENTER)
+    logo_badge(s, 2.35, 0.42, 0.8, FEATURE["b"])
+    txt(s, 3.45, 0.38, 8.9, 0.55, FEATURE["title"], 27, NAVY, bold=True)
+    txt(s, 3.45, 0.94, 8.9, 0.35, FEATURE["sub"], 11, MUTE, italic=True)
+    _fy = 1.7
+    for _lab, _lines in (("WHY IT MATTERS", FEATURE["matters"]), ("THE HISTORY", FEATURE["history"]), ("THE PICK · " + FEATURE["call"].upper(), FEATURE["pick"])):
+        txt(s, 0.9, _fy, 8.0, 0.35, _lab, 13, NAVY, bold=True)
+        _fy += 0.38
+        for _ln in _lines:
+            shape(s, MSO_SHAPE.OVAL, 1.0, _fy + 0.1, 0.12, 0.12, ORANGE)
+            txt(s, 1.3, _fy, 7.6, 0.5, _ln, 12, INK)
+            _fy += 0.5
+        _fy += 0.12
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 9.2, 1.75, 3.3, 2.6, NAVY)
+    txt(s, 9.4, 1.9, 2.9, 0.3, "THE MACHINE", 10, ORANGE, bold=True)
+    txt(s, 9.4, 2.25, 2.9, 0.6, FEATURE["call"], 26, WHITE, bold=True)
+    txt(s, 9.4, 2.95, 2.9, 0.4, FEATURE["score"], 17, ORANGE, bold=True)
+    txt(s, 9.4, 3.35, 2.9, 0.25, "score prediction", 8.5, PALE)
+    txt(s, 9.4, 3.7, 2.9, 0.4, FEATURE["prob"], 15, WHITE, bold=True)
+    txt(s, 9.4, 4.05, 2.9, 0.25, "win probability (machine)", 8.5, PALE)
+    txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · feature · not on the card, not graded", 9, MUTE)
 
 # ---------------- upset board (this week's alerts + the scorecard) ----------------
 if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):

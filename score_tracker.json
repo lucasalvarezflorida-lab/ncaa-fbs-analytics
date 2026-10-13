@@ -728,5 +728,65 @@
    28
   ],
   "shadow_total": 55.6
+ },
+ {
+  "week": 7,
+  "game": "Ohio State at Indiana",
+  "away": "Ohio State",
+  "home": "Indiana",
+  "machine": [
+   27,
+   24
+  ],
+  "man": null,
+  "final": null
+ },
+ {
+  "week": 7,
+  "game": "Notre Dame at BYU",
+  "away": "Notre Dame",
+  "home": "BYU",
+  "machine": [
+   30,
+   18
+  ],
+  "man": null,
+  "final": null
+ },
+ {
+  "week": 7,
+  "game": "Alabama at Tennessee",
+  "away": "Alabama",
+  "home": "Tennessee",
+  "machine": [
+   31,
+   23
+  ],
+  "man": null,
+  "final": null
+ },
+ {
+  "week": 7,
+  "game": "Missouri at Ole Miss",
+  "away": "Missouri",
+  "home": "Ole Miss",
+  "machine": [
+   28,
+   32
+  ],
+  "man": null,
+  "final": null
+ },
+ {
+  "week": 7,
+  "game": "Nebraska at Oregon",
+  "away": "Nebraska",
+  "home": "Oregon",
+  "machine": [
+   25,
+   28
+  ],
+  "man": null,
+  "final": null
  }
 ]
