@@ -1471,16 +1471,16 @@ def build_recap():
         if RECEIPTS_SHOW_MARKET:
             lines_ += f"closing {_line_txt(a, b, close)}"
         fin = finals.get(key)
-        calls = f"Machine {NAME2CODE[call.rsplit(' ', 1)[0]]} {call.rsplit(' ', 1)[1]}"
+        calls = f"Machine {NAME2CODE[call.rsplit(' ', 1)[0]]} {call.rsplit(' ', 1)[1]}"   # Lucas 10/13: order is Final · Man · Machine
         if man:
-            calls += f" · Man {NAME2CODE[man.rsplit(' ', 1)[0]]} {man.rsplit(' ', 1)[1]}"
+            calls = f"Man {NAME2CODE[man.rsplit(' ', 1)[0]]} {man.rsplit(' ', 1)[1]} · " + calls
         if fin is None:
-            rows.append((a, b, title, calls + " · FINAL pending",
+            rows.append((a, b, title, "FINAL pending · " + calls,
                          lines_, "graded before air — see the notes", "P", "T"))
             continue
         ap_, hp_ = fin
         win = b if hp_ >= ap_ else a
-        callfin = f"{calls} · FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)}"
+        callfin = f"FINAL {win} {max(ap_, hp_)}–{min(ap_, hp_)} · {calls}"
         margin = hp_ - ap_                       # actual home margin
         des = DESERVED.get((normalize_name(key[0]), normalize_name(key[1])))
         if des is not None:
@@ -2439,8 +2439,7 @@ _run_m, _run_k = WEEK0_MISS[0] + _rs["m"], WEEK0_MISS[1] + _rs["k"]
 if _rs["man"] and not RECEIPTS_SHOW_MARKET:
     _l1 = (f"Margin miss: man {_rs['c']:.1f} · machine {_rs['m']:.1f}"
            f" — closer: man {_rs['nc']}, machine {_rs['nm']}, {_rs['nt']} tie")
-    _l2 = (f"Points off the final score: man {_rs['sc']:g} · machine {_rs['sm']:g}"
-           f"   |   Machine's season: {_run_m:.1f} off across {PRIOR_GAMES + _rs['n']} games"
+    _l2 = (f"Points off the final score: man {_rs['sc']:g} · machine {_rs['sm']:g}"   # Lucas 10/13: the machine's season total came off the slide
            + (f" · vs the deserved margins this week: {_rs['d']:.1f}" if _rs.get("d") else ""))
 elif _rs["man"]:
     _l1 = (f"Margin miss: market {_rs['k']:.1f} · man {_rs['c']:.1f} · machine {_rs['m']:.1f}"
