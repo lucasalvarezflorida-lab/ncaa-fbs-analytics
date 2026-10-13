@@ -2569,7 +2569,7 @@ FEATURE = dict(
     history=["1985–94: seven straight top-10 meetings, Wide Right I and II, four national titles between them",
              "Miami won six straight 2000–04; Florida State six straight 2010–15; Miami has the last two (28–22 last year)",
              "Why it fell off: the two have not been top-five at the same time since 2004 — 2021's combined record was 8–10"],
-    pick=["Miami's offense vs Florida State's defense is the mismatch: 11.1 an attempt (1st) against a defense that gave up 44 to Louisville",
+    pick=["Miami's offense vs Florida State's defense is the mismatch: 10.6 an attempt (3rd), 49.6 a game (1st), against a defense that gave up 44 to Louisville",
           "Daniels is a runner with eight touchdowns and seven picks as a passer — Miami's front is built for that quarterback",
           "The loss would look like: Florida State over 5.0 a carry"],
 )
@@ -2580,15 +2580,15 @@ if FEATURE:
     logo_badge(s, 2.35, 0.42, 0.8, FEATURE["b"])
     txt(s, 3.45, 0.38, 8.9, 0.55, FEATURE["title"], 27, NAVY, bold=True)
     txt(s, 3.45, 0.94, 8.9, 0.35, FEATURE["sub"], 11, MUTE, italic=True)
-    _fy = 1.7
+    _fy = 1.62
     for _lab, _lines in (("WHY IT MATTERS", FEATURE["matters"]), ("THE HISTORY", FEATURE["history"]), ("THE PICK · " + FEATURE["call"].upper(), FEATURE["pick"])):
-        txt(s, 0.9, _fy, 8.0, 0.35, _lab, 13, NAVY, bold=True)
-        _fy += 0.38
+        txt(s, 0.9, _fy, 8.0, 0.32, _lab, 12.5, NAVY, bold=True)
+        _fy += 0.34
         for _ln in _lines:
-            shape(s, MSO_SHAPE.OVAL, 1.0, _fy + 0.1, 0.12, 0.12, ORANGE)
-            txt(s, 1.3, _fy, 7.6, 0.5, _ln, 12, INK)
-            _fy += 0.5
-        _fy += 0.12
+            shape(s, MSO_SHAPE.OVAL, 1.0, _fy + 0.09, 0.11, 0.11, ORANGE)
+            txt(s, 1.28, _fy, 7.7, 0.42, _ln, 11, INK)
+            _fy += 0.42
+        _fy += 0.08
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 9.2, 1.75, 3.3, 2.6, NAVY)
     txt(s, 9.4, 1.9, 2.9, 0.3, "THE MACHINE", 10, ORANGE, bold=True)
     txt(s, 9.4, 2.25, 2.9, 0.6, FEATURE["call"], 26, WHITE, bold=True)
