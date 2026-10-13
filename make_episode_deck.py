@@ -1292,7 +1292,8 @@ GAMES = [  # Week 7 — Lucas's card (Sun 10/11) in HIS order until Corey's deck
         a="NEB", b="ORE", vs="at", title="Nebraska at Oregon",
         cfbd=("Nebraska", "Oregon"),
         where="Eugene · Autzen Stadium",
-        sub="Sat Oct 17 · Nebraska 5–1 at Oregon 3–2 — Oregon off the UCLA loss, Moore's status the story",
+        sub="Sat Oct 17 · 11:00 ET · Nebraska 5–1 at Oregon 3–2 — Oregon off the UCLA loss, Moore's status the story",
+        when="11:00 PM ET",
         machine="Oregon –3", market="Oregon –7", value="4 to Nebraska — same side as the market, the machine half the number",
         wp=("NEB", 41, "ORE", 59),
         decides=["Moore: concussion since Sept 26; Raiola started the UCLA loss — the machine carries 2.0 off Oregon",
@@ -1934,7 +1935,7 @@ if BOARDS:
         y = TOP + i * RH
         if i % 2 == 0:
             shape(s, MSO_SHAPE.RECTANGLE, 0.9, y, 11.5, RH, NAVY2)
-        txt(s, 0.9, y + 0.06, 0.4, 0.3, str(i + 1), 13, ORANGE, bold=True, align=R)
+        txt(s, 0.75, y + 0.06, 0.55, 0.3, str(i + 1), 13, ORANGE, bold=True, align=R)   # 0.55 wide: "10" wraps in Slides at 0.4 (insets)
         _row_logo(s, 1.35, y, r["team"])
         txt(s, 1.75, y + 0.06, 2.8, 0.3, f"{r['coach']} · {r['team']}", 12, WHITE, bold=True)
         txt(s, 4.6, y + 0.09, 1.5, 0.3, r["tenure"], 8.5, PALE)
@@ -1954,11 +1955,11 @@ if BOARDS:
         txt(s, 10.3, y + 0.09, 2.1, 0.3, last, 8.5, PALE)
     _fy = TOP + 10 * RH + 0.12
     _nxt = BOARDS["hot_seat"][10:13]
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.62, NAVY2)
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.95, NAVY2)      # 0.95 tall: the footnote wraps to two lines in Slides (Lucas 10/13)
     txt(s, 1.1, _fy + 0.06, 11.2, 0.28,
         "Next three: " + " · ".join(f"{x['coach']} {round(100 * x['p_gone'])}%" for x in _nxt),
         11, WHITE, bold=True)
-    txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
+    txt(s, 1.1, _fy + 0.34, 11.2, 0.55,
         "LISTS = six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat), 0–5; * = none names him · ON LISTS = how many of the six name him · P(GONE) = odds he is gone next season, from 2014–25 · "
         "BUYOUT = what the school owes to fire him now; * = estimated, — = undisclosed", 10.5, PALE)
 
@@ -2075,9 +2076,13 @@ for g in GAMES:
     else:   # kickoff time from card_data ("Sat Sep 26, 12:00 PM ET"), else from the authored sub line
         _when = (CARD.get(g["cfbd"]) or {}).get("date") or ""
         _day, _, _time = _when.partition(", ")
+        if not _time and g.get("when"):          # Lucas 10/13: CFBD had no kickoff for Nebraska at Oregon - the authored `when` wins
+            _time = g["when"]
         if not _time:
             _parts = g["sub"].split(" · ")
             _day, _time = _parts[0], (_parts[1] if len(_parts) > 1 else "")
+        if not any(ch in _time for ch in (":", "ET", "TBA")):   # the sub line's second part was not a time
+            _time = "TBA"
         # Lucas 9/21: always show the DATE with the time, even when every game is the same day
         txt(s, 8.4, y + 0.08, 3.8, 0.4, _time, 17, ORANGE, bold=True, align=PP_ALIGN.RIGHT)
         txt(s, 8.4, y + 0.46, 3.8, 0.3, _day, 11, RGBColor(0xCA, 0xDC, 0xFC), bold=True, align=PP_ALIGN.RIGHT)

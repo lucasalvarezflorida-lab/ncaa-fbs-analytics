@@ -88,7 +88,7 @@ def hot_seat_requests(slide_id, rows, episode, week):
         y = TOP + i * RH
         if i % 2 == 0:
             b.box(0.9, y, 11.5, RH, NAVY2)
-        b.text(0.9, y + 0.06, 0.4, 0.3, str(i + 1), 13, ORANGE, True, "END")
+        b.text(0.75, y + 0.06, 0.55, 0.3, str(i + 1), 13, ORANGE, True, "END")
         b.logo(1.35, y, r["team"])
         nm = f"{r['coach']} · {r['team']}"
         b.text(1.75, y + 0.06, 2.85, 0.3, nm, 12 if len(nm) <= 26 else 10.5, WHITE, True)
@@ -103,9 +103,9 @@ def hot_seat_requests(slide_id, rows, episode, week):
         b.text(9.55, y + 0.07, 0.75, 0.3, r.get("lists") or "—", 11, ORANGE, True, "END")
         b.text(10.3, y + 0.09, 2.1, 0.3, (r.get("results") or ["—"])[-1], 8.5, PALE)
     fy = TOP + 10 * RH + 0.12
-    b.box(0.9, fy, 11.5, 0.62, NAVY2, "ROUND_RECTANGLE")
+    b.box(0.9, fy, 11.5, 0.95, NAVY2, "ROUND_RECTANGLE")
     b.text(1.1, fy + 0.06, 11.2, 0.28, "Next three: " + " · ".join(f"{x['coach']} {round(100 * x['p_gone'])}%" for x in rows[10:13]), 11, WHITE, True)
-    b.text(1.1, fy + 0.32, 11.2, 0.28, "LISTS = six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat), 0–5; * = none names him · ON LISTS = how many of the six name him · "
+    b.text(1.1, fy + 0.34, 11.2, 0.55, "LISTS = six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat), 0–5; * = none names him · ON LISTS = how many of the six name him · "
            "P(GONE) = odds he is gone next season, from 2014–25 · BUYOUT = what the school owes to fire him now; * = estimated, — = undisclosed", 10.5, PALE)
     return b.req
 
