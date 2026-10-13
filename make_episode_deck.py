@@ -2563,8 +2563,9 @@ FEATURE = dict(
     a="FSU", b="MIA", title="Florida State at Miami",
     sub="Sat Oct 17 · 7:00 ET · Hard Rock Stadium · Florida State 3–3 at Miami 5–0",
     call="Miami by 19", score="Miami 34–15", prob="88% Miami",
-    game=["No. 5, unbeaten, 41–13 at Clemson, 79% to win the ACC — and the first time Miami is on our card",
-          "Miami leads the series 37–33 — Wide Right, four titles in ten years, then two decades of one good team at a time",
+    game=["No. 5, unbeaten, 41–13 at Clemson, 79% to win the ACC",
+          "Miami leads the series 37–33 — Wide Right, four titles in ten years",
+          "Why it doesn't feel the same: not both top-five since 2004, and the ACC turned a title eliminator into a conference game",
           "Mensah is second on the Heisman board; Norvell is seventh on the seat board after 20–44 at Louisville"],
     pick=["Miami's offense against Florida State's defense: 49.6 a game, first in the country, against a defense that gave up 44 to Louisville",
           "The loss would look like: Florida State over 5.0 a carry"],
@@ -2576,15 +2577,15 @@ if FEATURE:
     logo_badge(s, 2.35, 0.42, 0.8, FEATURE["b"])
     txt(s, 3.45, 0.38, 8.9, 0.55, FEATURE["title"], 27, NAVY, bold=True)
     txt(s, 3.45, 0.94, 8.9, 0.35, FEATURE["sub"], 11, MUTE, italic=True)
-    _fy = 1.75
+    _fy = 1.7
     for _lab, _lines in (("THE GAME", FEATURE["game"]), ("THE PICK · " + FEATURE["call"].upper(), FEATURE["pick"])):
         txt(s, 0.9, _fy, 8.0, 0.4, _lab, 13, NAVY, bold=True)
         _fy += 0.45
         for _ln in _lines:
-            shape(s, MSO_SHAPE.OVAL, 1.0, _fy + 0.2, 0.15, 0.15, ORANGE)
-            txt(s, 1.45, _fy, 7.5, 0.85, _ln, 16, INK, bold=True)
-            _fy += 0.92
-        _fy += 0.2
+            shape(s, MSO_SHAPE.OVAL, 1.0, _fy + 0.29, 0.15, 0.15, ORANGE)      # bullet on the box's vertical centre
+            txt(s, 1.45, _fy, 7.5, 0.72, _ln, 15, INK, bold=True, anchor=MSO_ANCHOR.MIDDLE)   # text centred in its box (Lucas 10/13)
+            _fy += 0.74
+        _fy += 0.1
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 9.2, 1.75, 3.3, 2.6, NAVY)
     txt(s, 9.4, 1.9, 2.9, 0.3, "THE MACHINE", 10, ORANGE, bold=True)
     txt(s, 9.4, 2.25, 2.9, 0.6, FEATURE["call"], 26, WHITE, bold=True)
