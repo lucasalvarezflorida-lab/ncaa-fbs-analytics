@@ -2563,7 +2563,7 @@ FEATURE = dict(
     a="FSU", b="MIA", title="Florida State at Miami",
     sub="Sat Oct 17 · 7:00 ET · Hard Rock Stadium · Florida State 3–3 at Miami 5–0",
     call="Miami by 19", score="Miami 34–15", prob="88% Miami",
-    game=["Miami's first real test: No. 5, unbeaten, 79% to win the ACC — and the first time it is on our card",
+    game=["No. 5, unbeaten, 41–13 at Clemson, 79% to win the ACC — and the first time Miami is on our card",
           "Miami leads the series 37–33 — Wide Right, four titles in ten years, then two decades of one good team at a time",
           "Mensah is second on the Heisman board; Norvell is seventh on the seat board after 20–44 at Louisville"],
     pick=["Miami's offense against Florida State's defense: 49.6 a game, first in the country, against a defense that gave up 44 to Louisville",
