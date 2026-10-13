@@ -100,39 +100,42 @@ def build():
     shape(s, MSO_SHAPE.RECTANGLE, 0, 0, 13.333, 7.5, NAVY)
     txt(s, 0.9, 0.42, 11.5, 0.4, f"PROTOTYPE · WEEK {week} · THE MACHINE'S BRACKET", 14, ORANGE, True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "The Bracket", 40, WHITE, True)
-    txt(s, 0.9, 1.5, 11.5, 0.3, f"The season simulated {sims:,} times from today's ratings · five champions, seven at large · byes to the top four seeds", 13, PALE, True)
-    TOP, RH = 2.12, 0.37
+    txt(s, 0.9, 1.5, 11.5, 0.3, f"{sims:,} seasons from today's ratings · the twelve in and the four at the door · byes to the top four seeds", 13, PALE, True)
+    TOP, RH = 2.0, 0.3
     hdr = [(0.9, 0.45, "SEED", PP_ALIGN.RIGHT), (1.95, 2.6, "TEAM", PP_ALIGN.LEFT), (4.55, 1.3, "LEAGUE", PP_ALIGN.LEFT), (5.85, 1.75, "HOW THEY GET IN", PP_ALIGN.LEFT),
            (7.7, 0.8, "IN", PP_ALIGN.RIGHT), (8.55, 0.7, "BYE", PP_ALIGN.RIGHT), (9.3, 0.8, "AVG SEED", PP_ALIGN.RIGHT), (10.2, 1.0, "TITLE", PP_ALIGN.RIGHT), (11.3, 1.1, "AP (COMMITTEE NOV 3)", PP_ALIGN.RIGHT)]
     for x, w, lab, al in hdr:
         txt(s, x, TOP - 0.25, w, 0.22, lab, 8, PALE, True, al)
-    for i, r in enumerate(F):
+    for r in nxt:
+        r["how"] = "bubble"
+    for i, r in enumerate(F + nxt):      # Lucas 10/13: sixteen rows - the twelve in, then the four at the door (Miami over Notre Dame last year)
         y = TOP + i * RH
         if i % 2 == 0:
             shape(s, MSO_SHAPE.RECTANGLE, 0.9, y, 11.5, RH, NAVY2)
         if i == 4:
             shape(s, MSO_SHAPE.RECTANGLE, 0.9, y - 0.015, 11.5, 0.03, ORANGE)   # the bye line
-        txt(s, 0.9, y + 0.05, 0.45, 0.3, str(i + 1), 13, ORANGE, True, PP_ALIGN.RIGHT)
+        if i == 12:
+            shape(s, MSO_SHAPE.RECTANGLE, 0.9, y - 0.015, 11.5, 0.03, PALE)     # the cut line
+        txt(s, 0.9, y + 0.03, 0.45, 0.3, str(i + 1) if i < 12 else "—", 12, ORANGE if i < 12 else PALE, True, PP_ALIGN.RIGHT)
         lp = logo(r["team"])
         if lp:
-            shape(s, MSO_SHAPE.OVAL, 1.5, y + 0.04, 0.29, 0.29, WHITE)
-            s.shapes.add_picture(lp, Inches(1.53), Inches(y + 0.07), Inches(0.23), Inches(0.23))
-        txt(s, 1.95, y + 0.05, 2.6, 0.3, school(r["team"]), 12.5, WHITE, True)
-        txt(s, 4.55, y + 0.08, 1.3, 0.3, r["conf"].replace("FBS Independents", "Independent"), 9.5, PALE)
+            shape(s, MSO_SHAPE.OVAL, 1.5, y + 0.025, 0.25, 0.25, WHITE)
+            s.shapes.add_picture(lp, Inches(1.525), Inches(y + 0.05), Inches(0.2), Inches(0.2))
+        txt(s, 1.95, y + 0.03, 2.6, 0.3, school(r["team"]), 11.5, WHITE, True)
+        txt(s, 4.55, y + 0.06, 1.3, 0.3, r["conf"].replace("FBS Independents", "Independent"), 9, PALE)
         how = r["how"]
-        txt(s, 5.85, y + 0.07, 1.75, 0.3, how, 10, ORANGE if how != "at-large" else PALE, how != "at-large")
+        txt(s, 5.85, y + 0.05, 1.75, 0.3, how, 9.5, ORANGE if how not in ("at-large", "bubble") else PALE, how not in ("at-large", "bubble"))
         p = r["playoff"]
-        txt(s, 7.7, y + 0.06, 0.8, 0.3, f"{round(100 * p)}%", 11.5, UP if p >= 0.5 else (DOWN if p < 0.2 else WHITE), True, PP_ALIGN.RIGHT)
-        txt(s, 8.55, y + 0.07, 0.7, 0.3, f"{round(100 * r['bye'])}%", 10.5, WHITE, False, PP_ALIGN.RIGHT)
-        txt(s, 9.3, y + 0.07, 0.8, 0.3, f"{r['avg_seed']:.1f}", 10.5, PALE, False, PP_ALIGN.RIGHT)
-        txt(s, 10.2, y + 0.07, 1.0, 0.3, f"{100 * r['national_title']:.1f}%", 10.5, PALE, False, PP_ALIGN.RIGHT)
+        txt(s, 7.7, y + 0.04, 0.8, 0.3, f"{round(100 * p)}%", 11, UP if p >= 0.5 else (DOWN if p < 0.2 else WHITE), True, PP_ALIGN.RIGHT)
+        txt(s, 8.55, y + 0.05, 0.7, 0.3, f"{round(100 * r['bye'])}%", 10, WHITE, False, PP_ALIGN.RIGHT)
+        txt(s, 9.3, y + 0.05, 0.8, 0.3, f"{r['avg_seed']:.1f}", 10, PALE, False, PP_ALIGN.RIGHT)
+        txt(s, 10.2, y + 0.05, 1.0, 0.3, f"{100 * r['national_title']:.1f}%", 10, PALE, False, PP_ALIGN.RIGHT)
         a = ap.get(r["team"])
-        txt(s, 11.3, y + 0.07, 1.1, 0.3, f"AP {a}" if a else "NR", 10.5, PALE, False, PP_ALIGN.RIGHT)
-    fy = TOP + 12 * RH + 0.1
-    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, fy, 11.5, 0.7, NAVY2)
-    txt(s, 1.1, fy + 0.05, 11.2, 0.28, "First four out: " + " · ".join(f"{school(r['team'])} {round(100 * r['playoff'])}%" for r in nxt), 11, WHITE, True)
-    txt(s, 1.1, fy + 0.34, 11.2, 0.34, "IN = chance of a playoff spot · BYE = chance of a top-four seed · champions = the sim's most likely winner of each power league; the fifth bid is the best Group of Five champion · "
-        "the committee column shows the AP poll until the first CFP rankings on Nov 3 · prototype, not on air", 9.5, PALE)
+        txt(s, 11.3, y + 0.05, 1.1, 0.3, f"AP {a}" if a else "NR", 10, PALE, False, PP_ALIGN.RIGHT)
+    fy = TOP + 16 * RH + 0.1
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, fy, 11.5, 0.5, NAVY2)
+    txt(s, 1.1, fy + 0.06, 11.2, 0.4, "IN = chance of a playoff spot · BYE = chance of a top-four seed · champions = the sim's most likely winner of each power league; the fifth bid is the best Group of Five champion · "
+        "below the grey line: the four at the door · the committee column shows the AP poll until the first CFP rankings on Nov 3 · prototype, not on air", 9.5, PALE)
     out = os.path.join(HERE, "decks", f"proto_bracket_week{week}.pptx")
     prs.save(out)
     return out, F
