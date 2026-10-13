@@ -1467,9 +1467,9 @@ def build_recap():
         a, b, title, key, call, ours, close = row[:7]
         man = row[7] if len(row) > 7 else None
         ou = row[8] if len(row) > 8 else None
-        lines_ = f"our line {_line_txt(a, b, ours)}"
+        lines_ = ""                                             # Lucas 10/13: no "our line" on the receipts
         if RECEIPTS_SHOW_MARKET:
-            lines_ += f" · closing {_line_txt(a, b, close)}"
+            lines_ += f"closing {_line_txt(a, b, close)}"
         fin = finals.get(key)
         calls = f"Machine {NAME2CODE[call.rsplit(' ', 1)[0]]} {call.rsplit(' ', 1)[1]}"
         if man:
@@ -1484,7 +1484,7 @@ def build_recap():
         margin = hp_ - ap_                       # actual home margin
         des = DESERVED.get((normalize_name(key[0]), normalize_name(key[1])))
         if des is not None:
-            lines_ += f" · deserved {b if des >= 0 else a} +{abs(des):.1f}"
+            lines_ += (" · " if lines_ else "") + f"deserved {b if des >= 0 else a} +{abs(des):.1f}"
             T["d"] += abs(des + ours)
         ma, mh = _call_pts(call, key)
         off = {"M": abs(margin - (mh - ma)), "K": abs(margin + close)}   # machine graded on its SCORE CALL, same as the man (Lucas 10/6)
@@ -1497,7 +1497,7 @@ def build_recap():
                 _gap_c = abs((_ch - _ca) + close)
                 T["gc"] = T.get("gc", 0.0) + _gap_c
                 _gap_txt += f" · man {_gap_c:g}"
-            lines_ += " · " + _gap_txt
+            lines_ += (" · " if lines_ else "") + _gap_txt
         T["l"] = T.get("l", 0.0) + abs(margin + ours)                     # internal: the LINE's miss (how our spread was off)
         T["sm"] += abs(ma - ap_) + abs(mh - hp_)
         if ou is not None:
@@ -2453,12 +2453,11 @@ else:
            + (f" · vs the deserved margins: machine {_rs['d']:.1f}" if _rs.get("d") else ""))
     _l2 = (f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} across "
            f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}")
-txt(s, 1.15, y + 0.13, 11.0, 0.35, _l1, 14.5, WHITE, bold=True)
 if RECEIPTS_SHOW_SPREAD_GAP and SPREAD_GAP_SEASON:
     _gm, _gc, _gn = SPREAD_GAP_SEASON
-    _l2 += f"   |   Off the spread this season: machine {_gm:g} · man {_gc:g} over {_gn} games"
-if premortem_line():
-    _l2 += "   |   " + premortem_line()
+    _l1 += f"   |   Off the spread, {_gn} games: man {_gc:g} · machine {_gm:g}"
+txt(s, 1.15, y + 0.13, 11.0, 0.35, _l1, 14.5 if len(_l1) <= 95 else 12.5, WHITE, bold=True)
+# pre-mortems stay in the notes (Lucas 10/13: off the receipts slide)
 txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5 if len(_l2) <= 150 else 9, RGBColor(0xCA, 0xDC, 0xFC))
 if WINNER_LOSER:
     txt(s, 1.15, y + 0.8, 11.0, 0.3, f"Machine's week — WINNER: {WINNER_LOSER[0]}   ·   LOSER: {WINNER_LOSER[1]}", 10, ORANGE, bold=True)
