@@ -1918,7 +1918,7 @@ if BOARDS:
         f"EPISODE {EPISODE} · WEEK {WEEK} · THE SEAT BOARD", 14, ORANGE, bold=True)
     txt(s, 0.9, 0.76, 11.5, 0.8, "Hot Seat Top 10", 40, WHITE, bold=True)
     txt(s, 0.9, 1.5, 11.5, 0.3,
-        "40% what six hot-seat lists say + 60% the machine's odds he is gone by next season", 13, PALE, bold=True)
+        "Ranked by the machine's odds he is gone by next season (fit on 2014–25 changes) · the six hot-seat lists shown beside it", 13, PALE, bold=True)
     TOP, RH = 2.08, 0.4
     R = PP_ALIGN.RIGHT
     _hdr(s, 1.75, 2.8, TOP - 0.25, "COACH · SCHOOL")
@@ -1928,7 +1928,7 @@ if BOARDS:
     _hdr(s, 7.35, 0.7, TOP - 0.25, "P(GONE)", R)
     _hdr(s, 8.1, 0.95, TOP - 0.25, "BUYOUT", R)
     _hdr(s, 9.1, 0.5, TOP - 0.25, "Δ", R)
-    _hdr(s, 9.65, 0.55, TOP - 0.25, "SCORE", R)
+    _hdr(s, 9.65, 0.55, TOP - 0.25, "ON LISTS", R)
     _hdr(s, 10.3, 2.1, TOP - 0.25, "LAST RESULT")
     for i, r in enumerate(BOARDS["hot_seat"][:10]):
         y = TOP + i * RH
@@ -1949,17 +1949,17 @@ if BOARDS:
         d = r["delta"] or 0.0
         txt(s, 9.1, y + 0.09, 0.5, 0.3, f"{d:+.1f}" if d else "0.0", 10,
             UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d), align=R)
-        txt(s, 9.65, y + 0.06, 0.55, 0.3, f"{r['score']:.0f}", 12.5, ORANGE, bold=True, align=R)
+        txt(s, 9.65, y + 0.07, 0.55, 0.3, r.get("lists") or "—", 11, ORANGE, bold=True, align=R)
         last = (r["results"] or ["—"])[-1].replace("vs ", "vs ").replace("at ", "at ")
         txt(s, 10.3, y + 0.09, 2.1, 0.3, last, 8.5, PALE)
     _fy = TOP + 10 * RH + 0.12
     _nxt = BOARDS["hot_seat"][10:13]
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.62, NAVY2)
     txt(s, 1.1, _fy + 0.06, 11.2, 0.28,
-        "Next three: " + " · ".join(f"{x['coach']} {x['score']:.0f}" for x in _nxt),
+        "Next three: " + " · ".join(f"{x['coach']} {round(100 * x['p_gone'])}%" for x in _nxt),
         11, WHITE, bold=True)
     txt(s, 1.1, _fy + 0.32, 11.2, 0.28,
-        "LISTS = six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat), 0–5; * = none names him · P(GONE) = odds he is gone next season, from 2014–25 · "
+        "LISTS = six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat), 0–5; * = none names him · ON LISTS = how many of the six name him · P(GONE) = odds he is gone next season, from 2014–25 · "
         "BUYOUT = what the school owes to fire him now; * = estimated, — = undisclosed", 10.5, PALE)
 
     # -- Heisman --

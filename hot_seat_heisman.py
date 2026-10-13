@@ -2,7 +2,8 @@
 Heisman board ("our own favorite"). Writes boards_week{N}.json for
 make_episode_deck.py; the notes (.md) carry the reasoning.
 
-HOT SEAT — since 10/6/2026 (Lucas): seat score = 0.4 * (HUMAN prior / 5) + 0.6 * min(P(gone) / 0.5, 1)
+HOT SEAT — since 10/13/2026 (Lucas): the board ranks by P(gone), the model's chance the coach is not back (score = 100 x P(gone));
+  the 10/6 composite 0.4 * (HUMAN prior / 5) + 0.6 * min(P(gone) / 0.5, 1) is kept as `composite` (HOT_SEAT_RULE).
   * HUMAN prior = hot_seat_sources.human_prior: the mean of six published hot-seat lists (five preseason + one
     October read, each mapped to CBS's 0-5 scale), a list that does not name him counting a quarter-vote at 1.0.
     Replaced CBS alone (10/4-10/6); the CBS dict below is kept as one of the six and for the tenure strings.
@@ -202,6 +203,7 @@ def p_at_least(bar, proj, p10, p90):
 
 
 CBS_W, P_FULL, CBS_DEFAULT = 0.4, 0.5, 1.5     # CBS weight; P(gone) that maxes the machine half; rating for a coach CBS did not list
+HOT_SEAT_RULE = "p_gone"   # Lucas 10/13: the board ranks by the MODEL'S chance the coach is gone (score = 100 x P(gone)); the 10/6 composite stays as `composite`. Set "composite" to go back.
 
 
 def hot_seat(sim, ratings, results, week):
@@ -219,7 +221,8 @@ def hot_seat(sim, ratings, results, week):
         cbs = k_lists > 0          # for the "est." flag: True = at least one list names him
         bar = BARS.get(team)
         p_bar = p_at_least(bar, s["proj"], s["p10"], s["p90"]) if bar else None
-        score = CBS_W * rating / 5 + (1 - CBS_W) * min(m["p_gone"] / P_FULL, 1.0)
+        composite = CBS_W * rating / 5 + (1 - CBS_W) * min(m["p_gone"] / P_FULL, 1.0)   # the 10/6 rule, kept as a shadow column
+        score = m["p_gone"] if HOT_SEAT_RULE == "p_gone" else composite
         r = ratings.get(normalize_name(team), {})
         rows.append(dict(team=team, coach=coach, cbs=rating, cbs_est=not cbs, lists=f"{k_lists}/{n_lists}",
                          tenure=TENURE.get(team, f"yr {m['tenure']}"), bar=bar, p_bar=round(p_bar, 3) if p_bar is not None else None,
@@ -229,7 +232,7 @@ def hot_seat(sim, ratings, results, week):
                          proj=s["proj"], p10=s["p10"], p90=s["p90"],
                          pbowl=round(s["pbowl"], 3), machine_rank=s["rank"],
                          rating=r.get("cur"), delta=r.get("delta"), gp=r.get("gp"),
-                         results=results.get(team, []), score=round(100 * score, 1)))
+                         results=results.get(team, []), score=round(100 * score, 1), composite=round(100 * composite, 1)))
     rows.sort(key=lambda x: -x["score"])
     return rows
 
@@ -356,7 +359,7 @@ def main():
         write_hot_seat_sheet(HERE / "NCAA_FBS_Teams.xlsm", a.week, hs)
     except Exception as e:       # the workbook may be open in Excel; the board json is already written
         print("Hot Seat sheet not written:", e)
-    print(f"HOT SEAT (40% six-list human prior + 60% P(gone) model, {len(hs)} coaches)")
+    print(f"HOT SEAT ({'ranked by P(gone), the model alone - 10/13' if HOT_SEAT_RULE == 'p_gone' else '40% six-list human prior + 60% P(gone) model'}, {len(hs)} coaches)")
     for i, r in enumerate(hs[:14], 1):
         est = "*" if r["cbs_est"] else ""
         print(f"{i:>2} {r['coach']:<18}{r['team']:<18} human {r['cbs']}{est} ({r['lists']})  {r['record']}  "
@@ -394,7 +397,7 @@ def write_hot_seat_sheet(book, week, rows=None):
     if "Hot Seat" in wb.sheetnames:
         del wb["Hot Seat"]
     ws = wb.create_sheet("Hot Seat")
-    ws["A1"] = f"HOT SEAT - every FBS coach - before week {week} - score = {CBS_W:.0%} human prior (six hot-seat lists) + {1 - CBS_W:.0%} P(gone) (full marks at {P_FULL:.0%})"
+    ws["A1"] = f"HOT SEAT - every FBS coach - before week {week} - " + ("score = 100 x P(gone), the model's chance the coach is not back (10/13)" if HOT_SEAT_RULE == "p_gone" else f"score = {CBS_W:.0%} human prior (six hot-seat lists) + {1 - CBS_W:.0%} P(gone) (full marks at {P_FULL:.0%})")
     ws["A1"].font = Font(bold=True, size=13)
     ws["A2"] = ("P(gone) = the model's odds he is not the school's coach next season (fired, retired or stepped down), fit on 2014-25: "
                 "losses and scoring margin so far, tenure, last season vs the program's ten-year standard, preseason rank. Human prior = mean of the lists that name him "

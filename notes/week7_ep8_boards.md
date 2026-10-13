@@ -51,22 +51,25 @@ review before air. Betting-line context stays in the internal folder.
   - QB efficiency index (kept): Mensah 51.2 · Carr 47.7 · Sayin 45.8 · Hoover 43.8 · Stockton 41.2 · Russell 35.5
   - Non-QB watch: Jeremiah Smith (Ohio State), Malachi Toney (Miami), Ryan Wingo (Texas), Trent Mosley (USC)
 
-- **Hot Seat (machine)** — 40% human prior (six lists) + 60% P(gone) model; RECORD / P(GONE) on the slide
-  - The read: the model half moved Scotty Walden to the top — UTEP is 1–5 and has lost its last four by 26 or more. Locksley climbs to second after 16–45 at Ohio State, three straight losses by 25-plus.
-    - Mike Norvell is the name that matters this week: seventh, up from 13th, after 20–44 at Louisville — and he walks into Miami as a three-touchdown underdog. Every human list has him; the model's P(gone) is only 0.19 because the record is 3–3 and the projection is 7–5.
-    - Shane Beamer falls from seventh to ninth after winning at Florida. Dabo Swinney stays tenth.
-  - Scotty Walden (UTEP) 80.8 (+0.0, #2 → #1) — 1–5, P(gone) 0.52
-  - Mike Locksley (Maryland) 78.0 (+5.1, #4 → #2) — 2–4, P(gone) 0.34
-  - Bill O'Brien (Boston College) 76.7 (-4.3, #1 → #3) — 2–3, P(gone) 0.40
-  - Deion Sanders (Colorado) 70.7 (-3.8, #3 → #4) — 2–3, P(gone) 0.40
-  - Bryant Vincent (UL Monroe) 68.0 (+0.0, #6 → #5) — 0–5, P(gone) 0.56
-  - Derek Mason (Middle Tennessee) 67.0 (-3.8, #5 → #6) — 2–3, P(gone) 0.31
-  - Mike Norvell (Florida State) 62.5 (+4.2, #13 → #7) — 3–3, P(gone) 0.19
-  - Greg Schiano (Rutgers) 61.2 (-2.7, #8 → #8) — 1–4, P(gone) 0.32
-  - Shane Beamer (South Carolina) 60.5 (-7.2, #7 → #9) — 3–3, P(gone) 0.24
-  - Dabo Swinney (Clemson) 59.7 (-2.9, #9 → #10) — 3–2, P(gone) 0.32
-  - Next up: Tim Albin (Charlotte) 58.7 · Joe Moorhead (Akron) 57.1
-  - Why they moved this week (the human lists did not change; every move is the model half — the result, the record, the projection, the chance he is gone; the buyout is NOT a model input)
+- **Hot Seat (machine)** — RULE CHANGE 10/13 (Lucas): ranked by P(gone), the model's chance the coach is not back next season, alone. The six human lists are shown beside it and no longer move the rank. Reason: past the point where coaches have been let go in other years and close to the first playoff poll — the board should name who is most likely to be fired, not whose seat feels hottest.
+  - The read: the model's list is the Group of Five first. Vincent (UL Monroe, 0–5) at 56% and Walden (UTEP, 1–5) at 52% are the only two coaches the model has over 50%; O'Brien and Sanders are next at 40%.
+    - Mike Norvell drops off the ten: 19%. Every human list has him, but at 3–3 with a 7.1-win projection the model does not. That gap between the lists and the model is the segment.
+    - Dabo Swinney is 14th at 32%; Shane Beamer 30th at 24% after winning at Florida.
+    - Four of the ten have no human list on them (Vincent, Helton, Harley, and Moorhead on one) — the model sees records and projections, not narratives.
+  - Bryant Vincent (UL Monroe) 56% — 0–5, projected 3.1 wins, no list names him
+  - Scotty Walden (UTEP) 52% — 1–5, projected 2.5, 3 of 6 lists
+  - Bill O'Brien (Boston College) 40% — 2–3, projected 4.2, 6 of 6 lists, buyout $8–25M (estimated)
+  - Deion Sanders (Colorado) 40% — 2–3, projected 5, 6 of 6 lists, buyout ~$25M (estimated)
+  - Joe Moorhead (Akron) 38% — 1–5, projected 3.6, 1 of 6 lists
+  - Mike Locksley (Maryland) 34% — 2–4, projected 4.2, 6 of 6 lists, buyout $9.2M
+  - Tim Albin (Charlotte) 34% — 0–6, projected 2.7, 2 of 6 lists
+  - Tyson Helton (Western Kentucky) 33% — 2–4, projected 4.9, no list
+  - Rob Harley (Northern Illinois) 33% — 0–5, projected 3.6, no list, year one
+  - Greg Schiano (Rutgers) 32% — 1–4, projected 3.9, 1 of 6 lists, buyout $18.5M
+  - Next three: Pete Lembo (Buffalo) 32% · Fran Brown (Syracuse) 32% · Timmy Chang (Hawai'i) 32% · then Dabo Swinney 32%
+  - Under the old composite (40% lists + 60% model, kept as a shadow column) the ten were Walden, Locksley, O'Brien, Sanders, Vincent, Mason, Norvell, Schiano, Beamer, Swinney.
+  - First-firing watch: none yet. Vincent, Walden and Albin are the three near-winless seats with no buyout on file.
+  - Why they moved this week (ranks below are the OLD composite order from Sunday; the human lists did not change; every move is the model half — the result, the record, the projection, the chance he is gone; the buyout is NOT a model input)
     - Walden (UTEP) to #1, no change in score: 13–30 to Nevada, 1–5, projected 2.5 wins; the model has him at 52% gone and no list is needed to get there
     - Locksley (Maryland) #4 → #2, +5.1: 16–45 at Ohio State, a third straight loss by 25 or more; P(gone) 30% → 34% as the projection fell to 4.2 wins
     - O'Brien (Boston College) #1 → #3, −4.3: 16–25 at SMU was a loss, but a 9-point loss on the road is better than the model expected; P(gone) 44% → 40%
@@ -80,7 +83,6 @@ review before air. Betting-line context stays in the internal folder.
     - Next up: Albin (Charlotte) #16 → #11, +2.0, 0–6 after 10–50 at North Texas; Moorhead (Akron) #14 → #12 after 23–25 to Eastern Michigan
     - Biggest fallers outside the ten: Helton (Western Kentucky) #12 → #18, −11.4, beat Missouri State; Lembo (Buffalo) #17 → #22, −9.4, won at Toledo; Creighton (Eastern Michigan) #11 → #16, −8.6, won at Akron; Sawvel (Wyoming) #10 → #13, −7.6, won at San José State — a win moves a Group of Five seat more than a loss does, because the projection is close to the bar
     - Biggest riser outside the ten: Harley (Northern Illinois) #33 → #19, +6.7, 0–5 after 7–28 to Air Force
-  - First-firing watch: none yet. Walden, Vincent and Albin are the three winless-or-near-it seats with no buyout on file.
 
 - **Superdog picks** (lines as of Sun 10/11 — re-read at the freeze)
   - Machine Giant Killer: Colorado +16.5 vs Utah (#12) — exp 6.32, machine -13.3

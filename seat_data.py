@@ -30,7 +30,7 @@ sys.path.insert(0, str(HERE / "fpi-decomposition"))
 from name_mapping import normalize_name  # noqa: E402
 
 OUT = HERE / "seat_data_2026.json"
-RULE_WEEK = 6          # first boards file under the 10/4 hot-seat rule (40% human / 60% P(gone))
+RULE_WEEKS = [6, 7]    # boards files where the hot-seat rule changed: 6 = the 10/4 composite (40% human / 60% P(gone)); 7 = ranked by P(gone) alone (Lucas 10/13)
 MARKET_KEYS = {"market", "market_p", "upset_board", "market_date"}
 
 
@@ -95,7 +95,7 @@ def build() -> dict:
     nonqb = [dict(strip(r), **team_bits(r["team"])) for r in latest.get("heisman_non_qb", [])]
 
     out = dict(as_of=dt.datetime.now().isoformat(timespec="minutes"), season=2026, week=weeks[-1], weeks=weeks, heisman_weeks=hw,
-               rule_week=RULE_WEEK, generated=latest.get("generated"), games_used=latest.get("games_used"),
+               rule_weeks=RULE_WEEKS, generated=latest.get("generated"), games_used=latest.get("games_used"),
                hot_seat=hot, heisman_all=allpos, heisman_qb=qb, heisman_non_qb=nonqb)
     txt = json.dumps(out, separators=(",", ":"), ensure_ascii=False)
     assert "market" not in txt.lower() or '"market' not in txt, "market field leaked"

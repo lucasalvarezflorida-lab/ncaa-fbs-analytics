@@ -91,7 +91,7 @@ p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
 
   <section id="pane-seat" role="tabpanel" aria-labelledby="tab-seat">
     <h2>The seat board <span class="k" id="k-seat"></span></h2>
-    <p class="lead">Score = 40% what the six human lists say, 60% the model's chance the coach is gone after the season (fit on 2014 to 2025 firings: record against the bar, buyout, tenure, the machine's rating and its move). Projected wins come from the season simulation; the band is the 10th to 90th percentile.</p>
+    <p class="lead">Ranked by the model's chance the coach is not back next season, fit on 2014 to 2025 changes from the record against the bar, tenure, the machine's rating and its move. The six human hot-seat lists are shown beside it and do not move the rank. The buyout is information, not an input. Projected wins come from the season simulation; the band is the 10th to 90th percentile.</p>
     <div class="rows" id="seat"></div>
     <button class="showmore" id="seat-more">Show the next 10</button>
     <div class="foot" id="seat-foot"></div>
@@ -123,7 +123,7 @@ p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
   const mv = (prev, now) => prev == null ? '<small>new</small>' : prev > now ? `<small class="up">▲${prev - now}</small>` : prev < now ? `<small class="down">▼${now - prev}</small>` : '<small>—</small>';
   $('sub').textContent = `Boards after Week ${D.week - 1} (built for Week ${D.week}) · ${D.games_used} rated games · generated ${(D.generated || D.as_of).replace('T', ' ')}`;
 
-  const spark = (vals, weeks, w, h, mark) => {
+  const spark = (vals, weeks, w, h, marks) => {
     const pts = vals.map((v, i) => [v, weeks[i]]).filter((p) => p[0] != null);
     if (pts.length < 2) return '';
     const lo = Math.min(...pts.map((p) => p[0])), hi = Math.max(...pts.map((p) => p[0]));
@@ -131,7 +131,7 @@ p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
     const poly = vals.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean).join(' ');
     const li = vals.length - 1;
     let marker = '';
-    if (mark != null) { const mi = weeks.indexOf(mark); if (mi > 0) marker = `<line x1="${x(mi - 0.5).toFixed(1)}" y1="2" x2="${x(mi - 0.5).toFixed(1)}" y2="${h - 2}" stroke="var(--line)" stroke-dasharray="2 2"/>`; }
+    for (const mark of (marks || [])) { const mi = weeks.indexOf(mark); if (mi > 0) marker += `<line x1="${x(mi - 0.5).toFixed(1)}" y1="2" x2="${x(mi - 0.5).toFixed(1)}" y2="${h - 2}" stroke="var(--line)" stroke-dasharray="2 2"/>`; }
     return `<svg viewBox="0 0 ${w} ${h}" aria-label="by week ${pts.map((p) => 'wk' + p[1] + ' ' + p[0]).join(', ')}">${marker}<polyline points="${poly}" fill="none" stroke="var(--muted)" stroke-width="1.5"/>${vals[li] != null ? `<circle cx="${x(li).toFixed(1)}" cy="${y(vals[li]).toFixed(1)}" r="2.5" fill="var(--chalk)"/>` : ''}</svg>`;
   };
 
@@ -148,7 +148,7 @@ p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
         <div class="scorecell"><div class="v num">${f1(r.score)}${r.prev_score != null ? `<small class="${r.score > r.prev_score ? 'down' : r.score < r.prev_score ? 'up' : ''}">${(r.score - r.prev_score >= 0 ? '+' : '') + f1(r.score - r.prev_score)}</small>` : ''}</div><div class="track"><i style="width:${r.score / seatMax * 100}%"></i></div></div>
         <div class="cell c5"><b class="num">${pct(r.p_gone)}</b> gone<br>lists ${esc(r.lists || '—')}</div>
         <div class="cell c6"><b class="num">${f1(r.proj)}</b> wins${band}</div>
-        <div class="cell c7">${r.buyout ? `<b>${esc(r.buyout)}</b> buyout` : 'buyout —'}<div class="spark">${spark(r.hist, D.weeks, 110, 30, D.rule_week)}</div></div>
+        <div class="cell c7">${r.buyout ? `<b>${esc(r.buyout)}</b> buyout` : 'buyout —'}<div class="spark">${spark(r.hist, D.weeks, 110, 30, D.rule_weeks)}</div></div>
         <div class="more"><details><summary>results · machine #${r.machine_rank} (${f1(r.rating)}, ${r.delta >= 0 ? '+' : ''}${f1(r.delta)} since July)</summary>${(r.results || []).map(esc).join(' · ')}${r.buyout_note ? `<br><i>${esc(r.buyout_note)}</i>` : ''}</details></div>
       </div>`;
     }).join('');
@@ -156,7 +156,7 @@ p.lead { margin: 6px 0 12px; max-width: 72ch; color: var(--muted); }
     $('k-seat').textContent = `${Math.min(seatN, D.hot_seat.length)} of ${D.hot_seat.length} coaches`;
   };
   $('seat-more').addEventListener('click', () => { seatN += 10; renderSeat(); });
-  $('seat-foot').textContent = `Sparkline = the score by week (${D.weeks.map((w) => 'wk' + w).join(', ')}); the dashed line marks the rule change before the Week ${D.rule_week} board (the earlier scores were 60% CBS tier, 40% chance of missing the bar). Lists = how many of the six human hot-seat lists carry the coach. Gone = the model's chance the coach is out after the season.`;
+  $('seat-foot').textContent = `Sparkline = the score by week (${D.weeks.map((w) => 'wk' + w).join(', ')}); the dashed lines mark the rule changes: before Week 6 the score was 60% CBS tier + 40% chance of missing the bar, Week 6 was 40% human lists + 60% P(gone), from Week 7 it is P(gone) alone. Lists = how many of the six human hot-seat lists carry the coach. Gone = the model's chance the coach is out after the season.`;
 
   // heisman
   let heisN = 12;
