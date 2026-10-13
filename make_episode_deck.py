@@ -1363,9 +1363,9 @@ RECAP_ROWS = [   # Week 6 (auto from card_data_week6_frozen.json + score_tracker
     ("USC", "PSU", "USC at Penn State", ("USC", "Penn State"), "Penn State 28–27", -1, -1.5, "Penn State 31–27", 54.5),
 ]   # Week 6 margin miss (score calls): machine 52.0 · man 56.0 · market (line) 49.5 — winners: machine 1–4, man 2–3
 WINNER_LOSER = None   # Lucas 10/6: the machine's winner / loser of the week lives on the OneNote Recap page, not the slide
-WEEK0_MISS = (396.0, 384.0)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 6 (35 games) — running total (Wk5 55/61, Wk6 52/49.5)
-WEEK0_LINE_MISS = 395.7      # INTERNAL: the machine graded on its LINE through Week 6 (the old convention) — how our spread was off (Wk5 55.0, Wk6 51.2)
-PRIOR_GAMES = 35
+WEEK0_MISS = (344.0, 334.5)  # machine (SCORE-CALL margin, Lucas 10/6), market (closing line) through Week 5 (30 games) — the running total BEFORE the recap week (the slide adds the recap week itself); Wk5 55/61
+WEEK0_LINE_MISS = 344.5      # INTERNAL: the machine graded on its LINE through Week 5 (the old convention) — how our spread was off (Wk5 55.0; Wk6 51.2 is the recap week)
+PRIOR_GAMES = 30   # games BEFORE the recap week
 LEANS_LINE = "stated leans 4–3 · no position taken in Weeks 4–5"
 
 
@@ -1418,6 +1418,7 @@ SLIDES_SHOW_MARKET = False     # Lucas 9/21: the market is INTERNAL everywhere o
                                # internal/MARKET_DEEP_DIVE. The superdog SPREAD stays: the rulebook
                                # is defined by it.
 RECEIPTS_SHOW_MARKET = SLIDES_SHOW_MARKET
+RECEIPTS_SHOW_SPREAD_GAP = True   # Lucas 10/13: next to each call, how far off the closing spread it was, and the season total - the one market figure on the receipts slide
 CLOSER_SHOW_MARKET = True      # Lucas 9/21 (after the test run): the ONE exception - the predictions slide
                                # shows the market number next to ours so viewers can see whether we agree.
                                # The receipts stay man vs machine; every other slide stays market-free.
@@ -1487,6 +1488,16 @@ def build_recap():
             T["d"] += abs(des + ours)
         ma, mh = _call_pts(call, key)
         off = {"M": abs(margin - (mh - ma)), "K": abs(margin + close)}   # machine graded on its SCORE CALL, same as the man (Lucas 10/6)
+        if RECEIPTS_SHOW_SPREAD_GAP:                                      # how far each call sat from the closing spread (home-perspective market margin = -close)
+            _gap_m = abs((mh - ma) + close)
+            T["gm"] = T.get("gm", 0.0) + _gap_m
+            _gap_txt = f"off the spread · machine {_gap_m:g}"
+            if man:
+                _ca, _ch = _call_pts(man, key)
+                _gap_c = abs((_ch - _ca) + close)
+                T["gc"] = T.get("gc", 0.0) + _gap_c
+                _gap_txt += f" · man {_gap_c:g}"
+            lines_ += " · " + _gap_txt
         T["l"] = T.get("l", 0.0) + abs(margin + ours)                     # internal: the LINE's miss (how our spread was off)
         T["sm"] += abs(ma - ap_) + abs(mh - hp_)
         if ou is not None:
@@ -1520,6 +1531,43 @@ def build_recap():
 
 
 RECAP, RECAP_SUM = build_recap()
+
+
+def _spread_gap_season():
+    """Season to date, every graded card game with a closing line: sum of |call margin - market margin| for the machine
+    and the man (score_tracker.json + the frozen cards). Returns (machine, man, n)."""
+    import json as _json   # the module-level alias is defined further down the file
+    try:
+        tr = _json.load(open(os.path.join(HERE, "score_tracker.json"), encoding="utf-8"))
+    except FileNotFoundError:
+        return None
+    tot_m = tot_c = 0.0; n = 0
+    cache = {}
+    for g in tr:
+        if not (g.get("final") and g.get("machine")):
+            continue
+        wk = g["week"]
+        if wk not in cache:
+            cache[wk] = {}
+            for fn in (f"card_data_week{wk}_frozen.json", f"card_data_week{wk}.json"):
+                fp = os.path.join(HERE, fn)
+                if os.path.exists(fp):
+                    c = _json.load(open(fp, encoding="utf-8")); gg = c.get("games", c) if isinstance(c, dict) else c
+                    cache[wk] = {(normalize_name(x["home"]), normalize_name(x["away"])): x for x in gg}
+                    break
+        cg = cache[wk].get((normalize_name(g["home"]), normalize_name(g["away"])))
+        if not cg or not cg.get("mkt_spread"):
+            continue
+        team, num = cg["mkt_spread"].rsplit(" ", 1); num = float(num)
+        mkt = -num if normalize_name(team) == normalize_name(g["home"]) else num
+        tot_m += abs((g["machine"][1] - g["machine"][0]) - mkt)
+        if g.get("man"):
+            tot_c += abs((g["man"][1] - g["man"][0]) - mkt)
+        n += 1
+    return tot_m, tot_c, n
+
+
+SPREAD_GAP_SEASON = _spread_gap_season() if RECEIPTS_SHOW_SPREAD_GAP else None
 
 # ---- Superdog boards. RULEBOOK (settled with Corey 2026-09-19): a 3.5+ point
 # dog; SUPERDOG = any matchup, GIANT KILLER = an unranked dog vs an AP Top 25
@@ -2406,6 +2454,9 @@ else:
     _l2 = (f"Season: machine {_run_m:.1f} vs market {_run_k:.1f} across "
            f"{PRIOR_GAMES + _rs['n']} games · {LEANS_LINE}")
 txt(s, 1.15, y + 0.13, 11.0, 0.35, _l1, 14.5, WHITE, bold=True)
+if RECEIPTS_SHOW_SPREAD_GAP and SPREAD_GAP_SEASON:
+    _gm, _gc, _gn = SPREAD_GAP_SEASON
+    _l2 += f"   |   Off the spread this season: machine {_gm:g} · man {_gc:g} over {_gn} games"
 if premortem_line():
     _l2 += "   |   " + premortem_line()
 txt(s, 1.15, y + 0.5, 11.0, 0.3, _l2, 10.5 if len(_l2) <= 150 else 9, RGBColor(0xCA, 0xDC, 0xFC))
