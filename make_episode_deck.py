@@ -1476,7 +1476,7 @@ def build_recap():
             calls += f" · Man {NAME2CODE[man.rsplit(' ', 1)[0]]} {man.rsplit(' ', 1)[1]}"
         if fin is None:
             rows.append((a, b, title, calls + " · FINAL pending",
-                         lines_, "graded before air — see the notes", "P"))
+                         lines_, "graded before air — see the notes", "P", "T"))
             continue
         ap_, hp_ = fin
         win = b if hp_ >= ap_ else a
@@ -1492,11 +1492,13 @@ def build_recap():
             _gap_m = abs((mh - ma) + close)
             T["gm"] = T.get("gm", 0.0) + _gap_m
             _gap_txt = f"off the spread · machine {_gap_m:g}"
+            _gap_mark = "M"
             if man:
                 _ca, _ch = _call_pts(man, key)
                 _gap_c = abs((_ch - _ca) + close)
                 T["gc"] = T.get("gc", 0.0) + _gap_c
                 _gap_txt += f" · man {_gap_c:g}"
+                _gap_mark = "M" if _gap_m < _gap_c else ("C" if _gap_c < _gap_m else "T")
             lines_ += (" · " if lines_ else "") + _gap_txt
         T["l"] = T.get("l", 0.0) + abs(margin + ours)                     # internal: the LINE's miss (how our spread was off)
         T["sm"] += abs(ma - ap_) + abs(mh - hp_)
@@ -1526,7 +1528,8 @@ def build_recap():
             miss += f" · man {off['C']:g}"
         if len(shown) == 1:
             mark, verdict = "M", ""
-        rows.append((a, b, title, callfin, lines_, miss + (f" — {verdict}" if verdict else ""), mark))
+        rows.append((a, b, title, callfin, lines_, miss + (f" — {verdict}" if verdict else ""), mark,
+                     _gap_mark if RECEIPTS_SHOW_SPREAD_GAP else "T"))
     return rows, T
 
 
@@ -2419,13 +2422,13 @@ txt(s, 0.9, 1.08, 11.5, 0.3,
 # codes, not names, on the calls line: three score lines have to fit one row
 y = 1.55
 VERD = {"M": ORANGE, "K": RGBColor(0xB5, 0x12, 0x1B), "C": RGBColor(0x1F, 0x7A, 0x4D), "T": MUTE, "P": MUTE}
-for a, b, tit, callfin, lines_, miss, mark in RECAP:
+for a, b, tit, callfin, lines_, miss, mark, gmark in RECAP:
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y, 11.5, 0.86, ICE)
     logo_badge(s, 1.1, y + 0.13, 0.6, a)
     logo_badge(s, 1.8, y + 0.13, 0.6, b)
     txt(s, 2.6, y + 0.09, 4.8, 0.35, tit, 13.5, INK, bold=True)
     txt(s, 2.6, y + 0.46, 4.9, 0.3, callfin, 10.5, INK)
-    txt(s, 7.35, y + 0.11, 4.8, 0.3, lines_, 9.5, MUTE)
+    txt(s, 7.35, y + 0.11, 4.8, 0.3, lines_, 10, VERD[gmark], bold=True)   # Lucas 10/13: same size as off-by, coloured for the closer call
     txt(s, 7.35, y + 0.44, 4.8, 0.3, miss, 10, VERD[mark], bold=True)
     y += 0.94
 shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, y + 0.05, 11.5, 0.85 + (0.3 if WINNER_LOSER else 0), NAVY)
