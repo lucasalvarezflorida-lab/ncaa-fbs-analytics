@@ -19,6 +19,12 @@ review before air. Betting-line context stays in the internal folder.
     - Georgia 20 at Alabama 17 — called Alabama 27–24; off by 6 · Corey Alabama 35–34, off by 4
     - USC 31 at Penn State 23 — called Penn State 28–27; off by 9 · Corey Penn State 31–27, off by 12
   - The honest part on Texas A&M: the machine had them 9th on results (three blowouts of bad teams paying for the Kentucky and LSU losses); the play-by-play shadow had them 21st and had Missouri by six. The shadow was right. A&M is 16th now.
+  - The machine's week
+    - Winner: Ole Miss — 35–3 at Vanderbilt; +3.0 to 17.6, No. 16 → No. 9, playoff odds 23% → 44% (the biggest gain of anyone)
+    - Runner-up: Missouri +2.0, No. 17 → No. 14 after 27–6 over Texas A&M; playoff odds 19% → 34%
+    - Loser: Florida State — 20–44 at Louisville; −3.2 to 9.9, No. 19 → No. 37, out of the 25 (the biggest fall of anyone)
+    - Runner-up: Oregon — 15–17 to UCLA without Moore; −0.6 on the rating but playoff odds 35% → 6%, the largest drop in the field; LSU 82% → 59% after losing at Kentucky
+    - Say: "Machine — winner Ole Miss; loser Florida State, and Oregon's playoff odds went from a third to a coin flip's loose change"
   - Pre-mortems: see notes/premortems.md (fired / lost / named the reason) — A&M under 3.4 a carry, Georgia over 4.2 a carry and USC over 6.9 an attempt all fired and named the loss
   - Superdogs: Man 48.5 · Machine 44.5 — Machine: South Carolina +14.5 at Florida won outright 38–19 (+19.5), San Diego State +14.5 lost 66–14. Man: New Mexico State +6.5 lost 22–3, UCF +11.5 lost 42–28 (graded at his lines; Corey confirms)
 
