@@ -1924,13 +1924,12 @@ if BOARDS:
     R = PP_ALIGN.RIGHT
     _hdr(s, 1.75, 2.8, TOP - 0.25, "COACH · SCHOOL")
     _hdr(s, 4.6, 1.5, TOP - 0.25, "TENURE")
-    _hdr(s, 6.15, 0.55, TOP - 0.25, "LISTS", R)
-    _hdr(s, 6.75, 0.55, TOP - 0.25, "RECORD", R)
-    _hdr(s, 7.35, 0.7, TOP - 0.25, "P(GONE)", R)
-    _hdr(s, 8.1, 0.95, TOP - 0.25, "BUYOUT", R)
-    _hdr(s, 9.1, 0.5, TOP - 0.25, "Δ", R)
-    _hdr(s, 9.65, 0.55, TOP - 0.25, "ON LISTS", R)
-    _hdr(s, 10.3, 2.1, TOP - 0.25, "LAST RESULT")
+    _hdr(s, 6.2, 0.55, TOP - 0.25, "RECORD", R)
+    _hdr(s, 6.85, 0.7, TOP - 0.25, "P(GONE)", R)
+    _hdr(s, 7.6, 0.95, TOP - 0.25, "BUYOUT", R)
+    _hdr(s, 8.6, 0.5, TOP - 0.25, "Δ", R)
+    _hdr(s, 9.15, 0.6, TOP - 0.25, "ON LISTS", R)
+    _hdr(s, 9.85, 2.55, TOP - 0.25, "LAST RESULT")
     for i, r in enumerate(BOARDS["hot_seat"][:10]):
         y = TOP + i * RH
         if i % 2 == 0:
@@ -1939,20 +1938,18 @@ if BOARDS:
         _row_logo(s, 1.35, y, r["team"])
         txt(s, 1.75, y + 0.06, 2.8, 0.3, f"{r['coach']} · {r['team']}", 12, WHITE, bold=True)
         txt(s, 4.6, y + 0.09, 1.5, 0.3, r["tenure"], 8.5, PALE)
-        txt(s, 6.15, y + 0.07, 0.55, 0.3, f"{r['cbs']:.1f}{'*' if r['cbs_est'] else ''}",
-            11, WHITE, bold=True, align=R)
-        txt(s, 6.75, y + 0.07, 0.55, 0.3, r["record"], 11, WHITE, align=R)
-        txt(s, 7.35, y + 0.07, 0.7, 0.3, f"{round(100 * r['p_gone'])}%", 11,
+        txt(s, 6.2, y + 0.07, 0.55, 0.3, r["record"], 11, WHITE, align=R)
+        txt(s, 6.85, y + 0.07, 0.7, 0.3, f"{round(100 * r['p_gone'])}%", 11,
             DOWN if r["p_gone"] >= 0.3 else (UP if r["p_gone"] < 0.15 else WHITE),
             bold=True, align=R)
-        txt(s, 8.1, y + 0.07, 0.95, 0.3, f"{r.get('buyout', '—')}{'*' if r.get('buyout_est') else ''}",
+        txt(s, 7.6, y + 0.07, 0.95, 0.3, f"{r.get('buyout', '—')}{'*' if r.get('buyout_est') else ''}",
             10.5, WHITE, bold=True, align=R)
         d = r["delta"] or 0.0
-        txt(s, 9.1, y + 0.09, 0.5, 0.3, f"{d:+.1f}" if d else "0.0", 10,
+        txt(s, 8.6, y + 0.09, 0.5, 0.3, f"{d:+.1f}" if d else "0.0", 10,
             UP if d > 0 else (DOWN if d < 0 else PALE), bold=bool(d), align=R)
-        txt(s, 9.65, y + 0.07, 0.55, 0.3, r.get("lists") or "—", 11, ORANGE, bold=True, align=R)
+        txt(s, 9.15, y + 0.07, 0.6, 0.3, r.get("lists") or "—", 11, ORANGE, bold=True, align=R)
         last = (r["results"] or ["—"])[-1].replace("vs ", "vs ").replace("at ", "at ")
-        txt(s, 10.3, y + 0.09, 2.1, 0.3, last, 8.5, PALE)
+        txt(s, 9.85, y + 0.09, 2.55, 0.3, last, 8.5, PALE)
     _fy = TOP + 10 * RH + 0.12
     _nxt = BOARDS["hot_seat"][10:13]
     shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, _fy, 11.5, 0.95, NAVY2)      # 0.95 tall: the footnote wraps to two lines in Slides (Lucas 10/13)
@@ -1960,7 +1957,7 @@ if BOARDS:
         "Next three: " + " · ".join(f"{x['coach']} {round(100 * x['p_gone'])}%" for x in _nxt),
         11, WHITE, bold=True)
     txt(s, 1.1, _fy + 0.34, 11.2, 0.55,
-        "LISTS = six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat), 0–5; * = none names him · ON LISTS = how many of the six name him · P(GONE) = odds he is gone next season, from 2014–25 · "
+        "ON LISTS = how many of the six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat) name him · P(GONE) = odds he is gone next season, from 2014–25 · "
         "BUYOUT = what the school owes to fire him now; * = estimated, — = undisclosed", 10.5, PALE)
 
     # -- Heisman --
