@@ -318,7 +318,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: Ole Miss has beaten expectation by 5.0 with turnover luck of −9 — the de-lucked number says the team is a little better than its scores
   - Corey: PLACEHOLDER
 
-- **Nebraska at Oregon — Sat Oct 17, Autzen Stadium · Nebraska · Oregon (machine #17 at #15)**
+- **Nebraska at Oregon — Sat Oct 17, 11:00 PM ET, Autzen Stadium · Nebraska · Oregon (machine #17 at #15)**
   
   - The read
     - Oregon by 3.2, 59%, with Moore's status the story: the machine carries 2.0 off Oregon for the quarterback, and the plays say 1.7

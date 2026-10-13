@@ -1,80 +1,234 @@
 # Ep8 · Week 7 — BOARDS
 
-Outline notes: topic → the points → the facts under each point. MACHINE-DRAFTED Sun 10/11 —
-review before air. Betting-line context stays in the internal folder.
+Outline notes: topic → the points → the facts under each point. MACHINE-DRAFTED —
+review before air. Drafted Sun Oct 11 from the Sunday rebuild (329 rated games); rewritten Tue Oct 13 for the
+day's changes (hot-seat rule, playoff column, receipts slide). Corey's sections are placeholders until his deck
+updates. Betting-line context stays in the internal folder except where the slide now carries it (the receipts).
 
 - **Receipts (Week 6)** — man vs machine
-  - The read: the machine's worst week of the year. One winner in five, and the one it got right (Indiana) it had by six and got by three.
-    - The man had the one game the two disagreed on: Corey took Missouri 28–27, the machine had Texas A&M 25–24, Missouri won 27–6.
-    - The other three misses were shared: Oregon lost to UCLA without Dante Moore, Georgia beat Alabama in Tuscaloosa, USC beat Penn State.
-    - Margin miss still lands close because the machine's scores were tighter than the man's: 52 to 56.
-  - Winners: machine 1–4, man 2–3
-  - Margin miss, lower is better: Machine 52 · Man 56
-  - Points off the FINAL SCORE: Machine 82 · Man 120 (see notes/score_tracker.md)
+  - Winners: machine 1–4, man 2–3 — the man had the one game the two split: Corey took Missouri 28–27, the machine had Texas A&M 25–24, Missouri won 27–6
+    - The other three misses were shared: Oregon lost to UCLA without Dante Moore, Georgia won in Tuscaloosa, USC won at Penn State
+  - Margin miss, lower is better: Man 56 · Machine 52 — the machine's worst week of the year and it still edges the margin, because its scores were tighter than the man's
+    - Per game the machine was closer on three (Indiana, Oregon, Penn State), the man on two (Missouri, Alabama)
+    - The one it got right, Indiana, it had by six and got by three; the one it got wrong alone, Texas A&M, it had 9th on results while the play-by-play shadow had them 21st and had Missouri by six. The shadow was right. A&M is 16th now
+  - Off the spread (NEW on the slide this week — each call measured from the closing line): this week Man 8.5 · Machine 9.5 — closer: man 3, machine 2
+    - Season, 30 graded card games with a closing line: Man 58.5 · Machine 55.5 — about two points a game from the market for both; the machine a tenth of a point closer per game
+    - What it answers: "off by the final points" says who called the game; "off the spread" says who read the market. Corey was closer to the market three times this week and closer to the final twice
+  - Points off the FINAL SCORE (both teams' points added up): Man 120 · Machine 82 (see notes/score_tracker.md)
   - Season to date (35 games): winners machine 23–12, man 25–10; margin miss tied at 395
-  - Game by game
-    - Indiana 20 at Nebraska 17 — called Indiana 27–21; off by 3 · Corey Indiana 31–24, off by 4
-    - Texas A&M 6 at Missouri 27 — called Texas A&M 25–24; off by 22 · Corey Missouri 28–27, off by 20
-    - UCLA 17 at Oregon 15 — called Oregon 34–24; off by 12 · Corey Oregon 41–27, off by 16
-    - Georgia 20 at Alabama 17 — called Alabama 27–24; off by 6 · Corey Alabama 35–34, off by 4
-    - USC 31 at Penn State 23 — called Penn State 28–27; off by 9 · Corey Penn State 31–27, off by 12
-  - The honest part on Texas A&M: the machine had them 9th on results (three blowouts of bad teams paying for the Kentucky and LSU losses); the play-by-play shadow had them 21st and had Missouri by six. The shadow was right. A&M is 16th now.
+  - Game by game (the slide's order: Final · Man · Machine, closing line after the final)
+    - Indiana 20 at Nebraska 17 (IND –7.5) — Man IND 31–24 · Machine IND 27–21 · Off the spread: man 0.5 · machine 1.5, man closer · Off by the final points: man 4 · machine 3, machine closer
+    - Texas A&M 6 at Missouri 27 (MIZ –3.5) — Man MIZ 28–27 · Machine TAMU 25–24 · Off the spread: man 2.5 · machine 4.5, man closer · Off by the final points: man 20 · machine 22, man closer
+    - UCLA 17 at Oregon 15 (ORE –11.5) — Man ORE 41–27 · Machine ORE 34–24 · Off the spread: man 2.5 · machine 1.5, machine closer · Off by the final points: man 16 · machine 12, machine closer
+    - Georgia 20 at Alabama 17 (BAMA –1.5) — Man BAMA 35–34 · Machine BAMA 27–24 · Off the spread: man 0.5 · machine 1.5, man closer · Off by the final points: man 4 · machine 6, man closer
+    - USC 31 at Penn State 23 (PSU –1.5) — Man PSU 31–27 · Machine PSU 28–27 · Off the spread: man 2.5 · machine 0.5, machine closer · Off by the final points: man 12 · machine 9, machine closer
   - The machine's week
     - Winner: Ole Miss — 35–3 at Vanderbilt; +3.0 to 17.6, No. 16 → No. 9, playoff odds 23% → 44% (the biggest gain of anyone)
     - Runner-up: Missouri +2.0, No. 17 → No. 14 after 27–6 over Texas A&M; playoff odds 19% → 34%
     - Loser: Florida State — 20–44 at Louisville; −3.2 to 9.9, No. 19 → No. 37, out of the 25 (the biggest fall of anyone)
     - Runner-up: Oregon — 15–17 to UCLA without Moore; −0.6 on the rating but playoff odds 35% → 6%, the largest drop in the field; LSU 82% → 59% after losing at Kentucky
     - Say: "Machine — winner Ole Miss; loser Florida State, and Oregon's playoff odds went from a third to a coin flip's loose change"
-  - Pre-mortems: see notes/premortems.md (fired / lost / named the reason) — A&M under 3.4 a carry, Georgia over 4.2 a carry and USC over 6.9 an attempt all fired and named the loss
-  - Superdogs: Man 48.5 · Machine 44.5 — Machine: South Carolina +14.5 at Florida won outright 38–19 (+19.5), San Diego State +14.5 lost 66–14. Man: New Mexico State +6.5 lost 22–3, UCF +11.5 lost 42–28 (graded at his lines; Corey confirms)
+  - The man's week (Corey's slide): PLACEHOLDER — read off his deck when it posts; confirm the title says Week 6
+  - Pre-mortems (notes only — off the slide since 10/13): see notes/premortems.md (fired / lost / named the reason)
+    - A&M under 3.4 a carry, Georgia over 4.2 a carry and USC over 6.9 an attempt all fired and named the loss
+  - Superdogs: Man 48.5 · Machine 44.5
+    - Machine: South Carolina +14.5 at Florida won outright 38–19 (+19.5), San Diego State +14.5 lost 66–14
+    - Corey: New Mexico State +6.5 lost 22–3, UCF +11.5 lost 42–28 (graded at his lines — CONFIRM his)
 
 - **Top 25 (machine)**
-  - Rule: residual cap 42, lam 3, de-lucked 3 a turnover; 329 rated games
-  - The ten: Georgia 28.6 · Ohio State 27.7 · Notre Dame 27.5 · Alabama 27.0 · Miami 26.3 · Texas 26.2 · LSU 24.4 · Indiana 22.6 · Ole Miss 17.6 · Utah 17.4
-  - The read: Georgia takes the top spot by winning in Tuscaloosa; Alabama drops from first to fourth and is still 27.0 — the top four sit within 1.6 points of each other.
-    - The cliff after Indiana is the story of the board: eighth is 22.6, ninth is 17.6. There are eight real contenders and then everybody else.
-    - Miami is fifth and the only team in the top ten the show has not had on a card. That changes this week.
-  - Risers (this week's games alone): Louisville +3.0 (#43 → #34); Ole Miss +3.0 (#16 → #9); Houston +2.5 (#37 → #26); Missouri +2.0 (#17 → #14); Wake Forest +2.0 (#35 → #27); South Carolina +1.8 (#24 → #19)
-  - Fallers: Florida State -3.2 (#19 → #37); Texas A&M -2.3 (#9 → #16); Northwestern -1.4 (#25 → #28); LSU -1.4 (#7 → #7); Florida -1.1 (#15 → #18); Texas -0.9 (#4 → #6)
-  - Into the 25: Auburn #25, Iowa #24 · Out: Florida State (#19 → #37), Northwestern (#25 → #28)
-  - Oregon is 15th with Dante Moore still marked out (2.0 off the rating); the UCLA loss did the rest (19.0 → 16.4)
-  - Playoff picture: Georgia 99% · Alabama 95% · Notre Dame 95% · Texas 91% · Miami 91% · Ohio State 88% · Indiana 78% · LSU 59% · Boise State 48% · Ole Miss 44% · Utah 41% · Texas Tech 40%
-    - The read: seven teams at 78% or better for twelve spots. Miami is 79% to win the ACC, the highest conference number on the board. LSU's loss column is the swing: 59% in, down from 84% two weeks ago.
+  - What the number means (say it once if there is a new listener)
+    - Points better than an average FBS team on a neutral field; a line = the difference + 2.5 for home
+    - July prior is worth three games; FCS games count nothing; every game goes in de-lucked (margin minus 3 a turnover), one game moves a team by at most 42 points of evidence; a confirmed-out quarterback comes off his team's number (Oregon, −2.0 for Dante Moore)
+  - Georgia No. 1 at 28.6 — won in Tuscaloosa 20–17; Alabama drops from first to fourth and is still 27.0
+    - Say: "the top four sit inside 1.6 points — Georgia 28.6, Ohio State 27.7, Notre Dame 27.5, Alabama 27.0 — and the cliff after Indiana is the story of the board: eighth is 22.6, ninth is 17.6. Eight real contenders, then everybody else"
+    - Miami is fifth and the only team in the top ten the show has not had on a card. That changes this week
+  - The playoff column (NEW on the slide this week — the move column is now each team's chance to make the field, from the Sunday sim, 10,000 seasons)
+    - Say it once: "Our Rankings answer how good you are; the playoff column answers what you've done and what is left"
+    - Why it is there: a preview. The ranking stays sorted by the rating through Week 10 — the rating is the validated number and the receipts' number. The week of the first committee rankings (Tue Nov 3) a second board, The Bracket, joins the deck: the sim's twelve in (five champions including the best Group of Five champion, seven at large, straight seeding, byes to the top four) plus the four at the door below a cut line, next to the committee's list
+    - The gap to watch: LSU is 7th on the rating and 59% to make the field; Boise State is not in the 25 and 48% — the conference bid does that
+  - The 25 (rating · move this week · playoff · AP)
+    - 1. Georgia 28.6 · +0.8, #2 → #1 · 99% · AP 1
+    - 2. Ohio State 27.7 · +0.1, #3 → #2 · 88% · AP 4
+    - 3. Notre Dame 27.5 · +0.8, #5 → #3 · 95% · AP 2
+    - 4. Alabama 27.0 · −0.9, #1 → #4 · 95% · AP 6
+    - 5. Miami 26.3 · +0.1, #6 → #5 · 91% · AP 3
+    - 6. Texas 26.2 · −0.9, #4 → #6 · 91% · AP 7
+    - 7. LSU 24.4 · −1.4 · 59% · AP 22
+    - 8. Indiana 22.6 · −0.4 · 78% · AP 5
+    - 9. Ole Miss 17.6 · +3.0, #16 → #9 · 44% · AP 9
+    - 10. Utah 17.4 · +0.3 · 41% · AP 11
+    - 11. Oklahoma 16.9 · +1.0, #14 → #11 · 30% · AP NR
+    - 12. Tennessee 16.9 · +0.2 · 31% · AP 14
+    - 13. Texas Tech 16.7 · +0.5 · 40% · AP 10
+    - 14. Missouri 16.5 · +2.0, #17 → #14 · 34% · AP 13
+    - 15. Oregon 16.4 · −0.6, #11 → #15 · 6% · AP NR
+    - 18.4 on results; the machine takes 2.0 off for Dante Moore (still marked out — re-check Tuesday). The move column shows results only
+    - 16. Texas A&M 15.8 · −2.3, #9 → #16 · 4% · AP NR
+    - 17. Nebraska 15.7 · +1.4, #18 → #17 · 11% · AP NR
+    - 18. Florida 14.5 · −1.1, #15 → #18 · 9% · AP NR
+    - 19. South Carolina 14.5 · +1.8, #24 → #19 · 3% · AP NR
+    - 20. BYU 13.4 · +0.5, #23 → #20 · 23% · AP 8
+    - 21. USC 13.2 · +0.1, #19 → #21 · 9% · AP 19
+    - 22. Mississippi State 13.1 · +0.0 · 22% · AP 16
+    - 23. Wisconsin 13.0 · −0.0, #21 → #23 · 10% · AP NR
+    - 24. Iowa 12.0 · +1.3, #30 → #24 · 7% · AP 17
+    - 25. Auburn 11.6 · −0.7, #26 → #25 · 2% · AP NR
+  - Risers (this week's games alone, rule held constant)
+    - Louisville +3.0, #43 → #34: 44–20 over Florida State
+    - Ole Miss +3.0, #16 → #9: 35–3 at Vanderbilt
+    - Houston +2.5, #37 → #26
+    - Missouri +2.0, #17 → #14: 27–6 over Texas A&M
+    - Wake Forest +2.0, #35 → #27
+    - South Carolina +1.8, #24 → #19: 38–19 at Florida
+  - Fallers
+    - Florida State −3.2, #19 → #37: 20–44 at Louisville; the week's biggest loser
+    - Texas A&M −2.3, #9 → #16: 6–27 at Missouri
+    - Northwestern −1.4, #25 → #28
+    - LSU −1.4, stays #7: lost at Kentucky — playoff odds 82% → 59%
+    - Florida −1.1, #15 → #18: 19–38 to South Carolina at home
+    - Texas −0.9, #4 → #6
+  - Into the 25: Iowa #24 · Auburn #25
+  - Out of the 25: Florida State (#19 → #37) · Northwestern (#25 → #28)
+  - Voters vs us (AP Week 7, out Sunday)
+    - Their top ten: Georgia 1 · Notre Dame 2 · Miami 3 · Ohio State 4 · Indiana 5 · Alabama 6 · Texas 7 · BYU 8 · Ole Miss 9 · Texas Tech 10
+    - LSU: the machine's No. 7, the AP's No. 22 — two losses on the record, 24.4 on the field
+    - BYU: AP No. 8, the machine's No. 20
+    - Iowa: AP No. 17, the machine's No. 24
+    - Indiana: AP No. 5, the machine's No. 8 — the one place the voters are higher on a top-eight team than we are
+    - Ours, not theirs: Oklahoma 11, Oregon 15, Texas A&M 16, Nebraska 17 · Theirs, not ours: UCLA 12, Kentucky, Oklahoma State, Houston 20 (our 26)
+    - Say: "voters rank wins, the machine rates how well you've played"
+  - Playoff picture (the machine's simulator, 10,000 seasons from these ratings — the slide's new column)
+    - Georgia 99% to make the field (94% last week) · 50% to win the conference · 19.7% title
+    - Alabama 95% to make the field (98%) · 26% to win the conference · 13.0% title
+    - Notre Dame 95% to make the field (93%) · 14.3% title
+    - Texas 91% to make the field (97%) · 15% to win the conference · 12.4% title
+    - Miami 91% to make the field (91%) · 79% to win the conference — the highest conference number on the board · 10.9% title
+    - Ohio State 88% to make the field (87%) · 49% to win the conference · 13.8% title
+    - Indiana 78% to make the field (72%) · 34% to win the conference · 4.9% title
+    - LSU 59% to make the field (82%) · 4% to win the conference · 4.8% title
+    - Boise State 48% to make the field (46%) · 66% to win the conference · 0.1% title
+    - Ole Miss 44% to make the field (23%) · 1.1% title
+    - Utah 41% to make the field (38%) · 33% to win the conference · 0.8% title
+    - Texas Tech 40% to make the field (39%) · 34% to win the conference · 0.7% title
+    - Next: Missouri 34% (19%) · Tennessee 31% (26%) · Oklahoma 30% (14%) · BYU 23% (21%)
+    - The read: seven teams at 78% or better for twelve spots. LSU's loss column is the swing — 59% in, down from 84% two weeks ago. Ole Miss and Missouri are the week's gainers, and both are on the card Saturday against each other
 
-- **Heisman board (machine)** — "the machine's best-player board": best so far, not a prediction (market 2026-10-11)
-  - All positions (the slide board): Julian Sayin (QB) 14.7 · Darian Mensah (QB) 14.5 · C.J. Carr (QB) 12.8 · Keelon Russell (QB) 12.2 · Devon Dampier (QB) 11.1 · Josh Hoover (QB) 10.7 · Gunner Stockton (QB) 10.2 · Sam Leavitt (QB) 9.7
-  - The read: Sayin and Mensah are a coin flip at the top — 0.2 apart — and Mensah gets his first national stage of the year Saturday night against Florida State.
-    - Carr moves to third; Russell drops below him after Alabama's first loss.
-    - Jeremiah Smith is tenth on our board and the clear favorite in the market. Our board measures points added per game; a receiver touches the ball a dozen times, a quarterback sixty. The board is not saying Smith is the tenth-best player, it is saying his per-game points added are a receiver's.
-  - Julian Sayin (Ohio State) 14.7 (-0.8, #1 → #1)
-  - Darian Mensah (Miami) 14.5 (+0.0, #2 → #2)
-  - C.J. Carr (Notre Dame) 12.8 (+0.2, #4 → #3)
-  - Keelon Russell (Alabama) 12.2 (-0.6, #3 → #4)
-  - Devon Dampier (Utah) 11.1 (+0.3, #5 → #5)
-  - Josh Hoover (Indiana) 10.7 (+0.2, #6 → #6)
-  - Gunner Stockton (Georgia) 10.2 (+0.3, #9 → #7)
-  - Sam Leavitt (LSU) 9.7 (-0.2, #8 → #8)
-  - QB efficiency index (kept): Mensah 51.2 · Carr 47.7 · Sayin 45.8 · Hoover 43.8 · Stockton 41.2 · Russell 35.5
-  - Non-QB watch: Jeremiah Smith (Ohio State), Malachi Toney (Miami), Ryan Wingo (Texas), Trent Mosley (USC)
+- **Top 25 (Corey's)** — PLACEHOLDER: read off his deck when it posts (his top ten, 11–25, biggest splits vs ours, where we agree, his moves)
 
-- **Hot Seat (machine)** — RULE CHANGE 10/13 (Lucas): ranked by P(gone), the model's chance the coach is not back next season, alone. The six human lists are shown beside it and no longer move the rank. Reason: past the point where coaches have been let go in other years and close to the first playoff poll — the board should name who is most likely to be fired, not whose seat feels hottest.
-  - The read: the model's list is the Group of Five first. Vincent (UL Monroe, 0–5) at 56% and Walden (UTEP, 1–5) at 52% are the only two coaches the model has over 50%; O'Brien and Sanders are next at 40%.
-    - Mike Norvell drops off the ten: 19%. Every human list has him, but at 3–3 with a 7.1-win projection the model does not. That gap between the lists and the model is the segment.
-    - Dabo Swinney is 14th at 32%; Shane Beamer 30th at 24% after winning at Florida.
-    - Four of the ten have no human list on them (Vincent, Helton, Harley, and Moorhead on one) — the model sees records and projections, not narratives.
-  - Bryant Vincent (UL Monroe) 56% — 0–5, projected 3.1 wins, no list names him
-  - Scotty Walden (UTEP) 52% — 1–5, projected 2.5, 3 of 6 lists
-  - Bill O'Brien (Boston College) 40% — 2–3, projected 4.2, 6 of 6 lists, buyout $8–25M (estimated)
-  - Deion Sanders (Colorado) 40% — 2–3, projected 5, 6 of 6 lists, buyout ~$25M (estimated)
-  - Joe Moorhead (Akron) 38% — 1–5, projected 3.6, 1 of 6 lists
-  - Mike Locksley (Maryland) 34% — 2–4, projected 4.2, 6 of 6 lists, buyout $9.2M
-  - Tim Albin (Charlotte) 34% — 0–6, projected 2.7, 2 of 6 lists
-  - Tyson Helton (Western Kentucky) 33% — 2–4, projected 4.9, no list
-  - Rob Harley (Northern Illinois) 33% — 0–5, projected 3.6, no list, year one
-  - Greg Schiano (Rutgers) 32% — 1–4, projected 3.9, 1 of 6 lists, buyout $18.5M
-  - Next three: Pete Lembo (Buffalo) 32% · Fran Brown (Syracuse) 32% · Timmy Chang (Hawai'i) 32% · then Dabo Swinney 32%
-  - Under the old composite (40% lists + 60% model, kept as a shadow column) the ten were Walden, Locksley, O'Brien, Sanders, Vincent, Mason, Norvell, Schiano, Beamer, Swinney.
-  - First-firing watch: none yet. Vincent, Walden and Albin are the three near-winless seats with no buyout on file.
+- **Heisman board (machine)** — the Best-Player Board: points added per game × team factor (market: SI's tracker, 2026-10-11)
+  - What the board is, say it once
+    - Plain English: "Points per game is how many points a player's own plays added to his team's score each week. Eighteen a game means that without his plays, the offense scores about eighteen fewer points"
+    - 'Best so far, not a prediction.' CFBD's predicted points added (PPA) credits every play to the players who made it: a passer on every dropback, a receiver on every target, a runner on every carry. We take each player's PPA per play, shrink it toward his 2025 number (150 plays of prior weight for a quarterback, 40 for everyone else — a new starter gets the FBS average), multiply by his plays per game, and multiply by a team factor: 0.5 + half the team's odds of ten wins, because the trophy goes to players on ten-win teams
+    - The market column is the price to WIN the trophy — a vote in December — not who has played best. The two questions have different answers, and the gap between them is the segment
+  - The read: Sayin and Mensah are a coin flip at the top — 0.2 apart — and Mensah gets the home stage Saturday night against Florida State
+    - Carr moves to third; Russell drops below him after Alabama's first loss (the index is shrunk toward a prior he does not have — a new starter carries the FBS average)
+    - Sayin's index fell 15.5 → 14.7 with Ohio State's odds of ten wins; Hoover and Stockton each moved up a tenth or two
+
+  - **Why Sayin is above Smith — the on-air answer**
+    - Per touch, Smith is the best player in the country and the board says so: 1.06 points every time the ball goes his way, against 0.57 for Sayin every time he drops back. On the per-play board Smith is No. 1 and it is not close
+    - The difference is volume. Smith has been targeted 67 times in six games — 11 a game; Sayin has 193 dropbacks — 32 a game. 1.02 (Smith's shrunk number) × 11 is 11.3 points a game; 0.56 × 32 is 18.0. Same team, same team factor (0.82), so the whole gap is plays
+    - And Sayin's number already contains Smith. When Sayin hits Smith for 50 yards, PPA credits the throw to the passer and the catch to the receiver. A quarterback's points a game is the sum of what every receiver did with his throws, plus his own decisions; a receiver's is his share of one quarterback's throws
+    - The market disagrees — Smith −220 (69%), Sayin +3400 (3%) — because the market is pricing a vote. The board is not saying Smith is the tenth-best player; it is saying his per-game points added are a receiver's
+    - Say it plainly: our board is not wrong and neither is the market. One measures production per game, the other predicts a ballot
+
+  - **The five on the slide, and why**
+  - **Julian Sayin (QB, Ohio State) index 14.7** — 0.57 points a play on 193 plays in 6 games; 2025 prior 0.545; blended 0.56 a play × 32 plays a game = 18.0 points a game; team factor 0.82 (P(10 wins) 64%), market +3400 (3%)
+    - 116-of-163, 1,772 yards, 17 TD, 2 INT through six. The highest points a game on the board on volume; the per-play number is fourth among the five. Down 0.8 on the index this week because Ohio State's odds of ten wins fell, not because he played worse — the Indiana game Saturday is the one that moves it
+  - **Darian Mensah (QB, Miami) index 14.5** — 0.77 points a play on 142 plays in 5 games; 2025 prior 0.371; blended 0.56 a play × 28 plays a game = 16.0 points a game; team factor 0.91 (P(10 wins) 82%), market +1000 (9%)
+    - 112-of-133, 1,438 yards, 15 TD, 0 INT through five (Miami was off). The best per-play number of any quarterback (0.77) and the QB efficiency board's No. 1 (51.2); fewer dropbacks than Sayin is the only reason he is second on points a game. The 2025 prior (0.37) is low, so the shrink costs him more than anyone — on raw 2026 numbers he would be No. 1. Market No. 2 at +1000, tied with Carr
+  - **C.J. Carr (QB, Notre Dame) index 12.8** — 0.58 points a play on 161 plays in 6 games; 2025 prior 0.433; blended 0.51 a play × 27 plays a game = 13.6 points a game; team factor 0.94 (P(10 wins) 87%), market +1000 (9%)
+    - 102-of-144, 1,378 yards, 16 TD, 1 INT through six; 27 dropbacks a game, fewer than anyone above him. The team factor (0.94, Notre Dame 87% to ten wins) is the best on the board and is what moves him to third. BYU on the road Saturday night is his week
+  - **Keelon Russell (QB, Alabama) index 12.2** — 0.54 points a play on 206 plays in 6 games; 2025 prior none (new starter); blended 0.46 a play × 34 plays a game = 15.8 points a game; team factor 0.77 (P(10 wins) 54%), market +1600 (6%)
+    - 110-of-162, 1,599 yards, 12 TD, 2 INT, plus 225 rushing yards and 4 touchdowns through six. The most dropbacks of the five; a redshirt freshman with no 2025 line, so he carries the FBS-average prior, which drags his blended number down to 0.46 from a raw 0.54. Alabama's loss to Georgia took the team factor from 0.78 to 0.77 and him from third to fourth
+  - **Devon Dampier (QB, Utah) index 11.1** — 0.40 points a play on 178 plays in 5 games; 2025 prior 0.413; blended 0.41 a play × 36 plays a game = 14.4 points a game; team factor 0.77 (P(10 wins) 53%), no market price
+    - 94-of-131, 1,134 yards, 12 TD, 2 INT, plus 207 rushing yards and 3 touchdowns through five. 0.40 a play is the lowest in the five; he is here on plays a game (36) and Utah's 53% to ten wins. The first to fall out if Hoover adds a big week
+  - Next up: Josh Hoover 10.7 · Gunner Stockton 10.2 · Sam Leavitt 9.7 · Jayden Maiava 9.6 · Jeremiah Smith 9.3
+    - Josh Hoover (Indiana): 0.69 a play, second only to Mensah per play, but 25 dropbacks a game on a run-first team; the shrink hurts him too (2025 prior 0.35). Ohio State at home Saturday noon
+    - Gunner Stockton (Georgia): 0.58 a play, 25 dropbacks a game; Georgia's 73% to ten wins. Market +1750 after winning at Alabama
+    - Sam Leavitt (LSU): 0.39 a play, the lowest of anyone near the board; here on 38 dropbacks a game, and LSU's 40% to ten wins is sliding
+  - QB efficiency index (per play, kept beside the board): Mensah 51.2 · Carr 47.7 · Sayin 45.8 · Hoover 43.8 · Stockton 41.2 · Russell 35.5
+  - The market check (SI's tracker, Sun 10/11): Jeremiah Smith −220 (was +115) · C.J. Carr +1000 (was +800) · Darian Mensah +1000 (was +460) · Trinidad Chambliss +1500 · Keelon Russell +1600 (was +750) · Gunner Stockton +1750 (was +2900) · Julian Sayin +3400 (was +3100) · Kamario Taylor +4000 · Drew Mestemaker +4000 · Josh Hoover +4500
+    - Where the two lists disagree most: Sayin (board 1, market 7), Smith (market 1, board 10), Chambliss (market 4, not on the board — Ole Miss is 44% to the playoff but his per-play number is ordinary), Russell (market 5, board 4 — the market halved him after the Georgia loss)
+  - Non-QB watch (per touch, own scale): Jeremiah Smith 1.06 · Malachi Toney (Miami) 0.89 · Trent Mosley (USC) 0.96 on few touches · Ryan Wingo (Texas) 0.77 · Jadan Baugh (Florida) 0.33 — the running back whose team is 3% to ten wins
+  - Caveats: PPA is a model, not a stat sheet; garbage time is in these numbers; the team factor is our sim's number and moves every week; 'plays a game' punishes anyone whose team sat on a lead
+
+- **Heisman (Corey's)** — PLACEHOLDER: his five, read off the deck when it posts; note which of his five are in the machine's top eight
+
+- **Hot Seat (machine)** — RULE CHANGE 10/13 (Lucas): ranked by P(gone), the model's chance the coach is not back next season, alone
+  - What changed and why — say it once
+    - Since Oct 6 the board was 40% six human hot-seat lists + 60% the model. From this week the rank is the model's number alone; the six lists are still on the slide (ON LISTS, x/6) and no longer move the rank
+    - Why now: we are past the point where coaches have been let go in other years, and the first playoff poll is three weeks out. The board should name who is most likely to be fired, not whose seat feels hottest
+    - The model: who was actually gone the next year, 2014–25 (fired, retired or stepped down; coaches who left for another job are not counted) — tenure, last season against the program's ten-year standard, this season's record and scoring margin, and the win projection against the bar. It is fit on records and results; the buyout is NOT an input (the study had no buyout data). The buyout is on the slide as information — say so if asked
+    - Backtest, after five weeks of a season: 0.70 (0.50 is a coin flip); 20 of the 89 departures of 2022–25 in the season's top ten. A modest predictor that knows nothing about boosters, buyouts or December letters
+    - The old composite is kept as a shadow column; under it the ten were Walden, Locksley, O'Brien, Sanders, Vincent, Mason, Norvell, Schiano, Beamer, Swinney
+  - What it did to the board: the Group of Five first. Vincent (UL Monroe, 0–5) at 56% and Walden (UTEP, 1–5) at 52% are the only two coaches the model has over 50%; O'Brien and Sanders are next at 40%
+    - Mike Norvell drops off the ten: 19%. Every human list has him, but at 3–3 with a 7.1-win projection the model does not. That gap between the lists and the model is the segment
+    - Four of the ten have no human list on them (Vincent, Helton, Harley; Moorhead on one) — the model sees records and projections, not narratives
+    - Dabo Swinney is 14th at 32%; Shane Beamer 24th at 24% after winning at Florida; Derek Mason 16th at 31%
+
+  - **The ten, and why each is on the seat**
+  - **1. Bryant Vincent (UL Monroe) 56%** — 0–5, projected 3.1 wins (bowl 4%), lists 0/6, buyout — · was No. 5 under the composite
+    - This season: L 13-62 at Mississippi State; L 20-26 at UAB; L 35-38 vs SE Louisiana; L 17-45 vs Florida Atlantic; L 35-52 at South Alabama
+    - The record: 0–5, 8–21 in his tenure (5–7, then 3–9, then this), losing by 18 a game; the machine has the team 135th of 136
+    - What the model sees: the worst record pattern in FBS this year at a program whose ten-year standard is 31% wins — it is not asking for much, and he is under it. 56% to be gone (58% last week; the number drifts down a little as the projection settles), the only coach past even money with a full schedule left
+    - The money and the oddity: no list has written about him; he was also the interim athletic director last year at a department that cut $6–9M from the lowest budget in FBS. Base reported around $725–750K, deal through 2029, buyout undisclosed. The budget is what saves him — a 0–5 team with no money sometimes keeps the coach by default
+  - **2. Scotty Walden (UTEP) 52%** — 1–5, projected 2.5 wins (bowl 1%), lists 3/6, buyout — · was No. 1 under the composite
+    - This season: L 0-51 at Oklahoma; W 51-10 vs Texas Southern; L 17-52 at Michigan; L 7-33 vs Oregon State; L 7-61 at New Mexico; L 13-30 vs Nevada
+    - The record: 5–19 at UTEP coming into the year (3–9, 2–10), 6–24 now; the machine has UTEP last in FBS (138th, −24.3)
+    - What the model sees: 17% last year at a program that wins 25% over ten years — the lowest bar on the board, and he is under it; 2.5 projected wins is the lowest projection of anyone. 52% to be gone, unchanged this week — the Nevada loss was priced in
+    - The money: salary $801K; buyout undisclosed. He offered to take less money this offseason to fund players and the talks did not get done
+  - **3. Bill O'Brien (Boston College) 40%** — 2–3, projected 4.2 wins (bowl 17%), lists 6/6, buyout $8–25M* · was No. 3 under the composite
+    - This season: L 15-34 at Cincinnati; W 28-21 vs Rutgers; W 22-16 vs Maine; L 14-21 vs Virginia Tech; L 16-25 at SMU
+    - The record: 7–6 and a bowl in year one, then 2–10 with a ten-game losing streak — BC's worst season since 2012 — now 2–3 with losses to Cincinnati by 19, Virginia Tech and SMU
+    - What the model sees: last year's 17% is the lowest of anyone on the board against a program that wins 47% over ten years. 40% to be gone, down from 43% — a nine-point loss at SMU was better than the model expected
+    - The December letter: the athletic director told fans in writing that O'Brien is 'the right man' and put more money behind the program, including a $50M donor challenge — the strongest public backing anyone on this board has, written before a 2–3 start
+    - The money: BC is private and publishes nothing; the guesses run from $8M to $25M, so say 'undisclosed'. Every one of the six lists names him
+  - **4. Deion Sanders (Colorado) 40%** — 2–3, projected 5 wins (bowl 37%), lists 6/6, buyout ~$25M* · was No. 4 under the composite
+    - This season: W 14-13 at Georgia Tech; W 52-21 vs Weber State; L 7-41 at Northwestern; L 13-23 at Baylor; L 7-29 vs Texas Tech
+    - The record: 16–21 in four seasons — 4–8, 9–4, 3–9, now 2–3 with three straight losses by 34, 10 and 22. The 9–4 was the year with Travis Hunter and Shedeur Sanders; everything since has been under .500
+    - What the model sees: 25% last year against a 44% program, −7 a game this year; the projection is still 5 wins, which is why the number fell 43% → 40% even after 7–29 to Texas Tech. A record pattern, nothing more
+    - The money runs the other way: firing him costs the school something like $25M (an estimate — the 75% term is from his first contract), while leaving costs him $10M, and nothing if he retires. This is the seat where 'steps aside' is more likely than 'fired' — and the model cannot tell the two apart
+  - **5. Joe Moorhead (Akron) 38%** — 1–5, projected 3.6 wins (bowl 8%), lists 1/6, buyout — · was No. 12 under the composite
+    - This season: L 16-38 at Wake Forest; W 45-10 vs Robert Morris; L 7-41 at Minnesota; L 10-38 vs UNLV; L 17-41 at Central Michigan; L 23-25 vs Eastern Michigan
+    - The record: 8–28 through 2024 in four seasons, now 1–5 in year five with the one win over an FCS team; the machine has Akron 132nd
+    - What the model sees: a fifth-year coach under a 30%-win standard, losing by 23 a game. 38% to be gone, unchanged this week — the two-point loss to Eastern Michigan was the first close game of the year
+    - The money: extended through 2027 after last season; buyout undisclosed. Only one of the six lists names him, which is the composite's reason he sat 12th and the model's reason he is 5th
+  - **6. Mike Locksley (Maryland) 34%** — 2–4, projected 4.2 wins (bowl 17%), lists 6/6, buyout $9.2M · was No. 2 under the composite
+    - This season: W 62-0 vs Hampton; W 38-14 at UConn; L 26-35 vs Virginia Tech; L 3-54 vs UCLA; L 23-48 at Nebraska; L 16-45 at Ohio State
+    - The record: 37–49 in eight years, 4–8 the last two, now 2–4 with a third straight loss by 25 or more (54–3 to UCLA, 48–23 at Nebraska, 45–16 at Ohio State)
+    - What the model sees: 33% last year, a 43% program — only a little under his own standard; this year's margin is held up by 62–0 over Hampton. 34% to be gone, up from 30% as the projection fell to 4.2 wins
+    - The money: $9.2M to fire him this year — the lowest buyout in the Big Ten. Maryland kept him last December and gave him more money for players; the AD said so publicly. Cheap to fire, publicly backed, every list names him — the human half had him 2nd; the model has him 6th
+  - **7. Tim Albin (Charlotte) 34%** — 0–6, projected 2.7 wins (bowl 2%), lists 2/6, buyout — · was No. 11 under the composite
+    - This season: L 41-43 vs The Citadel; L 9-41 at Ole Miss; L 21-26 at App State; L 7-34 vs Louisiana; L 8-59 vs Memphis; L 10-50 at North Texas
+    - The record: 0–6 in year two, with the opener lost to an FCS team and the last two by 51 and 40; the machine has Charlotte 136th
+    - What the model sees: winless with the second-lowest projection on the board; year two is the tenure term that keeps him under Vincent and Walden. 34% to be gone, up from 32%
+    - The money: undisclosed. Two of the six lists have him — the human half is thin, the model half is the whole case
+  - **8. Tyson Helton (Western Kentucky) 33%** — 2–4, projected 4.9 wins (bowl 34%), lists 0/6, buyout — · was No. 18 under the composite
+    - This season: L 14-49 at Nevada; L 20-70 at Georgia; L 0-38 at Indiana; W 52-7 vs Mercyhurst; L 13-34 at New Mexico State; W 34-13 vs Missouri State
+    - The record: 8–5, 8–6, 9–4 the last three years, now 2–4 with both wins over FCS teams and a 34–13 loss at New Mexico State
+    - What the model sees: a Group of Five seat moves more on a win than a loss because the projection sits near the bar — the Missouri State win took him 43% → 33% and from 12th to 18th on the old composite, and he is still 8th on the model. No list has written about him
+    - The money: extended through 2028; buyout undisclosed. Three straight winning seasons protect him on the tenure terms; another winless month against FBS teams does not
+  - **9. Rob Harley (Northern Illinois) 33%** — 0–5, projected 3.6 wins (bowl 7%), lists 0/6, buyout — · was No. 19 under the composite
+    - This season: L 0-40 at Iowa; L 24-28 vs Illinois State; L 17-42 at Arizona; L 14-35 at Georgia State; L 7-28 vs Air Force
+    - The record: year one, 0–5, with a home loss to an FCS team (Illinois State) in week two; the machine has NIU 133rd
+    - What the model sees: a first-year coach is normally protected by tenure, and the number says so — 33% on a winless record is low for the record. The week's biggest riser outside the old ten (+6.7 on the composite, 28% → 33% on the model) after 7–28 to Air Force
+    - The money: undisclosed; no list names him. The honest line: year-one firings are rare, and the model knows it
+  - **10. Greg Schiano (Rutgers) 32%** — 1–4, projected 3.9 wins (bowl 11%), lists 1/6, buyout $18.5M · was No. 8 under the composite
+    - This season: L 21-37 vs Massachusetts; L 21-28 at Boston College; L 35-42 vs USC; W 58-7 vs Howard; L 15-47 vs Indiana
+    - The record: 31–41 in the second stint, 7–6, 7–6, 5–7, now 1–4 — with the 37–21 home loss to Massachusetts, the kind of result that moves this model more than a loss to Indiana does
+    - What the model sees: 42% last year at a program that wins 33% over ten years — he is above Rutgers' own standard, which is why he is only 32% to be gone despite 1–4 (35% last week; the projection was already 3.9)
+    - The money: the 2023 extension runs through 2029 and Rutgers owes 76.85% of what is left — about $18.5M — plus a $500K raise due after this season. That is a lot for a 1–4 team
+  - Next three: Pete Lembo (Buffalo) 32%, 3–3 · Fran Brown (Syracuse) 32%, 2–3 · Timmy Chang (Hawai'i) 32%, 1–5 · then Dabo Swinney (Clemson) 32%, 3–2, buyout $57M
+    - Lembo is the odd one: 3–3 with a 7.1-win projection and 86% to a bowl — the number is tenure and last season, not this one; he won at Toledo and fell 40% → 32%
+    - Swinney: 186–53 and two titles, but 7–6 last year against an 81%-win standard and 13–41 to Miami; $57M to fire him in 2026 and the model does not look at it. What the number measures is 'not here next year', and for Swinney the realistic path is his own door
+  - First-firing watch: none yet. Vincent, Walden and Albin are the three near-winless seats with no buyout on file
+
+  - Why Norvell is off the list — the on-air version
+    - Every one of the six lists has him, most of them first or second: 13–1 and left out of the playoff in 2023, then 2–10, then 5–7, and now 20–44 at Louisville
+    - The model has him at 19% — up from 15% after the Louisville loss, 36th in FBS. At 3–3 with a 7.1-win projection against a 50-50 program, the record pattern is a middling coach having a middling year, not a firing
+    - Under the composite the lists carried him to 7th; with the rank on the model alone he is out. Say it plainly: the humans and the model disagree on Norvell more than on anyone, and Saturday at Miami is the next data point — a 24-point loss there and the number moves again
+    - The caveat: Florida State's wins are New Mexico State, Central Arkansas and Virginia. The model counts wins and margins, not who they came against beyond the machine's rating
+
   - Why they moved this week (ranks below are the OLD composite order from Sunday; the human lists did not change; every move is the model half — the result, the record, the projection, the chance he is gone; the buyout is NOT a model input)
     - Walden (UTEP) to #1, no change in score: 13–30 to Nevada, 1–5, projected 2.5 wins; the model has him at 52% gone and no list is needed to get there
     - Locksley (Maryland) #4 → #2, +5.1: 16–45 at Ohio State, a third straight loss by 25 or more; P(gone) 30% → 34% as the projection fell to 4.2 wins
@@ -89,6 +243,7 @@ review before air. Betting-line context stays in the internal folder.
     - Next up: Albin (Charlotte) #16 → #11, +2.0, 0–6 after 10–50 at North Texas; Moorhead (Akron) #14 → #12 after 23–25 to Eastern Michigan
     - Biggest fallers outside the ten: Helton (Western Kentucky) #12 → #18, −11.4, beat Missouri State; Lembo (Buffalo) #17 → #22, −9.4, won at Toledo; Creighton (Eastern Michigan) #11 → #16, −8.6, won at Akron; Sawvel (Wyoming) #10 → #13, −7.6, won at San José State — a win moves a Group of Five seat more than a loss does, because the projection is close to the bar
     - Biggest riser outside the ten: Harley (Northern Illinois) #33 → #19, +6.7, 0–5 after 7–28 to Air Force
+  - Legend: ON LISTS = how many of the six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat) name him; P(GONE) = odds he is gone next season, fit on 2014–25; BUYOUT = what the school owes to fire him now, * = estimated from reported contract terms, — = undisclosed; the composite (40% lists + 60% model) is kept as a shadow column, not on the slide
 
 - **Superdog picks** (lines as of Sun 10/11 — re-read at the freeze)
   - Machine Giant Killer: Colorado +16.5 vs Utah (#12) — exp 6.32, machine -13.3
