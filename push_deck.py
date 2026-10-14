@@ -57,6 +57,10 @@ EP7_FILE_ID = "1xEP41l3znZxibzbe1FHIK5sfnpaaJUT3rqJvwWRFEzM"  # created Tue 10/6
 EP6_FILE_ID = "19q79SlN1qLop7EUpkexvZ7ZFIhpQO3XOuqBIo5-3I6E"  # created Tue 9/29 night via --new on Tuesday lines; PRIVATE; recording-day freeze re-pushes over it with --file-id
 EP6_MERGED_FILE_ID = "1t9d6GU_ySGG5CJx7bAyS7oszfhHruEQl4-g8tt49ARM"  # Wed 9/30: merge_flow on Corey's Week 5 export (his own deck 1UpeONbb) + our Ep6; PRIVATE until Lucas says
 DEFAULT_PPTX = os.path.join(HERE, "decks", "2026_Week0_Episode1.pptx")
+# Two Slides files, one per episode package (Lucas 10/14: two videos a week). A = recap / Top 25 / boards,
+# B = preview / picks / feature. Create each ONCE: `python push_deck.py --package A --new "Ep9A - Week 8 recap"`,
+# then paste the id here; afterwards `python push_deck.py --package A` replaces that file in place. Both PRIVATE (ours).
+PACKAGE_FILE_IDS = {"A": None, "B": None}
 
 PPTX_MIME = ("application/vnd.openxmlformats-officedocument"
              ".presentationml.presentation")
@@ -190,7 +194,23 @@ def main():
     ap.add_argument("--new", metavar="NAME",
                     help="create a NEW Slides file with this name instead of "
                          "replacing --file-id (not shared with anyone)")
+    ap.add_argument("--package", choices=["A", "B"],
+                    help="episode package: picks decks/2026_Week{W}_Episode{E}_{A|B}.pptx (from "
+                         "make_episode_deck.py's EPISODE, WEEK) and that package's Slides file id")
     args = ap.parse_args()
+    if args.package:
+        if args.pptx == DEFAULT_PPTX:
+            import re
+            src = open(os.path.join(HERE, "make_episode_deck.py"), encoding="utf-8").read()
+            m = re.search(r"^EPISODE, WEEK = (\d+), (\d+)", src, re.M)
+            args.pptx = os.path.join(HERE, "decks", f"2026_Week{m.group(2)}_Episode{m.group(1)}_{args.package}.pptx")
+        if not args.new:
+            fid = PACKAGE_FILE_IDS.get(args.package)
+            if not fid:
+                sys.exit(f"no Slides file id for package {args.package} yet - create it once with "
+                         f"`python push_deck.py --package {args.package} --new \"Ep.. {args.package} - ...\"` "
+                         "and paste the id into PACKAGE_FILE_IDS in push_deck.py")
+            args.file_id = fid
     if not os.path.exists(args.pptx):
         sys.exit(f"pptx not found: {args.pptx}")
     creds = get_credentials()

@@ -45,6 +45,48 @@ prs = Presentation()
 prs.slide_width = Inches(13.333)
 prs.slide_height = Inches(7.5)
 
+# Two episode packages (Lucas 10/14, two videos a week): A = recap / Top 25 / boards, B = preview / picks / feature.
+# `python make_episode_deck.py --package a|b|both` - the full deck is always written; A and B are cut from it.
+PACKAGE = (sys.argv[sys.argv.index("--package") + 1].lower() if "--package" in sys.argv else "both")
+SECTIONS: list[tuple[str, int]] = []          # (name, index of the section's first slide) in build order
+
+
+def _section(name: str) -> None:
+    SECTIONS.append((name, len(prs.slides)))
+
+
+def _section_ranges() -> dict[str, list[int]]:
+    out = {}
+    for i, (name, start) in enumerate(SECTIONS):
+        end = SECTIONS[i + 1][1] if i + 1 < len(SECTIONS) else len(prs.slides)
+        out[name] = list(range(start, end))
+    return out
+
+
+PACKAGES = {   # section order inside each package
+    "a": ["receipts", "top25", "boards", "bracket"],
+    "b": ["title", "games", "feature", "upset", "closer"],
+}
+
+
+def _package_file(full_path: str, pkg: str) -> str:
+    """Re-open the full deck, keep the package's slides in its order, save as *_A.pptx / *_B.pptx."""
+    ranges = _section_ranges()
+    keep = [i for sec in PACKAGES[pkg] for i in ranges.get(sec, [])]
+    p = Presentation(full_path)
+    lst = p.slides._sldIdLst
+    ids = list(lst)
+    for sid in ids:
+        lst.remove(sid)
+    for i in keep:
+        lst.append(ids[i])
+    for i, sid in enumerate(ids):
+        if i not in keep:
+            p.part.drop_rel(sid.rId)
+    out_p = full_path[:-5] + f"_{pkg.upper()}.pptx"
+    p.save(out_p)
+    return out_p
+
 
 def blank(bg=WHITE):
     s = prs.slides.add_slide(prs.slide_layouts[6])
@@ -1715,6 +1757,7 @@ print(f"AP poll: week {AP_WEEK} ({len(AP_TOP25)} ranked) · receipts graded "
       f"{RECAP_SUM['n']}/{len(RECAP_ROWS)}")
 
 # ---------------- slide 1: the machine's top 25 ----------------
+_section("top25")
 # Data: ratings_current_2026.json (our in-season rating, sorted) joined to
 # rosters/data/teams_fbs_2026.json for display names + ESPN logo URLs (logos
 # are fetched into decks/logos on first use). AP column = the cached poll.
@@ -1972,6 +2015,7 @@ def _box_lines(names):
     return out
 
 # ---------------- slides 2-3: hot seat + Heisman boards ----------------
+_section("boards")
 # Data: boards_week{N}.json from hot_seat_heisman.py (CBS rating x season-sim
 # odds of hitting the job-saving win total; QB PPA blend x team P(10+)).
 _BP = os.path.join(HERE, f"boards_week{WEEK}.json")
@@ -2126,6 +2170,7 @@ if BOARDS:
         italic=True)
 
 # ---------------- title slide ----------------
+_section("title")
 s = blank(NAVY)
 txt(s, 0.9, 0.85, 11.5, 0.45, f"EPISODE {EPISODE} · WEEK {WEEK} · {EP_DATE}", 14, ORANGE,
     bold=True)
@@ -2416,6 +2461,7 @@ def one_fact(val, short):
 
 
 # ---------------- week 0 receipts ----------------
+_section("receipts")
 s = blank()
 txt(s, 0.9, 0.5, 11.5, 0.55, f"Week {WEEK - 1} — the receipts", 30, NAVY, bold=True)
 txt(s, 0.9, 1.08, 11.5, 0.3,
@@ -2473,6 +2519,7 @@ if WINNER_LOSER:
     txt(s, 1.15, y + (1.1 if _lspread else 0.8), 11.0, 0.3, f"Machine's week — WINNER: {WINNER_LOSER[0]}   ·   LOSER: {WINNER_LOSER[1]}", 10, ORANGE, bold=True)
 
 # ---------------- per-game slides ----------------
+_section("games")
 for g in GAMES:
     # -- numbers slide (built first, MOVED after the two team slides below - Lucas 9/29) --
     s = blank()
@@ -2639,6 +2686,7 @@ for g in GAMES:
     _lst.append(_el)
 
 # ---------------- feature slide (Lucas 10/12: "add the UM slide") ----------------
+_section("feature")
 # One slide outside the card: a game the show wants to talk about without grading it. FEATURE = None skips it.
 FEATURE = dict(
     a="FSU", b="MIA", title="Florida State at Miami",
@@ -2677,6 +2725,7 @@ if FEATURE:
     txt(s, 0.9, 7.13, 11.5, 0.3, f"EP {EPISODE} · WEEK {WEEK} · feature · not on the card, not graded", 9, MUTE)
 
 # ---------------- upset board (this week's alerts + the scorecard) ----------------
+_section("upset")
 if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):
     UB = BOARDS["upset_board"]
     PALE = RGBColor(0xCA, 0xDC, 0xFC)
@@ -2735,6 +2784,7 @@ if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):
         "ATS-only (longshot moneylines bled −22.9% ROI 2021–25)", 8.5, PALE)
 
 # ---------------- closing card: predictions + superdogs ----------------
+_section("closer")
 # Lucas 9/23: Corey's ("Man") score call sits next to the machine's on each row.
 # Source: score_tracker.json week rows (`man` = [away, home], read off his score slides).
 
@@ -2811,3 +2861,7 @@ txt(s, 0.9, 7.15, 11.5, 0.3,
 out = os.path.join(HERE, "decks", f"2026_Week{WEEK}_Episode{EPISODE}.pptx")
 prs.save(out)
 print("wrote", out, f"- {len(prs.slides)} slides")
+for _pkg in ("a", "b"):
+    if PACKAGE in (_pkg, "both"):
+        _pp = _package_file(out, _pkg)
+        print("wrote", _pp, f"- {len(Presentation(_pp).slides)} slides (package {_pkg.upper()}: {' / '.join(s for s in PACKAGES[_pkg] if s in dict(SECTIONS))})")
