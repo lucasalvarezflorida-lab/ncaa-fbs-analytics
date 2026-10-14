@@ -54,4 +54,4 @@ week,date,pick,line,stake,model_p,market_p,result,pnl,bankroll_after
 7,2026-10-10,San Diego State +15.5,Oregon State -15.5,95,0.71,0.50,L,-95,1193
 7,2026-10-10,LSU -8.5,LSU -8.5 @ Kentucky (mkt -9.5),84,0.66,0.53,L,-84,1109
 7,2026-10-10,Hawai'i +20.5,Arizona State -20.5,82,0.68,0.50,W,82,1191
-8,2026-10-13,Delaware -1.5,Delaware -1.5 @ Middle Tennessee,148,0.64,0.50,,,
+8,2026-10-13,Delaware -1.5,Delaware -1.5 @ Middle Tennessee,148,0.64,0.50,L,-148,1043
