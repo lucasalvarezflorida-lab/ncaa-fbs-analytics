@@ -89,82 +89,6 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: Indiana's 65 rushing yards at Nebraska: the one game the run stalled, Indiana won by three
   - Corey: Indiana 28–27 (his score slide, Week 7 deck)
 
-- **Notre Dame at BYU — Sat Oct 17, 7:30 PM ET, LaVell Edwards Stadium · Notre Dame · BYU (machine #3 at #20)**
-  
-  - The read
-    - No. 2 goes to Provo at 4,500 feet: Notre Dame by 11.6, 76%, and the plays agree at 12.6
-    - Carr is the best-protected quarterback in the country — sacked on 0.6% of dropbacks — against a BYU defense allowing 13.4 a game and 5.5 a throw
-    - The honest part is Notre Dame's turnover luck, +30, the largest on the board; the machine already strips it, which is why the number is not 20
-  - The number: Notre Dame −11.6, 76% · Call Notre Dame 30–18
-    - Honesty: Machine Notre Dame −11.6, 76%. In July the machine had Notre Dame ahead by 12.8; since then Notre Dame +1.6, BYU +0.3. The play-by-play shadow agrees within a point (12.6); the biggest unit edge is Notre Dame's defense against BYU's offense, 7.7 a game. Not in the number: the elevation, the crowd, and that BYU has not lost at home.
-    - Pre-mortem — written on recording day from the frozen card
-  - Notre Dame keys
-    - Carr's clean pocket against a 7.4% sack rate
-      - Why: Carr: 9.6 a throw, 16 touchdowns, one pick, one sack in 145 dropbacks. BYU's rush gets home on 7.4% of dropbacks; if that holds at 0.6%, Notre Dame throws 30 times and wins by the number.
-        - C.J. Carr: 102-of-144 for 1,378 — 9.6 per attempt; 16 TD, 1 INT
-          - Notre Dame as a team: 118-of-169 for 1,571 (9.3 an attempt, 13.3 per completion) — the difference is Noah Grubbs, 14-of-22 for 164
-        - 25 explosive passes in 170 dropbacks (14.7%), 17-of-33 on deep throws; sacked 1 times (0.6%); 1 INT
-        - Receivers: Jordan Faison 28 for 387 and 4 TD; Micah Gilbert 19 for 378 and 2 TD; Jaden Greathouse 11 for 138 and 2 TD
-        - Rushing (box): 231 for 1,169 (5.1); 22 runs of 10+ (9.6%), 14.0% stuffed — Jonaz Walton 52 for 409 and 2 TD; Nolan James Jr. 65 for 335 and 5 TD; Aneyas Williams 67 for 294 and 4 TD
-        - Third down 29-of-64 (45%); third-and-long 4-of-24; third-and-short 11-of-16; red zone 20 TD in 28 trips (71%)
-      - What BYU brings:
-        - Passing allowed: 97-of-157 for 870 — 5.5 a throw, 9.0 per completion; 10 explosive passes in 168 dropbacks (6.0%), 3-of-15 on deep throws; 6 picks (vs FBS: 5.8 a throw allowed, 3.2 a carry)
-        - Sacks 11 in 168 dropbacks (6.5%) — Tausili Akana 3.5; Jake Clifton 1.5; Siale Esera 1
-        - Rushing allowed (box): 137 for 402 (2.9); 16 runs of 10+ against it (12.7%), 24.6% stuffed
-        - Opponents 24-of-65 on third down (37%); 11-of-43 on third-and-long; 6-of-9 on third-and-short; 8 TD allowed in 10 red-zone trips (80%)
-    - Take it away — 14 takeaways already
-      - Why: Notre Dame has 14 takeaways in six games (7 interceptions) and allows 2.1 a carry, third in the country. BYU has given it away 3 times all season; the first takeaway sets the game's shape.
-        - Passing allowed: 90-of-149 for 934 — 6.3 a throw, 10.4 per completion; 10 explosive passes in 161 dropbacks (6.2%), 4-of-10 on deep throws; 7 picks
-        - Sacks 12 in 161 dropbacks (7.5%) — Boubacar Traore 3.5; Bryce Young 3; Loghan Thomas 2
-        - Rushing allowed (box): 167 for 350 (2.1); 7 runs of 10+ against it (4.7%), 22.3% stuffed
-        - Opponents 27-of-72 on third down (38%); 12-of-42 on third-and-long; 8-of-12 on third-and-short; 6 TD allowed in 11 red-zone trips (55%)
-      - What BYU brings:
-        - Bear Bachmeier: 77-of-116 for 1,033 — 8.9 per attempt; 8 TD, 1 INT
-          - BYU as a team: 78-of-119 for 1,048 (8.8 an attempt, 13.4 per completion) — the difference is Treyson Bourguet, 1-of-3 for 15
-    - Run at a front allowing 2.9 a carry
-      - Why: Walton is at 7.9 a carry on 52 carries, but BYU allows 2.9 a carry and stuffs 24.6% of runs. If the run is shut off, Carr has to win it from the pocket in the thin air.
-      - Game by game:
-        - wk1 vs Wisconsin (FBS) W 41-13: 19-of-29 for 8.2 a throw, 4 of 20+, sacked 0; ran 32 for 111; allowed 7.2 a throw and 31 for 67
-        - wk2 vs Rice (FBS) W 52-0: 25-of-33 for 10.9 a throw, 7 of 20+, sacked 0; ran 32 for 118; allowed 5.3 a throw and 34 for 64
-        - wk3 vs Michigan State (FBS) W 27-10: 18-of-24 for 9.8 a throw, 4 of 20+, sacked 1; ran 43 for 161; allowed 6.5 a throw and 27 for 44
-        - wk4 at Purdue (FBS) W 49-10: 16-of-26 for 10.3 a throw, 6 of 20+, sacked 0; ran 32 for 177; allowed 4.8 a throw and 31 for 40
-        - wk5 at North Carolina (FBS) W 37-26: 21-of-30 for 7.8 a throw, 2 of 20+, sacked 0; ran 45 for 241; allowed 7.4 a throw and 23 for 77
-        - wk6 vs Stanford (FBS) W 58-7: 19-of-27 for 8.8 a throw, 2 of 20+, sacked 0; ran 47 for 361; allowed 6.3 a throw and 21 for 58
-    - Reserve: Notre Dame's worst grade was Michigan State (−17 against expectation) — the one game the pocket got muddy
-  - BYU keys
-    - Martin and Bachmeier on the ground — 6.0 a carry
-      - Why: BYU runs for 6.0 a carry against FBS; Martin is at 7.8 and Bachmeier adds the quarterback run. Notre Dame allows 2.1 a carry — the strength against the strength, and BYU cannot win throwing 40 times.
-        - Bear Bachmeier: 77-of-116 for 1,033 — 8.9 per attempt; 8 TD, 1 INT
-          - BYU as a team: 78-of-119 for 1,048 (8.8 an attempt, 13.4 per completion) — the difference is Treyson Bourguet, 1-of-3 for 15
-        - 17 explosive passes in 122 dropbacks (13.9%), 5-of-14 on deep throws; sacked 3 times (2.5%); 2 INT (vs FBS: 8.6 a throw, 5.8 a carry)
-        - Receivers: Legend Glasker 19 for 378 and 3 TD; Kyler Kasper 14 for 178 and 3 TD; Walker Lyons 13 for 150
-        - Rushing (box): 186 for 1,119 (6.0); 31 runs of 10+ (17.0%), 14.8% stuffed — LJ Martin 44 for 344 and 3 TD; Bear Bachmeier 36 for 239 and 4 TD; Journee Tonga 27 for 176 and 2 TD
-        - Third down 32-of-57 (56%); third-and-long 10-of-28; third-and-short 13-of-15; red zone 17 TD in 23 trips (74%)
-      - What Notre Dame brings:
-        - Passing allowed: 90-of-149 for 934 — 6.3 a throw, 10.4 per completion; 10 explosive passes in 161 dropbacks (6.2%), 4-of-10 on deep throws; 7 picks
-        - Sacks 12 in 161 dropbacks (7.5%) — Boubacar Traore 3.5; Bryce Young 3; Loghan Thomas 2
-        - Rushing allowed (box): 167 for 350 (2.1); 7 runs of 10+ against it (4.7%), 22.3% stuffed
-        - Opponents 27-of-72 on third down (38%); 12-of-42 on third-and-long; 8-of-12 on third-and-short; 6 TD allowed in 11 red-zone trips (55%)
-    - Keep Carr under 9 a throw
-      - Why: BYU allows 5.5 a throw (5th) and 13.4 a game (9th). Carr is at 9.6. The number assumes Carr gets his; BYU's path is a game where he does not.
-        - Passing allowed: 97-of-157 for 870 — 5.5 a throw, 9.0 per completion; 10 explosive passes in 168 dropbacks (6.0%), 3-of-15 on deep throws; 6 picks (vs FBS: 5.8 a throw allowed, 3.2 a carry)
-        - Sacks 11 in 168 dropbacks (6.5%) — Tausili Akana 3.5; Jake Clifton 1.5; Siale Esera 1
-        - Rushing allowed (box): 137 for 402 (2.9); 16 runs of 10+ against it (12.7%), 24.6% stuffed
-        - Opponents 24-of-65 on third down (37%); 11-of-43 on third-and-long; 6-of-9 on third-and-short; 8 TD allowed in 10 red-zone trips (80%)
-      - What Notre Dame brings:
-        - C.J. Carr: 102-of-144 for 1,378 — 9.6 per attempt; 16 TD, 1 INT
-          - Notre Dame as a team: 118-of-169 for 1,571 (9.3 an attempt, 13.3 per completion) — the difference is Noah Grubbs, 14-of-22 for 164
-    - Third down: Notre Dame converts 45%, BYU allows 37%
-      - Why: BYU's defense allows 19 of 52 on third down; Notre Dame converts 29 of 64. Long drives and a shortened game are the upset's shape at altitude.
-      - Game by game:
-        - wk1 vs Utah Tech (FCS) W 63-7: 17-of-22 for 9.7 a throw, 3 of 20+, sacked 1; ran 46 for 308; allowed 4.4 a throw and 25 for 49
-        - wk2 vs Arizona (FBS) W 28-17: 16-of-26 for 8.3 a throw, 4 of 20+, sacked 1; ran 30 for 148; allowed 7.4 a throw and 31 for 97
-        - wk3 at Colorado State (FBS) W 41-23: 12-of-17 for 13.4 a throw, 5 of 20+, sacked 0; ran 41 for 332; allowed 5.4 a throw and 24 for 82
-        - wk5 at TCU (FBS) W 17-10: 11-of-24 for 2.6 a throw, 0 of 20+, sacked 1; ran 38 for 154; allowed 7.5 a throw and 30 for 72
-        - wk6 vs Iowa State (FBS) W 24-10: 22-of-30 for 11.0 a throw, 5 of 20+, sacked 0; ran 31 for 177; allowed 3.4 a throw and 27 for 102
-    - Reserve: Bachmeier's one interception in 116 throws — BYU's margin for error is zero giveaways
-  - Corey: Notre Dame 31–20 (his score slide, Week 7 deck)
-
 - **Alabama at Tennessee — Sat Oct 17, 3:30 PM ET, Neyland Stadium · Alabama · Tennessee (machine #4 at #12)**
   
   - The read
@@ -318,6 +242,82 @@ context is kept out of this file on purpose - it lives in the internal folder.
     - Reserve: Ole Miss has beaten expectation by 5.0 with turnover luck of −9 — the de-lucked number says the team is a little better than its scores
   - Corey: Ole Miss 31–28 (his score slide, Week 7 deck)
 
+- **Notre Dame at BYU — Sat Oct 17, 7:30 PM ET, LaVell Edwards Stadium · Notre Dame · BYU (machine #3 at #20)**
+  
+  - The read
+    - No. 2 goes to Provo at 4,500 feet: Notre Dame by 11.6, 76%, and the plays agree at 12.6
+    - Carr is the best-protected quarterback in the country — sacked on 0.6% of dropbacks — against a BYU defense allowing 13.4 a game and 5.5 a throw
+    - The honest part is Notre Dame's turnover luck, +30, the largest on the board; the machine already strips it, which is why the number is not 20
+  - The number: Notre Dame −11.6, 76% · Call Notre Dame 30–18
+    - Honesty: Machine Notre Dame −11.6, 76%. In July the machine had Notre Dame ahead by 12.8; since then Notre Dame +1.6, BYU +0.3. The play-by-play shadow agrees within a point (12.6); the biggest unit edge is Notre Dame's defense against BYU's offense, 7.7 a game. Not in the number: the elevation, the crowd, and that BYU has not lost at home.
+    - Pre-mortem — written on recording day from the frozen card
+  - Notre Dame keys
+    - Carr's clean pocket against a 7.4% sack rate
+      - Why: Carr: 9.6 a throw, 16 touchdowns, one pick, one sack in 145 dropbacks. BYU's rush gets home on 7.4% of dropbacks; if that holds at 0.6%, Notre Dame throws 30 times and wins by the number.
+        - C.J. Carr: 102-of-144 for 1,378 — 9.6 per attempt; 16 TD, 1 INT
+          - Notre Dame as a team: 118-of-169 for 1,571 (9.3 an attempt, 13.3 per completion) — the difference is Noah Grubbs, 14-of-22 for 164
+        - 25 explosive passes in 170 dropbacks (14.7%), 17-of-33 on deep throws; sacked 1 times (0.6%); 1 INT
+        - Receivers: Jordan Faison 28 for 387 and 4 TD; Micah Gilbert 19 for 378 and 2 TD; Jaden Greathouse 11 for 138 and 2 TD
+        - Rushing (box): 231 for 1,169 (5.1); 22 runs of 10+ (9.6%), 14.0% stuffed — Jonaz Walton 52 for 409 and 2 TD; Nolan James Jr. 65 for 335 and 5 TD; Aneyas Williams 67 for 294 and 4 TD
+        - Third down 29-of-64 (45%); third-and-long 4-of-24; third-and-short 11-of-16; red zone 20 TD in 28 trips (71%)
+      - What BYU brings:
+        - Passing allowed: 97-of-157 for 870 — 5.5 a throw, 9.0 per completion; 10 explosive passes in 168 dropbacks (6.0%), 3-of-15 on deep throws; 6 picks (vs FBS: 5.8 a throw allowed, 3.2 a carry)
+        - Sacks 11 in 168 dropbacks (6.5%) — Tausili Akana 3.5; Jake Clifton 1.5; Siale Esera 1
+        - Rushing allowed (box): 137 for 402 (2.9); 16 runs of 10+ against it (12.7%), 24.6% stuffed
+        - Opponents 24-of-65 on third down (37%); 11-of-43 on third-and-long; 6-of-9 on third-and-short; 8 TD allowed in 10 red-zone trips (80%)
+    - Take it away — 14 takeaways already
+      - Why: Notre Dame has 14 takeaways in six games (7 interceptions) and allows 2.1 a carry, third in the country. BYU has given it away 3 times all season; the first takeaway sets the game's shape.
+        - Passing allowed: 90-of-149 for 934 — 6.3 a throw, 10.4 per completion; 10 explosive passes in 161 dropbacks (6.2%), 4-of-10 on deep throws; 7 picks
+        - Sacks 12 in 161 dropbacks (7.5%) — Boubacar Traore 3.5; Bryce Young 3; Loghan Thomas 2
+        - Rushing allowed (box): 167 for 350 (2.1); 7 runs of 10+ against it (4.7%), 22.3% stuffed
+        - Opponents 27-of-72 on third down (38%); 12-of-42 on third-and-long; 8-of-12 on third-and-short; 6 TD allowed in 11 red-zone trips (55%)
+      - What BYU brings:
+        - Bear Bachmeier: 77-of-116 for 1,033 — 8.9 per attempt; 8 TD, 1 INT
+          - BYU as a team: 78-of-119 for 1,048 (8.8 an attempt, 13.4 per completion) — the difference is Treyson Bourguet, 1-of-3 for 15
+    - Run at a front allowing 2.9 a carry
+      - Why: Walton is at 7.9 a carry on 52 carries, but BYU allows 2.9 a carry and stuffs 24.6% of runs. If the run is shut off, Carr has to win it from the pocket in the thin air.
+      - Game by game:
+        - wk1 vs Wisconsin (FBS) W 41-13: 19-of-29 for 8.2 a throw, 4 of 20+, sacked 0; ran 32 for 111; allowed 7.2 a throw and 31 for 67
+        - wk2 vs Rice (FBS) W 52-0: 25-of-33 for 10.9 a throw, 7 of 20+, sacked 0; ran 32 for 118; allowed 5.3 a throw and 34 for 64
+        - wk3 vs Michigan State (FBS) W 27-10: 18-of-24 for 9.8 a throw, 4 of 20+, sacked 1; ran 43 for 161; allowed 6.5 a throw and 27 for 44
+        - wk4 at Purdue (FBS) W 49-10: 16-of-26 for 10.3 a throw, 6 of 20+, sacked 0; ran 32 for 177; allowed 4.8 a throw and 31 for 40
+        - wk5 at North Carolina (FBS) W 37-26: 21-of-30 for 7.8 a throw, 2 of 20+, sacked 0; ran 45 for 241; allowed 7.4 a throw and 23 for 77
+        - wk6 vs Stanford (FBS) W 58-7: 19-of-27 for 8.8 a throw, 2 of 20+, sacked 0; ran 47 for 361; allowed 6.3 a throw and 21 for 58
+    - Reserve: Notre Dame's worst grade was Michigan State (−17 against expectation) — the one game the pocket got muddy
+  - BYU keys
+    - Martin and Bachmeier on the ground — 6.0 a carry
+      - Why: BYU runs for 6.0 a carry against FBS; Martin is at 7.8 and Bachmeier adds the quarterback run. Notre Dame allows 2.1 a carry — the strength against the strength, and BYU cannot win throwing 40 times.
+        - Bear Bachmeier: 77-of-116 for 1,033 — 8.9 per attempt; 8 TD, 1 INT
+          - BYU as a team: 78-of-119 for 1,048 (8.8 an attempt, 13.4 per completion) — the difference is Treyson Bourguet, 1-of-3 for 15
+        - 17 explosive passes in 122 dropbacks (13.9%), 5-of-14 on deep throws; sacked 3 times (2.5%); 2 INT (vs FBS: 8.6 a throw, 5.8 a carry)
+        - Receivers: Legend Glasker 19 for 378 and 3 TD; Kyler Kasper 14 for 178 and 3 TD; Walker Lyons 13 for 150
+        - Rushing (box): 186 for 1,119 (6.0); 31 runs of 10+ (17.0%), 14.8% stuffed — LJ Martin 44 for 344 and 3 TD; Bear Bachmeier 36 for 239 and 4 TD; Journee Tonga 27 for 176 and 2 TD
+        - Third down 32-of-57 (56%); third-and-long 10-of-28; third-and-short 13-of-15; red zone 17 TD in 23 trips (74%)
+      - What Notre Dame brings:
+        - Passing allowed: 90-of-149 for 934 — 6.3 a throw, 10.4 per completion; 10 explosive passes in 161 dropbacks (6.2%), 4-of-10 on deep throws; 7 picks
+        - Sacks 12 in 161 dropbacks (7.5%) — Boubacar Traore 3.5; Bryce Young 3; Loghan Thomas 2
+        - Rushing allowed (box): 167 for 350 (2.1); 7 runs of 10+ against it (4.7%), 22.3% stuffed
+        - Opponents 27-of-72 on third down (38%); 12-of-42 on third-and-long; 8-of-12 on third-and-short; 6 TD allowed in 11 red-zone trips (55%)
+    - Keep Carr under 9 a throw
+      - Why: BYU allows 5.5 a throw (5th) and 13.4 a game (9th). Carr is at 9.6. The number assumes Carr gets his; BYU's path is a game where he does not.
+        - Passing allowed: 97-of-157 for 870 — 5.5 a throw, 9.0 per completion; 10 explosive passes in 168 dropbacks (6.0%), 3-of-15 on deep throws; 6 picks (vs FBS: 5.8 a throw allowed, 3.2 a carry)
+        - Sacks 11 in 168 dropbacks (6.5%) — Tausili Akana 3.5; Jake Clifton 1.5; Siale Esera 1
+        - Rushing allowed (box): 137 for 402 (2.9); 16 runs of 10+ against it (12.7%), 24.6% stuffed
+        - Opponents 24-of-65 on third down (37%); 11-of-43 on third-and-long; 6-of-9 on third-and-short; 8 TD allowed in 10 red-zone trips (80%)
+      - What Notre Dame brings:
+        - C.J. Carr: 102-of-144 for 1,378 — 9.6 per attempt; 16 TD, 1 INT
+          - Notre Dame as a team: 118-of-169 for 1,571 (9.3 an attempt, 13.3 per completion) — the difference is Noah Grubbs, 14-of-22 for 164
+    - Third down: Notre Dame converts 45%, BYU allows 37%
+      - Why: BYU's defense allows 19 of 52 on third down; Notre Dame converts 29 of 64. Long drives and a shortened game are the upset's shape at altitude.
+      - Game by game:
+        - wk1 vs Utah Tech (FCS) W 63-7: 17-of-22 for 9.7 a throw, 3 of 20+, sacked 1; ran 46 for 308; allowed 4.4 a throw and 25 for 49
+        - wk2 vs Arizona (FBS) W 28-17: 16-of-26 for 8.3 a throw, 4 of 20+, sacked 1; ran 30 for 148; allowed 7.4 a throw and 31 for 97
+        - wk3 at Colorado State (FBS) W 41-23: 12-of-17 for 13.4 a throw, 5 of 20+, sacked 0; ran 41 for 332; allowed 5.4 a throw and 24 for 82
+        - wk5 at TCU (FBS) W 17-10: 11-of-24 for 2.6 a throw, 0 of 20+, sacked 1; ran 38 for 154; allowed 7.5 a throw and 30 for 72
+        - wk6 vs Iowa State (FBS) W 24-10: 22-of-30 for 11.0 a throw, 5 of 20+, sacked 0; ran 31 for 177; allowed 3.4 a throw and 27 for 102
+    - Reserve: Bachmeier's one interception in 116 throws — BYU's margin for error is zero giveaways
+  - Corey: Notre Dame 31–20 (his score slide, Week 7 deck)
+
 - **Nebraska at Oregon — Sat Oct 17, 11:00 PM ET, Autzen Stadium · Nebraska · Oregon (machine #17 at #15)**
   
   - The read
@@ -393,4 +393,3 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk6 vs UCLA (FBS) L 15-17: 15-of-33 for 4.9 a throw, 2 of 20+, sacked 0; ran 27 for 73; allowed 8.9 a throw and 47 for 140
     - Reserve: Oregon's third down: 16 of 51 (31%) against FBS — the offense has been drives of three plays since Moore went down
   - Corey: Oregon 31–27 (his score slide, Week 7 deck)
-

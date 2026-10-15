@@ -747,22 +747,6 @@
  },
  {
   "week": 7,
-  "game": "Notre Dame at BYU",
-  "away": "Notre Dame",
-  "home": "BYU",
-  "machine": [
-   30,
-   18
-  ],
-  "man": [
-   31,
-   20
-  ],
-  "final": null,
-  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
- },
- {
-  "week": 7,
   "game": "Alabama at Tennessee",
   "away": "Alabama",
   "home": "Tennessee",
@@ -789,6 +773,22 @@
   "man": [
    28,
    31
+  ],
+  "final": null,
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
+ },
+ {
+  "week": 7,
+  "game": "Notre Dame at BYU",
+  "away": "Notre Dame",
+  "home": "BYU",
+  "machine": [
+   30,
+   18
+  ],
+  "man": [
+   31,
+   20
   ],
   "final": null,
   "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
