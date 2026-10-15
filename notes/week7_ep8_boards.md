@@ -36,7 +36,7 @@ updates. Betting-line context stays in the internal folder except where the slid
     - Corey: New Mexico State +6.5 lost 22–3, UCF +11.5 lost 42–28 (graded at his lines)
     - Correction (re-read off the episode videos 10/15): Corey's Week 4 superdog was Nevada +5.5 vs Air Force (covered, 5), not Air Force (we had it as a 10.5-point outright win). Our earlier "Man 48.5" was 5.5 too high. Corey's own slide after Week 4 read Man 34 / Machine 20, which matches the corrected ledger
     - Corey's Week 6 deck showed Man 41 after Week 5; the corrected ledger has 43 (34 + Baylor's 9). Ask him which is right
-    - The season split (new slide before the card): the machine is the giant killer (34.5 of its 44.5 from Giant Killer picks, South Carolina the only outright win); the man is the superdog (42 of his 43, three outright wins: Colorado, Duke, Baylor)
+    - The season split: the machine is the giant killer (34.5 of its 44.5 from Giant Killer picks, South Carolina the only outright win); the man is the superdog (42 of his 43, three outright wins: Colorado, Duke, Baylor)
 
 - **Top 25 (machine)**
   - What the number means (say it once if there is a new listener)
@@ -248,8 +248,9 @@ updates. Betting-line context stays in the internal folder except where the slid
     - Biggest riser outside the ten: Harley (Northern Illinois) #33 → #19, +6.7, 0–5 after 7–28 to Air Force
   - Legend: ON LISTS = how many of the six hot-seat lists (CBS, ESPN, SportsGrid, 2 Stripes, Eh Gap, Coaches Hot Seat) name him; P(GONE) = odds he is gone next season, fit on 2014–25; BUYOUT = what the school owes to fire him now, * = estimated from reported contract terms, — = undisclosed; the composite (40% lists + 60% model) is kept as a shadow column, not on the slide
 
-- **Superdog picks** (lines as of Sun 10/11 — re-read at the freeze)
-  - Machine Giant Killer: Colorado +16.5 vs Utah (#12) — exp 6.32, machine -13.3
-  - Machine Superdog: Charlotte +24.5 at Temple — exp 7.96, machine -14.9
-    - Next: Kansas +8.5 at Kansas State — exp 7.57, machine -0.5 · Syracuse +12.5 vs Louisville — exp 7.27, machine -7.3 · Nevada +14.5 at North Dakota State — exp 7.26, machine -9.1
+- **Superdog picks** (lines as of Sun 10/11, 8 PM ET; the freeze re-reads them; the deck's 'The machine's dogs this week' slide carries these)
+  - Machine Superdog: Syracuse +13.5 vs Louisville (Sat 7:30 PM ET) - machine Louisville by 7.3, 6.2 fewer than the points; 33% to win outright, 66% to cover; worth 7.7 points on average (5 for a cover, 18.5 for the win)
+    - Next: Nevada +15.5 at North Dakota State (28% to win) · Southern Miss +7 vs Arkansas State (53%) · Charlotte +21.5 at Temple (18%; was the pick on Sunday's noon board at +24.5 before the line came down)
+  - Machine Giant Killer: Colorado +16.5 vs #11 Utah (Sat 10:15 PM ET) - machine Utah by 13.3, 3.2 fewer than the points; 20% to win outright, 59% to cover; worth 6.3 points on average (5 for a cover, 21.5 for the win)
+    - Next: Michigan State +8.5 vs #25 Northwestern (34%) · Florida State +21 at #3 Miami (12%) · Virginia +8.5 at #24 SMU (31%)
   - Corey's picks: PLACEHOLDER

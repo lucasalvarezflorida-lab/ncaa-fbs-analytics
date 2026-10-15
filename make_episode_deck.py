@@ -36,7 +36,8 @@ LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
 EPISODE, WEEK = 8, 7
 RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
-RENDER_SUPERDOG_SEASON = True   # Lucas 10/15: the season's superdogs + giant killers, man vs machine, before the closer
+RENDER_SUPERDOG_SEASON = False  # 10/15: the season's superdogs + giant killers by week (built, then Lucas: 'just for this week' - off)
+RENDER_SUPERDOG_WEEK = True     # Lucas 10/15: this week's Superdog + Giant Killer, with the why, before the closer
 EP_DATE = "OCT 17, 2026"   # the card's game dates (all five on Saturday)
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
@@ -1740,7 +1741,7 @@ def superdog_boards():
         rows.append(dict(dog=dog, fav=fav, at=at, pts=abs(sp), p=p, mkt=mkt,
                          ml=ml, ev=p * abs(sp), edge=edge,
                          p_cover=float(curve.win_prob(edge)), rank=ap_rank(fav),
-                         dog_rank=ap_rank(dog)))
+                         dog_rank=ap_rank(dog), date=g.get("date")))
     for r in rows:   # expected rulebook points: a cover pays 5, a win pays 5 + the spread
         r["exp_pts"] = SUPERDOG_COVER_PTS * r["p_cover"] + r["pts"] * r["p"]
     rows.sort(key=lambda r: -r["exp_pts"])
@@ -2787,7 +2788,7 @@ if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):
 # ---------------- superdogs + giant killers, the season so far (Lucas 10/15) ----------------
 # Every graded pick from superdog_ledger.json (machine_picks + man_picks_weekN), one row per week,
 # machine left / man right, standings in the title. Weeks 1-2 of Corey's were read off the episode videos 10/15.
-_section("superdogs")
+_section("superdogs")   # both superdog slides (season, this week) sit in this section
 
 
 def _superdog_season():
@@ -2856,6 +2857,76 @@ if SD_SEASON and SD_SEASON["weeks"]:
     txt(s, 0.9, 6.85, 11.5, 0.3,
         "SD = Superdog, any game · GK = Giant Killer, unranked dog vs an AP Top 25 team · 3.5+ point dogs · "
         "5 for a cover · 5 + the spread for a win · 1 for a push", 10.5, PALE_, italic=True)
+
+# ---------------- this week's Superdog + Giant Killer (Lucas 10/15, 'just for this week') ----------------
+# The same two picks as the closer's band (SUPERDOG_ANY / SUPERDOG_T25, live from card_data, so the freeze
+# refreshes them), with the machine's number, win / cover chances, expected rulebook points and the next three.
+def _man_dogs():
+    import json
+    try:
+        led = json.load(open(os.path.join(HERE, "superdog_ledger.json"), encoding="utf-8"))
+    except FileNotFoundError:
+        return []
+    return led.get(f"man_picks_week{WEEK}", [])
+
+
+_GK = SUPERDOG_T25[0] if SUPERDOG_T25 else None
+_SD_BOARD = [r for r in SUPERDOG_ANY if r is not _GK]
+if RENDER_SUPERDOG_WEEK and (_GK or _SD_BOARD):
+    MAN_GREEN_ = RGBColor(0x5C, 0xD6, 0x8A)
+    PALE_ = RGBColor(0xCA, 0xDC, 0xFC)
+    s = blank(NAVY)
+    txt(s, 0.9, 0.42, 11.5, 0.4, f"EPISODE {EPISODE} · WEEK {WEEK} · SUPERDOG AND GIANT KILLER", 14, ORANGE, bold=True)
+    txt(s, 0.9, 0.8, 11.5, 0.7, "The machine's dogs this week", 34, WHITE, bold=True)
+
+    def _fav(r):
+        return (f"#{r['rank']} " if r["rank"] else "") + r["fav"]
+
+    def _dog_card(x, label, r, nxt):
+        W = 5.55
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.7, W, 4.75, NAVY2)
+        shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, 1.7, W, 0.5, ORANGE)
+        txt(s, x + 0.25, 1.79, W - 0.5, 0.35, "★ " + label, 15, NAVY, bold=True)
+        lx = x + 0.25
+        for t in (r["dog"], r["fav"]):
+            lp = logo_for(normalize_name(t))
+            if lp:
+                shape(s, MSO_SHAPE.OVAL, lx, 2.42, 0.7, 0.7, WHITE)
+                s.shapes.add_picture(lp, Inches(lx + 0.07), Inches(2.49), Inches(0.56), Inches(0.56))
+            lx += 0.82
+        txt(s, x + 1.95, 2.38, W - 2.1, 0.5, f"{r['dog']} +{r['pts']:g}", 26, WHITE, bold=True)
+        txt(s, x + 1.95, 2.88, W - 2.1, 0.35, f"{r['at']} {_fav(r)}" + (f" · {r['date']}" if r.get("date") else ""), 12, PALE_)
+        fav_by = r["pts"] - r["edge"]          # the machine's margin for the favorite
+        tiles = [(f"{abs(fav_by):.1f}", f"{r['fav'] if fav_by > 0.05 else r['dog']} by"),
+                 (f"{r['p'] * 100:.0f}%", "wins outright"),
+                 (f"{r['p_cover'] * 100:.0f}%", "covers")]
+        tw = (W - 0.5 - 0.3) / 3
+        for i, (big, small) in enumerate(tiles):
+            tx = x + 0.25 + i * (tw + 0.15)
+            shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, tx, 3.45, tw, 1.0, NAVY)
+            txt(s, tx + 0.1, 3.55, tw - 0.2, 0.45, big, 22, ORANGE, bold=True, align=PP_ALIGN.CENTER)
+            txt(s, tx + 0.1, 4.05, tw - 0.2, 0.3, small, 10.5, PALE_, align=PP_ALIGN.CENTER)
+        gap = r["edge"]
+        why = (f"The machine has {r['fav']} by {fav_by:.1f}, {gap:.1f} fewer than the {r['pts']:g} points"
+               if fav_by > 0.05 else f"The machine has {r['dog']} winning outright by {-fav_by:.1f}")
+        txt(s, x + 0.25, 4.62, W - 0.5, 0.6,
+            why + f". Worth {r['exp_pts']:.1f} points on average: 5 for a cover, {5 + r['pts']:g} for the win.", 12, WHITE)
+        if nxt:
+            txt(s, x + 0.25, 5.42, W - 0.5, 0.25, "NEXT ON THE BOARD", 10, ORANGE, bold=True)
+            txt(s, x + 0.25, 5.68, W - 0.5, 0.7,
+                "\n".join(f"{n['dog']} +{n['pts']:g} {n['at']} {_fav(n)} · {n['p'] * 100:.0f}% to win" for n in nxt[:3]),
+                10.5, PALE_)
+
+    if _SD_BOARD:
+        _dog_card(0.9, "SUPERDOG · ANY GAME", _SD_BOARD[0], _SD_BOARD[1:4])
+    if _GK:
+        _dog_card(6.85, "GIANT KILLER · UNRANKED VS TOP 25", _GK, SUPERDOG_T25[1:4])
+    _md = _man_dogs()
+    if _md:
+        txt(s, 0.9, 6.55, 11.5, 0.3, "MAN: " + " · ".join(p["pick"] for p in _md), 13, MAN_GREEN_, bold=True)
+    txt(s, 0.9, 6.95, 11.5, 0.3,
+        f"3.5+ point dogs, FBS vs FBS · 5 for a cover · 5 + the spread for a win · 1 for a push · lines as of {LINES_AS_OF} · research, not picks",
+        10.5, PALE_, italic=True)
 
 # ---------------- closing card: predictions + superdogs ----------------
 _section("closer")
