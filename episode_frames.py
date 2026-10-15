@@ -3,7 +3,7 @@
 Corey's worst case for his score calls is "re-watch the video". This does that without watching: pull the
 episode from the Man vs Machine channel (yt-dlp, video only, 720p - about 80 MB for two hours), read its
 chapters (one per game), and for every game chapter tile the LAST SIX MINUTES at one frame every 30 s into
-a contact sheet. Corey's score slide (two team halves, his winner's score in green) sits about two minutes
+a contact sheet (20 s step since 10/9). Corey's score slide (two team halves, his winner's score in green) sits about two minutes
 before the chapter ends, right before the machine's number slide. The sheets are READ (by eye / by Claude);
 then --cut takes full-resolution receipt frames at the slide times and the reads go in corey_calls.json
 next to them. Nothing here reads numbers off pixels.
@@ -12,6 +12,7 @@ next to them. Nothing here reads numbers off pixels.
     python episode_frames.py --latest                                   # newest full episode on the channel
     python episode_frames.py --video 8QfQpPEUDAM --cut 50:55,67:18,...  # full-res frames at those times (keeps the mp4 only if --keep)
     python episode_frames.py --video 8QfQpPEUDAM --sheet-minutes 8 --sheet-step 20
+    python episode_frames.py --video 8QfQpPEUDAM --chapter superdog      # the whole 'Superdog and Giant Killer Picks' chapter
 
 Output: decks/video/frames/<id>/sheet_NN.jpg (+ corey_NN_mmm-ss.jpg from --cut) + index.json. The mp4 is
 deleted after the cut unless --keep (re-downloadable). decks/video/ is gitignored. Downloads only the show's
@@ -78,7 +79,30 @@ def game_chapters(meta: dict) -> list[dict]:
     return games or meta["chapters"]
 
 
-def sheets(path: Path, meta: dict, minutes: int = 6, step: int = 30) -> list[dict]:
+def chapter_sheet(path: Path, meta: dict, match: str, step: int = 15) -> list[str]:
+    """The WHOLE of every chapter whose title contains `match` (e.g. 'superdog'), one frame per `step` s,
+    tiled 4 wide in sheets of at most 24 frames -> chapter_<slug>_NN.jpg."""
+    out_dir = VIDEO_DIR / "frames" / meta["id"]; out_dir.mkdir(parents=True, exist_ok=True)
+    hits = [c for c in meta["chapters"] if match.lower() in (c["title"] or "").lower()]
+    if not hits:
+        raise SystemExit(f"no chapter matching {match!r}: " + " | ".join(c["title"] for c in meta["chapters"]))
+    files = []
+    slug = re.sub(r"[^a-z0-9]+", "_", match.lower()).strip("_")
+    for c in hits:
+        end = c["end"] or meta["duration"]; t0 = c["start"]; k = 0
+        while end - t0 >= step:   # a tail shorter than one step has no frame to tile
+            span = min(end - t0, 24 * step); n = max(1, int(span // step)); rows = -(-n // 4); k += 1
+            f = out_dir / f"chapter_{slug}_{k:02d}.jpg"
+            vf = f"fps=1/{step},scale=480:-1,{TIMESTAMP},tile=4x{rows}"
+            subprocess.run([ffmpeg(), "-y", "-loglevel", "error", "-ss", f"{t0:.2f}", "-t", f"{span:.2f}", "-i", str(path), "-vf", vf, "-frames:v", "1", str(f)],
+                           check=True, capture_output=True)
+            mm, ss = divmod(int(t0), 60)
+            print(f"  {c['title']:40s} from {mm:3d}:{ss:02d} ({int(span)} s, every {step} s) -> {f.name}")
+            files.append(f.name); t0 += span
+    return files
+
+
+def sheets(path: Path, meta: dict, minutes: int = 6, step: int = 20) -> list[dict]:
     out_dir = VIDEO_DIR / "frames" / meta["id"]; out_dir.mkdir(parents=True, exist_ok=True)
     n_frames = minutes * 60 // step
     cols = 4; rows = -(-n_frames // cols)
@@ -119,7 +143,8 @@ if __name__ == "__main__":
     ap.add_argument("--video", help="YouTube video id")
     ap.add_argument("--latest", action="store_true")
     ap.add_argument("--sheet-minutes", type=int, default=6)
-    ap.add_argument("--sheet-step", type=int, default=30)
+    ap.add_argument("--sheet-step", type=int, default=20)   # 20 s since 10/9: a <30 s slide can fall between 30 s tiles
+    ap.add_argument("--chapter", help="sheet the WHOLE chapter(s) whose title contains this text, e.g. superdog")
     ap.add_argument("--cut", help="comma list of mm:ss (or h:mm:ss) times for full-res frames")
     ap.add_argument("--keep", action="store_true", help="keep the downloaded video")
     a = ap.parse_args()
@@ -128,7 +153,9 @@ if __name__ == "__main__":
         raise SystemExit("--video <id> or --latest")
     path, meta = download(vid)
     print(f"{meta['title']} ({meta['duration']}s, {len(meta['chapters'])} chapters) -> {path.name} {path.stat().st_size // 1048576} MB")
-    if a.cut:
+    if a.chapter:
+        chapter_sheet(path, meta, a.chapter, min(a.sheet_step, 15))
+    elif a.cut:
         cut(path, meta, [x.strip() for x in a.cut.split(",") if x.strip()])
     else:
         sheets(path, meta, a.sheet_minutes, a.sheet_step)

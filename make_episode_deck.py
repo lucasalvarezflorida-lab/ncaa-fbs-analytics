@@ -36,6 +36,7 @@ LIGHTLINE = RGBColor(0xD5, 0xDF, 0xEC)
 
 EPISODE, WEEK = 8, 7
 RENDER_UPSET_BOARD = False   # Lucas 9/9: off; flip to True to add the alerts slide before the closer
+RENDER_SUPERDOG_SEASON = True   # Lucas 10/15: the season's superdogs + giant killers, man vs machine, before the closer
 EP_DATE = "OCT 17, 2026"   # the card's game dates (all five on Saturday)
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fpi-decomposition"))
@@ -65,7 +66,7 @@ def _section_ranges() -> dict[str, list[int]]:
 
 PACKAGES = {   # section order inside each package
     "a": ["receipts", "top25", "boards", "bracket"],
-    "b": ["title", "games", "feature", "upset", "closer"],
+    "b": ["title", "games", "feature", "upset", "superdogs", "closer"],
 }
 
 
@@ -2782,6 +2783,79 @@ if RENDER_UPSET_BOARD and BOARDS and BOARDS.get("upset_board"):
         "Backtest 2023–25: these rules ran 49.7% ATS — a research shortlist and a "
         "narrative engine, not a bet slip · RED dogs at +401 or longer on the road are "
         "ATS-only (longshot moneylines bled −22.9% ROI 2021–25)", 8.5, PALE)
+
+# ---------------- superdogs + giant killers, the season so far (Lucas 10/15) ----------------
+# Every graded pick from superdog_ledger.json (machine_picks + man_picks_weekN), one row per week,
+# machine left / man right, standings in the title. Weeks 1-2 of Corey's were read off the episode videos 10/15.
+_section("superdogs")
+
+
+def _superdog_season():
+    import json
+    try:
+        led = json.load(open(os.path.join(HERE, "superdog_ledger.json"), encoding="utf-8"))
+    except FileNotFoundError:
+        return None
+    side = {"machine": [p for p in led.get("machine_picks", []) if p.get("result")]}
+    side["man"] = [dict(p, week=p.get("week") or int(k[14:])) for k in led if k.startswith("man_picks_week")
+                   for p in led[k] if p.get("result")]
+    weeks = sorted({p["week"] for v in side.values() for p in v})
+    tot = {k: sum(p.get("points") or 0 for p in v) for k, v in side.items()}
+    by_slot = {k: {sl: sum(p.get("points") or 0 for p in v if p.get("slot") == sl) for sl in ("superdog", "giant_killer")}
+               for k, v in side.items()}
+    outright = {k: sum(1 for p in v if p["result"] == "win") for k, v in side.items()}
+    beat = {k: sum(1 for p in v if p["result"] in ("win", "cover")) for k, v in side.items()}
+    return dict(side=side, weeks=weeks, tot=tot, by_slot=by_slot, outright=outright, beat=beat,
+                n={k: len(v) for k, v in side.items()})
+
+
+SD_SEASON = _superdog_season() if RENDER_SUPERDOG_SEASON else None
+if SD_SEASON and SD_SEASON["weeks"]:
+    S_ = SD_SEASON
+    MAN_GREEN_ = RGBColor(0x5C, 0xD6, 0x8A)
+    PALE_ = RGBColor(0xCA, 0xDC, 0xFC)
+    DIM_ = RGBColor(0x8F, 0xA6, 0xC8)
+    s = blank(NAVY)
+    lead = "machine" if S_["tot"]["machine"] >= S_["tot"]["man"] else "man"
+    txt(s, 0.9, 0.42, 11.5, 0.4, f"EPISODE {EPISODE} · SUPERDOGS AND GIANT KILLERS · THROUGH WEEK {S_['weeks'][-1]}", 14, ORANGE, bold=True)
+    txt(s, 0.9, 0.8, 11.5, 0.7, f"Machine {S_['tot']['machine']:g}  ·  Man {S_['tot']['man']:g}", 34, WHITE, bold=True)
+    cols = [("machine", "MACHINE", ORANGE, 0.9), ("man", "MAN", MAN_GREEN_, 6.85)]
+    W = 5.55
+    for key, label, col, x in cols:
+        bs = S_["by_slot"][key]
+        txt(s, x, 1.62, W, 0.32, label, 15, col, bold=True)
+        txt(s, x + 1.1, 1.66, W - 1.1, 0.3,
+            f"superdog {bs['superdog']:g} · giant killer {bs['giant_killer']:g} · "
+            f"{S_['outright'][key]} outright, {S_['beat'][key]} of {S_['n'][key]} beat the spread",
+            10.5, PALE_, align=PP_ALIGN.RIGHT)
+    y0, rh = 2.05, (6.75 - 2.05) / len(S_["weeks"])
+    tag = {"win": ("WIN", MAN_GREEN_), "cover": ("COVER", WHITE), "loss": ("LOSS", DIM_)}
+    SHORT_ = {"North Dakota State": "NDSU", "Washington State": "Wash. State", "Sacramento State": "Sac State"}
+
+    def _short(t):
+        for a, b in SHORT_.items():
+            t = t.replace(a, b)
+        return t
+    for i, wk in enumerate(S_["weeks"]):
+        y = y0 + i * rh
+        for key, label, col, x in cols:
+            shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x, y, W, rh - 0.08, NAVY2)
+            txt(s, x + 0.12, y + 0.08, 0.6, 0.3, f"WK {wk}", 11, col, bold=True)
+            picks = sorted([p for p in S_["side"][key] if p["week"] == wk],
+                           key=lambda p: 0 if p.get("slot") == "superdog" else 1)
+            for j, p in enumerate(picks[:2]):
+                yy = y + 0.07 + j * (rh - 0.12) / 2
+                res = p["result"]
+                t, tc = tag.get(res, ("PUSH" if "push" in res else res.upper(), PALE_))
+                big = res == "win"
+                txt(s, x + 0.8, yy, 0.45, 0.3, "SD" if p.get("slot") == "superdog" else "GK", 10, DIM_, bold=True)
+                txt(s, x + 1.2, yy - 0.02, 3.25, 0.32, _short(p["pick"]), 11.5, WHITE if res != "loss" else PALE_, bold=big)
+                txt(s, x + 4.2, yy, 0.65, 0.3, t, 10, tc, bold=True, align=PP_ALIGN.RIGHT)
+                txt(s, x + 4.85, yy - 0.02, 0.6, 0.32, f"+{p.get('points') or 0:g}" if p.get("points") else "0", 11.5,
+                    col if p.get("points") else DIM_, bold=True, align=PP_ALIGN.RIGHT)
+    txt(s, 0.9, 6.85, 11.5, 0.3,
+        "SD = Superdog, any game · GK = Giant Killer, unranked dog vs an AP Top 25 team · 3.5+ point dogs · "
+        "5 for a cover · 5 + the spread for a win · 1 for a push", 10.5, PALE_, italic=True)
 
 # ---------------- closing card: predictions + superdogs ----------------
 _section("closer")

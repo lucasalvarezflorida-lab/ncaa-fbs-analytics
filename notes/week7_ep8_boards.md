@@ -31,9 +31,12 @@ updates. Betting-line context stays in the internal folder except where the slid
   - The man's week (Corey's slide): PLACEHOLDER — read off his deck when it posts; confirm the title says Week 6
   - Pre-mortems (notes only — off the slide since 10/13): see notes/premortems.md (fired / lost / named the reason)
     - A&M under 3.4 a carry, Georgia over 4.2 a carry and USC over 6.9 an attempt all fired and named the loss
-  - Superdogs: Man 48.5 · Machine 44.5
+  - Superdogs: Machine 44.5 · Man 43 — the machine leads for the first time
     - Machine: South Carolina +14.5 at Florida won outright 38–19 (+19.5), San Diego State +14.5 lost 66–14
-    - Corey: New Mexico State +6.5 lost 22–3, UCF +11.5 lost 42–28 (graded at his lines — CONFIRM his)
+    - Corey: New Mexico State +6.5 lost 22–3, UCF +11.5 lost 42–28 (graded at his lines)
+    - Correction (re-read off the episode videos 10/15): Corey's Week 4 superdog was Nevada +5.5 vs Air Force (covered, 5), not Air Force (we had it as a 10.5-point outright win). Our earlier "Man 48.5" was 5.5 too high. Corey's own slide after Week 4 read Man 34 / Machine 20, which matches the corrected ledger
+    - Corey's Week 6 deck showed Man 41 after Week 5; the corrected ledger has 43 (34 + Baylor's 9). Ask him which is right
+    - The season split (new slide before the card): the machine is the giant killer (34.5 of its 44.5 from Giant Killer picks, South Carolina the only outright win); the man is the superdog (42 of his 43, three outright wins: Colorado, Duke, Baylor)
 
 - **Top 25 (machine)**
   - What the number means (say it once if there is a new listener)

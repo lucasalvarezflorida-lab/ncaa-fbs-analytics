@@ -11,11 +11,11 @@
   }
  },
  "standings": {
-  "man": 48.5,
+  "man": 43.0,
   "machine": 44.5,
-  "as_of": "through Week 6 (machine); Corey's week 6 picks still to grade at his lines",
-  "note": "Through Week 3: Man 29 / Machine 15. Week 4: Machine +5 (Georgia Southern +18.5 covered, lost by 14; Charlotte +10 lost 34-7). Man +10.5 AT OUR RECORDED LINES (Air Force +5.5 WON outright 36-33 = 5 + 5.5; Iowa State +8 lost by 14) - Corey grades his own at the line he took; confirm. Week 5: Machine +5 (Boston College +21 covered, lost 25-16; Charlotte +20.5 lost 59-8). Man +9 AT OUR RECORDED LINES (Baylor +4 WON outright 55-19 = 5 + 4; Colorado +13 lost 29-7).",
-  "corey_shows": "his slide 10/7: Man 41 (Baylor won) / Machine 25 (Boston College covered) - he grades at the lines he took; ours at recorded lines Man 48.5 / Machine 25"
+  "as_of": "through Week 6",
+  "note": "Corrected 10/15 from the episode videos: Corey's Week 4 superdog was Nevada +5.5 (covered, 5), not Air Force (we had 10.5), and Weeks 1-2 are now itemized. Corey's own on-air standings: after Wk1 Man 11.5 / Machine 10; Wk2 23 / 10; Wk3 29 / 15; Wk4 34 / 20 - all match this ledger.",
+  "corey_shows": "his Week 6 deck (10/7): Man 41 / Machine 25. This ledger after Week 5: Man 43 / Machine 25 (34 + Baylor 5 + 4). The 2-point gap on his side is open - ask Corey."
  },
  "machine_picks": [
   {
@@ -77,7 +77,7 @@
   {
    "week": 4,
    "slot": "giant_killer",
-   "pick": "Georgia Southern +18.5 vs Houston",
+   "pick": "Georgia Southern +18.5 vs #25 Houston",
    "final": "Houston 42-28",
    "result": "cover",
    "points": 5
@@ -85,7 +85,7 @@
   {
    "week": 5,
    "slot": "giant_killer",
-   "pick": "Boston College +21 at SMU",
+   "pick": "Boston College +21 at #21 SMU",
    "final": "SMU 25-16",
    "result": "cover",
    "points": 5,
@@ -102,7 +102,7 @@
   },
   {
    "week": 6,
-   "slot": "giant_killer",
+   "slot": "superdog",
    "pick": "San Diego State +14.5 at Oregon State",
    "final": "Oregon State 66-14",
    "result": "loss",
@@ -113,7 +113,7 @@
   {
    "week": 6,
    "slot": "giant_killer",
-   "pick": "South Carolina +14.5 at Florida",
+   "pick": "South Carolina +14.5 at #16 Florida",
    "final": "South Carolina 38-19",
    "result": "win",
    "points": 19.5,
@@ -121,32 +121,81 @@
    "line_note": "frozen card 10/7 6:25 PM ET; Giant Killer (Florida AP #16)"
   }
  ],
+ "man_picks_week1": [
+  {
+   "week": 1,
+   "slot": "superdog",
+   "pick": "Colorado +6.5 at Georgia Tech",
+   "final": "Colorado 14-13",
+   "result": "win",
+   "points": 11.5,
+   "source": "read off Corey's superdog slide in the episode video 10/15 (episode_frames.py --chapter superdog), Pqg3lIFBwL4"
+  },
+  {
+   "week": 1,
+   "slot": "giant_killer",
+   "pick": "Stanford +24.5 vs #7 Miami",
+   "final": "Miami 45-6",
+   "result": "loss",
+   "points": 0,
+   "source": "read off Corey's superdog slide in the episode video 10/15 (episode_frames.py --chapter superdog), Pqg3lIFBwL4"
+  }
+ ],
+ "man_picks_week2": [
+  {
+   "week": 2,
+   "slot": "superdog",
+   "pick": "Duke +6.5 at Illinois",
+   "final": "Duke 31-27",
+   "result": "win",
+   "points": 11.5,
+   "source": "read off Corey's superdog slide in the episode video 10/15 (episode_frames.py --chapter superdog), WW4MWWi3kVU"
+  },
+  {
+   "week": 2,
+   "slot": "giant_killer",
+   "pick": "Kansas +5.5 vs Missouri",
+   "final": "Missouri 38-21",
+   "result": "loss",
+   "points": 0,
+   "source": "read off Corey's superdog slide in the episode video 10/15 (episode_frames.py --chapter superdog), WW4MWWi3kVU"
+  }
+ ],
  "man_picks_week3": [
   {
    "pick": "FIU +7 at FAU",
    "final": "FAU 16-10",
    "result": "cover",
-   "points": 5
+   "points": 5,
+   "week": 3,
+   "slot": "superdog"
   },
   {
    "pick": "Colorado State +18 vs BYU",
    "final": "BYU 41-23",
    "result": "push at +18",
-   "points": 1
+   "points": 1,
+   "week": 3,
+   "slot": "giant_killer"
   }
  ],
  "man_picks_week4": [
   {
-   "pick": "Air Force +5.5 at Nevada",
+   "pick": "Nevada +5.5 vs Air Force",
    "final": "Air Force 36-33",
-   "result": "win",
-   "points": 10.5
+   "result": "cover",
+   "points": 5,
+   "week": 4,
+   "slot": "superdog",
+   "corrected": "2026-10-15: was 'Air Force +5.5 at Nevada', a 10.5-point outright win. Corey's slide reads 'Air Force at Nevada (+5.5)' = Nevada the dog, and his next standings line says 'Nevada Covered'. Video 4kQDlFp8apo + 8QfQpPEUDAM."
   },
   {
-   "pick": "Iowa State +8 vs Utah",
+   "pick": "Iowa State +8 vs #15 Utah",
    "final": "Utah 31-17",
    "result": "loss",
-   "points": 0
+   "points": 0,
+   "week": 4,
+   "slot": "giant_killer"
   }
  ],
  "man_picks_week5": [
@@ -155,14 +204,18 @@
    "line_note": "his line; market Tue night ASU -4",
    "final": "Baylor 55-19",
    "result": "win",
-   "points": 9.0
+   "points": 9.0,
+   "week": 5,
+   "slot": "superdog"
   },
   {
-   "pick": "Colorado +13 vs Texas Tech",
+   "pick": "Colorado +13 vs #12 Texas Tech",
    "line_note": "his line; market Tue night Texas Tech -12.5; Giant Killer (Texas Tech AP #12)",
    "final": "Texas Tech 29-7",
    "result": "loss",
-   "points": 0
+   "points": 0,
+   "week": 5,
+   "slot": "giant_killer"
   }
  ],
  "man_picks_week6": [
@@ -173,7 +226,8 @@
    "final": "FIU 22-3",
    "result": "loss",
    "points": 0,
-   "graded": "2026-10-11 by hand: NMSU +6.5 lost by 19"
+   "graded": "2026-10-11 by hand: NMSU +6.5 lost by 19",
+   "slot": "superdog"
   },
   {
    "pick": "UCF +11.5 at Oklahoma State",
@@ -182,7 +236,8 @@
    "final": "Oklahoma State 42-28",
    "result": "loss",
    "points": 0,
-   "graded": "2026-10-11 by hand: UCF +11.5 lost by 14"
+   "graded": "2026-10-11 by hand: UCF +11.5 lost by 14",
+   "slot": "giant_killer"
   }
  ]
 }
