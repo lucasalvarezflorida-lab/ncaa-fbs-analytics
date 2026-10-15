@@ -738,8 +738,12 @@
    27,
    24
   ],
-  "man": null,
-  "final": null
+  "man": [
+   27,
+   28
+  ],
+  "final": null,
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
  },
  {
   "week": 7,
@@ -750,8 +754,12 @@
    30,
    18
   ],
-  "man": null,
-  "final": null
+  "man": [
+   31,
+   20
+  ],
+  "final": null,
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
  },
  {
   "week": 7,
@@ -762,8 +770,12 @@
    31,
    23
   ],
-  "man": null,
-  "final": null
+  "man": [
+   34,
+   27
+  ],
+  "final": null,
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
  },
  {
   "week": 7,
@@ -774,8 +786,12 @@
    28,
    32
   ],
-  "man": null,
-  "final": null
+  "man": [
+   28,
+   31
+  ],
+  "final": null,
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
  },
  {
   "week": 7,
@@ -786,7 +802,11 @@
    25,
    28
   ],
-  "man": null,
-  "final": null
+  "man": [
+   27,
+   31
+  ],
+  "final": null,
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
  }
 ]

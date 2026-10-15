@@ -2998,6 +2998,11 @@ for i, (label, board) in enumerate(
     txt(s, 3.6, y + 0.15 + i * 0.44, 8.6, 0.38,
         f"{r['dog']} +{r['pts']:g} {r['at']} {fav}{ml}", 16, WHITE,
         bold=True)
+# Corey's two dogs on the same band, right side (Lucas 10/15: 'add Corey's prices' to the predictions slide)
+for i, slot in enumerate(("superdog", "giant_killer")):
+    _mp = [p for p in _man_dogs() if p.get("slot") == slot]
+    if _mp:
+        txt(s, 7.6, y + 0.17 + i * 0.44, 4.6, 0.36, "Man: " + _mp[0]["pick"], 14, NAVY, bold=True, align=PP_ALIGN.RIGHT)
 txt(s, 0.9, 7.15, 11.5, 0.3,
     "Superdogs: 5 for a cover · 5 + the spread for a win · 1 for a push · research, not picks"
     + (f" · market = DraftKings, {LINES_AS_OF}" if CLOSER_SHOW_MARKET else ""), 11,

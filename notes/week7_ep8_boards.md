@@ -253,4 +253,4 @@ updates. Betting-line context stays in the internal folder except where the slid
     - Next: Nevada +15.5 at North Dakota State (28% to win) · Southern Miss +7 vs Arkansas State (53%) · Charlotte +21.5 at Temple (18%; was the pick on Sunday's noon board at +24.5 before the line came down)
   - Machine Giant Killer: Colorado +16.5 vs #11 Utah (Sat 10:15 PM ET) - machine Utah by 13.3, 3.2 fewer than the points; 20% to win outright, 59% to cover; worth 6.3 points on average (5 for a cover, 21.5 for the win)
     - Next: Michigan State +8.5 vs #25 Northwestern (34%) · Florida State +21 at #3 Miami (12%) · Virginia +8.5 at #24 SMU (31%)
-  - Corey's picks: PLACEHOLDER
+  - Corey's picks (his slide, his lines): Superdog Southern Miss +7 vs Arkansas State · Giant Killer Michigan State +7.5 vs #25 Northwestern (machine board has Southern Miss third-best superdog at 53% to win, Michigan State next-best giant killer at +8.5, 34%)

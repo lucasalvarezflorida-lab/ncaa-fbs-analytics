@@ -239,5 +239,23 @@
    "graded": "2026-10-11 by hand: UCF +11.5 lost by 14",
    "slot": "giant_killer"
   }
+ ],
+ "man_picks_week7": [
+  {
+   "week": 7,
+   "slot": "superdog",
+   "pick": "Southern Miss +7 vs Arkansas State",
+   "line_note": "his line (his slide 52, 'Arkansas State at Southern Miss (+7)')",
+   "result": null,
+   "points": null
+  },
+  {
+   "week": 7,
+   "slot": "giant_killer",
+   "pick": "Michigan State +7.5 vs #25 Northwestern",
+   "line_note": "his line (his slide 52, 'Northwestern at Michigan State (+7.5)')",
+   "result": null,
+   "points": null
+  }
  ]
 }

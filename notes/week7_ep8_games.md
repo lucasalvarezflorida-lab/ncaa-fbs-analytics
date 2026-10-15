@@ -87,7 +87,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk5 at Rutgers (FBS) W 47-15: 21-of-29 for 9.1 a throw, 4 of 20+, sacked 1; ran 39 for 329; allowed 9.8 a throw and 35 for 59
         - wk6 at Nebraska (FBS) W 20-17: 12-of-22 for 12.0 a throw, 4 of 20+, sacked 2; ran 22 for 65; allowed 6.0 a throw and 39 for 128
     - Reserve: Indiana's 65 rushing yards at Nebraska: the one game the run stalled, Indiana won by three
-  - Corey: PLACEHOLDER
+  - Corey: Indiana 28–27 (his score slide, Week 7 deck)
 
 - **Notre Dame at BYU — Sat Oct 17, 7:30 PM ET, LaVell Edwards Stadium · Notre Dame · BYU (machine #3 at #20)**
   
@@ -163,7 +163,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk5 at TCU (FBS) W 17-10: 11-of-24 for 2.6 a throw, 0 of 20+, sacked 1; ran 38 for 154; allowed 7.5 a throw and 30 for 72
         - wk6 vs Iowa State (FBS) W 24-10: 22-of-30 for 11.0 a throw, 5 of 20+, sacked 0; ran 31 for 177; allowed 3.4 a throw and 27 for 102
     - Reserve: Bachmeier's one interception in 116 throws — BYU's margin for error is zero giveaways
-  - Corey: PLACEHOLDER
+  - Corey: Notre Dame 31–20 (his score slide, Week 7 deck)
 
 - **Alabama at Tennessee — Sat Oct 17, 3:30 PM ET, Neyland Stadium · Alabama · Tennessee (machine #4 at #12)**
   
@@ -240,7 +240,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk5 vs Auburn (FBS) W 24-14: 11-of-18 for 4.8 a throw, 1 of 20+, sacked 3; ran 49 for 237; allowed 4.8 a throw and 32 for 186
         - wk6 at Arkansas (FBS) W 24-17: 18-of-29 for 8.5 a throw, 5 of 20+, sacked 1; ran 35 for 167; allowed 5.7 a throw and 34 for 133
     - Reserve: Tennessee's offense: 9.4% sacks taken, 7.9% explosive passes — the pocket is the problem on both sides of this game
-  - Corey: PLACEHOLDER
+  - Corey: Alabama 34–27 (his score slide, Week 7 deck)
 
 - **Missouri at Ole Miss — Sat Oct 17, 3:30 PM ET, Vaught-Hemingway Stadium · Missouri · Ole Miss (machine #14 at #9)**
   
@@ -316,7 +316,7 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk4 at Florida (FBS) L 28-52: 25-of-34 for 8.8 a throw, 4 of 20+, sacked 0; ran 27 for 128; allowed 8.5 a throw and 53 for 302
         - wk6 at Vanderbilt (FBS) W 52-17: 20-of-30 for 7.1 a throw, 2 of 20+, sacked 1; ran 35 for 196; allowed 6.5 a throw and 37 for 103
     - Reserve: Ole Miss has beaten expectation by 5.0 with turnover luck of −9 — the de-lucked number says the team is a little better than its scores
-  - Corey: PLACEHOLDER
+  - Corey: Ole Miss 31–28 (his score slide, Week 7 deck)
 
 - **Nebraska at Oregon — Sat Oct 17, 11:00 PM ET, Autzen Stadium · Nebraska · Oregon (machine #17 at #15)**
   
@@ -392,5 +392,5 @@ context is kept out of this file on purpose - it lives in the internal folder.
         - wk4 at USC (FBS) W 41-27: 27-of-35 for 10.5 a throw, 6 of 20+, sacked 0; ran 33 for 138; allowed 7.8 a throw and 33 for 120
         - wk6 vs UCLA (FBS) L 15-17: 15-of-33 for 4.9 a throw, 2 of 20+, sacked 0; ran 27 for 73; allowed 8.9 a throw and 47 for 140
     - Reserve: Oregon's third down: 16 of 51 (31%) against FBS — the offense has been drives of three plays since Moore went down
-  - Corey: PLACEHOLDER
+  - Corey: Oregon 31–27 (his score slide, Week 7 deck)
 
