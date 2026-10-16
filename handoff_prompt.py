@@ -37,6 +37,12 @@ Carnival boundary, and the dossiers.
 {shoot}
 WEEKLY ROUTINE (do without asking, report after; each writes a summary in internal/)
 
+* SINCE 10/14 the week runs through the agents: `/run-week N --phase sunday`
+  (Sunday), `/run-week N --phase midweek` (Tuesday), `/run-week N --phase record`
+  (recording day) — the `run-week` skill orchestrates data-puller, researcher,
+  model-updater, slides-builder and show-notes-writer and stops at the gates.
+  The commands below are what those phases run underneath; use them only to
+  rerun one piece by hand.
 * Sunday: `python sunday.py --week N` (N = the week just played) — finals,
   score tracker, pre-mortem grades, superdog ledger (machine), rebuild,
   weekly change, hot seat / Heisman (MARKET by hand first), next-week card
@@ -88,7 +94,7 @@ SHOOT_DONE = """POST-SHOOT CHECKLIST (the shoot is done)
   so the receipts grade what was said, not what was regenerated.
 * Confirm the frozen card (card_data_week{week}_frozen.json) is the one on
   air; nothing regenerates until the Ep switch.
-* Sunday is `python sunday.py --week {week}`.
+* Sunday is `/run-week {week} --phase sunday` (sunday.py --week {week} underneath).
 """
 
 
