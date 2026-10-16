@@ -25,7 +25,7 @@ PHASES = {   # which steps a phase runs, in order (the three real-time moments o
     "full": STEPS,
     "sunday": ["01-data", "03-model"],
     "midweek": ["01-data", "02-research", "03-model", "04-slides", "05-notes"],
-    "record": ["01-data", "03-model", "04-slides", "05-notes"],
+    "record": ["01-data", "02-research", "03-model", "04-slides", "05-notes"],   # 02 = the DAY-OF availability pass (Lucas 10/16: LJ Martin), before the freeze
 }
 STATUSES = ("pending", "running", "ok", "warn", "fail", "proposal", "ask", "skipped")
 
