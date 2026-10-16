@@ -743,7 +743,12 @@
    28
   ],
   "final": null,
-  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)",
+  "machine_shadow": [
+   26,
+   24
+  ],
+  "shadow_total": 50.2
  },
  {
   "week": 7,
@@ -759,7 +764,12 @@
    27
   ],
   "final": null,
-  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)",
+  "machine_shadow": [
+   29,
+   21
+  ],
+  "shadow_total": 50.4
  },
  {
   "week": 7,
@@ -775,7 +785,12 @@
    31
   ],
   "final": null,
-  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)",
+  "machine_shadow": [
+   27,
+   30
+  ],
+  "shadow_total": 57.0
  },
  {
   "week": 7,
@@ -791,7 +806,12 @@
    20
   ],
   "final": null,
-  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)",
+  "machine_shadow": [
+   30,
+   19
+  ],
+  "shadow_total": 48.9
  },
  {
   "week": 7,
@@ -807,6 +827,11 @@
    31
   ],
   "final": null,
-  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)"
+  "man_source": "Corey's deck 1UpeONbb export 10/15 (score slides 19/26/30/34/41, read by position + green winner)",
+  "machine_shadow": [
+   23,
+   26
+  ],
+  "shadow_total": 48.7
  }
 ]
